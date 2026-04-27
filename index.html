@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISV Morning — {{DATE}}</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1208; --paper: #f5f0e8; --cream: #ede8da;
+    --navy: #0f1e35; --gold: #b8860b; --rule: #c8b97a;
+    --muted: #6b5e47; --accent: #8b1a1a;
+  }
+  body { background: #d4cbb8; font-family: 'Source Serif 4', Georgia, serif; color: var(--ink); padding: 16px 8px 32px; }
+  .paper { max-width: 660px; margin: 0 auto; background: var(--paper); box-shadow: 0 4px 40px rgba(0,0,0,0.25); }
+  .masthead { background: var(--navy); padding: 28px 24px 20px; text-align: center; border-bottom: 3px solid var(--gold); }
+  .masthead-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.25em; color: var(--rule); text-transform: uppercase; margin-bottom: 10px; }
+  .masthead-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 38px; color: #f5f0e8; line-height: 1; }
+  .masthead-title span { color: var(--gold); }
+  .masthead-tagline { font-style: italic; font-size: 11px; color: #a09070; margin-top: 8px; }
+  .masthead-date { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--rule); margin-top: 12px; letter-spacing: 0.15em; text-transform: uppercase; padding-top: 12px; border-top: 1px solid #2a3d55; }
+  .weather-strip { background: var(--cream); border-bottom: 2px solid var(--rule); padding: 10px 22px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .weather-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
+  .weather-day { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink); background: white; padding: 3px 7px; border: 1px solid var(--rule); white-space: nowrap; }
+  .weather-day.rain { border-color: #6a8fb0; color: #2a4a6a; background: #eef3f8; }
+  .weather-alert { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--accent); letter-spacing: 0.1em; margin-left: auto; }
+  .body-wrap { padding: 0 22px 28px; }
+  .greeting { padding: 16px 0 4px; font-size: 12.5px; font-style: italic; color: var(--muted); font-weight: 300; border-bottom: 1px solid var(--cream); margin-bottom: 4px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--cream); }
+  .section { padding: 16px 0 0; }
+  .headline-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--cream); }
+  .headline-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .headline-flag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 3px; }
+  .headline-text { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 14px; line-height: 1.35; color: var(--ink); margin-bottom: 4px; }
+  .headline-summary { font-size: 12.5px; line-height: 1.6; color: #3d3020; font-weight: 300; }
+  .learn-more { display: inline-block; margin-top: 4px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+  @media (max-width: 500px) { .two-col { grid-template-columns: 1fr; } }
+  .ops-box { background: var(--cream); border-left: 3px solid var(--navy); padding: 10px 12px; margin-bottom: 8px; }
+  .ops-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .ops-text { font-size: 13px; line-height: 1.5; color: var(--ink); }
+  .insight-box { background: var(--navy); color: var(--paper); padding: 16px 18px; margin-top: 16px; }
+  .insight-box .section-label { color: var(--rule); }
+  .insight-box .section-label::after { background: #2a3d55; }
+  .insight-title { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; line-height: 1.4; color: #f5f0e8; margin-bottom: 8px; }
+  .insight-body { font-size: 12.5px; line-height: 1.65; color: #a09070; font-weight: 300; }
+  .fact-item { display: flex; gap: 8px; margin-bottom: 9px; font-size: 12.5px; line-height: 1.55; font-weight: 300; }
+  .fact-bullet { font-family: 'DM Mono', monospace; color: var(--gold); flex-shrink: 0; }
+  .joke-box { background: var(--cream); border: 1px solid var(--rule); padding: 14px 16px; text-align: center; }
+  .joke-setup { font-size: 13px; font-style: italic; color: var(--muted); margin-bottom: 6px; font-weight: 300; }
+  .joke-punchline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--ink); }
+  .positivity-box { text-align: center; padding: 18px 12px 8px; }
+  .positivity-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; line-height: 1.5; color: var(--ink); margin-bottom: 8px; }
+  .footer { background: var(--navy); padding: 14px 22px; text-align: center; border-top: 3px solid var(--gold); }
+  .footer-text { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 0.12em; color: #4a5f75; text-transform: uppercase; line-height: 1.8; }
+  .rule { border: none; border-top: 2px solid var(--rule); margin: 16px 0; }
+  .rule-thin { border: none; border-top: 1px dashed var(--rule); margin: 14px 0; }
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <div class="masthead">
+    <div class="masthead-eyebrow">Your personal briefing</div>
+    <div class="masthead-title">ISV <span>Morning</span></div>
+    <div class="masthead-tagline">Everything worth knowing before your first cup gets cold</div>
+    <div class="masthead-date">{{DATE}} &nbsp;·&nbsp; Carrum Downs, VIC</div>
+  </div>
+
+  <div class="weather-strip">
+    <span class="weather-label">This week</span>
+    <span class="weather-day">{{WEATHER_1}}</span>
+    <span class="weather-day {{WEATHER_2_CLASS}}">{{WEATHER_2}}</span>
+    <span class="weather-day {{WEATHER_3_CLASS}}">{{WEATHER_3}}</span>
+    <span class="weather-day">{{WEATHER_4}}</span>
+    <span class="weather-day">{{WEATHER_5}}</span>
+    <span class="weather-alert">{{WEATHER_ALERT}}</span>
+  </div>
+
+  <div class="body-wrap">
+    <p class="greeting">Good morning, Liall. The world kept moving. Here's what actually matters.</p>
+    <hr class="rule">
+
+    <div class="section">
+      <div class="section-label">🌍 World</div>
+      <div class="headline-item">
+        <div class="headline-flag">{{WORLD_1_FLAG}}</div>
+        <div class="headline-text">{{WORLD_1_HEADLINE}}</div>
+        <div class="headline-summary">{{WORLD_1_SUMMARY}}</div>
+        <a class="learn-more" href="{{WORLD_1_URL}}" target="_blank">Learn more →</a>
+      </div>
+      <div class="headline-item">
+        <div class="headline-flag">{{WORLD_2_FLAG}}</div>
+        <div class="headline-text">{{WORLD_2_HEADLINE}}</div>
+        <div class="headline-summary">{{WORLD_2_SUMMARY}}</div>
+        <a class="learn-more" href="{{WORLD_2_URL}}" target="_blank">Learn more →</a>
+      </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <div class="section">
+      <div class="section-label">📈 Economics</div>
+      <div class="headline-item">
+        <div class="headline-flag">{{ECON_1_FLAG}}</div>
+        <div class="headline-text">{{ECON_1_HEADLINE}}</div>
+        <div class="headline-summary">{{ECON_1_SUMMARY}}</div>
+        <a class="learn-more" href="{{ECON_1_URL}}" target="_blank">Learn more →</a>
+      </div>
+      <div class="headline-item">
+        <div class="headline-flag">{{ECON_2_FLAG}}</div>
+        <div class="headline-text">{{ECON_2_HEADLINE}}</div>
+        <div class="headline-summary">{{ECON_2_SUMMARY}}</div>
+      </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <div class="section">
+      <div class="section-label">🤖 Tech & AI</div>
+      <div class="headline-item">
+        <div class="headline-flag">{{TECH_1_FLAG}}</div>
+        <div class="headline-text">{{TECH_1_HEADLINE}}</div>
+        <div class="headline-summary">{{TECH_1_SUMMARY}}</div>
+        <a class="learn-more" href="{{TECH_1_URL}}" target="_blank">Learn more →</a>
+      </div>
+      <div class="headline-item">
+        <div class="headline-flag">{{TECH_2_FLAG}}</div>
+        <div class="headline-text">{{TECH_2_HEADLINE}}</div>
+        <div class="headline-summary">{{TECH_2_SUMMARY}}</div>
+      </div>
+    </div>
+
+    <hr class="rule-thin">
+
+    <div class="two-col">
+      <div>
+        <div class="section-label">🇦🇺 Australia</div>
+        <div class="headline-item" style="border-bottom:none;padding-bottom:0;">
+          <div class="headline-text" style="font-size:13px;">{{AUS_1_HEADLINE}}</div>
+          <div class="headline-summary">{{AUS_1_SUMMARY}}</div>
+          <a class="learn-more" href="{{AUS_1_URL}}" target="_blank">Learn more →</a>
+        </div>
+        <div class="headline-item" style="border-bottom:none;padding-bottom:0;margin-top:10px;">
+          <div class="headline-text" style="font-size:13px;">{{AUS_2_HEADLINE}}</div>
+          <div class="headline-summary">{{AUS_2_SUMMARY}}</div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">🌆 Victoria</div>
+        <div class="headline-item" style="border-bottom:none;padding-bottom:0;">
+          <div class="headline-text" style="font-size:13px;">{{VIC_1_HEADLINE}}</div>
+          <div class="headline-summary">{{VIC_1_SUMMARY}}</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+    <div class="section">
+      <div class="section-label">🔬 Science</div>
+      <div class="headline-item">
+        <div class="headline-flag">{{SCI_1_FLAG}}</div>
+        <div class="headline-text">{{SCI_1_HEADLINE}}</div>
+        <div class="headline-summary">{{SCI_1_SUMMARY}}</div>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+    <div class="insight-box">
+      <div class="section-label">💡 Business Insight</div>
+      <div class="insight-title">{{INSIGHT_TITLE}}</div>
+      <div class="insight-body">{{INSIGHT_BODY}}</div>
+    </div>
+
+    <hr class="rule">
+
+    <div class="section">
+      <div class="section-label">🧠 Things Worth Knowing</div>
+      <div class="fact-item"><span class="fact-bullet">◆</span><span>{{FACT_1}}</span></div>
+      <div class="fact-item"><span class="fact-bullet">◆</span><span>{{FACT_2}}</span></div>
+      <div class="fact-item"><span class="fact-bullet">◆</span><span>{{FACT_3}}</span></div>
+    </div>
+
+    <hr class="rule">
+
+    <div class="section">
+      <div class="section-label">😄 Today's Joke</div>
+      <div class="joke-box">
+        <div class="joke-setup">{{JOKE_SETUP}}</div>
+        <div class="joke-punchline">{{JOKE_PUNCHLINE}}</div>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+    <div class="positivity-box">
+      <div class="section-label" style="justify-content:center;margin-bottom:14px;">☀️ To Close</div>
+      <div class="positivity-quote">{{CLOSING_QUOTE}}</div>
+      <p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin:8px 0 14px;">{{CLOSING_ATTR}}</p>
+      <p style="font-size:12px;color:var(--muted);font-style:italic;font-weight:300;line-height:1.6;">{{CLOSING_MESSAGE}}</p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">ISV Morning &nbsp;·&nbsp; Generated for Liall &nbsp;·&nbsp; Industrial Services Victoria &nbsp;·&nbsp; Carrum Downs VIC<br>Not advice. Not a diary. Just a heads up.</div>
+  </div>
+
+</div>
+</body>
+</html>
