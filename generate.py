@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Thursday, 1 May 2026",
+    "{{DATE}}": "Friday, 2 May 2026",
 
-    # Weather — Carrum Downs VIC, 5-day outlook from Thu 1 May
-    "{{WEATHER_1}}": "Thu · Partly cloudy · 17°C",
-    "{{WEATHER_2}}": "Fri · Cloudy · 16°C",
-    "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "Sat · Showers · 14°C",
-    "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "Sun · Clearing · 15°C",
-    "{{WEATHER_5}}": "Mon · Fine · 18°C",
+    # Weather — Carrum Downs VIC, 5-day outlook from Fri 2 May
+    "{{WEATHER_1}}": "Fri 2 May · Cloudy · 16°C",
+    "{{WEATHER_2}}": "Sat · Showers · 14°C",
+    "{{WEATHER_2_CLASS}}": "rain",
+    "{{WEATHER_3}}": "Sun · Clearing · 15°C",
+    "{{WEATHER_3_CLASS}}": "",
+    "{{WEATHER_4}}": "Mon · Fine · 18°C",
+    "{{WEATHER_5}}": "Tue · Partly cloudy · 17°C",
     "{{WEATHER_ALERT}}": "Rain Saturday",
 
     # World
-    "{{WORLD_1_FLAG}}": "🌍 GULF · ENERGY",
-    "{{WORLD_1_HEADLINE}}": "UAE Officially Exits OPEC as Iran War Reshapes the Global Oil Order",
-    "{{WORLD_1_SUMMARY}}": "The United Arab Emirates formally left OPEC today — effective 1 May — stripping the cartel of its third-largest producer and dealing a heavy blow to Saudi Arabia's grip on oil policy. The exit follows months of tension over production caps and comes as the ongoing US-Israel war on Iran has already slashed OPEC's combined output by nearly 8 million barrels per day.",
+    "{{WORLD_1_FLAG}}": "🛢️ UAE · OPEC",
+    "{{WORLD_1_HEADLINE}}": "UAE Formally Exits OPEC — the Cartel's Biggest Blow in Decades",
+    "{{WORLD_1_SUMMARY}}": "The United Arab Emirates officially left OPEC and OPEC+ yesterday, effective 1 May, stripping the cartel of its third-largest producer. Months of tension over production quotas came to a head as Iran's sustained attacks on Strait of Hormuz shipping throttled the UAE's ability to export at scale. The withdrawal leaves Saudi Arabia scrambling and removes OPEC's key moderating voice at the worst possible time.",
     "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/4/28/uae-leaves-opec-and-opec",
 
-    "{{WORLD_2_FLAG}}": "👑 ROYALS · GEOPOLITICS",
-    "{{WORLD_2_HEADLINE}}": "King Charles Praises AUKUS in Historic Address to US Congress",
-    "{{WORLD_2_SUMMARY}}": "In his first speech to a joint session of Congress, King Charles called the AUKUS defence partnership \"ambitious and vital for the Indo-Pacific\", while highlighting the strength of the US–UK–Australia alliance. President Trump called the King \"a fantastic person,\" though relations with UK PM Keir Starmer remain fraught.",
-    "{{WORLD_2_URL}}": "https://www.cnn.com/2026/04/28/world/live-news/iran-war-trump-israel",
+    "{{WORLD_2_FLAG}}": "👑 UK · US",
+    "{{WORLD_2_HEADLINE}}": "King Charles Addresses US Congress — Praises AUKUS, Offers Pointed Warning on Democracy",
+    "{{WORLD_2_SUMMARY}}": "King Charles III became only the second British monarch to address a joint session of Congress on Monday, calling the AUKUS defence pact \"ambitious and vital\" for Indo-Pacific stability and reaffirming the US–UK \"special relationship.\" He offered a carefully worded but unmistakable warning about the importance of democratic institutions — remarks that drew sharp commentary in Washington. A state dinner with President Trump followed.",
+    "{{WORLD_2_URL}}": "https://edition.cnn.com/2026/04/28/us/live-news/king-charles-queen-camilla-us-visit",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🇦🇺 AUSTRALIA · FUEL",
-    "{{ECON_1_HEADLINE}}": "Fuel Excise Cut Is Delivering Savings — But the Middle East War Is Eating Them Back",
-    "{{ECON_1_SUMMARY}}": "Australia's halved fuel excise (26.3 cents per litre off, valid to 30 June) delivered early savings of 20–26 cents per litre at the pump, but surging global crude prices driven by the Iran war have partially clawed those gains back. The ACCC is actively monitoring whether retailers — particularly diesel sellers — are passing on recent falls in international refined fuel prices.",
-    "{{ECON_1_URL}}": "https://www.accc.gov.au/media-release/accc-monitors-fuel-excise-cut-fuel-surcharges-and-fuel-price-movements",
+    "{{ECON_1_FLAG}}": "🏦 AUSTRALIA · RATES",
+    "{{ECON_1_HEADLINE}}": "RBA Board Meets Tuesday — Hold Expected, But 4.6% Inflation Keeps Everyone on Edge",
+    "{{ECON_1_SUMMARY}}": "The Reserve Bank of Australia convenes Tuesday 5 May for its next rate decision. Two hikes this year have already lifted the cash rate to 4.10%, and most economists forecast a hold — but with annual inflation stuck at 4.6% and Middle East energy disruption still flowing through supply chains, the board faces pressure from both directions. Any move up would add meaningful monthly cost for businesses carrying commercial debt or equipment finance.",
+    "{{ECON_1_URL}}": "https://www.rba.gov.au/monetary-policy/int-rate-decisions/",
 
-    "{{ECON_2_FLAG}}": "🏦 AUSTRALIA · RATES",
-    "{{ECON_2_HEADLINE}}": "RBA Rate Pause Widely Expected as May Board Meeting Looms Next Week",
-    "{{ECON_2_SUMMARY}}": "With the cash rate already raised twice in 2026 to 4.10%, most economists expect the Reserve Bank to hold at its 4–5 May meeting, giving borrowers a short reprieve. Australia's inflation sits at 4.6% — well above the 2–3% target — and the RBA is under pressure to balance cost-of-living relief against energy-driven price pressures.",
+    "{{ECON_2_FLAG}}": "⛽ AUSTRALIA · FUEL",
+    "{{ECON_2_HEADLINE}}": "Fuel Excise Cut Expires June 30 — Operators Warned to Plan for the Snapback",
+    "{{ECON_2_SUMMARY}}": "Australia's temporary 50% fuel excise cut runs out on 30 June, and with no extension confirmed, diesel-heavy operators should factor a 26.3 cents per litre cost increase back into their July pricing. Industry groups are pushing for an extension, but the government has not yet committed. The Iran war has already eroded much of the original saving — when the excise snaps back, the combined hit to transport-intensive trades will be significant.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🇦🇺 AUSTRALIA · AI",
-    "{{TECH_1_HEADLINE}}": "MYOB and Microsoft Launch AI Agents for Australian Small Businesses — Cashflow Forecasting to Compliance Nudges",
-    "{{TECH_1_SUMMARY}}": "Microsoft confirmed its Agent 365 platform hit general availability today, the same day MYOB began embedding AI agents directly into its accounting software for Australia's 3.28 million SMEs. The agents forecast cash flow, guide compliance readiness, and surface proactive insights — all inside the tools small businesses already use, with no coding required.",
-    "{{TECH_1_URL}}": "https://news.microsoft.com/source/asia/2026/04/08/myob-and-microsoft-sign-five-year-strategic-partnership/",
+    "{{TECH_1_FLAG}}": "🤝 AI · DEAL",
+    "{{TECH_1_HEADLINE}}": "OpenAI and Microsoft Rip Up Their Partnership — OpenAI Is No Longer Tied to Azure Alone",
+    "{{TECH_1_SUMMARY}}": "OpenAI and Microsoft have renegotiated their foundational partnership, allowing OpenAI to deploy its models across cloud platforms beyond Microsoft Azure for the first time. Microsoft retains preferred-provider status but loses its exclusive grip — a structural shift that intensifies competition between cloud giants and gives businesses more real choice in which AI stack they build on.",
+    "{{TECH_1_URL}}": "https://thenewstack.io/openai-microsoft-partnership-restructured/",
 
-    "{{TECH_2_FLAG}}": "🌐 AI · ENTERPRISE",
-    "{{TECH_2_HEADLINE}}": "40% of Enterprise Apps to Feature AI Agents by Year-End — But Only 10% Have Scaled Beyond Pilots",
-    "{{TECH_2_SUMMARY}}": "A new cross-industry report finds agentic AI is entering mainstream tools faster than expected, but scaling remains elusive. Just one in ten organisations has moved beyond test deployments — mostly due to governance gaps and hallucination risks. Google Workspace Studio and Anthropic's Managed Agents are among the latest platforms trying to close the gap.",
+    "{{TECH_2_FLAG}}": "🌐 AI · OPEN SOURCE",
+    "{{TECH_2_HEADLINE}}": "DeepSeek V4 Goes Open-Weight: China's Most Capable AI Is Now Free to Use and Modify",
+    "{{TECH_2_SUMMARY}}": "Chinese AI lab DeepSeek released V4-Flash and V4-Pro in open-weight preview last week — the Pro model packs 1.6 trillion parameters, a 1-million token context window, and benchmarks that rival closed-source models from OpenAI and Anthropic at a fraction of the running cost. For small businesses evaluating AI tools: capable, enterprise-grade AI is getting dramatically cheaper every quarter.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🇩🇪 GERMANY · AUTO",
-    "{{ROBOT_1_HEADLINE}}": "BMW Puts Humanoid Robots on the Factory Floor in Europe — An Industrial First",
-    "{{ROBOT_1_SUMMARY}}": "BMW Group has deployed AEON — a humanoid robot developed by Hexagon Robotics — at its Leipzig plant, marking the first time Physical AI of this kind has entered European automotive production. Two AEON units will work on high-voltage battery assembly and exterior component manufacturing, following a successful US pilot where a humanoid robot logged 1,250 hours and moved over 90,000 sheet metal parts.",
-    "{{ROBOT_1_URL}}": "https://www.press.bmwgroup.com/global/article/detail/T0455864EN/bmw-group-to-deploy-humanoid-robots-in-production-in-germany-for-the-first-time?language=en",
+    "{{ROBOT_1_FLAG}}": "🏭 GERMANY · INDUSTRIAL",
+    "{{ROBOT_1_HEADLINE}}": "\"Autonomous Alfie\" — A Self-Learning Humanoid Robot Built for Factory Floors, No Programmer Required",
+    "{{ROBOT_1_SUMMARY}}": "German robotics startup RobCo unveiled Autonomous Alfie at Hannover Messe 2026 — a humanoid robot designed for precision assembly, material handling, and intralogistics that adapts to new workflows without rigid reprogramming. Delivered as Robotics-as-a-Service with no upfront capital, it targets mid-sized manufacturers who have been locked out of automation by integration costs. First customer deployments are scheduled for later this year.",
+    "{{ROBOT_1_URL}}": "https://roboticsandautomationnews.com/2026/04/20/robco-unveils-autonomous-alfie-humanoid-robot-for-industrial-automation-at-hannover-messe/100762/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "eSafety Commissioner Stands Firm Despite Wave of Online Threats After Social Media Ban",
-    "{{AUS_1_SUMMARY}}": "Australia's eSafety Commissioner says the volume of abuse and threats she has received since implementing the under-16s social media restrictions has only hardened her resolve. \"They only encourage me to dig in,\" she told media. The restrictions remain in force and are being actively enforced.",
-    "{{AUS_1_URL}}": "https://www.sbs.com.au/news",
+    "{{AUS_1_HEADLINE}}": "Japan's \"Iron Lady\" PM Takaichi Arrives in Australia on Sunday for Landmark Energy and Defence Talks",
+    "{{AUS_1_SUMMARY}}": "Japanese Prime Minister Sanae Takaichi arrives in Canberra on Sunday 3 May for her first official Australian visit. She meets PM Albanese at Parliament House on Monday for the annual Australia–Japan Leaders' Meeting, with LNG supply agreements, AUKUS cooperation, and the 50th anniversary of the Australia–Japan friendship treaty all on the agenda.",
+    "{{AUS_1_URL}}": "https://www.pm.gov.au/media/visit-australia-prime-minister-japan-0",
 
-    "{{AUS_2_HEADLINE}}": "Government Targets Loopholes Letting Tech Giants Dodge Australian News Payments",
-    "{{AUS_2_SUMMARY}}": "A new government proposal would close gaps in Australia's news media bargaining code that allow platforms like Meta and Google to avoid triggering mandatory arbitration with publishers. The move comes as concerns grow that major platforms have been renegotiating deals below market rate — or avoiding them altogether.",
+    "{{AUS_2_HEADLINE}}": "WA Grain Belt Hit by Worst Mouse Plague in Years — and Farmers Are Running Out of Bait",
+    "{{AUS_2_SUMMARY}}": "Mouse populations have exploded across key cropping regions in Western Australia, with surveys recording up to 4,000 burrows per hectare in the worst-affected zones around Northampton and Ravensthorpe. Demand for zinc phosphide bait has outstripped supply ahead of seeding season, and with no federal assistance funding, growers are absorbing the cost on top of elevated fuel and fertiliser prices.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Melbourne Victory v Sydney FC: A-League Elimination Final Set for Saturday Night at AAMI Park",
-    "{{VIC_1_SUMMARY}}": "Melbourne Victory face Sydney FC in a winner-takes-all A-League Elimination Final on Saturday 2 May, kick-off 7:40pm AEST at AAMI Park. The loser goes home — and with Melbourne's finals record shaky of late, home-ground advantage and a vocal crowd will need to count for something.",
+    "{{VIC_1_HEADLINE}}": "Melbourne Victory vs Sydney FC — A-League Elimination Final Tomorrow Night at AAMI Park",
+    "{{VIC_1_SUMMARY}}": "Melbourne Victory host Sydney FC in a winner-takes-all A-League Elimination Final tomorrow night, Saturday 3 May, kick-off 7:40pm at AAMI Park. Lose and the season ends immediately. Victory's home record has been the backbone of their year — they'll need the crowd and the form to drag them through.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔬 BIOLOGY · MEDICINE",
-    "{{SCI_1_HEADLINE}}": "Scientists Crack a 100-Year-Old Problem: How to Freeze Transplant Organs Without Shattering Them",
-    "{{SCI_1_SUMMARY}}": "Researchers at Texas A&M University have developed a cryopreservation technique that dramatically reduces the cracking that has plagued frozen organ storage for over a century. By engineering solutions with higher glass transition temperatures, the team may have unlocked a path to organs being preserved for days or weeks rather than hours — potentially transforming transplant waiting lists worldwide.",
+    "{{SCI_1_FLAG}}": "🔬 MEDICINE · ONCOLOGY",
+    "{{SCI_1_HEADLINE}}": "A Daily Vitamin D Supplement Boosted Breast Cancer Treatment Success by 79% in New Study",
+    "{{SCI_1_SUMMARY}}": "Brazilian researchers at São Paulo State University found that breast cancer patients who took a modest 2,000 IU daily vitamin D supplement alongside standard chemotherapy were dramatically more likely to achieve complete cancer remission — nearly half the supplemented group achieved full remission, compared to fewer than one in four in the placebo group. The study of 80 women was published this week and adds to a growing body of evidence that widespread vitamin D deficiency may quietly be undermining treatment outcomes worldwide.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Your Job Notes Are a Goldmine — If You Let AI Organise Them",
-    "{{INSIGHT_BODY}}": "Most tradies take job notes in their head, on scraps of paper, or in voice memos that never get typed up. That's lost knowledge — and lost time when it comes to quoting similar work, training a new person, or defending a scope-of-work dispute. AI transcription tools like Otter.ai and voice-to-text on your phone now let you speak your notes after a job and have them turned into a clean, searchable summary in seconds. For a blasting and coatings operation, that means every job's surface conditions, product used, square metreage, and hours on-site become a record you can actually find — building the institutional knowledge that lets you quote faster and win more of the right work.",
+    "{{INSIGHT_TITLE}}": "Your T&Cs Are Your First Line of Defence — AI Can Write Them in Minutes",
+    "{{INSIGHT_BODY}}": "Most small trades operators send a quote and start work — and when a job turns ugly over payment, scope creep, or site access, they discover a quote isn't a contract. AI tools like Claude or ChatGPT can now draft a custom set of terms and conditions for your trade in under five minutes: covering scope of work, variation clauses, payment terms, late fees, and liability limits. Get a solicitor to review once, then bolt them onto every quote you send. For blasting and coatings work — where surface conditions, product substitutions, and weather delays create real scope ambiguity — written T&Cs aren't just protection. They signal to commercial clients that you run a professional outfit worth trusting with their project.",
 
     # Fun Facts
-    "{{FACT_1}}": "A honeybee visits around 2,000 flowers to produce a single teaspoon of honey — and the average worker bee makes only about one-twelfth of a teaspoon in its entire lifetime.",
-    "{{FACT_2}}": "Melbourne's tram network is the largest outside of Europe, with over 250 kilometres of track and roughly 1,700 stops — and it's free to ride within the CBD fare zone.",
-    "{{FACT_3}}": "Your body contains approximately 37 trillion human cells — but it's home to an estimated 38 trillion bacteria, meaning there are slightly more microbes in you than there are \"you.\"",
+    "{{FACT_1}}": "Most of the \"wasabi\" served in Australian and Western restaurants is actually a blend of horseradish, mustard, and green food colouring. Genuine Wasabia japonica is so difficult to cultivate that real fresh wasabi costs around $300 per kilogram — making it one of the world's most expensive culinary plants.",
+    "{{FACT_2}}": "Since 2012, the computing power used in the world's largest AI training runs has doubled roughly every six months — an increase of more than 600,000-fold in just over a decade, a pace that makes Moore's Law look leisurely.",
+    "{{FACT_3}}": "The world's first recorded labour strike took place in ancient Egypt in 1170 BC, when workers building the royal tomb complex at Deir el-Medina downed tools because their rations of grain, fish, and beer hadn't been delivered on time. They essentially invented industrial action.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the tiler refuse to start on the kitchen floor?",
-    "{{JOKE_PUNCHLINE}}": "He had too many grout expectations.",
+    "{{JOKE_SETUP}}": "What do you call a tradesman who's booked solid for six months?",
+    "{{JOKE_PUNCHLINE}}": "Excellent.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Do what you can, with what you have, where you are.\"",
-    "{{CLOSING_ATTR}}": "Theodore Roosevelt",
-    "{{CLOSING_MESSAGE}}": "It's Thursday — the first day of May — and the global energy order just shifted again with the UAE walking out of OPEC this morning. Closer to home, showers are due Saturday, so if outdoor blasting work is on the schedule this week, tomorrow's cool dry morning is your best window. RBA rate decision lands Tuesday. Good week to get a step ahead.",
+    "{{CLOSING_QUOTE}}": "\"Give me six hours to chop down a tree and I will spend the first four sharpening the axe.\"",
+    "{{CLOSING_ATTR}}": "Abraham Lincoln",
+    "{{CLOSING_MESSAGE}}": "It's Friday — get any outdoor blasting locked in today while the sky is still dry. Rain rolls in tomorrow along with the A-League elimination final at AAMI Park. Japanese PM Takaichi arrives in Canberra Sunday, and the RBA board makes its rates call on Tuesday. Solid finish to the week — make the most of the morning.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
