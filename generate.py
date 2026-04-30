@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Wednesday, 29 April 2026",
+    "{{DATE}}": "Friday, 01 May 2026",
 
-    # Weather — Carrum Downs VIC, 5-day outlook from Wed 29 Apr
-    "{{WEATHER_1}}": "Wed 29 Apr · Partly cloudy · 18°C",
-    "{{WEATHER_2}}": "Thu 30 Apr · Sunny · 22°C",
-    "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "Fri 1 May · Mostly sunny · 20°C",
+    # Weather — Carrum Downs VIC, 5-day outlook from Fri 1 May
+    "{{WEATHER_1}}": "Fri 1 May · Showers likely · 17°C",
+    "{{WEATHER_2}}": "Sat 2 May · Showers · 15°C",
+    "{{WEATHER_2_CLASS}}": "rain",
+    "{{WEATHER_3}}": "Sun 3 May · Mostly cloudy · 15°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "Sat 2 May · Showers · 17°C",
-    "{{WEATHER_5}}": "Sun 3 May · Heavy showers · 15°C",
-    "{{WEATHER_ALERT}}": "Rain Sat–Sun",
+    "{{WEATHER_4}}": "Mon 4 May · Clearing · 17°C",
+    "{{WEATHER_5}}": "Tue 5 May · Fine · 19°C",
+    "{{WEATHER_ALERT}}": "Wet start to May",
 
     # World
-    "{{WORLD_1_FLAG}}": "🛢️ IRAN · OIL",
-    "{{WORLD_1_HEADLINE}}": "Trump Rejects Iran's Strait of Hormuz Offer — Brent Crude Surges Past $116",
-    "{{WORLD_1_SUMMARY}}": "Iran proposed halting attacks on Strait of Hormuz shipping if the US lifted its blockade — but Trump rejected the deal, insisting any agreement must first address Iran's nuclear program. With talks deadlocked and Brent crude now trading above $116 a barrel, the Middle East war is in its 60th day. US military costs have hit $25 billion with no ceasefire in sight. For Australian businesses still carrying Middle East fuel surcharges, there's no early relief on the horizon.",
-    "{{WORLD_1_URL}}": "https://www.cnn.com/2026/04/29/world/live-news/iran-war-peace-proposal-trump",
+    "{{WORLD_1_FLAG}}": "🇦🇪 UAE · ENERGY",
+    "{{WORLD_1_HEADLINE}}": "UAE Quits OPEC After 58 Years — Effective Today, Freeing It to Flood Markets with Oil",
+    "{{WORLD_1_SUMMARY}}": "The United Arab Emirates formally left OPEC on May 1, ending 58 years of membership. Long frustrated by production quotas capping it at 3.2 million barrels per day while its actual capacity sits near 5 million, the UAE is now free to pump without restriction. Iran's closure of the Strait of Hormuz still blocks most Gulf exports, so the near-term impact on supply is limited — but if peace resumes traffic flow, the UAE could add up to 1.6 million barrels per day to global supply, roughly 1.5% of world output. For Australian businesses still absorbing Middle East fuel surcharges, this is a meaningful long-term price-relief signal.",
+    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/4/28/uae-leaves-opec-and-opec",
 
-    "{{WORLD_2_FLAG}}": "🇰🇷 SOUTH KOREA",
-    "{{WORLD_2_HEADLINE}}": "Ousted South Korean President Yoon Gets 7 More Years — Already Serving Life for Rebellion",
-    "{{WORLD_2_SUMMARY}}": "A Seoul appeals court sentenced former President Yoon Suk Yeol to an additional seven years in prison on Wednesday for resisting arrest and bypassing a mandatory Cabinet meeting before his failed martial law declaration in December 2024. That sentence stacks on top of a life sentence he already received on rebellion charges — making him one of the most heavily punished leaders in South Korean democratic history. His legal team plans to appeal to the Supreme Court.",
-    "{{WORLD_2_URL}}": "https://www.npr.org/2026/04/29/g-s1-119165/south-korean-court-sentences-ex-president-yoon",
+    "{{WORLD_2_FLAG}}": "🇬🇧 UK · DIPLOMACY",
+    "{{WORLD_2_HEADLINE}}": "King Charles Addresses U.S. Congress — First British Monarch in 35 Years to Do So",
+    "{{WORLD_2_SUMMARY}}": "King Charles III made a historic address to a joint session of the U.S. Congress on April 28, calling the Anglo-American alliance 'more important today than it has ever been.' In a nearly 30-minute speech he condemned a recent attack near the Capitol and urged united democracies to stand firm against violence and division. He later attended a White House state dinner hosted by President Trump. The last British monarch to address Congress was Queen Elizabeth II in 1991 — making this a significant diplomatic event.",
+    "{{WORLD_2_URL}}": "https://thehill.com/policy/international/5853910-king-charles-address-congress/",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🏦 AUSTRALIA · RATES",
-    "{{ECON_1_HEADLINE}}": "Australia's Inflation Hits a 2-Year High at 4.09% — Raising the Stakes at the RBA's May Meeting",
-    "{{ECON_1_SUMMARY}}": "Australia's Q1 2026 inflation came in at 4.09% annually — the highest reading in over two years. It was fractionally below the 4.2% forecast, but still well outside the RBA's 2–3% target band, with Middle East fuel costs continuing to drive the trimmed mean. The Reserve Bank board meets in early May, and while most economists forecast a hold, another hike is on the table. Any move up will add directly to repayments for businesses carrying commercial loans, equipment finance, or vehicle debt.",
-    "{{ECON_1_URL}}": "https://www.cnbc.com/2026/04/29/australia-inflation-q1-rba-rate-hike-outlook.html",
+    "{{ECON_1_FLAG}}": "⛽ AUSTRALIA · FUEL",
+    "{{ECON_1_HEADLINE}}": "China Agrees to Resume Jet Fuel Exports to Australia — Easing Aviation Supply Crunch",
+    "{{ECON_1_SUMMARY}}": "Foreign Minister Penny Wong announced on April 30 that China has agreed to cooperate on resuming jet fuel exports to Australia, following high-level diplomatic talks. China had halted refined fuel exports in March amid Middle East supply disruptions — a significant blow given China supplied 32% of Australia's jet fuel imports in 2025. Export licences are now being issued to Chinese state-owned refiners for May loadings. It's a direct supply-chain win for Australian airlines and logistics operators, though broader pump prices remain elevated.",
+    "{{ECON_1_URL}}": "https://www.france24.com/en/live-news/20260429-australia-fm-says-china-agrees-to-collaborate-on-jet-fuel-exports",
 
-    "{{ECON_2_FLAG}}": "⛽ AUSTRALIA · FUEL",
-    "{{ECON_2_HEADLINE}}": "Retail Diesel Finally Falling — But the 26.3¢ Excise Cut Helping You Expires June 30",
-    "{{ECON_2_SUMMARY}}": "The ACCC's latest weekly fuel monitoring shows international diesel prices dropped 18% in the week to 22 April, and retail pump prices are beginning to follow. That's a genuine short-term win for transport-heavy trades. But the temporary halving of the fuel excise — saving 26.3 cents per litre — expires 30 June with no confirmed extension. If the excise snaps back while Middle East tensions persist, the combined cost hit for diesel-dependent operators could be significant heading into Q3.",
+    "{{ECON_2_FLAG}}": "🏪 AUSTRALIA · COSTS",
+    "{{ECON_2_HEADLINE}}": "ACCC Reports Surge in Fuel Surcharge Complaints — Some Small Businesses Charged Over 70%",
+    "{{ECON_2_SUMMARY}}": "The competition regulator has recorded a sharp rise in complaints from small businesses about fuel surcharges imposed by transport and logistics contractors, with some surcharges for remote-area businesses exceeding 70%. The government's temporary halving of the fuel excise to 26.3 cents per litre offers partial relief — but expires June 30. For trades operators relying on freight or subcontractors, auditing your current surcharge agreements before the excise snaps back is a worthwhile task this week.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤝 AI · DEAL",
-    "{{TECH_1_HEADLINE}}": "OpenAI and Microsoft End Exclusivity — AWS Immediately Launches Three New OpenAI Services",
-    "{{TECH_1_SUMMARY}}": "OpenAI and Microsoft have restructured their foundational partnership, ending Microsoft's exclusive grip on where OpenAI models can be deployed. AWS responded within hours, announcing three new OpenAI-based services on its Bedrock platform — including a jointly built agent service. For any business choosing an AI stack: cloud competition is now real, prices will fall, and you're no longer locked into Azure to access the world's most capable AI models.",
-    "{{TECH_1_URL}}": "https://thenewstack.io/openai-microsoft-partnership-restructured/",
+    "{{TECH_1_FLAG}}": "🤖 AI · BUSINESS",
+    "{{TECH_1_HEADLINE}}": "Google Declares the 'Agentic Enterprise' Era — AI Is Shifting from Chat to Action",
+    "{{TECH_1_SUMMARY}}": "Google Cloud CEO Thomas Kurian announced on April 30 the company's Agentic Enterprise strategy, framing it as the shift from AI as a 'system of intelligence' to a 'system of action' — where AI agents complete tasks, automate workflows, and operate independently in business software. This follows confirmation that Anthropic's annualised revenue crossed $30 billion in April, overtaking OpenAI's $25 billion for the first time. For small business owners: the AI tools being built right now won't just answer questions — they'll handle scheduling, quoting, ordering, and compliance without you touching them.",
+    "{{TECH_1_URL}}": "https://www.devflokers.com/blog/ai-news-last-24-hours-april-29-30-2026-roundup",
 
-    "{{TECH_2_FLAG}}": "⚖️ AI · LEGAL",
-    "{{TECH_2_HEADLINE}}": "The OpenAI vs Elon Musk Trial Begins — Billions and the Governance of AI at Stake",
-    "{{TECH_2_SUMMARY}}": "The closely-watched lawsuit between Elon Musk and OpenAI CEO Sam Altman went to trial in federal court in Oakland on Tuesday. Musk alleges OpenAI betrayed its founding non-profit mission by prioritising commercial gain over humanity's safety. OpenAI argues Musk walked away, later tried to seize control, and is now using litigation to hamper a competitor. The outcome could reshape how AI companies worldwide are governed, funded, and held accountable.",
+    "{{TECH_2_FLAG}}": "🧠 AI · RESEARCH",
+    "{{TECH_2_HEADLINE}}": "AI Model That Claimed to 'Think Like a Human' Was Just Memorising, Study Finds",
+    "{{TECH_2_SUMMARY}}": "The much-hyped Centaur AI model, which claimed to replicate human cognitive behaviour across 160 tasks, has been challenged by new research published April 29 — finding the model wasn't truly thinking, just pattern-matching on memorised training data. The finding echoes longstanding debates about whether large language models truly understand or merely predict. Practical upshot for AI users: these tools are genuinely powerful precisely because of their pattern recognition, but knowing their limits helps you deploy them more effectively and catch their mistakes before they matter.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 USA · HUMANOID",
-    "{{ROBOT_1_HEADLINE}}": "Apptronik Hires Waymo's Top Product Executive to Drive Apollo Robot Into Mass Production",
-    "{{ROBOT_1_SUMMARY}}": "Austin-based humanoid robot startup Apptronik has appointed Waymo veteran Daniel Chu as Chief Product Officer, tasked with leading the commercial rollout of its Apollo robot following a $935 million raise. Chu joins alongside executives from Amazon, Boston Dynamics, and Paramount — a C-suite assembly that signals Apptronik is moving hard from R&D into market deployment. Factory and logistics deployments are planned for 2026. This is the commercialisation phase starting in earnest for physical AI.",
-    "{{ROBOT_1_URL}}": "https://www.therobotreport.com/apptroniks-new-cpo-chu-hire-major-step-right-direction/",
+    "{{ROBOT_1_FLAG}}": "✈️ JAPAN · ROBOTICS",
+    "{{ROBOT_1_HEADLINE}}": "Japan Airlines Begins Testing Humanoid Robots for Baggage Handling at Haneda Airport",
+    "{{ROBOT_1_SUMMARY}}": "Japan Airlines launched Japan's first demonstration experiment deploying humanoid robots for airport ground handling at Tokyo's Haneda tarmac, published April 30. The Unitree-built robots — roughly 130 cm tall — use 3D LiDAR and depth cameras to handle baggage and cargo containers alongside human staff. JAL's 4,000 ground handlers are stretched by surging inbound tourism and Japan's shrinking workforce. The two-year trial, running until 2028, aims to expand robots into cabin cleaning and ground equipment operation. Labour shortage is now driving real-world humanoid deployment at industrial scale.",
+    "{{ROBOT_1_URL}}": "https://roboticsandautomationnews.com/2026/04/30/japan-trials-humanoid-robots-for-airport-operations-as-labor-shortages-intensify/101120/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australia Moves to Tax Meta, Google and TikTok Unless They Pay News Publishers",
-    "{{AUS_1_SUMMARY}}": "The Albanese government tabled draft legislation Tuesday that would hit Meta, Google and TikTok with a 2.25% tax on their Australian revenue if they refuse to strike commercial deals with news publishers. Expected to generate $144–179 million per year, distributed to media organisations by journalist headcount. The platforms are calling it a backdoor digital services tax — but the bill heads to Parliament by 2 July.",
-    "{{AUS_1_URL}}": "https://www.npr.org/2026/04/29/g-s1-119142/australia-moves-to-tax-meta-google-and-tiktok-to-fund-newsrooms",
+    "{{AUS_1_HEADLINE}}": "Australia Commits to All 14 Bondi Terror Attack Inquiry Recommendations — Including National Gun Reform",
+    "{{AUS_1_SUMMARY}}": "The Albanese government announced it will enact all 14 recommendations from the interim report into the Bondi terror attack and antisemitism, which killed 15 people in December 2025. Key measures include nationally consistent gun laws, a firearm buyback, enhanced security at Jewish sites, and a full-time national counter-terrorism coordinator. A final Royal Commission report is due by December 14 — the one-year anniversary of the attack.",
+    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/counter-terrorism-laws-did-not-hinder-bondi-attack-prevention-interim-report-reveals/rujr8zvn9",
 
-    "{{AUS_2_HEADLINE}}": "Japan's PM Takaichi Arrives in Canberra This Weekend for Energy and Defence Talks",
-    "{{AUS_2_SUMMARY}}": "Japanese Prime Minister Sanae Takaichi flies into Canberra on Sunday for the annual Australia–Japan Leaders' Meeting, where she'll meet PM Albanese on Monday. LNG supply security, AUKUS cooperation, and the 50th anniversary of the Australia–Japan friendship treaty are all on the agenda — at a critical time with Middle East disruption squeezing global LNG supply chains.",
+    "{{AUS_2_HEADLINE}}": "Gas Export Tax Debate Reaches Fever Pitch — PM Albanese Forced to Weigh In",
+    "{{AUS_2_SUMMARY}}": "The proposed gas export levy has become one of the most contested policy battles in Canberra, with PM Albanese now directly weighing in after intense lobbying from industry. The tax — designed to redirect a share of LNG profits to Australian consumers and businesses during the energy crisis — could raise significant revenue, but gas companies warn it will chill investment. No final decision has been announced, but the political pressure is intensifying.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Melbourne's Southbank to Get an $8 Million Public Park Underneath a Busy Overpass",
-    "{{VIC_1_SUMMARY}}": "The City Road Undercroft in Southbank will be transformed into a 5,000 sqm public park under Melbourne's draft 2026–27 budget — combining $5.5 million from the City of Melbourne with $4 million in federal funding. Plans include a street-style skate plaza, roller rink, bouldering walls, basketball and netball courts, and greenery pockets. Construction begins late 2026, pending approvals.",
+    "{{VIC_1_HEADLINE}}": "Victoria's Free Public Transport Runs Through All of May — Then Half-Price to Year's End",
+    "{{VIC_1_SUMMARY}}": "Free travel on trains, trams and buses across Victoria continues through May 31, before transitioning to half-price fares — capped at $5.70 daily — from June 1 until December 31, 2026. The extension eases cost-of-living pressure during the fuel crisis. Average commuters could save over $850 between June and year's end. Under-18s and eligible concession holders continue to travel permanently free.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔬 PHYSICS · MEDICINE",
-    "{{SCI_1_HEADLINE}}": "MIT Scientists Found That Chaotic Laser Light Can Teach Itself to Focus — and Now They're Using It to Image the Brain 25× Faster",
-    "{{SCI_1_SUMMARY}}": "Researchers at MIT have discovered that under specific conditions, a chaotic scatter of laser light will spontaneously self-organise into a tightly focused 'pencil beam' — a paradoxical phenomenon that shouldn't work according to conventional optics. They turned it into a tool: the self-organising beam can image the human blood-brain barrier in 3D at speeds 25 times faster than any existing technique, without contrast agents or fluorescent dyes. The research, published in Nature Methods this week, could accelerate the development of treatments for Alzheimer's and other neurological diseases.",
+    "{{SCI_1_FLAG}}": "🔬 SCIENCE · MEDICINE",
+    "{{SCI_1_HEADLINE}}": "Scientists Get First-Ever 3D View of Killer T Cells Destroying Cancer — at Nanometre Precision",
+    "{{SCI_1_SUMMARY}}": "Researchers at the University of Geneva have captured the first three-dimensional images of cytotoxic T lymphocytes — the body's specialised 'killer cells' — in a near-native state as they eliminate cancer. Using cryo-expansion microscopy, the team flash-froze cells and physically expanded them using an absorbent hydrogel to reveal precise internal organisation at nanometre scale. They found killer T cells form a dome-shaped 'immune synapse' — a tightly controlled contact zone where toxic molecules destroy the cancer cell without harming surrounding healthy tissue. Published April 29, the breakthrough could help explain why some immunotherapy treatments fail and guide the next generation of cancer therapies.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Your Phone Can't Answer at 10pm — But an AI Chatbot Can",
-    "{{INSIGHT_BODY}}": "Most trade jobs get booked in the evening, when the client has finally had a moment to think about it. For small operators in blasting, coatings, or construction, that's typically when the phone goes to voicemail — and the inquiry goes to whichever competitor picks up first. AI-powered chatbot tools costing under $100 a month can be added to your website or Google Business profile to handle incoming inquiries, collect job details, and confirm a callback time — 24 hours a day, seven days a week. You don't need a developer to set one up. Tools like Tidio, Crisp, or a custom Claude integration can be configured in an afternoon. For a sole operator or small team, being genuinely 'always on' without working nights is one of the highest-leverage improvements you can make to your inquiry conversion rate.",
+    "{{INSIGHT_TITLE}}": "AI-Powered Route Planning Is Cutting Tradie Fuel Bills by Up to 20% — Right When It Matters Most",
+    "{{INSIGHT_BODY}}": "With pump prices still elevated from the Middle East crisis and the government's fuel excise cut expiring June 30, every litre of diesel counts. AI-driven route optimisation tools — many already built into job management platforms like ServiceM8, Tradify, or standalone apps like Circuit or OptimoRoute — can cut your driving distance by 15–20% by sequencing jobs intelligently, accounting for live traffic, and eliminating backtracking. For a sole operator doing 30,000+ km a year for work, that's 4,500–6,000 km less driving — potentially $1,500–$2,500 saved on fuel annually, before factoring in tyre wear and maintenance savings. If you're still routing your day by habit or intuition, you're leaving money on the table every week, and the clock is ticking on the excise discount.",
 
     # Fun Facts
-    "{{FACT_1}}": "Sea otters hold hands while they sleep — a behaviour known as 'rafting.' Without an anchor, they'd drift apart from their mate in open water. Pairs clasp paws to stay together, and some otters also wrap themselves in kelp fronds to keep from floating away overnight.",
-    "{{FACT_2}}": "Honey never spoils. Archaeologists have found 3,000-year-old honey sealed in Egyptian tomb vessels that was still perfectly edible. Its extreme acidity, very low moisture content, and naturally occurring hydrogen peroxide create an environment where bacteria simply cannot survive.",
-    "{{FACT_3}}": "The word 'salary' comes from the Latin 'salarium' — the allowance given to Roman soldiers specifically to buy salt. Salt was so valuable in the ancient world it functioned as currency across multiple civilisations. 'Worth his salt' entered English directly from this tradition.",
+    "{{FACT_1}}": "Today is International Workers' Day — celebrated as a public holiday in over 80 countries on May 1 — and its origin traces to the 1886 Haymarket affair in Chicago, where workers striking for an eight-hour working day turned violent. Australia's own eight-hour day movement predates it by 30 years: Melbourne stonemasons won the right in 1856, making Victoria one of the first places in the world to achieve what is now the standard working week.",
+    "{{FACT_2}}": "The Maillard reaction — the golden-brown crust you get when searing meat, toasting bread, or brewing coffee — was named after French chemist Louis-Camille Maillard, who first described it in 1912. It's a chemical reaction between amino acids and reducing sugars that produces hundreds of distinct flavour compounds. It has nothing to do with caramelisation, which involves only sugars — which is why boiled meat and seared meat taste completely different.",
+    "{{FACT_3}}": "The original Doom (1993) was installed on so many computers that id Software's John Carmack claimed it was the most-installed program in PC history — more copies running than Windows 95, both released in the same year. The game's source code was eventually released publicly, and since then it has been ported to run on ATMs, digital cameras, a pregnancy test display, and even inside other video games.",
 
     # Joke
-    "{{JOKE_SETUP}}": "What do you call a concreter who retires at 50?",
-    "{{JOKE_PUNCHLINE}}": "Set for life.",
+    "{{JOKE_SETUP}}": "Why do roofers make terrible secret agents?",
+    "{{JOKE_PUNCHLINE}}": "They always blow their cover.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Quality is not an act, it is a habit.\"",
-    "{{CLOSING_ATTR}}": "Aristotle",
-    "{{CLOSING_MESSAGE}}": "It's Wednesday morning, Liall — the week is sitting well. Partly cloudy today with a warm, sunny stretch forecast for Thursday and Friday before rain closes in over the weekend. Australia's Q1 inflation just printed at 4.09%, so watch the RBA's May meeting closely. The Iran/Hormuz deadlock continues to keep fuel costs elevated, but retail diesel did fall this week — worth timing your next fill-up. Make the most of the dry window.",
+    "{{CLOSING_QUOTE}}": "\"The secret of getting ahead is getting started.\"",
+    "{{CLOSING_ATTR}}": "Mark Twain",
+    "{{CLOSING_MESSAGE}}": "It's Friday, Liall — the week wraps up and a wet weekend is forecast, so lock in any outdoor work today. Two big energy stories broke overnight: the UAE officially left OPEC this morning after 58 years, and Penny Wong secured a deal to get jet fuel flowing from China again. Victoria's free public transport continues through all of May, saving commuters and crews real money. Make it a sharp morning.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
