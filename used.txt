@@ -63,3 +63,14 @@ JOKE: Why do roofers make terrible secret agents?
 INSIGHT: AI-Powered Route Planning Is Cutting Tradie Fuel Bills by Up to 20% — Right When It Matters Most
 QUOTE: "The secret of getting ahead is getting started." — Mark Twain
 ---
+
+DATE: Saturday, 02 May 2026
+SCIENCE: New DNA-based treatment (polypurine hairpins) blocks PCSK9 protein to cut LDL cholesterol by nearly 50% without statins — University of Barcelona, published May 1 2026
+ROBOTICS: China's State Grid commits $1 billion (6.8B yuan) to deploy 8,500 AI robots including 5,000 robot dogs across national power grid — 2026
+FACT: The mantis shrimp has 16 types of colour photoreceptors compared to 3 in humans, yet uses rapid eye movements rather than wavelength comparison to identify colour.
+FACT: The human gut contains approximately 100 million neurons — more than the spinal cord — forming the enteric nervous system, or "second brain," which operates independently of the head brain.
+FACT: The Apollo Guidance Computer (1969) had just 4 kilobytes of RAM; it was this project that led MIT programmer Margaret Hamilton to coin the term "software engineering."
+JOKE: Why did the painter refuse to repaint the kitchen ceiling?
+INSIGHT: AI-Assisted Job Scheduling Is Killing the Double-Booking Problem for Small Trades
+QUOTE: "It always seems impossible until it's done." — Nelson Mandela
+---
