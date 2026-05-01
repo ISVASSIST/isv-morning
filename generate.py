@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Friday, 01 May 2026",
+    "{{DATE}}": "Saturday, 02 May 2026",
 
-    # Weather — Carrum Downs VIC, 5-day outlook from Fri 1 May
-    "{{WEATHER_1}}": "Fri 1 May · Showers likely · 17°C",
-    "{{WEATHER_2}}": "Sat 2 May · Showers · 15°C",
-    "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "Sun 3 May · Mostly cloudy · 15°C",
+    # Weather — Carrum Downs VIC, 5-day outlook from Sat 2 May
+    "{{WEATHER_1}}": "Sat 2 May · Showers · 15°C",
+    "{{WEATHER_2}}": "Sun 3 May · Mostly cloudy · 15°C",
+    "{{WEATHER_2_CLASS}}": "",
+    "{{WEATHER_3}}": "Mon 4 May · Clearing · 17°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "Mon 4 May · Clearing · 17°C",
-    "{{WEATHER_5}}": "Tue 5 May · Fine · 19°C",
-    "{{WEATHER_ALERT}}": "Wet start to May",
+    "{{WEATHER_4}}": "Tue 5 May · Fine · 19°C",
+    "{{WEATHER_5}}": "Wed 6 May · Partly cloudy · 19°C",
+    "{{WEATHER_ALERT}}": "Wet Saturday morning",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇦🇪 UAE · ENERGY",
-    "{{WORLD_1_HEADLINE}}": "UAE Quits OPEC After 58 Years — Effective Today, Freeing It to Flood Markets with Oil",
-    "{{WORLD_1_SUMMARY}}": "The United Arab Emirates formally left OPEC on May 1, ending 58 years of membership. Long frustrated by production quotas capping it at 3.2 million barrels per day while its actual capacity sits near 5 million, the UAE is now free to pump without restriction. Iran's closure of the Strait of Hormuz still blocks most Gulf exports, so the near-term impact on supply is limited — but if peace resumes traffic flow, the UAE could add up to 1.6 million barrels per day to global supply, roughly 1.5% of world output. For Australian businesses still absorbing Middle East fuel surcharges, this is a meaningful long-term price-relief signal.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/4/28/uae-leaves-opec-and-opec",
+    "{{WORLD_1_FLAG}}": "🇲🇲 MYANMAR · POLITICS",
+    "{{WORLD_1_HEADLINE}}": "Myanmar Junta Moves Aung San Suu Kyi from Prison to House Arrest After Five Years",
+    "{{WORLD_1_SUMMARY}}": "Myanmar's military government transferred the detained Nobel Peace Prize laureate and former leader Aung San Suu Kyi from Naypyidaw prison to house arrest on April 30, following a partial sentence reduction tied to a Buddhist holiday amnesty. Suu Kyi, 80, still faces over 13 years of her sentence. Her lawyers and son Kim Aris say they cannot confirm the transfer and warn she remains cut off from contact with the outside world. The UN Secretary-General called it \"a meaningful step,\" while democracy advocates remain cautious.",
+    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/4/30/myanmars-former-leader-aung-san-suu-kyi-moved-from-prison-to-house-arrest",
 
-    "{{WORLD_2_FLAG}}": "🇬🇧 UK · DIPLOMACY",
-    "{{WORLD_2_HEADLINE}}": "King Charles Addresses U.S. Congress — First British Monarch in 35 Years to Do So",
-    "{{WORLD_2_SUMMARY}}": "King Charles III made a historic address to a joint session of the U.S. Congress on April 28, calling the Anglo-American alliance 'more important today than it has ever been.' In a nearly 30-minute speech he condemned a recent attack near the Capitol and urged united democracies to stand firm against violence and division. He later attended a White House state dinner hosted by President Trump. The last British monarch to address Congress was Queen Elizabeth II in 1991 — making this a significant diplomatic event.",
-    "{{WORLD_2_URL}}": "https://thehill.com/policy/international/5853910-king-charles-address-congress/",
+    "{{WORLD_2_FLAG}}": "⚓ MIDDLE EAST · CONFLICT",
+    "{{WORLD_2_HEADLINE}}": "Israeli Navy Intercepts Gaza Aid Flotilla in International Waters; 170 Activists Detained",
+    "{{WORLD_2_SUMMARY}}": "The Israeli navy intercepted the Global Sumud Flotilla late Wednesday while the convoy attempted to reach Gaza, stopping it more than 500 nautical miles from Israel — off Crete. Around 170 activists from multiple countries were detained and taken ashore, including six Australians. Two activists remained in Israeli custody. Flotilla organisers condemned the interception as an act of piracy in international waters; Israel said the vessels were stopped to enforce the maritime blockade.",
+    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/5/1/gaza-aid-flotilla-vessels-taken-to-crete-after-israeli-interception",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ AUSTRALIA · FUEL",
-    "{{ECON_1_HEADLINE}}": "China Agrees to Resume Jet Fuel Exports to Australia — Easing Aviation Supply Crunch",
-    "{{ECON_1_SUMMARY}}": "Foreign Minister Penny Wong announced on April 30 that China has agreed to cooperate on resuming jet fuel exports to Australia, following high-level diplomatic talks. China had halted refined fuel exports in March amid Middle East supply disruptions — a significant blow given China supplied 32% of Australia's jet fuel imports in 2025. Export licences are now being issued to Chinese state-owned refiners for May loadings. It's a direct supply-chain win for Australian airlines and logistics operators, though broader pump prices remain elevated.",
-    "{{ECON_1_URL}}": "https://www.france24.com/en/live-news/20260429-australia-fm-says-china-agrees-to-collaborate-on-jet-fuel-exports",
+    "{{ECON_1_FLAG}}": "🏦 AUSTRALIA · RBA",
+    "{{ECON_1_HEADLINE}}": "RBA Rate Decision Due Tuesday — Economists Now Tipping Another Rise to 4.35%",
+    "{{ECON_1_SUMMARY}}": "The Reserve Bank meets Monday–Tuesday (May 4–5) and announces its decision at 2:30pm AEST Tuesday. The cash rate sits at 4.10% following March's rise. With inflation hitting 4.6% — a three-year high driven by the Middle East supply shock — CBA and Westpac are now both tipping a further 25-basis-point rise to 4.35%. For small business owners carrying variable-rate loans, two rises this close together is a meaningful cost increase. Worth reviewing fixed-rate options before Tuesday's call.",
+    "{{ECON_1_URL}}": "https://www.rba.gov.au/monetary-policy/int-rate-decisions/",
 
-    "{{ECON_2_FLAG}}": "🏪 AUSTRALIA · COSTS",
-    "{{ECON_2_HEADLINE}}": "ACCC Reports Surge in Fuel Surcharge Complaints — Some Small Businesses Charged Over 70%",
-    "{{ECON_2_SUMMARY}}": "The competition regulator has recorded a sharp rise in complaints from small businesses about fuel surcharges imposed by transport and logistics contractors, with some surcharges for remote-area businesses exceeding 70%. The government's temporary halving of the fuel excise to 26.3 cents per litre offers partial relief — but expires June 30. For trades operators relying on freight or subcontractors, auditing your current surcharge agreements before the excise snaps back is a worthwhile task this week.",
+    "{{ECON_2_FLAG}}": "⛽ AUSTRALIA · FUEL",
+    "{{ECON_2_HEADLINE}}": "Fuel Excise Cut Helping at the Pump — But It Expires June 30 and Inflation Stays Elevated",
+    "{{ECON_2_SUMMARY}}": "The government's temporary halving of the fuel excise to 26.3 cents per litre has provided some pump relief since April 1, but economists warn the cut expires June 30 and underlying inflation remains at 4.6%. Fuel costs have spread through the supply chain, lifting freight, materials, and services pricing. For Melbourne trades operators, diesel prices are still well above pre-crisis levels even with the excise cut in place — auditing your fuel surcharge agreements now, before the excise snaps back, is a smart move.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI · BUSINESS",
-    "{{TECH_1_HEADLINE}}": "Google Declares the 'Agentic Enterprise' Era — AI Is Shifting from Chat to Action",
-    "{{TECH_1_SUMMARY}}": "Google Cloud CEO Thomas Kurian announced on April 30 the company's Agentic Enterprise strategy, framing it as the shift from AI as a 'system of intelligence' to a 'system of action' — where AI agents complete tasks, automate workflows, and operate independently in business software. This follows confirmation that Anthropic's annualised revenue crossed $30 billion in April, overtaking OpenAI's $25 billion for the first time. For small business owners: the AI tools being built right now won't just answer questions — they'll handle scheduling, quoting, ordering, and compliance without you touching them.",
-    "{{TECH_1_URL}}": "https://www.devflokers.com/blog/ai-news-last-24-hours-april-29-30-2026-roundup",
+    "{{TECH_1_FLAG}}": "🇺🇸 US · DEFENSE AI",
+    "{{TECH_1_HEADLINE}}": "Pentagon Signs AI Deals with OpenAI, Google, Nvidia, Microsoft and Amazon for Classified Military Use",
+    "{{TECH_1_SUMMARY}}": "The US Department of Defense announced on May 1 that seven leading AI companies — OpenAI, Google, Nvidia, Microsoft, Amazon Web Services, Reflection AI, and SpaceX — have signed agreements to deploy their AI on the Pentagon's most classified networks (Impact Level 6 and 7). The technology will be used for battlefield decision-making and intelligence analysis. More than 1.3 million Defence personnel have already used the military's AI platform. Anthropic was notably excluded after being designated a supply-chain risk earlier this year.",
+    "{{TECH_1_URL}}": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
 
-    "{{TECH_2_FLAG}}": "🧠 AI · RESEARCH",
-    "{{TECH_2_HEADLINE}}": "AI Model That Claimed to 'Think Like a Human' Was Just Memorising, Study Finds",
-    "{{TECH_2_SUMMARY}}": "The much-hyped Centaur AI model, which claimed to replicate human cognitive behaviour across 160 tasks, has been challenged by new research published April 29 — finding the model wasn't truly thinking, just pattern-matching on memorised training data. The finding echoes longstanding debates about whether large language models truly understand or merely predict. Practical upshot for AI users: these tools are genuinely powerful precisely because of their pattern recognition, but knowing their limits helps you deploy them more effectively and catch their mistakes before they matter.",
+    "{{TECH_2_FLAG}}": "🔬 AI · RESEARCH",
+    "{{TECH_2_HEADLINE}}": "Study: Top AI Agents Still Perform at Half the Level of Expert Human Scientists on Complex Tasks",
+    "{{TECH_2_SUMMARY}}": "A study published in Nature found that the best autonomous AI agents perform at only about half the level of PhD-level human experts when given genuinely complex scientific tasks requiring original reasoning and judgement. While AI tools are dramatically boosting individual researcher output, they are not yet replacing domain expertise on hard problems. For business owners evaluating AI tools: the data confirms they work best as high-powered assistants to skilled people — not as stand-alone replacements for experience.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "✈️ JAPAN · ROBOTICS",
-    "{{ROBOT_1_HEADLINE}}": "Japan Airlines Begins Testing Humanoid Robots for Baggage Handling at Haneda Airport",
-    "{{ROBOT_1_SUMMARY}}": "Japan Airlines launched Japan's first demonstration experiment deploying humanoid robots for airport ground handling at Tokyo's Haneda tarmac, published April 30. The Unitree-built robots — roughly 130 cm tall — use 3D LiDAR and depth cameras to handle baggage and cargo containers alongside human staff. JAL's 4,000 ground handlers are stretched by surging inbound tourism and Japan's shrinking workforce. The two-year trial, running until 2028, aims to expand robots into cabin cleaning and ground equipment operation. Labour shortage is now driving real-world humanoid deployment at industrial scale.",
-    "{{ROBOT_1_URL}}": "https://roboticsandautomationnews.com/2026/04/30/japan-trials-humanoid-robots-for-airport-operations-as-labor-shortages-intensify/101120/",
+    "{{ROBOT_1_FLAG}}": "🇨🇳 CHINA · ROBOTICS",
+    "{{ROBOT_1_HEADLINE}}": "China Commits $1 Billion to Deploy 8,500 Robots — Including 5,000 Robot Dogs — Across Its National Power Grid",
+    "{{ROBOT_1_SUMMARY}}": "China's State Grid Corporation, operator of the world's largest electricity network, has allocated 6.8 billion yuan (~$1 billion AUD) in 2026 to acquire roughly 8,500 AI-powered robots for power infrastructure operations. The fleet includes about 5,000 quadruped 'robot dogs' for patrol and inspection in remote and mountainous terrain, plus humanoid and dual-arm robots for high-risk maintenance tasks. Described as the single largest embodied-AI procurement by any government entity worldwide, the deployment covers substations, transmission lines, and transformer yards across China. Industrial-scale robot deployment has moved from pilot programme to national infrastructure strategy.",
+    "{{ROBOT_1_URL}}": "https://interestingengineering.com/ai-robotics/china-8500-robots-power-grid",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australia Commits to All 14 Bondi Terror Attack Inquiry Recommendations — Including National Gun Reform",
-    "{{AUS_1_SUMMARY}}": "The Albanese government announced it will enact all 14 recommendations from the interim report into the Bondi terror attack and antisemitism, which killed 15 people in December 2025. Key measures include nationally consistent gun laws, a firearm buyback, enhanced security at Jewish sites, and a full-time national counter-terrorism coordinator. A final Royal Commission report is due by December 14 — the one-year anniversary of the attack.",
-    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/counter-terrorism-laws-did-not-hinder-bondi-attack-prevention-interim-report-reveals/rujr8zvn9",
+    "{{AUS_1_HEADLINE}}": "Six Australians Detained on Gaza Flotilla Moved to Crete; DFAT Providing Consular Assistance",
+    "{{AUS_1_SUMMARY}}": "Six Australians who were aboard the Global Sumud Flotilla — intercepted by Israeli forces in international waters on Wednesday — have been transferred to Crete, where DFAT is providing consular assistance. The group includes a doctor and several activists. Families say they have been unable to make phone contact and are calling for urgent access.",
+    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/israel-sumudarrests-approximately-175-gaza-flotilla-activists-in-international-waters-near-greece/w99w04idl",
 
-    "{{AUS_2_HEADLINE}}": "Gas Export Tax Debate Reaches Fever Pitch — PM Albanese Forced to Weigh In",
-    "{{AUS_2_SUMMARY}}": "The proposed gas export levy has become one of the most contested policy battles in Canberra, with PM Albanese now directly weighing in after intense lobbying from industry. The tax — designed to redirect a share of LNG profits to Australian consumers and businesses during the energy crisis — could raise significant revenue, but gas companies warn it will chill investment. No final decision has been announced, but the political pressure is intensifying.",
+    "{{AUS_2_HEADLINE}}": "Antisemitism Royal Commission Releases Interim Report; Government Accepts All 14 Recommendations",
+    "{{AUS_2_SUMMARY}}": "The interim report from Australia's Royal Commission into antisemitism and the December 2025 Bondi attack has been released, with the Albanese government committing to implement all 14 recommendations. Key measures include nationally consistent gun laws, a firearm buyback programme, enhanced security at places of worship, and a full-time national counter-terrorism coordinator. The final report is due by December 14.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victoria's Free Public Transport Runs Through All of May — Then Half-Price to Year's End",
-    "{{VIC_1_SUMMARY}}": "Free travel on trains, trams and buses across Victoria continues through May 31, before transitioning to half-price fares — capped at $5.70 daily — from June 1 until December 31, 2026. The extension eases cost-of-living pressure during the fuel crisis. Average commuters could save over $850 between June and year's end. Under-18s and eligible concession holders continue to travel permanently free.",
+    "{{VIC_1_HEADLINE}}": "Melbourne Victory Host Sydney FC in A-League 'Big Blue' Elimination Final Tonight at AAMI Park",
+    "{{VIC_1_SUMMARY}}": "Melbourne Victory host fifth-placed Sydney FC in an A-League Men Elimination Final at AAMI Park tonight, kick-off at 7:40pm AEST. Dubbed the 'Big Blue,' it's the first time the two foundation clubs have met in the finals series since 2019. The loser goes home. Live on Paramount+ and Network 10.",
 
     # Science
     "{{SCI_1_FLAG}}": "🔬 SCIENCE · MEDICINE",
-    "{{SCI_1_HEADLINE}}": "Scientists Get First-Ever 3D View of Killer T Cells Destroying Cancer — at Nanometre Precision",
-    "{{SCI_1_SUMMARY}}": "Researchers at the University of Geneva have captured the first three-dimensional images of cytotoxic T lymphocytes — the body's specialised 'killer cells' — in a near-native state as they eliminate cancer. Using cryo-expansion microscopy, the team flash-froze cells and physically expanded them using an absorbent hydrogel to reveal precise internal organisation at nanometre scale. They found killer T cells form a dome-shaped 'immune synapse' — a tightly controlled contact zone where toxic molecules destroy the cancer cell without harming surrounding healthy tissue. Published April 29, the breakthrough could help explain why some immunotherapy treatments fail and guide the next generation of cancer therapies.",
+    "{{SCI_1_HEADLINE}}": "New DNA-Based Treatment Cuts 'Bad' LDL Cholesterol by Nearly 50% — Without Statins or Side Effects",
+    "{{SCI_1_SUMMARY}}": "Researchers at the University of Barcelona have developed a novel treatment using DNA molecules called polypurine hairpins (PPRHs) that block the PCSK9 protein — the key regulator that prevents the body from clearing LDL 'bad' cholesterol from the bloodstream. By silencing the PCSK9 gene, early trials showed LDL levels cut by nearly 50%, without the muscle pain and other side effects linked to statins. Published May 1 in Biochemical Pharmacology, the approach could offer a new path for the millions of Australians managing cholesterol with daily medication.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "AI-Powered Route Planning Is Cutting Tradie Fuel Bills by Up to 20% — Right When It Matters Most",
-    "{{INSIGHT_BODY}}": "With pump prices still elevated from the Middle East crisis and the government's fuel excise cut expiring June 30, every litre of diesel counts. AI-driven route optimisation tools — many already built into job management platforms like ServiceM8, Tradify, or standalone apps like Circuit or OptimoRoute — can cut your driving distance by 15–20% by sequencing jobs intelligently, accounting for live traffic, and eliminating backtracking. For a sole operator doing 30,000+ km a year for work, that's 4,500–6,000 km less driving — potentially $1,500–$2,500 saved on fuel annually, before factoring in tyre wear and maintenance savings. If you're still routing your day by habit or intuition, you're leaving money on the table every week, and the clock is ticking on the excise discount.",
+    "{{INSIGHT_TITLE}}": "AI-Assisted Job Scheduling Is Killing the Double-Booking Problem for Small Trades",
+    "{{INSIGHT_BODY}}": "For small operators juggling multiple crews, varied job lengths, and unpredictable travel time across Melbourne's south-east, scheduling is one of the most expensive invisible costs in the business. AI-assisted scheduling tools — built into platforms like ServiceM8, Tradify, and Fergus, or available as standalone apps — analyse your job pipeline, crew locations, and travel time in real time, flagging conflicts before they become missed appointments or back-to-back blowouts. Businesses trialling these tools report fewer double-bookings, smarter crew sequencing, and better client communication through automated reminders and updated ETAs. In a market where reliability is a genuine point of difference, a tool that prevents one double-booking a month could easily pay for itself in retained customers alone.",
 
     # Fun Facts
-    "{{FACT_1}}": "Today is International Workers' Day — celebrated as a public holiday in over 80 countries on May 1 — and its origin traces to the 1886 Haymarket affair in Chicago, where workers striking for an eight-hour working day turned violent. Australia's own eight-hour day movement predates it by 30 years: Melbourne stonemasons won the right in 1856, making Victoria one of the first places in the world to achieve what is now the standard working week.",
-    "{{FACT_2}}": "The Maillard reaction — the golden-brown crust you get when searing meat, toasting bread, or brewing coffee — was named after French chemist Louis-Camille Maillard, who first described it in 1912. It's a chemical reaction between amino acids and reducing sugars that produces hundreds of distinct flavour compounds. It has nothing to do with caramelisation, which involves only sugars — which is why boiled meat and seared meat taste completely different.",
-    "{{FACT_3}}": "The original Doom (1993) was installed on so many computers that id Software's John Carmack claimed it was the most-installed program in PC history — more copies running than Windows 95, both released in the same year. The game's source code was eventually released publicly, and since then it has been ported to run on ATMs, digital cameras, a pregnancy test display, and even inside other video games.",
+    "{{FACT_1}}": "The mantis shrimp has 16 types of colour photoreceptors in its eyes — compared to just 3 in humans — yet it's a surprisingly poor colour discriminator. Scientists discovered it doesn't compare wavelengths the way humans do; instead it uses rapid eye movements to scan the spectrum like a barcode reader, trading colour nuance for extraordinary processing speed.",
+    "{{FACT_2}}": "Your gut contains approximately 100 million neurons — more than the entire spinal cord — forming what neuroscientists call the 'enteric nervous system' or 'second brain.' It operates largely independently of your head brain, continuing to regulate digestion, immune responses, and serotonin production even after the nerve connection between them is severed.",
+    "{{FACT_3}}": "The Apollo Guidance Computer that landed humans on the Moon in 1969 had just 4 kilobytes of RAM and ran at 0.043 MHz. A modern smartphone has roughly 8 billion times more RAM. The software was hand-woven into core rope memory by MIT programmers — it was this project that led Margaret Hamilton to coin the term 'software engineering.'",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why do roofers make terrible secret agents?",
-    "{{JOKE_PUNCHLINE}}": "They always blow their cover.",
+    "{{JOKE_SETUP}}": "Why did the painter refuse to repaint the kitchen ceiling?",
+    "{{JOKE_PUNCHLINE}}": "He said the last coat was still a bit above his head.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"The secret of getting ahead is getting started.\"",
-    "{{CLOSING_ATTR}}": "Mark Twain",
-    "{{CLOSING_MESSAGE}}": "It's Friday, Liall — the week wraps up and a wet weekend is forecast, so lock in any outdoor work today. Two big energy stories broke overnight: the UAE officially left OPEC this morning after 58 years, and Penny Wong secured a deal to get jet fuel flowing from China again. Victoria's free public transport continues through all of May, saving commuters and crews real money. Make it a sharp morning.",
+    "{{CLOSING_QUOTE}}": "\"It always seems impossible until it's done.\"",
+    "{{CLOSING_ATTR}}": "Nelson Mandela",
+    "{{CLOSING_MESSAGE}}": "It's Saturday, Liall — wet morning forecast in Carrum Downs, which makes it a good day for desk work before tonight's A-League Big Blue at AAMI Park (Victory vs Sydney FC, 7:40pm). RBA decision lands Tuesday, so keep an eye on your loan costs. Six Australians are safely in Crete. Make it a productive one.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
