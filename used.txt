@@ -74,3 +74,14 @@ JOKE: Why did the painter refuse to repaint the kitchen ceiling?
 INSIGHT: AI-Assisted Job Scheduling Is Killing the Double-Booking Problem for Small Trades
 QUOTE: "It always seems impossible until it's done." — Nelson Mandela
 ---
+
+DATE: Sunday, 03 May 2026
+SCIENCE: Boosting protein Sox9 reactivates brain astrocytes to clear Alzheimer's amyloid plaques and preserve memory in mouse models — Baylor College of Medicine, Nature Neuroscience, published May 2 2026
+ROBOTICS: Meta acquires Assured Robot Intelligence (ARI) startup to build foundation AI models for humanoid robots — May 1 2026
+FACT: Octopuses have three hearts and blue copper-based blood; the systemic heart stops beating when they swim hard, which is why they prefer crawling.
+FACT: The world's largest living organism by area is a single honey fungus (Armillaria ostoyae) in Oregon's Malheur National Forest, spanning 9.6 square kilometres and up to 8,000 years old.
+FACT: Australia holds the record for the world's longest fence — the Dingo Fence — stretching approximately 5,614 kilometres from south-western Queensland to the South Australian coast.
+JOKE: Why don't plumbers make great comedians?
+INSIGHT: Stop Losing Repeat Business: How AI Can Turn Every Completed Job into Tomorrow's Lead
+QUOTE: "Knowing is not enough; we must apply. Willing is not enough; we must do." — Johann Wolfgang von Goethe
+---
