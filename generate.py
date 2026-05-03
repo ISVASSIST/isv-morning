@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Sunday, 03 May 2026",
+    "{{DATE}}": "Monday, 04 May 2026",
 
-    # Weather — Carrum Downs VIC, 5-day outlook from Sun 3 May
-    "{{WEATHER_1}}": "Sun 3 May · Clearing showers · 20°C",
-    "{{WEATHER_2}}": "Mon 4 May · Showers · 16°C",
+    # Weather — Carrum Downs VIC, 5-day outlook from Mon 4 May (BOM)
+    "{{WEATHER_1}}": "Mon 4 May · Partly cloudy, PM showers · 20°C",
+    "{{WEATHER_2}}": "Tue 5 May · Showers likely · 18°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "Tue 5 May · Rain · 15°C",
+    "{{WEATHER_3}}": "Wed 6 May · Cloudy, showers · 19°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "Wed 6 May · Mostly cloudy · 16°C",
-    "{{WEATHER_5}}": "Thu 7 May · Partly sunny · 17°C",
-    "{{WEATHER_ALERT}}": "⚠ Showers Mon–Tue",
+    "{{WEATHER_4}}": "Thu 7 May · Cold front, showers · 14°C",
+    "{{WEATHER_5}}": "Fri 8 May · Cold &amp; gusty · 13°C",
+    "{{WEATHER_ALERT}}": "⚠ Cold front Thu–Fri · Alpine snow",
 
     # World
     "{{WORLD_1_FLAG}}": "🌐 MIDDLE EAST · CONFLICT",
-    "{{WORLD_1_HEADLINE}}": "Trump Rejects Iran's 14-Point Ceasefire Plan — Senior Commander Warns Conflict 'Possible'",
-    "{{WORLD_1_SUMMARY}}": "US President Trump dismissed Iran's latest peace proposal — which included opening the Strait of Hormuz, withdrawing US forces, and lifting sanctions — saying Tehran asks for terms he \"can't agree to.\" A senior Iranian military official warned that renewed conflict is now \"possible.\" With the war in its 64th day, both sides remain under a fragile ceasefire but negotiations have effectively stalled, and Trump confirmed he is reviewing military options.",
+    "{{WORLD_1_HEADLINE}}": "Iran Tables 14-Point Counter-Proposal as US-Iran Stalemate Threatens Prolonged Oil Crisis",
+    "{{WORLD_1_SUMMARY}}": "Iran has formally submitted a 14-point counter-proposal to American ceasefire terms, but with Washington signalling it can endure a long stand-off and Tehran matching that rhetoric, hopes for a rapid resolution have dimmed. Before the conflict, roughly 3,000 vessels per month transited the Strait of Hormuz — in March just 154 did. Analysts now warn both sides are using negotiations as a signalling exercise rather than a genuine peace process, keeping global oil supply disrupted indefinitely.",
     "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/5/2/iran-war-whats-happening-on-day-64-as-trump-rejects-tehrans-proposal",
 
-    "{{WORLD_2_FLAG}}": "🇩🇪 EUROPE · NATO",
-    "{{WORLD_2_HEADLINE}}": "Pentagon Orders 5,000 US Troops Out of Germany — Trump Hints the Number Will Go Much Further",
-    "{{WORLD_2_SUMMARY}}": "The United States will withdraw approximately 5,000 troops — around 14% of its German garrison — within six to twelve months, amid Trump's escalating public feud with Chancellor Friedrich Merz over the Iran conflict. Trump told reporters the actual number will go \"a lot further\" than 5,000. Republican lawmakers and NATO allies have warned the move weakens Western security and benefits Vladimir Putin.",
-    "{{WORLD_2_URL}}": "https://www.npr.org/2026/05/02/g-s1-119864/u-s-withdraw-troops-germany",
+    "{{WORLD_2_FLAG}}": "🇲🇲 MYANMAR",
+    "{{WORLD_2_HEADLINE}}": "\"Moving Her Is Not Freeing Her\" — Suu Kyi's Son Rejects Myanmar Junta's House Arrest Claim",
+    "{{WORLD_2_SUMMARY}}": "Kim Aris, son of imprisoned former Myanmar leader Aung San Suu Kyi, told NPR on Sunday he cannot independently confirm the military junta's claim that his 80-year-old mother has been moved from prison to house arrest after more than five years. \"She remains a hostage, cut off from the world,\" he said. Human rights groups called the move a PR exercise designed to rehabilitate the junta's image following a prisoner amnesty tied to a Buddhist holiday — and noted she still faces more than 13 years of her politically motivated sentence.",
+    "{{WORLD_2_URL}}": "https://www.npr.org/2026/05/03/nx-s1-5808875/aung-san-suu-kyi-myanmar-son-house-arrest",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ GLOBAL · ENERGY",
-    "{{ECON_1_HEADLINE}}": "Oil Still 17% Above Pre-War Levels — Why Prices Aren't Falling Despite the Ceasefire",
-    "{{ECON_1_SUMMARY}}": "Global crude oil prices have retreated from their 60% war-peak but remain roughly 17% above pre-conflict levels, even with a ceasefire technically in place. CNN's analysis explains the persistent premium: futures traders are pricing in renewed conflict risk as Trump reviews military options, and Strait of Hormuz cargo flows remain disrupted. For Australian trades businesses, this means diesel and freight costs stay elevated — planning for fuel above $2 per litre through Q3 is prudent.",
-    "{{ECON_1_URL}}": "https://www.cnn.com/2026/05/01/business/oil-market-price-high-low-iran",
+    "{{ECON_1_FLAG}}": "🇦🇺 ECONOMICS · RBA",
+    "{{ECON_1_HEADLINE}}": "RBA Board Meets Today — Markets Pricing 70% Chance of Rate Hike to 4.35% Tomorrow",
+    "{{ECON_1_SUMMARY}}": "The Reserve Bank of Australia's monetary policy board convened this morning for its May 4–5 meeting, with Governor Michele Bullock set to announce the cash rate decision at 2:30pm AEST tomorrow. Inflation running at 4.6% — the highest since September 2023 — has pushed market pricing to a 70–75% probability of a 25bp hike. Economists calculate a further rise would add an estimated $5,000–$10,000 per year to the operating costs of a typical $2M-revenue small business.",
+    "{{ECON_1_URL}}": "https://www.canstar.com.au/news/what-to-expect-from-the-rba-in-may-2026/",
 
-    "{{ECON_2_FLAG}}": "🇦🇺 SMALL BUSINESS",
-    "{{ECON_2_HEADLINE}}": "HVIA Fuel Security Update: Diesel at Eastern Australia Truck Stops Still Up 28% on Pre-War Levels",
-    "{{ECON_2_SUMMARY}}": "The Heavy Vehicle Industry Association's May 1 fuel security update reports diesel prices at major truck stops across eastern Australia remain approximately 28% above pre-Iran-conflict levels, even with the halved federal excise in place. With the excise cut expiring June 30 and peace talks stalled, HVIA is urging operators to lock in fuel contracts or supplier agreements before the snapback. Trades businesses running vans and utes should recalculate their cost-per-job figures now.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL · SMALL BUSINESS",
+    "{{ECON_2_HEADLINE}}": "Federal Fuel Excise Cut Expires June 30 — Trades Operators Urged to Plan for Price Snapback",
+    "{{ECON_2_SUMMARY}}": "The federal government's temporary 50% fuel excise cut expires June 30, 2026. With peace talks stalled and Hormuz shipping still disrupted, there is no guarantee prices will ease before the snapback. The Heavy Vehicle Industry Association is urging fleet operators to explore contract fuel pricing before the cut expires. For trades businesses quoting jobs that run past July, building in a fuel cost increase now is prudent risk management.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "⚖️ AI · LAW",
-    "{{TECH_1_HEADLINE}}": "Chinese Court Rules It Illegal to Fire Workers Solely to Replace Them with AI",
-    "{{TECH_1_SUMMARY}}": "The Hangzhou Intermediate People's Court upheld a landmark ruling that a tech company acted unlawfully when it dismissed a senior worker — whose role was taken over by AI large language models — purely to cut costs. The court found that while companies may benefit from AI efficiency gains, the risks of \"technological iteration\" cannot be shifted entirely onto employees. The decision sets a precedent across China's technology sector and is being watched closely by labour advocates in Australia and globally.",
-    "{{TECH_1_URL}}": "https://www.npr.org/2026/05/01/nx-s1-5807131/tech-worker-china-ai",
+    "{{TECH_1_FLAG}}": "💻 AI · ENTERPRISE",
+    "{{TECH_1_HEADLINE}}": "Back-Office AI Officially Moves From Pilot to Production — Enterprise Platforms Confirm Live Deployments",
+    "{{TECH_1_SUMMARY}}": "A May 3 industry analysis tracking enterprise AI adoption confirms that AI-powered back-office automation — covering invoicing, HR, compliance reporting, and supplier management — has transitioned from proof-of-concept to live production at platforms including Salesforce and Workday. AI use across HR tasks alone reached 43% of companies surveyed in 2026, up from 26% two years ago. For small trades operators, the timing signal is clear: tools Fortune 500 companies are running at scale today typically reach the SME market within 12–18 months at a fraction of the enterprise price.",
+    "{{TECH_1_URL}}": "https://asanify.com/blog/news/ai-back-office-automation-may-3-2026/",
 
-    "{{TECH_2_FLAG}}": "🤖 AI · AGENTS",
-    "{{TECH_2_HEADLINE}}": "OpenAI's Codex Revenue Doubles in Under a Week as 'Agentic AI' Moves Into the Mainstream",
-    "{{TECH_2_SUMMARY}}": "OpenAI reported this week that revenue from Codex — its AI coding agent that takes multi-step actions autonomously — doubled in under seven days, driven by surging enterprise demand. The rapid uptake signals that \"agentic\" AI, which can complete sequences of tasks without constant human prompting, is moving into mainstream business infrastructure faster than most anticipated. For trades businesses, the practical implication: AI agents that can draft quotes, follow up on invoices, and manage job workflows are arriving in standard software platforms much sooner than most people expect.",
+    "{{TECH_2_FLAG}}": "📈 AI · MARKETS",
+    "{{TECH_2_HEADLINE}}": "Goldman Sachs Calls AI Software Sell-Off \"Overdone\" as Enterprise Adoption Data Beats Estimates",
+    "{{TECH_2_SUMMARY}}": "Goldman Sachs analysts issued a note on Sunday maintaining overweight positions across AI-exposed software stocks, calling the recent market pullback \"overdone\" given that Q1 2026 earnings consistently showed enterprise AI adoption beating analyst estimates. The bank highlighted strong quarter-on-quarter growth in AI credit consumption at platforms including Atlassian (20% month-on-month) and Figma as evidence corporate AI usage is accelerating rather than plateauing. For anyone watching where AI investment is heading: enterprise adoption is real, it is accelerating, and it is pulling the broader software market with it.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🤖 BIG TECH · ROBOTICS",
-    "{{ROBOT_1_HEADLINE}}": "Meta Buys AI Robotics Startup Assured Robot Intelligence to Power Its Humanoid Push",
-    "{{ROBOT_1_SUMMARY}}": "Meta Platforms has acquired Assured Robot Intelligence (ARI), a startup building foundation AI models that help robots understand and physically adapt to human behaviour in dynamic, unstructured environments. ARI's team — including former Nvidia researcher and UC San Diego professor Xiaolong Wang — joins Meta's Superintelligence Labs. Rather than making robots directly, Meta aims to become the \"Android of robotics\": an enabling AI platform for the broader humanoid industry, in a market analysts value at $5 trillion by 2035.",
-    "{{ROBOT_1_URL}}": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/",
+    "{{ROBOT_1_FLAG}}": "⚙️ ROBOTICS · SIMULATION",
+    "{{ROBOT_1_HEADLINE}}": "$8.5M Startup Antioch Bets Cloud Simulation Will Break the Deadlock Slowing Industrial Robot Deployment",
+    "{{ROBOT_1_SUMMARY}}": "New York-based Antioch, founded in 2025, has raised $8.5 million to build a cloud platform that lets robotics teams develop, train, and evaluate autonomous systems entirely in simulation — removing the need for costly, time-consuming real-world testing. Backers include A*, Category Ventures, and MaC Venture Capital. The company argues over-reliance on physical testing is the single biggest bottleneck slowing industrial automation adoption, drawing parallels to how cloud computing transformed software development by making iteration cheap and fast.",
+    "{{ROBOT_1_URL}}": "https://roboticsandautomationnews.com/2026/05/03/antioch-raises-8-5-million-to-accelerate-simulation-based-development-of-autonomous-systems/101171/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australia's Teen Social Media Ban Gets Quietly Amended — Critics Say Tech Firms Won New Workarounds",
-    "{{AUS_1_SUMMARY}}": "New amendments to Australia's world-first under-16 social media ban have paved the way for tech companies to work around the policy's core restrictions, according to Crikey analysis. The original law — which came into force in December — barred platforms from allowing Australians under 16 to create accounts. Critics argue the latest changes, which were not publicly highlighted, gut the original intent and reflect successful lobbying by major platforms.",
-    "{{AUS_1_URL}}": "https://www.crikey.com.au/2026/05/01/teen-social-media-ban-australia-changes/",
+    "{{AUS_1_HEADLINE}}": "Man Charged With Murder of Five-Year-Old Kumanjayi in NT After Death Sparked Riots",
+    "{{AUS_1_SUMMARY}}": "NT Police have charged Jefferson Lewis, 47, with the murder of five-year-old Kumanjayi in Alice Springs — a death that sparked violent community protests and clashes with police last week. Lewis also faces two additional charges. The case has reignited national debate about child safety in remote Indigenous communities and the adequacy of youth justice policy in the Northern Territory.",
+    "{{AUS_1_URL}}": "https://www.aljazeera.com/news/2026/5/3/man-charged-over-murder-of-australian-indigenous-girl-that-sparked-riots",
 
-    "{{AUS_2_HEADLINE}}": "Man Charged with Attempted Murder After Two Jewish Men Stabbed in London; Australian Groups Call for Action",
-    "{{AUS_2_SUMMARY}}": "A 45-year-old man has been charged with attempted murder after stabbing two Jewish men in London in the latest in a string of antisemitic attacks alarming communities in the UK and Australia. Australian Jewish organisations are calling on the federal government to act on the Antisemitism Royal Commission's interim recommendations ahead of its final report, due December 14. PM Albanese condemned the attack.",
+    "{{AUS_2_HEADLINE}}": "Australia's Student Visa Crackdown Hits Record Refusal Rates — Universities Warn of Funding Crisis",
+    "{{AUS_2_SUMMARY}}": "From May 1, sweeping new student visa reforms — a tougher Genuine Student test, graduate visa age cap cut from 50 to 35, and mandatory savings of AUD $31,200 — have dramatically tightened the international student pathway. Refusal rates from South Asia are at record highs and a national annual cap of 295,000 approvals means many eligible applicants are simply turned away. Smaller universities that rely heavily on international fee revenue are warning of a serious funding squeeze.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victorian State Budget Handed Down Tuesday — Business Groups Push for Confidence Boost Amid Rising State Debt",
-    "{{VIC_1_SUMMARY}}": "The Victorian Government delivers its 2026-27 State Budget on Tuesday 5 May, with the Victorian Chamber of Commerce and industry bodies urging Treasurer Jaclyn Symes to prioritise measures that restore business confidence and reduce regulatory complexity. Victoria's state debt has risen sharply and business confidence trails the national average. The City of Melbourne's separate $804.8 million draft budget — covering parks upgrades, safer streets, and community hubs — is also open for public consultation.",
+    "{{VIC_1_HEADLINE}}": "Liberals Retain Nepean Seat — One Nation's 24.7% Primary Vote Puts State Parties on Notice",
+    "{{VIC_1_SUMMARY}}": "Liberal candidate Anthony Marsh won the Nepean by-election on Saturday with 63.5% on a two-candidate preferred count, retaining the seat for his party. But it was One Nation's strong 24.7% primary vote that dominated post-election analysis, with strategists warning it signals broader discontent — particularly in outer-suburban electorates — that could reshape the upcoming Victorian state election.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🧠 NEUROSCIENCE",
-    "{{SCI_1_HEADLINE}}": "Scientists Find a Way to Help the Brain Clear Its Own Alzheimer's Plaques — Published May 2",
-    "{{SCI_1_SUMMARY}}": "Researchers at Baylor College of Medicine, publishing in Nature Neuroscience on May 2, found that boosting a protein called Sox9 reactivates astrocytes — the brain's star-shaped support cells — to actively engulf and remove the amyloid plaques characteristic of Alzheimer's disease. In mouse models that already had established cognitive impairment, the technique cleared plaques and preserved memory. Unlike most current approaches that focus on neurons or preventing new plaque formation, this strategy harnesses the brain's own built-in housekeeping system.",
+    "{{SCI_1_FLAG}}": "🌍 GEOSCIENCE",
+    "{{SCI_1_HEADLINE}}": "\"Double Quake\" Scenario: Researchers Find San Andreas and Cascadia Faults Can Rupture in Tandem",
+    "{{SCI_1_SUMMARY}}": "Oregon State University scientists, publishing in the journal Geosphere, have found sediment evidence that the Cascadia Subduction Zone and the Northern San Andreas Fault periodically synchronise — with at least three events in the past 1,500 years where both fault systems ruptured within minutes to hours of each other. A simultaneous rupture would place San Francisco, Portland, Seattle, and Vancouver all in emergency status at once, overwhelming any planned response capacity. The study received wide coverage on May 2, 2026.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Stop Losing Repeat Business: How AI Can Turn Every Completed Job into Tomorrow's Lead",
-    "{{INSIGHT_BODY}}": "For most small trades businesses, the biggest untapped asset isn't the tools in the van — it's the database of customers they've already done work for. AI-powered CRM and follow-up tools can automatically trigger a check-in message six months after a job, send maintenance reminders, request a Google review while the experience is still fresh, and suggest repeat services based on job history. For an abrasive blasting and coatings operation in Melbourne's south-east, that means proactively prompting past clients about recoating cycles or upcoming asset inspections rather than waiting for them to call. Platforms like ServiceM8 and Tradify include basic versions of this, and standalone AI follow-up tools typically run under $50 per month. In a competitive market, the operator who communicates most consistently wins the repeat work without fighting on price.",
+    "{{INSIGHT_TITLE}}": "AI Can Write Your SWMS in 60 Seconds — But You Still Need to Sign It Off",
+    "{{INSIGHT_BODY}}": "For any trade working with hazardous processes — coatings, blasting, confined spaces, heights — Safe Work Method Statements (SWMS) and Job Safety Analyses (JSAs) are compulsory before starting higher-risk work. In practice, these documents take 30–60 minutes to write properly from scratch, and many operators either reuse old templates (creating legal exposure) or cut corners on time-pressed jobs. AI tools like Claude, ChatGPT, or purpose-built platforms such as SafetyDocs and ProcedureFlow can now generate a detailed, task-specific first-draft SWMS in under a minute once you describe the scope and key hazards. The output covers standard risk categories, control measures, and PPE requirements — enough to give your supervisor a solid base to review rather than a blank page to fill. On a multi-job week, that can save two to four hours of admin, improve your compliance trail, and give you a defensible audit record if anything goes wrong on site. The catch: no AI can do your site assessment or take legal responsibility. But for getting the document structure right quickly, it has become genuinely useful.",
 
     # Fun Facts
-    "{{FACT_1}}": "Octopuses have three hearts: two pump blood through each set of gills, while a third — the systemic heart — circulates it around the body. Their blood is blue because it uses copper-based haemocyanin instead of iron-based haemoglobin. When an octopus swims hard, the systemic heart actually stops beating, which is why octopuses strongly prefer crawling over swimming.",
-    "{{FACT_2}}": "The world's largest living organism by area isn't a blue whale or a giant sequoia — it's a single honey fungus (Armillaria ostoyae) growing underground in Oregon's Malheur National Forest. It spans roughly 9.6 square kilometres and is estimated to be between 2,000 and 8,000 years old. It was discovered in 1998 when foresters were investigating a mysterious die-off of trees.",
-    "{{FACT_3}}": "Australia holds the record for the world's longest fence — the Dingo Fence, stretching approximately 5,614 kilometres from south-western Queensland to the South Australian coast. Built in the 1880s to protect south-eastern sheep pastures from wild dingoes, it remains actively maintained today.",
+    "{{FACT_1}}": "The platypus hunts with its eyes, ears, and nostrils completely sealed — navigating underwater using a bill packed with electroreceptors that detect the tiny electrical fields generated by its prey's muscle contractions. It is one of only a handful of mammals on Earth with this electroreception ability, and the only venomous one.",
+    "{{FACT_2}}": "The word \"concrete\" traces to the Latin \"concretus\" meaning \"condensed\" or \"hardened.\" Roman engineers made a superior hydraulic concrete from volcanic ash (pozzolana), lime, and seawater — structures built with it two thousand years ago, including the Pantheon's unreinforced dome, still stand today, while many 20th-century Portland cement buildings are already crumbling. Materials scientists are still reverse-engineering exactly why it lasts.",
+    "{{FACT_3}}": "Steel is essentially iron with a very precise amount of carbon: 0.2%–2.1% by weight. Too little carbon and you get soft wrought iron; too much and you get brittle cast iron. The entire modern built world — bridges, buildings, ships, tools — rests on the ability to control that margin down to a fraction of a per cent.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why don't plumbers make great comedians?",
-    "{{JOKE_PUNCHLINE}}": "Their timing is always off — and the punchline usually turns up a week late and costs twice what was quoted.",
+    "{{JOKE_SETUP}}": "Why did the gasfitter get promoted so quickly?",
+    "{{JOKE_PUNCHLINE}}": "He always worked well under pressure.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Knowing is not enough; we must apply. Willing is not enough; we must do.\"",
-    "{{CLOSING_ATTR}}": "Johann Wolfgang von Goethe",
-    "{{CLOSING_MESSAGE}}": "Happy Sunday, Liall — autumn showers clearing through the morning in Carrum Downs, with a mild 20°C peak this afternoon before rain returns Monday and Tuesday. Good day to clear the desk before the week ramps up. Two big announcements land Tuesday afternoon: the RBA cash rate decision at 2:30pm and the Victorian State Budget. If you're carrying variable-rate finance or watching state procurement, worth keeping Tuesday afternoon free.",
+    "{{CLOSING_QUOTE}}": "\"Whether you think you can, or you think you can't — you're right.\"",
+    "{{CLOSING_ATTR}}": "Henry Ford",
+    "{{CLOSING_MESSAGE}}": "Monday morning in Carrum Downs — a decent 20°C today with showers possible late afternoon. Make the most of the dry start: Thursday brings a Southern Ocean cold front pushing temperatures down to 14°C with strong winds and Alpine snow, making outdoor coatings and blasting work difficult. Two big decisions land tomorrow: the RBA cash rate announcement at 2:30pm AEST, and the Victorian State Budget. Worth keeping Tuesday afternoon clear to assess what both mean for your costs and pipeline.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
