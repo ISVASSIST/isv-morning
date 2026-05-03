@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Saturday, 02 May 2026",
+    "{{DATE}}": "Sunday, 03 May 2026",
 
-    # Weather — Carrum Downs VIC, 5-day outlook from Sat 2 May
-    "{{WEATHER_1}}": "Sat 2 May · Showers · 15°C",
-    "{{WEATHER_2}}": "Sun 3 May · Mostly cloudy · 15°C",
-    "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "Mon 4 May · Clearing · 17°C",
-    "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "Tue 5 May · Fine · 19°C",
-    "{{WEATHER_5}}": "Wed 6 May · Partly cloudy · 19°C",
-    "{{WEATHER_ALERT}}": "Wet Saturday morning",
+    # Weather — Carrum Downs VIC, 5-day outlook from Sun 3 May
+    "{{WEATHER_1}}": "Sun 3 May · Clearing showers · 20°C",
+    "{{WEATHER_2}}": "Mon 4 May · Showers · 16°C",
+    "{{WEATHER_2_CLASS}}": "rain",
+    "{{WEATHER_3}}": "Tue 5 May · Rain · 15°C",
+    "{{WEATHER_3_CLASS}}": "rain",
+    "{{WEATHER_4}}": "Wed 6 May · Mostly cloudy · 16°C",
+    "{{WEATHER_5}}": "Thu 7 May · Partly sunny · 17°C",
+    "{{WEATHER_ALERT}}": "⚠ Showers Mon–Tue",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇲🇲 MYANMAR · POLITICS",
-    "{{WORLD_1_HEADLINE}}": "Myanmar Junta Moves Aung San Suu Kyi from Prison to House Arrest After Five Years",
-    "{{WORLD_1_SUMMARY}}": "Myanmar's military government transferred the detained Nobel Peace Prize laureate and former leader Aung San Suu Kyi from Naypyidaw prison to house arrest on April 30, following a partial sentence reduction tied to a Buddhist holiday amnesty. Suu Kyi, 80, still faces over 13 years of her sentence. Her lawyers and son Kim Aris say they cannot confirm the transfer and warn she remains cut off from contact with the outside world. The UN Secretary-General called it \"a meaningful step,\" while democracy advocates remain cautious.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/4/30/myanmars-former-leader-aung-san-suu-kyi-moved-from-prison-to-house-arrest",
+    "{{WORLD_1_FLAG}}": "🌐 MIDDLE EAST · CONFLICT",
+    "{{WORLD_1_HEADLINE}}": "Trump Rejects Iran's 14-Point Ceasefire Plan — Senior Commander Warns Conflict 'Possible'",
+    "{{WORLD_1_SUMMARY}}": "US President Trump dismissed Iran's latest peace proposal — which included opening the Strait of Hormuz, withdrawing US forces, and lifting sanctions — saying Tehran asks for terms he \"can't agree to.\" A senior Iranian military official warned that renewed conflict is now \"possible.\" With the war in its 64th day, both sides remain under a fragile ceasefire but negotiations have effectively stalled, and Trump confirmed he is reviewing military options.",
+    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/5/2/iran-war-whats-happening-on-day-64-as-trump-rejects-tehrans-proposal",
 
-    "{{WORLD_2_FLAG}}": "⚓ MIDDLE EAST · CONFLICT",
-    "{{WORLD_2_HEADLINE}}": "Israeli Navy Intercepts Gaza Aid Flotilla in International Waters; 170 Activists Detained",
-    "{{WORLD_2_SUMMARY}}": "The Israeli navy intercepted the Global Sumud Flotilla late Wednesday while the convoy attempted to reach Gaza, stopping it more than 500 nautical miles from Israel — off Crete. Around 170 activists from multiple countries were detained and taken ashore, including six Australians. Two activists remained in Israeli custody. Flotilla organisers condemned the interception as an act of piracy in international waters; Israel said the vessels were stopped to enforce the maritime blockade.",
-    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/5/1/gaza-aid-flotilla-vessels-taken-to-crete-after-israeli-interception",
+    "{{WORLD_2_FLAG}}": "🇩🇪 EUROPE · NATO",
+    "{{WORLD_2_HEADLINE}}": "Pentagon Orders 5,000 US Troops Out of Germany — Trump Hints the Number Will Go Much Further",
+    "{{WORLD_2_SUMMARY}}": "The United States will withdraw approximately 5,000 troops — around 14% of its German garrison — within six to twelve months, amid Trump's escalating public feud with Chancellor Friedrich Merz over the Iran conflict. Trump told reporters the actual number will go \"a lot further\" than 5,000. Republican lawmakers and NATO allies have warned the move weakens Western security and benefits Vladimir Putin.",
+    "{{WORLD_2_URL}}": "https://www.npr.org/2026/05/02/g-s1-119864/u-s-withdraw-troops-germany",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🏦 AUSTRALIA · RBA",
-    "{{ECON_1_HEADLINE}}": "RBA Rate Decision Due Tuesday — Economists Now Tipping Another Rise to 4.35%",
-    "{{ECON_1_SUMMARY}}": "The Reserve Bank meets Monday–Tuesday (May 4–5) and announces its decision at 2:30pm AEST Tuesday. The cash rate sits at 4.10% following March's rise. With inflation hitting 4.6% — a three-year high driven by the Middle East supply shock — CBA and Westpac are now both tipping a further 25-basis-point rise to 4.35%. For small business owners carrying variable-rate loans, two rises this close together is a meaningful cost increase. Worth reviewing fixed-rate options before Tuesday's call.",
-    "{{ECON_1_URL}}": "https://www.rba.gov.au/monetary-policy/int-rate-decisions/",
+    "{{ECON_1_FLAG}}": "⛽ GLOBAL · ENERGY",
+    "{{ECON_1_HEADLINE}}": "Oil Still 17% Above Pre-War Levels — Why Prices Aren't Falling Despite the Ceasefire",
+    "{{ECON_1_SUMMARY}}": "Global crude oil prices have retreated from their 60% war-peak but remain roughly 17% above pre-conflict levels, even with a ceasefire technically in place. CNN's analysis explains the persistent premium: futures traders are pricing in renewed conflict risk as Trump reviews military options, and Strait of Hormuz cargo flows remain disrupted. For Australian trades businesses, this means diesel and freight costs stay elevated — planning for fuel above $2 per litre through Q3 is prudent.",
+    "{{ECON_1_URL}}": "https://www.cnn.com/2026/05/01/business/oil-market-price-high-low-iran",
 
-    "{{ECON_2_FLAG}}": "⛽ AUSTRALIA · FUEL",
-    "{{ECON_2_HEADLINE}}": "Fuel Excise Cut Helping at the Pump — But It Expires June 30 and Inflation Stays Elevated",
-    "{{ECON_2_SUMMARY}}": "The government's temporary halving of the fuel excise to 26.3 cents per litre has provided some pump relief since April 1, but economists warn the cut expires June 30 and underlying inflation remains at 4.6%. Fuel costs have spread through the supply chain, lifting freight, materials, and services pricing. For Melbourne trades operators, diesel prices are still well above pre-crisis levels even with the excise cut in place — auditing your fuel surcharge agreements now, before the excise snaps back, is a smart move.",
+    "{{ECON_2_FLAG}}": "🇦🇺 SMALL BUSINESS",
+    "{{ECON_2_HEADLINE}}": "HVIA Fuel Security Update: Diesel at Eastern Australia Truck Stops Still Up 28% on Pre-War Levels",
+    "{{ECON_2_SUMMARY}}": "The Heavy Vehicle Industry Association's May 1 fuel security update reports diesel prices at major truck stops across eastern Australia remain approximately 28% above pre-Iran-conflict levels, even with the halved federal excise in place. With the excise cut expiring June 30 and peace talks stalled, HVIA is urging operators to lock in fuel contracts or supplier agreements before the snapback. Trades businesses running vans and utes should recalculate their cost-per-job figures now.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🇺🇸 US · DEFENSE AI",
-    "{{TECH_1_HEADLINE}}": "Pentagon Signs AI Deals with OpenAI, Google, Nvidia, Microsoft and Amazon for Classified Military Use",
-    "{{TECH_1_SUMMARY}}": "The US Department of Defense announced on May 1 that seven leading AI companies — OpenAI, Google, Nvidia, Microsoft, Amazon Web Services, Reflection AI, and SpaceX — have signed agreements to deploy their AI on the Pentagon's most classified networks (Impact Level 6 and 7). The technology will be used for battlefield decision-making and intelligence analysis. More than 1.3 million Defence personnel have already used the military's AI platform. Anthropic was notably excluded after being designated a supply-chain risk earlier this year.",
-    "{{TECH_1_URL}}": "https://www.washingtonpost.com/technology/2026/05/01/pentagon-ai-deals-microsoft-amazon-google-classified-military/",
+    "{{TECH_1_FLAG}}": "⚖️ AI · LAW",
+    "{{TECH_1_HEADLINE}}": "Chinese Court Rules It Illegal to Fire Workers Solely to Replace Them with AI",
+    "{{TECH_1_SUMMARY}}": "The Hangzhou Intermediate People's Court upheld a landmark ruling that a tech company acted unlawfully when it dismissed a senior worker — whose role was taken over by AI large language models — purely to cut costs. The court found that while companies may benefit from AI efficiency gains, the risks of \"technological iteration\" cannot be shifted entirely onto employees. The decision sets a precedent across China's technology sector and is being watched closely by labour advocates in Australia and globally.",
+    "{{TECH_1_URL}}": "https://www.npr.org/2026/05/01/nx-s1-5807131/tech-worker-china-ai",
 
-    "{{TECH_2_FLAG}}": "🔬 AI · RESEARCH",
-    "{{TECH_2_HEADLINE}}": "Study: Top AI Agents Still Perform at Half the Level of Expert Human Scientists on Complex Tasks",
-    "{{TECH_2_SUMMARY}}": "A study published in Nature found that the best autonomous AI agents perform at only about half the level of PhD-level human experts when given genuinely complex scientific tasks requiring original reasoning and judgement. While AI tools are dramatically boosting individual researcher output, they are not yet replacing domain expertise on hard problems. For business owners evaluating AI tools: the data confirms they work best as high-powered assistants to skilled people — not as stand-alone replacements for experience.",
+    "{{TECH_2_FLAG}}": "🤖 AI · AGENTS",
+    "{{TECH_2_HEADLINE}}": "OpenAI's Codex Revenue Doubles in Under a Week as 'Agentic AI' Moves Into the Mainstream",
+    "{{TECH_2_SUMMARY}}": "OpenAI reported this week that revenue from Codex — its AI coding agent that takes multi-step actions autonomously — doubled in under seven days, driven by surging enterprise demand. The rapid uptake signals that \"agentic\" AI, which can complete sequences of tasks without constant human prompting, is moving into mainstream business infrastructure faster than most anticipated. For trades businesses, the practical implication: AI agents that can draft quotes, follow up on invoices, and manage job workflows are arriving in standard software platforms much sooner than most people expect.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🇨🇳 CHINA · ROBOTICS",
-    "{{ROBOT_1_HEADLINE}}": "China Commits $1 Billion to Deploy 8,500 Robots — Including 5,000 Robot Dogs — Across Its National Power Grid",
-    "{{ROBOT_1_SUMMARY}}": "China's State Grid Corporation, operator of the world's largest electricity network, has allocated 6.8 billion yuan (~$1 billion AUD) in 2026 to acquire roughly 8,500 AI-powered robots for power infrastructure operations. The fleet includes about 5,000 quadruped 'robot dogs' for patrol and inspection in remote and mountainous terrain, plus humanoid and dual-arm robots for high-risk maintenance tasks. Described as the single largest embodied-AI procurement by any government entity worldwide, the deployment covers substations, transmission lines, and transformer yards across China. Industrial-scale robot deployment has moved from pilot programme to national infrastructure strategy.",
-    "{{ROBOT_1_URL}}": "https://interestingengineering.com/ai-robotics/china-8500-robots-power-grid",
+    "{{ROBOT_1_FLAG}}": "🤖 BIG TECH · ROBOTICS",
+    "{{ROBOT_1_HEADLINE}}": "Meta Buys AI Robotics Startup Assured Robot Intelligence to Power Its Humanoid Push",
+    "{{ROBOT_1_SUMMARY}}": "Meta Platforms has acquired Assured Robot Intelligence (ARI), a startup building foundation AI models that help robots understand and physically adapt to human behaviour in dynamic, unstructured environments. ARI's team — including former Nvidia researcher and UC San Diego professor Xiaolong Wang — joins Meta's Superintelligence Labs. Rather than making robots directly, Meta aims to become the \"Android of robotics\": an enabling AI platform for the broader humanoid industry, in a market analysts value at $5 trillion by 2035.",
+    "{{ROBOT_1_URL}}": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Six Australians Detained on Gaza Flotilla Moved to Crete; DFAT Providing Consular Assistance",
-    "{{AUS_1_SUMMARY}}": "Six Australians who were aboard the Global Sumud Flotilla — intercepted by Israeli forces in international waters on Wednesday — have been transferred to Crete, where DFAT is providing consular assistance. The group includes a doctor and several activists. Families say they have been unable to make phone contact and are calling for urgent access.",
-    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/israel-sumudarrests-approximately-175-gaza-flotilla-activists-in-international-waters-near-greece/w99w04idl",
+    "{{AUS_1_HEADLINE}}": "Australia's Teen Social Media Ban Gets Quietly Amended — Critics Say Tech Firms Won New Workarounds",
+    "{{AUS_1_SUMMARY}}": "New amendments to Australia's world-first under-16 social media ban have paved the way for tech companies to work around the policy's core restrictions, according to Crikey analysis. The original law — which came into force in December — barred platforms from allowing Australians under 16 to create accounts. Critics argue the latest changes, which were not publicly highlighted, gut the original intent and reflect successful lobbying by major platforms.",
+    "{{AUS_1_URL}}": "https://www.crikey.com.au/2026/05/01/teen-social-media-ban-australia-changes/",
 
-    "{{AUS_2_HEADLINE}}": "Antisemitism Royal Commission Releases Interim Report; Government Accepts All 14 Recommendations",
-    "{{AUS_2_SUMMARY}}": "The interim report from Australia's Royal Commission into antisemitism and the December 2025 Bondi attack has been released, with the Albanese government committing to implement all 14 recommendations. Key measures include nationally consistent gun laws, a firearm buyback programme, enhanced security at places of worship, and a full-time national counter-terrorism coordinator. The final report is due by December 14.",
+    "{{AUS_2_HEADLINE}}": "Man Charged with Attempted Murder After Two Jewish Men Stabbed in London; Australian Groups Call for Action",
+    "{{AUS_2_SUMMARY}}": "A 45-year-old man has been charged with attempted murder after stabbing two Jewish men in London in the latest in a string of antisemitic attacks alarming communities in the UK and Australia. Australian Jewish organisations are calling on the federal government to act on the Antisemitism Royal Commission's interim recommendations ahead of its final report, due December 14. PM Albanese condemned the attack.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Melbourne Victory Host Sydney FC in A-League 'Big Blue' Elimination Final Tonight at AAMI Park",
-    "{{VIC_1_SUMMARY}}": "Melbourne Victory host fifth-placed Sydney FC in an A-League Men Elimination Final at AAMI Park tonight, kick-off at 7:40pm AEST. Dubbed the 'Big Blue,' it's the first time the two foundation clubs have met in the finals series since 2019. The loser goes home. Live on Paramount+ and Network 10.",
+    "{{VIC_1_HEADLINE}}": "Victorian State Budget Handed Down Tuesday — Business Groups Push for Confidence Boost Amid Rising State Debt",
+    "{{VIC_1_SUMMARY}}": "The Victorian Government delivers its 2026-27 State Budget on Tuesday 5 May, with the Victorian Chamber of Commerce and industry bodies urging Treasurer Jaclyn Symes to prioritise measures that restore business confidence and reduce regulatory complexity. Victoria's state debt has risen sharply and business confidence trails the national average. The City of Melbourne's separate $804.8 million draft budget — covering parks upgrades, safer streets, and community hubs — is also open for public consultation.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔬 SCIENCE · MEDICINE",
-    "{{SCI_1_HEADLINE}}": "New DNA-Based Treatment Cuts 'Bad' LDL Cholesterol by Nearly 50% — Without Statins or Side Effects",
-    "{{SCI_1_SUMMARY}}": "Researchers at the University of Barcelona have developed a novel treatment using DNA molecules called polypurine hairpins (PPRHs) that block the PCSK9 protein — the key regulator that prevents the body from clearing LDL 'bad' cholesterol from the bloodstream. By silencing the PCSK9 gene, early trials showed LDL levels cut by nearly 50%, without the muscle pain and other side effects linked to statins. Published May 1 in Biochemical Pharmacology, the approach could offer a new path for the millions of Australians managing cholesterol with daily medication.",
+    "{{SCI_1_FLAG}}": "🧠 NEUROSCIENCE",
+    "{{SCI_1_HEADLINE}}": "Scientists Find a Way to Help the Brain Clear Its Own Alzheimer's Plaques — Published May 2",
+    "{{SCI_1_SUMMARY}}": "Researchers at Baylor College of Medicine, publishing in Nature Neuroscience on May 2, found that boosting a protein called Sox9 reactivates astrocytes — the brain's star-shaped support cells — to actively engulf and remove the amyloid plaques characteristic of Alzheimer's disease. In mouse models that already had established cognitive impairment, the technique cleared plaques and preserved memory. Unlike most current approaches that focus on neurons or preventing new plaque formation, this strategy harnesses the brain's own built-in housekeeping system.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "AI-Assisted Job Scheduling Is Killing the Double-Booking Problem for Small Trades",
-    "{{INSIGHT_BODY}}": "For small operators juggling multiple crews, varied job lengths, and unpredictable travel time across Melbourne's south-east, scheduling is one of the most expensive invisible costs in the business. AI-assisted scheduling tools — built into platforms like ServiceM8, Tradify, and Fergus, or available as standalone apps — analyse your job pipeline, crew locations, and travel time in real time, flagging conflicts before they become missed appointments or back-to-back blowouts. Businesses trialling these tools report fewer double-bookings, smarter crew sequencing, and better client communication through automated reminders and updated ETAs. In a market where reliability is a genuine point of difference, a tool that prevents one double-booking a month could easily pay for itself in retained customers alone.",
+    "{{INSIGHT_TITLE}}": "Stop Losing Repeat Business: How AI Can Turn Every Completed Job into Tomorrow's Lead",
+    "{{INSIGHT_BODY}}": "For most small trades businesses, the biggest untapped asset isn't the tools in the van — it's the database of customers they've already done work for. AI-powered CRM and follow-up tools can automatically trigger a check-in message six months after a job, send maintenance reminders, request a Google review while the experience is still fresh, and suggest repeat services based on job history. For an abrasive blasting and coatings operation in Melbourne's south-east, that means proactively prompting past clients about recoating cycles or upcoming asset inspections rather than waiting for them to call. Platforms like ServiceM8 and Tradify include basic versions of this, and standalone AI follow-up tools typically run under $50 per month. In a competitive market, the operator who communicates most consistently wins the repeat work without fighting on price.",
 
     # Fun Facts
-    "{{FACT_1}}": "The mantis shrimp has 16 types of colour photoreceptors in its eyes — compared to just 3 in humans — yet it's a surprisingly poor colour discriminator. Scientists discovered it doesn't compare wavelengths the way humans do; instead it uses rapid eye movements to scan the spectrum like a barcode reader, trading colour nuance for extraordinary processing speed.",
-    "{{FACT_2}}": "Your gut contains approximately 100 million neurons — more than the entire spinal cord — forming what neuroscientists call the 'enteric nervous system' or 'second brain.' It operates largely independently of your head brain, continuing to regulate digestion, immune responses, and serotonin production even after the nerve connection between them is severed.",
-    "{{FACT_3}}": "The Apollo Guidance Computer that landed humans on the Moon in 1969 had just 4 kilobytes of RAM and ran at 0.043 MHz. A modern smartphone has roughly 8 billion times more RAM. The software was hand-woven into core rope memory by MIT programmers — it was this project that led Margaret Hamilton to coin the term 'software engineering.'",
+    "{{FACT_1}}": "Octopuses have three hearts: two pump blood through each set of gills, while a third — the systemic heart — circulates it around the body. Their blood is blue because it uses copper-based haemocyanin instead of iron-based haemoglobin. When an octopus swims hard, the systemic heart actually stops beating, which is why octopuses strongly prefer crawling over swimming.",
+    "{{FACT_2}}": "The world's largest living organism by area isn't a blue whale or a giant sequoia — it's a single honey fungus (Armillaria ostoyae) growing underground in Oregon's Malheur National Forest. It spans roughly 9.6 square kilometres and is estimated to be between 2,000 and 8,000 years old. It was discovered in 1998 when foresters were investigating a mysterious die-off of trees.",
+    "{{FACT_3}}": "Australia holds the record for the world's longest fence — the Dingo Fence, stretching approximately 5,614 kilometres from south-western Queensland to the South Australian coast. Built in the 1880s to protect south-eastern sheep pastures from wild dingoes, it remains actively maintained today.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the painter refuse to repaint the kitchen ceiling?",
-    "{{JOKE_PUNCHLINE}}": "He said the last coat was still a bit above his head.",
+    "{{JOKE_SETUP}}": "Why don't plumbers make great comedians?",
+    "{{JOKE_PUNCHLINE}}": "Their timing is always off — and the punchline usually turns up a week late and costs twice what was quoted.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"It always seems impossible until it's done.\"",
-    "{{CLOSING_ATTR}}": "Nelson Mandela",
-    "{{CLOSING_MESSAGE}}": "It's Saturday, Liall — wet morning forecast in Carrum Downs, which makes it a good day for desk work before tonight's A-League Big Blue at AAMI Park (Victory vs Sydney FC, 7:40pm). RBA decision lands Tuesday, so keep an eye on your loan costs. Six Australians are safely in Crete. Make it a productive one.",
+    "{{CLOSING_QUOTE}}": "\"Knowing is not enough; we must apply. Willing is not enough; we must do.\"",
+    "{{CLOSING_ATTR}}": "Johann Wolfgang von Goethe",
+    "{{CLOSING_MESSAGE}}": "Happy Sunday, Liall — autumn showers clearing through the morning in Carrum Downs, with a mild 20°C peak this afternoon before rain returns Monday and Tuesday. Good day to clear the desk before the week ramps up. Two big announcements land Tuesday afternoon: the RBA cash rate decision at 2:30pm and the Victorian State Budget. If you're carrying variable-rate finance or watching state procurement, worth keeping Tuesday afternoon free.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
