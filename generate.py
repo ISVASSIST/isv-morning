@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Monday, 04 May 2026",
+    "{{DATE}}": "Tuesday, 05 May 2026",
 
-    # Weather — Carrum Downs VIC, 5-day outlook from Mon 4 May (BOM)
-    "{{WEATHER_1}}": "Mon 4 May · Partly cloudy, PM showers · 20°C",
-    "{{WEATHER_2}}": "Tue 5 May · Showers likely · 18°C",
+    # Weather — Carrum Downs VIC, 5-day outlook from Tue 5 May
+    "{{WEATHER_1}}": "Tue 5 May · Showers · 14–17°C",
+    "{{WEATHER_2}}": "Wed 6 May · Heavy showers · 13–18°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "Wed 6 May · Cloudy, showers · 19°C",
+    "{{WEATHER_3}}": "Thu 7 May · Very heavy showers · 12–17°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "Thu 7 May · Cold front, showers · 14°C",
-    "{{WEATHER_5}}": "Fri 8 May · Cold &amp; gusty · 13°C",
-    "{{WEATHER_ALERT}}": "⚠ Cold front Thu–Fri · Alpine snow",
+    "{{WEATHER_4}}": "Fri 8 May · Clearing · 11–15°C",
+    "{{WEATHER_5}}": "Sat 9 May · Mostly dry · 9–14°C",
+    "{{WEATHER_ALERT}}": "⚠ Heavy rain Wed–Thu · Up to 20mm",
 
     # World
-    "{{WORLD_1_FLAG}}": "🌐 MIDDLE EAST · CONFLICT",
-    "{{WORLD_1_HEADLINE}}": "Iran Tables 14-Point Counter-Proposal as US-Iran Stalemate Threatens Prolonged Oil Crisis",
-    "{{WORLD_1_SUMMARY}}": "Iran has formally submitted a 14-point counter-proposal to American ceasefire terms, but with Washington signalling it can endure a long stand-off and Tehran matching that rhetoric, hopes for a rapid resolution have dimmed. Before the conflict, roughly 3,000 vessels per month transited the Strait of Hormuz — in March just 154 did. Analysts now warn both sides are using negotiations as a signalling exercise rather than a genuine peace process, keeping global oil supply disrupted indefinitely.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/5/2/iran-war-whats-happening-on-day-64-as-trump-rejects-tehrans-proposal",
+    "{{WORLD_1_FLAG}}": "🇮🇷 MIDDLE EAST · IRAN",
+    "{{WORLD_1_HEADLINE}}": "Trump Calls US-Iran Talks \"Very Positive\" as Both Sides Exchange Responses on Peace Terms",
+    "{{WORLD_1_SUMMARY}}": "US President Donald Trump said on Sunday that his representatives are having 'very positive discussions' with Iran, even as both sides exchange conflicting signals on key sticking points. Iran has now received a formal US response to its 14-point peace proposal — which demands sanctions relief, war reparations, and US force withdrawal — but Washington continues to insist on stringent nuclear restrictions as a precondition. Day 65 of the conflict: global oil supply disruption through the Strait of Hormuz remains severe, with shipping still well below pre-war levels.",
+    "{{WORLD_1_URL}}": "https://www.cnbc.com/2026/05/03/trump-iran-war-peace-proposal.html",
 
-    "{{WORLD_2_FLAG}}": "🇲🇲 MYANMAR",
-    "{{WORLD_2_HEADLINE}}": "\"Moving Her Is Not Freeing Her\" — Suu Kyi's Son Rejects Myanmar Junta's House Arrest Claim",
-    "{{WORLD_2_SUMMARY}}": "Kim Aris, son of imprisoned former Myanmar leader Aung San Suu Kyi, told NPR on Sunday he cannot independently confirm the military junta's claim that his 80-year-old mother has been moved from prison to house arrest after more than five years. \"She remains a hostage, cut off from the world,\" he said. Human rights groups called the move a PR exercise designed to rehabilitate the junta's image following a prisoner amnesty tied to a Buddhist holiday — and noted she still faces more than 13 years of her politically motivated sentence.",
-    "{{WORLD_2_URL}}": "https://www.npr.org/2026/05/03/nx-s1-5808875/aung-san-suu-kyi-myanmar-son-house-arrest",
+    "{{WORLD_2_FLAG}}": "🌐 PRESS FREEDOM",
+    "{{WORLD_2_HEADLINE}}": "Global Press Freedom Falls to 25-Year Low — 471 Journalists Imprisoned, 13 Killed in 2026",
+    "{{WORLD_2_SUMMARY}}": "Reporters Without Borders released its 2026 World Press Freedom Index on World Press Freedom Day (May 3), recording the lowest press freedom scores in a quarter century. Thirteen journalists have been killed globally so far in 2026, 471 are behind bars, and at least 21 are held hostage. The report cites authoritarian crackdowns, AI-generated disinformation, and the fallout from ongoing geopolitical conflicts as the key drivers of the decline.",
+    "{{WORLD_2_URL}}": "https://www.democracynow.org/2026/5/4/headlines",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🇦🇺 ECONOMICS · RBA",
-    "{{ECON_1_HEADLINE}}": "RBA Board Meets Today — Markets Pricing 70% Chance of Rate Hike to 4.35% Tomorrow",
-    "{{ECON_1_SUMMARY}}": "The Reserve Bank of Australia's monetary policy board convened this morning for its May 4–5 meeting, with Governor Michele Bullock set to announce the cash rate decision at 2:30pm AEST tomorrow. Inflation running at 4.6% — the highest since September 2023 — has pushed market pricing to a 70–75% probability of a 25bp hike. Economists calculate a further rise would add an estimated $5,000–$10,000 per year to the operating costs of a typical $2M-revenue small business.",
-    "{{ECON_1_URL}}": "https://www.canstar.com.au/news/what-to-expect-from-the-rba-in-may-2026/",
+    "{{ECON_1_FLAG}}": "🇦🇺 INTEREST RATES · RBA",
+    "{{ECON_1_HEADLINE}}": "RBA Decision at 2:30pm Today — Markets Tip 25bp Hike Taking Cash Rate to 4.35%",
+    "{{ECON_1_SUMMARY}}": "The Reserve Bank of Australia announces its May cash rate decision at 2:30pm AEST this afternoon. Markets are pricing a 70–75% chance of a 25-basis-point hike that would take the cash rate to 4.35% — its highest since 2011 — with headline inflation stuck at 4.6%, well above the 2–3% target. For small businesses carrying variable-rate debt or equipment finance, a rise feeds through to repayments within weeks. Worth keeping an eye on the 2:30pm announcement.",
+    "{{ECON_1_URL}}": "https://www.rba.gov.au/monetary-policy/int-rate-decisions/",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL · SMALL BUSINESS",
-    "{{ECON_2_HEADLINE}}": "Federal Fuel Excise Cut Expires June 30 — Trades Operators Urged to Plan for Price Snapback",
-    "{{ECON_2_SUMMARY}}": "The federal government's temporary 50% fuel excise cut expires June 30, 2026. With peace talks stalled and Hormuz shipping still disrupted, there is no guarantee prices will ease before the snapback. The Heavy Vehicle Industry Association is urging fleet operators to explore contract fuel pricing before the cut expires. For trades businesses quoting jobs that run past July, building in a fuel cost increase now is prudent risk management.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL · EXCISE",
+    "{{ECON_2_HEADLINE}}": "Fuel Excise Cut Runs to 30 June — But the 56-Day Countdown Demands a Pricing Plan Now",
+    "{{ECON_2_SUMMARY}}": "The Government's 32c/litre fuel excise cut (April 1 – June 30) continues to hold retail diesel at roughly $2.75 nationally — real relief for trades operators running fleets. But the June 30 expiry is 56 days away, and with Hormuz disruptions ongoing and the global oil market still volatile, a post-July price snapback is a genuine risk. For any job you're quoting that runs past July, building a fuel cost contingency into your pricing now is basic risk management.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "💻 AI · ENTERPRISE",
-    "{{TECH_1_HEADLINE}}": "Back-Office AI Officially Moves From Pilot to Production — Enterprise Platforms Confirm Live Deployments",
-    "{{TECH_1_SUMMARY}}": "A May 3 industry analysis tracking enterprise AI adoption confirms that AI-powered back-office automation — covering invoicing, HR, compliance reporting, and supplier management — has transitioned from proof-of-concept to live production at platforms including Salesforce and Workday. AI use across HR tasks alone reached 43% of companies surveyed in 2026, up from 26% two years ago. For small trades operators, the timing signal is clear: tools Fortune 500 companies are running at scale today typically reach the SME market within 12–18 months at a fraction of the enterprise price.",
-    "{{TECH_1_URL}}": "https://asanify.com/blog/news/ai-back-office-automation-may-3-2026/",
+    "{{TECH_1_FLAG}}": "🤖 AI · LEADERSHIP",
+    "{{TECH_1_HEADLINE}}": "IBM Study: 76% of Major Companies Now Have a Chief AI Officer — Up From 26% a Year Ago",
+    "{{TECH_1_SUMMARY}}": "A major IBM Institute for Business Value study of 2,000 CEOs across 33 countries (released May 4) reveals that AI leadership has exploded: 76% of organisations now have a dedicated Chief AI Officer, up from just 26% in 2025. Sixty-four per cent of CEOs say they are comfortable making major strategic decisions based on AI-generated input. Companies that redesigned five core business functions around AI were four times more likely to meet their business objectives.",
+    "{{TECH_1_URL}}": "https://newsroom.ibm.com/2026-05-04-ibm-study-ceos-are-reshaping-c-suite-roles-for-the-ai-era",
 
-    "{{TECH_2_FLAG}}": "📈 AI · MARKETS",
-    "{{TECH_2_HEADLINE}}": "Goldman Sachs Calls AI Software Sell-Off \"Overdone\" as Enterprise Adoption Data Beats Estimates",
-    "{{TECH_2_SUMMARY}}": "Goldman Sachs analysts issued a note on Sunday maintaining overweight positions across AI-exposed software stocks, calling the recent market pullback \"overdone\" given that Q1 2026 earnings consistently showed enterprise AI adoption beating analyst estimates. The bank highlighted strong quarter-on-quarter growth in AI credit consumption at platforms including Atlassian (20% month-on-month) and Figma as evidence corporate AI usage is accelerating rather than plateauing. For anyone watching where AI investment is heading: enterprise adoption is real, it is accelerating, and it is pulling the broader software market with it.",
+    "{{TECH_2_FLAG}}": "🔒 AI · MILITARY",
+    "{{TECH_2_HEADLINE}}": "Google Staff Revolt Over Pentagon Deal — 600 Employees Oppose Military Use of Gemini AI",
+    "{{TECH_2_SUMMARY}}": "Close to 600 Google employees have signed an open letter opposing the company's agreement to provide its Gemini AI models to US military classified networks for 'any lawful purpose.' The backlash, reported May 4, echoes the 2018 Project Maven controversy that forced Google to withdraw from military AI contracts. The episode deepens the debate about where ethical lines sit as AI becomes embedded in defence and national security infrastructure.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "⚙️ ROBOTICS · SIMULATION",
-    "{{ROBOT_1_HEADLINE}}": "$8.5M Startup Antioch Bets Cloud Simulation Will Break the Deadlock Slowing Industrial Robot Deployment",
-    "{{ROBOT_1_SUMMARY}}": "New York-based Antioch, founded in 2025, has raised $8.5 million to build a cloud platform that lets robotics teams develop, train, and evaluate autonomous systems entirely in simulation — removing the need for costly, time-consuming real-world testing. Backers include A*, Category Ventures, and MaC Venture Capital. The company argues over-reliance on physical testing is the single biggest bottleneck slowing industrial automation adoption, drawing parallels to how cloud computing transformed software development by making iteration cheap and fast.",
-    "{{ROBOT_1_URL}}": "https://roboticsandautomationnews.com/2026/05/03/antioch-raises-8-5-million-to-accelerate-simulation-based-development-of-autonomous-systems/101171/",
+    "{{ROBOT_1_FLAG}}": "🏭 WAREHOUSE ROBOTICS",
+    "{{ROBOT_1_HEADLINE}}": "Locus Robotics Launches AI-Powered \"Locus Array\" for Fully Autonomous Warehouse Fulfillment",
+    "{{ROBOT_1_SUMMARY}}": "Locus Robotics unveiled 'Locus Array' on May 3 — a fully autonomous order fulfillment system combining mobile robots, an integrated picking arm, and AI-powered perception that completes end-to-end warehouse workflows without any human intervention. The launch marks a significant step beyond assisted picking toward true lights-out automation. Early deployments are underway in North America, with global rollout across Europe and Asia-Pacific planned as demand for fully autonomous fulfillment accelerates.",
+    "{{ROBOT_1_URL}}": "https://roboticsandautomationnews.com/2026/05/03/locus-robotics-rolls-out-locus-array-for-end-to-end-warehouse-fulfillment/101175/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Man Charged With Murder of Five-Year-Old Kumanjayi in NT After Death Sparked Riots",
-    "{{AUS_1_SUMMARY}}": "NT Police have charged Jefferson Lewis, 47, with the murder of five-year-old Kumanjayi in Alice Springs — a death that sparked violent community protests and clashes with police last week. Lewis also faces two additional charges. The case has reignited national debate about child safety in remote Indigenous communities and the adequacy of youth justice policy in the Northern Territory.",
-    "{{AUS_1_URL}}": "https://www.aljazeera.com/news/2026/5/3/man-charged-over-murder-of-australian-indigenous-girl-that-sparked-riots",
+    "{{AUS_1_HEADLINE}}": "Australia and Japan Sign Landmark Pact on Defence, Energy Security and Critical Minerals",
+    "{{AUS_1_SUMMARY}}": "Prime Ministers Anthony Albanese and Japan's Sanae Takaichi signed major new agreements in Canberra on Monday, deepening cooperation on defence, energy security, and critical minerals supply chains. The deal directly targets China's dominance of rare earth production and comes as the Iran war underscores the strategic value of Australia-Japan energy ties — Australia already supplies close to half of Japan's LNG.",
+    "{{AUS_1_URL}}": "https://www.bnnbloomberg.ca/business/2026/05/04/japan-and-australia-agree-to-deepen-cooperation-on-energy-defence-and-critical-minerals/",
 
-    "{{AUS_2_HEADLINE}}": "Australia's Student Visa Crackdown Hits Record Refusal Rates — Universities Warn of Funding Crisis",
-    "{{AUS_2_SUMMARY}}": "From May 1, sweeping new student visa reforms — a tougher Genuine Student test, graduate visa age cap cut from 50 to 35, and mandatory savings of AUD $31,200 — have dramatically tightened the international student pathway. Refusal rates from South Asia are at record highs and a national annual cap of 295,000 approvals means many eligible applicants are simply turned away. Smaller universities that rely heavily on international fee revenue are warning of a serious funding squeeze.",
+    "{{AUS_2_HEADLINE}}": "Royal Commission on Antisemitism Opens First Public Hearings Across Australia",
+    "{{AUS_2_SUMMARY}}": "Australia's Royal Commission into antisemitism and social cohesion commenced its first public hearings on Monday, with witnesses sharing testimony about their personal experiences. The commission will take evidence from communities, educators, and institutions across the country over several months as it examines the current state of social cohesion nationally.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Liberals Retain Nepean Seat — One Nation's 24.7% Primary Vote Puts State Parties on Notice",
-    "{{VIC_1_SUMMARY}}": "Liberal candidate Anthony Marsh won the Nepean by-election on Saturday with 63.5% on a two-candidate preferred count, retaining the seat for his party. But it was One Nation's strong 24.7% primary vote that dominated post-election analysis, with strategists warning it signals broader discontent — particularly in outer-suburban electorates — that could reshape the upcoming Victorian state election.",
+    "{{VIC_1_HEADLINE}}": "Melbourne Budget to Double Safety Officers and Turn Southbank Underpass Into 5,000m² Public Park",
+    "{{VIC_1_SUMMARY}}": "The City of Melbourne's draft 2026-27 budget proposes doubling Community Safety Officers from 11 to 22 to address rising antisocial behaviour concerns, and converting a neglected Southbank concrete underpass into a 5,000 square metre activated public space — featuring a roller rink, skate park, bouldering wall, basketball courts, and improved lighting.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🌍 GEOSCIENCE",
-    "{{SCI_1_HEADLINE}}": "\"Double Quake\" Scenario: Researchers Find San Andreas and Cascadia Faults Can Rupture in Tandem",
-    "{{SCI_1_SUMMARY}}": "Oregon State University scientists, publishing in the journal Geosphere, have found sediment evidence that the Cascadia Subduction Zone and the Northern San Andreas Fault periodically synchronise — with at least three events in the past 1,500 years where both fault systems ruptured within minutes to hours of each other. A simultaneous rupture would place San Francisco, Portland, Seattle, and Vancouver all in emergency status at once, overwhelming any planned response capacity. The study received wide coverage on May 2, 2026.",
+    "{{SCI_1_FLAG}}": "🦋 EVOLUTION",
+    "{{SCI_1_HEADLINE}}": "Evolution Has Used the Same Two Genes to Build Identical Wing Patterns for 120 Million Years",
+    "{{SCI_1_SUMMARY}}": "An international team led by the University of York and Wellcome Sanger Institute has found that distantly related butterflies and moths in South American rainforests independently evolved near-identical warning colour patterns by reusing the exact same pair of genes — ivory and optix — across 120 million years. Rather than altering the genes themselves, evolution acted on genetic 'switches' that control when and where they activate. The finding challenges assumptions about evolutionary randomness, suggesting life follows more predictable genetic pathways than previously thought. Published in PLOS Biology.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "AI Can Write Your SWMS in 60 Seconds — But You Still Need to Sign It Off",
-    "{{INSIGHT_BODY}}": "For any trade working with hazardous processes — coatings, blasting, confined spaces, heights — Safe Work Method Statements (SWMS) and Job Safety Analyses (JSAs) are compulsory before starting higher-risk work. In practice, these documents take 30–60 minutes to write properly from scratch, and many operators either reuse old templates (creating legal exposure) or cut corners on time-pressed jobs. AI tools like Claude, ChatGPT, or purpose-built platforms such as SafetyDocs and ProcedureFlow can now generate a detailed, task-specific first-draft SWMS in under a minute once you describe the scope and key hazards. The output covers standard risk categories, control measures, and PPE requirements — enough to give your supervisor a solid base to review rather than a blank page to fill. On a multi-job week, that can save two to four hours of admin, improve your compliance trail, and give you a defensible audit record if anything goes wrong on site. The catch: no AI can do your site assessment or take legal responsibility. But for getting the document structure right quickly, it has become genuinely useful.",
+    "{{INSIGHT_TITLE}}": "When Material Costs Spike, AI Can Be Your Purchasing Manager — For Free",
+    "{{INSIGHT_BODY}}": "With inflation running at 4.6% and supply chains still absorbing the shocks of global energy disruption, small trades operators are being squeezed from both directions — rising material costs and the prospect of higher borrowing costs. AI tools integrated with supplier catalogues and invoicing platforms can now monitor price movements, generate alternative supplier comparisons, and draft purchase enquiries automatically. Tradies who've started using AI for procurement report savings of 8–15% by identifying better-priced substitutes or flagging when to buy ahead of known price rises. The investment is zero beyond a subscription you may already have — the question is whether you're putting it to work yet.",
 
     # Fun Facts
-    "{{FACT_1}}": "The platypus hunts with its eyes, ears, and nostrils completely sealed — navigating underwater using a bill packed with electroreceptors that detect the tiny electrical fields generated by its prey's muscle contractions. It is one of only a handful of mammals on Earth with this electroreception ability, and the only venomous one.",
-    "{{FACT_2}}": "The word \"concrete\" traces to the Latin \"concretus\" meaning \"condensed\" or \"hardened.\" Roman engineers made a superior hydraulic concrete from volcanic ash (pozzolana), lime, and seawater — structures built with it two thousand years ago, including the Pantheon's unreinforced dome, still stand today, while many 20th-century Portland cement buildings are already crumbling. Materials scientists are still reverse-engineering exactly why it lasts.",
-    "{{FACT_3}}": "Steel is essentially iron with a very precise amount of carbon: 0.2%–2.1% by weight. Too little carbon and you get soft wrought iron; too much and you get brittle cast iron. The entire modern built world — bridges, buildings, ships, tools — rests on the ability to control that margin down to a fraction of a per cent.",
+    "{{FACT_1}}": "A bolt of lightning is roughly five times hotter than the surface of the sun — reaching around 30,000°C — yet is only about 2–3 centimetres wide. Earth is struck by lightning approximately 1.4 billion times every year.",
+    "{{FACT_2}}": "The wingspan of a Boeing 747 is longer than the entire first flight made by the Wright Brothers — the Flyer covered just 37 metres at Kitty Hawk in 1903, while a 747's wings span 68 metres tip to tip.",
+    "{{FACT_3}}": "Australia's Anna Creek Station in South Australia is the world's largest working cattle station at around 24,000 square kilometres — bigger than Israel and roughly the size of Wales.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the gasfitter get promoted so quickly?",
-    "{{JOKE_PUNCHLINE}}": "He always worked well under pressure.",
+    "{{JOKE_SETUP}}": "Why did the carpenter win the workplace safety award?",
+    "{{JOKE_PUNCHLINE}}": "He was the only one on site who knew when to stop — and he never cut corners.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Whether you think you can, or you think you can't — you're right.\"",
-    "{{CLOSING_ATTR}}": "Henry Ford",
-    "{{CLOSING_MESSAGE}}": "Monday morning in Carrum Downs — a decent 20°C today with showers possible late afternoon. Make the most of the dry start: Thursday brings a Southern Ocean cold front pushing temperatures down to 14°C with strong winds and Alpine snow, making outdoor coatings and blasting work difficult. Two big decisions land tomorrow: the RBA cash rate announcement at 2:30pm AEST, and the Victorian State Budget. Worth keeping Tuesday afternoon clear to assess what both mean for your costs and pipeline.",
+    "{{CLOSING_QUOTE}}": "\"Price is what you pay. Value is what you get.\"",
+    "{{CLOSING_ATTR}}": "Warren Buffett",
+    "{{CLOSING_MESSAGE}}": "A wet Tuesday in Carrum Downs — showers all day, so keep the gear covered and the van stocked. The big moment this afternoon is the RBA rate decision at 2:30pm: if they hike to 4.35%, start thinking about what that means for any variable-rate finance you're carrying. Wednesday and Thursday look heavier still — up to 20mm — so plan your outdoor jobs around the forecast. Good luck out there, Liall.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
