@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Tuesday, 05 May 2026",
+    "{{DATE}}": "Wednesday, 06 May 2026",
 
-    # Weather — Carrum Downs VIC, 5-day outlook from Tue 5 May
-    "{{WEATHER_1}}": "Tue 5 May · Showers · 14–17°C",
-    "{{WEATHER_2}}": "Wed 6 May · Heavy showers · 13–18°C",
+    # Weather — Carrum Downs VIC, 5-day outlook from Wed 6 May
+    "{{WEATHER_1}}": "Wed 6 May · Heavy showers · 13–18°C",
+    "{{WEATHER_2}}": "Thu 7 May · Very heavy rain · 12–17°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "Thu 7 May · Very heavy showers · 12–17°C",
+    "{{WEATHER_3}}": "Fri 8 May · Showers easing · 11–15°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "Fri 8 May · Clearing · 11–15°C",
-    "{{WEATHER_5}}": "Sat 9 May · Mostly dry · 9–14°C",
-    "{{WEATHER_ALERT}}": "⚠ Heavy rain Wed–Thu · Up to 20mm",
+    "{{WEATHER_4}}": "Sat 9 May · Partly cloudy · 10–14°C",
+    "{{WEATHER_5}}": "Sun 10 May · Mostly dry · 9–13°C",
+    "{{WEATHER_ALERT}}": "⚠ Heavy rain Wed–Thu · Easing Friday",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇷 MIDDLE EAST · IRAN",
-    "{{WORLD_1_HEADLINE}}": "Trump Calls US-Iran Talks \"Very Positive\" as Both Sides Exchange Responses on Peace Terms",
-    "{{WORLD_1_SUMMARY}}": "US President Donald Trump said on Sunday that his representatives are having 'very positive discussions' with Iran, even as both sides exchange conflicting signals on key sticking points. Iran has now received a formal US response to its 14-point peace proposal — which demands sanctions relief, war reparations, and US force withdrawal — but Washington continues to insist on stringent nuclear restrictions as a precondition. Day 65 of the conflict: global oil supply disruption through the Strait of Hormuz remains severe, with shipping still well below pre-war levels.",
-    "{{WORLD_1_URL}}": "https://www.cnbc.com/2026/05/03/trump-iran-war-peace-proposal.html",
+    "{{WORLD_1_FLAG}}": "🇺🇦 UKRAINE / RUSSIA",
+    "{{WORLD_1_HEADLINE}}": "Zelensky and Putin Declare Rival Ceasefires — Ukraine's Starts Today, Russia's Is for Victory Day",
+    "{{WORLD_1_SUMMARY}}": "President Zelensky declared a Ukrainian ceasefire beginning at midnight May 5–6, pre-empting Russia's proposed Victory Day truce on May 8–9. Putin's offer — floated during a call with Trump — came with a threat of 'massive missile strikes' on Kyiv if violated. Ukraine called Russia's terms 'not serious,' refusing to observe a ceasefire timed around a Russian military holiday. The duelling truces highlight the fragility of any peace push; markets are watching closely for breakthrough or breakdown.",
+    "{{WORLD_1_URL}}": "https://kyivindependent.com/zelensky-announces-earlier-ceasefire-starting-may-6-ahead-of-russias-victory-day-truce/",
 
-    "{{WORLD_2_FLAG}}": "🌐 PRESS FREEDOM",
-    "{{WORLD_2_HEADLINE}}": "Global Press Freedom Falls to 25-Year Low — 471 Journalists Imprisoned, 13 Killed in 2026",
-    "{{WORLD_2_SUMMARY}}": "Reporters Without Borders released its 2026 World Press Freedom Index on World Press Freedom Day (May 3), recording the lowest press freedom scores in a quarter century. Thirteen journalists have been killed globally so far in 2026, 471 are behind bars, and at least 21 are held hostage. The report cites authoritarian crackdowns, AI-generated disinformation, and the fallout from ongoing geopolitical conflicts as the key drivers of the decline.",
-    "{{WORLD_2_URL}}": "https://www.democracynow.org/2026/5/4/headlines",
+    "{{WORLD_2_FLAG}}": "🌊 MIDDLE EAST · HORMUZ",
+    "{{WORLD_2_HEADLINE}}": "US Military Sinks Iranian Boats in Operation to Reopen the Strait of Hormuz",
+    "{{WORLD_2_SUMMARY}}": "US Apache helicopters and Navy vessels sank at least six Iranian boats on May 4 under Operation Project Freedom — Trump's order to escort stranded shipping through the blockaded Strait of Hormuz. Iran claims civilian vessels were struck, killing five people; the US disputes the account. The UAE reported Iranian missile and drone strikes on Emirati territory in the same period. The operation has placed the fragile US-Iran ceasefire under severe pressure, with Iran threatening to strike European military bases.",
+    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/5/5/iran-says-us-military-killed-five-civilians-in-attacks-on-passenger-boats",
 
     # Economics
     "{{ECON_1_FLAG}}": "🇦🇺 INTEREST RATES · RBA",
-    "{{ECON_1_HEADLINE}}": "RBA Decision at 2:30pm Today — Markets Tip 25bp Hike Taking Cash Rate to 4.35%",
-    "{{ECON_1_SUMMARY}}": "The Reserve Bank of Australia announces its May cash rate decision at 2:30pm AEST this afternoon. Markets are pricing a 70–75% chance of a 25-basis-point hike that would take the cash rate to 4.35% — its highest since 2011 — with headline inflation stuck at 4.6%, well above the 2–3% target. For small businesses carrying variable-rate debt or equipment finance, a rise feeds through to repayments within weeks. Worth keeping an eye on the 2:30pm announcement.",
-    "{{ECON_1_URL}}": "https://www.rba.gov.au/monetary-policy/int-rate-decisions/",
+    "{{ECON_1_HEADLINE}}": "RBA Raises Cash Rate to 4.35% — Third Hike This Year as Inflation Stays at 4.6%",
+    "{{ECON_1_SUMMARY}}": "The Reserve Bank raised the official cash rate by 25 basis points to 4.35% today, with eight of nine board members voting in favour. The decision follows March headline inflation of 4.6% — more than double the 2–3% target — driven significantly by fuel prices tied to the Hormuz crisis. The hike wipes out all three 2025 rate cuts. Westpac forecasts two further 25bp hikes in June and August that would push the cash rate to 4.85%. For small businesses on variable-rate equipment finance, this feeds through to monthly repayments within weeks.",
+    "{{ECON_1_URL}}": "https://www.rba.gov.au/media-releases/2026/mr-26-08.html",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL · EXCISE",
-    "{{ECON_2_HEADLINE}}": "Fuel Excise Cut Runs to 30 June — But the 56-Day Countdown Demands a Pricing Plan Now",
-    "{{ECON_2_SUMMARY}}": "The Government's 32c/litre fuel excise cut (April 1 – June 30) continues to hold retail diesel at roughly $2.75 nationally — real relief for trades operators running fleets. But the June 30 expiry is 56 days away, and with Hormuz disruptions ongoing and the global oil market still volatile, a post-July price snapback is a genuine risk. For any job you're quoting that runs past July, building a fuel cost contingency into your pricing now is basic risk management.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL · PRICES",
+    "{{ECON_2_HEADLINE}}": "Diesel at 222c/Litre — Fuel Excise Cut Expires June 30, 56 Days Away",
+    "{{ECON_2_SUMMARY}}": "Terminal gate diesel prices are running around 222 cents per litre nationally, held down by the government's fuel excise halved to 26.3c/litre from March 30 to June 30. That's 56 days until expiry, and with Hormuz tensions re-escalating after US military action on May 4, a post-July price snapback is a genuine risk. Any quotes you're writing for jobs running past July should include a fuel cost contingency right now.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI · LEADERSHIP",
-    "{{TECH_1_HEADLINE}}": "IBM Study: 76% of Major Companies Now Have a Chief AI Officer — Up From 26% a Year Ago",
-    "{{TECH_1_SUMMARY}}": "A major IBM Institute for Business Value study of 2,000 CEOs across 33 countries (released May 4) reveals that AI leadership has exploded: 76% of organisations now have a dedicated Chief AI Officer, up from just 26% in 2025. Sixty-four per cent of CEOs say they are comfortable making major strategic decisions based on AI-generated input. Companies that redesigned five core business functions around AI were four times more likely to meet their business objectives.",
-    "{{TECH_1_URL}}": "https://newsroom.ibm.com/2026-05-04-ibm-study-ceos-are-reshaping-c-suite-roles-for-the-ai-era",
+    "{{TECH_1_FLAG}}": "🤖 AI · FINANCIAL SERVICES",
+    "{{TECH_1_HEADLINE}}": "Anthropic Launches 10 Ready-to-Run AI Agents for Banks, Insurers and Asset Managers",
+    "{{TECH_1_SUMMARY}}": "Anthropic unveiled 10 pre-built agent templates at an invite-only New York event on May 5, covering tasks like pitch building, KYC screening, earnings review, and month-end reconciliation. The release includes full Microsoft 365 integration — letting Claude run as a single agent across Excel, PowerPoint, Word, and Outlook — and a Moody's data partnership covering 600 million companies. While aimed at large institutions, the direction is unmistakable: AI is moving from assistant to autonomous operator across every industry.",
+    "{{TECH_1_URL}}": "https://fortune.com/2026/05/05/anthropic-wall-street-financial-services-agents-jamie-dimon/",
 
-    "{{TECH_2_FLAG}}": "🔒 AI · MILITARY",
-    "{{TECH_2_HEADLINE}}": "Google Staff Revolt Over Pentagon Deal — 600 Employees Oppose Military Use of Gemini AI",
-    "{{TECH_2_SUMMARY}}": "Close to 600 Google employees have signed an open letter opposing the company's agreement to provide its Gemini AI models to US military classified networks for 'any lawful purpose.' The backlash, reported May 4, echoes the 2018 Project Maven controversy that forced Google to withdraw from military AI contracts. The episode deepens the debate about where ethical lines sit as AI becomes embedded in defence and national security infrastructure.",
+    "{{TECH_2_FLAG}}": "📊 AI · PERFORMANCE",
+    "{{TECH_2_HEADLINE}}": "AI Agents Now Succeed at Real-World Tasks 77% of the Time — Up From 20% Just 12 Months Ago",
+    "{{TECH_2_SUMMARY}}": "New benchmarking data from Terminal-Bench shows AI agents now successfully complete real-world tasks 77.3% of the time, compared to just 20% in mid-2025. AI handling cybersecurity challenges now solves them 93% of the time, up from 15% in 2024. The pace of improvement is extraordinary. If you evaluated AI tools and found them unreliable a year ago, the landscape has fundamentally changed — and the gap between early adopters and late movers is widening every month.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🏭 WAREHOUSE ROBOTICS",
-    "{{ROBOT_1_HEADLINE}}": "Locus Robotics Launches AI-Powered \"Locus Array\" for Fully Autonomous Warehouse Fulfillment",
-    "{{ROBOT_1_SUMMARY}}": "Locus Robotics unveiled 'Locus Array' on May 3 — a fully autonomous order fulfillment system combining mobile robots, an integrated picking arm, and AI-powered perception that completes end-to-end warehouse workflows without any human intervention. The launch marks a significant step beyond assisted picking toward true lights-out automation. Early deployments are underway in North America, with global rollout across Europe and Asia-Pacific planned as demand for fully autonomous fulfillment accelerates.",
-    "{{ROBOT_1_URL}}": "https://roboticsandautomationnews.com/2026/05/03/locus-robotics-rolls-out-locus-array-for-end-to-end-warehouse-fulfillment/101175/",
+    "{{ROBOT_1_FLAG}}": "🏭 CHINA · INDUSTRIAL ROBOTICS",
+    "{{ROBOT_1_HEADLINE}}": "IFR: China Makes AI-Powered Robots the Core of Its 15th Five-Year Plan",
+    "{{ROBOT_1_SUMMARY}}": "The International Federation of Robotics published analysis yesterday confirming China has elevated robotics and 'embodied intelligence' to the same strategic tier as nuclear fusion in its 15th Five-Year Plan (2026–2030). Humanoid robots now access an $8.2 billion (60B yuan) National AI Industry Investment Fund. China already deploys approximately 2 million industrial robots — 4.5 times more than Japan — and accounted for 54% of all new industrial robots installed globally in 2025. The strategic gap with the rest of the world is widening rapidly.",
+    "{{ROBOT_1_URL}}": "https://ifr.org/ifr-press-releases/news/china-makes-ai-powered-robots-core-of-national-strategy",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australia and Japan Sign Landmark Pact on Defence, Energy Security and Critical Minerals",
-    "{{AUS_1_SUMMARY}}": "Prime Ministers Anthony Albanese and Japan's Sanae Takaichi signed major new agreements in Canberra on Monday, deepening cooperation on defence, energy security, and critical minerals supply chains. The deal directly targets China's dominance of rare earth production and comes as the Iran war underscores the strategic value of Australia-Japan energy ties — Australia already supplies close to half of Japan's LNG.",
-    "{{AUS_1_URL}}": "https://www.bnnbloomberg.ca/business/2026/05/04/japan-and-australia-agree-to-deepen-cooperation-on-energy-defence-and-critical-minerals/",
+    "{{AUS_1_HEADLINE}}": "Federal Budget Next Week — Earned Income Offset, EV Tax Changes and Cost-of-Living Relief Expected",
+    "{{AUS_1_SUMMARY}}": "Treasurer Jim Chalmers delivers the Federal Budget next week, with measures flagged including an 'earned income offset' for low-to-middle income earners, scrapping the EV discount, and cost-of-living relief packages. Consumer confidence sits at just 67.2 — only 15% of Australians say now is a good time for major purchases — and 61% of businesses expect bad economic conditions over the next year.",
+    "{{AUS_1_URL}}": "https://www.roymorgan.com/findings/roy-morgan-update-may-5-2026",
 
-    "{{AUS_2_HEADLINE}}": "Royal Commission on Antisemitism Opens First Public Hearings Across Australia",
-    "{{AUS_2_SUMMARY}}": "Australia's Royal Commission into antisemitism and social cohesion commenced its first public hearings on Monday, with witnesses sharing testimony about their personal experiences. The commission will take evidence from communities, educators, and institutions across the country over several months as it examines the current state of social cohesion nationally.",
+    "{{AUS_2_HEADLINE}}": "Business Confidence Hits Lowest Level Since COVID as Rate Hike Wipes Out 2025 Cuts",
+    "{{AUS_2_SUMMARY}}": "ANZ-Roy Morgan data from May 5 shows 61.3% of Australian businesses now expect bad economic conditions over the next year — the worst reading since the COVID downturn. The RBA's third consecutive hike today has undone all three 2025 cuts. Market consensus is for at least one more rise before year end. For small operators, the window to refinance or restructure debt is narrowing.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Melbourne Budget to Double Safety Officers and Turn Southbank Underpass Into 5,000m² Public Park",
-    "{{VIC_1_SUMMARY}}": "The City of Melbourne's draft 2026-27 budget proposes doubling Community Safety Officers from 11 to 22 to address rising antisocial behaviour concerns, and converting a neglected Southbank concrete underpass into a 5,000 square metre activated public space — featuring a roller rink, skate park, bouldering wall, basketball courts, and improved lighting.",
+    "{{VIC_1_HEADLINE}}": "Victorian Budget: $14M AI Adoption Fund, $30M Frankston TAFE AI Centre, $19M for Small Business",
+    "{{VIC_1_SUMMARY}}": "The state budget delivered Tuesday includes a $19 million small business support package, a $14 million AI career conversion fund to protect workers impacted by automation, and a $30 million Digital, AI and Technology TAFE Centre of Excellence being built at Chisholm Institute's Frankston campus — in Liall's backyard. Free public transport extends until end of May with half-price fares for the remainder of 2026. Budget projects a $700 million surplus in 2025-26.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🦋 EVOLUTION",
-    "{{SCI_1_HEADLINE}}": "Evolution Has Used the Same Two Genes to Build Identical Wing Patterns for 120 Million Years",
-    "{{SCI_1_SUMMARY}}": "An international team led by the University of York and Wellcome Sanger Institute has found that distantly related butterflies and moths in South American rainforests independently evolved near-identical warning colour patterns by reusing the exact same pair of genes — ivory and optix — across 120 million years. Rather than altering the genes themselves, evolution acted on genetic 'switches' that control when and where they activate. The finding challenges assumptions about evolutionary randomness, suggesting life follows more predictable genetic pathways than previously thought. Published in PLOS Biology.",
+    "{{SCI_1_FLAG}}": "⚛️ PARTICLE PHYSICS",
+    "{{SCI_1_HEADLINE}}": "LHC 'Charming Penguins' Hint at New Physics — 1-in-16,000 Chance the Result Is Just Noise",
+    "{{SCI_1_SUMMARY}}": "Physicists at CERN's Large Hadron Collider have measured B meson decays where the angle of emerging particles disagrees with the Standard Model at 4-sigma significance — roughly a 1-in-16,000 chance the result is random noise. The anomaly, accepted for Physical Review Letters and corroborated by the CMS experiment, involves quantum processes called 'charming penguin diagrams' — a name coined after a physicist lost a pub darts game at CERN in 1977. If confirmed, the discovery could reveal undiscovered particles or forces that rewrite our understanding of fundamental physics.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "When Material Costs Spike, AI Can Be Your Purchasing Manager — For Free",
-    "{{INSIGHT_BODY}}": "With inflation running at 4.6% and supply chains still absorbing the shocks of global energy disruption, small trades operators are being squeezed from both directions — rising material costs and the prospect of higher borrowing costs. AI tools integrated with supplier catalogues and invoicing platforms can now monitor price movements, generate alternative supplier comparisons, and draft purchase enquiries automatically. Tradies who've started using AI for procurement report savings of 8–15% by identifying better-priced substitutes or flagging when to buy ahead of known price rises. The investment is zero beyond a subscription you may already have — the question is whether you're putting it to work yet.",
+    "{{INSIGHT_TITLE}}": "Know Your Numbers Before the Budget Drops: How AI Can Build Your Rate-Rise Survival Plan",
+    "{{INSIGHT_BODY}}": "With the cash rate now at 4.35% and the Federal Budget landing next week, right now is the moment to run a realistic financial health check on your business. AI tools can take your last 12 months of invoices, material costs, and fuel receipts and generate a plain-English cash flow projection in minutes — flagging whether a further rate rise would tip you into difficulty and identifying which cost lines are eating the most margin. The tradies who come out the other side of a tightening cycle are the ones who see the crunch coming early. If you don't have a financial model for your business, an AI tool and a morning of data entry can change that today — well before Chalmers delivers his numbers next week.",
 
     # Fun Facts
-    "{{FACT_1}}": "A bolt of lightning is roughly five times hotter than the surface of the sun — reaching around 30,000°C — yet is only about 2–3 centimetres wide. Earth is struck by lightning approximately 1.4 billion times every year.",
-    "{{FACT_2}}": "The wingspan of a Boeing 747 is longer than the entire first flight made by the Wright Brothers — the Flyer covered just 37 metres at Kitty Hawk in 1903, while a 747's wings span 68 metres tip to tip.",
-    "{{FACT_3}}": "Australia's Anna Creek Station in South Australia is the world's largest working cattle station at around 24,000 square kilometres — bigger than Israel and roughly the size of Wales.",
+    "{{FACT_1}}": "The term 'penguin diagram' in particle physics was coined after a 1977 darts game at CERN. Physicist John Ellis lost a bet and was required to include the word 'penguin' in his next scientific paper — so he named a class of quantum loop diagrams after the bird. Nearly 50 years later, LHC scientists are still chasing 'charming penguins' for clues about new physics.",
+    "{{FACT_2}}": "When Australia decimalised its currency in 1966, Prime Minister Menzies proposed calling the new unit the 'royal.' A public vote overwhelmingly rejected it. 'Dollar' was chosen instead — making Australia one of the very few countries to name its currency by popular opinion.",
+    "{{FACT_3}}": "Garlic turns blue-green when it meets acid. The sulphur compounds in garlic react with trace amino acids in the presence of vinegar or lemon juice, producing harmless blue-green pigments. It alarms cooks every time, but it is completely safe to eat — and happens routinely when pickling.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the carpenter win the workplace safety award?",
-    "{{JOKE_PUNCHLINE}}": "He was the only one on site who knew when to stop — and he never cut corners.",
+    "{{JOKE_SETUP}}": "Why do scaffolders always seem so calm under pressure?",
+    "{{JOKE_PUNCHLINE}}": "They're used to working at every level.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Price is what you pay. Value is what you get.\"",
-    "{{CLOSING_ATTR}}": "Warren Buffett",
-    "{{CLOSING_MESSAGE}}": "A wet Tuesday in Carrum Downs — showers all day, so keep the gear covered and the van stocked. The big moment this afternoon is the RBA rate decision at 2:30pm: if they hike to 4.35%, start thinking about what that means for any variable-rate finance you're carrying. Wednesday and Thursday look heavier still — up to 20mm — so plan your outdoor jobs around the forecast. Good luck out there, Liall.",
+    "{{CLOSING_QUOTE}}": "\"In the middle of every difficulty lies opportunity.\"",
+    "{{CLOSING_ATTR}}": "Albert Einstein",
+    "{{CLOSING_MESSAGE}}": "Heavy rain today and through Thursday — keep outdoor jobs pushed to the back half of the week and the wet-weather kit in the van. The big move this morning is the RBA hike to 4.35%, officially wiping out last year's rate cuts: run the numbers on your variable-rate finance today. On a brighter note, yesterday's Victorian budget earmarked a $30 million AI and tech training centre at Frankston — practically next door. The tools are coming to you, Liall. Make it count.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
