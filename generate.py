@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Thursday, 07 May 2026",
+    "{{DATE}}": "Friday, 08 May 2026",
 
-    # Weather — Carrum Downs VIC, 5-day outlook from Thu 7 May
-    "{{WEATHER_1}}": "Thu 7 May · Showers · 12°C",
-    "{{WEATHER_2}}": "Fri 8 May · Rain · 12°C",
-    "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "Sat 9 May · Partly cloudy · 15°C",
+    # Weather — Carrum Downs VIC, 5-day outlook from Fri 8 May
+    "{{WEATHER_1}}": "Fri 8 May · Rain clearing · 12°C",
+    "{{WEATHER_2}}": "Sat 9 May · Partly cloudy · 15°C",
+    "{{WEATHER_2_CLASS}}": "",
+    "{{WEATHER_3}}": "Sun 10 May · Mostly sunny · 16°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "Sun 10 May · Partly cloudy · 14°C",
-    "{{WEATHER_5}}": "Mon 11 May · Showers · 16°C",
-    "{{WEATHER_ALERT}}": "⚠ Wet Thu–Fri · clearing Sat",
+    "{{WEATHER_4}}": "Mon 11 May · Partly cloudy · 17°C",
+    "{{WEATHER_5}}": "Tue 12 May · Budget Day · Showers · 16°C",
+    "{{WEATHER_ALERT}}": "⚠ Cold polar blast · clearing Sat",
 
     # World
     "{{WORLD_1_FLAG}}": "🌐 MIDDLE EAST",
-    "{{WORLD_1_HEADLINE}}": "Trump Pauses Hormuz Escorts as US–Iran Peace Talks Gain Ground",
-    "{{WORLD_1_SUMMARY}}": "President Trump has halted the US Navy escort operation through the Strait of Hormuz, citing 'great progress' in negotiations with Iran mediated by Pakistan. Talks now cover freedom of navigation, Iran's nuclear programme, sanctions, and long-term peace. Iran's Foreign Ministry says it continues to exchange diplomatic messages via Islamabad but has not yet issued a formal response to Washington's latest proposal.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/5/6/has-the-us-accepted-irans-demand-to-settle-hormuz-first-nuclear-later",
+    "{{WORLD_1_HEADLINE}}": "1,600 Ships Stranded in Hormuz as Trump Pauses 'Project Freedom' Amid Iran Deal Talks",
+    "{{WORLD_1_SUMMARY}}": "After only two escorted transits, President Trump suspended his 'Project Freedom' naval escort operation through the Strait of Hormuz, saying talks with Iran via Pakistani intermediaries show 'great progress.' Roughly 1,600 vessels remain stranded in or near the strait, and Tehran is reviewing the latest US proposal. Iran's Foreign Minister says navigation will normalise only once sanctions are lifted and the conflict formally ends. Global oil markets are on edge — the next 72 hours may be decisive.",
+    "{{WORLD_1_URL}}": "https://www.nbcnews.com/world/iran/us-iran-war-trump-open-hormuz-attacks-ships-ceasefire-rcna343604",
 
-    "{{WORLD_2_FLAG}}": "🇸🇾 INTERNATIONAL SECURITY",
-    "{{WORLD_2_HEADLINE}}": "IS Group Families Repatriated to Australia After Years in Syrian Detention",
-    "{{WORLD_2_SUMMARY}}": "Four women and nine children connected to IS fighters have arrived in Australia after years held in Syria's al-Roj camp. The Labor government says it played no role in organising the repatriation and that monitoring arrangements are already in place. The move follows years of legal pressure from families and human rights advocates.",
-    "{{WORLD_2_URL}}": "https://www.sbs.com.au/news/podcast-episode/families-linked-to-is-group-fighters-returning-to-australia-midday-news-bulletin-6-may-2026/dmc0tq29z",
+    "{{WORLD_2_FLAG}}": "🇮🇳 SOUTH ASIA",
+    "{{WORLD_2_HEADLINE}}": "One Year Since India's Operation Sindoor — Analysts Warn 2026 Conflict Risks Remain High",
+    "{{WORLD_2_SUMMARY}}": "May 7 marked the one-year anniversary of India's Operation Sindoor — the strikes into Pakistan-administered territory triggered by the Pahalgam terror attack that killed 26 civilians. A fragile ceasefire has held since May 10, 2025, but a new analysis in The Diplomat warns the space for restraint is narrowing. Indian officials have signalled that any future terrorist incident traced to Pakistan will be met with a firm, decisive response — raising the stakes of any next crisis considerably.",
+    "{{WORLD_2_URL}}": "https://thediplomat.com/2026/05/a-year-after-operation-sindoor-rising-risks-and-deepening-instability/",
 
     # Economics
-    "{{ECON_1_FLAG}}": "📋 FEDERAL BUDGET",
-    "{{ECON_1_HEADLINE}}": "Federal Budget on 12 May — What Small Business Is Watching For",
-    "{{ECON_1_SUMMARY}}": "Treasurer Chalmers delivers the federal budget in five days with a stated focus on restraint rather than large-scale stimulus. Expected measures include cost-of-living relief for households, an earned income offset for lower earners, and targeted support for energy costs. Small businesses are watching closely for any changes to instant asset write-off thresholds, fuel-related relief, and whether the excise cut beyond June 30 gets extended.",
-    "{{ECON_1_URL}}": "https://www.smartcompany.com.au/federal-budget-2026/federal-budget-what-we-know-businesses-2026-fuel-negative-gearing-capital-gains/",
+    "{{ECON_1_FLAG}}": "🏦 INTEREST RATES",
+    "{{ECON_1_HEADLINE}}": "RBA Lifts to 4.35% for Third Time in 2026 — CBA Says Pause Likely, Westpac Sees August Rise",
+    "{{ECON_1_SUMMARY}}": "One day after the Reserve Bank's third consecutive rate rise to 4.35%, the major banks are split on what comes next. CBA economists say the bank now has room to pause, with 2026 GDP growth revised down to 1.3%. Westpac still forecasts another rise in August. For small businesses on variable-rate equipment finance or overdraft facilities, yesterday's increase flows through in weeks. Now is the moment to review your loan structure before the next move.",
+    "{{ECON_1_URL}}": "https://www.commbank.com.au/articles/newsroom/2026/05/rba-may-interest-rates-cba-economists-analysis.html",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL PRICES",
-    "{{ECON_2_HEADLINE}}": "Petrol at 181c/L, Diesel at 246c/L — Excise Cut Expires June 30",
-    "{{ECON_2_SUMMARY}}": "National average petrol sits at 181.3 cents per litre and diesel at 245.9 cents per litre this week. The government's fuel excise cut — halved to 26.3 cents — expires June 30. With Hormuz tensions still unresolved, a post-July price snapback is a real risk. Any jobs or contracts running past July should factor in a fuel cost contingency right now.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL & BUDGET",
+    "{{ECON_2_HEADLINE}}": "Fuel Excise Relief Ends June 30 — Petrol Near $2/L, Diesel Near $3/L as Budget Week Arrives",
+    "{{ECON_2_SUMMARY}}": "The government's halved fuel excise (saving 26.3c per litre) expires June 30 — and Treasurer Chalmers has signalled Tuesday's budget will be restrained, making an extension far from certain. National petrol averages are hovering around $1.95–$2.10 per litre and diesel near $2.80–$3.00 per litre, driven by ongoing Hormuz supply disruption. For trades businesses with ongoing or multi-month contracts, now is the time to factor a fuel contingency into your pricing.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "💰 AI INVESTMENT",
-    "{{TECH_1_HEADLINE}}": "Google Commits Up to $40 Billion to Anthropic in Landmark AI Deal",
-    "{{TECH_1_SUMMARY}}": "Google is investing $10 billion immediately into Anthropic — maker of the Claude AI — at a $350 billion valuation, with up to $30 billion more tied to performance targets. Anthropic has also committed to spend $200 billion on Google Cloud over five years, cementing Google as its primary compute partner. The deal mirrors a separate Amazon agreement, and signals that the big AI labs are locking in infrastructure partnerships for the decade ahead.",
-    "{{TECH_1_URL}}": "https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/",
+    "{{TECH_1_FLAG}}": "🤖 AI MODELS",
+    "{{TECH_1_HEADLINE}}": "OpenAI Releases GPT-5.5 Instant — 52% Fewer Hallucinations, 30% More Concise — New Default for All Users",
+    "{{TECH_1_SUMMARY}}": "OpenAI's GPT-5.5 Instant became the default model for all ChatGPT users this week, replacing GPT-5.3 Instant. The update delivers 52.5% fewer hallucinated claims on high-stakes topics — medicine, law, and finance — and cuts response length by around 30% without losing accuracy. Enhanced memory personalisation using past conversations and connected Gmail is rolling out to paid users first. If you use ChatGPT as a regular business tool, the day-to-day quality has genuinely improved.",
+    "{{TECH_1_URL}}": "https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/",
 
-    "{{TECH_2_FLAG}}": "📉 AI & WORKFORCE",
-    "{{TECH_2_HEADLINE}}": "Snap Cuts 1,000 Jobs — CEO Credits AI for Letting Smaller Teams Match Previous Output",
-    "{{TECH_2_SUMMARY}}": "Snap CEO Evan Spiegel announced the layoff of approximately 1,000 employees, explicitly citing 'rapid advancements in artificial intelligence' that allow smaller teams to deliver the same work. The move signals what is becoming a structural shift across the tech sector: AI is not just a product — it is actively reshaping how many people a business needs to operate.",
+    "{{TECH_2_FLAG}}": "📊 AI ADOPTION",
+    "{{TECH_2_HEADLINE}}": "Microsoft: 17.8% of Working-Age Population Now Uses AI — Developer Code Commits Up 78% Year-on-Year",
+    "{{TECH_2_SUMMARY}}": "Microsoft's 2026 State of Global AI Diffusion report, published yesterday, found AI usage among the global working-age population grew from 16.3% to 17.8% in a single quarter. Developers are leading the charge — global software commits jumped 78% year-on-year, the fastest productivity acceleration the industry has recorded. For businesses still holding off on AI adoption, the productivity gap with early users is widening every quarter.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🏭 HUMANOID PRODUCTION",
-    "{{ROBOT_1_HEADLINE}}": "1X Opens America's First Vertically Integrated Humanoid Robot Factory in California",
-    "{{ROBOT_1_SUMMARY}}": "Norwegian robotics firm 1X has opened its NEO Factory in Hayward, California — a 58,000 sq ft facility producing up to 10,000 general-purpose NEO home robots in 2026, scaling to 100,000 by 2027. First customer deliveries are planned for this year. Early-access pre-orders sold out within five days of launch, and every NEO rolls off the line powered by NVIDIA's Jetson Thor chip.",
-    "{{ROBOT_1_URL}}": "https://www.globenewswire.com/news-release/2026/04/30/3285118/0/en/1x-opens-neo-factory-in-hayward-ca-americas-first-vertically-integrated-humanoid-robot-factory-with-consumer-shipments-planned-for-2026.html",
+    "{{ROBOT_1_FLAG}}": "🤖 INDUSTRIAL AI · USA",
+    "{{ROBOT_1_HEADLINE}}": "Boston Dynamics Embeds Google's Gemini AI Into Spot Robots — Units Now Continuously Learn Their Sites",
+    "{{ROBOT_1_SUMMARY}}": "Boston Dynamics has integrated Google DeepMind's Gemini Robotics ER 1.6 model into its Spot robots and Orbit enterprise platform under a new AIVI-Learning system. Deployed robots now continuously build and update a detailed AI model of the specific facility they work in — going far beyond pre-programmed routines to genuine on-site adaptive intelligence. For industrial operators, the shift from 'robot as tool' to 'robot as learning system' is no longer theoretical.",
+    "{{ROBOT_1_URL}}": "https://www.therobotreport.com/boston-dynamics-and-google-deepmind-are-using-gemini-to-make-spot-smarter/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "RBA Rate Now 4.35% — What Yesterday's Hike Means for Business Borrowers",
-    "{{AUS_1_SUMMARY}}": "The day after the RBA's third 2026 rate hike, CBA economists say the bank now has room to pause — but Westpac still forecasts further rises in June and August. For small businesses on variable-rate equipment finance or business loans, the increase flows through within weeks. The key action item: review your loan structure before rates move again.",
-    "{{AUS_1_URL}}": "https://www.commbank.com.au/articles/newsroom/2026/05/rba-may-interest-rates-cba-economists-analysis.html",
+    "{{AUS_1_HEADLINE}}": "Australia Scraps Most of $45B Inland Rail — Project Halted North of Parkes Ahead of Tuesday's Budget",
+    "{{AUS_1_SUMMARY}}": "The government announced Wednesday it is placing an indefinite hold on all Inland Rail construction north of Parkes, NSW, after an independent review found the Melbourne-to-Brisbane route would cost at least $45 billion — nearly three times the original $16.4B estimate. The completed southern leg from Melbourne to Parkes proceeds; $1.75B is redirected to alternative freight rail and shipping initiatives. The scrapping lands just days before Tuesday's May 12 federal budget.",
+    "{{AUS_1_URL}}": "https://www.bloomberg.com/news/articles/2026-05-06/australia-scraps-much-of-inland-rail-project-to-save-budget-cash",
 
-    "{{AUS_2_HEADLINE}}": "Royal Commission on Antisemitism Hears Jewish Families Fear for Children's Safety",
-    "{{AUS_2_SUMMARY}}": "The Royal Commission on Antisemitism and Social Cohesion heard from Jewish parents who say they fear for their children's safety following the Bondi terror attack, with accounts of racial slurs and antisemitic abuse at schools and sporting venues. The commission is examining community safety, social cohesion, and the legal framework for addressing hate-based harm.",
+    "{{AUS_2_HEADLINE}}": "Polar Blast Delivers Coldest May Conditions in Decades to Southeast Australia",
+    "{{AUS_2_SUMMARY}}": "A deep polar airmass swept Victoria, NSW, and Tasmania this week, bringing snow to alpine areas above 600 metres and overnight frost warnings across regional Victoria. Ski resorts recorded temperatures as low as −6°C for the first time this season. The cold snap is lifting through Friday, with clearing conditions and milder temperatures expected from Saturday.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "South Side Festival Kicks Off in Frankston Tomorrow — Ten Nights of Arts and Culture",
-    "{{VIC_1_SUMMARY}}": "The South Side Festival launches in Frankston from 8–17 May 2026, bringing ten nights of theatre, circus, dance, light installations, and community events. Neon Fields transforms Beauty Park into a glowing wonderland this weekend (8–10 May). Frankston is right next door — a solid option if you're looking for something on with the family this Saturday.",
+    "{{VIC_1_HEADLINE}}": "Melbourne Writers Festival Wraps Up This Sunday — Free Sessions Still Available at CBD Venues",
+    "{{VIC_1_SUMMARY}}": "Melbourne Writers Festival closes Sunday May 10 with sessions across the city covering AI, technology, economics, culture, and the future of work. Most events are free or low-cost and walk-in friendly. If the polar blast in Carrum Downs has you looking for a reason to get into the city this Saturday, this is a solid one.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔬 CANCER TREATMENT · UK",
-    "{{SCI_1_HEADLINE}}": "Nine-Week Immunotherapy Before Surgery Keeps Bowel Cancer Patients Relapse-Free for Nearly 3 Years",
-    "{{SCI_1_SUMMARY}}": "A UK-led trial (NEOPRISM-CRC) gave 32 patients with stage 2–3 colorectal cancer nine weeks of pembrolizumab immunotherapy before surgery — replacing the usual post-surgery chemotherapy. After 33 months of follow-up, not one patient has relapsed. Standard care sees roughly 25% of similar patients relapse within three years. Results were presented at the American Association for Cancer Research annual meeting in San Diego.",
+    "{{SCI_1_FLAG}}": "💊 METABOLISM · USA",
+    "{{SCI_1_HEADLINE}}": "Scientists Engineer a 'Trojan Horse' GLP-1 Drug That Smuggles a Metabolic Activator Directly Into Fat Cells",
+    "{{SCI_1_SUMMARY}}": "Researchers have developed a next-generation weight-loss approach: instead of simply mimicking GLP-1 and GIP gut hormones, they engineered molecules that use those hormones as a delivery vehicle — a Trojan horse — to smuggle a powerful metabolic activator directly into fat and liver cells. Early results show faster and more sustained fat loss than standard GLP-1 drugs alone. With Ozempic-era medications already reshaping healthcare, food consumption patterns, and global agriculture, this points toward a considerably more potent second generation already in development.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "How a Daily 10-Minute AI Debrief Can Save Your Business Thousands Each Year",
-    "{{INSIGHT_BODY}}": "At the end of a long day on site, the last thing you want is more admin. But five to ten minutes dictating a site summary into an AI tool — what was done, what is outstanding, any variations or extra charges — can automatically generate job notes, update your quote, flag uncharged extras, and draft a client message. Over a year, tradespeople who build this habit typically recover thousands in missed charges and cut after-hours paperwork by hours each week. The entry point is low: voice memos on your phone, dropped into an AI, with a simple prompt to structure the debrief. It turns the drive home into productive time without a single minute of typing.",
+    "{{INSIGHT_TITLE}}": "From Site Photo to Client Report in 30 Seconds — The AI Habit Most Tradies Are Still Missing",
+    "{{INSIGHT_BODY}}": "Every tradie takes photos on site — but most of those images die in a camera roll filed somewhere in May. Those exact photos, fed into an AI with a simple prompt — 'here's today's site photo, write a short progress report for my client' — produce a clean, professional update in under a minute. Add a line about what's still to come, and you have a ready-to-send client message that took thirty seconds. Clients who receive regular updates are far less likely to dispute invoices, delay payment, or leave a negative review. For a business running multiple jobs at once, this habit alone can transform client relationships — and it costs nothing but a moment and a prompt. Try it on your next site visit today.",
 
     # Fun Facts
-    "{{FACT_1}}": "Flamingos are born white — they turn pink from the carotenoid pigments in the brine shrimp and algae they eat. A flamingo kept away from its natural diet will gradually fade back to white, which is why zoos add special carotenoid supplements to their food.",
-    "{{FACT_2}}": "Sound travels through steel approximately 15 times faster than through air — 5,120 m/s versus 343 m/s. Early railway workers would press an ear to the track to detect approaching trains long before the noise reached them through the air.",
-    "{{FACT_3}}": "The smell of rain — petrichor — can be detected by the human nose at concentrations as low as 0.4 parts per trillion. The scent comes from geosmin, a compound released by soil bacteria when raindrops hit dry earth and kick microscopic particles into the air.",
+    "{{FACT_1}}": "The Great Wall of China was built using a mortar made from sticky rice flour mixed with calcium carbonate — and it turned out to be one of the toughest building materials ever recorded. Some sections constructed with this mix have resisted earthquake damage and tree root penetration for over 1,500 years, still outperforming lime-only mortar of the same era.",
+    "{{FACT_2}}": "Australia is the only inhabited continent with no active volcanoes on its mainland — a result of sitting near the centre of its tectonic plate rather than on a boundary. The nearest active volcanoes in Australian sovereign territory are on Heard Island and McDonald Islands, roughly 4,000 kilometres southwest in the Southern Ocean.",
+    "{{FACT_3}}": "Titanium is the ninth most abundant element in Earth's crust, yet costs around 30 times more per kilogram to produce than steel — because extracting pure titanium requires heating ore to 850°C under a blanket of magnesium gas to strip away oxygen and chlorine one molecule at a time. The production process has not changed fundamentally since it was developed in 1940.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the glazier always win every negotiation?",
-    "{{JOKE_PUNCHLINE}}": "He made his position perfectly clear.",
+    "{{JOKE_SETUP}}": "Why did the plasterer never lose an argument?",
+    "{{JOKE_PUNCHLINE}}": "He always knew how to smooth things over.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Success is not final, failure is not fatal: it is the courage to continue that counts.\"",
-    "{{CLOSING_ATTR}}": "Winston Churchill",
-    "{{CLOSING_MESSAGE}}": "Cool and showery in Carrum Downs today — 12°C with rain expected through Friday before it clears for the weekend. Yesterday's RBA hike to 4.35% is now the new baseline, so if you have variable-rate finance, today is a good day to run the numbers. The federal budget lands in five days — know your margins before Chalmers sets the tone. Have a strong Thursday, Liall.",
+    "{{CLOSING_QUOTE}}": "\"Opportunity is missed by most people because it is dressed in overalls and looks like work.\"",
+    "{{CLOSING_ATTR}}": "Thomas A. Edison",
+    "{{CLOSING_MESSAGE}}": "Cold and wet in Carrum Downs this Friday morning — the polar blast is still sitting but should lift by tomorrow. Yesterday's RBA hike to 4.35% is the new rate environment, Tuesday is budget day, and fuel excise relief expires June 30. Three things worth getting in front of today before the week closes. Have a strong Friday, Liall.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
