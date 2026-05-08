@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Friday, 08 May 2026",
+    "{{DATE}}": "Saturday, 09 May 2026",
 
-    # Weather — Carrum Downs VIC, 5-day outlook from Fri 8 May
-    "{{WEATHER_1}}": "Fri 8 May · Rain clearing · 12°C",
-    "{{WEATHER_2}}": "Sat 9 May · Partly cloudy · 15°C",
+    # Weather — Carrum Downs VIC, 5-day outlook from Sat 9 May
+    "{{WEATHER_1}}": "Sat 9 May · Partly cloudy · 14°C/8°C",
+    "{{WEATHER_2}}": "Sun 10 May · Mostly cloudy · 14°C/7°C",
     "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "Sun 10 May · Mostly sunny · 16°C",
-    "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "Mon 11 May · Partly cloudy · 17°C",
-    "{{WEATHER_5}}": "Tue 12 May · Budget Day · Showers · 16°C",
-    "{{WEATHER_ALERT}}": "⚠ Cold polar blast · clearing Sat",
+    "{{WEATHER_3}}": "Mon 11 May · Showers · 15°C/8°C",
+    "{{WEATHER_3_CLASS}}": "rain",
+    "{{WEATHER_4}}": "Tue 12 May · Budget Day · 14°C/9°C",
+    "{{WEATHER_5}}": "Wed 13 May · Mostly cloudy · 15°C/8°C",
+    "{{WEATHER_ALERT}}": "❄ Cold start — polar blast easing",
 
     # World
-    "{{WORLD_1_FLAG}}": "🌐 MIDDLE EAST",
-    "{{WORLD_1_HEADLINE}}": "1,600 Ships Stranded in Hormuz as Trump Pauses 'Project Freedom' Amid Iran Deal Talks",
-    "{{WORLD_1_SUMMARY}}": "After only two escorted transits, President Trump suspended his 'Project Freedom' naval escort operation through the Strait of Hormuz, saying talks with Iran via Pakistani intermediaries show 'great progress.' Roughly 1,600 vessels remain stranded in or near the strait, and Tehran is reviewing the latest US proposal. Iran's Foreign Minister says navigation will normalise only once sanctions are lifted and the conflict formally ends. Global oil markets are on edge — the next 72 hours may be decisive.",
-    "{{WORLD_1_URL}}": "https://www.nbcnews.com/world/iran/us-iran-war-trump-open-hormuz-attacks-ships-ceasefire-rcna343604",
+    "{{WORLD_1_FLAG}}": "🦠 HEALTH — GLOBAL",
+    "{{WORLD_1_HEADLINE}}": "Hantavirus Cruise Ship Arrives at Canary Islands as Death Toll Reaches Three",
+    "{{WORLD_1_SUMMARY}}": "The MV Hondius, a cruise ship with eight confirmed or suspected hantavirus cases and three deaths on board, is due to dock in Tenerife today after weeks at sea. Spain agreed to take the vessel after Cape Verde was unable to handle the medical response. All 147 passengers and crew will be examined, isolated, and repatriated. The Andes strain of hantavirus — linked to rodents in South America — is unusually capable of limited human-to-human transmission, making international health authorities closely watch for spread.",
+    "{{WORLD_1_URL}}": "https://www.npr.org/2026/05/08/g-s1-121055/spain-readies-for-evacuations",
 
-    "{{WORLD_2_FLAG}}": "🇮🇳 SOUTH ASIA",
-    "{{WORLD_2_HEADLINE}}": "One Year Since India's Operation Sindoor — Analysts Warn 2026 Conflict Risks Remain High",
-    "{{WORLD_2_SUMMARY}}": "May 7 marked the one-year anniversary of India's Operation Sindoor — the strikes into Pakistan-administered territory triggered by the Pahalgam terror attack that killed 26 civilians. A fragile ceasefire has held since May 10, 2025, but a new analysis in The Diplomat warns the space for restraint is narrowing. Indian officials have signalled that any future terrorist incident traced to Pakistan will be met with a firm, decisive response — raising the stakes of any next crisis considerably.",
-    "{{WORLD_2_URL}}": "https://thediplomat.com/2026/05/a-year-after-operation-sindoor-rising-risks-and-deepening-instability/",
+    "{{WORLD_2_FLAG}}": "🇺🇸 MIDDLE EAST — US/IRAN",
+    "{{WORLD_2_HEADLINE}}": "US-Iran Ceasefire Teeters After Navy Ships Intercepted Iranian Missiles in Hormuz",
+    "{{WORLD_2_SUMMARY}}": "Three US warships were targeted by Iranian missiles, drones and small assault boats during a Strait of Hormuz transit on 7 May — all threats were destroyed and no ships were hit. The Pentagon launched self-defence strikes on Iranian ports in response. Secretary of State Rubio said on 8 May he expected Tehran's response to a peace deal proposal by end of day, adding: 'The red line is clear — threaten Americans and you'll get blown up.' Global oil prices remain elevated as the standoff continues.",
+    "{{WORLD_2_URL}}": "https://www.npr.org/2026/05/07/g-s1-120978/u-s-military-intercepted-iran-attacks-navy-ships-hormuz",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🏦 INTEREST RATES",
-    "{{ECON_1_HEADLINE}}": "RBA Lifts to 4.35% for Third Time in 2026 — CBA Says Pause Likely, Westpac Sees August Rise",
-    "{{ECON_1_SUMMARY}}": "One day after the Reserve Bank's third consecutive rate rise to 4.35%, the major banks are split on what comes next. CBA economists say the bank now has room to pause, with 2026 GDP growth revised down to 1.3%. Westpac still forecasts another rise in August. For small businesses on variable-rate equipment finance or overdraft facilities, yesterday's increase flows through in weeks. Now is the moment to review your loan structure before the next move.",
-    "{{ECON_1_URL}}": "https://www.commbank.com.au/articles/newsroom/2026/05/rba-may-interest-rates-cba-economists-analysis.html",
+    "{{ECON_1_FLAG}}": "🇦🇺 BUDGET 2026",
+    "{{ECON_1_HEADLINE}}": "Budget Night on Tuesday: $20K Asset Write-Off and Fuel Excise Extension in Frame for Small Business",
+    "{{ECON_1_SUMMARY}}": "Treasurer Jim Chalmers hands down the 2026-27 Federal Budget on Tuesday 12 May. Two key measures are on small business watch lists: whether the $20,000 instant asset write-off is made permanent (it expires 30 June if not extended), and whether the 26.3 c/litre fuel excise cut is extended beyond June 30. A $10.7 billion Australian Fuel Security and Resilience Package — including a permanent government-owned fuel reserve — has already been confirmed as a budget item.",
+    "{{ECON_1_URL}}": "https://dynamicbusiness.com/featured/what-is-in-the-2026-federal-budget-for-small-business-here-is-what-we-know-so-far.html",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL & BUDGET",
-    "{{ECON_2_HEADLINE}}": "Fuel Excise Relief Ends June 30 — Petrol Near $2/L, Diesel Near $3/L as Budget Week Arrives",
-    "{{ECON_2_SUMMARY}}": "The government's halved fuel excise (saving 26.3c per litre) expires June 30 — and Treasurer Chalmers has signalled Tuesday's budget will be restrained, making an extension far from certain. National petrol averages are hovering around $1.95–$2.10 per litre and diesel near $2.80–$3.00 per litre, driven by ongoing Hormuz supply disruption. For trades businesses with ongoing or multi-month contracts, now is the time to factor a fuel contingency into your pricing.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL PRICES",
+    "{{ECON_2_HEADLINE}}": "ACCC: Retail Petrol and Diesel Trending Lower — But Excise Cut Expiry on 30 June Still a Watchpoint",
+    "{{ECON_2_SUMMARY}}": "The ACCC's latest weekly fuel monitoring shows retail petrol and diesel prices continuing to fall as the April fuel excise cut flows through. The 26.3 c/litre reduction runs until 30 June 2026, with ACCC monitoring weekly to ensure the savings pass to consumers and businesses. With the Middle East crisis keeping wholesale prices volatile, whether that cut gets extended in Tuesday's budget could make a material difference to trades transport costs heading into winter.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI MODELS",
-    "{{TECH_1_HEADLINE}}": "OpenAI Releases GPT-5.5 Instant — 52% Fewer Hallucinations, 30% More Concise — New Default for All Users",
-    "{{TECH_1_SUMMARY}}": "OpenAI's GPT-5.5 Instant became the default model for all ChatGPT users this week, replacing GPT-5.3 Instant. The update delivers 52.5% fewer hallucinated claims on high-stakes topics — medicine, law, and finance — and cuts response length by around 30% without losing accuracy. Enhanced memory personalisation using past conversations and connected Gmail is rolling out to paid users first. If you use ChatGPT as a regular business tool, the day-to-day quality has genuinely improved.",
-    "{{TECH_1_URL}}": "https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/",
+    "{{TECH_1_FLAG}}": "🤖 AI — GOVERNANCE",
+    "{{TECH_1_HEADLINE}}": "Google, Microsoft and xAI Sign Up for US Government AI Safety Testing Programme",
+    "{{TECH_1_SUMMARY}}": "Three of the world's biggest AI developers have committed to having their models tested by the US Department of Commerce's Centre for AI Standards and Innovation (CAISI). The White House is simultaneously drafting an executive order to vet all new AI models before public release — a process compared to FDA drug approval. The framework marks a significant shift from voluntary commitments to structured government oversight of AI deployment.",
+    "{{TECH_1_URL}}": "https://www.euronews.com/next/2026/05/08/tech-giants-agree-to-us-government-ai-testing",
 
-    "{{TECH_2_FLAG}}": "📊 AI ADOPTION",
-    "{{TECH_2_HEADLINE}}": "Microsoft: 17.8% of Working-Age Population Now Uses AI — Developer Code Commits Up 78% Year-on-Year",
-    "{{TECH_2_SUMMARY}}": "Microsoft's 2026 State of Global AI Diffusion report, published yesterday, found AI usage among the global working-age population grew from 16.3% to 17.8% in a single quarter. Developers are leading the charge — global software commits jumped 78% year-on-year, the fastest productivity acceleration the industry has recorded. For businesses still holding off on AI adoption, the productivity gap with early users is widening every quarter.",
+    "{{TECH_2_FLAG}}": "📊 AI — ADOPTION",
+    "{{TECH_2_HEADLINE}}": "Microsoft Report: 17.8% of Workers Use AI — But Frontier Businesses Are Pulling 3.5x Further Ahead",
+    "{{TECH_2_SUMMARY}}": "Microsoft's 2026 Global AI Diffusion Report, published Thursday, finds just 17.8% of working-age people worldwide use AI tools — but a sharp divide is opening. Firms in the top 5% of AI adoption now deploy it 3.5 times more per worker than the average, up from 2x a year ago. Software developer employment rose 4% year-on-year, suggesting AI is augmenting skilled workers rather than replacing them. The productivity gap between early adopters and the rest is widening every quarter.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🤖 INDUSTRIAL AI · USA",
-    "{{ROBOT_1_HEADLINE}}": "Boston Dynamics Embeds Google's Gemini AI Into Spot Robots — Units Now Continuously Learn Their Sites",
-    "{{ROBOT_1_SUMMARY}}": "Boston Dynamics has integrated Google DeepMind's Gemini Robotics ER 1.6 model into its Spot robots and Orbit enterprise platform under a new AIVI-Learning system. Deployed robots now continuously build and update a detailed AI model of the specific facility they work in — going far beyond pre-programmed routines to genuine on-site adaptive intelligence. For industrial operators, the shift from 'robot as tool' to 'robot as learning system' is no longer theoretical.",
-    "{{ROBOT_1_URL}}": "https://www.therobotreport.com/boston-dynamics-and-google-deepmind-are-using-gemini-to-make-spot-smarter/",
+    "{{ROBOT_1_FLAG}}": "🇨🇳 ROBOTICS — FUNDING",
+    "{{ROBOT_1_HEADLINE}}": "China's ROBOTERA Closes $200M+ Round, Already Delivering Humanoids to 10+ Logistics Centres",
+    "{{ROBOT_1_SUMMARY}}": "ROBOTERA, backed by SF Group, Alibaba, Geely Capital and Hillhouse among others, has closed a funding round exceeding $200 million USD — following a separate RMB 1 billion strategic round in March. The company is already operating humanoid robots across 10+ logistics centres through partnerships with China Post and SF Group, reports 300%+ growth in Q2 2026, and says 95% of core components are built in-house. Deployments are now expanding from logistics into automotive and electronics manufacturing globally.",
+    "{{ROBOT_1_URL}}": "https://www.roboticstomorrow.com/news/2026/05/08/robotera-raises-over-usd-200-million-in-new-round-led-by-sf-group-hsg-and-idg-capital/26534/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australia Scraps Most of $45B Inland Rail — Project Halted North of Parkes Ahead of Tuesday's Budget",
-    "{{AUS_1_SUMMARY}}": "The government announced Wednesday it is placing an indefinite hold on all Inland Rail construction north of Parkes, NSW, after an independent review found the Melbourne-to-Brisbane route would cost at least $45 billion — nearly three times the original $16.4B estimate. The completed southern leg from Melbourne to Parkes proceeds; $1.75B is redirected to alternative freight rail and shipping initiatives. The scrapping lands just days before Tuesday's May 12 federal budget.",
-    "{{AUS_1_URL}}": "https://www.bloomberg.com/news/articles/2026-05-06/australia-scraps-much-of-inland-rail-project-to-save-budget-cash",
+    "{{AUS_1_HEADLINE}}": "Three 'ISIS Brides' Arrested at Sydney and Melbourne Airports on Slavery and Terror Charges",
+    "{{AUS_1_SUMMARY}}": "Three Australian women returning from Syria — among 13 Australians, including nine children, repatriated from former Islamic State territory — were arrested by counter-terrorism teams at Sydney and Melbourne airports on Thursday. Two women arrested in Melbourne face slavery-related charges; a third arrested in Sydney faces terrorism charges including membership of a proscribed organisation. The returns follow years of government negotiations.",
+    "{{AUS_1_URL}}": "https://www.washingtonpost.com/world/2026/05/07/isis-brides-australia-syria-islamic-state/cf4efcd2-49e9-11f1-a119-857cd2bf4fd4_story.html",
 
-    "{{AUS_2_HEADLINE}}": "Polar Blast Delivers Coldest May Conditions in Decades to Southeast Australia",
-    "{{AUS_2_SUMMARY}}": "A deep polar airmass swept Victoria, NSW, and Tasmania this week, bringing snow to alpine areas above 600 metres and overnight frost warnings across regional Victoria. Ski resorts recorded temperatures as low as −6°C for the first time this season. The cold snap is lifting through Friday, with clearing conditions and milder temperatures expected from Saturday.",
+    "{{AUS_2_HEADLINE}}": "Inland Rail Scrapped North of Parkes After $45 Billion Cost Blowout",
+    "{{AUS_2_SUMMARY}}": "The Albanese government has cancelled the northern section of the Inland Rail project — originally designed to connect Melbourne to Brisbane — after costs blew out from $16.4 billion to more than $45 billion, a 450% increase. The Melbourne-to-Parkes southern section will still be completed by 2027, enabling double-stacked freight trains to run between Melbourne and Perth via Parkes.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Melbourne Writers Festival Wraps Up This Sunday — Free Sessions Still Available at CBD Venues",
-    "{{VIC_1_SUMMARY}}": "Melbourne Writers Festival closes Sunday May 10 with sessions across the city covering AI, technology, economics, culture, and the future of work. Most events are free or low-cost and walk-in friendly. If the polar blast in Carrum Downs has you looking for a reason to get into the city this Saturday, this is a solid one.",
+    "{{VIC_1_HEADLINE}}": "Melbourne Marks 125 Years Since First Federal Parliament with Free Events at Royal Exhibition Building",
+    "{{VIC_1_SUMMARY}}": "Today — 9 May 2026 — marks exactly 125 years since Australia's first Federal Parliament opened at Melbourne's Royal Exhibition Building in Carlton Gardens. Free public events run 12pm–5pm today and tomorrow, featuring building tours, historical exhibitions, Charles Nuttall's famous 1901 painting of the opening ceremony (not publicly displayed since 2001), and the original State Landau Coach. A good excuse to get into the city if the cold weather permits.",
 
     # Science
-    "{{SCI_1_FLAG}}": "💊 METABOLISM · USA",
-    "{{SCI_1_HEADLINE}}": "Scientists Engineer a 'Trojan Horse' GLP-1 Drug That Smuggles a Metabolic Activator Directly Into Fat Cells",
-    "{{SCI_1_SUMMARY}}": "Researchers have developed a next-generation weight-loss approach: instead of simply mimicking GLP-1 and GIP gut hormones, they engineered molecules that use those hormones as a delivery vehicle — a Trojan horse — to smuggle a powerful metabolic activator directly into fat and liver cells. Early results show faster and more sustained fat loss than standard GLP-1 drugs alone. With Ozempic-era medications already reshaping healthcare, food consumption patterns, and global agriculture, this points toward a considerably more potent second generation already in development.",
+    "{{SCI_1_FLAG}}": "🔬 PHYSICS — UK",
+    "{{SCI_1_HEADLINE}}": "Universe's Fundamental Constants Are Precisely Tuned to Allow Life — Right Down to How Blood Flows in Cells",
+    "{{SCI_1_SUMMARY}}": "Researchers at Queen Mary University of London have published evidence that the Universe's fundamental constants — including Planck's constant and the charge of an electron — sit within an extraordinarily narrow range that allows liquids to flow correctly inside living cells. Even a few percent shift in these values would make blood too thick, water too sticky, or cellular motion impossible. Published 8 May, the work extends the 'fine-tuning' argument from nuclear reactions inside stars all the way down to the biochemistry of the cell — suggesting life's existence depends on a precise balance written into the deepest physics of the cosmos.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "From Site Photo to Client Report in 30 Seconds — The AI Habit Most Tradies Are Still Missing",
-    "{{INSIGHT_BODY}}": "Every tradie takes photos on site — but most of those images die in a camera roll filed somewhere in May. Those exact photos, fed into an AI with a simple prompt — 'here's today's site photo, write a short progress report for my client' — produce a clean, professional update in under a minute. Add a line about what's still to come, and you have a ready-to-send client message that took thirty seconds. Clients who receive regular updates are far less likely to dispute invoices, delay payment, or leave a negative review. For a business running multiple jobs at once, this habit alone can transform client relationships — and it costs nothing but a moment and a prompt. Try it on your next site visit today.",
+    "{{INSIGHT_TITLE}}": "Your Supplier Relationships Are a Business Asset — AI Can Help You Manage Them Like One",
+    "{{INSIGHT_BODY}}": "Most trades operators know their top suppliers by feel — who's reliable, who stretches lead times, who's quietly crept up on price. But with material costs volatile and supply chains unpredictable heading into the back half of 2026, gut feel isn't enough. AI tools can now scan your purchase history — invoices, emails, delivery dockets — and build a plain-language supplier scorecard in minutes: average lead times, price variance over six months, where the biggest gaps are. A prompt like 'compare my three main supply contacts on price and delivery reliability across the last 12 months' can surface patterns you'd never spot manually. That kind of insight doesn't need a purchasing manager — it needs a habit. Start with your most-used supplier, feed in the data you have, and ask what story it tells.",
 
     # Fun Facts
-    "{{FACT_1}}": "The Great Wall of China was built using a mortar made from sticky rice flour mixed with calcium carbonate — and it turned out to be one of the toughest building materials ever recorded. Some sections constructed with this mix have resisted earthquake damage and tree root penetration for over 1,500 years, still outperforming lime-only mortar of the same era.",
-    "{{FACT_2}}": "Australia is the only inhabited continent with no active volcanoes on its mainland — a result of sitting near the centre of its tectonic plate rather than on a boundary. The nearest active volcanoes in Australian sovereign territory are on Heard Island and McDonald Islands, roughly 4,000 kilometres southwest in the Southern Ocean.",
-    "{{FACT_3}}": "Titanium is the ninth most abundant element in Earth's crust, yet costs around 30 times more per kilogram to produce than steel — because extracting pure titanium requires heating ore to 850°C under a blanket of magnesium gas to strip away oxygen and chlorine one molecule at a time. The production process has not changed fundamentally since it was developed in 1940.",
+    "{{FACT_1}}": "A cloud, despite looking light and airy, typically weighs around 500 tonnes — roughly equivalent to 100 adult elephants. The water droplets that make up a cloud are so tiny and spread across such a vast volume that rising air currents support the weight. A large storm cloud can weigh millions of tonnes.",
+    "{{FACT_2}}": "Tooth enamel is the hardest substance the human body produces — rating 5 on the Mohs hardness scale, comparable to a steel file. But the cells that form it (ameloblasts) die before the tooth erupts from the gum, meaning enamel can never regenerate once worn or cracked. There is no biological fallback once it is gone.",
+    "{{FACT_3}}": "The dot over a lowercase letter 'i' or 'j' is called a 'tittle' — a term used in English typography for centuries. It appears in the Biblical phrase 'not one jot or tittle shall pass from the law', where 'jot' referred to the smallest Hebrew letter and 'tittle' to the smallest mark within a letter.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the plasterer never lose an argument?",
-    "{{JOKE_PUNCHLINE}}": "He always knew how to smooth things over.",
+    "{{JOKE_SETUP}}": "Why do boilermakers make terrible liars?",
+    "{{JOKE_PUNCHLINE}}": "Everything they say is under pressure.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Opportunity is missed by most people because it is dressed in overalls and looks like work.\"",
-    "{{CLOSING_ATTR}}": "Thomas A. Edison",
-    "{{CLOSING_MESSAGE}}": "Cold and wet in Carrum Downs this Friday morning — the polar blast is still sitting but should lift by tomorrow. Yesterday's RBA hike to 4.35% is the new rate environment, Tuesday is budget day, and fuel excise relief expires June 30. Three things worth getting in front of today before the week closes. Have a strong Friday, Liall.",
+    "{{CLOSING_QUOTE}}": "\"Success usually comes to those who are too busy to be looking for it.\"",
+    "{{CLOSING_ATTR}}": "Henry David Thoreau",
+    "{{CLOSING_MESSAGE}}": "A cold Saturday in Carrum Downs — but a significant one. Today marks exactly 125 years since Australia's first Federal Parliament opened at the Royal Exhibition Building in Melbourne, with free public events running from noon. Budget night is Tuesday, the fuel excise cut expiry is ticking, and a hantavirus-hit cruise ship is docking in the Canary Islands. Stay warm, keep an eye on Tuesday's budget, and make the most of the weekend, Liall.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
