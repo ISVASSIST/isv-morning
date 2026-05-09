@@ -1,4 +1,3 @@
-
 DATE: Tuesday, 29 April 2026
 SCIENCE: NASA's Curiosity rover detects potential DNA building blocks in ancient clay-rich Martian rocks, published April 28 2026
 FACT: The Strait of Hormuz is only 33 kilometres wide at its narrowest point, yet through it flows roughly 20% of all the world's traded oil — making it the single most economically critical stretch of water on the planet.
@@ -150,4 +149,15 @@ FACT: The dot over a lowercase letter 'i' or 'j' is called a 'tittle' — a term
 JOKE: Why do boilermakers make terrible liars?
 INSIGHT: Your Supplier Relationships Are a Business Asset — AI Can Help You Manage Them Like One
 QUOTE: "Success usually comes to those who are too busy to be looking for it." — Henry David Thoreau
+---
+
+DATE: Sunday, 10 May 2026
+SCIENCE: Scientists discover microscopic pond ciliate with genetic code that breaks universal DNA stop codon rules — Earlham Institute, published 7 May 2026
+ROBOTICS: Figure AI scales BotQ factory to one humanoid robot per hour, 24x throughput improvement, 12,000 units/year target — May 2026
+FACT: Copper pipes have been used in plumbing for at least 4,500 years — a functioning copper pipe system was found in the Pyramid of Sahure, Egypt, dating to ~2,500 BC, over 1,000 years before the first Olympic Games.
+FACT: The original 1972 Pong arcade cabinet failed at its first test installation within days — not from a technical fault but because the coin slot jammed from being too full of quarters. It generated $40 on opening night (roughly $300 today).
+FACT: Stainless steel is self-repairing — chromium in the alloy forms an invisible oxide passive layer just nanometres thick that continuously regenerates if scratched or worn. Discovered accidentally by metallurgist Harry Brearley in Sheffield in 1913.
+JOKE: Why did the tradie ring his mum on Mother's Day from the job site?
+INSIGHT: How AI Can Help You Win Government Work — What Changes When the Contracts Get Bigger
+QUOTE: "The way to get started is to quit talking and begin doing." — Walt Disney
 ---
