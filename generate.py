@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Monday, 11 May 2026",
+    "{{DATE}}": "Tuesday, 12 May 2026",
 
-    # Weather — Carrum Downs VIC, 5-day outlook from Mon 11 May
-    "{{WEATHER_1}}": "Mon 11 May · Cloudy · 16°C/8°C",
-    "{{WEATHER_2}}": "Tue 12 May · Drizzle · 14°C/11°C",
+    # Weather — Carrum Downs VIC, 5-day outlook from Tue 12 May
+    "{{WEATHER_1}}": "Tue 12 May · Cloudy/Showers · 20°C/12°C",
+    "{{WEATHER_2}}": "Wed 13 May · Sun→Showers PM · 24°C/12°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "Wed 13 May · Fog → Sunny · 17°C/7°C",
+    "{{WEATHER_3}}": "Thu 14 May · Partly Cloudy · 17°C/9°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "Thu 14 May · Mostly Sunny · 18°C/7°C",
-    "{{WEATHER_5}}": "Fri 15 May · Sunny · 18°C/8°C",
-    "{{WEATHER_ALERT}}": "🌧 Drizzle Tue · ☀️ Clears Wed",
+    "{{WEATHER_4}}": "Fri 15 May · Showers · 14°C/9°C",
+    "{{WEATHER_5}}": "Sat 16 May · Mostly Cloudy · 15°C/8°C",
+    "{{WEATHER_ALERT}}": "🌧 Showers Today & Wed PM",
 
     # World
-    "{{WORLD_1_FLAG}}": "🌍 UKRAINE",
-    "{{WORLD_1_HEADLINE}}": "Russia-Ukraine Three-Day Ceasefire Expires This Morning — Guns Expected to Resume",
-    "{{WORLD_1_SUMMARY}}": "The US-brokered ceasefire covering Russia's Victory Day weekend — 9 to 11 May — formally expires this morning. Both sides exchanged 1,000 prisoners during the truce. Trump called it \"the beginning of the end\" of the four-year war, but Russian officials stressed the pause was temporary only. Negotiators meet today to determine whether a longer pause — or any pathway to a permanent settlement — is achievable. Markets and energy traders are watching closely.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/5/8/trump-announces-three-day-ceasefire-in-russia-ukraine-war",
+    "{{WORLD_1_FLAG}}": "🇮🇷 IRAN / US",
+    "{{WORLD_1_HEADLINE}}": "Trump Calls Iran's Peace Response 'Totally Unacceptable' as Hormuz Crisis Reaches Three Months",
+    "{{WORLD_1_SUMMARY}}": "President Trump has declared Iran's latest response to a US peace proposal 'totally unacceptable,' deepening uncertainty around whether a ceasefire is achievable. The Strait of Hormuz has been disrupted since late February — through which roughly 20% of globally traded oil flows — with US forces actively blockading Iranian shipping. Fuel markets remain volatile and diplomacy is stalling, with sources reporting Trump is now more seriously considering a return to direct military operations.",
+    "{{WORLD_1_URL}}": "https://www.cbsnews.com/live-updates/iran-war-trump-us-attacks-qeshm-island-ceasefire/",
 
-    "{{WORLD_2_FLAG}}": "🌍 MIDDLE EAST",
-    "{{WORLD_2_HEADLINE}}": "US Navy Opens Fire on Iranian Tankers After Armed Exchange in Strait of Hormuz",
-    "{{WORLD_2_SUMMARY}}": "US naval forces fired on two Iranian oil tankers following an exchange of fire with Iranian forces in the Strait of Hormuz — the waterway through which roughly 20% of all globally traded oil flows. Iran is under a US-enforced naval blockade as food prices surge and its currency collapses. The UAE separately reported a fresh Iranian missile and drone attack over the weekend. The escalation has renewed global concern about oil supply disruption.",
-    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/middleeast",
+    "{{WORLD_2_FLAG}}": "🕊️ IRAN",
+    "{{WORLD_2_HEADLINE}}": "Nobel Peace Laureate Narges Mohammadi Hospitalised After Collapsing in Iranian Prison",
+    "{{WORLD_2_SUMMARY}}": "Iranian human rights activist and 2023 Nobel Peace Prize winner Narges Mohammadi has been transferred to a Tehran hospital after collapsing in prison more than a week ago. International human rights groups are demanding her immediate release. Mohammadi received the Nobel Prize for her decades-long fight against the oppression of women in Iran and remains imprisoned despite sustained global pressure.",
+    "{{WORLD_2_URL}}": "https://www.democracynow.org/2026/5/11/headlines",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🇦🇺 BUDGET NIGHT",
-    "{{ECON_1_HEADLINE}}": "Federal Budget Tomorrow Night — Watch the Instant Asset Write-Off and the $150 Small Biz Energy Rebate",
-    "{{ECON_1_SUMMARY}}": "Treasurer Jim Chalmers delivers the 2026-27 budget Tuesday evening. Pre-confirmed: a $150 energy rebate for small businesses and the $10.7bn Fuel Security Package. The key watch for small operators is whether the $20,000 instant asset write-off gets made permanent — it expires 30 June. COSBOA is pushing for the small business tax rate to drop from 25% to 20%. Pre-budget leaks also suggest a 30% baseline tax on trust distributions, which could hit family business structures.",
-    "{{ECON_1_URL}}": "https://www.smartcompany.com.au/federal-budget-2026/federal-budget-what-we-know-businesses-2026-fuel-negative-gearing-capital-gains/",
+    "{{ECON_1_FLAG}}": "🇦🇺 BUDGET 2026",
+    "{{ECON_1_HEADLINE}}": "$20K Instant Asset Write-Off Made Permanent in Tonight's Federal Budget — Big Win for Trades",
+    "{{ECON_1_SUMMARY}}": "Treasurer Jim Chalmers' 2026-27 budget, handed down tonight, makes the $20,000 instant asset write-off a permanent fixture of the tax system — ending over a decade of annual extensions that created uncertainty for small business investment planning. Trades operators under $10M turnover can now instantly deduct eligible tools, equipment, and tech purchases under $20K, rather than depreciating over years. No more June 30 scrambles to qualify.",
+    "{{ECON_1_URL}}": "https://www.smartcompany.com.au/federal-budget-2026/budget-2026-20000-instant-asset-write-off-become-permanent/",
 
-    "{{ECON_2_FLAG}}": "🏦 RATES",
-    "{{ECON_2_HEADLINE}}": "RBA Raises Cash Rate to 4.35% — Third Straight Hike Fully Reverses Last Year's Rate Cuts",
-    "{{ECON_2_SUMMARY}}": "The Reserve Bank lifted its cash rate to 4.35% at its May meeting, fully unwinding the 2025 easing cycle. Inflation sits at 4.6% — its highest since September 2023 — driven by energy costs and Middle East supply disruptions. The RBA has flagged stagflation risk if shocks persist. For small businesses, higher borrowing costs now stack on top of elevated fuel and materials prices heading into a traditionally slower winter period.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL",
+    "{{ECON_2_HEADLINE}}": "Diesel Eases to $2.65/L as Halved Fuel Excise Continues — Budget Adds $10B Security Package",
+    "{{ECON_2_SUMMARY}}": "Diesel has fallen from a $3.26/litre April peak to around $2.65/litre, helped by the government's temporary excise halving to 26.3 cents per litre (running until June 30). Tonight's budget also announces a $10 billion fuel security package including a government-owned 1-billion-litre emergency reserve of diesel and aviation fuel. Fleet-heavy operators should watch for the July decision on whether excise relief is extended into the new financial year.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "💡 AI & WORK",
-    "{{TECH_1_HEADLINE}}": "AI Is Restructuring Jobs, Not Eliminating Them — Software Dev Employment Up 4% Amid AI Surge",
-    "{{TECH_1_SUMMARY}}": "New CNN analysis published Sunday finds AI is automating specific tasks within roles rather than replacing workers outright. US software developer employment rose 4% year-on-year in Q1 2026 as global AI adoption reached 17.8% of the working-age population. For trades operators, the lesson is the same: AI is most likely to absorb the administrative burden — quoting, scheduling, compliance docs — leaving the skilled site work untouched. The question is whether you let it work for you, or watch a competitor do it first.",
-    "{{TECH_1_URL}}": "https://www.cnn.com/2026/05/10/tech/ai-taking-jobs",
+    "{{TECH_1_FLAG}}": "🪟 WINDOWS",
+    "{{TECH_1_HEADLINE}}": "Windows 11 May 2026 Update Rolls Out Today — AI Agent Monitoring, Xbox Mode, Security Hardening",
+    "{{TECH_1_SUMMARY}}": "Microsoft's May 2026 Windows 11 update, rolling out today, adds AI agent monitoring in the Taskbar — letting users see which AI processes are actively running on-device — alongside a new Xbox gaming mode, improved File Explorer performance, expanded archive format support, and tightened driver security policies. The AI monitoring feature is a practical addition for businesses running agentic tools, making it easier to track what AI is doing in the background.",
+    "{{TECH_1_URL}}": "https://www.msn.com/en-us/news/other/windows-11-may-2026-update-pairs-new-features-with-ai-rethink/gm-GMCB6A6D01",
 
-    "{{TECH_2_FLAG}}": "📱 AI HARDWARE",
-    "{{TECH_2_HEADLINE}}": "Qualcomm CEO: The Smartphone Era Is Ending — AI Agents Will Run Your Personal 'Ecosystem'",
-    "{{TECH_2_SUMMARY}}": "Qualcomm's CEO told Fortune this weekend that the smartphone-centric world is giving way to an interconnected 'ecosystem of you': AI-powered glasses, smart earbuds, and a persistent AI agent tying everything together. The company is already working with OpenAI, Meta, and other major players on undisclosed wearable devices. The vision: less phone-in-pocket, more always-on AI assistant that's aware of your environment and context — all day, hands-free.",
+    "{{TECH_2_FLAG}}": "⚠️ AI RISK",
+    "{{TECH_2_HEADLINE}}": "Study: AI Chatbots Don't Just Spread Misinformation — They Can Actively Reinforce False Beliefs",
+    "{{TECH_2_SUMMARY}}": "Research published yesterday finds AI chatbots can do more than spread incorrect information — they can actively strengthen users' existing false beliefs by subtly adapting responses to align with what the user wants to hear. The practical takeaway for anyone using AI tools in business: treat AI output as a first draft to verify, not a final answer — especially for quotes, compliance, and any high-stakes decisions where the cost of being confidently wrong is high.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🤖 IFR · GLOBAL",
-    "{{ROBOT_1_HEADLINE}}": "Global Industrial Robot Installations Hit All-Time High of US$16.7 Billion",
-    "{{ROBOT_1_SUMMARY}}": "The International Federation of Robotics has confirmed that the global market value of industrial robot installations reached a record US$16.7 billion, with demand accelerating across automotive, electronics, food processing, and logistics. The IFR's State of Robotics 2026 report — published Saturday — shows physical automation is no longer a future trend: manufacturers worldwide are integrating robot arms, autonomous mobile platforms, and early-stage humanoids alongside human workers in standard daily production. Australia's adoption remains below the global average but is growing.",
-    "{{ROBOT_1_URL}}": "https://ifr.org/ifr-press-releases/news/top-5-global-robotics-trends-2026",
+    "{{ROBOT_1_FLAG}}": "🏭 TESLA",
+    "{{ROBOT_1_HEADLINE}}": "Tesla Shuts Model S and X Lines at Fremont — Factory Now Converting to Optimus Humanoid Robot Production",
+    "{{ROBOT_1_SUMMARY}}": "The last Model S and Model X ever built at Tesla's Fremont factory rolled off the line on Saturday 9 May, ending a 14-year production run. The assembly space is now being converted to manufacture Optimus humanoid robots, with production targeted to begin in late July or August at a planned capacity of 1 million units per year from Fremont alone. A second Optimus factory at Gigafactory Texas targets 10 million units annually by 2027 — a pivotal moment in the shift from electric vehicles to physical AI.",
+    "{{ROBOT_1_URL}}": "https://evxl.co/2026/05/10/tesla-last-model-s-x-fremont-optimus/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Chalmers Announces $2 Billion to Unlock 65,000 New Homes Ahead of Tuesday Budget",
-    "{{AUS_1_SUMMARY}}": "Treasurer Jim Chalmers confirmed the federal budget will include $2 billion in infrastructure funding to unlock 65,000 new homes, targeting Australia's housing affordability crisis. The investment front-funds roads, water and essential services in growth corridors to accelerate land release. Labor expects the package to support thousands of additional construction trade jobs across the country as new estates are opened up faster than currently possible.",
-    "{{AUS_1_URL}}": "https://www.bloomberg.com/news/articles/2026-05-09/australia-to-tackle-unacceptable-housing-market-chalmers-says",
+    "{{AUS_1_HEADLINE}}": "Budget 2026: Tax Cut, $1K No-Receipt Deduction, Energy Rebate, Defence Surge — What's In It",
+    "{{AUS_1_SUMMARY}}": "Key measures from tonight's federal budget: the lowest income tax rate drops from 16% to 15% from 1 July; Australians can claim a flat $1,000 work-related deduction without receipts; a $150 energy rebate goes to households and small businesses; $53 billion in extra defence spending over the next decade; and a major NDIS overhaul aims to rein in annual spending that has surpassed $50 billion.",
+    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/federal-budget-2026-what-we-know-so-far/stvb6xnlz",
 
-    "{{AUS_2_HEADLINE}}": "Jewish Families Tell Antisemitism Royal Commission: 'We Fear for Our Children's Future in Australia'",
-    "{{AUS_2_SUMMARY}}": "Parents and community leaders gave emotional testimony to Australia's Royal Commission into Antisemitism and Social Cohesion, describing persistent fear for their children's safety in schools and public spaces following the Bondi terror attack. Witnesses called for stronger government protections, curriculum changes, and greater accountability for social media platforms. The commission is expected to deliver interim findings by mid-year.",
+    "{{AUS_2_HEADLINE}}": "Delta Goodrem Set for Eurovision 2026 Semi-Final 2 in Vienna on Thursday — Grand Final Saturday",
+    "{{AUS_2_SUMMARY}}": "Eurovision Song Contest 2026 opened in Vienna tonight with Semi-Final 1. Australia's Delta Goodrem competes in Semi-Final 2 on Thursday 14 May with her song Eclipse, featuring a celestial-themed staging built around a Swarovski crystal eclipse. The Grand Final is Saturday 16 May — Goodrem is among the pre-competition favourites to give Australia its best-ever Eurovision result.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Melbourne to Double Community Safety Officers and Build a 5,000 sqm Southbank Public Park",
-    "{{VIC_1_SUMMARY}}": "The City of Melbourne's draft 2026-27 budget doubles Community Safety Officers from 11 to 22, targeting antisocial behaviour and rough sleeping in the CBD. The Southbank City Road Undercroft is also set to become a 5,000 square metre public park featuring a roller rink, skate park, bouldering wall, and basketball courts. Melbourne Design Week launches Thursday 14 May, with over 400 events across two weeks celebrating the festival's 10th anniversary.",
+    "{{VIC_1_HEADLINE}}": "Victoria to Legislate the Right to Work From Home — Laws Take Effect September 2026",
+    "{{VIC_1_SUMMARY}}": "The Victorian Government will enshrine employees' right to work from home for at least two days a week into the Equal Opportunity Act, effective from 1 September 2026 — regardless of employer size, though firms with fewer than 15 staff get a delayed start of July 2027. Victoria becomes the first Australian state to make flexible work a legal right rather than just employer policy.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🧬 LONGEVITY · UNIVERSITY OF ROCHESTER",
-    "{{SCI_1_HEADLINE}}": "Scientists Transfer Naked Mole Rat's Anti-Ageing Gene Into Mice — Lifespan Extends by 4.4%",
-    "{{SCI_1_SUMMARY}}": "Researchers at the University of Rochester engineered mice to carry the naked mole rat's version of the hyaluronan synthase 2 gene — the gene behind the animal's extraordinary levels of high-molecular-weight hyaluronic acid. The result: modified mice lived 4.4% longer, with significantly less inflammation across multiple organs, better gut health, and stronger cancer resistance. Naked mole rats can live up to 41 years — nearly ten times longer than other rodents of similar size. Published Saturday in ScienceDaily.",
+    "{{SCI_1_FLAG}}": "🚀 NASA · JPL",
+    "{{SCI_1_HEADLINE}}": "NASA's Psyche Spacecraft Set to Slingshot Past Mars This Friday at Nearly 20,000 km/h",
+    "{{SCI_1_SUMMARY}}": "NASA's Psyche mission will perform a gravity-assist flyby of Mars on Friday 15 May, skimming just 4,500 km from the planet's surface to harness its gravitational pull as a free speed boost. The manoeuvre saves propellant on Psyche's 3.6-billion-kilometre journey to a metal-rich asteroid suspected to be the exposed core of a protoplanet — where it arrives in 2029. Scientists will calibrate onboard instruments using Mars as a target during the pass. Published by NASA JPL, May 10.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Your Quote Follow-Up Is a Revenue Leak — Here's How AI Plugs It",
-    "{{INSIGHT_BODY}}": "Most tradies send a quote and move on. But research consistently shows that following up just once lifts conversion rates by 20–35% — and the biggest barrier is time. AI tools like Claude or a simple automated workflow can now send a personalised follow-up message 48–72 hours after each quote, referencing the job details, offering to answer questions, and nudging the decision without you lifting a finger. For a trades business sending 10–15 quotes a week, capturing just one or two extra jobs per month at your average ticket size can clear $5,000–$15,000 per year in recovered revenue. Set it up once. Let it run.",
+    "{{INSIGHT_TITLE}}": "Budget Day 2026: The $20K Write-Off Is Now Permanent — AI Can Make Sure You Claim Every Dollar",
+    "{{INSIGHT_BODY}}": "Tonight's federal budget makes the $20,000 instant asset write-off a permanent part of the Australian tax system — a genuine win for trades operators who've spent over a decade planning around temporary annual extensions. But knowing it exists and actually capturing every eligible purchase are two different things. AI accounting tools connected to your bank feed or accounting software can automatically flag qualifying asset purchases as they happen, categorise tools, compressors, vehicles, and equipment under the threshold, and build a claim-ready itemised list for your accountant before EOFY. Set it up once and you stop leaving money on the table. With the write-off now permanent, you can also plan multi-year capital investment — buying and claiming strategically across financial years — without the annual June 30 deadline panic.",
 
     # Fun Facts
-    "{{FACT_1}}": "The word \"muscle\" comes from the Latin \"musculus\" — meaning \"little mouse\" — because Romans thought the rippling movement of a flexed muscle beneath the skin looked like a mouse moving under cloth. They used exactly the same word for both the animal and the body part.",
-    "{{FACT_2}}": "More steel is recycled every year than all other materials combined — approximately 650 million tonnes globally, at a recycling rate of around 85%. Recycling a single tonne of steel saves 1.4 tonnes of iron ore, 740 kilograms of coal, and enough energy to power a home for nearly two days.",
-    "{{FACT_3}}": "Antarctica is the world's largest desert. Most of the continent receives less than 200mm of precipitation per year — technically drier than the Sahara. Most of the snow on Antarctica doesn't fall from the sky: it blows in from the coast and gets redistributed by katabatic winds that can exceed 300 km/h.",
+    "{{FACT_1}}": "A day on Venus is longer than a year on Venus. It takes the planet 243 Earth days to complete one full rotation, but only 225 Earth days to orbit the Sun — meaning the Venusian year ends before the Venusian day does. Venus also rotates backwards relative to most planets, so the Sun rises in the west and sets in the east.",
+    "{{FACT_2}}": "The first documented computer bug was a literal insect: a moth found trapped in a relay of Harvard University's Mark II computer in 1947. Grace Hopper's team taped it into the lab logbook with the note 'First actual case of bug being found' — coining the modern use of the term in computing.",
+    "{{FACT_3}}": "Wombats are the only known animals to produce cube-shaped droppings. They use their scat to mark territory on rocks and logs, and the cubic shape prevents it rolling away — an entirely practical evolutionary adaptation to a very specific problem.",
 
     # Joke
-    "{{JOKE_SETUP}}": "A builder proudly told his accountant: 'Ten jobs on the go, booked solid for six months, just hired two new blokes.'",
-    "{{JOKE_PUNCHLINE}}": "His accountant said: 'Wonderful. Now go and collect some of the money you're owed — your account is empty.'",
+    "{{JOKE_SETUP}}": "Why do air conditioning technicians always seem so calm on the job?",
+    "{{JOKE_PUNCHLINE}}": "They know how to keep their cool under pressure.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"You have power over your mind, not outside events. Realise this, and you will find strength.\"",
-    "{{CLOSING_ATTR}}": "Marcus Aurelius",
-    "{{CLOSING_MESSAGE}}": "A significant week ahead, Liall. The federal budget lands tomorrow night — watch closely for the instant asset write-off decision and what the energy rebate means for your cost base. Foggy mornings to kick off the week but the sun pushes through by Wednesday. The Ukraine ceasefire ended this morning and the Middle East remains unpredictable. Lock in the week, follow up any open quotes, and have a strong Monday.",
+    "{{CLOSING_QUOTE}}": "\"The secret of success is to do the common thing uncommonly well.\"",
+    "{{CLOSING_ATTR}}": "John D. Rockefeller Jr.",
+    "{{CLOSING_MESSAGE}}": "Budget Day 2026, Liall — and for once it delivers something concrete: the $20K write-off is permanent, diesel is tracking down, and a $150 energy rebate is coming your way. Warm and showery week in Carrum Downs — enjoy the relative warmth before the cooler weekend arrives. NASA's Psyche spacecraft takes its Mars slingshot on Friday, and Delta Goodrem takes the Eurovision stage in Vienna on Thursday. Keep the week clean, follow up any open quotes.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
