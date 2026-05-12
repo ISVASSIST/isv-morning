@@ -183,3 +183,14 @@ JOKE: Why do air conditioning technicians always seem so calm on the job?
 INSIGHT: Budget Day 2026: The $20K Write-Off Is Now Permanent — AI Can Make Sure You Claim Every Dollar
 QUOTE: "The secret of success is to do the common thing uncommonly well." — John D. Rockefeller Jr.
 ---
+
+DATE: Wednesday, 13 May 2026
+SCIENCE: Hidden molecular switch (glycerol-sensing enzyme TNAP) in brown fat activates secondary heat-producing pathway and governs bone mineralisation — McGill University, Nature, published 11 May 2026
+ROBOTICS: SAP and Cyberwave deploy fully autonomous AI robots in live SAP logistics warehouse in St. Leon-Rot, Germany — box folding, packaging, shipping fulfilment without human supervision — published May 12 2026
+FACT: Sharks have existed on Earth for approximately 450 million years — swimming in ancient seas roughly 100 million years before the first trees appeared on land. They have survived all five mass extinction events, including the asteroid impact that ended the non-avian dinosaurs.
+FACT: Nintendo was founded in 1889 — 96 years before Super Mario Bros. — as a playing card company handcrafting traditional Japanese Hanafuda cards in Kyoto. It is the world's oldest gaming company still operating today.
+FACT: Umami — the fifth taste alongside sweet, sour, salty, and bitter — was only scientifically identified in 1908 by Japanese chemist Kikunae Ikeda, who isolated glutamate from seaweed broth. Parmesan, anchovies, miso, and mushrooms are high in free glutamates.
+JOKE: Why did the old-school sparky refuse to try the new AI quoting software?
+INSIGHT: More Tradies Are Coming — Here's How AI Helps You Compete on Service, Not Just Price
+QUOTE: "It is not the strongest of the species that survives, nor the most intelligent, but the one most responsive to change." — Charles Darwin
+---
