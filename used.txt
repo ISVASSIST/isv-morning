@@ -172,3 +172,14 @@ JOKE: A builder proudly told his accountant: 'Ten jobs on the go, booked solid f
 INSIGHT: Your Quote Follow-Up Is a Revenue Leak — Here's How AI Plugs It
 QUOTE: "You have power over your mind, not outside events. Realise this, and you will find strength." — Marcus Aurelius
 ---
+
+DATE: Tuesday, 12 May 2026
+SCIENCE: NASA's Psyche spacecraft set to perform gravity-assist flyby of Mars on Friday 15 May at 4,500 km altitude — published NASA JPL, May 10 2026
+ROBOTICS: Tesla ends Model S and X production at Fremont factory, converting lines to Optimus humanoid robot manufacturing — 1M units/year target — published May 10 2026
+FACT: A day on Venus is longer than a year on Venus — 243 Earth days to rotate vs 225 Earth days to orbit the Sun; also rotates backwards so the Sun rises in the west
+FACT: The first documented computer bug was a literal moth found in Harvard's Mark II computer relay in 1947 — Grace Hopper's team taped it into the logbook, coining the modern use of the term
+FACT: Wombats are the only known animals to produce cube-shaped droppings — used to mark territory on rocks and logs without rolling away
+JOKE: Why do air conditioning technicians always seem so calm on the job?
+INSIGHT: Budget Day 2026: The $20K Write-Off Is Now Permanent — AI Can Make Sure You Claim Every Dollar
+QUOTE: "The secret of success is to do the common thing uncommonly well." — John D. Rockefeller Jr.
+---
