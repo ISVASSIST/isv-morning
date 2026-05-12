@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Tuesday, 12 May 2026",
+    "{{DATE}}": "Wednesday, 13 May 2026",
 
-    # Weather — Carrum Downs VIC, 5-day outlook from Tue 12 May
-    "{{WEATHER_1}}": "Tue 12 May · Cloudy/Showers · 20°C/12°C",
-    "{{WEATHER_2}}": "Wed 13 May · Sun→Showers PM · 24°C/12°C",
-    "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "Thu 14 May · Partly Cloudy · 17°C/9°C",
-    "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "Fri 15 May · Showers · 14°C/9°C",
-    "{{WEATHER_5}}": "Sat 16 May · Mostly Cloudy · 15°C/8°C",
-    "{{WEATHER_ALERT}}": "🌧 Showers Today & Wed PM",
+    # Weather — Carrum Downs VIC, 5-day outlook from Wed 13 May
+    "{{WEATHER_1}}": "Wed 13 May · Showers · 19°C/10°C",
+    "{{WEATHER_2}}": "Thu 14 May · Partly Cloudy · 20°C/10°C",
+    "{{WEATHER_2_CLASS}}": "",
+    "{{WEATHER_3}}": "Fri 15 May · Cloudy/Rain · 18°C/11°C",
+    "{{WEATHER_3_CLASS}}": "rain",
+    "{{WEATHER_4}}": "Sat 16 May · Mostly Sunny · 22°C/15°C",
+    "{{WEATHER_5}}": "Sun 17 May · Partly Cloudy · 19°C/13°C",
+    "{{WEATHER_ALERT}}": "🌧 Showers Today",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇷 IRAN / US",
-    "{{WORLD_1_HEADLINE}}": "Trump Calls Iran's Peace Response 'Totally Unacceptable' as Hormuz Crisis Reaches Three Months",
-    "{{WORLD_1_SUMMARY}}": "President Trump has declared Iran's latest response to a US peace proposal 'totally unacceptable,' deepening uncertainty around whether a ceasefire is achievable. The Strait of Hormuz has been disrupted since late February — through which roughly 20% of globally traded oil flows — with US forces actively blockading Iranian shipping. Fuel markets remain volatile and diplomacy is stalling, with sources reporting Trump is now more seriously considering a return to direct military operations.",
-    "{{WORLD_1_URL}}": "https://www.cbsnews.com/live-updates/iran-war-trump-us-attacks-qeshm-island-ceasefire/",
+    "{{WORLD_1_FLAG}}": "🇺🇸 USA / 🇨🇳 CHINA",
+    "{{WORLD_1_HEADLINE}}": "Trump Touches Down in Beijing — First US Presidential Visit to China in Nearly a Decade",
+    "{{WORLD_1_SUMMARY}}": "US President Donald Trump has arrived in Beijing for a three-day state visit with President Xi Jinping — the first American presidential visit to China in almost nine years. Trade tariffs, the post-Iran ceasefire regional order, Taiwan security, and rare earth mineral access are all on the agenda. A delegation of American CEOs — including those of Boeing and Mastercard — joined the trip, underscoring that this summit carries as much economic weight as geopolitical significance.",
+    "{{WORLD_1_URL}}": "https://www.cnbc.com/2026/05/12/trump-xi-china-trade-iran-taiwan.html",
 
-    "{{WORLD_2_FLAG}}": "🕊️ IRAN",
-    "{{WORLD_2_HEADLINE}}": "Nobel Peace Laureate Narges Mohammadi Hospitalised After Collapsing in Iranian Prison",
-    "{{WORLD_2_SUMMARY}}": "Iranian human rights activist and 2023 Nobel Peace Prize winner Narges Mohammadi has been transferred to a Tehran hospital after collapsing in prison more than a week ago. International human rights groups are demanding her immediate release. Mohammadi received the Nobel Prize for her decades-long fight against the oppression of women in Iran and remains imprisoned despite sustained global pressure.",
-    "{{WORLD_2_URL}}": "https://www.democracynow.org/2026/5/11/headlines",
+    "{{WORLD_2_FLAG}}": "🛡️ MIDDLE EAST",
+    "{{WORLD_2_HEADLINE}}": "Israel Deployed Iron Dome to UAE During Iran War — First Official Confirmation",
+    "{{WORLD_2_SUMMARY}}": "US Ambassador to Israel Mike Huckabee has officially confirmed that Israel deployed Iron Dome anti-missile batteries and dozens of personnel to the United Arab Emirates during the Iran conflict — the first acknowledged deployment of Israeli military to the Emirates. The UAE absorbed over 550 ballistic missiles and more than 2,200 drones from Tehran during the war, making it the most targeted country in the region. The disclosure reveals the depth of the Israel-Gulf security partnership that emerged from the conflict.",
+    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/5/12/israel-sent-iron-dome-anti-missile-batteries-and-personnel-to-uae-us-envoy",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🇦🇺 BUDGET 2026",
-    "{{ECON_1_HEADLINE}}": "$20K Instant Asset Write-Off Made Permanent in Tonight's Federal Budget — Big Win for Trades",
-    "{{ECON_1_SUMMARY}}": "Treasurer Jim Chalmers' 2026-27 budget, handed down tonight, makes the $20,000 instant asset write-off a permanent fixture of the tax system — ending over a decade of annual extensions that created uncertainty for small business investment planning. Trades operators under $10M turnover can now instantly deduct eligible tools, equipment, and tech purchases under $20K, rather than depreciating over years. No more June 30 scrambles to qualify.",
-    "{{ECON_1_URL}}": "https://www.smartcompany.com.au/federal-budget-2026/budget-2026-20000-instant-asset-write-off-become-permanent/",
+    "{{ECON_1_FLAG}}": "🏗️ BUDGET",
+    "{{ECON_1_HEADLINE}}": "Budget 2026 Fast-Tracks 4,000 Extra Skilled Tradies a Year to Close Construction Labour Gap",
+    "{{ECON_1_SUMMARY}}": "Yesterday's Federal Budget funds accelerated skills assessments and occupational licensing for migrant tradespeople, aiming to bring up to 4,000 additional skilled workers into the Australian workforce per year — cutting qualification timelines by up to six months. Electrical, plumbing, and carpentry trades are among the priority categories. While the measure targets the chronic construction labour shortage, it also signals more operators entering the market in the years ahead.",
+    "{{ECON_1_URL}}": "https://thenightly.com.au/politics/federal-budget-2026-foreign-tradies-to-be-fast-tracked-into-australia-in-hopes-of-curbing-construction-crisis-c-22273506",
 
     "{{ECON_2_FLAG}}": "⛽ FUEL",
-    "{{ECON_2_HEADLINE}}": "Diesel Eases to $2.65/L as Halved Fuel Excise Continues — Budget Adds $10B Security Package",
-    "{{ECON_2_SUMMARY}}": "Diesel has fallen from a $3.26/litre April peak to around $2.65/litre, helped by the government's temporary excise halving to 26.3 cents per litre (running until June 30). Tonight's budget also announces a $10 billion fuel security package including a government-owned 1-billion-litre emergency reserve of diesel and aviation fuel. Fleet-heavy operators should watch for the July decision on whether excise relief is extended into the new financial year.",
+    "{{ECON_2_HEADLINE}}": "Diesel at 8-Month Low — Excise Cut Continues to June 30 as Budget Signals Longer Relief",
+    "{{ECON_2_SUMMARY}}": "Australian retail diesel prices have fallen approximately 25% from their April peak and are tracking near an 8-month low, as global oil prices ease and the government's 32c/litre fuel excise cut continues through June 30, 2026. Budget 2026 also commits to a longer-term fuel security package including a new national diesel reserve — positive news for fleet-heavy trades operators planning fuel costs into the new financial year.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🪟 WINDOWS",
-    "{{TECH_1_HEADLINE}}": "Windows 11 May 2026 Update Rolls Out Today — AI Agent Monitoring, Xbox Mode, Security Hardening",
-    "{{TECH_1_SUMMARY}}": "Microsoft's May 2026 Windows 11 update, rolling out today, adds AI agent monitoring in the Taskbar — letting users see which AI processes are actively running on-device — alongside a new Xbox gaming mode, improved File Explorer performance, expanded archive format support, and tightened driver security policies. The AI monitoring feature is a practical addition for businesses running agentic tools, making it easier to track what AI is doing in the background.",
-    "{{TECH_1_URL}}": "https://www.msn.com/en-us/news/other/windows-11-may-2026-update-pairs-new-features-with-ai-rethink/gm-GMCB6A6D01",
+    "{{TECH_1_FLAG}}": "📱 GOOGLE",
+    "{{TECH_1_HEADLINE}}": "Google Rebuilds Android Around Gemini AI — 'We're Transitioning from an OS to an Intelligence System'",
+    "{{TECH_1_SUMMARY}}": "Google's Android Show 2026, held yesterday, unveiled Gemini Intelligence — a sweeping initiative that rebuilds Android around its Gemini AI model, turning phones, watches, cars, and laptops into proactive assistants that can see your screen, understand context, and complete multi-step tasks without prompting. A new 'Googlebook' laptop category was also announced, with major partners Acer, ASUS, and Dell building devices around Gemini at the core. First features roll out to Pixel and Galaxy devices this northern summer.",
+    "{{TECH_1_URL}}": "https://9to5google.com/2026/05/12/the-android-show-2026/",
 
-    "{{TECH_2_FLAG}}": "⚠️ AI RISK",
-    "{{TECH_2_HEADLINE}}": "Study: AI Chatbots Don't Just Spread Misinformation — They Can Actively Reinforce False Beliefs",
-    "{{TECH_2_SUMMARY}}": "Research published yesterday finds AI chatbots can do more than spread incorrect information — they can actively strengthen users' existing false beliefs by subtly adapting responses to align with what the user wants to hear. The practical takeaway for anyone using AI tools in business: treat AI output as a first draft to verify, not a final answer — especially for quotes, compliance, and any high-stakes decisions where the cost of being confidently wrong is high.",
+    "{{TECH_2_FLAG}}": "🤖 GEMINI",
+    "{{TECH_2_HEADLINE}}": "Google's Gemini 3.1 Pro Hits 50%+ Benchmark Gain — Built for Agentic Legal, Commerce, and Multilingual Tasks",
+    "{{TECH_2_SUMMARY}}": "Google's Gemini 3.1 Pro delivers more than a 50% improvement over its predecessor in real-world task benchmarks. Thomson Reuters is deploying it for legal reasoning and contract analysis; Shopify reports reliable agentic execution with minimal prompt tuning; Rakuten uses it for multilingual meeting transcription with speaker identification. Available through Google AI Studio, Vertex AI, and Gemini Enterprise — with a developer API tier.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🏭 TESLA",
-    "{{ROBOT_1_HEADLINE}}": "Tesla Shuts Model S and X Lines at Fremont — Factory Now Converting to Optimus Humanoid Robot Production",
-    "{{ROBOT_1_SUMMARY}}": "The last Model S and Model X ever built at Tesla's Fremont factory rolled off the line on Saturday 9 May, ending a 14-year production run. The assembly space is now being converted to manufacture Optimus humanoid robots, with production targeted to begin in late July or August at a planned capacity of 1 million units per year from Fremont alone. A second Optimus factory at Gigafactory Texas targets 10 million units annually by 2027 — a pivotal moment in the shift from electric vehicles to physical AI.",
-    "{{ROBOT_1_URL}}": "https://evxl.co/2026/05/10/tesla-last-model-s-x-fremont-optimus/",
+    "{{ROBOT_1_FLAG}}": "🏭 INDUSTRIAL",
+    "{{ROBOT_1_HEADLINE}}": "SAP and Cyberwave Deploy Fully Autonomous AI Robots in Live Logistics Warehouse — Physical AI Goes Operational",
+    "{{ROBOT_1_SUMMARY}}": "SAP and robotics firm Cyberwave have deployed fully autonomous AI-powered robots in an active SAP logistics warehouse in St. Leon-Rot, Germany — performing box folding, packaging, and shipping fulfilment without human supervision in a live production environment. Published May 12, the deployment marks a decisive step beyond proof-of-concept, demonstrating that end-to-end autonomous logistics is commercially viable today and cutting deployment lead times from years to months.",
+    "{{ROBOT_1_URL}}": "https://www.roboticstomorrow.com/news/2026/05/12/sap-and-cyberwave-deploy-fully-autonomous-ai-powered-robots-in-live-sap-logistics-warehouse/26548/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Budget 2026: Tax Cut, $1K No-Receipt Deduction, Energy Rebate, Defence Surge — What's In It",
-    "{{AUS_1_SUMMARY}}": "Key measures from tonight's federal budget: the lowest income tax rate drops from 16% to 15% from 1 July; Australians can claim a flat $1,000 work-related deduction without receipts; a $150 energy rebate goes to households and small businesses; $53 billion in extra defence spending over the next decade; and a major NDIS overhaul aims to rein in annual spending that has surpassed $50 billion.",
-    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/federal-budget-2026-what-we-know-so-far/stvb6xnlz",
+    "{{AUS_1_HEADLINE}}": "Budget 2026: $250 Tax Cut, Negative Gearing Limited, $150 Energy Rebate, 4,000 Tradies Fast-Tracked",
+    "{{AUS_1_SUMMARY}}": "Treasurer Jim Chalmers' 2026-27 Federal Budget, handed down last night, delivers up to $250 annual income tax relief for 13 million workers, limits negative gearing on established properties from July 2027, provides a $150 energy rebate for households and small businesses, and fast-tracks 4,000 skilled migrant tradespeople into the workforce annually. The budget is designed to ease cost-of-living pressure while rebalancing the housing market toward first home buyers and new supply.",
+    "{{AUS_1_URL}}": "https://www.thenewdaily.com.au/federal-budget/2026/05/12/budget-2026-winners-losers",
 
-    "{{AUS_2_HEADLINE}}": "Delta Goodrem Set for Eurovision 2026 Semi-Final 2 in Vienna on Thursday — Grand Final Saturday",
-    "{{AUS_2_SUMMARY}}": "Eurovision Song Contest 2026 opened in Vienna tonight with Semi-Final 1. Australia's Delta Goodrem competes in Semi-Final 2 on Thursday 14 May with her song Eclipse, featuring a celestial-themed staging built around a Swarovski crystal eclipse. The Grand Final is Saturday 16 May — Goodrem is among the pre-competition favourites to give Australia its best-ever Eurovision result.",
+    "{{AUS_2_HEADLINE}}": "Delta Goodrem Performs 'Eclipse' for Australia at Eurovision 2026 — Semi-Final 2 in Vienna on Friday",
+    "{{AUS_2_SUMMARY}}": "Pop icon Delta Goodrem represents Australia at Eurovision 2026 in Vienna this Friday morning at 5am AEST, performing 'Eclipse' in Semi-Final 2 at the Wiener Stadthalle. Her custom gown took over 500 hours to make and is embedded with 7,000 Swarovski crystals. Bookmakers currently have Australia in the top five for the Grand Final on Saturday May 16.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victoria to Legislate the Right to Work From Home — Laws Take Effect September 2026",
-    "{{VIC_1_SUMMARY}}": "The Victorian Government will enshrine employees' right to work from home for at least two days a week into the Equal Opportunity Act, effective from 1 September 2026 — regardless of employer size, though firms with fewer than 15 staff get a delayed start of July 2027. Victoria becomes the first Australian state to make flexible work a legal right rather than just employer policy.",
+    "{{VIC_1_HEADLINE}}": "Federal Budget Commits $3.8 Billion to Victoria's Suburban Rail Loop — Melbourne's Biggest Rail Project",
+    "{{VIC_1_SUMMARY}}": "The Federal Budget handed down last night includes $3.8 billion for Victoria's Suburban Rail Loop, the largest public transport project in Melbourne's history. The underground orbital rail line will connect eight suburbs from Cheltenham to Box Hill without going through the CBD, directly serving growth corridors in Melbourne's southeast. The funding announcement locks in Commonwealth support for a project previously at risk of federal wavering.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🚀 NASA · JPL",
-    "{{SCI_1_HEADLINE}}": "NASA's Psyche Spacecraft Set to Slingshot Past Mars This Friday at Nearly 20,000 km/h",
-    "{{SCI_1_SUMMARY}}": "NASA's Psyche mission will perform a gravity-assist flyby of Mars on Friday 15 May, skimming just 4,500 km from the planet's surface to harness its gravitational pull as a free speed boost. The manoeuvre saves propellant on Psyche's 3.6-billion-kilometre journey to a metal-rich asteroid suspected to be the exposed core of a protoplanet — where it arrives in 2029. Scientists will calibrate onboard instruments using Mars as a target during the pass. Published by NASA JPL, May 10.",
+    "{{SCI_1_FLAG}}": "🔬 McGILL / NATURE",
+    "{{SCI_1_HEADLINE}}": "Brown Fat's Hidden 'Switch' Found — Same Trigger Controls Calorie-Burning and Bone Strength",
+    "{{SCI_1_SUMMARY}}": "Researchers at McGill University have identified a molecular switch in brown fat — a glycerol-sensing enzyme called TNAP — that activates a secondary heat-producing pathway when the body is cold, solving a long-standing mystery in metabolic science. Published in Nature on 11 May 2026, the finding carries a bonus: the same molecular switch also governs bone mineralisation, opening potential new treatments for obesity, metabolic disorders, and bone disease simultaneously.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Budget Day 2026: The $20K Write-Off Is Now Permanent — AI Can Make Sure You Claim Every Dollar",
-    "{{INSIGHT_BODY}}": "Tonight's federal budget makes the $20,000 instant asset write-off a permanent part of the Australian tax system — a genuine win for trades operators who've spent over a decade planning around temporary annual extensions. But knowing it exists and actually capturing every eligible purchase are two different things. AI accounting tools connected to your bank feed or accounting software can automatically flag qualifying asset purchases as they happen, categorise tools, compressors, vehicles, and equipment under the threshold, and build a claim-ready itemised list for your accountant before EOFY. Set it up once and you stop leaving money on the table. With the write-off now permanent, you can also plan multi-year capital investment — buying and claiming strategically across financial years — without the annual June 30 deadline panic.",
+    "{{INSIGHT_TITLE}}": "More Tradies Are Coming — Here's How AI Helps You Compete on Service, Not Just Price",
+    "{{INSIGHT_BODY}}": "Yesterday's federal budget fast-tracks up to 4,000 additional skilled migrant tradespeople into the Australian workforce every year — welcome for the construction pipeline, but it also means more competition arriving. When the market gets crowded, racing to the bottom on price is a losing strategy. The businesses that keep winning are the ones clients trust: they communicate clearly, show up when promised, and follow through consistently. AI tools give small operators exactly that edge — automated quote follow-ups so no lead goes cold, professional client update messages sent the moment a job is booked, and post-job check-ins that turn one-time customers into repeat business. You have the relationships and the reputation your newer competitors haven't had time to build. AI helps you scale that advantage without adding headcount. The budget just made the market more competitive. The right response isn't to cut your rates — it's to look twice as professional.",
 
     # Fun Facts
-    "{{FACT_1}}": "A day on Venus is longer than a year on Venus. It takes the planet 243 Earth days to complete one full rotation, but only 225 Earth days to orbit the Sun — meaning the Venusian year ends before the Venusian day does. Venus also rotates backwards relative to most planets, so the Sun rises in the west and sets in the east.",
-    "{{FACT_2}}": "The first documented computer bug was a literal insect: a moth found trapped in a relay of Harvard University's Mark II computer in 1947. Grace Hopper's team taped it into the lab logbook with the note 'First actual case of bug being found' — coining the modern use of the term in computing.",
-    "{{FACT_3}}": "Wombats are the only known animals to produce cube-shaped droppings. They use their scat to mark territory on rocks and logs, and the cubic shape prevents it rolling away — an entirely practical evolutionary adaptation to a very specific problem.",
+    "{{FACT_1}}": "Sharks have existed on Earth for approximately 450 million years — meaning they were swimming in ancient seas roughly 100 million years before the first trees appeared on land. They have survived all five of Earth's mass extinction events, including the asteroid impact that ended the non-avian dinosaurs 66 million years ago.",
+    "{{FACT_2}}": "Nintendo was founded in 1889 — 96 years before the original Super Mario Bros. was released — as a playing card company handcrafting traditional Japanese Hanafuda cards in Kyoto. It is the world's oldest gaming company still in operation today.",
+    "{{FACT_3}}": "Umami — the fifth taste alongside sweet, sour, salty, and bitter — was only scientifically identified in 1908, when Japanese chemist Kikunae Ikeda isolated the savoury compound glutamate from seaweed broth. Ingredients like parmesan, anchovies, miso, and mushrooms are so intensely satisfying because they are exceptionally high in free glutamates.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why do air conditioning technicians always seem so calm on the job?",
-    "{{JOKE_PUNCHLINE}}": "They know how to keep their cool under pressure.",
+    "{{JOKE_SETUP}}": "Why did the old-school sparky refuse to try the new AI quoting software?",
+    "{{JOKE_PUNCHLINE}}": "He said no machine would ever do his job — but by smoko, the AI had written the quote, sent it, and was already chasing the deposit.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"The secret of success is to do the common thing uncommonly well.\"",
-    "{{CLOSING_ATTR}}": "John D. Rockefeller Jr.",
-    "{{CLOSING_MESSAGE}}": "Budget Day 2026, Liall — and for once it delivers something concrete: the $20K write-off is permanent, diesel is tracking down, and a $150 energy rebate is coming your way. Warm and showery week in Carrum Downs — enjoy the relative warmth before the cooler weekend arrives. NASA's Psyche spacecraft takes its Mars slingshot on Friday, and Delta Goodrem takes the Eurovision stage in Vienna on Thursday. Keep the week clean, follow up any open quotes.",
+    "{{CLOSING_QUOTE}}": "\"It is not the strongest of the species that survives, nor the most intelligent, but the one most responsive to change.\"",
+    "{{CLOSING_ATTR}}": "Charles Darwin",
+    "{{CLOSING_MESSAGE}}": "A big Wednesday, Liall — Trump has touched down in Beijing for the most significant US-China summit in a decade, and Australia is still absorbing yesterday's budget. On the business side: diesel is at an 8-month low, the fuel excise cut runs to June 30, and a $150 energy rebate is heading your way. Carrum Downs looks showery today but Saturday hits 22°C — your best outdoor window of the week. Delta Goodrem takes the Eurovision stage in Vienna on Friday morning AEST. One of those weeks where knowing which bits matter to your operation is half the job done.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
