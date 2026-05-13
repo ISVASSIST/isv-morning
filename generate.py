@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Wednesday, 13 May 2026",
+    "{{DATE}}": "Thursday, 14 May 2026",
 
-    # Weather — Carrum Downs VIC, 5-day outlook from Wed 13 May
-    "{{WEATHER_1}}": "Wed 13 May · Showers · 19°C/10°C",
-    "{{WEATHER_2}}": "Thu 14 May · Partly Cloudy · 20°C/10°C",
+    # Weather — Carrum Downs VIC, 5-day outlook from Thu 14 May
+    "{{WEATHER_1}}": "Thu 14 May · Polar Blast Clearing · 14°C",
+    "{{WEATHER_2}}": "Fri 15 May · Partly Cloudy · 16°C",
     "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "Fri 15 May · Cloudy/Rain · 18°C/11°C",
-    "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "Sat 16 May · Mostly Sunny · 22°C/15°C",
-    "{{WEATHER_5}}": "Sun 17 May · Partly Cloudy · 19°C/13°C",
-    "{{WEATHER_ALERT}}": "🌧 Showers Today",
+    "{{WEATHER_3}}": "Sat 16 May · Cool & Dry · 16°C",
+    "{{WEATHER_3_CLASS}}": "",
+    "{{WEATHER_4}}": "Sun 17 May · Mild · 17°C",
+    "{{WEATHER_5}}": "Mon 18 May · Mild · 17°C",
+    "{{WEATHER_ALERT}}": "❄️ POLAR BLAST — COLD START",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇺🇸 USA / 🇨🇳 CHINA",
-    "{{WORLD_1_HEADLINE}}": "Trump Touches Down in Beijing — First US Presidential Visit to China in Nearly a Decade",
-    "{{WORLD_1_SUMMARY}}": "US President Donald Trump has arrived in Beijing for a three-day state visit with President Xi Jinping — the first American presidential visit to China in almost nine years. Trade tariffs, the post-Iran ceasefire regional order, Taiwan security, and rare earth mineral access are all on the agenda. A delegation of American CEOs — including those of Boeing and Mastercard — joined the trip, underscoring that this summit carries as much economic weight as geopolitical significance.",
-    "{{WORLD_1_URL}}": "https://www.cnbc.com/2026/05/12/trump-xi-china-trade-iran-taiwan.html",
+    "{{WORLD_1_FLAG}}": "🇺🇸🇨🇳 US–CHINA SUMMIT",
+    "{{WORLD_1_HEADLINE}}": "Trump and Xi Begin High-Stakes Talks in Beijing — Trade, AI Safety, Iran War and Taiwan on the Agenda",
+    "{{WORLD_1_SUMMARY}}": "US President Donald Trump arrived in Beijing Wednesday evening for a landmark state visit — the first US presidential trip to China in nearly a decade. Talks begin Thursday with Xi Jinping covering Nvidia chip exports, AI safety dialogue, Taiwan security, Iran war fallout, and rare earth access. Trump was accompanied by Elon Musk, Apple's Tim Cook, and Nvidia's Jensen Huang, signalling the summit's heavy commercial dimension alongside its geopolitical stakes.",
+    "{{WORLD_1_URL}}": "https://www.cnbc.com/2026/05/13/trump-china-xi-beijing-meeting-ceos.html",
 
-    "{{WORLD_2_FLAG}}": "🛡️ MIDDLE EAST",
-    "{{WORLD_2_HEADLINE}}": "Israel Deployed Iron Dome to UAE During Iran War — First Official Confirmation",
-    "{{WORLD_2_SUMMARY}}": "US Ambassador to Israel Mike Huckabee has officially confirmed that Israel deployed Iron Dome anti-missile batteries and dozens of personnel to the United Arab Emirates during the Iran conflict — the first acknowledged deployment of Israeli military to the Emirates. The UAE absorbed over 550 ballistic missiles and more than 2,200 drones from Tehran during the war, making it the most targeted country in the region. The disclosure reveals the depth of the Israel-Gulf security partnership that emerged from the conflict.",
-    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/5/12/israel-sent-iron-dome-anti-missile-batteries-and-personnel-to-uae-us-envoy",
+    "{{WORLD_2_FLAG}}": "🦠 GLOBAL HEALTH",
+    "{{WORLD_2_HEADLINE}}": "Hantavirus Cruise Ship Outbreak Grows to 11 Cases and Three Deaths — WHO Monitoring Multi-Country Spread",
+    "{{WORLD_2_SUMMARY}}": "The Andes strain of hantavirus linked to the Dutch cruise ship MV Hondius has now infected 11 people across multiple countries, with three confirmed deaths. The vessel was travelling between Argentina and the Canary Islands when the rodent-borne virus spread, potentially through rare human-to-human transmission. All passengers have been flown home on government and military aircraft; the WHO assesses global risk as low but is actively monitoring.",
+    "{{WORLD_2_URL}}": "https://www.cidrap.umn.edu/misc-emerging-topics/hantavirus-outbreak-grows-11-cases-9-confirmed",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🏗️ BUDGET",
-    "{{ECON_1_HEADLINE}}": "Budget 2026 Fast-Tracks 4,000 Extra Skilled Tradies a Year to Close Construction Labour Gap",
-    "{{ECON_1_SUMMARY}}": "Yesterday's Federal Budget funds accelerated skills assessments and occupational licensing for migrant tradespeople, aiming to bring up to 4,000 additional skilled workers into the Australian workforce per year — cutting qualification timelines by up to six months. Electrical, plumbing, and carpentry trades are among the priority categories. While the measure targets the chronic construction labour shortage, it also signals more operators entering the market in the years ahead.",
-    "{{ECON_1_URL}}": "https://thenightly.com.au/politics/federal-budget-2026-foreign-tradies-to-be-fast-tracked-into-australia-in-hopes-of-curbing-construction-crisis-c-22273506",
+    "{{ECON_1_FLAG}}": "⛽ FUEL COSTS",
+    "{{ECON_1_HEADLINE}}": "Diesel Still Near $2.80/Litre as Fuel Excise Cut Ticks Down to June 30 — No Extension Confirmed",
+    "{{ECON_1_SUMMARY}}": "Despite easing from April's crisis peak, diesel remains near $2.70–$3.00 per litre nationally and the government's 26-cent-per-litre excise cut expires June 30 with no extension confirmed. Around 120 service stations are still reporting diesel outages — a fraction of the April peak but still disruptive for fleet-dependent trades operators. A new government fuel reserve program capable of holding up to 1 billion litres is underway but won't deliver relief until 2027.",
+    "{{ECON_1_URL}}": "https://www.ibtimes.com.au/australia-fuel-crisis-deepens-may-2026-middle-east-war-disrupts-supplies-budget-relief-kicks-1868716",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL",
-    "{{ECON_2_HEADLINE}}": "Diesel at 8-Month Low — Excise Cut Continues to June 30 as Budget Signals Longer Relief",
-    "{{ECON_2_SUMMARY}}": "Australian retail diesel prices have fallen approximately 25% from their April peak and are tracking near an 8-month low, as global oil prices ease and the government's 32c/litre fuel excise cut continues through June 30, 2026. Budget 2026 also commits to a longer-term fuel security package including a new national diesel reserve — positive news for fleet-heavy trades operators planning fuel costs into the new financial year.",
+    "{{ECON_2_FLAG}}": "🏗️ BUDGET 2026",
+    "{{ECON_2_HEADLINE}}": "$20,000 Instant Asset Write-Off Made Permanent — Small Business Gets Certainty as Budget Locks In the Threshold",
+    "{{ECON_2_SUMMARY}}": "The 2026-27 Federal Budget, handed down Tuesday night, makes the $20,000 instant asset write-off a permanent fixture for businesses with annual turnover under $10 million. Previously renewed year-to-year and subject to political uncertainty, the threshold is now a settled planning tool. Eligible equipment, tools, vehicles, and technology can be fully deducted in the year of purchase — a clear incentive to invest ahead of the new financial year.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "📱 GOOGLE",
-    "{{TECH_1_HEADLINE}}": "Google Rebuilds Android Around Gemini AI — 'We're Transitioning from an OS to an Intelligence System'",
-    "{{TECH_1_SUMMARY}}": "Google's Android Show 2026, held yesterday, unveiled Gemini Intelligence — a sweeping initiative that rebuilds Android around its Gemini AI model, turning phones, watches, cars, and laptops into proactive assistants that can see your screen, understand context, and complete multi-step tasks without prompting. A new 'Googlebook' laptop category was also announced, with major partners Acer, ASUS, and Dell building devices around Gemini at the core. First features roll out to Pixel and Galaxy devices this northern summer.",
-    "{{TECH_1_URL}}": "https://9to5google.com/2026/05/12/the-android-show-2026/",
+    "{{TECH_1_FLAG}}": "📊 STANFORD AI INDEX",
+    "{{TECH_1_HEADLINE}}": "Stanford 2026 AI Index: Generative AI Hit 53% Global Adoption in Three Years — Faster Than PC or Internet",
+    "{{TECH_1_SUMMARY}}": "Stanford University's Human-Centred AI Institute released its 2026 AI Index report Wednesday, tracking the fastest technology adoption in recorded history. Generative AI reached 53% of the global working-age population within three years of mass release — surpassing the adoption rates of the PC, the internet, and the smartphone. The estimated annual consumer value of free AI tools reached $172 billion in the US alone, with the median value per user tripling between 2025 and 2026.",
+    "{{TECH_1_URL}}": "https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report",
 
-    "{{TECH_2_FLAG}}": "🤖 GEMINI",
-    "{{TECH_2_HEADLINE}}": "Google's Gemini 3.1 Pro Hits 50%+ Benchmark Gain — Built for Agentic Legal, Commerce, and Multilingual Tasks",
-    "{{TECH_2_SUMMARY}}": "Google's Gemini 3.1 Pro delivers more than a 50% improvement over its predecessor in real-world task benchmarks. Thomson Reuters is deploying it for legal reasoning and contract analysis; Shopify reports reliable agentic execution with minimal prompt tuning; Rakuten uses it for multilingual meeting transcription with speaker identification. Available through Google AI Studio, Vertex AI, and Gemini Enterprise — with a developer API tier.",
+    "{{TECH_2_FLAG}}": "💼 TECH EMPLOYMENT",
+    "{{TECH_2_HEADLINE}}": "AI Is Eliminating Entire Job Functions at Major Firms — Restructuring Wave Accelerates as Adoption Surges",
+    "{{TECH_2_SUMMARY}}": "A wave of corporate restructuring linked directly to AI is gathering pace, with firms cutting entire departments while reporting record revenues. Cloudflare this month cut 1,100 staff — 20% of its workforce — citing a 600% surge in internal AI usage in three months while revenue hit an all-time high. Analysts caution that small businesses supplying services to white-collar sectors may face contracting demand as AI absorbs administrative, finance, HR, and marketing workloads at enterprise scale.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🏭 INDUSTRIAL",
-    "{{ROBOT_1_HEADLINE}}": "SAP and Cyberwave Deploy Fully Autonomous AI Robots in Live Logistics Warehouse — Physical AI Goes Operational",
-    "{{ROBOT_1_SUMMARY}}": "SAP and robotics firm Cyberwave have deployed fully autonomous AI-powered robots in an active SAP logistics warehouse in St. Leon-Rot, Germany — performing box folding, packaging, and shipping fulfilment without human supervision in a live production environment. Published May 12, the deployment marks a decisive step beyond proof-of-concept, demonstrating that end-to-end autonomous logistics is commercially viable today and cutting deployment lead times from years to months.",
-    "{{ROBOT_1_URL}}": "https://www.roboticstomorrow.com/news/2026/05/12/sap-and-cyberwave-deploy-fully-autonomous-ai-powered-robots-in-live-sap-logistics-warehouse/26548/",
+    "{{ROBOT_1_FLAG}}": "🇬🇧🇩🇪 UK / GERMANY",
+    "{{ROBOT_1_HEADLINE}}": "UK Startup Humanoid Lands Landmark Deal to Deploy 2,000 Robots in Schaeffler's Global Factories by 2032",
+    "{{ROBOT_1_SUMMARY}}": "Humanoid, a UK AI and robotics company founded in 2024, has signed a binding Robot-as-a-Service agreement with German precision engineering giant Schaeffler to deploy between 1,000 and 2,000 wheeled humanoid robots across global manufacturing sites. The first units go live at two German facilities in December 2026. Schaeffler simultaneously becomes Humanoid's preferred actuator supplier — one of the largest disclosed humanoid deployment agreements ever announced.",
+    "{{ROBOT_1_URL}}": "https://www.roboticstomorrow.com/news/2026/05/13/humanoid-secures-landmark-deal-with-schaeffler-to-deploy-thousands-of-humanoid-robots/26562/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Budget 2026: $250 Tax Cut, Negative Gearing Limited, $150 Energy Rebate, 4,000 Tradies Fast-Tracked",
-    "{{AUS_1_SUMMARY}}": "Treasurer Jim Chalmers' 2026-27 Federal Budget, handed down last night, delivers up to $250 annual income tax relief for 13 million workers, limits negative gearing on established properties from July 2027, provides a $150 energy rebate for households and small businesses, and fast-tracks 4,000 skilled migrant tradespeople into the workforce annually. The budget is designed to ease cost-of-living pressure while rebalancing the housing market toward first home buyers and new supply.",
-    "{{AUS_1_URL}}": "https://www.thenewdaily.com.au/federal-budget/2026/05/12/budget-2026-winners-losers",
+    "{{AUS_1_HEADLINE}}": "PM Defends Budget Tax Overhaul as Coalition Cries Foul — Negative Gearing and CGT Changes Dominate Debate",
+    "{{AUS_1_SUMMARY}}": "Treasurer Jim Chalmers' 2026-27 Federal Budget limits negative gearing to new builds from July 2027 and replaces the 50% CGT discount with cost-base indexation. The PM is defending the changes as long-overdue rebalancing of property investment incentives; the Coalition has accused the government of breaking election promises. Independent MPs are calling for revenue from the reforms to flow back to Australians as income tax relief.",
+    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/federal-budget-2026-five-minute-guide/2g0jf7tvz",
 
-    "{{AUS_2_HEADLINE}}": "Delta Goodrem Performs 'Eclipse' for Australia at Eurovision 2026 — Semi-Final 2 in Vienna on Friday",
-    "{{AUS_2_SUMMARY}}": "Pop icon Delta Goodrem represents Australia at Eurovision 2026 in Vienna this Friday morning at 5am AEST, performing 'Eclipse' in Semi-Final 2 at the Wiener Stadthalle. Her custom gown took over 500 hours to make and is embedded with 7,000 Swarovski crystals. Bookmakers currently have Australia in the top five for the Grand Final on Saturday May 16.",
+    "{{AUS_2_HEADLINE}}": "Australia to Ban Betting Ads During Live Sports Broadcasts from January 2027",
+    "{{AUS_2_SUMMARY}}": "The Albanese government has tabled its response to the landmark Murphy gambling inquiry, proposing a national ban on wagering advertisements during live sports broadcasts on free-to-air TV between 6am and 8:30pm. Restrictions also extend to social media platforms, sporting venues, and player uniforms. Legislation will be developed throughout 2026, with the full reforms taking effect from January 1, 2027.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Federal Budget Commits $3.8 Billion to Victoria's Suburban Rail Loop — Melbourne's Biggest Rail Project",
-    "{{VIC_1_SUMMARY}}": "The Federal Budget handed down last night includes $3.8 billion for Victoria's Suburban Rail Loop, the largest public transport project in Melbourne's history. The underground orbital rail line will connect eight suburbs from Cheltenham to Box Hill without going through the CBD, directly serving growth corridors in Melbourne's southeast. The funding announcement locks in Commonwealth support for a project previously at risk of federal wavering.",
+    "{{VIC_1_HEADLINE}}": "Melbourne Wakes to Coldest Morning of 2026 — Polar Blast Clears as Alpine Resorts Celebrate Early Snowfalls",
+    "{{VIC_1_SUMMARY}}": "Melbourne recorded its coldest temperature of the year as a powerful polar blast sent temperatures 4–8°C below the May average across Victoria this week. Snowfalls of up to 20 centimetres were reported at Mount Buller and Falls Creek, with ski resorts kicking off the season early. The blast is clearing Thursday morning, with milder conditions returning gradually through the weekend.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔬 McGILL / NATURE",
-    "{{SCI_1_HEADLINE}}": "Brown Fat's Hidden 'Switch' Found — Same Trigger Controls Calorie-Burning and Bone Strength",
-    "{{SCI_1_SUMMARY}}": "Researchers at McGill University have identified a molecular switch in brown fat — a glycerol-sensing enzyme called TNAP — that activates a secondary heat-producing pathway when the body is cold, solving a long-standing mystery in metabolic science. Published in Nature on 11 May 2026, the finding carries a bonus: the same molecular switch also governs bone mineralisation, opening potential new treatments for obesity, metabolic disorders, and bone disease simultaneously.",
+    "{{SCI_1_FLAG}}": "⚛️ QUANTUM PHYSICS — JAPAN",
+    "{{SCI_1_HEADLINE}}": "Japanese Scientists Crack Major Quantum Bottleneck — Instant Detection of 'W States' Advances Quantum Internet",
+    "{{SCI_1_SUMMARY}}": "Researchers in Japan have solved a critical obstacle in quantum networking by developing a photonic circuit that can instantly detect 'W states' — exotic multi-particle entangled configurations essential for quantum teleportation and distributed computing. Previous methods required exponentially many measurements as photon count increased, making them impractical at scale. The team demonstrated a stable three-photon device operating without active control, a key requirement for real-world quantum network deployment. Published 13 May 2026.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "More Tradies Are Coming — Here's How AI Helps You Compete on Service, Not Just Price",
-    "{{INSIGHT_BODY}}": "Yesterday's federal budget fast-tracks up to 4,000 additional skilled migrant tradespeople into the Australian workforce every year — welcome for the construction pipeline, but it also means more competition arriving. When the market gets crowded, racing to the bottom on price is a losing strategy. The businesses that keep winning are the ones clients trust: they communicate clearly, show up when promised, and follow through consistently. AI tools give small operators exactly that edge — automated quote follow-ups so no lead goes cold, professional client update messages sent the moment a job is booked, and post-job check-ins that turn one-time customers into repeat business. You have the relationships and the reputation your newer competitors haven't had time to build. AI helps you scale that advantage without adding headcount. The budget just made the market more competitive. The right response isn't to cut your rates — it's to look twice as professional.",
+    "{{INSIGHT_TITLE}}": "The Trades Business That Doesn't Have an AI Strategy by 2027 Will Be Competing on Price Alone",
+    "{{INSIGHT_BODY}}": "Stanford's 2026 AI Index — released this week — confirms that generative AI has reached 53% of the global population in just three years: the fastest technology adoption in recorded history. For a small trades business like ISV, this isn't just a tech headline. It means your customers, competitors, and subcontractors are all becoming AI-literate simultaneously, and the ones building AI into their operations now will have a structural cost and service advantage by 2027 that will be very hard to close on price. AI-assisted quoting, scheduling, client communication, and compliance documentation can let a three-person operation work like a six-person one — without the payroll. The businesses that figure this out in 2026 won't need to cut their rates next year. The ones that wait will have no choice.",
 
     # Fun Facts
-    "{{FACT_1}}": "Sharks have existed on Earth for approximately 450 million years — meaning they were swimming in ancient seas roughly 100 million years before the first trees appeared on land. They have survived all five of Earth's mass extinction events, including the asteroid impact that ended the non-avian dinosaurs 66 million years ago.",
-    "{{FACT_2}}": "Nintendo was founded in 1889 — 96 years before the original Super Mario Bros. was released — as a playing card company handcrafting traditional Japanese Hanafuda cards in Kyoto. It is the world's oldest gaming company still in operation today.",
-    "{{FACT_3}}": "Umami — the fifth taste alongside sweet, sour, salty, and bitter — was only scientifically identified in 1908, when Japanese chemist Kikunae Ikeda isolated the savoury compound glutamate from seaweed broth. Ingredients like parmesan, anchovies, miso, and mushrooms are so intensely satisfying because they are exceptionally high in free glutamates.",
+    "{{FACT_1}}": "Every giant panda at every zoo in the world is technically owned by China — all animals are on loan under agreements costing around USD $1 million per pair per year, and cubs born outside China are also Chinese property that must eventually be returned. Fewer than 1,900 giant pandas are known to exist worldwide.",
+    "{{FACT_2}}": "When glass fractures, the crack propagates at speeds of up to 5,500 kilometres per hour — roughly 1.5 kilometres per second. The shattering sound you hear isn't the glass breaking but air rushing into the crack. In a vacuum, glass would shatter in complete silence.",
+    "{{FACT_3}}": "The United States has more public libraries than McDonald's restaurants — around 17,000 public library branches compared to approximately 13,700 US McDonald's outlets. Total annual library visits in the US exceed attendance at all major professional sport events combined.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the old-school sparky refuse to try the new AI quoting software?",
-    "{{JOKE_PUNCHLINE}}": "He said no machine would ever do his job — but by smoko, the AI had written the quote, sent it, and was already chasing the deposit.",
+    "{{JOKE_SETUP}}": "How many estimators does it take to change a lightbulb?",
+    "{{JOKE_PUNCHLINE}}": "One. But you won't know the final cost until after it's done.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"It is not the strongest of the species that survives, nor the most intelligent, but the one most responsive to change.\"",
-    "{{CLOSING_ATTR}}": "Charles Darwin",
-    "{{CLOSING_MESSAGE}}": "A big Wednesday, Liall — Trump has touched down in Beijing for the most significant US-China summit in a decade, and Australia is still absorbing yesterday's budget. On the business side: diesel is at an 8-month low, the fuel excise cut runs to June 30, and a $150 energy rebate is heading your way. Carrum Downs looks showery today but Saturday hits 22°C — your best outdoor window of the week. Delta Goodrem takes the Eurovision stage in Vienna on Friday morning AEST. One of those weeks where knowing which bits matter to your operation is half the job done.",
+    "{{CLOSING_QUOTE}}": "\"The only limit to our realization of tomorrow will be our doubts of today.\"",
+    "{{CLOSING_ATTR}}": "Franklin D. Roosevelt",
+    "{{CLOSING_MESSAGE}}": "Thursday in Carrum Downs — the polar blast is clearing and you're heading into the back half of the working week. The federal budget landed Tuesday night and there's plenty to absorb: the $20K write-off is now permanent, the fuel excise cut runs to June 30, and negative gearing reforms kick in from 2027. Across in Beijing today, Trump and Xi are sitting down for talks that could reshape technology access and trade flows for years. Cold start this morning, but the weekend is looking mild. Get the day moving.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
