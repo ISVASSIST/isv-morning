@@ -205,3 +205,14 @@ JOKE: How many estimators does it take to change a lightbulb?
 INSIGHT: The Trades Business That Doesn't Have an AI Strategy by 2027 Will Be Competing on Price Alone
 QUOTE: "The only limit to our realization of tomorrow will be our doubts of today." — Franklin D. Roosevelt
 ---
+
+DATE: Friday, 15 May 2026
+SCIENCE: Giant squid (Architeuthis dux) confirmed in Western Australian waters for the first time via eDNA — Western Australian Museum / Schmidt Ocean Institute, Cape Range and Cloates submarine canyons, published May 2026
+ROBOTICS: Symbotic's SymBot autonomous mobile robots process 2.23 billion warehouse cases in 2025, travel 200 million miles — physical AI platform, May 13 2026
+FACT: Portland cement accounts for around 8% of global CO₂ emissions; geopolymer cements using industrial slag and fly ash could cut those emissions by up to 80% at comparable performance
+FACT: Capsaicin has no taste or smell — it binds to TRPV1 heat/pain receptors in the mouth, triggering burn signals; dairy casein proteins break the capsaicin–receptor bond, which is why milk beats water for chilli relief
+FACT: Colossus — world's first programmable digital computer, built at Bletchley Park 1943 — was deliberately destroyed on Churchill's orders after WWII to protect British codebreaking secrets; existence classified until 1975, rebuilt from scratch in 2008
+JOKE: Why do refrigeration mechanics always win arguments?
+INSIGHT: AI-Assisted Cash Flow Forecasting: The Tool Keeping Small Trades Businesses Solvent Through Volatile Times
+QUOTE: "Do not go where the path may lead, go instead where there is no path and leave a trail." — Ralph Waldo Emerson
+---
