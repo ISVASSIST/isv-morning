@@ -4,91 +4,91 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Wednesday, 20 May 2026",
+    "{{DATE}}": "Thursday, 21 May 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Wed 20 May (BOM forecast)
-    "{{WEATHER_1}}": "WED 20 · 🌧 Showers · 14°C",
-    "{{WEATHER_2}}": "THU 21 · ⛅ Clearing · 15°C",
+    # Weather — Carrum Downs VIC, 5-day from Thu 21 May (BOM forecast)
+    "{{WEATHER_1}}": "THU 21 · 🌫 Foggy start · 16°C",
+    "{{WEATHER_2}}": "FRI 22 · ⛅ Partly cloudy · 17°C",
     "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "FRI 22 · ⛅ Partly cloudy · 16°C",
+    "{{WEATHER_3}}": "SAT 23 · ☀ Mostly sunny · 19°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "SAT 23 · ☁ Mostly cloudy · 17°C",
-    "{{WEATHER_5}}": "SUN 24 · ⛅ Mild · 17°C",
-    "{{WEATHER_ALERT}}": "☔ SHOWERS TODAY",
+    "{{WEATHER_4}}": "SUN 24 · ⛅ Mild · 14°C",
+    "{{WEATHER_5}}": "MON 25 · ☁ Cloudy · 14°C",
+    "{{WEATHER_ALERT}}": "🌫 FOG RISK THIS MORNING",
 
     # World
-    "{{WORLD_1_FLAG}}": "🌍 US–IRAN",
-    "{{WORLD_1_HEADLINE}}": "Trump Was 'An Hour Away' From Striking Iran — Gulf Leaders Called It Off With 48 Hours to Spare",
-    "{{WORLD_1_SUMMARY}}": "President Trump announced Monday that he called off a planned military strike on Iran after receiving direct appeals from the leaders of Saudi Arabia, the UAE, and Qatar — who said active negotiations were underway and could produce a deal 'very acceptable' to all sides. Trump confirmed he had been 'an hour away' from launching the attack when he agreed to the pause, giving Iran 'two or three days' to reach an agreement or face a full-scale assault. Oil markets swung sharply on the news. The standoff is the most acute military flashpoint in the region since the war began — and every movement in oil futures flows directly into Australian fuel prices within days.",
-    "{{WORLD_1_URL}}": "https://www.npr.org/2026/05/19/g-s1-122762/trump-says-hes-called-off-iran-strike",
+    "{{WORLD_1_FLAG}}": "🌊 IRAN · OIL",
+    "{{WORLD_1_HEADLINE}}": "Strait of Hormuz Remains Effectively Closed — 230 Tankers Stranded as Iran Charges $1M+ Per Ship",
+    "{{WORLD_1_SUMMARY}}": "Despite the Iran war ceasefire declared in early May, the Strait of Hormuz remains 'effectively closed' according to Abu Dhabi National Oil Company CEO Sultan Al Jaber. Iran has established a new 'Persian Gulf Strait Authority' that vets and taxes ships seeking passage — with reported tolls exceeding $1 million per vessel — and 230 fully loaded oil tankers remain stranded inside the Gulf. US Secretary of State Marco Rubio called the arrangement 'unacceptable.' US forces have exchanged fire with Iranian units in the strait and disabled two Iranian tankers. Every day those ships can't move, global oil supply tightens — and Australian diesel prices will remain volatile until the blockade lifts.",
+    "{{WORLD_1_URL}}": "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
 
-    "{{WORLD_2_FLAG}}": "🇺🇸 USA",
-    "{{WORLD_2_HEADLINE}}": "Three Killed in Hate-Crime Attack on San Diego Mosque — Two Teen Suspects Found Dead",
-    "{{WORLD_2_SUMMARY}}": "Three people were killed on Sunday in a targeted attack at the Islamic Center of San Diego — the city's largest mosque. The victims included security guard Amin Abdullah, described by police as a hero who saved additional lives, and two staff members. Two teen suspects were found dead in a nearby car from self-inflicted gunshot wounds. Hate speech was scrawled on a recovered weapon and a suicide note expressing racial pride was found. Authorities are treating the attack as a hate crime. It is the deadliest mosque attack in US history.",
-    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/5/18/san-diego-police-say-responding-to-an-active-shooter-at-islamic-center",
+    "{{WORLD_2_FLAG}}": "🦠 GLOBAL HEALTH",
+    "{{WORLD_2_HEADLINE}}": "WHO Holds Emergency Briefing on Cruise Ship Hantavirus Outbreak — 8 Cases, 3 Deaths Across 23 Countries",
+    "{{WORLD_2_SUMMARY}}": "The WHO Director-General held a press conference today on the Hantavirus cluster linked to the Dutch cruise ship MV Hondius, which departed Ushuaia, Argentina in April and travelled through Antarctica and the South Atlantic. Eight cases have been confirmed — six laboratory-confirmed as Andes virus — with three deaths, a case fatality rate of 38%. Cases have since emerged in the Netherlands, South Africa, and Switzerland. The WHO assesses global public health risk as low, but this is the first documented Hantavirus outbreak aboard a ship, and health authorities in 23 countries are monitoring returned passengers.",
+    "{{WORLD_2_URL}}": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON600",
 
     # Economics
-    "{{ECON_1_FLAG}}": "📉 INFLATION",
-    "{{ECON_1_HEADLINE}}": "Australia's Inflation Cools to 4.3% — First Clear Sign the Fuel Price Surge Is Peaking",
-    "{{ECON_1_SUMMARY}}": "Australia's annual inflation rate eased to 4.3% in the 12 months to May 2026, down from 4.6% in March — the first back-to-back monthly cooling since the global energy shock began. Fuel's contribution to inflation dropped from 8.9% year-on-year in March to 6.8% in May, reflecting some stabilisation in global oil markets and the current 32¢/litre federal excise cut. For small business operators watching margins, this is cautiously good news — though the excise cut expires June 30 and the Iran standoff is keeping wholesale crude prices volatile. The RBA cash rate remains at 4.35% as the Board monitors whether the cooling holds.",
-    "{{ECON_1_URL}}": "https://www.ibtimes.com.au/australia-inflation-eases-slightly-43-may-2026-fuel-pressures-begin-moderate-1868689",
+    "{{ECON_1_FLAG}}": "💼 WAGES",
+    "{{ECON_1_HEADLINE}}": "ACTU Lifts Minimum Wage Claim to 6% — Fair Work Commission Decision Weeks Away, July 1 Effect",
+    "{{ECON_1_SUMMARY}}": "Australian unions have raised their minimum wage claim before the Fair Work Commission from 5% to 6% for the country's three million lowest-paid workers, citing rising living costs and the ongoing Iran-driven economic shock. The FWC decision is expected in early June 2026, taking effect from the first full pay period after 1 July. Employer groups are pushing back hard, pointing to payday super obligations also kicking in on 1 July and sustained margin pressure on small business. For trades operators with apprentices or casuals on award rates, a 6% rise would add hundreds of dollars a week to labour cost — on top of all the other July changes.",
+    "{{ECON_1_URL}}": "https://www.actu.org.au/media-release/unions-increase-their-minimum-wages-claim-to-6/",
 
-    "{{ECON_2_FLAG}}": "💼 WAGES",
-    "{{ECON_2_HEADLINE}}": "Fair Work Wage Review Decision Due in Weeks — 3–4% Rise Expected for Award Workers From July 1",
-    "{{ECON_2_SUMMARY}}": "The Fair Work Commission's annual wage review is entering its final phase, with a decision expected in the first or second week of June 2026, taking effect from the first full pay period on or after July 1. Based on current economic data and recent decision history, most analysts forecast an increase of 3–4% to the National Minimum Wage (currently $24.95/hr) and all modern award rates. For trades businesses with casuals, apprentices, or staff on award rates, this means a material jump in your labour cost from mid-July — one that needs to be factored into quotes you're writing this week.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL / EXCISE",
+    "{{ECON_2_HEADLINE}}": "Federal Fuel Excise Cut Expires June 30 — Six Weeks to Lock In Lower-Cost Quotes Before Triple Cost Hit",
+    "{{ECON_2_SUMMARY}}": "The Federal Government's 32 cents-per-litre excise reduction on petrol and diesel — introduced from 1 April 2026 to offset the global fuel shock — expires 30 June 2026, the same day payday superannuation obligations begin. For south-east Melbourne trades businesses running vans and equipment across multiple jobs daily, the 32c cut has been providing genuine cost relief. When it expires on 1 July — alongside higher super contributions and a likely award wage rise — the simultaneous hit will be sharp. Jobs being quoted this week for work extending into July should factor in all three changes, or risk locking in a margin hit before the ink is dry.",
 
     # Tech / AI
     "{{TECH_1_FLAG}}": "🔵 GOOGLE I/O",
-    "{{TECH_1_HEADLINE}}": "Google Unveils Gemini Spark — A Personal AI Agent That Takes Action Across Your Apps",
-    "{{TECH_1_SUMMARY}}": "At Google I/O 2026 on Tuesday, Google unveiled Gemini Spark — a new general-purpose AI agent embedded in the Gemini app that doesn't just answer questions but actively takes action across your connected apps 'on your behalf, while under your direction.' Spark can reason across Gmail, Calendar, Drive, Maps, and third-party apps, draft replies, book appointments, and manage tasks autonomously. Google also announced Gemini 3.5 Flash, priced at roughly one-third of comparable frontier models. For small business operators, this is the clearest signal yet that AI is moving from a typing assistant to an active business partner — one that can manage your admin while you're on the tools.",
-    "{{TECH_1_URL}}": "https://www.cnbc.com/2026/05/19/google-ai-ultra-gemini-spark-omni.html",
+    "{{TECH_1_HEADLINE}}": "Google Gemini 3.5 Flash Now Live — Frontier AI Speed at a Fraction of the Cost, Built for Agents",
+    "{{TECH_1_SUMMARY}}": "Launched at Google I/O on Tuesday and now generally available, Gemini 3.5 Flash is Google DeepMind's newest frontier AI model — running four times faster than comparable models at $1.50 per million input tokens. It outperforms Gemini 3.1 Pro on complex coding and agentic benchmarks and is live across the Gemini API, Google AI Studio, Vertex AI, GitHub Copilot, and the Gemini app. For small business owners using AI tools for quotes, job summaries, or client emails, this represents a meaningful drop in cost-per-use. Frontier-level AI is no longer something that requires a subscription premium to access.",
+    "{{TECH_1_URL}}": "https://www.marktechpost.com/2026/05/20/google-introduces-gemini-3-5-flash-at-i-o-2026-a-faster-and-cheaper-model-for-ai-agents-and-coding/",
 
-    "{{TECH_2_FLAG}}": "💰 AI FUNDING",
-    "{{TECH_2_HEADLINE}}": "Anthropic Closing $30 Billion Round at $900 Billion+ Valuation — Would Overtake OpenAI as Most Valuable Private AI Company",
-    "{{TECH_2_SUMMARY}}": "Bloomberg reports that Anthropic's $30 billion fundraising round — led by Dragoneer, Sequoia Capital, Greenoaks, and Altimeter Capital — is expected to close by end of May 2026 at a valuation exceeding $900 billion, which would overtake OpenAI's March valuation of $852 billion. Anthropic's annualised revenue has surged from $9 billion at end-2025 to over $44 billion by May 2026. For context: this valuation is larger than the entire ASX top 20 combined. The AI investment wave is not a bubble narrative — the revenue growth is real and accelerating at a pace few technology businesses in history have matched.",
+    "{{TECH_2_FLAG}}": "⛪ TECH & SOCIETY",
+    "{{TECH_2_HEADLINE}}": "Pope Leo XIV to Release First Papal Document on AI and Human Dignity — 'Magnifica Humanitas' Due Sunday",
+    "{{TECH_2_SUMMARY}}": "Pope Leo XIV will publish his first encyclical, titled 'Magnifica Humanitas' (Magnificent Humanity), on Sunday 25 May 2026, setting out the Catholic Church's formal ethical framework for artificial intelligence. The document is expected to address automation, labour displacement, and the boundaries of human–machine interaction. Anthropic co-founder Christopher Olah is expected at the Vatican launch. Whatever your personal views, a papal encyclical on AI will shape ethical discourse in over 100 countries — a clear signal the AI debate has moved well beyond the tech sector into fundamental questions about work and what it means to be human.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🇦🇹 EUROPE",
-    "{{ROBOT_1_HEADLINE}}": "Hexagon AEON Humanoid Begins Live Factory Deployment in Austria — Schaeffler Signs Fleet Deal",
-    "{{ROBOT_1_SUMMARY}}": "Hexagon Robotics' AEON humanoid robot has entered active deployment at Fill Maschinenbau's advanced manufacturing facility in Gurten, Austria — handling machine tending, inspection, and data capture within live production workflows. The pilot is one of the first genuine factory-floor humanoid deployments in the European engineering sector. In a separate announcement, global precision manufacturer Schaeffler committed to deploying a fleet of AEON humanoids across its global factory network. The pace of humanoid factory adoption in Europe has accelerated markedly: two major industrial firms have signed AEON commitments in the same fortnight.",
-    "{{ROBOT_1_URL}}": "https://roboticsandautomationnews.com/2026/05/15/hexagon-and-fill-maschinenbau-partner-to-advance-manufacturing-autonomy-using-humanoids/101578/",
+    "{{ROBOT_1_FLAG}}": "📊 INDUSTRY ROI",
+    "{{ROBOT_1_HEADLINE}}": "Humanoid Robots Hit 6-Month Factory Payback Periods — Industry Analysis Signals Commercial Tipping Point",
+    "{{ROBOT_1_SUMMARY}}": "A major industry analysis published this week confirms humanoid robots are beginning to show a clear return on investment, with payback periods in high-utilisation factory settings falling to approximately six months — down from 15 months just a year ago. Hardware costs continue to fall, with entry-level functional humanoids approaching $25,000: the level at which annual robot operating costs undercut a single human shift worker. Amazon, Apptronik at Mercedes-Benz, Boston Dynamics at Hyundai, and AgiBot are all in active commercial deployment. For industrial services businesses, the window to understand what these systems need — cleaning, protective coating, maintenance access — is closing faster than most realise.",
+    "{{ROBOT_1_URL}}": "https://roboticsandautomationnews.com/2026/05/19/humanoid-robots-show-clearer-roi-but-commercial-success-depends-on-effective-output/101714/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Queensland Flooding Kills Woman, Dozens of Teenagers Rescued as Storms Sweep Southeast",
-    "{{AUS_1_SUMMARY}}": "A woman was killed and dozens of teenagers were rescued after severe flash flooding struck southeast Queensland on Monday, inundating roads and overwhelming emergency services. Dozens of school students were among those stranded and required emergency evacuation. The Bureau of Meteorology warned further rainfall was likely across southeastern Queensland through midweek. For trades businesses, flood events like this consistently drive elevated demand for flood remediation, drainage work, waterproofing, and protective coatings in the weeks and months that follow.",
-    "{{AUS_1_URL}}": "https://www.sbs.com.au/news",
+    "{{AUS_1_HEADLINE}}": "Qantas Frontline Staff Approve 14% Pay Rise — Wage Benchmark Signal Ahead of Fair Work Decision",
+    "{{AUS_1_SUMMARY}}": "Qantas frontline workers have voted to approve a new enterprise agreement delivering a 14% pay rise — one of the largest single rounds of wage growth seen at a major Australian employer in recent years. Labour economists are watching closely as a potential benchmark ahead of the Fair Work Commission's minimum wage decision in June, with some flagging it strengthens the case for a higher-than-expected award increase from July 1. For trades businesses, the broader signal is clear: wage expectations across the Australian workforce are resetting upward. Businesses that haven't reviewed award entitlements recently should do so before the July decision lands.",
+    "{{AUS_1_URL}}": "https://www.aerotime.aero/articles/qantas-staff-secure-14-wage-increase-and-roster-protections-under-new-agreement",
 
-    "{{AUS_2_HEADLINE}}": "$20K Instant Asset Write-Off Now Permanent — Budget's Biggest Gift to Small Business Takes Effect July 1",
-    "{{AUS_2_SUMMARY}}": "The 2026-27 Federal Budget has permanently extended the $20,000 instant asset write-off for small businesses with annual turnover up to $10 million — removing the annual uncertainty that previously forced businesses to time equipment purchases before sunset clauses expired. From July 1, eligible tools, equipment, and assets can be written off in the year of purchase. For trades businesses considering plant, machinery, or vehicles before end of FY2026, there is now a clear tax planning window open between now and June 30 — and the write-off won't disappear in 2027 even if you miss it this year.",
+    "{{AUS_2_HEADLINE}}": "Sydney CBD Teen Attack: Two Girls Charged After Assault on Bus Driver, Passenger and American Tourists",
+    "{{AUS_2_SUMMARY}}": "NSW Police have charged two teenage girls — aged 16 and 17 — following an alleged assault spree in Sydney's CBD on Sunday 17 May. The pair allegedly attacked a bus driver and a 35-year-old passenger before assaulting two American female tourists on the street. A 19-year-old male was issued a move-on direction. Both girls were refused bail and appeared in the Children's Court on Monday 18 May. Security footage of the incident circulated widely online and reignited national debate about public safety on public transport.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victoria's Rent Controls Bill in Parliament — First CPI-Linked Cap Could Reshape Melbourne's Investment Property Market",
-    "{{VIC_1_SUMMARY}}": "The Allan Government's Rent Controls Bill, introduced in April 2026, is currently before the Victorian Parliament and proposes capping annual rent increases at CPI — which would make Victoria the first Australian state to impose legislated rent controls in the modern era. Landlord and property industry groups warn it will reduce rental supply further at the worst possible time. The bill follows broader Victorian rental reforms that took effect in late 2025, banning no-fault evictions and rental bidding. The outcome will materially affect Melbourne's residential property market dynamics and the investment appetite that underpins renovation and maintenance work across the south-east.",
+    "{{VIC_1_HEADLINE}}": "Three Wyndham Teens Arrested Over Alleged Melbourne Nightclub Arson Attacks",
+    "{{VIC_1_SUMMARY}}": "Victoria Police arrested three Wyndham men — two aged 18 and one aged 17 — on Wednesday 20 May after search warrants across Tarneit and Maribyrnong. The arrests relate to alleged arson attacks on Melbourne nightclubs La Di Da (CBD) and Electric Bar (Prahran) in early May, in which a vehicle was driven into the Prahran venue before accelerant was poured through both clubs. One suspect was allegedly found carrying a machete at Highpoint Shopping Centre. The trio face charges of arson, attempted arson, criminal damage, burglary, and vehicle theft, and are being interviewed by detectives.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🌊 CLIMATE",
-    "{{SCI_1_HEADLINE}}": "Antarctica's Hektoria Glacier Retreated 24 Kilometres in 15 Months — Fastest Grounded Ice Loss Ever Recorded",
-    "{{SCI_1_SUMMARY}}": "Scientists have confirmed that Antarctica's Hektoria Glacier set a modern record for grounded ice loss, retreating approximately 24 kilometres in just 15 months — a pace that stunned glaciologists worldwide. The collapse was driven by 'buoyancy-driven calving,' where warming seawater infiltrates beneath the glacier at high tide and intermittently lifts large sections of ice off the bedrock, causing them to break away at once. While Hektoria is relatively small, researchers warn that the same mechanism could trigger far more catastrophic losses in Antarctica's vastly larger glaciers — with serious long-term consequences for global sea level rise projections. Published in ScienceDaily, May 18, 2026.",
+    "{{SCI_1_FLAG}}": "⚛️ PHYSICS",
+    "{{SCI_1_HEADLINE}}": "Decades-Long Physics Mystery May Have Just Been a Calculation Error All Along",
+    "{{SCI_1_SUMMARY}}": "For over 50 years, physicists measured a subtle property of the muon — a heavy cousin of the electron — and found it stubbornly at odds with the Standard Model's predictions. The persistent discrepancy fuelled serious speculation about hidden forces and undiscovered particles beyond our current understanding of the universe. Now, after years of intensive supercomputer calculations, a team led by Professor Zoltan Fodor at Pennsylvania State University has concluded the anomaly was almost certainly a calculation error: the most mathematically difficult part of the puzzle — how the 'strong force' of quarks influences the muon's magnetic moment — had been computed incorrectly all along. The Standard Model holds. The search for physics beyond it now shifts to other frontiers. Reported by ScienceDaily and TechExplorist, May 19, 2026.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Getting Ahead of July's Wage Rise: Why the Next Six Weeks Are Critical for Your Job Pricing",
-    "{{INSIGHT_BODY}}": "The Fair Work Commission's annual wage review decision is landing in the first or second week of June, with the increase taking effect from the first full pay period after July 1. Most analysts are forecasting a 3–4% rise. For a small trades business employing three or four workers on award or close-to-award rates, that is hundreds of dollars a week added to your labour cost — and it hits immediately on every job running through July. The problem isn't the rise itself; it's the quotes you're writing right now. If you're pricing three-week projects that run into July without adjusting your labour rate, you're locking in a margin hit before the decision is even handed down. AI tools make this easy: pull your last 20 quotes, run your current labour cost assumptions through a simple model, and test what a 3.5% increase does to your margin across each job type. You can do this in an afternoon with ChatGPT or Claude — no accountant required. Build the new rate into your quoting template now, and when the decision lands in June you're already pricing correctly. The businesses that won't act are the ones writing quotes this week on last year's numbers.",
+    "{{INSIGHT_TITLE}}": "How AI Can Systematise Your New Client Onboarding — and Stop Every Job Starting in Chaos",
+    "{{INSIGHT_BODY}}": "Most trades businesses treat new client onboarding the same way: wing it, get the job done, deal with the details later. But every time you start a job without a consistent intake process, you're building in risk — unsigned scopes, unclear access arrangements, no documented site conditions, and no paper trail if something goes sideways. AI can fix this without adding much admin time. The approach is straightforward: use Claude or ChatGPT to draft a standard new-client intake checklist — eight to ten questions covering scope, access, site hazards, payment terms, and any client-specific requirements. Drop it into a Google Form and make it your non-negotiable first step before any quote goes out. Then ask AI to generate a one-page client confirmation summary from the intake responses: what's agreed, what's excluded, and what the payment schedule looks like. You've created a light contract without paying a lawyer. For ISV, where jobs involve chemical handling, access to occupied premises, and equipment on third-party sites, a consistent intake process is also a WHS paper trail. AI makes the setup fast — a few hours once. After that, every job starts better than the one before.",
 
     # Fun Facts
-    "{{FACT_1}}": "The blue whale's heart weighs approximately 180 kilograms — roughly the size of a small car — and beats just 4 to 8 times per minute when the animal is diving deep. Its main aorta is wide enough for a small child to crawl through. Despite powering the largest animal ever known to have existed, the blue whale's lifespan of 80 to 90 years is comparable to that of a human.",
+    "{{FACT_1}}": "A 'jiffy' is an actual unit of scientific measurement, not just an expression. In computing, one jiffy equals one hundredth of a second — ten milliseconds — and governs the minimum interval between system clock ticks in many operating systems. In physics, a jiffy is the time it takes light to travel one centimetre, approximately 33 picoseconds. The word entered English in the 18th century as slang for 'a very short time' before being formally adopted as a precise quantity in multiple scientific disciplines.",
 
-    "{{FACT_2}}": "Saffron is the world's most expensive spice by weight — typically $5,000 to $10,000 per kilogram depending on grade and origin. The price comes from the harvest: each Crocus sativus flower produces only three red stigmas, and a single kilogram of dried saffron requires between 150,000 and 200,000 flowers, all of which must be picked by hand at dawn during a brief autumn window of just two to three weeks per year.",
+    "{{FACT_2}}": "Spider silk is approximately five times stronger than steel by weight, and can stretch up to 40 per cent of its own length before breaking. A thread the diameter of a garden hose would theoretically be strong enough to halt a Boeing 747 in mid-flight. Despite decades of biotechnology research, no manufacturing process has successfully replicated the full combination of tensile strength, elasticity, and lightness that spiders achieve at room temperature using nothing but protein dissolved in water.",
 
-    "{{FACT_3}}": "Epoxy adhesive was developed almost simultaneously and independently by chemists at Shell Development Company in the United States and Ciba in Switzerland in the mid-1940s — both reached the same solution without knowing about each other. The two-part resin system was commercially introduced in 1947. Today, over 800,000 tonnes of epoxy resin are consumed globally every year, used in everything from industrial coatings and concrete flooring to aircraft construction and printed circuit boards.",
+    "{{FACT_3}}": "Coffee is the world's most traded agricultural commodity by value, and the second most traded commodity of any kind after crude oil. It is produced by approximately 125 million people concentrated in a band of countries between the Tropics of Cancer and Capricorn known as the Coffee Belt. Australia grows its own coffee in small quantities in the Atherton Tablelands of far north Queensland — conditions are marginal for the plant, but yields command premium prices on the specialty market.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why do fencing contractors make the best negotiators?",
-    "{{JOKE_PUNCHLINE}}": "They've spent their whole career working with people who can never agree on where the boundary is.",
+    "{{JOKE_SETUP}}": "Why do land surveyors always win property boundary disputes?",
+    "{{JOKE_PUNCHLINE}}": "They know exactly where to draw the line.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Perfect is the enemy of good.\"",
-    "{{CLOSING_ATTR}}": "— Voltaire",
-    "{{CLOSING_MESSAGE}}": "It's a wet Wednesday morning in Carrum Downs, with showers likely through the day before things start to clear toward Thursday. The big story overnight was Iran: Trump confirmed he was an hour away from launching strikes before Gulf leaders stepped in and bought 48–72 hours of tense diplomacy — oil markets are watching every word, and your diesel costs this week reflect that. Closer to home, the wage review clock is ticking toward a June decision, and if you haven't modelled what a 3–4% labour cost rise does to your July pricing, this morning's a good time to run those numbers. Stay dry, Liall.",
+    "{{CLOSING_QUOTE}}": "“Remember to look up at the stars and not down at your feet.”",
+    "{{CLOSING_ATTR}}": "— Stephen Hawking",
+    "{{CLOSING_MESSAGE}}": "Thursday morning in Carrum Downs — foggy to start, clearing to 16°C with a mostly cloudy afternoon, and then things get genuinely good: partly cloudy Friday, mostly sunny Saturday at 19°C. The Strait of Hormuz situation continues to simmer overnight — Iran is running a million-dollar-a-ship toll booth and 230 loaded tankers are going nowhere, so fuel cost volatility isn't resolving this week. On the wages front, the ACTU lifted its Fair Work claim to 6% — the decision lands in weeks. July 1 is shaping up as a triple cost hit: fuel excise ends, payday super starts, and a likely wage rise kicks in. If you're quoting work that runs past July 1, factor all three in now rather than explain the shortfall in August. Good week ahead, Liall.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
