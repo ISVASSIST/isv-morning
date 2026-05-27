@@ -348,3 +348,14 @@ JOKE: My plumber told me the job would be a quick fix.
 INSIGHT: Why the Best Tradies in 2026 Are Treating AI Like a Business Partner, Not a Search Engine
 QUOTE: "Two roads diverged in a wood, and I took the one less travelled by, and that has made all the difference." — Robert Frost
 ---
+
+DATE: Thursday, 28 May 2026
+SCIENCE: NASA James Webb Space Telescope discovers gas giant exoplanet 700 light-years away with daily mineral cloud weather cycle — silicate clouds form each morning, dissipate by nightfall
+ROBOTICS: Open Source Robotics Alliance (OSRA) formally launched at 2026 Robotics Summit & Expo in Boston — new open-source governance model for Robot Operating System (ROS) in the physical AI era
+FACT: Honeybee waggle dance — angle encodes sun direction, duration encodes distance (1 second ≈ 1 km); Karl von Frisch awarded Nobel Prize 1973 for decoding it
+FACT: Great Pacific Garbage Patch — roughly 3x size of France, 1.6 million sq km — but 94% is microplastics invisible to naked eye; Ocean Cleanup removed 9M kg since 2018
+FACT: Duct tape invented 1943 after factory worker Vesta Stoudt wrote directly to President Roosevelt about soldiers struggling to open wax-sealed ammo boxes in the field — became standard US military issue within months
+JOKE: Why did the linemarker refuse to take a sick day?
+INSIGHT: How AI Can Help You Price Warranty Risk Into Every Quote — Before a Comeback Eats Your Margin
+QUOTE: "Do not wait to strike till the iron is hot; but make it hot by striking." — William Butler Yeats
+---
