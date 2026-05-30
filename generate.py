@@ -50,10 +50,10 @@ replacements = {
     "{{TECH_2_URL}}": "",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🏭 GERMANY · MANUFACTURING",
-    "{{ROBOT_1_HEADLINE}}": "BMW Introduces Humanoid Robots to German Manufacturing for the First Time — Plant Leipzig Pilot Begins",
-    "{{ROBOT_1_SUMMARY}}": "BMW Group has launched a humanoid robot pilot at its Plant Leipzig — the first deployment of humanoid physical AI in a BMW European production environment, following a successful earlier rollout at its Spartanburg plant in the US. The Leipzig pilot reflects a broader acceleration across the sector: humanoid robot unit prices have fallen from approximately $85,000 in 2023 to around $25,000 today as production scales. SoftBank's $5.4 billion acquisition of ABB's robotics division — pending regulatory clearance — signals major capital is now consolidating around physical AI deployment at industrial scale. For operators in coatings and industrial services, the trajectory points toward automation becoming viable in complex surface-prep and structured application tasks within the decade.",
-    "{{ROBOT_1_URL}}": "https://www.bmwgroup.com/en/news/general/2026/humanoid-robot-in-leipzig.html",
+    "{{ROBOT_1_FLAG}}": "🦾 USA · MANUFACTURING",
+    "{{ROBOT_1_HEADLINE}}": "Hyundai Orders 25,000 Electric Atlas Robots From Boston Dynamics — Largest Humanoid Deployment Commitment in History",
+    "{{ROBOT_1_SUMMARY}}": "Hyundai Motor Group has placed an order for 25,000 Electric Atlas humanoid robots from Boston Dynamics to deploy across its US manufacturing facilities — the largest single humanoid unit commitment in manufacturing history. A May 18 technical demonstration showed Atlas lifting and carrying 45kg loads using reinforcement learning, compressing millions of hours of simulated practice into weeks of real-world training. Hyundai has simultaneously established a dedicated robotics parts procurement division and a software-defined factory promotion division to support the rollout, with full automotive line deployment targeted from 2028. At current humanoid pricing of $25,000–$37,000 per unit, the 25,000-unit order represents a capital commitment of $625M–$925M. That scale confirms humanoid robots in structured manufacturing have crossed the threshold from pilot programme to industrial platform — and the pace is accelerating.",
+    "{{ROBOT_1_URL}}": "https://www.koreaherald.com/article/10756187",
 
     # Australia
     "{{AUS_1_HEADLINE}}": "Federal Budget 2026-27: CGT 50% Discount Abolished From July 2027 — Small Business Concessions Preserved",
