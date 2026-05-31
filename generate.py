@@ -4,95 +4,95 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Sunday, 31 May 2026",
+    "{{DATE}}": "Monday, 01 June 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Sun 31 May (BOM forecast)
-    "{{WEATHER_1}}": "SUN 31 · 🌧 Showers · 15°C",
-    "{{WEATHER_2}}": "MON 1 JUN · 🌧 Showers · 14°C",
+    # Weather — Carrum Downs VIC, 5-day from Mon 1 Jun (BOM/AccuWeather forecast)
+    "{{WEATHER_1}}": "MON 1 · ⛅ Partly cloudy · 8–14°C",
+    "{{WEATHER_2}}": "TUE 2 · 🌧 Showers · 9–15°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "TUE 2 JUN · ⛈ Heavy rain · 15°C",
-    "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "WED 3 JUN · ☁ Cloudy · 13°C",
-    "{{WEATHER_5}}": "THU 4 JUN · ⛅ Partly cloudy · 13°C",
-    "{{WEATHER_ALERT}}": "⚠ WET START TO JUNE — SHOWERS DAILY SUN–TUE",
+    "{{WEATHER_3}}": "WED 3 · ☁ Cloudy · 8–14°C",
+    "{{WEATHER_3_CLASS}}": "",
+    "{{WEATHER_4}}": "THU 4 · ⛅ Mostly cloudy · 9–14°C",
+    "{{WEATHER_5}}": "FRI 5 · ⛅ Clearing · 9–15°C",
+    "{{WEATHER_ALERT}}": "⚠ SHOWERS EXPECTED TUESDAY",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇱 ISRAEL · LEBANON",
-    "{{WORLD_1_HEADLINE}}": "Israeli Ground Forces Cross Lebanon's Litani River — Netanyahu Declares Offensive Expanding",
-    "{{WORLD_1_SUMMARY}}": "Israeli Prime Minister Benjamin Netanyahu confirmed Friday that Israeli ground forces have crossed Lebanon's Litani River — the boundary long treated as the effective limit of Israeli operations in southern Lebanon. 'Our forces have crossed the Litani and advanced to controlling positions,' Netanyahu said, adding that operations were active across Beirut, the Bekaa Valley and the entire front. The advance comes despite a ceasefire agreed April 16 and a 45-day extension signed May 15 — both of which have failed to halt the fighting. Since the original ceasefire, UNICEF reports 55 children killed and 212 injured in Lebanon. Israeli and Lebanese military officials met at the Pentagon this week to discuss implementation, as the diplomatic and military tracks continue to run in opposite directions.",
-    "{{WORLD_1_URL}}": "https://www.cbc.ca/news/world/israel-lebanon-litani-river-9.7216696",
+    "{{WORLD_1_FLAG}}": "🌏 MIDDLE EAST · HORMUZ",
+    "{{WORLD_1_HEADLINE}}": "US and Iran Agree 60-Day Ceasefire Extension as Strait of Hormuz Deal Framework Takes Shape",
+    "{{WORLD_1_SUMMARY}}": "The United States and Iran have entered a 60-day ceasefire extension framework as both sides work toward a final agreement to formally end the 2026 Iran war. The Strait of Hormuz — through which roughly 20% of global oil trade passes — is being progressively de-mined under US Navy escort, with President Trump saying talks are 'largely negotiated.' The fragile truce has been punctuated by skirmishes, and US forces struck Iranian drone positions near Bandar Abbas last week after detecting preparations for fresh attacks. For Australian businesses, the Hormuz conflict has been the primary driver of the fuel crisis that pushed CPI to 4.6% and triggered the temporary fuel excise cut. A durable deal would ease oil price pressure; a breakdown would reinstate the oil shock immediately.",
+    "{{WORLD_1_URL}}": "https://en.wikipedia.org/wiki/2026_Iran_war_ceasefire",
 
-    "{{WORLD_2_FLAG}}": "🇸🇬 SINGAPORE · SECURITY FORUM",
-    "{{WORLD_2_HEADLINE}}": "Hegseth at Shangri-La Dialogue: US Firms Line on Taiwan and China as Beijing Skips Forum for Second Year",
-    "{{WORLD_2_SUMMARY}}": "US Secretary of Defense Pete Hegseth delivered the keynote at the 2026 Shangri-La Dialogue in Singapore on Saturday — the region's premier annual defence forum — setting out US policy on China, Taiwan, the South China Sea, Iran, and AI rivalry. The address was the first detailed public statement of US Indo-Pacific posture since Trump and Xi agreed to reset relations at their May summit in Beijing. Analysts noted Hegseth struck a firmer tone on Taiwan while softening economic competition language. China's Defence Minister Dong Jun declined to attend for the second consecutive year. For businesses operating across Indo-Pacific supply chains, the direction of US-China policy post-Beijing reset will be a key variable shaping trade costs through the second half of 2026.",
-    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/5/30/what-hegseths-comments-at-shangri-la-dialogue-say-about-us-foreign-policy",
+    "{{WORLD_2_FLAG}}": "🇺🇦 UKRAINE · SECURITY",
+    "{{WORLD_2_HEADLINE}}": "Zelenskyy: Ukraine Intelligence Confirms Russia Planning Major Drone and Missile Barrage",
+    "{{WORLD_2_SUMMARY}}": "Ukrainian President Volodymyr Zelenskyy has warned that Kyiv has received credible intelligence indicating Russia is preparing a large coordinated drone and missile assault. Ukraine has issued civilian warnings and is requesting expedited Western air defence deliveries. The announcement comes as the frontline situation remains under pressure ahead of summer, and as European and US officials weigh the scale of continued military support.",
+    "{{WORLD_2_URL}}": "https://www.aljazeera.com/",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ AUSTRALIA · FUEL COSTS",
-    "{{ECON_1_HEADLINE}}": "ACCC: Diesel Down 30% Since April Excise Cut — But the 26.3c/L Reversal Is Locked In for July 1",
-    "{{ECON_1_SUMMARY}}": "The ACCC's May 22 weekly fuel monitoring update confirmed that the April 1 fuel excise halving has reduced retail diesel prices around 30% and petrol 28% across Australia's five major cities. The relief is real but time-limited: on June 30, the excise unconditionally reverts from 26.3c to 52.6c per litre — a 26.3c increase landing on every diesel vehicle from July 1. A trades business running three vehicles averaging 80L per fill twice weekly faces roughly $630 in additional monthly fuel cost from that date. Any quote being written today for work scheduled after June 30 needs to use post-excise fuel rates — not current pump prices. The current price is temporary. The July bill is not.",
-    "{{ECON_1_URL}}": "https://www.accc.gov.au/about-us/publications/weekly-fuel-price-monitoring-update",
+    "{{ECON_1_FLAG}}": "🇦🇺 INTEREST RATES",
+    "{{ECON_1_HEADLINE}}": "RBA Meets June 16 as CPI Hits 4.6% — Westpac Forecasts Two More Rate Hikes by August",
+    "{{ECON_1_SUMMARY}}": "Australia's annual inflation rate has climbed to 4.6% — its highest since September 2023 — with fuel prices and supply chain disruption the primary drivers, tied directly to the US-Iran conflict around the Strait of Hormuz. The RBA board meets in 16 days on June 16, with the cash rate currently sitting at 4.35% after three consecutive hikes this year. CBA, ANZ and NAB are forecasting a hold; Westpac economists are predicting a further 25bp rise, with another possible in August, lifting the rate to 4.85%. Small trades businesses carrying variable-rate finance, equipment loans, or commercial mortgages should model the cost impact of a potential mid-June hike before quoting on larger jobs.",
+    "{{ECON_1_URL}}": "https://www.aussie.com.au/insights/news/expert-predictions-rba-rates/",
 
-    "{{ECON_2_FLAG}}": "💰 AUSTRALIA · FEDERAL BUDGET",
-    "{{ECON_2_HEADLINE}}": "Budget 2026-27: $20K Instant Asset Write-Off Now Permanent — Loss Carry-Back Also Unlocked for Small Business",
-    "{{ECON_2_SUMMARY}}": "Two meaningful small business wins from the 2026-27 Federal Budget take effect from 1 July 2026. The $20,000 instant asset write-off is now permanently legislated for businesses with turnover under $10 million — ending years of annual extensions and giving certainty to equipment purchase planning. Separately, companies with global turnover under $1 billion can carry a tax loss back against tax paid in the previous two years, improving cash flow in lean periods. For trades operators buying vehicles, compressors, spray equipment or scaffolding, the permanent write-off removes the annual timing risk. The budget also confirmed CGT small business concessions are maintained, while the broader 50% CGT discount is being replaced with inflation-adjusted indexation for gains from July 2027.",
-    "{{ECON_2_URL}}": "https://business.gov.au/news/budget-2026-27",
+    "{{ECON_2_FLAG}}": "💼 JULY 1 · COST CRUNCH",
+    "{{ECON_2_HEADLINE}}": "July 1 Double Hit: Minimum Wage Rise and Fuel Excise Snap-Back Land on Australian Businesses Simultaneously",
+    "{{ECON_2_SUMMARY}}": "Two cost increases arrive on the same day for Australian small businesses: from July 1, the national minimum wage rises (lifting modern award pay points across trades and construction), and the fuel excise reverts from 26.3 cents to 52.6 cents per litre — adding approximately 28.9c/L at the pump once GST is applied. For a trades operator running two employees and three vehicles, the combined weekly cost base jumps materially from that date. Jobs quoted today using current pump prices and current award rates will be underpriced for work scheduled in July or later.",
+    "{{ECON_2_URL}}": "",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI · GOOGLE I/O",
-    "{{TECH_1_HEADLINE}}": "Google Launches Gemini 3.5 Flash and Gemini Spark: AI That Acts on Your Behalf, Not Just Answers Questions",
-    "{{TECH_1_SUMMARY}}": "Google's I/O 2026 keynote confirmed the shift from AI-as-chatbot to AI-as-agent. Gemini 3.5 Flash combines fast output with what Google calls 'frontier intelligence with action' — the model can execute multi-step tasks, not just generate text. Gemini Spark goes further: a 24/7 AI agent that reasons across your connected apps — calendar, email, documents, contacts — and takes actions on your behalf under your direction. Google also rebuilt its Search box for the first time in 25 years, now accepting images, files, videos and open browser tabs as simultaneous inputs. The practical shift for small business operators: AI tools are moving from 'help me draft this' to 'do this for me' — and the operators building AI habits now will be ahead of those still waiting to start.",
-    "{{TECH_1_URL}}": "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/",
+    "{{TECH_1_FLAG}}": "🤖 AI · ANTHROPIC",
+    "{{TECH_1_HEADLINE}}": "Anthropic's Claude Opus 4.8 Sets New AI Coding Benchmark With 1M Token Context and Parallel Agent Workflows",
+    "{{TECH_1_SUMMARY}}": "Released last week, Claude Opus 4.8 scores 69.2% on SWE-Bench Pro — outperforming GPT-5.5 and Gemini 3.1 Pro — with a default one-million-token context window across major platforms. The headline feature is 'dynamic workflows': a single session can now orchestrate hundreds of parallel AI sub-agents, enabling automation of large-scale tasks such as codebase-wide migrations or multi-document research across hundreds of thousands of lines. An effort control slider lets users dial Claude's reasoning depth to trade speed for quality. For business users, the practical implication is AI that can handle more complex, multi-step projects without human handoffs at each stage.",
+    "{{TECH_1_URL}}": "https://www.anthropic.com/news/claude-opus-4-8",
 
-    "{{TECH_2_FLAG}}": "🔐 AI · SECURITY",
-    "{{TECH_2_HEADLINE}}": "Intelligence Agencies Warn: AI Agents Can Be Hijacked — Five Key Risk Categories for Business Operators",
-    "{{TECH_2_SUMMARY}}": "Cybersecurity and intelligence agencies from the US, UK, Australia and allies jointly released 'Careful Adoption of Agentic AI Services,' identifying five risk categories unique to AI agents that take actions: prompt injection (malicious instructions hidden in web content), excessive permissions granted to the agent, supply chain compromise in the AI toolchain, insufficient human oversight of AI-initiated actions, and insecure memory and data handling. The practical rule for small business operators using AI to send emails, respond to reviews, or process customer requests: keep human checkpoints on any AI action involving money, customer data, or outgoing communications. The automation benefit is real — the oversight layer is essential.",
+    "{{TECH_2_FLAG}}": "📊 AI · BUSINESS RESULTS",
+    "{{TECH_2_HEADLINE}}": "AI-Referred Traffic to Retail Sites Up 393% in Q1 2026 — and Converting 42% Better Than Any Other Channel",
+    "{{TECH_2_SUMMARY}}": "New data from retail analytics firms shows AI-referred visitors surged 393% year-over-year in Q1 2026 and converted to purchases at a rate 42% higher than all other traffic sources. Analysts say 2026 is the year AI definitively moves from hype to measurable revenue driver — with the sharpest gains concentrated in businesses that integrated AI into actual customer workflows, not just marketing copy. The pattern applies across sectors: the gap between AI-integrated operators and those still waiting to start is widening every quarter.",
     "{{TECH_2_URL}}": "",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 USA · MANUFACTURING",
-    "{{ROBOT_1_HEADLINE}}": "Hyundai Orders 25,000 Electric Atlas Robots From Boston Dynamics — Largest Humanoid Deployment Commitment in History",
-    "{{ROBOT_1_SUMMARY}}": "Hyundai Motor Group has placed an order for 25,000 Electric Atlas humanoid robots from Boston Dynamics to deploy across its US manufacturing facilities — the largest single humanoid unit commitment in manufacturing history. A May 18 technical demonstration showed Atlas lifting and carrying 45kg loads using reinforcement learning, compressing millions of hours of simulated practice into weeks of real-world training. Hyundai has simultaneously established a dedicated robotics parts procurement division and a software-defined factory promotion division to support the rollout, with full automotive line deployment targeted from 2028. At current humanoid pricing of $25,000–$37,000 per unit, the 25,000-unit order represents a capital commitment of $625M–$925M. That scale confirms humanoid robots in structured manufacturing have crossed the threshold from pilot programme to industrial platform — and the pace is accelerating.",
-    "{{ROBOT_1_URL}}": "https://www.koreaherald.com/article/10756187",
+    "{{ROBOT_1_FLAG}}": "🇨🇳 CHINA · MANUFACTURING",
+    "{{ROBOT_1_HEADLINE}}": "AGIBOT's G2 Humanoids Go Live on Chinese Electronics Factory Line — Running Tablet Tests Autonomously",
+    "{{ROBOT_1_SUMMARY}}": "AGIBOT's G2 humanoid robots are now running automated tablet testing directly on the live production line at Longcheer Technology's manufacturing facility in China — what the company describes as a world first for humanoid deployment in consumer electronics production. The robots handle functional testing tasks previously performed by human technicians, operating within the existing factory setup without line modification. AGIBOT has shipped more than 10,000 humanoid units to date and has declared 2026 its 'Deployment Year One,' with targets for 100+ deployed robots across automotive, semiconductor, and energy sectors by Q3. The company holds a 39% global market share in humanoid shipments.",
+    "{{ROBOT_1_URL}}": "https://interestingengineering.com/ai-robotics/agibot-g2-humanoid-robots-live-production-line",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Federal Budget 2026-27: CGT 50% Discount Abolished From July 2027 — Small Business Concessions Preserved",
-    "{{AUS_1_SUMMARY}}": "The 2026-27 Federal Budget replaces the 50% capital gains tax discount with inflation-adjusted indexation for gains realised from 1 July 2027, with a minimum 30% effective rate on realised gains. The change affects investment property, shares and business asset disposals for individuals and trusts. Crucially, the Government confirmed existing CGT small business concessions are fully preserved — meaning sale of a business or active business asset under SBE thresholds remains eligible for rollover and retirement exemptions. Property investors and self-funded retirees face the largest impact. Trades business owners planning an exit or asset sale should be reviewing disposal timing with their accountant now — before July 2027.",
-    "{{AUS_1_URL}}": "https://budget.gov.au/content/04-tax-reform.htm",
+    "{{AUS_1_HEADLINE}}": "AUKUS Shake-Up: Australia to Buy All Three Nuclear Submarines Second-Hand From the US",
+    "{{AUS_1_SUMMARY}}": "Defence Minister Richard Marles has confirmed Australia will acquire three used Block IV Virginia-class nuclear submarines under a revised AUKUS arrangement announced at the Shangri-La Dialogue in Singapore. The change replaces the original plan for a mix of used and new vessels, with the joint US-UK-Australia statement citing simplified supply chain management, maintenance efficiencies, and significant cost savings. Australia will also build five SSN-AUKUS submarines locally from the late 2030s. The revision is expected to save Australia billions in procurement and long-term maintenance costs over the life of the programme.",
+    "{{AUS_1_URL}}": "https://www.anews.com.tr/world/2026/05/31/australia-will-purchase-3-second-hand-nuclear-powered-submarines-under-revised-aukus-deal",
 
-    "{{AUS_2_HEADLINE}}": "Cost of Living Survey: One in Eight Australian Adults Skipping Meals as Inflation Remains Above Target",
-    "{{AUS_2_SUMMARY}}": "A recent ACOSS survey found one in eight Australian adults reporting they skipped meals due to financial pressure, with food insecurity highest among renters, households with children, and casual workers. Inflation remains above the RBA's 2–3% target band, driven by fuel, rent and food costs. While the April fuel excise cut provided temporary relief, the core cost-of-living squeeze is suppressing discretionary spending — including home maintenance and trades work. Operators with a residential customer base should expect continued price sensitivity through the second half of 2026.",
+    "{{AUS_2_HEADLINE}}": "Australia's CPI Hits 4.6% as Hormuz Conflict Drives Fuel and Supply Chain Costs Higher",
+    "{{AUS_2_SUMMARY}}": "Australia's annual CPI has climbed to 4.6% — its highest level since September 2023 — with fuel prices and supply chain disruption tied to the US-Iran conflict around the Strait of Hormuz the primary drivers. Freight costs, materials, and energy bills have all risen sharply across the economy. Small business operators are caught in a compound squeeze: the temporary fuel excise cut provides partial relief until June 30, but underlying inflation dynamics are not expected to ease quickly even if a Hormuz deal is finalised.",
     "{{AUS_2_URL}}": "",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victoria's Free Public Transport Ends Tonight — Half-Price Fares Begin Tomorrow on All Metro and Regional Services",
-    "{{VIC_1_SUMMARY}}": "Free public transport across Victoria ends at midnight tonight (Sunday 31 May), with half-price fares taking effect Monday 1 June 2026 and running through to 1 January 2027. The maximum full-fare daily cap drops from $11.40 to $5.70; concession fares fall from $5.70 to $2.85. All metro trains, trams, buses and regional V/Line coaches are included; SkyBus and ferries are excluded. Tap on as usual — the system calculates the half price automatically. For trades businesses with staff commuting by public transport to job sites, the transition is seamless. Victoria has committed approximately $432 million to fund the half-price period.",
+    "{{VIC_1_HEADLINE}}": "Victoria's Knife Crime Shows First Signs of Decline One Year After Australia's First Machete Ban",
+    "{{VIC_1_SUMMARY}}": "New data confirms knife-related offences are beginning to ease across Victoria, one year after the government announced the ban on machetes — and nine months since it took effect in September 2025. Officers seized nearly 22,000 edged weapons across the state in 2025, averaging 48 per day, while 18,031 machetes were surrendered during the pre-ban amnesty. A Victorian government spokesperson acknowledged crime rates remained too high but said the latest enforcement reforms were working. Victoria remains the only Australian state to completely prohibit machetes, with possession carrying penalties of up to two years imprisonment or $47,000 fines.",
     "{{VIC_1_URL}}": "",
 
     # Science
-    "{{SCI_1_FLAG}}": "⚛️ QUANTUM · BREAKTHROUGH",
-    "{{SCI_1_HEADLINE}}": "Stanford Engineers Build Room-Temperature Quantum Device Using 'Twisted Light' — Quantum Computing Out of the Freezer",
-    "{{SCI_1_SUMMARY}}": "Researchers at Stanford University have developed a nanoscale quantum device that operates at room temperature by using 'twisted light' — photons that move forward while rotating, like a corkscrew — to entangle quantum states between light and electrons. The device pairs a patterned silicon nanostructure with a thin layer of molybdenum diselenide, a two-dimensional semiconductor. When twisted photons strike the material, their rotational spin transfers to electrons within it, creating the entanglement that quantum communication and computing depend on. Most quantum systems today require cooling to near absolute zero (−459°F), making them large and extremely expensive. This breakthrough, published in Nature Communications and reported May 28, opens a pathway toward miniaturised quantum devices — with near-term applications in quantum-secured communications and, over the longer term, compact quantum processors.",
+    "{{SCI_1_FLAG}}": "🕊 BIOLOGY · NAVIGATION",
+    "{{SCI_1_HEADLINE}}": "Homing Pigeons Navigate Via Iron-Rich Immune Cells in Their Livers — Scientists Call It 'Mind-Blowing'",
+    "{{SCI_1_SUMMARY}}": "An international team of German researchers has discovered that homing pigeons navigate using iron-rich macrophages — immune cells normally associated with breaking down red blood cells — located in the liver. The iron makes these cells superparamagnetic, allowing them to respond to shifts in Earth's magnetic field. The cells sit adjacent to nerve fibres, suggesting magnetic signals travel directly to the brain during flight. In experiments, removing the macrophages caused pigeons to lose directional ability on overcast days while still navigating successfully using solar cues when the sky was clear — confirming two completely independent navigation systems operating in parallel. Published in ScienceDaily on May 29, the finding overturns decades of assumptions about where animal magnetic sensing is located.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "The Job Debrief Habit: How AI Turns Every Completed Job Into a Sharper Quote",
-    "{{INSIGHT_BODY}}": "Most trades operators are excellent at doing work and getting to the next job. Very few have a system for capturing what they learned on the last one. Here's a habit that costs five minutes and compounds over time: at the end of every completed job, open an AI tool — Claude, ChatGPT, Gemini — and give it three sentences: what the job was, what took longer than quoted, and what you'd price differently next time. Then ask it to turn those three inputs into a one-paragraph note to your future self for the next quote of that type. Over three months, you'll build a reference library of job-specific lessons that reflect your actual operations, not a generic pricing guide. Most estimating errors aren't math errors — they're memory errors. A five-minute AI-assisted debrief, captured and retrievable, is the cheapest estimating improvement you'll ever make.",
+    "{{INSIGHT_TITLE}}": "30 Days to the New Financial Year — How AI Can Lock In Smarter Rates for FY2027 Before the Costs Hit",
+    "{{INSIGHT_BODY}}": "The next 30 days are probably the most financially consequential stretch of the year for a small trades business. On July 1, the fuel excise snaps back — adding roughly 29 cents per litre to diesel overnight. The minimum wage rises the same day. And if Westpac's economists are right, the RBA may add another 25 basis points on June 16, lifting variable-rate finance costs from mid-July. Most operators will absorb all three quietly, chip away at the margin they've spent twelve months rebuilding, and try not to notice. The smarter move is to spend 60 to 90 minutes this week with an AI tool — Claude, ChatGPT, whichever you're comfortable with — and model what your revised rate card needs to look like by July 1. Feed it your current hourly rate, your average weekly diesel spend, your labour costs, and your finance repayments. Ask it to calculate the break-even impact of each July change and propose a revised rate. You don't have to quote it to every customer tomorrow. But knowing the number — before your margin gets quietly eaten — is the entire game.",
 
     # Fun Facts
-    "{{FACT_1}}": "Starbucks entered Australia in 2000 with plans for 150+ stores — and closed 61 of its 84 locations in a single day in July 2008. The chain had underestimated a local café culture built on espresso and barista craft since the Italian migration wave of the 1950s, where independent operators set quality standards the chain couldn't match. It remains one of the most documented examples of a major global brand being outcompeted on their home ground by small operators who knew their customers better.",
+    "{{FACT_1}}": "The original London Bridge was sold in 1968 for $2.46 million to an American businessman who had it dismantled stone by stone and shipped to Lake Havasu City, Arizona, where it was fully reassembled and opened in 1971. The buyer, Robert McCulloch, was widely reported to have believed he was purchasing the far more iconic Tower Bridge. He insisted he knew exactly what he was buying — but the story persists, and the bridge still stands in the Arizona desert.",
 
-    "{{FACT_2}}": "A teaspoon of material from a neutron star would weigh approximately 10 million tonnes on Earth — roughly the same as all of humanity compressed into a space the size of a sugar cube. Neutron stars are the collapsed remnants of massive stars that have exploded as supernovae; their gravity is so extreme that protons and electrons are crushed together into neutrons. A typical neutron star packs 1.4 times the mass of our Sun into a sphere just 20 kilometres across — smaller than the distance across Melbourne's CBD.",
+    "{{FACT_2}}": "A woodpecker drills at up to 20 pecks per second — an impact that would cause a concussion in any other animal. Its brain is protected by three overlapping adaptations: a spongy, shock-absorbing skull that distributes force; highly compressed neck muscles acting as suspension; and a tongue so long it wraps entirely around the back of the skull like a biological seatbelt, cushioning each strike before it reaches the brain. Engineers have studied the design to improve helmet and protective equipment technology.",
 
-    "{{FACT_3}}": "The original Nintendo Game Boy (1989) had 8 kilobytes of RAM and a processor running at 4.19 megahertz — slower than a 1970s pocket calculator, and about 8,000 times less memory than a modern smartwatch. Its designers deliberately chose weaker hardware to extend battery life and keep the price low. That trade-off turned out to be exactly right: the Game Boy sold 118 million units across its lifespan and defined portable gaming for a generation.",
+    "{{FACT_3}}": "The United States has never officially adopted the metric system — making it one of only three countries in the world, alongside Myanmar and Liberia, that have not done so. A Metric Conversion Act passed in 1975, but voluntary compliance only. The story traces partly to 1793, when a French vessel carrying the official metric reference standards to the US sank en route. By the time replacement standards arrived, the political moment had passed — and the imperial system was too deeply embedded to shift.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the chef get promoted to head of the kitchen?",
-    "{{JOKE_PUNCHLINE}}": "He always raised the steaks — and his margins never fell below medium.",
+    "{{JOKE_SETUP}}": "Why did the landscaper keep getting promoted?",
+    "{{JOKE_PUNCHLINE}}": "Because every time there was a problem, he just mulched it over.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "“Whether you think you can, or you think you can’t — you’re right.”",
-    "{{CLOSING_ATTR}}": "— Henry Ford",
-    "{{CLOSING_MESSAGE}}": "Sunday, 31 May 2026 — last day of the month, and the last day of free public transport across Victoria. Half-price fares kick in on metro trains, trams and buses from tomorrow morning, so if any of your team commutes by PT, they'll notice the tap-on cost changing. Showers are likely in the southeast suburbs today — Carrum Downs is squarely in that band — so outdoor work this morning is marginal at best. The June 30 fuel excise cliff is now exactly 30 days away: if you haven't updated post-June-30 fuel rates in your quoting template yet, this Sunday morning — with no job pressure — is the right time to do it. Enjoy your Sunday, Liall.",
+    "{{CLOSING_QUOTE}}": "“Great things are done by a series of small things brought together.”",
+    "{{CLOSING_ATTR}}": "— Vincent van Gogh",
+    "{{CLOSING_MESSAGE}}": "Monday, 1 June 2026 — the first day of meteorological winter in Melbourne, and exactly 30 days until the end of the financial year. Half-price public transport kicks in across Victoria from today, so if any of your team commutes by PT the tap-on cost has halved. The bigger number to keep in mind: July 1 now brings a triple cost event — fuel excise snap-back, minimum wage rise, and potentially another RBA hike on the 16th. Cold mornings ahead, and some real financial decisions to make before the month is out. Get the rate card right before the crunch hits. Have a good week, Liall.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
