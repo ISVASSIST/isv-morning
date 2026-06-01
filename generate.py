@@ -4,95 +4,91 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Monday, 01 June 2026",
+    "{{DATE}}": "Tuesday, 02 June 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Mon 1 Jun (BOM/AccuWeather forecast)
-    "{{WEATHER_1}}": "MON 1 · ⛅ Partly cloudy · 8–14°C",
-    "{{WEATHER_2}}": "TUE 2 · 🌧 Showers · 9–15°C",
-    "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "WED 3 · ☁ Cloudy · 8–14°C",
-    "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "THU 4 · ⛅ Mostly cloudy · 9–14°C",
-    "{{WEATHER_5}}": "FRI 5 · ⛅ Clearing · 9–15°C",
-    "{{WEATHER_ALERT}}": "⚠ SHOWERS EXPECTED TUESDAY",
+    # Weather — Carrum Downs VIC, 5-day from Tue 2 Jun (BOM forecast)
+    "{{WEATHER_1}}": "TUE 2 · ⛅ Part cloud, fog · 8–14°C",
+    "{{WEATHER_2}}": "WED 3 · ☁ Cloudy · 9–14°C",
+    "{{WEATHER_2_CLASS}}": "",
+    "{{WEATHER_3}}": "THU 4 · 🌧 Showers likely · 9–13°C",
+    "{{WEATHER_3_CLASS}}": "rain",
+    "{{WEATHER_4}}": "FRI 5 · 🌧 Showers · 9–14°C",
+    "{{WEATHER_5}}": "SAT 6 · ⛅ Part cloud · 10–15°C",
+    "{{WEATHER_ALERT}}": "⚠ SHOWERS FROM THURSDAY",
 
     # World
-    "{{WORLD_1_FLAG}}": "🌏 MIDDLE EAST · HORMUZ",
-    "{{WORLD_1_HEADLINE}}": "US and Iran Agree 60-Day Ceasefire Extension as Strait of Hormuz Deal Framework Takes Shape",
-    "{{WORLD_1_SUMMARY}}": "The United States and Iran have entered a 60-day ceasefire extension framework as both sides work toward a final agreement to formally end the 2026 Iran war. The Strait of Hormuz — through which roughly 20% of global oil trade passes — is being progressively de-mined under US Navy escort, with President Trump saying talks are 'largely negotiated.' The fragile truce has been punctuated by skirmishes, and US forces struck Iranian drone positions near Bandar Abbas last week after detecting preparations for fresh attacks. For Australian businesses, the Hormuz conflict has been the primary driver of the fuel crisis that pushed CPI to 4.6% and triggered the temporary fuel excise cut. A durable deal would ease oil price pressure; a breakdown would reinstate the oil shock immediately.",
-    "{{WORLD_1_URL}}": "https://en.wikipedia.org/wiki/2026_Iran_war_ceasefire",
+    "{{WORLD_1_FLAG}}": "🌏 MIDDLE EAST · BREAKING",
+    "{{WORLD_1_HEADLINE}}": "US Strikes Iranian Military Sites After American Drone Shot Down — Kuwait Hit by Missile Fire",
+    "{{WORLD_1_SUMMARY}}": "US Central Command struck radar and drone control sites in Iran over the weekend after Tehran shot down an American MQ-1 Predator drone. Iran retaliated with its own strikes, with Kuwait reporting incoming drone and missile fire. Both countries continue ceasefire negotiations amid escalating regional tensions — with direct implications for global oil supply and fuel prices.",
+    "{{WORLD_1_URL}}": "https://www.npr.org/2026/06/01/g-s1-125126/us-iran-war-updates",
 
-    "{{WORLD_2_FLAG}}": "🇺🇦 UKRAINE · SECURITY",
-    "{{WORLD_2_HEADLINE}}": "Zelenskyy: Ukraine Intelligence Confirms Russia Planning Major Drone and Missile Barrage",
-    "{{WORLD_2_SUMMARY}}": "Ukrainian President Volodymyr Zelenskyy has warned that Kyiv has received credible intelligence indicating Russia is preparing a large coordinated drone and missile assault. Ukraine has issued civilian warnings and is requesting expedited Western air defence deliveries. The announcement comes as the frontline situation remains under pressure ahead of summer, and as European and US officials weigh the scale of continued military support.",
-    "{{WORLD_2_URL}}": "https://www.aljazeera.com/",
+    "{{WORLD_2_FLAG}}": "🌎 LATIN AMERICA · POLITICS",
+    "{{WORLD_2_HEADLINE}}": "Right-Wing Outsider Wins Colombia's First-Round Presidential Vote — June 21 Runoff Set Against Leftist Cepeda",
+    "{{WORLD_2_SUMMARY}}": "Abelardo de la Espriella, a tough-on-crime right-wing candidate aligned with Trump, scored a surprise first-round win in Colombia's presidential election with 43.7% of the vote — defying all opinion polls. He will face leftist senator Iván Cepeda in a June 21 runoff that will define the country's political direction and its relationship with the United States.",
+    "{{WORLD_2_URL}}": "https://www.pbs.org/newshour/world/polls-close-in-colombia-vote-with-espriella-and-cepeda-advancing-to-runoff",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🇦🇺 INTEREST RATES",
-    "{{ECON_1_HEADLINE}}": "RBA Meets June 16 as CPI Hits 4.6% — Westpac Forecasts Two More Rate Hikes by August",
-    "{{ECON_1_SUMMARY}}": "Australia's annual inflation rate has climbed to 4.6% — its highest since September 2023 — with fuel prices and supply chain disruption the primary drivers, tied directly to the US-Iran conflict around the Strait of Hormuz. The RBA board meets in 16 days on June 16, with the cash rate currently sitting at 4.35% after three consecutive hikes this year. CBA, ANZ and NAB are forecasting a hold; Westpac economists are predicting a further 25bp rise, with another possible in August, lifting the rate to 4.85%. Small trades businesses carrying variable-rate finance, equipment loans, or commercial mortgages should model the cost impact of a potential mid-June hike before quoting on larger jobs.",
-    "{{ECON_1_URL}}": "https://www.aussie.com.au/insights/news/expert-predictions-rba-rates/",
+    "{{ECON_1_FLAG}}": "🇦🇺 FUEL · EXCISE",
+    "{{ECON_1_HEADLINE}}": "Australia's Half-Price Fuel Excise Relief Expires June 30 — Diesel Prices Set to Jump 29 Cents Per Litre",
+    "{{ECON_1_SUMMARY}}": "Since April 1, federal fuel excise has been halved from 52.6¢ to 26.3¢ per litre, cutting diesel by 31% and petrol by 29% in major cities. That relief expires in four weeks on June 30, with full rates snapping back overnight — adding around 29 cents per litre once GST applies. Trades operators with vehicle-heavy operations should factor the July cost jump into any work quoted now for delivery after June 30.",
+    "{{ECON_1_URL}}": "https://www.smartcompany.com.au/economy/australia-fuel-crisis-essential-updates-businesses/",
 
-    "{{ECON_2_FLAG}}": "💼 JULY 1 · COST CRUNCH",
-    "{{ECON_2_HEADLINE}}": "July 1 Double Hit: Minimum Wage Rise and Fuel Excise Snap-Back Land on Australian Businesses Simultaneously",
-    "{{ECON_2_SUMMARY}}": "Two cost increases arrive on the same day for Australian small businesses: from July 1, the national minimum wage rises (lifting modern award pay points across trades and construction), and the fuel excise reverts from 26.3 cents to 52.6 cents per litre — adding approximately 28.9c/L at the pump once GST is applied. For a trades operator running two employees and three vehicles, the combined weekly cost base jumps materially from that date. Jobs quoted today using current pump prices and current award rates will be underpriced for work scheduled in July or later.",
-    "{{ECON_2_URL}}": "",
+    "{{ECON_2_FLAG}}": "🏦 INTEREST RATES · RBA",
+    "{{ECON_2_HEADLINE}}": "Economists Split on June 16 RBA Decision — NAB Tips Another Hike as Cash Rate Sits at 4.35%",
+    "{{ECON_2_SUMMARY}}": "The Reserve Bank of Australia meets in 14 days with economists divided on whether the cash rate rises again from 4.35%. NAB has flagged a June hike is likely; CBA, ANZ, and most others expect a hold. The RBA's May statement flagged inflation has 'picked up materially' driven by fuel and supply chain costs. Small businesses carrying variable-rate finance or equipment loans should model a further 25 basis point increase in their forward costs while the decision plays out.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI · ANTHROPIC",
-    "{{TECH_1_HEADLINE}}": "Anthropic's Claude Opus 4.8 Sets New AI Coding Benchmark With 1M Token Context and Parallel Agent Workflows",
-    "{{TECH_1_SUMMARY}}": "Released last week, Claude Opus 4.8 scores 69.2% on SWE-Bench Pro — outperforming GPT-5.5 and Gemini 3.1 Pro — with a default one-million-token context window across major platforms. The headline feature is 'dynamic workflows': a single session can now orchestrate hundreds of parallel AI sub-agents, enabling automation of large-scale tasks such as codebase-wide migrations or multi-document research across hundreds of thousands of lines. An effort control slider lets users dial Claude's reasoning depth to trade speed for quality. For business users, the practical implication is AI that can handle more complex, multi-step projects without human handoffs at each stage.",
-    "{{TECH_1_URL}}": "https://www.anthropic.com/news/claude-opus-4-8",
+    "{{TECH_1_FLAG}}": "🤖 AI · GOOGLE",
+    "{{TECH_1_HEADLINE}}": "Google Gemini 3.5 Flash Now Live as Default AI in Search and Gemini App — Built for Agents, Not Chatbots",
+    "{{TECH_1_SUMMARY}}": "Google's Gemini 3.5 Flash is now generally available and set as the default AI in both the Gemini app and AI Mode in Google Search globally. Designed from the ground up for agentic workflows — multi-step tasks, tool use, and autonomous operation rather than simple Q&A — it delivers frontier-level reasoning at significantly faster inference speeds. From June 8, it will be enabled by default in Gemini Enterprise and cannot be turned off.",
+    "{{TECH_1_URL}}": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
 
-    "{{TECH_2_FLAG}}": "📊 AI · BUSINESS RESULTS",
-    "{{TECH_2_HEADLINE}}": "AI-Referred Traffic to Retail Sites Up 393% in Q1 2026 — and Converting 42% Better Than Any Other Channel",
-    "{{TECH_2_SUMMARY}}": "New data from retail analytics firms shows AI-referred visitors surged 393% year-over-year in Q1 2026 and converted to purchases at a rate 42% higher than all other traffic sources. Analysts say 2026 is the year AI definitively moves from hype to measurable revenue driver — with the sharpest gains concentrated in businesses that integrated AI into actual customer workflows, not just marketing copy. The pattern applies across sectors: the gap between AI-integrated operators and those still waiting to start is widening every quarter.",
-    "{{TECH_2_URL}}": "",
+    "{{TECH_2_FLAG}}": "💰 AI · INDUSTRY",
+    "{{TECH_2_HEADLINE}}": "OpenAI Surpasses $25 Billion in Annualised Revenue as IPO Preparations Begin for Late 2026",
+    "{{TECH_2_SUMMARY}}": "OpenAI has crossed $25 billion in annualised revenue and is taking early steps toward a public listing, potentially by late 2026. Rival Anthropic is approaching $19 billion. The rapid commercial growth of the leading AI labs confirms that enterprise AI adoption has crossed the inflection point from experiment to standard business infrastructure — and the monetisation gap between early and late adopters is now measured in billions.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🇨🇳 CHINA · MANUFACTURING",
-    "{{ROBOT_1_HEADLINE}}": "AGIBOT's G2 Humanoids Go Live on Chinese Electronics Factory Line — Running Tablet Tests Autonomously",
-    "{{ROBOT_1_SUMMARY}}": "AGIBOT's G2 humanoid robots are now running automated tablet testing directly on the live production line at Longcheer Technology's manufacturing facility in China — what the company describes as a world first for humanoid deployment in consumer electronics production. The robots handle functional testing tasks previously performed by human technicians, operating within the existing factory setup without line modification. AGIBOT has shipped more than 10,000 humanoid units to date and has declared 2026 its 'Deployment Year One,' with targets for 100+ deployed robots across automotive, semiconductor, and energy sectors by Q3. The company holds a 39% global market share in humanoid shipments.",
-    "{{ROBOT_1_URL}}": "https://interestingengineering.com/ai-robotics/agibot-g2-humanoid-robots-live-production-line",
+    "{{ROBOT_1_FLAG}}": "⚙️ PHYSICAL AI · NVIDIA",
+    "{{ROBOT_1_HEADLINE}}": "NVIDIA Launches Cosmos 3 — Open Physical AI World Model Built to Power Robots and Autonomous Machines",
+    "{{ROBOT_1_SUMMARY}}": "NVIDIA released Cosmos 3 on June 1, an open-source physical AI foundation model combining visual reasoning, world generation, and action prediction in a single architecture. Trained on 20 trillion tokens of real and synthetic robot, video, and sensor data, it is designed to be the reasoning engine for physical robots across factory floors, warehouses, and autonomous vehicles. Two versions: Cosmos 3 Nano (16B parameters) for real-time robot inference on workstation hardware, and Cosmos 3 Super (64B) for datacenter-scale deployment.",
+    "{{ROBOT_1_URL}}": "https://www.globenewswire.com/news-release/2026/06/01/3303987/0/en/NVIDIA-Launches-Cosmos-3-the-Open-Frontier-Foundation-Model-for-Physical-AI.html",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "AUKUS Shake-Up: Australia to Buy All Three Nuclear Submarines Second-Hand From the US",
-    "{{AUS_1_SUMMARY}}": "Defence Minister Richard Marles has confirmed Australia will acquire three used Block IV Virginia-class nuclear submarines under a revised AUKUS arrangement announced at the Shangri-La Dialogue in Singapore. The change replaces the original plan for a mix of used and new vessels, with the joint US-UK-Australia statement citing simplified supply chain management, maintenance efficiencies, and significant cost savings. Australia will also build five SSN-AUKUS submarines locally from the late 2030s. The revision is expected to save Australia billions in procurement and long-term maintenance costs over the life of the programme.",
-    "{{AUS_1_URL}}": "https://www.anews.com.tr/world/2026/05/31/australia-will-purchase-3-second-hand-nuclear-powered-submarines-under-revised-aukus-deal",
+    "{{AUS_1_HEADLINE}}": "AUKUS Revised: Australia to Buy Three Second-Hand US Nuclear Submarines in Simplified Stopgap Deal",
+    "{{AUS_1_SUMMARY}}": "Defence Minister Richard Marles confirmed at Singapore's Shangri-La Dialogue that Australia will now acquire all three Virginia-class nuclear submarines second-hand from the US Navy — replacing the original plan for a mix of new and used vessels. Defence cited the premium on simplicity in an 'incredibly complicated' endeavour. Australia's commitment to build five SSN-AUKUS submarines domestically from the late 2030s remains unchanged.",
+    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/drones-and-second-hand-submarines-latest-aukus-details-unveiled/zolbu9p5g",
 
-    "{{AUS_2_HEADLINE}}": "Australia's CPI Hits 4.6% as Hormuz Conflict Drives Fuel and Supply Chain Costs Higher",
-    "{{AUS_2_SUMMARY}}": "Australia's annual CPI has climbed to 4.6% — its highest level since September 2023 — with fuel prices and supply chain disruption tied to the US-Iran conflict around the Strait of Hormuz the primary drivers. Freight costs, materials, and energy bills have all risen sharply across the economy. Small business operators are caught in a compound squeeze: the temporary fuel excise cut provides partial relief until June 30, but underlying inflation dynamics are not expected to ease quickly even if a Hormuz deal is finalised.",
-    "{{AUS_2_URL}}": "",
+    "{{AUS_2_HEADLINE}}": "Socceroos Fall 1–0 to Mexico in Pre-World Cup Friendly as Tournament Preparation Continues",
+    "{{AUS_2_SUMMARY}}": "Australia's national men's football team suffered a 1–0 defeat to Mexico in a pre-World Cup friendly, providing a tough but useful test ahead of the tournament. The result against a strong North American side gives coaching staff key data as the Socceroos finalise their preparation and squad selection.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victoria's Knife Crime Shows First Signs of Decline One Year After Australia's First Machete Ban",
-    "{{VIC_1_SUMMARY}}": "New data confirms knife-related offences are beginning to ease across Victoria, one year after the government announced the ban on machetes — and nine months since it took effect in September 2025. Officers seized nearly 22,000 edged weapons across the state in 2025, averaging 48 per day, while 18,031 machetes were surrendered during the pre-ban amnesty. A Victorian government spokesperson acknowledged crime rates remained too high but said the latest enforcement reforms were working. Victoria remains the only Australian state to completely prohibit machetes, with possession carrying penalties of up to two years imprisonment or $47,000 fines.",
-    "{{VIC_1_URL}}": "",
+    "{{VIC_1_HEADLINE}}": "Melbourne's Draft 2026–27 City Budget Doubles Safety Officers and Expands Mental Health Homelessness Services",
+    "{{VIC_1_SUMMARY}}": "The City of Melbourne's draft 2026–27 budget proposes doubling Community Safety Officers from 11 to 22, expanding homelessness services to include dedicated complex mental health support for the first time, and planting 3,000 new trees across the city. The plan reflects council's continued focus on safety and liveability as Melbourne's CBD continues its post-pandemic recovery and densification.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🕊 BIOLOGY · NAVIGATION",
-    "{{SCI_1_HEADLINE}}": "Homing Pigeons Navigate Via Iron-Rich Immune Cells in Their Livers — Scientists Call It 'Mind-Blowing'",
-    "{{SCI_1_SUMMARY}}": "An international team of German researchers has discovered that homing pigeons navigate using iron-rich macrophages — immune cells normally associated with breaking down red blood cells — located in the liver. The iron makes these cells superparamagnetic, allowing them to respond to shifts in Earth's magnetic field. The cells sit adjacent to nerve fibres, suggesting magnetic signals travel directly to the brain during flight. In experiments, removing the macrophages caused pigeons to lose directional ability on overcast days while still navigating successfully using solar cues when the sky was clear — confirming two completely independent navigation systems operating in parallel. Published in ScienceDaily on May 29, the finding overturns decades of assumptions about where animal magnetic sensing is located.",
+    "{{SCI_1_FLAG}}": "🔬 MEDICINE · ONCOLOGY",
+    "{{SCI_1_HEADLINE}}": "Experimental Drug Daraxonrasib Nearly Doubles Survival in Advanced Pancreatic Cancer — Results Published in NEJM",
+    "{{SCI_1_SUMMARY}}": "Presented at the American Society of Clinical Oncology annual meeting and published simultaneously in the New England Journal of Medicine, daraxonrasib delivered median overall survival of 13.2 months versus 6.7 months on standard chemotherapy for patients with metastatic pancreatic cancer. The drug blocks the KRAS mutation driving tumour growth in over 90% of cases — a target that had resisted drugs for decades. Pancreatic cancer kills around 90% of patients within five years; these results are the first meaningful step forward in survival outcomes in a generation.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "30 Days to the New Financial Year — How AI Can Lock In Smarter Rates for FY2027 Before the Costs Hit",
-    "{{INSIGHT_BODY}}": "The next 30 days are probably the most financially consequential stretch of the year for a small trades business. On July 1, the fuel excise snaps back — adding roughly 29 cents per litre to diesel overnight. The minimum wage rises the same day. And if Westpac's economists are right, the RBA may add another 25 basis points on June 16, lifting variable-rate finance costs from mid-July. Most operators will absorb all three quietly, chip away at the margin they've spent twelve months rebuilding, and try not to notice. The smarter move is to spend 60 to 90 minutes this week with an AI tool — Claude, ChatGPT, whichever you're comfortable with — and model what your revised rate card needs to look like by July 1. Feed it your current hourly rate, your average weekly diesel spend, your labour costs, and your finance repayments. Ask it to calculate the break-even impact of each July change and propose a revised rate. You don't have to quote it to every customer tomorrow. But knowing the number — before your margin gets quietly eaten — is the entire game.",
+    "{{INSIGHT_TITLE}}": "New Month, New Habits: Five AI Prompts Every Trades Business Should Run at the Start of June",
+    "{{INSIGHT_BODY}}": "A new month is your best natural reset point. Most small trades operators know they should review their numbers, check the pipeline, and plan ahead — but it rarely happens because there's no system. AI changes that. Take 10 minutes at the start of each month and prompt your AI assistant to: review your previous month's job log for patterns in margin and delays; draft a short cash flow projection based on your outstanding quotes; flag any recurring supplier invoices that have risen since last quarter; update your rate card with any cost increases since your last review; and draft a short follow-up message to any quotes older than three weeks. Each task takes under two minutes. Together, they deliver the discipline a bookkeeper, estimator, and business coach would charge thousands per month to provide — sitting quietly on your phone, ready when you need it. The financial year ends in 29 days. Start June right.",
 
     # Fun Facts
-    "{{FACT_1}}": "The original London Bridge was sold in 1968 for $2.46 million to an American businessman who had it dismantled stone by stone and shipped to Lake Havasu City, Arizona, where it was fully reassembled and opened in 1971. The buyer, Robert McCulloch, was widely reported to have believed he was purchasing the far more iconic Tower Bridge. He insisted he knew exactly what he was buying — but the story persists, and the bridge still stands in the Arizona desert.",
+    "{{FACT_1}}": "The loudest sound in recorded history was the 1883 eruption of Krakatoa, which was heard clearly 4,800 kilometres away on Rodrigues Island near Mauritius. The pressure wave circled Earth four complete times and was recorded on barometers around the world for five consecutive days.",
 
-    "{{FACT_2}}": "A woodpecker drills at up to 20 pecks per second — an impact that would cause a concussion in any other animal. Its brain is protected by three overlapping adaptations: a spongy, shock-absorbing skull that distributes force; highly compressed neck muscles acting as suspension; and a tongue so long it wraps entirely around the back of the skull like a biological seatbelt, cushioning each strike before it reaches the brain. Engineers have studied the design to improve helmet and protective equipment technology.",
+    "{{FACT_2}}": "Switzerland is legally required to maintain emergency food stockpiles sufficient for its entire population — covering months of essential goods including coffee, sugar, edible oils, rice, and medicines. The strategic reserves are managed under the Federal Act on National Economic Supply and rotated continuously by law.",
 
-    "{{FACT_3}}": "The United States has never officially adopted the metric system — making it one of only three countries in the world, alongside Myanmar and Liberia, that have not done so. A Metric Conversion Act passed in 1975, but voluntary compliance only. The story traces partly to 1793, when a French vessel carrying the official metric reference standards to the US sank en route. By the time replacement standards arrived, the political moment had passed — and the imperial system was too deeply embedded to shift.",
+    "{{FACT_3}}": "Hot-dip galvanising — plunging structural steel into molten zinc at around 450°C — was patented by Frenchman Stanislas Sorel in 1836. A correctly applied galvanising coat provides 50 to 100 years of corrosion protection with zero ongoing maintenance in most Australian environments, outperforming paint and other protective coatings by decades.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the landscaper keep getting promoted?",
-    "{{JOKE_PUNCHLINE}}": "Because every time there was a problem, he just mulched it over.",
+    "{{JOKE_SETUP}}": "Why do arborists make the best managers?",
+    "{{JOKE_PUNCHLINE}}": "Because they're brilliant at spotting deadwood — and cutting it before it brings the whole operation down.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "“Great things are done by a series of small things brought together.”",
-    "{{CLOSING_ATTR}}": "— Vincent van Gogh",
-    "{{CLOSING_MESSAGE}}": "Monday, 1 June 2026 — the first day of meteorological winter in Melbourne, and exactly 30 days until the end of the financial year. Half-price public transport kicks in across Victoria from today, so if any of your team commutes by PT the tap-on cost has halved. The bigger number to keep in mind: July 1 now brings a triple cost event — fuel excise snap-back, minimum wage rise, and potentially another RBA hike on the 16th. Cold mornings ahead, and some real financial decisions to make before the month is out. Get the rate card right before the crunch hits. Have a good week, Liall.",
+    "{{CLOSING_QUOTE}}": "“Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.”",
+    "{{CLOSING_ATTR}}": "— Marie Curie",
+    "{{CLOSING_MESSAGE}}": "First Tuesday of June, Liall — 29 days left in the financial year, and a wet week building from Thursday. Fuel excise relief is counting down to June 30 and the RBA decides in 14 days. A good morning to prompt the AI, tighten the rate card, and make sure any jobs quoted today account for what lands on July 1. Stay dry out there.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
