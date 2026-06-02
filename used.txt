@@ -413,3 +413,13 @@ JOKE: Why do arborists make the best managers?
 INSIGHT: New Month, New Habits: Five AI Prompts Every Trades Business Should Run at the Start of June
 QUOTE: Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less. — Marie Curie
 ---
+DATE: Wednesday, 03 June 2026
+SCIENCE: NASA's Roman Space Telescope expected to discover approximately 100,000 exoplanets in five years — more than all previous missions combined — ScienceDaily June 1 2026
+ROBOTICS: PUDU D7 industrial semi-humanoid robot launched by Pudu Robotics Embodied division — 165cm, 45kg, 8-hour autonomous operation with self-swapping battery, PuduFM 1.0 AI model — June 1 2026
+FACT: Papua New Guinea has more distinct languages than any other country on Earth — over 840 spoken languages representing roughly 10% of all human languages despite a population of just 10 million
+FACT: The total length of blood vessels in a single adult human body — arteries, veins and capillaries combined — is approximately 100,000 kilometres, enough to circle the Earth about 2.5 times
+FACT: The Great Barrier Reef has lost approximately 50% of its coral cover since 1995, primarily due to mass bleaching events driven by rising ocean temperatures
+JOKE: Why do cabinet makers make the best project managers?
+INSIGHT: Winter Is Here — How AI Can Turn Your Quiet Week Into a Profitable One
+QUOTE: Perfection is not attainable, but if we chase perfection we can catch excellence. — Vince Lombardi
+---
