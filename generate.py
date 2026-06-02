@@ -4,91 +4,91 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Tuesday, 02 June 2026",
+    "{{DATE}}": "Wednesday, 03 June 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Tue 2 Jun (BOM forecast)
-    "{{WEATHER_1}}": "TUE 2 · ⛅ Part cloud, fog · 8–14°C",
-    "{{WEATHER_2}}": "WED 3 · ☁ Cloudy · 9–14°C",
+    # Weather — Carrum Downs VIC, 5-day from Wed 3 Jun
+    "{{WEATHER_1}}": "WED 3 · ⛅ Part cloudy · 8–14°C",
+    "{{WEATHER_2}}": "THU 4 · ☁ Cloudy · 8–14°C",
     "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "THU 4 · 🌧 Showers likely · 9–13°C",
+    "{{WEATHER_3}}": "FRI 5 · 🌧 Showers likely · 8–13°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "FRI 5 · 🌧 Showers · 9–14°C",
-    "{{WEATHER_5}}": "SAT 6 · ⛅ Part cloud · 10–15°C",
-    "{{WEATHER_ALERT}}": "⚠ SHOWERS FROM THURSDAY",
+    "{{WEATHER_4}}": "SAT 6 · ⛅ Part cloudy · 8–14°C",
+    "{{WEATHER_5}}": "SUN 7 · ☁ Overcast · 9–14°C",
+    "{{WEATHER_ALERT}}": "⚠ SHOWERS FROM FRIDAY",
 
     # World
-    "{{WORLD_1_FLAG}}": "🌏 MIDDLE EAST · BREAKING",
-    "{{WORLD_1_HEADLINE}}": "US Strikes Iranian Military Sites After American Drone Shot Down — Kuwait Hit by Missile Fire",
-    "{{WORLD_1_SUMMARY}}": "US Central Command struck radar and drone control sites in Iran over the weekend after Tehran shot down an American MQ-1 Predator drone. Iran retaliated with its own strikes, with Kuwait reporting incoming drone and missile fire. Both countries continue ceasefire negotiations amid escalating regional tensions — with direct implications for global oil supply and fuel prices.",
-    "{{WORLD_1_URL}}": "https://www.npr.org/2026/06/01/g-s1-125126/us-iran-war-updates",
+    "{{WORLD_1_FLAG}}": "🌏 EUROPE · UKRAINE",
+    "{{WORLD_1_HEADLINE}}": "Russia Fires 73 Missiles and 656 Drones at Ukraine — 17 Dead in Largest Barrage of 2026",
+    "{{WORLD_1_SUMMARY}}": "Russia launched its largest aerial assault of 2026 overnight, firing 73 missiles — including eight hypersonic Zircon weapons — and 656 drones at Ukrainian cities. At least 17 people died across Kyiv, Dnipro and Kharkiv. Ukrainian air defences intercepted 40 missiles and 602 drones, but residential buildings and civilian infrastructure across eight Kyiv districts were damaged. President Zelenskyy called urgently for more Western air defence support.",
+    "{{WORLD_1_URL}}": "https://abcnews.com/International/russia-launches-horrific-drone-missile-strikes-ukraine-killing/story?id=133506283",
 
-    "{{WORLD_2_FLAG}}": "🌎 LATIN AMERICA · POLITICS",
-    "{{WORLD_2_HEADLINE}}": "Right-Wing Outsider Wins Colombia's First-Round Presidential Vote — June 21 Runoff Set Against Leftist Cepeda",
-    "{{WORLD_2_SUMMARY}}": "Abelardo de la Espriella, a tough-on-crime right-wing candidate aligned with Trump, scored a surprise first-round win in Colombia's presidential election with 43.7% of the vote — defying all opinion polls. He will face leftist senator Iván Cepeda in a June 21 runoff that will define the country's political direction and its relationship with the United States.",
-    "{{WORLD_2_URL}}": "https://www.pbs.org/newshour/world/polls-close-in-colombia-vote-with-espriella-and-cepeda-advancing-to-runoff",
+    "{{WORLD_2_FLAG}}": "🌎 UNITED STATES · LAW",
+    "{{WORLD_2_HEADLINE}}": "US Appeals Court Rules Trump's Transgender Military Ban Unconstitutional — Hegseth Vows Supreme Court Fight",
+    "{{WORLD_2_SUMMARY}}": "A divided three-judge panel of the DC Circuit Court ruled on June 2 that the Pentagon's policy barring transgender troops from service was designed to 'harm a politically unpopular group' and violated the Constitution. The ruling protects current transgender service members from expulsion but does not allow new recruits to join. Defence Secretary Hegseth immediately signalled an appeal to the Supreme Court.",
+    "{{WORLD_2_URL}}": "https://www.npr.org/2026/06/02/g-s1-125323/pentagon-transgender-troops",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🇦🇺 FUEL · EXCISE",
-    "{{ECON_1_HEADLINE}}": "Australia's Half-Price Fuel Excise Relief Expires June 30 — Diesel Prices Set to Jump 29 Cents Per Litre",
-    "{{ECON_1_SUMMARY}}": "Since April 1, federal fuel excise has been halved from 52.6¢ to 26.3¢ per litre, cutting diesel by 31% and petrol by 29% in major cities. That relief expires in four weeks on June 30, with full rates snapping back overnight — adding around 29 cents per litre once GST applies. Trades operators with vehicle-heavy operations should factor the July cost jump into any work quoted now for delivery after June 30.",
-    "{{ECON_1_URL}}": "https://www.smartcompany.com.au/economy/australia-fuel-crisis-essential-updates-businesses/",
+    "{{ECON_1_FLAG}}": "🇦🇺 FUEL · COST OF LIVING",
+    "{{ECON_1_HEADLINE}}": "Australia's Fuel Excise Relief Ends June 30 — Prices to Jump ~29c/L Overnight on July 1",
+    "{{ECON_1_SUMMARY}}": "The federal government's halved fuel excise — cutting 26.3 cents per litre off petrol and diesel since April 1 — expires in 28 days with no extension announced. Once GST is factored in, pump prices jump by approximately 29 cents per litre overnight on July 1. For trades operators filling multiple diesel tanks weekly, that adds hundreds of dollars in monthly running costs. Any work quoted this week for delivery after June 30 should account for this reset.",
+    "{{ECON_1_URL}}": "https://fairworkmate.com.au/blog/fuel-excise-cut-ends-30-june-2026-what-happens-next",
 
-    "{{ECON_2_FLAG}}": "🏦 INTEREST RATES · RBA",
-    "{{ECON_2_HEADLINE}}": "Economists Split on June 16 RBA Decision — NAB Tips Another Hike as Cash Rate Sits at 4.35%",
-    "{{ECON_2_SUMMARY}}": "The Reserve Bank of Australia meets in 14 days with economists divided on whether the cash rate rises again from 4.35%. NAB has flagged a June hike is likely; CBA, ANZ, and most others expect a hold. The RBA's May statement flagged inflation has 'picked up materially' driven by fuel and supply chain costs. Small businesses carrying variable-rate finance or equipment loans should model a further 25 basis point increase in their forward costs while the decision plays out.",
+    "{{ECON_2_FLAG}}": "🏭 SMALL BUSINESS · AUSTRALIA",
+    "{{ECON_2_HEADLINE}}": "Small Business Input Costs at Record Highs — Energy, Insurance and Wages Squeeze 2026 Margins",
+    "{{ECON_2_SUMMARY}}": "Australian industry research finds 40% of small businesses expect 2026 to be worse than last year, with energy prices, insurance premiums and wage pressures all at their highest in a decade. Despite some cautious optimism, SMEs say input cost pressure will remain elevated through the second half of FY26 — particularly hitting operators who have not updated their rate cards since 2024.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI · GOOGLE",
-    "{{TECH_1_HEADLINE}}": "Google Gemini 3.5 Flash Now Live as Default AI in Search and Gemini App — Built for Agents, Not Chatbots",
-    "{{TECH_1_SUMMARY}}": "Google's Gemini 3.5 Flash is now generally available and set as the default AI in both the Gemini app and AI Mode in Google Search globally. Designed from the ground up for agentic workflows — multi-step tasks, tool use, and autonomous operation rather than simple Q&A — it delivers frontier-level reasoning at significantly faster inference speeds. From June 8, it will be enabled by default in Gemini Enterprise and cannot be turned off.",
-    "{{TECH_1_URL}}": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+    "{{TECH_1_FLAG}}": "🤖 AI · MICROSOFT",
+    "{{TECH_1_HEADLINE}}": "Microsoft Build 2026: Persistent AI Agents Now Embedded Across Office 365, Windows and Azure",
+    "{{TECH_1_SUMMARY}}": "At its June 2 keynote in San Francisco, Microsoft launched Copilot Agent Mode for Office 365 — persistent AI agents that operate autonomously inside Word, Excel, Teams and Outlook, rolling out to subscribers in late June. Windows Local AI brings on-device agents to NPU-equipped PCs, and Azure AI Foundry now offers enterprise dashboards to manage thousands of deployed AI agents simultaneously. The shift from chatbot to always-on autonomous assistant is now built into the world's most widely used software platform.",
+    "{{TECH_1_URL}}": "https://windowsnews.ai/article/build-2026-microsoft-unleashes-ai-agents-across-office-365-windows-and-azure-at-san-francisco-keynot.421349",
 
-    "{{TECH_2_FLAG}}": "💰 AI · INDUSTRY",
-    "{{TECH_2_HEADLINE}}": "OpenAI Surpasses $25 Billion in Annualised Revenue as IPO Preparations Begin for Late 2026",
-    "{{TECH_2_SUMMARY}}": "OpenAI has crossed $25 billion in annualised revenue and is taking early steps toward a public listing, potentially by late 2026. Rival Anthropic is approaching $19 billion. The rapid commercial growth of the leading AI labs confirms that enterprise AI adoption has crossed the inflection point from experiment to standard business infrastructure — and the monetisation gap between early and late adopters is now measured in billions.",
+    "{{TECH_2_FLAG}}": "💰 AI · IPO",
+    "{{TECH_2_HEADLINE}}": "Anthropic Files Confidential IPO at $965 Billion Valuation — First Major AI Lab to Head for Public Markets",
+    "{{TECH_2_SUMMARY}}": "Anthropic submitted a confidential S-1 to the US SEC on June 1, targeting an October 2026 listing. The filing follows a $65 billion Series H that pushed its valuation to $965 billion — surpassing OpenAI's $852 billion. Annual revenue has surged from $10 billion to a $47 billion run rate in 2026, making it the fastest-growing enterprise software company in history. The listing would be the first IPO by a major frontier AI laboratory.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "⚙️ PHYSICAL AI · NVIDIA",
-    "{{ROBOT_1_HEADLINE}}": "NVIDIA Launches Cosmos 3 — Open Physical AI World Model Built to Power Robots and Autonomous Machines",
-    "{{ROBOT_1_SUMMARY}}": "NVIDIA released Cosmos 3 on June 1, an open-source physical AI foundation model combining visual reasoning, world generation, and action prediction in a single architecture. Trained on 20 trillion tokens of real and synthetic robot, video, and sensor data, it is designed to be the reasoning engine for physical robots across factory floors, warehouses, and autonomous vehicles. Two versions: Cosmos 3 Nano (16B parameters) for real-time robot inference on workstation hardware, and Cosmos 3 Super (64B) for datacenter-scale deployment.",
-    "{{ROBOT_1_URL}}": "https://www.globenewswire.com/news-release/2026/06/01/3303987/0/en/NVIDIA-Launches-Cosmos-3-the-Open-Frontier-Foundation-Model-for-Physical-AI.html",
+    "{{ROBOT_1_FLAG}}": "🦾 CHINA · INDUSTRIAL ROBOTICS",
+    "{{ROBOT_1_HEADLINE}}": "PUDU D7 Industrial Semi-Humanoid Launched for Factory Floors — 8-Hour Autonomous Operation, Self-Swapping Battery",
+    "{{ROBOT_1_SUMMARY}}": "Pudu Robotics' Embodied division unveiled the PUDU D7 on June 1 — a 165cm, 45kg semi-humanoid robot built for manufacturing environments. Running on the PuduFM 1.0 AI foundation model, it handles dispensing, assembly and fine manipulation with millimetre-level force control across 50 degrees of freedom. Its standout feature: it independently removes, replaces and recharges its own battery, sustaining over 8 hours of continuous factory floor operation without any human intervention.",
+    "{{ROBOT_1_URL}}": "https://www.roboticstomorrow.com/news/2026/06/01/pudu-embodied-unveils-the-next-generation-pudu-d7-opening-a-new-chapter-for-industrial-semi-humanoid-robotics/26651/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "AUKUS Revised: Australia to Buy Three Second-Hand US Nuclear Submarines in Simplified Stopgap Deal",
-    "{{AUS_1_SUMMARY}}": "Defence Minister Richard Marles confirmed at Singapore's Shangri-La Dialogue that Australia will now acquire all three Virginia-class nuclear submarines second-hand from the US Navy — replacing the original plan for a mix of new and used vessels. Defence cited the premium on simplicity in an 'incredibly complicated' endeavour. Australia's commitment to build five SSN-AUKUS submarines domestically from the late 2030s remains unchanged.",
-    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/drones-and-second-hand-submarines-latest-aukus-details-unveiled/zolbu9p5g",
+    "{{AUS_1_HEADLINE}}": "Socceroos Confirm 26-Man World Cup Squad — Coach Popovic Targets Historic Quarter-Final in North America",
+    "{{AUS_1_SUMMARY}}": "Australia's final FIFA World Cup 2026 squad was confirmed June 1, with coach Tony Popovic publicly targeting the quarter-finals — a milestone the Socceroos have never achieved. Drawn into Group D, they open against Turkey in Vancouver on June 14, face the USA in Seattle, then Paraguay in Santa Clara. The squad was named after a preparation camp in Sarasota, Florida.",
+    "{{AUS_1_URL}}": "https://socceroos.com.au/news/socceroos-squad-numbers-revealed-fifa-world-cup-2026tm",
 
-    "{{AUS_2_HEADLINE}}": "Socceroos Fall 1–0 to Mexico in Pre-World Cup Friendly as Tournament Preparation Continues",
-    "{{AUS_2_SUMMARY}}": "Australia's national men's football team suffered a 1–0 defeat to Mexico in a pre-World Cup friendly, providing a tough but useful test ahead of the tournament. The result against a strong North American side gives coaching staff key data as the Socceroos finalise their preparation and squad selection.",
+    "{{AUS_2_HEADLINE}}": "Traditional Owners Grieve as Bulldozers Move into Barrambin for Brisbane's 2032 Olympic Stadium",
+    "{{AUS_2_SUMMARY}}": "Construction of Brisbane's $3.8 billion Olympic main stadium began June 1 at Barrambin (Victoria Park) with earth-moving machinery and police surrounding the heritage-listed site. First Nations custodians described watching sacred healing springs fenced off as an act of grief. More than a thousand trees, including pre-settlement natives, are expected to be cleared, with 10 federal applications lodged to protect significant Aboriginal areas.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Melbourne's Draft 2026–27 City Budget Doubles Safety Officers and Expands Mental Health Homelessness Services",
-    "{{VIC_1_SUMMARY}}": "The City of Melbourne's draft 2026–27 budget proposes doubling Community Safety Officers from 11 to 22, expanding homelessness services to include dedicated complex mental health support for the first time, and planting 3,000 new trees across the city. The plan reflects council's continued focus on safety and liveability as Melbourne's CBD continues its post-pandemic recovery and densification.",
+    "{{VIC_1_HEADLINE}}": "Melbourne Marks Mabo Day Tonight — Free Concert at Federation Square on 34th Anniversary of Landmark Land Rights Ruling",
+    "{{VIC_1_SUMMARY}}": "A free Mabo Day concert presented by the Koorie Heritage Trust takes place at Federation Square tonight from 6pm to 8:30pm, featuring live music, an island feast, and the Blak Designer Mini Market. Today is the 34th anniversary of the High Court's Mabo v Queensland decision on June 3, 1992 — the ruling that overturned the doctrine of terra nullius and led directly to the Native Title Act 1993.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔬 MEDICINE · ONCOLOGY",
-    "{{SCI_1_HEADLINE}}": "Experimental Drug Daraxonrasib Nearly Doubles Survival in Advanced Pancreatic Cancer — Results Published in NEJM",
-    "{{SCI_1_SUMMARY}}": "Presented at the American Society of Clinical Oncology annual meeting and published simultaneously in the New England Journal of Medicine, daraxonrasib delivered median overall survival of 13.2 months versus 6.7 months on standard chemotherapy for patients with metastatic pancreatic cancer. The drug blocks the KRAS mutation driving tumour growth in over 90% of cases — a target that had resisted drugs for decades. Pancreatic cancer kills around 90% of patients within five years; these results are the first meaningful step forward in survival outcomes in a generation.",
+    "{{SCI_1_FLAG}}": "🔭 SPACE · NASA",
+    "{{SCI_1_HEADLINE}}": "NASA's Roman Space Telescope Set to Find 100,000 New Worlds — More Than All Previous Missions Combined",
+    "{{SCI_1_SUMMARY}}": "A new analysis published June 1 confirms NASA's Nancy Grace Roman Space Telescope — on track for launch in late 2026 — is expected to discover approximately 100,000 exoplanets in five years, dwarfing the roughly 6,300 found by all missions to date. Observing 100 million stars in largely uncharted Milky Way regions, it will search for rare Earth-sized worlds, study thousands of alien atmospheres, and catalogue rogue planets drifting without a star — potentially transforming the search for life in our galaxy.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "New Month, New Habits: Five AI Prompts Every Trades Business Should Run at the Start of June",
-    "{{INSIGHT_BODY}}": "A new month is your best natural reset point. Most small trades operators know they should review their numbers, check the pipeline, and plan ahead — but it rarely happens because there's no system. AI changes that. Take 10 minutes at the start of each month and prompt your AI assistant to: review your previous month's job log for patterns in margin and delays; draft a short cash flow projection based on your outstanding quotes; flag any recurring supplier invoices that have risen since last quarter; update your rate card with any cost increases since your last review; and draft a short follow-up message to any quotes older than three weeks. Each task takes under two minutes. Together, they deliver the discipline a bookkeeper, estimator, and business coach would charge thousands per month to provide — sitting quietly on your phone, ready when you need it. The financial year ends in 29 days. Start June right.",
+    "{{INSIGHT_TITLE}}": "Winter Is Here — How AI Can Turn Your Quiet Week Into a Profitable One",
+    "{{INSIGHT_BODY}}": "For small trades operators in abrasive blasting, coatings, and industrial services, a run of cold or wet weather doesn't just slow site access — it can stall cash flow fast if you're not ready for it. The good news: quiet days are exactly when AI earns its keep. While the site slows this week, use AI to update your rate card with the July 1 fuel cost reset factored in. Have it draft follow-up messages for quotes over three weeks old. Ask it to generate SWMS templates for upcoming jobs. Get it to write a short case study from your last completed project for the website. Businesses that treat winter downtime as a business sprint — not dead time — consistently finish the second half of the year stronger than those who simply wait for the sun. With 29 days to EOFY, the admin you do this week could be worth thousands before August.",
 
     # Fun Facts
-    "{{FACT_1}}": "The loudest sound in recorded history was the 1883 eruption of Krakatoa, which was heard clearly 4,800 kilometres away on Rodrigues Island near Mauritius. The pressure wave circled Earth four complete times and was recorded on barometers around the world for five consecutive days.",
+    "{{FACT_1}}": "Papua New Guinea has more distinct languages than any other country on Earth — over 840 spoken across its mountainous terrain, representing roughly 10% of all human languages despite a population of just 10 million. Many villages developed languages entirely unintelligible to neighbours a single valley away after thousands of years of isolated community life.",
 
-    "{{FACT_2}}": "Switzerland is legally required to maintain emergency food stockpiles sufficient for its entire population — covering months of essential goods including coffee, sugar, edible oils, rice, and medicines. The strategic reserves are managed under the Federal Act on National Economic Supply and rotated continuously by law.",
+    "{{FACT_2}}": "The total length of blood vessels in a single adult human body — arteries, veins and capillaries combined — is approximately 100,000 kilometres. That is enough to circle the Earth about 2.5 times, or travel from Melbourne to London and back roughly 47 times.",
 
-    "{{FACT_3}}": "Hot-dip galvanising — plunging structural steel into molten zinc at around 450°C — was patented by Frenchman Stanislas Sorel in 1836. A correctly applied galvanising coat provides 50 to 100 years of corrosion protection with zero ongoing maintenance in most Australian environments, outperforming paint and other protective coatings by decades.",
+    "{{FACT_3}}": "The Great Barrier Reef is the world's largest living structure — stretching 2,300 kilometres along Queensland's coast and covering an area larger than the UK, Switzerland and the Netherlands combined. Scientists estimate the reef has lost approximately 50% of its coral cover since 1995, primarily due to mass bleaching events driven by rising ocean temperatures.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why do arborists make the best managers?",
-    "{{JOKE_PUNCHLINE}}": "Because they're brilliant at spotting deadwood — and cutting it before it brings the whole operation down.",
+    "{{JOKE_SETUP}}": "Why do cabinet makers make the best project managers?",
+    "{{JOKE_PUNCHLINE}}": "Because they understand exactly where every piece fits, they never leave a gap in the plan — and they know that if you rush the finish, it always shows.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "“Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.”",
-    "{{CLOSING_ATTR}}": "— Marie Curie",
-    "{{CLOSING_MESSAGE}}": "First Tuesday of June, Liall — 29 days left in the financial year, and a wet week building from Thursday. Fuel excise relief is counting down to June 30 and the RBA decides in 14 days. A good morning to prompt the AI, tighten the rate card, and make sure any jobs quoted today account for what lands on July 1. Stay dry out there.",
+    "{{CLOSING_QUOTE}}": "“Perfection is not attainable, but if we chase perfection we can catch excellence.”",
+    "{{CLOSING_ATTR}}": "— Vince Lombardi",
+    "{{CLOSING_MESSAGE}}": "Happy Wednesday, Liall. Rain arrives from Friday, so make the most of the dry days ahead. The fuel excise clock is ticking — 28 days until July 1 prices reset, so factor that into anything quoted this week for later delivery. The Socceroos confirmed their World Cup squad yesterday, Melbourne's Winter Night Market fires up at the QVM tonight, and today is Mabo Day — the 34th anniversary of the High Court's landmark ruling. A good mid-week to sprint on the admin before the cold sets in. Have a productive one.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
