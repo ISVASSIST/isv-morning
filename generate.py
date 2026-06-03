@@ -4,91 +4,92 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Wednesday, 03 June 2026",
+    "{{DATE}}": "Thursday, 04 June 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Wed 3 Jun
-    "{{WEATHER_1}}": "WED 3 · ⛅ Part cloudy · 8–14°C",
-    "{{WEATHER_2}}": "THU 4 · ☁ Cloudy · 8–14°C",
-    "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "FRI 5 · 🌧 Showers likely · 8–13°C",
-    "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "SAT 6 · ⛅ Part cloudy · 8–14°C",
-    "{{WEATHER_5}}": "SUN 7 · ☁ Overcast · 9–14°C",
-    "{{WEATHER_ALERT}}": "⚠ SHOWERS FROM FRIDAY",
+    # Weather — Carrum Downs VIC, 5-day from Thu 4 Jun
+    # Cold front today with up to 30mm of rain, then easing through the week
+    "{{WEATHER_1}}": "THU 4 · 🌧 Cold front, rain · 7–14°C",
+    "{{WEATHER_2}}": "FRI 5 · 🌧 Showers likely · 7–12°C",
+    "{{WEATHER_2_CLASS}}": "rain",
+    "{{WEATHER_3}}": "SAT 6 · ⛅ Mostly cloudy · 8–14°C",
+    "{{WEATHER_3_CLASS}}": "",
+    "{{WEATHER_4}}": "SUN 7 · ☀ Clearing · 8–14°C",
+    "{{WEATHER_5}}": "MON 8 · 🌧 Shower possible · 7–13°C",
+    "{{WEATHER_ALERT}}": "⚠ COLD FRONT TODAY · UP TO 30MM",
 
     # World
-    "{{WORLD_1_FLAG}}": "🌏 EUROPE · UKRAINE",
-    "{{WORLD_1_HEADLINE}}": "Russia Fires 73 Missiles and 656 Drones at Ukraine — 17 Dead in Largest Barrage of 2026",
-    "{{WORLD_1_SUMMARY}}": "Russia launched its largest aerial assault of 2026 overnight, firing 73 missiles — including eight hypersonic Zircon weapons — and 656 drones at Ukrainian cities. At least 17 people died across Kyiv, Dnipro and Kharkiv. Ukrainian air defences intercepted 40 missiles and 602 drones, but residential buildings and civilian infrastructure across eight Kyiv districts were damaged. President Zelenskyy called urgently for more Western air defence support.",
-    "{{WORLD_1_URL}}": "https://abcnews.com/International/russia-launches-horrific-drone-missile-strikes-ukraine-killing/story?id=133506283",
+    "{{WORLD_1_FLAG}}": "🌏 UKRAINE · RUSSIA",
+    "{{WORLD_1_HEADLINE}}": "Russia Fires 198 Drones at Ukraine — Six Dead in Kyiv as Ukrainian Drones Hit St. Petersburg Oil Terminal",
+    "{{WORLD_1_SUMMARY}}": "Russian forces launched 198 drones at Ukrainian cities overnight June 2–3; air defences intercepted 189. Six civilians were killed and 90 injured across Kyiv. Ukrainian forces responded by striking Russia's largest Baltic Sea oil terminal in St. Petersburg, setting it ablaze. President Zelenskyy renewed urgent calls for additional Western air defence systems to counter the nightly barrages.",
+    "{{WORLD_1_URL}}": "https://www.cnn.com/world/europe/ukraine",
 
-    "{{WORLD_2_FLAG}}": "🌎 UNITED STATES · LAW",
-    "{{WORLD_2_HEADLINE}}": "US Appeals Court Rules Trump's Transgender Military Ban Unconstitutional — Hegseth Vows Supreme Court Fight",
-    "{{WORLD_2_SUMMARY}}": "A divided three-judge panel of the DC Circuit Court ruled on June 2 that the Pentagon's policy barring transgender troops from service was designed to 'harm a politically unpopular group' and violated the Constitution. The ruling protects current transgender service members from expulsion but does not allow new recruits to join. Defence Secretary Hegseth immediately signalled an appeal to the Supreme Court.",
-    "{{WORLD_2_URL}}": "https://www.npr.org/2026/06/02/g-s1-125323/pentagon-transgender-troops",
+    "{{WORLD_2_FLAG}}": "🌎 SOUTH AMERICA · COLOMBIA",
+    "{{WORLD_2_HEADLINE}}": "Tough-on-Crime Outsider Leads Colombia Presidential Race — Runoff Set Against Former Petro Ally",
+    "{{WORLD_2_SUMMARY}}": "Aberaldo de la Espriella, a security-focused outsider running on a tough-on-crime platform, has emerged as the front-runner in Colombia's presidential election, setting up a runoff against Ivan Cepeda, a close ally of outgoing President Gustavo Petro. The result reflects deepening voter frustration with crime and insecurity across Latin America, with de la Espriella drawing strong support from regions hardest hit by gang violence.",
+    "{{WORLD_2_URL}}": "https://www.npr.org/sections/world/",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🇦🇺 FUEL · COST OF LIVING",
-    "{{ECON_1_HEADLINE}}": "Australia's Fuel Excise Relief Ends June 30 — Prices to Jump ~29c/L Overnight on July 1",
-    "{{ECON_1_SUMMARY}}": "The federal government's halved fuel excise — cutting 26.3 cents per litre off petrol and diesel since April 1 — expires in 28 days with no extension announced. Once GST is factored in, pump prices jump by approximately 29 cents per litre overnight on July 1. For trades operators filling multiple diesel tanks weekly, that adds hundreds of dollars in monthly running costs. Any work quoted this week for delivery after June 30 should account for this reset.",
-    "{{ECON_1_URL}}": "https://fairworkmate.com.au/blog/fuel-excise-cut-ends-30-june-2026-what-happens-next",
+    "{{ECON_1_FLAG}}": "🇦🇺 WAGES · SMALL BUSINESS",
+    "{{ECON_1_HEADLINE}}": "National Minimum Wage Rises 5.97% to $26.44/Hr — Modern Award Rates Up 4.75% From 1 July",
+    "{{ECON_1_SUMMARY}}": "The Fair Work Commission announced on June 2 that Australia's national minimum wage rises by nearly 6% to $26.44 an hour — or $1,004.90 a week — from July 1. Modern award rates covering most trade workers follow at 4.75%. The Commission described it as a 'particularly challenging' decision given inflation and cost-of-living pressures. Employers have 27 days to update payroll and reprice any work quoted under current rates.",
+    "{{ECON_1_URL}}": "https://www.fairwork.gov.au/about-us/workplace-laws/annual-wage-review/annual-wage-review-2026",
 
-    "{{ECON_2_FLAG}}": "🏭 SMALL BUSINESS · AUSTRALIA",
-    "{{ECON_2_HEADLINE}}": "Small Business Input Costs at Record Highs — Energy, Insurance and Wages Squeeze 2026 Margins",
-    "{{ECON_2_SUMMARY}}": "Australian industry research finds 40% of small businesses expect 2026 to be worse than last year, with energy prices, insurance premiums and wage pressures all at their highest in a decade. Despite some cautious optimism, SMEs say input cost pressure will remain elevated through the second half of FY26 — particularly hitting operators who have not updated their rate cards since 2024.",
+    "{{ECON_2_FLAG}}": "⚡ ENERGY · DARWIN",
+    "{{ECON_2_HEADLINE}}": "Ichthys LNG Strike Threatens Australia's Gas Exports — Rolling Stoppages Planned Through June 23",
+    "{{ECON_2_SUMMARY}}": "The Offshore Alliance commenced protected industrial action at Inpex's Ichthys LNG facility near Darwin on June 2, running four-hour daily stoppages at Australia's largest gas export hub — 9.3 million tonnes per year. Escalating action is scheduled through June 23. Talks over pay rises and conditions have stalled after more than a year of negotiation, raising concerns about wholesale gas prices and supply security for Asian LNG buyers.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI · MICROSOFT",
-    "{{TECH_1_HEADLINE}}": "Microsoft Build 2026: Persistent AI Agents Now Embedded Across Office 365, Windows and Azure",
-    "{{TECH_1_SUMMARY}}": "At its June 2 keynote in San Francisco, Microsoft launched Copilot Agent Mode for Office 365 — persistent AI agents that operate autonomously inside Word, Excel, Teams and Outlook, rolling out to subscribers in late June. Windows Local AI brings on-device agents to NPU-equipped PCs, and Azure AI Foundry now offers enterprise dashboards to manage thousands of deployed AI agents simultaneously. The shift from chatbot to always-on autonomous assistant is now built into the world's most widely used software platform.",
-    "{{TECH_1_URL}}": "https://windowsnews.ai/article/build-2026-microsoft-unleashes-ai-agents-across-office-365-windows-and-azure-at-san-francisco-keynot.421349",
+    "{{TECH_1_FLAG}}": "🏛️ USA · AI POLICY",
+    "{{TECH_1_HEADLINE}}": "Trump Signs Executive Order Asking AI Companies to Give US Government 30-Day Early Access to New Models",
+    "{{TECH_1_SUMMARY}}": "President Trump signed an executive order on June 2 asking AI companies to voluntarily submit new frontier models to the federal government for testing up to 30 days before public release. The order also establishes an 'AI cybersecurity clearinghouse' to track model vulnerabilities and directs agencies to harden critical infrastructure against AI-enabled threats. An earlier draft mandating a 90-day review period was scrapped after lobbying from major AI developers.",
+    "{{TECH_1_URL}}": "https://www.cnbc.com/2026/06/02/trump-executive-order-ai.html",
 
-    "{{TECH_2_FLAG}}": "💰 AI · IPO",
-    "{{TECH_2_HEADLINE}}": "Anthropic Files Confidential IPO at $965 Billion Valuation — First Major AI Lab to Head for Public Markets",
-    "{{TECH_2_SUMMARY}}": "Anthropic submitted a confidential S-1 to the US SEC on June 1, targeting an October 2026 listing. The filing follows a $65 billion Series H that pushed its valuation to $965 billion — surpassing OpenAI's $852 billion. Annual revenue has surged from $10 billion to a $47 billion run rate in 2026, making it the fastest-growing enterprise software company in history. The listing would be the first IPO by a major frontier AI laboratory.",
+    "{{TECH_2_FLAG}}": "💹 GLOBAL · AI MARKETS",
+    "{{TECH_2_HEADLINE}}": "Goldman Sachs Revises Humanoid Robotics Forecast Sixfold — Now Sees $38 Billion Market by 2035",
+    "{{TECH_2_SUMMARY}}": "Goldman Sachs dramatically upgraded its humanoid robotics market projection from $6 billion to $38 billion by 2035, citing AI advances and falling hardware costs — unit prices have dropped from $50,000–$250,000 to $30,000–$150,000 in a single year. The bank's base case calls for 250,000 industrial humanoid shipments by 2030, rising to 1.4 million annually by 2035, with China currently outpacing the US in deployment speed and manufacturing cost reduction.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 CHINA · INDUSTRIAL ROBOTICS",
-    "{{ROBOT_1_HEADLINE}}": "PUDU D7 Industrial Semi-Humanoid Launched for Factory Floors — 8-Hour Autonomous Operation, Self-Swapping Battery",
-    "{{ROBOT_1_SUMMARY}}": "Pudu Robotics' Embodied division unveiled the PUDU D7 on June 1 — a 165cm, 45kg semi-humanoid robot built for manufacturing environments. Running on the PuduFM 1.0 AI foundation model, it handles dispensing, assembly and fine manipulation with millimetre-level force control across 50 degrees of freedom. Its standout feature: it independently removes, replaces and recharges its own battery, sustaining over 8 hours of continuous factory floor operation without any human intervention.",
-    "{{ROBOT_1_URL}}": "https://www.roboticstomorrow.com/news/2026/06/01/pudu-embodied-unveils-the-next-generation-pudu-d7-opening-a-new-chapter-for-industrial-semi-humanoid-robotics/26651/",
+    "{{ROBOT_1_FLAG}}": "🤖 USA · NVIDIA",
+    "{{ROBOT_1_HEADLINE}}": "NVIDIA and Unitree Unveil Isaac GR00T Open Humanoid Robot Platform for Global Research Labs",
+    "{{ROBOT_1_SUMMARY}}": "Announced at NVIDIA GTC Taipei on June 1, the Isaac GR00T reference robot pairs Unitree's H2 Plus humanoid (6 feet tall, 75 degrees of freedom) with NVIDIA Jetson AGX Thor compute running at 2,070 TOPS, open-source GR00T AI models, and Sharpa tactile five-finger hands. Stanford Robotics Center, ETH Zurich, Ai2 and UC San Diego will use the platform to push the frontier of physical AI. Available from Unitree in late 2026, with model workflows dropping on GitHub and Hugging Face shortly.",
+    "{{ROBOT_1_URL}}": "https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Socceroos Confirm 26-Man World Cup Squad — Coach Popovic Targets Historic Quarter-Final in North America",
-    "{{AUS_1_SUMMARY}}": "Australia's final FIFA World Cup 2026 squad was confirmed June 1, with coach Tony Popovic publicly targeting the quarter-finals — a milestone the Socceroos have never achieved. Drawn into Group D, they open against Turkey in Vancouver on June 14, face the USA in Seattle, then Paraguay in Santa Clara. The squad was named after a preparation camp in Sarasota, Florida.",
+    "{{AUS_1_HEADLINE}}": "Socceroos Confirm 26-Man World Cup Squad — Open Against Turkey in Vancouver on June 14",
+    "{{AUS_1_SUMMARY}}": "Australia's FIFA World Cup 2026 squad was confirmed June 1, with 26 players drawn from European, Asian and A-League clubs. Coach Tony Popovic has publicly targeted a quarter-final — a milestone the Socceroos have never reached. They open Group D against Turkey in Vancouver on June 14, face the United States in Seattle, then Paraguay in Santa Clara.",
     "{{AUS_1_URL}}": "https://socceroos.com.au/news/socceroos-squad-numbers-revealed-fifa-world-cup-2026tm",
 
-    "{{AUS_2_HEADLINE}}": "Traditional Owners Grieve as Bulldozers Move into Barrambin for Brisbane's 2032 Olympic Stadium",
-    "{{AUS_2_SUMMARY}}": "Construction of Brisbane's $3.8 billion Olympic main stadium began June 1 at Barrambin (Victoria Park) with earth-moving machinery and police surrounding the heritage-listed site. First Nations custodians described watching sacred healing springs fenced off as an act of grief. More than a thousand trees, including pre-settlement natives, are expected to be cleared, with 10 federal applications lodged to protect significant Aboriginal areas.",
+    "{{AUS_2_HEADLINE}}": "ACT Public Schools to Close June 11 as AEU Teachers' Strike Proceeds",
+    "{{AUS_2_SUMMARY}}": "The ACT Education Directorate confirmed all ACT government schools will close on June 11 following AEU members' scheduled strike action. Teachers are pushing for better pay and conditions after protracted EBA negotiations. Parents across the territory have been notified to arrange childcare for the one-day closure.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Melbourne Marks Mabo Day Tonight — Free Concert at Federation Square on 34th Anniversary of Landmark Land Rights Ruling",
-    "{{VIC_1_SUMMARY}}": "A free Mabo Day concert presented by the Koorie Heritage Trust takes place at Federation Square tonight from 6pm to 8:30pm, featuring live music, an island feast, and the Blak Designer Mini Market. Today is the 34th anniversary of the High Court's Mabo v Queensland decision on June 3, 1992 — the ruling that overturned the doctrine of terra nullius and led directly to the Native Title Act 1993.",
+    "{{VIC_1_HEADLINE}}": "St Kilda Film Festival Opens Tonight — 11 Days of Australian Short Cinema From June 4 to 14",
+    "{{VIC_1_SUMMARY}}": "Australia's longest-running short film festival opens Thursday at venues across St Kilda, running through June 14 with screenings, Q&As and industry events. The program spans comedy, documentary and drama shorts from local and international filmmakers. Free and ticketed sessions are available across the run.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔭 SPACE · NASA",
-    "{{SCI_1_HEADLINE}}": "NASA's Roman Space Telescope Set to Find 100,000 New Worlds — More Than All Previous Missions Combined",
-    "{{SCI_1_SUMMARY}}": "A new analysis published June 1 confirms NASA's Nancy Grace Roman Space Telescope — on track for launch in late 2026 — is expected to discover approximately 100,000 exoplanets in five years, dwarfing the roughly 6,300 found by all missions to date. Observing 100 million stars in largely uncharted Milky Way regions, it will search for rare Earth-sized worlds, study thousands of alien atmospheres, and catalogue rogue planets drifting without a star — potentially transforming the search for life in our galaxy.",
+    "{{SCI_1_FLAG}}": "⚛️ PHYSICS",
+    "{{SCI_1_HEADLINE}}": "Scientists Reverse Energy Flow in Turbulence — Overturning an 80-Year-Old Theory",
+    "{{SCI_1_SUMMARY}}": "Researchers at the University of Pittsburgh and University of Turin have shown for the first time that the direction of energy flow in turbulence can be deliberately altered, overturning the Kolmogorov 1941 theory that energy in 3D flows always cascades from large to small scales. Using a tensor-based mathematical framework, they demonstrated the flow can be reversed by changing how forces align. Published June 2 via ScienceDaily, the finding opens new possibilities for controlling ocean currents and improving medical fluid technologies.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Winter Is Here — How AI Can Turn Your Quiet Week Into a Profitable One",
-    "{{INSIGHT_BODY}}": "For small trades operators in abrasive blasting, coatings, and industrial services, a run of cold or wet weather doesn't just slow site access — it can stall cash flow fast if you're not ready for it. The good news: quiet days are exactly when AI earns its keep. While the site slows this week, use AI to update your rate card with the July 1 fuel cost reset factored in. Have it draft follow-up messages for quotes over three weeks old. Ask it to generate SWMS templates for upcoming jobs. Get it to write a short case study from your last completed project for the website. Businesses that treat winter downtime as a business sprint — not dead time — consistently finish the second half of the year stronger than those who simply wait for the sun. With 29 days to EOFY, the admin you do this week could be worth thousands before August.",
+    "{{INSIGHT_TITLE}}": "The $26.44 Challenge: How Trades Operators Can Absorb the Wage Rise Without Losing Margin",
+    "{{INSIGHT_BODY}}": "The Fair Work Commission just ruled that Australia's minimum wage rises to $26.44 an hour from 1 July — a 5.97% lift, with most trade award rates following at 4.75%. For a trades business running two or three people in the field, that is a real labour cost increase arriving in 27 days. The instinct is to absorb it and hope margins hold — but that approach rarely works. The smarter move: open an AI tool today, paste in your last ten job cards, and ask it to identify where your labour time is consistently running over your quoted hours. Most operators find two or three recurring job types bleeding time. Reprice those categories before July 1, tighten your labour allowances on standard quotes, and update your rate card to reflect the new cost baseline. Thirty minutes with AI this week could protect your margin for the entire second half of the financial year.",
 
     # Fun Facts
-    "{{FACT_1}}": "Papua New Guinea has more distinct languages than any other country on Earth — over 840 spoken across its mountainous terrain, representing roughly 10% of all human languages despite a population of just 10 million. Many villages developed languages entirely unintelligible to neighbours a single valley away after thousands of years of isolated community life.",
+    "{{FACT_1}}": "Tungsten has the highest melting point of any pure metal at 3,422 degrees Celsius — hotter than the sun's surface during solar flares — making it the only material suitable for incandescent light bulb filaments and rocket nozzle throats. It was first isolated in 1783 by Spanish brothers Juan and Fausto Elhuyar, who named it from the Swedish 'tung sten' meaning 'heavy stone.'",
 
-    "{{FACT_2}}": "The total length of blood vessels in a single adult human body — arteries, veins and capillaries combined — is approximately 100,000 kilometres. That is enough to circle the Earth about 2.5 times, or travel from Melbourne to London and back roughly 47 times.",
+    "{{FACT_2}}": "The word 'deadline' originated in the American Civil War — a literal line marked around a prison camp, beyond which escaping prisoners would be shot on sight. It did not appear in a print publishing context until the early 1920s, and took another decade before it entered mainstream business use.",
 
-    "{{FACT_3}}": "The Great Barrier Reef is the world's largest living structure — stretching 2,300 kilometres along Queensland's coast and covering an area larger than the UK, Switzerland and the Netherlands combined. Scientists estimate the reef has lost approximately 50% of its coral cover since 1995, primarily due to mass bleaching events driven by rising ocean temperatures.",
+    "{{FACT_3}}": "Caffeine is the world's most widely consumed psychoactive substance — roughly 80 per cent of the global adult population uses it daily. It works by blocking adenosine receptors that signal drowsiness, with effects peaking 30 to 60 minutes after consumption. Its half-life of 5 to 6 hours means half the caffeine from a 3pm coffee is still circulating in your brain at 9pm.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why do cabinet makers make the best project managers?",
-    "{{JOKE_PUNCHLINE}}": "Because they understand exactly where every piece fits, they never leave a gap in the plan — and they know that if you rush the finish, it always shows.",
+    "{{JOKE_SETUP}}": "Why do building certifiers make the worst house guests?",
+    "{{JOKE_PUNCHLINE}}": "They won't leave until they've signed off on everything.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "“Perfection is not attainable, but if we chase perfection we can catch excellence.”",
-    "{{CLOSING_ATTR}}": "— Vince Lombardi",
-    "{{CLOSING_MESSAGE}}": "Happy Wednesday, Liall. Rain arrives from Friday, so make the most of the dry days ahead. The fuel excise clock is ticking — 28 days until July 1 prices reset, so factor that into anything quoted this week for later delivery. The Socceroos confirmed their World Cup squad yesterday, Melbourne's Winter Night Market fires up at the QVM tonight, and today is Mabo Day — the 34th anniversary of the High Court's landmark ruling. A good mid-week to sprint on the admin before the cold sets in. Have a productive one.",
+    "{{CLOSING_QUOTE}}": "“If everything seems under control, you’re not going fast enough.”",
+    "{{CLOSING_ATTR}}": "— Mario Andretti",
+    "{{CLOSING_MESSAGE}}": "Cold front rolling through Carrum Downs today with up to 30mm of rain possible and a feels-like temperature around 7 to 9 degrees — a good day to stay off exposed sites and push through paperwork, quotes, and that rate card update before the wage rise hits. The Fair Work Commission's decision gives you 27 days to reprice before award rates jump on July 1. A wet Thursday can be a productive one if you treat it that way. Have a sharp one, Liall.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
