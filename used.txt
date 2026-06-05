@@ -443,3 +443,13 @@ JOKE: What do you call a tradie who finishes every job on time, under budget, an
 INSIGHT: AI-Powered Invoice Follow-Up: The Easiest Revenue You're Not Chasing
 QUOTE: "A ship in harbour is safe — but that is not what ships are built for." — John A. Shedd
 ---
+DATE: Saturday, 06 June 2026
+SCIENCE: EPFL chip-scale ultrafast femtosecond laser folded to matchhead size — Nature, June 3 2026 — "holy grail of integrated photonics"
+ROBOTICS: AGIBOT World Challenge 2026 at ICRA 2026 Vienna — 526 teams from 27 countries competing on real humanoid robots, June 5 2026
+FACT: The average person walks approximately 160,000 kilometres over their lifetime — roughly four times around the Earth's circumference
+FACT: Aircraft windscreens certified via chicken-cannon test — 1.8 kg bird at cruising speed — same cannon used for jet engine fan blades
+FACT: Coriolis effect does not reliably determine drain spiral direction — dominated by basin geometry, not hemisphere — only significant at weather-system scale
+JOKE: Why do tradies make the best World Cup fans?
+INSIGHT: How AI Can Help You Track Your Margins Job by Job — Before the Numbers Tell a Bad Story
+QUOTE: "The pessimist complains about the wind; the optimist expects it to change; the realist adjusts the sails." — William Arthur Ward
+---
