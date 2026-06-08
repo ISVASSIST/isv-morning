@@ -4,92 +4,92 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Monday, 08 June 2026",
+    "{{DATE}}": "Tuesday, 09 June 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Mon 8 Jun
-    # Cool winter week; showers today and Friday, clearing midweek
-    "{{WEATHER_1}}": "MON 8 · 🌧 Showers · 8–14°C",
-    "{{WEATHER_2}}": "TUE 9 · ⛅ Clearing · 9–16°C",
-    "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "WED 10 · 🌤 Mostly clear · 8–16°C",
+    # Weather — Carrum Downs VIC, 5-day from Tue 9 Jun
+    # Cool winter week; showers Wednesday, clearing to fine weekend
+    "{{WEATHER_1}}": "TUE 9 · ⛅ Partly Cloudy · 11–15°C",
+    "{{WEATHER_2}}": "WED 10 · 🌧 Showers · 12–15°C",
+    "{{WEATHER_2_CLASS}}": "rain",
+    "{{WEATHER_3}}": "THU 11 · ⛅ Mostly Cloudy · 8–16°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "THU 11 · ⛅ Cloudy · 9–15°C",
-    "{{WEATHER_5}}": "FRI 12 · 🌧 Showers · 8–14°C",
-    "{{WEATHER_ALERT}}": "👑 KING'S BIRTHDAY PUBLIC HOLIDAY",
+    "{{WEATHER_4}}": "FRI 12 · 🌤 Clearing · 10–17°C",
+    "{{WEATHER_5}}": "SAT 13 · ☀️ Fine · 10–19°C",
+    "{{WEATHER_ALERT}}": "⚽ WORLD CUP OPENS THURSDAY",
 
     # World
-    "{{WORLD_1_FLAG}}": "🌍 MIDDLE EAST · IRAN-US",
-    "{{WORLD_1_HEADLINE}}": "Iran Accuses US of Ceasefire Violations — Strikes on Qeshm Radar Sites Condemned as 'Clear Breach'",
-    "{{WORLD_1_SUMMARY}}": "Iran's foreign ministry strongly condemned US strikes against radar and coastal surveillance facilities at Sirik and Qeshm Island on Saturday, calling them a \"clear violation of the April 8 ceasefire.\" Tehran accused Washington of complete disregard for international law, saying the targeted facilities protect maritime navigation safety through the Strait of Hormuz. Meanwhile, Israeli forces launched renewed strikes against Hezbollah targets in south Beirut on Sunday, threatening to derail fragile US-Iran peace talks. There is no active ceasefire framework in place and Iran has warned that continued US adventurist actions pose serious escalation risks to regional security.",
-    "{{WORLD_1_URL}}": "https://www.cbsnews.com/live-updates/iran-us-war-israel-hezbollah-fighting-ceasefire-efforts/",
+    "{{WORLD_1_FLAG}}": "🇵🇭 ASIA-PACIFIC · PHILIPPINES",
+    "{{WORLD_1_HEADLINE}}": "Magnitude 7.8 Earthquake Kills at Least 35 in Southern Philippines, Triggering Tsunami",
+    "{{WORLD_1_SUMMARY}}": "A powerful offshore earthquake struck Mindanao on Monday, collapsing buildings in General Santos City and triggering a one-metre tsunami that swept coastal communities in Sarangani province. Landslides killed at least 13, bringing the total death toll to 35 with more than 200 injured. Tsunami warnings have been lifted but search and rescue teams continue working through the rubble of the hard-hit south.",
+    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/6/8/tsunami-warnings-issued-after-8-2-magnitude-earthquake-off-philippines",
 
-    "{{WORLD_2_FLAG}}": "🇦🇱 EUROPE · ALBANIA",
-    "{{WORLD_2_HEADLINE}}": "Thousands March in Tirana as Albania Greenlights Kushner's $1.6B Resort on Protected Adriatic Coastline",
-    "{{WORLD_2_SUMMARY}}": "Thousands of Albanians protested in Tirana over the weekend against a $1.6 billion luxury resort project on the protected Sazan-Karaburun peninsula, backed by Jared Kushner's Affinity Partners. Demonstrators say the project was fast-tracked by Prime Minister Edi Rama without adequate environmental assessment and threatens one of Europe's last pristine Adriatic coastlines. Protesters waved Albanian and EU flags, raising questions about transparency and the approvals process as Albania's EU accession talks continue.",
-    "{{WORLD_2_URL}}": "https://www.nbcnews.com/world/europe/kushner-luxury-resort-plan-protests-albania-rcna348612",
+    "{{WORLD_2_FLAG}}": "🇨🇳 CHINA · NORTH KOREA",
+    "{{WORLD_2_HEADLINE}}": "Xi Jinping in Pyongyang for First State Visit in Seven Years — Calls for Deeper Strategic Ties With Kim",
+    "{{WORLD_2_SUMMARY}}": "Chinese President Xi Jinping arrived in North Korea on Monday for a two-day state visit — his first trip to Pyongyang since 2019 — calling for 'powerful momentum' in China-North Korea ties. The visit marks the 65th anniversary of their mutual defence treaty, but analysts say Beijing's real objective is reasserting influence over Kim Jong Un as Pyongyang's military alignment with Russia deepens and US-led denuclearisation talks remain stalled.",
+    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/6/8/chinas-xi-jinping-arrives-in-north-korea-on-rare-state-visit",
 
     # Economics
-    "{{ECON_1_FLAG}}": "📊 ECONOMY · AUS GDP",
-    "{{ECON_1_HEADLINE}}": "Australia's Economy Grew Just 0.3% in Q1 — Weakest in a Year as War, Weather and Weak Demand Bite",
-    "{{ECON_1_SUMMARY}}": "The ABS confirmed that Australia's GDP expanded only 0.3% in the March quarter of 2026, well below the 0.5% forecast and down from 0.9% growth in the prior quarter — the weakest result in a year. Severe weather disrupted mining, exports fell on lower coal and iron ore shipments, and household spending remained subdued. The RBA has flagged further slowing as the Middle East conflict squeezes energy markets and household budgets stay tight — a backdrop that makes the July 1 double-hit of wage rises and fuel excise snapback all the more significant for small business planning right now.",
-    "{{ECON_1_URL}}": "https://www.cnbc.com/2026/06/03/australia-gdp-q1-economic-growth-weather-weak-demand-middle-east-war-energy-costs.html",
+    "{{ECON_1_FLAG}}": "⛽ FUEL PRICES · AUS",
+    "{{ECON_1_HEADLINE}}": "Fuel Prices Set to Jump 26–29c/L on July 1 as Government Confirms No Excise Extension",
+    "{{ECON_1_SUMMARY}}": "The federal government's temporary halving of the fuel excise — which has kept petrol and diesel prices down by 26–29 cents a litre since April 1 — expires June 30 with no extension confirmed despite ongoing Middle East oil supply pressures. From July 1, an 80-litre diesel fill costs roughly $22 more. For trades businesses running vehicle fleets, this arrives on the same date as the Fair Work annual wage adjustment — a combined cost hit that demands immediate repricing before the new financial year.",
+    "{{ECON_1_URL}}": "https://www.sbs.com.au/news/article/government-to-reassess-fuel-excise-extension-as-reserves-swell-july-cutoff-nears/ixy1ok945",
 
-    "{{ECON_2_FLAG}}": "🏗️ CONSTRUCTION · ABS",
-    "{{ECON_2_HEADLINE}}": "Australian Building Approvals Fall 3.4% in April — Trades Pipeline Cooling as High Costs Bite",
-    "{{ECON_2_SUMMARY}}": "Australian building approvals fell 3.4% in April 2026, well worse than the 1.5% expected decline, while company gross operating profits fell 1.3% in Q1. The softening approvals trend signals a tightening forward pipeline for new residential and commercial construction — arriving at the same time as higher wages and expiring fuel relief. For small trades operators, a cooling pipeline makes quoting efficiency, relationship retention, and margin discipline more important heading into the second half of the year.",
+    "{{ECON_2_FLAG}}": "🏦 INTEREST RATES · AUS",
+    "{{ECON_2_HEADLINE}}": "RBA Decision One Week Away — Markets Split on a Fourth 2026 Rate Rise or Pause at 4.35%",
+    "{{ECON_2_SUMMARY}}": "The Reserve Bank meets next Tuesday June 16, with the cash rate at 4.35% after three consecutive hikes this year. Westpac economists predict another 25bp rise; CBA and independent economist Saul Eslake tip a pause as the RBA waits for evidence that inflation is easing. Headline CPI is forecast to peak at 4.8% in the June quarter, keeping variable-rate business lending and equipment finance expensive heading into the new financial year.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🍎 USA · APPLE WWDC",
-    "{{TECH_1_HEADLINE}}": "Apple WWDC 2026 Keynote Today — Siri Gets Full AI Overhaul with Gemini Integration, iOS 27 Announced",
-    "{{TECH_1_SUMMARY}}": "Apple's WWDC 2026 keynote goes live tonight Australian time (10am Pacific), with Siri set for its biggest transformation since 2011. Apple has rebuilt Siri as a full chatbot with LLM-powered intelligence and deep integration with Google's Gemini models — the first time a third-party AI provider has been embedded in Apple's core assistant. iOS 27, macOS 27, watchOS 27 and visionOS 27 are all expected, along with expanded Apple Intelligence features and the option to set Claude, ChatGPT or Gemini as default for specific tasks. Developer betas drop today; public release expected September.",
-    "{{TECH_1_URL}}": "https://www.macrumors.com/roundup/wwdc/",
+    "{{TECH_1_FLAG}}": "🍎 USA · APPLE WWDC 2026",
+    "{{TECH_1_HEADLINE}}": "Apple Launches 'Siri AI' at WWDC 2026 — A Rebuilt Conversational Assistant With Agency Across All Your Apps",
+    "{{TECH_1_SUMMARY}}": "Apple's WWDC 2026 keynote on Monday unveiled 'Siri AI' — a completely rebuilt Siri capable of multi-turn conversations, real-time web knowledge, and system-wide agency: autonomously changing passwords, pulling context from photos, and acting as an AI agent from the Dynamic Island. iOS 27, macOS Golden Gate, and all platform updates were announced. Public beta arrives July; full release September alongside iPhone 18. For iPhone-using small business operators, a phone-based assistant that can draft, book, and execute tasks without switching apps is arriving this year.",
+    "{{TECH_1_URL}}": "https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html",
 
-    "{{TECH_2_FLAG}}": "🧠 USA · ANTHROPIC",
-    "{{TECH_2_HEADLINE}}": "Anthropic: Claude Now Writes 80% of Its Own Production Code — Company Warns AI Needs a Brake Pedal",
-    "{{TECH_2_SUMMARY}}": "In a striking disclosure published last week, Anthropic revealed that more than 80% of the code merged into its production codebase in May 2026 was authored by Claude — up from near zero just 18 months earlier. Rather than celebrating the milestone, Anthropic used it as a warning: the company called on all frontier AI labs to agree on a coordinated mechanism to slow or pause development if AI systems begin recursively self-improving faster than humans can manage. Claude succeeded on its hardest unsupervised coding tasks 76% of the time in May — a 50 percentage point improvement in six months.",
+    "{{TECH_2_FLAG}}": "📊 AI MARKET · JUNE 2026",
+    "{{TECH_2_HEADLINE}}": "ChatGPT's Market Share Falls to 54.7% as Claude Records 306% Growth in a Single Quarter",
+    "{{TECH_2_SUMMARY}}": "The June 2026 Momentic report shows ChatGPT's share of global AI web visits has dropped from 76.5% in early 2025 to 54.7%, while Google Gemini climbs to 27.4% (up 104% in six months) and Claude has grown 306% in a single quarter. The AI assistant market is fragmenting fast — the practical implication for small businesses is to build workflows around tasks, not around a single brand, as the capability gap between the leading tools continues to narrow.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🤖 USA · AMAZON ROBOTICS",
-    "{{ROBOT_1_HEADLINE}}": "Amazon's One-Million-Robot Fleet Gets an AI Brain — DeepFleet Cuts Travel Time by 10%, Delivery Robots Next",
-    "{{ROBOT_1_SUMMARY}}": "Amazon has crossed one million robots deployed across its global fulfilment network and has now layered a generative AI routing system called DeepFleet on top — optimising robot movement in real time to cut fleet travel time by 10% without adding hardware. The company's next step is autonomous last-mile delivery robots, with MIT collaborating on solving outdoor routing challenges. Amazon says 75% of its global deliveries are already assisted by a robot at some stage. The deployment scale — one million physical robots, AI-coordinated routing, and delivery robots next — is arguably the most concrete current example of what end-to-end robotic logistics looks like at commercial scale.",
-    "{{ROBOT_1_URL}}": "https://nationalcioreview.com/articles-insights/extra-bytes/amazons-logistics-strategy-evolves-with-deepfleet-and-one-million-robots/",
+    "{{ROBOT_1_FLAG}}": "🤖 GLOBAL · HUMANOID MARKET",
+    "{{ROBOT_1_HEADLINE}}": "Bank of America: 90,000 Humanoid Robots to Ship in 2026 — Factory Payback Period Now Just Six Months",
+    "{{ROBOT_1_SUMMARY}}": "Fresh analysis from KraneShares citing Bank of America data puts global humanoid robot shipments on track for 90,000 units in 2026, rising steeply to 1.2 million per year by 2030. The tipping point: in high-utilisation industrial environments, the investment payback period has already compressed to six months — transforming humanoid robotics from 'strategic experiment' to standard capital expenditure. Factory deployments from Figure AI, Boston Dynamics Atlas, and Chinese manufacturers are now scaling under standing commercial orders, not pilot contracts.",
+    "{{ROBOT_1_URL}}": "https://kraneshares.com/humanoid-robotics-in-2026-the-race-from-pilot-to-platform/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "King's Birthday Public Holiday Today — Victoria and Most States Observe Long Weekend",
-    "{{AUS_1_SUMMARY}}": "Monday 8 June is the King's Birthday public holiday in Victoria, New South Wales, South Australia, Tasmania and the ACT, marking King Charles III's official birthday. Shops and most businesses are closed, while workers required to come in are entitled to public holiday penalty rates under the Fair Work Act. Note: Queensland and Western Australia observe King's Birthday on separate dates later in the year.",
-    "{{AUS_1_URL}}": "https://business.vic.gov.au/business-information/public-holidays/victorian-public-holidays-2026",
+    "{{AUS_1_HEADLINE}}": "World Cup Opens Thursday — Socceroos Face Türkiye in Vancouver on June 14",
+    "{{AUS_1_SUMMARY}}": "The 2026 FIFA World Cup begins this Thursday June 11 in Mexico City, with Australia's Socceroos kicking off their Group D campaign against Türkiye in Vancouver on June 14. Coach Tony Popovic's 26-man squad features Mat Ryan and Mathew Leckie heading to a record-equalling fourth World Cup alongside 17 first-timers. Australia also faces co-hosts USA on June 20 and Paraguay June 26 in the 48-team, three-nation tournament — the biggest in history.",
+    "{{AUS_1_URL}}": "https://footballaustralia.com.au/news/commbank-socceroos-squad-named-fifa-world-cup-2026tm",
 
-    "{{AUS_2_HEADLINE}}": "World Cup in Three Days: Socceroos Depart for North America, Group D Campaign Begins June 14",
-    "{{AUS_2_SUMMARY}}": "The FIFA World Cup 2026 opens this Thursday June 11 in Mexico City, and Australia's Socceroos begin their Group D campaign against Turkey in Vancouver on June 14 — then face co-hosts USA on June 20 and Paraguay on June 26. The 26-man squad features veterans Mathew Leckie and Mat Ryan alongside 17 debutants. The tournament spans 16 cities across three host nations over 39 days.",
+    "{{AUS_2_HEADLINE}}": "Income Tax Rate Drops to 15% on July 1 — But Fuel Excise Snapback Will Offset Much of the Relief",
+    "{{AUS_2_SUMMARY}}": "From July 1, the 16% income tax bracket drops to 15% under the 2026-27 federal budget — worth up to $268 annually for eligible workers, with a further cut to 14% from July 2027. For trades business owners, however, the relief lands on the same date as the fuel excise restoration, adding roughly $22–$28 per large tank fill. The $20,000 instant asset write-off for small businesses is now permanent — relevant for equipment purchases in the new financial year.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "21-Gun Salute at the Shrine as Melbourne Marks King Charles III's Official Birthday",
-    "{{VIC_1_SUMMARY}}": "A 21-gun salute at Melbourne's Shrine of Remembrance this morning officially marks King Charles III's birthday across Victoria, with the state observing the public holiday long weekend. Across greater Melbourne and regional Victoria, most businesses are closed. RISING Festival, Melbourne's annual new art event, also wraps up today after running since May 28 across 60+ events at 50 venues — its final day coinciding with the public holiday.",
+    "{{VIC_1_HEADLINE}}": "Sunbury Line Suspended This Saturday and Sunday — Bus Replacements as Metro Tunnel Works Ramp Up",
+    "{{VIC_1_SUMMARY}}": "Commuters on the Sunbury train line face full service suspension this Saturday June 13 and Sunday June 14 for Metro Tunnel construction works, with bus replacements operating throughout. A second weekend suspension is planned for June 27–28. Separately, half-price public transport fares remain in place for all Victorian passengers until at least the end of 2026.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔬 USA · LOS ALAMOS",
-    "{{SCI_1_HEADLINE}}": "Scientists Solve the Last Piece of Schrödinger's 100-Year-Old Colour Theory — With Implications for Your TV Screen",
-    "{{SCI_1_SUMMARY}}": "Researchers led by Los Alamos National Laboratory scientist Roxana Bujack have resolved the final unfinished element of Erwin Schrödinger's mathematical theory of colour perception — first formulated in the 1920s. The team used Riemannian geometry to formally define the 'neutral axis' of colour space (the line from pure black through grey to white) that Schrödinger described qualitatively but never pinned down mathematically. Correcting this gap in the model used by the entire colour-reproduction industry has immediate practical implications for display calibration in televisions, monitors and medical imaging, as well as for textile and paint manufacturers who rely on colour-matching algorithms. Published ScienceDaily, 6 June 2026.",
+    "{{SCI_1_FLAG}}": "🐨 AUSTRALIA · ECOLOGY",
+    "{{SCI_1_HEADLINE}}": "South Australia's Koala Boom May End in Mass Starvation — Population Has Outgrown Its Food Supply",
+    "{{SCI_1_SUMMARY}}": "South Australia's koala population in the Mount Lofty Ranges has grown to an estimated 22,000–26,000 animals — roughly 10% of Australia's total — in numbers the ecosystem can no longer safely support. Researchers warn that without targeted fertility management, overbrowsing will strip the eucalyptus forests koalas depend on, triggering widespread starvation and habitat collapse. The study recommends sterilising around 22% of adult females annually to hold the population below a sustainable threshold. Published ScienceDaily, 6 June 2026.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Why the King's Birthday Long Weekend Is the Best Four Hours You'll Spend on Your Business All Year",
-    "{{INSIGHT_BODY}}": "With July 1 now under three weeks away and two significant cost increases set to land simultaneously — the Fair Work wage rise and the fuel excise snapback — this public holiday morning is arguably the most valuable uninterrupted planning window you will get before the financial year turns. Use it to do three things with AI: first, stress-test your current job rates against the new wage structure and fuel costs to find out which job types are quietly going underwater; second, have AI draft revised rate cards and quote templates ready to go from next week; third, run a debrief on your last ten jobs to spot the margin patterns you have been too busy to notice. Most trades operators will spend this morning doing nothing, or doing unpaid work out of habit. The ones who come out of July still making money will be the ones who used today to get ahead of it.",
+    "{{INSIGHT_TITLE}}": "The July 1 Double Hit Is Three Weeks Away — Use AI This Week to Find Out Which Jobs Will Bleed Margin",
+    "{{INSIGHT_BODY}}": "In three weeks, two cost increases land on the same date: the annual Fair Work wage adjustment and the full restoration of the 52.6 cents-per-litre fuel excise, which halved in April and will not be extended. For a small trades business with two employees and two work vehicles covering around 1,000 kilometres per week, this combined hit can add $800–$1,200 to monthly outgoings overnight — without a single new cost decision being made. The businesses that absorb this cleanly are already repricing. AI makes the analysis fast: paste your last quarter of job data into Claude or ChatGPT, describe the incoming cost changes, and ask it to identify which job types or service areas will become unprofitable at current rates. Then ask it to draft revised rate cards and a short client note explaining the adjustment. Twenty minutes this week is worth more than a month of margin scrambling in July.",
 
     # Fun Facts
-    "{{FACT_1}}": "The tradition of celebrating a British monarch's birthday on a separate 'official' date began with King George II (1683–1760), whose actual birthday fell in late October — poor weather for the outdoor military reviews the occasion required in England. Every British and Commonwealth sovereign since has maintained a ceremonial birthday distinct from their real one. King Charles III was born on 14 November 1948 but is officially celebrated across most of Australia on the second Monday of June.",
+    "{{FACT_1}}": "When inflation in Germany's Weimar Republic peaked in November 1923, the exchange rate hit 4.2 trillion marks per US dollar — a loaf of bread cost 200 billion marks. Workers were paid twice daily so they could spend wages before afternoon prices rose further, and people carted cash in wheelbarrows to buy groceries. The crisis ended when Germany introduced the Rentenmark, exchanged at one new mark per one trillion old. Economists cite the collapse as a key factor in the political instability that followed through the 1930s.",
 
-    "{{FACT_2}}": "The human eye contains only three types of colour-detecting cone cells, yet the brain interprets combinations of their signals to distinguish roughly 10 million shades. The vast majority of those shades have no name in any language — we experience them but cannot describe them precisely with words. Colour-blindness, most commonly a reduced ability to tell red from green, affects around 8 per cent of men but only 0.5 per cent of women.",
+    "{{FACT_2}}": "Egg whites foam when whipped because the proteins — ovalbumin and ovomucin — are denatured by the mechanical force and align at the air-water interface, trapping bubbles in a stable structure. A single drop of egg yolk or oil destroys the foam entirely: fat coats the protein ends before they can bond, preventing the structure from forming. This is why pastry chefs are precise about bowl and whisk cleanliness — a trace of fat on the equipment is enough to prevent meringue from forming, no matter how long you whip.",
 
-    "{{FACT_3}}": "Space Invaders (1978) was so popular in Japan within months of launch that it caused a temporary shortage of 100-yen coins, prompting the government to quadruple coin production to keep up with demand. It was also the first video game to save high scores — allowing players to see and try to beat previous bests — a design mechanic that has since driven the engagement model of virtually every game, app, and fitness platform built in the decades since.",
+    "{{FACT_3}}": "The PlayStation was famously rejected by Nintendo before Sony built it themselves. A 1991 deal for a CD-ROM add-on for the Super Nintendo collapsed after Nintendo changed contract terms without warning, leaving Sony with a nearly complete console platform. Sony launched the PlayStation in 1994, and it went on to become the best-selling console brand in history. Over 600 million PlayStation consoles have been sold across all generations — with Nintendo's perceived slight arguably the most commercially costly partnership breakdown in the history of technology.",
 
     # Joke
-    "{{JOKE_SETUP}}": "How does a trades business owner spend the King's Birthday public holiday?",
-    "{{JOKE_PUNCHLINE}}": "Invoicing last week's jobs, quoting next week's leads, and technically calling it a day off.",
+    "{{JOKE_SETUP}}": "Asked an AI to help write a quote for a tricky new commercial client.",
+    "{{JOKE_PUNCHLINE}}": "It asked: 'Do you want the price that wins the job, the price that makes money, or the special one that tries both?' First time a computer's made me feel genuinely understood.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "“He who is not courageous enough to take risks will accomplish nothing in life.”",
-    "{{CLOSING_ATTR}}": "— Muhammad Ali",
-    "{{CLOSING_MESSAGE}}": "It's a cool, showery Monday morning in Carrum Downs — 8 to 14 degrees, King's Birthday long weekend, and a good day to be near the bay. Apple's WWDC keynote fires up tonight Australian time — the new Siri looks like the biggest iPhone shift in years. With July 1 now under three weeks away and two cost hits landing on the same day, if you can carve out a couple of hours today before the weekend ends, running the numbers on what the wage rise and fuel snapback actually cost you per job is time well spent. The World Cup opens Thursday. Socceroos kick off June 14. Have a good one, Liall.",
+    "{{CLOSING_QUOTE}}": "“Act as if what you do makes a difference. It does.”",
+    "{{CLOSING_ATTR}}": "— William James",
+    "{{CLOSING_MESSAGE}}": "It's a cool Tuesday morning in Carrum Downs — winter proper now, with showers expected Wednesday and a fine weekend coming. Apple's Siri rebuild landed overnight and it looks like the most significant iPhone shift in years. The FIFA World Cup opens Thursday in Mexico City, and the Socceroos kick off five days from now on June 14 — worth setting an alarm. The fuel excise clock is ticking: three weeks to July 1, and the cost structure changes whether the repricing is ready or not. Have a good day, Liall.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
