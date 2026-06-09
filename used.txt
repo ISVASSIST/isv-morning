@@ -483,3 +483,13 @@ JOKE: Asked an AI to help write a quote for a tricky new commercial client.
 INSIGHT: The July 1 Double Hit Is Three Weeks Away — Use AI This Week to Find Out Which Jobs Will Bleed Margin
 QUOTE: "Act as if what you do makes a difference. It does." — William James
 ---
+DATE: Wednesday, 10 June 2026
+SCIENCE: Scientists identify acetylcholine as the brain signal enabling habit-breaking and behavioural flexibility — Okinawa Institute of Science and Technology, Nature Communications, June 2026
+ROBOTICS: 1X opens pre-orders for $20,000 NEO consumer humanoid robot — world's first consumer-ready home robot, 2026 delivery, 22-DoF hands, 29 kg
+FACT: Mexico City's Estadio Azteca is the only stadium to host two FIFA World Cup finals (1970, 1986); also site of Maradona's Hand of God and Goal of the Century in the same match
+FACT: A Rubik's Cube has 43 quintillion configurations yet any state solvable in 20 moves or fewer — God's Number, proven 2010 using 35 CPU-years of Google compute
+FACT: Acetylcholine controls both habit-breaking (cholinergic interneurons) and muscle contractions — the same molecule starts every deliberate physical action you make
+JOKE: I asked my apprentice if he'd been watching any of the World Cup.
+INSIGHT: Too Busy to Look at the Numbers? AI Can Run Your EOFY Business Health Check in 10 Minutes
+QUOTE: "Empty your mind, be formless. Shapeless, like water. Be water, my friend." — Bruce Lee
+---
