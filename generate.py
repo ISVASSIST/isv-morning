@@ -4,92 +4,92 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Wednesday, 10 June 2026",
+    "{{DATE}}": "Thursday, 11 June 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Wed 10 Jun
-    # Wet Wednesday, clearing Thursday, fine weekend ahead
-    "{{WEATHER_1}}": "WED 10 · 🌧 Showers · 10–15°C",
-    "{{WEATHER_2}}": "THU 11 · ⛅ Partly Cloudy · 11–16°C",
-    "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "FRI 12 · 🌤 Mostly Fine · 11–16°C",
-    "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "SAT 13 · ☀️ Fine · 10–17°C",
-    "{{WEATHER_5}}": "SUN 14 · ⛅ Partly Cloudy · 12–17°C",
-    "{{WEATHER_ALERT}}": "⚽ WORLD CUP KICKS OFF TOMORROW",
+    # Weather — Carrum Downs VIC, 5-day from Thu 11 Jun
+    # Warm northerly Thu before cold front, rain Fri-Sat, clearing Sun-Mon
+    "{{WEATHER_1}}": "THU 11 · ⛅ Mostly Cloudy · 13–22°C",
+    "{{WEATHER_2}}": "FRI 12 · 🌧 Rain · 11–17°C",
+    "{{WEATHER_2_CLASS}}": "rain",
+    "{{WEATHER_3}}": "SAT 13 · 🌧 Showers · 9–14°C",
+    "{{WEATHER_3_CLASS}}": "rain",
+    "{{WEATHER_4}}": "SUN 14 · ⛅ Partly Cloudy · 8–13°C",
+    "{{WEATHER_5}}": "MON 15 · ⛅ Cloudy · 9–14°C",
+    "{{WEATHER_ALERT}}": "⚽ WORLD CUP OPENS TODAY — MEXICO v SA AT AZTECA",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇰🇪 AFRICA · KENYA",
-    "{{WORLD_1_HEADLINE}}": "Kenyan Police Fire Tear Gas on Protesters Opposing US Ebola Quarantine Centre as Demonstrations Turn Deadly",
-    "{{WORLD_1_SUMMARY}}": "Kenyan police fired tear gas in Nanyuki on Tuesday as protests against a proposed US-run quarantine facility for Americans exposed to Ebola turned violent for a second day. At least two people were killed on Monday when the demonstrations escalated. The 50-bed unit at an air force base would house asymptomatic Americans exposed to the DRC and Uganda Ebola outbreak — but Kenyans accuse Washington of offloading its health risk onto a poorer country. A court suspended construction on Friday and extended the order three weeks further on Tuesday; US military planes have continued ferrying staff and equipment regardless.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/6/9/protests-erupt-in-kenya-over-us-ebola-quarantine-centre-in-nanyuki",
+    "{{WORLD_1_FLAG}}": "🇺🇸 USA · MIDDLE EAST",
+    "{{WORLD_1_HEADLINE}}": "US and Iran Exchange Strikes Over Hormuz — Tehran Fires Back at US Bases in Bahrain, Kuwait and Jordan",
+    "{{WORLD_1_SUMMARY}}": "The US-Iran conflict entered a dangerous new phase on June 10 when US forces struck Qeshm Island and Iranian coastal installations along the Strait of Hormuz, after Iran downed a US Apache helicopter. Tehran's IRGC retaliated with drone attacks on the US Fifth Fleet in Bahrain and a Kuwaiti airbase, plus a long-range missile strike on Jordan. President Trump said the US would resume attacks on Iran on Thursday, citing stalled ceasefire talks. A Qatari delegation was in Tehran Wednesday attempting to broker a deal. Oil markets are pricing a sustained risk premium above $12 per barrel — extending global energy inflation well beyond the July 1 domestic excise change.",
+    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/6/10/iran-strikes-bahrain-and-jordan-in-retaliation-for-us-attacks-in-hormuz",
 
-    "{{WORLD_2_FLAG}}": "⚽ GLOBAL · SPORT",
-    "{{WORLD_2_HEADLINE}}": "FIFA World Cup 2026 Opens Tomorrow — Shakira and Burna Boy to Headline Ceremony at Mexico City's Iconic Azteca",
-    "{{WORLD_2_SUMMARY}}": "The 48-team, 104-match 2026 FIFA World Cup kicks off in Mexico City tomorrow, June 11, as co-hosts Mexico face South Africa at the Estadio Azteca. Shakira and Burna Boy will perform the tournament's official anthem Dai Dai at the opening ceremony, joined by Maná, J Balvin, Alejandro Fernández, and Tyla. It's the first World Cup co-hosted across three nations — Mexico, the US, and Canada — and the largest tournament in history. Mexico City has declared June 11 a public holiday.",
-    "{{WORLD_2_URL}}": "https://www.aljazeera.com/sports/2026/6/9/world-cup-opening-ceremony-whos-performing-when-it-starts-how-to-watch",
+    "{{WORLD_2_FLAG}}": "🚀 MARKETS · USA",
+    "{{WORLD_2_HEADLINE}}": "SpaceX Prices Its Record $75 Billion IPO Tonight — The Largest Market Listing in History Opens on Nasdaq Tomorrow",
+    "{{WORLD_2_SUMMARY}}": "SpaceX prices its initial public offering tonight, June 11, under the ticker SPCX at $135 per share — targeting a $75 billion raise, the largest IPO in recorded market history, more than triple the previous US record set by Alibaba in 2014. At its implied $1.75 trillion valuation, SpaceX will rank among the world's ten most valuable companies from the moment SPCX opens for trading on Friday. The IPO is already fully oversubscribed. Elon Musk retains approximately 82% of post-listing voting power. The company that changed how humans reach orbit becomes tomorrow the company every fund manager has to have a view on.",
+    "{{WORLD_2_URL}}": "https://finance.yahoo.com/markets/stocks/articles/spcx-ipo-record-75-billion-155245946.html",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ FUEL PRICES · AUS",
-    "{{ECON_1_HEADLINE}}": "ACCC Data: Diesel at 209c/L, Petrol at 173c/L — Both Set to Spike When July 1 Excise Snapback Hits",
-    "{{ECON_1_SUMMARY}}": "The ACCC's June 5 weekly monitoring report shows diesel averaging 209.3 cents per litre and petrol at 173.3 cents per litre across Australia's five largest cities — down 113 and 84 cents respectively from March 31, entirely due to the temporary 32c/L excise halving that ends June 30. Regional diesel is higher still at 221.1 cents per litre. In three weeks those reductions reverse. For a trades business running two vehicles on 1,000+ km per week, the July 1 snapback lands on the same day as the annual Fair Work wage adjustment — the repricing window is closing fast.",
-    "{{ECON_1_URL}}": "https://www.accc.gov.au/about-us/publications/weekly-fuel-price-monitoring-update",
+    "{{ECON_1_FLAG}}": "📊 US INFLATION · GLOBAL IMPACT",
+    "{{ECON_1_HEADLINE}}": "US CPI Hits 4.2% — Highest in Three Years as Iran War Energy Shock Drives 40% Jump in Petrol Prices",
+    "{{ECON_1_SUMMARY}}": "The US Bureau of Labor Statistics May CPI report, released June 10, showed annual inflation at 4.2% — the highest since early 2023. Energy accounted for over 60% of the monthly increase, with US petrol prices up 40.5% year-on-year driven by the Iran war and Strait of Hormuz risk premium. Core inflation (excluding food and energy) is still running at 2.9%. For Australian businesses, the mechanism is direct: sustained high crude oil prices flow through to bowser prices within 2–3 weeks. With the domestic 32c/L excise cut expiring June 30, international energy pressure extends the fuel cost squeeze well into the new financial year.",
+    "{{ECON_1_URL}}": "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html",
 
-    "{{ECON_2_FLAG}}": "📊 CONSUMER CONFIDENCE · AUS",
-    "{{ECON_2_HEADLINE}}": "Australian Consumer Confidence Falls to Near 50-Year Low — Westpac Index Drops to 80.6, Fourth Monthly Decline",
-    "{{ECON_2_SUMMARY}}": "The Westpac–Melbourne Institute Consumer Sentiment Index fell 2.9% to 80.6 in June — its fourth consecutive monthly decline and one of the weakest readings in the survey's 50-year history. Pessimists now outnumber optimists by nearly 20 percentage points. The survey found cost-of-living concerns dominate household thinking, with the fuel excise cut rated only 'a small and brief reprieve.' House price expectations dropped below their long-run average for the first time in nearly three years — a potential headwind for construction and renovation-adjacent trades heading into the new financial year.",
+    "{{ECON_2_FLAG}}": "🇦🇺 SMALL BUSINESS · FEDERAL BUDGET",
+    "{{ECON_2_HEADLINE}}": "Permanent $20K Instant Asset Write-Off Confirmed for July 1 — 19 Days to Capture FY2026 Tools and Equipment",
+    "{{ECON_2_SUMMARY}}": "The 2026–27 Federal Budget permanently locks in the $20,000 instant asset write-off for businesses with annual turnover under $10 million, effective July 1. Any tool, machine, or equipment purchased and in use before June 30 can be fully expensed this financial year — directly reducing your taxable income up to $20K. For trades businesses planning to upgrade a compressor, fit out a vehicle, or replace a piece of plant, the 19-day window before financial year-end is the most tax-effective time to act. The asset must be in use before midnight June 30 — not merely ordered.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🇺🇸 USA · AI POLICY",
-    "{{TECH_1_HEADLINE}}": "Trump Signs Executive Order on AI Innovation and Security — White House Fast-Tracks Federal AI Deployment",
-    "{{TECH_1_SUMMARY}}": "A June 2026 White House Executive Order titled 'Promoting Advanced Artificial Intelligence Innovation and Security' directs federal agencies to remove regulatory barriers to AI adoption and prioritise American AI providers in procurement across healthcare, defence, infrastructure, and economic planning. The order signals a clear US government shift from AI oversight to AI acceleration — deepening investment in the major platforms (Anthropic, OpenAI, Google) and flowing through to the capabilities small business users access via those tools in the months ahead.",
-    "{{TECH_1_URL}}": "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
+    "{{TECH_1_FLAG}}": "🍎 APPLE · WWDC 2026",
+    "{{TECH_1_HEADLINE}}": "Apple Rebuilds Siri With Google's Gemini — Every iPhone Business User Gets a Vastly More Capable AI From Autumn",
+    "{{TECH_1_SUMMARY}}": "At WWDC 2026 on June 8, Apple unveiled a completely rebuilt Siri powered by a custom 1.2-trillion-parameter Google Gemini model, licensed at approximately $1 billion per year. New Siri holds multi-turn conversations, recalls past interactions, accesses context across apps, and completes multi-step tasks automatically. Users can choose ChatGPT, Gemini, or Anthropic's Claude as their AI backend. For any trades business owner running operations from an iPhone or iPad, iOS 27 this autumn will make the device meaningfully more capable as an on-site business tool — drafting quotes, summarising site notes, and writing client follow-ups in plain English.",
+    "{{TECH_1_URL}}": "https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html",
 
-    "{{TECH_2_FLAG}}": "🤖 AI AGENTS · JUNE 2026",
-    "{{TECH_2_HEADLINE}}": "AI Is Moving From Chat to Action — Claude Opus 4.8 Completes 750,000-Line Migration in 11 Days Using Autonomous Subagents",
-    "{{TECH_2_SUMMARY}}": "The shift from AI as a question-answering tool to AI as a working system is now documented in practice. Claude Opus 4.8 (released May 28) dynamically generates orchestration scripts and deploys multiple parallel subagents — one developer used this to migrate 750,000 lines of legacy code in just 11 days. OpenAI separately launched real-time voice agents with live translation this month. For small business owners, the shift that matters is that AI is no longer just answering questions — it's completing multi-step workflows autonomously, including quoting, scheduling, and client follow-up sequences.",
+    "{{TECH_2_FLAG}}": "⚖️ AI REGULATION · USA",
+    "{{TECH_2_HEADLINE}}": "June 30 Is the First US AI Enforcement Deadline — Colorado's AI Act Applies to Any System Making Decisions About People",
+    "{{TECH_2_SUMMARY}}": "On June 30, Colorado's Consumer Protections for Artificial Intelligence Act becomes enforceable — the first AI law in the United States with real penalties. It covers any high-risk AI system used in decisions affecting employment, housing, credit, or healthcare, requiring risk management programs, annual impact assessments, and consumer rights to explanation and appeal. Companies under $25 million revenue get a grace period. The broader signal for Australian operators: the era of unregulated AI deployment is ending. Australia's own AI regulatory framework is expected to take shape in late 2026 — what Colorado's enforcement looks like in practice will inform what arrives here.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🤖 CONSUMER ROBOTS · NORWAY",
-    "{{ROBOT_1_HEADLINE}}": "1X Opens Pre-Orders for $20,000 NEO Home Robot — World's First Consumer-Ready Humanoid With 2026 Delivery",
-    "{{ROBOT_1_SUMMARY}}": "Norwegian robotics startup 1X has opened pre-orders for NEO, billed as the world's first consumer-ready humanoid robot, at US$20,000 with a $200 deposit to secure delivery. At 29 kg, NEO can lift over 68 kg, operates at near-silent 22 decibels, and carries 22-degrees-of-freedom hands with human-level dexterity. Day-one capabilities include fetching items, opening doors, and operating appliances. US deliveries are planned for 2026; Australia from 2027. The home humanoid robot — long theoretical — is now a commercial product you can order today.",
-    "{{ROBOT_1_URL}}": "https://www.robotics247.com/article/video_1x_announces_neo_consumer_ready_humanoid_robot_pre_order_details_with_200_deposit",
+    "{{ROBOT_1_FLAG}}": "🦾 HUMANOID · USA",
+    "{{ROBOT_1_HEADLINE}}": "Agility Robotics Deploys Digit Humanoids at Toyota Canada — Robot-as-a-Service Model Signals the Pivot From Pilot to Platform",
+    "{{ROBOT_1_SUMMARY}}": "Agility Robotics has more than seven Digit humanoid robots operating on the Toyota Canada production floor under a Robot-as-a-Service commercial model — Toyota pays per operational hour, not as a capital purchase. The RaaS structure removes the upfront cost barrier that has kept humanoid robots in pilot territory and is now regarded by industry analysts as the deployment mechanism most likely to drive volume adoption through 2026. With Figure, Boston Dynamics, and Agility all active in real automotive and logistics facilities this month, the shift from proof-of-concept to sustained production deployment is now documented fact.",
+    "{{ROBOT_1_URL}}": "https://kraneshares.com/humanoid-robotics-in-2026-the-race-from-pilot-to-platform/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Demons Win Emotional Big Freeze at MCG — Kozzy Pickett Seals Eight-Point Win in Tribute to Neale Daniher",
-    "{{AUS_1_SUMMARY}}": "Melbourne defeated Collingwood 83–75 in Monday's King's Birthday Big Freeze blockbuster at the MCG, with Kozzy Pickett kicking the match-sealing goal in a tense final quarter. The game carried deep emotional weight following the passing of Neale Daniher — the inspirational former Demons coach who founded the Big Freeze event in 2015 to raise awareness and funds for MND research. AFL Round 13 drew a record national crowd of 390,752 across all games.",
-    "{{AUS_1_URL}}": "https://www.afl.com.au/news/1536297/melbourne-demons-down-collingwood-magpies-pies-in-kings-birthday-battle-royale-marred-by-serious-injury-concern",
+    "{{AUS_1_HEADLINE}}": "Western Sydney Airport to Open for Freight in July, Passengers from 25 October — Sydney's Second Airport Is Almost Here",
+    "{{AUS_1_SUMMARY}}": "The Federal Government confirmed Western Sydney International (Nancy-Bird Walton) Airport will begin freight operations July 26 and open to passengers on October 25, 2026. Jetstar will operate the first commercial service — an Airbus A320 to the Gold Coast at 11am on October 25. The airport is the largest infrastructure project ever built in NSW and adds critical capacity to a Sydney aviation system that has been near its operational limits for years. For Australian businesses, a second Sydney gateway means more competitive freight options and new direct flight routes from late 2026.",
+    "{{AUS_1_URL}}": "https://www.pm.gov.au/media/its-official-western-sydney-open-passengers-25-october-and-freight-26-july-2026",
 
-    "{{AUS_2_HEADLINE}}": "Australian Dollar Falls to 0.7028 as Consumer Gloom Deepens Ahead of EOFY",
-    "{{AUS_2_SUMMARY}}": "The AUD/USD slid to 0.7028 on Tuesday, June 9, as the Westpac June consumer sentiment data confirmed Australian households are at their most pessimistic in decades. A weaker dollar pushes up the cost of imported materials, machinery, and equipment priced in USD — relevant for any trades business buying overseas-manufactured coatings, fasteners, or plant heading into the new financial year.",
+    "{{AUS_2_HEADLINE}}": "Seven West Media Cuts Up to 200 Jobs in $400M Southern Cross Merger — Newsrooms and Local Hubs Hollowed Out",
+    "{{AUS_2_SUMMARY}}": "Up to 200 positions will be permanently cut at Seven West Media this week following its $400 million merger with Southern Cross Media, as the combined group targets $30 million in annual cost savings. Local broadcast hubs and investigative reporting capabilities are among the hardest-hit areas. The restructuring reflects an accelerating collapse in linear television advertising revenue, with digital competition pushing traditional broadcast media to the point where cost reduction — rather than reinvestment — is the only available lever.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victoria's $767M West Melbourne Infrastructure Blitz Underway — Roads, Rail Freight and Port Upgrades Reshape Industrial Corridor",
-    "{{VIC_1_SUMMARY}}": "Victoria's $767 million infrastructure investment in Melbourne's western industrial corridor — four major road projects plus a new international freight gateway — is now under active construction. The works target freight connectivity between the port precinct and outer western and southern industrial zones, cutting heavy vehicle travel times. The state is separately on track to remove its 88th level crossing later in 2026, maintaining the momentum of Australia's most ambitious urban rail-road separation program.",
+    "{{VIC_1_HEADLINE}}": "5,000 Blue Beanies at the MCG — Melbourne Farewells Neale Daniher in a State Funeral Worthy of a Champion",
+    "{{VIC_1_SUMMARY}}": "Over 5,000 Victorians gathered at the Melbourne Cricket Ground on Wednesday June 10 to farewell Neale Daniher AO — former Demons coach, Australian of the Year 2025, and the driving force behind the fight against Motor Neurone Disease. Eulogies came from his four children and wife Jan. Paul Kelly closed the service with Leaps and Bounds. The hearse made one final lap of the MCG before proceeding down Daniher Way. FightMND, the charity Daniher founded, has raised more than $150 million for MND research since 2015.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🧠 NEUROSCIENCE · JAPAN",
-    "{{SCI_1_HEADLINE}}": "Scientists Identify the Brain Chemical That Helps Break Old Habits — Pathway to Treating Addiction, OCD and Parkinson's",
-    "{{SCI_1_SUMMARY}}": "Researchers at the Okinawa Institute of Science and Technology have identified acetylcholine — released by specific cholinergic interneuron brain cells — as the key signal enabling behavioural flexibility: the ability to break a habit and adapt when circumstances change. The study observed mice adjusting their choices after losing an expected reward, finding that cholinergic interneurons fire to trigger a mental 'reset.' The finding offers potential new treatment pathways for addiction, obsessive-compulsive disorder, and Parkinson's disease, where rigid habitual behaviour is a central feature. Published in Nature Communications, June 2026.",
+    "{{SCI_1_FLAG}}": "🧠 NEUROSCIENCE · USA",
+    "{{SCI_1_HEADLINE}}": "Scientists Complete the First Full Brain Map of Any Adult Animal — 160,000 Neurons and 50 Million Connections in a Fruit Fly",
+    "{{SCI_1_SUMMARY}}": "An international team led by Harvard Medical School and Princeton University has published the first complete connectome of an adult animal's entire nervous system — mapping every neuron and synapse in a fruit fly's brain and nerve cord at electron microscope resolution. The Brain and Nerve Cord (BANC) dataset captures all ~160,000 neurons and over 50 million connections, assembled from thousands of microscopy images stitched together by AI. The key finding: most fly behaviours appear to be directed by local neural circuits distributed through the body, not by a single central command in the brain. The full dataset is freely available online as an open-source resource for neuroscience globally. Published in Nature, June 2026.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Too Busy to Look at the Numbers? AI Can Run Your EOFY Business Health Check in 10 Minutes",
-    "{{INSIGHT_BODY}}": "For most trades business owners, EOFY arrives and the real story of the year only becomes clear in your accountant's office — weeks after you could have done anything about it. The problem isn't laziness; it's that pulling a genuine picture of margin, job profitability, and cash flow position takes time you rarely have during the busy season. AI changes this. Open Claude or ChatGPT and describe your last quarter: the types of jobs you ran, your rough sense of margins, your labour-to-materials split, and any patterns you've noticed — jobs that always run over, clients who negotiate late, materials that keep surprising you. Ask the AI to help you identify which job types are probably your most and least profitable, and what questions you should be asking your accountant before June 30. It won't replace your bookkeeper — but it turns a vague anxiety about the numbers into a sharp list of specific questions. You'll walk into your EOFY meeting with more clarity and less chance of leaving money on the table. Twenty minutes. Today.",
+    "{{INSIGHT_TITLE}}": "Building Your FY2027 Rate Card With AI: How to Model the July 1 Cost Hit Before It Lands",
+    "{{INSIGHT_BODY}}": "On July 1, two cost changes land simultaneously: the 32 cents per litre fuel excise cut expires, and the Fair Work annual wage adjustment takes effect. For most trades operators, those two line items alone add hundreds of dollars per week to the cost base. If your rates don't adjust before that date — not after — the hit lands directly on margin. Most business owners know this is coming but haven't sat down to model what it actually means for their specific operation. That's exactly the task AI is built for. Open Claude or ChatGPT and describe your business: how many crew, how many vehicles, your approximate weekly fuel spend, your current day rates, and the mix of job types you run. Ask the AI to estimate the dollar impact of the excise change and the wage rise on your cost per job, per crew day, and per week. Then ask it to draft updated rate card entries — realistic numbers that absorb the increases without sending clients a shock. Ask it to write the advisory message you'll send to regular clients: professional, factual, framed around industry cost reality rather than apology. Do this before June 30. It takes less than an hour with AI doing the modelling. The operators who do this now will start July 1 in front. The ones who wait will spend the rest of the financial year chasing ground they already lost.",
 
     # Fun Facts
-    "{{FACT_1}}": "Mexico City's Estadio Azteca — where the World Cup opens tomorrow — is the only stadium in history to have hosted two FIFA World Cup finals: Brazil vs Italy in 1970 and Argentina vs West Germany in 1986. The same ground hosted Diego Maradona's legendary 1986 quarter-final against England, where he scored both the 'Hand of God' goal and the 'Goal of the Century' four minutes apart — arguably the two most famous moments in football history, in the same match, at the same ground.",
+    "{{FACT_1}}": "Tonight SpaceX prices the largest initial public offering in recorded market history — targeting $75 billion at $135 per share under the ticker SPCX on Nasdaq. For context, the previous US IPO record was Alibaba's $25 billion in 2014; Saudi Aramco's global record was $35.4 billion in 2019. At $1.75 trillion, SpaceX is valued at more than Toyota, LVMH, and every company listed on the ASX 200 combined. Elon Musk, who founded SpaceX in 2002 with $100 million of his PayPal proceeds, retains roughly 82% of voting control after the float.",
 
-    "{{FACT_2}}": "A Rubik's Cube has 43,252,003,274,489,856,000 possible configurations — roughly 43 quintillion. Yet any scrambled cube in any state can be solved in 20 moves or fewer. Mathematicians call this 'God's Number,' and proving it in 2010 required 35 CPU-years of computational time donated by Google engineers to verify every possible configuration.",
+    "{{FACT_2}}": "Since 1989, a single whale nicknamed 'the 52 Hz whale' has been tracked by US Navy hydrophone networks crossing and recrossing the North Pacific, singing at 52 Hz — far above the 10–40 Hz calls of blue whales and 20 Hz of fin whales, and outside the vocal range of every other known whale species. For over 35 years its calls have gone unanswered. Scientists believe it is a rare blue/fin whale hybrid whose anatomy produces a frequency no other whale can receive. It is the only whale on Earth no other whale can hear — and it has been singing alone into the ocean longer than the World Wide Web has existed.",
 
-    "{{FACT_3}}": "Acetylcholine — the brain chemical in today's science story — is also the same molecule that triggers every deliberate movement you make. It's released at the neuromuscular junction to initiate muscle contractions: every time you grip a tool, lift equipment, or sign a quote, acetylcholine is what starts the process. This dual role controlling both movement and mental flexibility makes it one of the most consequential chemicals in the body.",
+    "{{FACT_3}}": "Melbourne's winter solstice is just 10 days away — June 21 is the shortest day of the year in the Southern Hemisphere. On that day, Carrum Downs will receive approximately 9 hours and 20 minutes of daylight, compared to nearly 14 hours and 50 minutes at the summer solstice in December. For trades working outdoors, this 5.5-hour seasonal difference in available daylight compresses the effective working window through winter, tightens cure times for exterior coatings, and limits the time available for photographing completed work in natural light.",
 
     # Joke
-    "{{JOKE_SETUP}}": "I asked my apprentice if he'd been watching any of the World Cup.",
-    "{{JOKE_PUNCHLINE}}": "He said: 'I don't need to — I already get enough penalty shootouts every time I submit a quote.'",
+    "{{JOKE_SETUP}}": "My sparky told me he'd invested $10,000 in the SpaceX IPO overnight.",
+    "{{JOKE_PUNCHLINE}}": "I said: 'Mate, you can't even get your quotes off the ground.' He said: 'That's exactly why I need to diversify.'",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "“Empty your mind, be formless. Shapeless, like water. You put water into a cup — it becomes the cup. Be water, my friend.”",
-    "{{CLOSING_ATTR}}": "— Bruce Lee",
-    "{{CLOSING_MESSAGE}}": "It's Wednesday morning in Carrum Downs — wet today, but clearing tomorrow and a fine weekend on the way. The World Cup kicks off in Mexico City tomorrow with Shakira on stage and 48 nations on the pitch — the biggest tournament ever, arriving in your time zone. The Demons honoured Neale Daniher with a big Monday win at the MCG, which felt right. Consumer confidence is at near 50-year lows, the dollar is soft, and the July 1 fuel clock is running. If the business is in good shape, now's the time to lock that in. If it isn't, now's the time to find out. Have a good Wednesday, Liall.",
+    "{{CLOSING_QUOTE}}": "“No winter lasts forever; no spring skips its turn.”",
+    "{{CLOSING_ATTR}}": "— Hal Borland",
+    "{{CLOSING_MESSAGE}}": "It's Thursday morning in Carrum Downs — warmer than you'd expect thanks to those northerly winds, before rain arrives tomorrow and the weekend turns properly wintry. Today the 2026 FIFA World Cup opens in Mexico City: Mexico vs South Africa at the Azteca, and the greatest football tournament in history is officially underway. Tonight SpaceX prices the largest IPO in market history, and yesterday's US inflation data confirmed that global energy costs aren't cooling any time soon. July 1 is 19 days away. If the rate card isn't done, today is the day to start. Have a good Thursday, Liall.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
