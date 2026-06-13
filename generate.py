@@ -4,92 +4,92 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Saturday, 13 June 2026",
+    "{{DATE}}": "Sunday, 14 June 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Sat 13 Jun
-    # Rain and northerly winds Sat–Sun, clearing from Monday
-    "{{WEATHER_1}}": "SAT 13 · 🌧 Rain · 13–16°C",
-    "{{WEATHER_2}}": "SUN 14 · 🌧 Showers · 9–14°C",
+    # Weather — Carrum Downs VIC, 5-day from Sun 14 Jun
+    # Partly cloudy today with fog risk; heavy rain Mon; easing Tue-Thu
+    "{{WEATHER_1}}": "SUN 14 · ⛅ Fog/cloudy · 14°C",
+    "{{WEATHER_2}}": "MON 15 · 🌧 Rain heavy · 13°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "MON 15 · ⛅ Clearing · 7–13°C",
+    "{{WEATHER_3}}": "TUE 16 · ⛅ Easing · 12°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "TUE 16 · ☁ Cloudy · 7–12°C",
-    "{{WEATHER_5}}": "WED 17 · 🌤 Partly Cloudy · 5–12°C",
-    "{{WEATHER_ALERT}}": "⚠ HEAVY RAIN & N WINDS TO 40KM/H SAT–SUN",
+    "{{WEATHER_4}}": "WED 17 · ⛅ Shower PM · 13°C",
+    "{{WEATHER_5}}": "THU 18 · 🌤 Partly cloudy · 13°C",
+    "{{WEATHER_ALERT}}": "⚠ FOG SUN AM · HEAVY RAIN MON",
 
     # World
-    "{{WORLD_1_FLAG}}": "🌐 MIDDLE EAST · CEASEFIRE",
-    "{{WORLD_1_HEADLINE}}": "Iran-US Ceasefire Holds as Negotiators Say They Are '75% There' — But Tehran Insists Nothing Is Signed",
-    "{{WORLD_1_SUMMARY}}": "The 60-day US-Iran ceasefire entered its second day as Trump declared the deal 'approved' and cancelled planned strikes. Pakistani PM Sharif posted that peace 'has never been this close,' citing direct involvement from Witkoff, Rubio, and Iranian President Pezeshkian. However, Iran's Foreign Minister Araqchi maintained no agreement had been formally concluded — with Tehran insisting on retaining uranium enrichment rights and control of Hormuz shipping. Negotiators say they are '75 percent there.' For Australian businesses, a genuine deal would release oil market pressure and push fuel prices back toward pre-crisis levels within weeks — but every false signal in this conflict has been followed by escalation. Watch the weekend carefully.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/liveblog/2026/6/12/iran-war-live-trump-claims-tehran-deal-approved-cancels-new-strikes",
+    "{{WORLD_1_FLAG}}": "🇰🇷 South Korea",
+    "{{WORLD_1_HEADLINE}}": "Ousted South Korean President Yoon Sentenced to 30 More Years Over North Korea Drone Plot",
+    "{{WORLD_1_SUMMARY}}": "A Seoul court handed former President Yoon Suk Yeol an additional 30-year prison sentence — stacked on top of a life term he received in February — after finding him guilty of conspiring to order propaganda drones over Pyongyang in October 2024 to provoke a North Korean military response and manufacture a justification for martial law. His former Defence Minister received the same term. Yoon, 65, is now serving what amounts to a permanent sentence across two separate convictions for two separate acts of abuse of power and treason.",
+    "{{WORLD_1_URL}}": "https://www.foxnews.com/world/former-south-korean-president-yoon-suk-yeol-sentenced-30-years-over-north-korea-drone-flights",
 
-    "{{WORLD_2_FLAG}}": "🇬🇧 UK · POLITICS",
-    "{{WORLD_2_HEADLINE}}": "UK Defence Secretary John Healey Resigns Over Military Funding Shortfall — Sixth Starmer Minister Out in a Month",
-    "{{WORLD_2_SUMMARY}}": "John Healey and Armed Forces Minister Al Carns quit on June 11 after Chancellor Rachel Reeves refused to increase defence spending beyond £12 billion — far short of the £18 billion Healey sought to meet rising NATO obligations. Healey said the settlement 'falls well short of what the nation needs at this dangerous time,' citing rising Russian and global threats. He became the sixth Starmer minister to resign in a single month and the 19th to leave government since Labour took power in July 2024. Dan Jarvis was immediately appointed Secretary of State for Defence.",
-    "{{WORLD_2_URL}}": "https://www.cbsnews.com/news/united-kingdom-defense-chief-john-healey-resigns-military-funding-nato/",
+    "{{WORLD_2_FLAG}}": "🇬🇧 UK · Belfast",
+    "{{WORLD_2_HEADLINE}}": "Riots Erupt Across Belfast for Second Night as Far-Right Groups Exploit Stabbing — Elon Musk Accused of Stoking Unrest",
+    "{{WORLD_2_SUMMARY}}": "Violent anti-immigrant protests spread across Belfast for a second consecutive night after a brutal knife attack sparked far-right mobilisation. Masked men set fires and hurled bricks and bottles at police; the Northern Ireland Fire and Rescue Service responded to 62 incidents in a single evening. Elon Musk drew fierce condemnation after sharing posts on X amplifying the violence. Northern Ireland First Minister Michelle O'Neill called it 'disgusting cowardice' and a government minister labelled the riots 'racist thuggery.' Northern Ireland police deployed water cannons and made multiple arrests.",
+    "{{WORLD_2_URL}}": "https://www.nbcnews.com/world/united-kingdom/belfast-riots-elon-musk-anti-immigrant-violence-stabbing-rcna349384",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🇦🇺 ATO · JULY 1",
-    "{{ECON_1_HEADLINE}}": "ATO Confirms Fuel Tax Credit Rates Revert to Full on July 1 — 17 Days to Review Your BAS and Job Pricing",
-    "{{ECON_1_SUMMARY}}": "The ATO has confirmed fuel tax credit rates will revert to full indexed levels from July 1, 2026, when the temporary fuel excise halving expires. Businesses that have been claiming credits at the reduced April 1 rates need to update their records and recalculate cost models before the end of the financial year. For trades operators, the practical impact is immediate: any job priced on current fuel costs needs to be reviewed before quotes are finalised for work starting in July. The Q4 FY2026 BAS (April–June) will reflect the reduced excise, but FY2027 Q1 activity will be calculated at the full rate — meaning the difference will be visible in your first quarterly BAS lodgement next October.",
-    "{{ECON_1_URL}}": "https://www.ato.gov.au/businesses-and-organisations/business-bulletins-newsroom/fuel-tax-credit-rates-changed-from-1-april-2026",
+    "{{ECON_1_FLAG}}": "⛽ Fuel Watch · 16 Days",
+    "{{ECON_1_HEADLINE}}": "Australia's Fuel Excise Cut Expires June 30 — Diesel Jumps 26 Cents Per Litre Overnight Into FY2027",
+    "{{ECON_1_SUMMARY}}": "The federal government's temporary halving of the fuel excise — saving diesel operators approximately 26.3 cents per litre since April 1 — expires at midnight on June 30, the same moment FY2027 begins. For trades businesses running diesel fleets, the cost jump is immediate and unavoidable. Any job quoted at current fuel rates but starting in July needs its margins reviewed now. With 16 days remaining, this week is the window to re-run job costings, adjust fleet allowances, and update any standard rates that were built on the reduced excise assumption.",
+    "{{ECON_1_URL}}": "https://wealthworks.com.au/blog/fuel-excise-cut-april-2026-how-it-works-petrol-diesel-savings-australia",
 
-    "{{ECON_2_FLAG}}": "🏦 RBA · RATES",
-    "{{ECON_2_HEADLINE}}": "RBA Cash Rate Decision Due Tuesday June 16 — Hold at 4.35% Expected With Easing Bias Emerging",
-    "{{ECON_2_SUMMARY}}": "The Reserve Bank of Australia meets on Tuesday June 16, with both CBA and NAB now removing forecasts for further rate hikes. The market consensus is a hold at 4.35%, with some economists projecting the first cut could come as early as August if inflation continues to ease. The easing of Middle East oil pressure — if the ceasefire holds — would be a significant disinflationary input. For small businesses, Tuesday's meeting and post-decision statement will be the clearest signal yet of whether the RBA sees the current rate as the peak or whether any upside risk remains.",
+    "{{ECON_2_FLAG}}": "🏦 RBA · Tuesday",
+    "{{ECON_2_HEADLINE}}": "RBA Meets Tuesday — First Rate Cut Tipped for August If Ceasefire Holds and Inflation Eases",
+    "{{ECON_2_SUMMARY}}": "The Reserve Bank meets on Tuesday June 16 with a near-unanimous market consensus for a hold at 4.35%. But with CBA and NAB both removing rate hike forecasts, and some economists now tipping a cut as early as August if the US-Iran ceasefire stabilises oil prices through July, the post-decision statement will carry significant weight. For small businesses carrying variable-rate equipment loans or business credit, a cut this quarter would be the first meaningful debt relief since 2022. Watch the RBA's language on Tuesday afternoon — it will be the clearest signal yet on whether the rate peak is confirmed.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI · WORKFORCE",
-    "{{TECH_1_HEADLINE}}": "Snap Cuts 1,000 Jobs as AI Now Writes 65% of Its New Code — Tech Layoff Wave Reshapes What Human Work Means",
-    "{{TECH_1_SUMMARY}}": "Snapchat parent Snap axed approximately 1,000 employees — 16% of its workforce — and closed over 300 open roles, directly citing AI replacing coding and operations work. CEO Evan Spiegel confirmed AI now generates more than 65% of all new code written at Snap. The cuts are expected to deliver over $500 million in annualised savings by H2 2026. This follows Meta's 8,000-job reduction last month, also AI-driven. The pattern is accelerating: major platforms are running leaner by embedding AI into the work itself — not just using AI as a productivity aid, but as a replacement for headcount. The question for every business now is not whether AI will change staffing decisions, but how fast.",
-    "{{TECH_1_URL}}": "https://www.foxbusiness.com/markets/snapchat-parent-company-cuts-1000-jobs-major-ai-driven-workforce-restructuring",
+    "{{TECH_1_FLAG}}": "🤖 AI · Workforce",
+    "{{TECH_1_HEADLINE}}": "Snap Cuts 1,000 Jobs as AI Writes 65% of Its New Code — Follows Meta's 8,000-Job AI Pivot Last Month",
+    "{{TECH_1_SUMMARY}}": "Snapchat parent Snap axed approximately 1,000 employees — 16% of its global workforce — directly citing AI generating the majority of new code and taking over operations roles. CEO Evan Spiegel confirmed AI now produces more than 65% of all new code written at Snap, with the restructuring projected to save over $500 million annually. This follows Meta's 8,000-role reduction last month, also AI-driven. Two of the world's largest social platforms have now formally replaced headcount with AI rather than supplementing it — and the structural shift is spreading beyond tech into every sector where repetitive skilled work can be automated.",
+    "{{TECH_1_URL}}": "https://www.crescendo.ai/news/latest-ai-news-and-updates",
 
-    "{{TECH_2_FLAG}}": "💼 AI · META",
-    "{{TECH_2_HEADLINE}}": "Meta Cuts 8,000 Jobs in AI Pivot — Thousands More Reassigned to AI-Focused Roles as Platform Restructures Around Intelligence",
-    "{{TECH_2_SUMMARY}}": "Meta has reduced its global headcount by roughly 10% — approximately 8,000 roles — while simultaneously reassigning thousands more employees to AI-focused teams. An additional 600 staff in Meta's own AI division were separately cut in a push for leaner decision-making. Taken together with Snap's restructuring this week, two of the world's largest social platforms have now formally declared that AI is replacing generalist roles, not supplementing them. For trades and small business owners, the signal is that the gap between AI-enabled businesses and those still running on manual processes is widening faster than most economic forecasts predicted.",
+    "{{TECH_2_FLAG}}": "📊 AI · Commerce",
+    "{{TECH_2_HEADLINE}}": "Adobe: AI-Generated Traffic to Retail Sites Up 393% — Converts to Sales 42% Better Than Other Channels",
+    "{{TECH_2_SUMMARY}}": "Adobe Digital Insights Q1 2026 data shows AI-driven referral traffic to US retail websites surged 393% year-on-year, and that traffic converted to sales 42% more effectively than traffic from search, social, or email. Customers are increasingly discovering businesses through AI assistants rather than Google. For small trades operators with online quote forms or booking pages, the implication is clear: businesses optimised for AI discovery are picking up a disproportionate share of new enquiries without any additional marketing spend.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🇨🇳 CHINA · POLICY",
-    "{{ROBOT_1_HEADLINE}}": "China's Government Issues National Directive: Humanoid Robots Must Achieve 'Routine Deployment' Across Industry by End of 2026",
-    "{{ROBOT_1_SUMMARY}}": "China's Ministry of Industry and Information Technology (MIIT) and the State-owned Assets Supervision and Administration Commission (SASAC) have jointly launched the 2026 Humanoid Robot and Embodied AI Real-Scene Training Action. The directive mandates that humanoid robots complete application verification and achieve 'routine deployment' across industrial manufacturing, public services, and specialised operations by December 2026 — targeting thousand-unit deployments across more than 100 validated real-world scenarios. Implementation plans are due from enterprises by the end of this month. It is the most comprehensive state-backed robot industrialisation mandate ever issued globally, underpinning China's position as the world's most aggressive humanoid robotics scaler at the government level.",
-    "{{ROBOT_1_URL}}": "https://pandaily.com/miit-sasac-humanoid-robot-real-scene-training-2026-jun2026",
+    "{{ROBOT_1_FLAG}}": "🤖 Robotics · IPO",
+    "{{ROBOT_1_HEADLINE}}": "EngineAI Files Confidentially for Hong Kong IPO as New Shenzhen Factory Ships First T800 Humanoid Robots",
+    "{{ROBOT_1_SUMMARY}}": "Shenzhen-based EngineAI filed confidentially for a Hong Kong stock exchange listing on June 12, engaging China International Capital Corp and Citic Securities as underwriters. Founded in 2023 and valued above $1.5 billion after a Series B in April, EngineAI opened a 12,000 square metre Shenzhen factory on June 1 and began shipping its T800 humanoid robot — with a production line targeting 10,000 units per year. If completed, the IPO would mark one of the first publicly listed pure-play humanoid robotics companies globally, a milestone expected to unlock significant new institutional capital for the sector.",
+    "{{ROBOT_1_URL}}": "https://blog.mean.ceo/robotics-news-june-2026/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Socceroos Face Türkiye Tomorrow in World Cup Opener — Australia Kicks Off at 2pm AEST from Vancouver",
-    "{{AUS_1_SUMMARY}}": "Australia begins their 2026 FIFA World Cup campaign tomorrow, Sunday June 14, at 2:00pm AEST at BC Place in Vancouver against Türkiye — a watchable afternoon kick-off for Australian fans. Coach Tony Popovic's 26-man squad includes 17 first-time World Cup players alongside veterans Mathew Ryan (captain) and Mathew Leckie, both set to equal Tim Cahill's record of four World Cup squads. Group D also includes the USA (June 20 at 5am AEST) and Paraguay (June 26). With the expanded 48-team format, Australia has a more realistic path through the group stage than in any previous World Cup.",
-    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/socceroos-australia-world-cup-2026-explained/5w41ackgb",
+    "{{AUS_1_HEADLINE}}": "Socceroos Face Türkiye in 2026 World Cup Opener Today — Kick-Off 2pm AEST From Vancouver",
+    "{{AUS_1_SUMMARY}}": "Australia begins their 2026 FIFA World Cup campaign at BC Place in Vancouver against Türkiye today at 2pm AEST — a rare civilised viewing hour for Australian fans. Coach Tony Popovic's squad includes captain Mathew Ryan and veteran Mathew Leckie, both set to equal Tim Cahill's record of four World Cup appearances. Group D also includes hosts USA (June 20) and Paraguay (June 26). With the expanded 48-team format and a realistic path through the group stage, this is arguably Australia's strongest World Cup position since the 2006 Germany campaign.",
+    "{{AUS_1_URL}}": "https://socceroos.com.au/news/match-preview-australia-v-turkiye-fifa-world-cup-2026tm",
 
-    "{{AUS_2_HEADLINE}}": "Fair Work Commission Hears INPEX Ichthys LNG Strike Application — NT Energy Supply in Focus",
-    "{{AUS_2_SUMMARY}}": "The Fair Work Commission held a hearing Friday on INPEX's application regarding protected industrial action at the Ichthys LNG facility in Darwin. An adverse outcome could affect LNG export volumes and domestic east-coast gas supply at an already sensitive time — with the energy market under pressure from the Middle East conflict and the fuel excise relief expiring June 30. The outcome will be watched closely by energy-intensive businesses and logistics operators tracking input costs into Q1 FY2027.",
+    "{{AUS_2_HEADLINE}}": "Fair Work Commission Hears INPEX Ichthys LNG Strike Application — NT Gas Supply Under Watch",
+    "{{AUS_2_SUMMARY}}": "The Fair Work Commission held a hearing Friday on INPEX's application regarding protected industrial action at the Ichthys LNG facility in Darwin. A disruption to the facility could tighten domestic east-coast gas supply at an already sensitive time — with Middle East tensions keeping energy markets volatile and the fuel excise relief expiring June 30. Energy-intensive businesses and logistics operators are watching the outcome closely for any flow-on to input costs in Q1 FY2027.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "FIFA World Cup Live Screenings Begin Today at Bunjil Place — Every Match Free on the Outdoor Screen Through July 19",
-    "{{VIC_1_SUMMARY}}": "Bunjil Place in Narre Warren — 10 kilometres from Carrum Downs — is screening every 2026 FIFA World Cup match live on its outdoor screen through July 19. The Socceroos' Group D opener against Türkiye tomorrow at 2pm AEST is the first marquee fixture. The NGV's Cartier: Winter Masterpieces, which opened Thursday, also continues its run through October 4 at NGV International on St Kilda Road. A packed Melbourne winter program — between the football and one of the biggest gallery exhibitions ever staged in Australia, there is no shortage of reasons to head out once the rain eases.",
+    "{{VIC_1_HEADLINE}}": "Free World Cup Live Screenings at Bunjil Place Narre Warren — Every Match on Outdoor Screen Through July 19",
+    "{{VIC_1_SUMMARY}}": "Bunjil Place in Narre Warren — ten kilometres from Carrum Downs — is screening every 2026 FIFA World Cup match live and free on its outdoor screen through the tournament final on July 19. The Socceroos' opener against Türkiye kicks off this afternoon at 2pm. With 104 matches scheduled across 48 teams, there is live football on virtually every day through mid-July. A worthwhile way to catch the big games without a pub cover charge — check the Bunjil Place website for session times and weather contingencies.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔬 BIOLOGY · AGEING",
-    "{{SCI_1_HEADLINE}}": "Scientists Identify the Hidden Trigger of Cellular Aging — and Show a Dietary Molecule Can Reverse It",
-    "{{SCI_1_SUMMARY}}": "Researchers at Germany's Leibniz Institute on Aging have pinpointed the decline of phosphatidylcholine — a key membrane lipid — as a primary driver of age-related mitochondrial dysfunction and cellular energy loss. As organisms age, phosphatidylcholine synthesis drops, disrupting the mitochondrial membrane network that powers cells. The study, published in Nature Communications on June 10, showed that restoring phosphatidylcholine through diet reversed mitochondrial decline in nematode models and rejuvenated energy networks in human cell cultures. The finding opens a potential dietary path to slow one of the most fundamental cellular processes underlying the ageing of every living organism.",
+    "{{SCI_1_FLAG}}": "🔬 Physics · Neutrinos",
+    "{{SCI_1_HEADLINE}}": "China's Giant JUNO Observatory Publishes First Results in Nature — Neutrino Measurements 1.6× More Precise Than All Previous Experiments Combined",
+    "{{SCI_1_SUMMARY}}": "The Jiangmen Underground Neutrino Observatory (JUNO) — a 20,000-tonne liquid scintillator sphere buried 700 metres underground in southern China — published its first physics result as the cover article in Nature on June 10, with ScienceDaily coverage on June 12. Using just 59 days of data collected in late 2025, JUNO improved precision on two key neutrino oscillation parameters by a factor of 1.6 over the best combined results from decades of prior global experiments. Neutrinos are the universe's most abundant particles after photons; pinning down their mass hierarchy could help resolve why matter came to dominate over antimatter — and ultimately why the universe exists at all.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Why Your Plant and Equipment Is Your Most Underpriced Line Item — and How AI Can Fix It This Weekend",
-    "{{INSIGHT_BODY}}": "Most small trades operators price labour and materials with reasonable care, but plant and equipment — the ute, trailer, compressor, generator, specialty gear — typically gets a round number that has not been revisited since fuel, insurance premiums, and replacement costs were a third of what they are now. The result is that every job quietly subsidises your equipment at margins you have never consciously set. Here is where AI earns its keep in a single Saturday morning session. Open Claude or ChatGPT and list every piece of plant you regularly deploy: what you paid for it, current insurance and registration, fuel cost per week, and expected replacement timeline. Ask the AI to calculate a realistic per-hour and per-day cost for each item at your current utilisation rate. Then compare that figure to what you are actually charging or including in quotes. Most operators find they are undercharging on equipment by 20 to 40 percent — particularly on specialty gear used infrequently, where there is no visible 'market rate' to anchor against. That gap, recovered consistently across a full year of quoting, can represent five to ten thousand dollars in recovered margin without changing a single hour of work or a single job. It is not glamorous analysis. But it is the kind of thing that makes your next financial year materially different from this one, and it takes less time than watching the pre-match commentary tonight.",
+    "{{INSIGHT_TITLE}}": "Two Weeks to EOFY: How AI Can Digitise Your Paper Trail Before June 30",
+    "{{INSIGHT_BODY}}": "With June 30 exactly sixteen days away, most small trades businesses have job cards, photo receipts, delivery dockets, and handwritten materials notes scattered across the ute, a desk drawer, and three different email threads — and the accountant needs all of it. AI document tools can now photograph a paper job card, extract the key details, create a searchable digital record, and categorise it for tax purposes in under 60 seconds per document. Running a weekly AI sweep through your phone's camera roll — photos of receipts, supplier dockets, purchase orders — can compress three hours of bookkeeping prep into thirty minutes. Here is the practical approach: open Claude or ChatGPT on your phone right now, photograph a pile of paper documents, and ask the AI to extract the date, supplier, amount, and job reference from each one. Paste the results into a spreadsheet and you have a clean, dated transaction log your accountant can use without chasing you. The accountant deadline is not June 30 — it is the fortnight before June 30, when they need time to process everything. Starting today means you hand over clean records, not a shoebox. That difference alone can save two to four hours of billable accounting time at the end of the year.",
 
     # Fun Facts
-    "{{FACT_1}}": "The human nose can identify approximately one trillion distinct odours — roughly 500 times more than previous estimates suggested. Smell is the only sense with a direct neural pathway to the brain's memory and emotion centres, the hippocampus and amygdala, which is why a single familiar scent can trigger a vivid, emotionally charged memory from decades earlier far more powerfully than any image or sound.",
+    "{{FACT_1}}": "The Great Ocean Road was carved through 243 kilometres of Victoria's rugged southwest coastline by 3,000 returned World War I soldiers between 1919 and 1932, using picks, shovels, and gelignite — no heavy machinery was used. It took thirteen years to complete and is officially classified as the world's largest war memorial. The soldiers received only basic wages, contributing their labour as a tribute to Australian servicemen lost in the war.",
 
-    "{{FACT_2}}": "The Panama Canal's lock system uses no pumps whatsoever — every ship is raised and lowered entirely by gravity, using freshwater from Gatun Lake above sea level. Each vessel passage drains approximately 197 million litres of fresh water into the ocean. Completed in 1914 after a decade of construction by 75,000 workers, the canal saves ships roughly 15,000 kilometres compared to sailing around Cape Horn at the southern tip of South America.",
+    "{{FACT_2}}": "Earth's magnetic north pole does not sit at the geographic North Pole — it is currently drifting toward Siberia at roughly 50 kilometres per year and has moved more than 2,300 kilometres since systematic records began in 1831. In some parts of Australia, this magnetic declination means a compass points up to 12 degrees away from true geographic north. It is why professional surveyors always reference true north coordinates rather than magnetic bearings, and why navigational charts carry a declination correction value.",
 
-    "{{FACT_3}}": "The world's largest known bacterium, Thiomargarita magnifica, was discovered in Caribbean mangroves in 2022 and can grow up to two centimetres long — large enough to see with the naked eye. It rewrote biology textbooks: unlike all other bacteria, it stores its DNA inside a membrane-bound organelle, a feature previously thought exclusive to complex cells. A single specimen can contain up to 700,000 times more DNA than a typical bacterium.",
+    "{{FACT_3}}": "Graphene — a single atom-thick sheet of carbon atoms first isolated in 2004 by Andre Geim and Konstantin Novoselov at Manchester University — is approximately 200 times stronger than steel by weight and conducts electricity better than copper at room temperature. The pair received the 2010 Nobel Prize in Physics for the discovery. A graphene sheet large enough to cover a football field would weigh less than four grams.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the bricklayer never need a calculator on site?",
-    "{{JOKE_PUNCHLINE}}": "He always knew when the job was about to hit a wall.",
+    "{{JOKE_SETUP}}": "Why did the site supervisor always make the best scrambled eggs?",
+    "{{JOKE_PUNCHLINE}}": "Because he knew exactly when to pull them off the heat — leave it one minute too long and you've got a rework.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "“Simplicity is the ultimate sophistication.”",
-    "{{CLOSING_ATTR}}": "— Leonardo da Vinci",
-    "{{CLOSING_MESSAGE}}": "A rainy Saturday in Carrum Downs — northerly winds up to 40 km/h and rain likely through the morning, easing this evening. The Socceroos kick off their World Cup campaign tomorrow at 2pm AEST against Türkiye in Vancouver — a civilised Saturday arvo watch if you can get your quotes and your plant costing sorted first. The Iran ceasefire is at a delicate moment: if the Strait of Hormuz reopens properly over the weekend, you will see it at the bowser within a fortnight. But the fuel excise relief still ends on June 30 regardless. Use the wet morning well, Liall — the week ahead has the RBA on Tuesday, World Cup at all hours, and 17 days to get your July pricing right.",
+    "{{CLOSING_QUOTE}}": "“Even if you’re on the right track, you’ll get run over if you just sit there.”",
+    "{{CLOSING_ATTR}}": "— Will Rogers",
+    "{{CLOSING_MESSAGE}}": "The Socceroos kick off at 2pm AEST this afternoon — Turkey in Vancouver, a rare civilised-hour World Cup match for Australian viewing. Carrum Downs has partly cloudy skies today with a fog risk this morning, but heavy rain is forecast for Monday so anything worth doing outdoors is worth doing today. Sixteen days to the end of the financial year, and the fuel excise cut disappears at midnight on June 30 regardless of what happens in Tehran. A Sunday spent on your paper trail and your July job pricing could save you a very stressful first week of FY2027, Liall.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
