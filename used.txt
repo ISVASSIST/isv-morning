@@ -623,3 +623,13 @@ JOKE: Why did the pest controller always have a full diary?
 INSIGHT: Training Your Next Generation: How AI Is Helping Small Trades Businesses Onboard Apprentices Faster and Keep Them Longer
 QUOTE: "You miss 100% of the shots you don't take." — Wayne Gretzky
 ---
+DATE: Wednesday, 24 June 2026
+SCIENCE: World's first nuclear clocks built by two independent teams — thorium-229 nucleus oscillations, up to 1,000x more precise than atomic clocks, sensitive to three fundamental forces — Nature, June 23 2026
+ROBOTICS: Figure AI BotQ facility reaches one Figure 03 humanoid robot per hour — 24x throughput improvement in under 120 days, 80%+ first-pass yield
+FACT: The world's oldest known cookbook is the Yale Culinary Tablets, four clay tablets from around 1700 BC from ancient Mesopotamia, recording 35 recipes in Akkadian cuneiform including a lamb broth
+FACT: Koalas have fingerprints so similar to human fingerprints that forensic examiners have occasionally mistaken koala prints for human ones — confirmed in published forensic research, a striking example of convergent evolution
+FACT: The world's first commercial nuclear power plant was the Obninsk Nuclear Power Plant in the Soviet Union, which began generating electricity on 27 June 1954, producing just 5 megawatts
+JOKE: I tried to cook the perfect steak using the sous vide method my apprentice recommended.
+INSIGHT: The One-Hour AI Audit Every Trades Business Should Run Before July 1
+QUOTE: "The way I see it, if you want the rainbow, you gotta put up with the rain." — Dolly Parton
+---
