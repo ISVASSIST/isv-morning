@@ -643,3 +643,13 @@ JOKE: What do the Socceroos and a small trades business owner have in common thi
 INSIGHT: How AI Can Find the Margin Leaks in Your FY2026 Jobs Before the Books Close
 QUOTE: "You can't go back and change the beginning, but you can start where you are and change the ending." — C. S. Lewis
 ---
+DATE: Friday, 26 June 2026
+SCIENCE: Physicists split a single photon and discover it creates an infinite quantum superposition of particle states, not two smaller photons — Physical Review Letters, June 2026
+ROBOTICS: NVIDIA and Doosan Group expand physical AI collaboration for autonomous industrial equipment in construction, energy, and manufacturing — June 2026
+FACT: Voyager 1, launched 1977, is now over 24 billion km from Earth — signals take 22+ hours to arrive at 160 bits per second; plutonium RTG expected to keep it alive until ~2036
+FACT: Trans-Australian Railway across the Nullarbor Plain runs 478 km in a perfectly straight line — longest straight stretch of railway on Earth, completed 1917, surveyed by hand
+FACT: Pac-Man 1980 arcade game has a kill screen at Level 256 — integer overflow corrupts the right half of the screen with scrambled tiles, making the stage impossible to complete
+JOKE: I looked into getting a humanoid robot to help with site preparation.
+INSIGHT: How AI Can Help You Build a Job Cost Template That Catches Every Billable Item Before You Send the Invoice
+QUOTE: "The key is not the will to win. Everybody has that. It is the will to prepare to win that is important." — Bobby Knight
+---
