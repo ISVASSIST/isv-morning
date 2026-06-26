@@ -653,3 +653,14 @@ JOKE: I looked into getting a humanoid robot to help with site preparation.
 INSIGHT: How AI Can Help You Build a Job Cost Template That Catches Every Billable Item Before You Send the Invoice
 QUOTE: "The key is not the will to win. Everybody has that. It is the will to prepare to win that is important." — Bobby Knight
 ---
+
+DATE: Saturday, 27 June 2026
+SCIENCE: Earth may have been seeding Venus with microbial life via asteroid impacts for billions of years — Johns Hopkins APL study, ScienceDaily June 25 2026
+ROBOTICS: German industry demands faster humanoid robot adoption, 82% call for China-style subsidies — automatica Trend Index, RoboticsTomorrow June 26 2026
+FACT: The twin earthquakes that struck Venezuela on June 24 2026 (magnitude 7.5 and 7.2) are the strongest to hit the country since a catastrophic quake levelled Caracas in 1900, killing 10,000–30,000 people
+FACT: 3I/ATLAS — the third interstellar object ever confirmed to enter our solar system — was scanned by SETI's Allen Telescope Array for 7+ hours in June 2026; all 74 million narrowband signals traced back to Earth sources
+FACT: Germany has 449 industrial robots per 10,000 manufacturing employees (third globally after South Korea at 1,012 and Singapore at 770); Australia has approximately 87 per 10,000 — roughly one-fifth the German rate
+JOKE: Why does the concreter never lose an argument?
+INSIGHT: How AI Can Turn Your Job Site Photos Into Professional Documentation — Without Writing a Word
+QUOTE: "Success usually comes to those who are too busy to be looking for it." — Henry David Thoreau
+---
