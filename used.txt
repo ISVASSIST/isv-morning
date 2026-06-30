@@ -697,3 +697,14 @@ JOKE: How does a trades business owner know the financial year has officially en
 INSIGHT: The Last Hours of FY2026: How to Use AI to Close Every Open Loop Before Midnight
 QUOTE: "A good plan today is better than a perfect plan tomorrow." — Publilius Syrus
 ---
+
+DATE: Wednesday, 01 July 2026
+SCIENCE: New systematic review of five clinical trials finds creatine supplementation may modestly ease depression symptoms, but evidence remains mixed/inconclusive — ScienceDaily, published June 30 2026
+ROBOTICS: China's humanoid robot rental boom (153,000+ rental businesses, $1.5B market) exposes practical autonomy limits — most robots still task-specific and human-guided — CNN, published June 30 2026
+FACT: The Compagnie Parisienne de l'Air Comprimé built the world's first citywide compressed-air power network in Paris from 1888, piping high-pressure air through tunnels to drive machinery, clocks and small motors across the city
+FACT: San Francisco's Boudin Bakery has kept the same sourdough starter alive and in continuous use since the California Gold Rush in 1849 — over 175 years of unbroken wild yeast culture
+FACT: AlphaGo's famous 'Move 37' against world champion Lee Sedol in 2016 was initially thought to be a mistake by commentators — it's now taught in professional Go academies as a genuine strategic turning point
+JOKE: Why did the signwriter never lose an argument with a difficult client?
+INSIGHT: Public Liability Renewal Season: How AI Can Stop You Sleepwalking Into a Bad Auto-Renewal
+QUOTE: "The secret of change is to focus all of your energy not on fighting the old, but on building the new." — Socrates
+---
