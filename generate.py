@@ -4,91 +4,91 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Friday, 03 July 2026",
+    "{{DATE}}": "Saturday, 04 July 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Fri 3 Jul
-    "{{WEATHER_1}}": "FRI 3 · 🌧 Showers, windy · 9–14°C",
-    "{{WEATHER_2}}": "SAT 4 · 🌧 Showers, cooler · 8–14°C",
-    "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "SUN 5 · ⛅ Early shower, clearing · 9–14°C",
-    "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "MON 6 · ☀️ Sunny, frosty start · 3–15°C",
-    "{{WEATHER_5}}": "TUE 7 · ☀️ Mostly sunny · 5–16°C",
-    "{{WEATHER_ALERT}}": "⚠ SHOWERS TODAY & TOMORROW · MIN WAGE RISES TO $26.44/HR THIS WEEK",
+    # Weather — Carrum Downs VIC, 5-day from Sat 4 Jul
+    "{{WEATHER_1}}": "SAT 4 · 🌧 Showers · 8–15°C",
+    "{{WEATHER_2}}": "SUN 5 · ☁️ Cloudy · 9–14°C",
+    "{{WEATHER_2_CLASS}}": "",
+    "{{WEATHER_3}}": "MON 6 · ☀️ Sunny, frosty start · 3–15°C",
+    "{{WEATHER_3_CLASS}}": "",
+    "{{WEATHER_4}}": "TUE 7 · ⛅ Mostly sunny · 5–14°C",
+    "{{WEATHER_5}}": "WED 8 · ⛅ Partly cloudy · 6–14°C",
+    "{{WEATHER_ALERT}}": "⚠ SHOWERS EASING TODAY · DIESEL & PETROL RISING AS FUEL EXCISE DISCOUNT HALVES",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇻🇦 VATICAN CITY · SCHISM · BISHOPS EXCOMMUNICATED",
-    "{{WORLD_1_HEADLINE}}": "Vatican Declares Traditionalist Society of St. Pius X in Schism, Excommunicates Its Bishops",
-    "{{WORLD_1_SUMMARY}}": "The Vatican formally excommunicated the four bishops the breakaway Society of St. Pius X consecrated without papal consent on July 1 in Écône, Switzerland, plus two more who took part in the ceremony, declaring the ultra-traditionalist society itself in schism. Priests belonging to the group are now deemed excommunicated too, with the Vatican warning that sacraments they perform — including confession and marriage — are invalid, and that the faithful attending SSPX Masses risk excommunication themselves. It's the most decisive Vatican action against the group since Pope Benedict XVI lifted an earlier excommunication in 2009, closing off nearly two decades of cautious rapprochement.",
-    "{{WORLD_1_URL}}": "https://www.npr.org/2026/07/02/nx-s1-5878916/vatican-society-of-st-pius-x-in-schism",
+    "{{WORLD_1_FLAG}}": "🇮🇷 IRAN · KHAMENEI FUNERAL · WEEK OF MOURNING BEGINS",
+    "{{WORLD_1_HEADLINE}}": "Iran Begins a Week of Funeral Ceremonies for Slain Supreme Leader Khamenei",
+    "{{WORLD_1_SUMMARY}}": "Ayatollah Ali Khamenei's body lay in state in Tehran on Friday as officials, clerics and foreign dignitaries from more than 50 delegations paid their respects, opening a mourning period expected to run through July 9 across Iran and Iraq. Khamenei was killed alongside family members in the opening strikes of the US-Israeli attack on Tehran in February; Tehran's mayor has said turnout at this weekend's viewings, followed by Monday's funeral procession, could reach 20 million people. It's a moment likely to shape Middle East diplomacy for months, with US-Iran talks in Doha paused around the ceremonies.",
+    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/7/3/iran-begins-week-of-funeral-ceremonies-for-slain-supreme-leader-khamenei",
 
-    "{{WORLD_2_FLAG}}": "🇺🇸 UNITED STATES · TRADE · USMCA NOT RENEWED",
-    "{{WORLD_2_HEADLINE}}": "Trump Refuses to Renew USMCA, Toppling a Pillar of North American Trade Stability",
-    "{{WORLD_2_SUMMARY}}": "Six years to the day after the US-Mexico-Canada trade deal took effect, the Trump administration confirmed this week it won't renew it in its current form, instead opening a decade of amendment negotiations that could see Washington strike separate bilateral deals with Mexico and Canada. The pact stays technically in force but now faces annual reviews that could reopen major provisions at any time, injecting fresh uncertainty into roughly $2 trillion of North American trade — the kind of upstream disruption that tends to work its way into global shipping costs and, eventually, the price of imported gear and materials everywhere, including here.",
-    "{{WORLD_2_URL}}": "https://www.nbcnews.com/business/economy/trump-usmca-renewal-tariffs-trade-rcna352594",
+    "{{WORLD_2_FLAG}}": "🇫🇷 SOUTHERN FRANCE · WILDFIRES · THOUSANDS EVACUATED",
+    "{{WORLD_2_HEADLINE}}": "Wildfires Scorch Southern France as Record Heatwave and Drought Fuel the Blazes",
+    "{{WORLD_2_SUMMARY}}": "Multiple fires are burning across southern France, with the largest blaze near the Spanish border in the Aude and Hérault regions having scorched around 900 hectares and prompting roughly 800 firefighters and 150 vehicles to be deployed. Nearly 5,000 people have been evacuated from coastal campsites as wind gusts up to 70km/h hamper containment, following an 11-day record-breaking heatwave through June. A reminder of how fast a dry, hot run of weeks turns into an emergency — a pattern playing out across southern Europe this northern summer.",
+    "{{WORLD_2_URL}}": "https://www.manilatimes.net/2026/07/03/world/wildfires-scorch-southern-france-as-heat-and-drought-fuel-blazes/2377748",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ FUEL PRICES · DIESEL NATIONAL AVERAGE · $1.97/L",
-    "{{ECON_1_HEADLINE}}": "National Diesel Average Hits 197.1 Cents a Litre as the Halved Fuel Excise Discount Bites",
-    "{{ECON_1_SUMMARY}}": "The latest pricing data puts Australia's national average diesel price at 197.1 cents a litre this week, with Victoria still the cheapest state to fill up at an average 185.6 cents a litre. It's the first full week of pricing since the fuel excise discount halved from 32 cents to 16 cents a litre on July 1, and retailers are progressively passing the difference through — worth checking against whatever number you last budgeted a tank of diesel at.",
-    "{{ECON_1_URL}}": "https://gdp.com.au/petrol-prices",
+    "{{ECON_1_FLAG}}": "⛽ FUEL PRICES · ACCC · EXCISE DISCOUNT HALVED",
+    "{{ECON_1_HEADLINE}}": "Petrol and Diesel Prices Jump as the Fuel Excise Discount Halves From July 1",
+    "{{ECON_1_SUMMARY}}": "The ACCC's latest weekly monitoring shows average retail petrol across the five largest capital cities rose to 158.1 cents a litre on July 1 (from 151.5c the day before), while diesel jumped to 179.1 cents a litre (from 173.5c) — the direct result of the temporary 32-cent fuel excise cut being halved to 16 cents from July 1, a measure due to run until August 2. Worth checking against whatever number you last quoted a job's fuel cost on, since the increase is landing in real time this week.",
+    "{{ECON_1_URL}}": "https://www.accc.gov.au/media-release/accc-to-monitor-fuel-prices-and-market-behaviour-as-fuel-excise-is-partly-restored",
 
-    "{{ECON_2_FLAG}}": "💰 FAIR WORK COMMISSION · MINIMUM WAGE · UP 6% THIS WEEK",
-    "{{ECON_2_HEADLINE}}": "National Minimum Wage Rises 6% to $26.44 an Hour From This Week's First Full Pay Cycle",
-    "{{ECON_2_SUMMARY}}": "The Fair Work Commission's 6% increase to the National Minimum Wage takes effect from the first full pay period after July 1, lifting the weekly minimum to $1,004.90 (award wages rise 4.75%), flowing through to around 2.7 million workers. For any small trades business with award-reliant staff, it's worth double-checking payroll has applied the new rates before the next pay run rather than after — the increase applies automatically regardless of when you get around to updating the numbers.",
+    "{{ECON_2_FLAG}}": "🛒 ACCC · RETAIL · SUPERMARKET PRICE-GOUGING NOW ILLEGAL",
+    "{{ECON_2_HEADLINE}}": "World-First Law Banning Supermarket Price Gouging Takes Effect, Coles and Woolworths in the Crosshairs",
+    "{{ECON_2_SUMMARY}}": "From this month, Australia's new Food and Grocery Code amendments make it illegal for 'very large retailers' — in practice just Coles and Woolworths, the only two chains turning over more than $30 billion — to charge prices the ACCC deems excessive relative to supply cost plus a reasonable margin, with penalties up to $10 million or 10% of annual turnover per breach. It won't move the needle on trade material costs directly, but it's the clearest sign yet regulators are willing to intervene on pricing power — worth watching if it extends to other sectors down the track.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 GOOGLE · SEARCH · GEMINI 3.5 FLASH NOW DEFAULT",
-    "{{TECH_1_HEADLINE}}": "Google Makes Gemini 3.5 Flash the Default Model Behind AI Mode in Search, Starting This Week",
-    "{{TECH_1_SUMMARY}}": "From July 2, Google has swapped in Gemini 3.5 Flash as the default model behind AI Mode in Search globally, promising flagship-level reasoning on coding and complex queries at the speed of its lighter-weight Flash tier. For anyone using Google to research suppliers, compare prices or draft a quick job scope, it means the AI answers sitting above the normal search results just got noticeably sharper without anyone needing to opt into anything.",
-    "{{TECH_1_URL}}": "https://blog.google/products-and-platforms/products/search/search-io-2026/",
+    "{{TECH_1_FLAG}}": "🤖 MICROSOFT · ENTERPRISE AI · $2.5B FRONTIER COMPANY",
+    "{{TECH_1_HEADLINE}}": "Microsoft Launches $2.5 Billion 'Frontier Company' to Embed AI Engineers Inside Client Businesses",
+    "{{TECH_1_SUMMARY}}": "Microsoft announced a new $2.5 billion business unit this week, Microsoft Frontier Company, that will place around 6,000 AI and industry experts directly inside customer organisations — from LSEG to Unilever — to help them design, deploy and continually improve AI systems tied to measurable business outcomes. It's the clearest sign yet that the big platforms see 'someone helps you actually use the AI' as the next competitive battleground, not just better models — a service tier way beyond small-business budgets today, but a hint at where AI support is heading.",
+    "{{TECH_1_URL}}": "https://blogs.microsoft.com/blog/2026/07/02/microsoft-frontier-company-ai-engineering-that-amplifies-and-protects-your-intelligence/",
 
-    "{{TECH_2_FLAG}}": "🤖 OPENAI · GOVERNANCE · 5% GOVERNMENT STAKE PROPOSED",
-    "{{TECH_2_HEADLINE}}": "OpenAI Reportedly Proposes Giving the US Government a 5% Stake in the Company",
-    "{{TECH_2_SUMMARY}}": "OpenAI executives, including CEO Sam Altman, have opened preliminary talks about handing Washington a 5% ownership stake, as part of a wider arrangement that would see the government hold a slice of each major US AI developer, the Financial Times reports. It's a sign of how tightly AI policy and national politics are becoming intertwined at the top of the industry — worth watching less for the direct impact on a small trades business and more for what it signals about how the tools you rely on daily might eventually be regulated.",
+    "{{TECH_2_FLAG}}": "🤖 AMAZON · ENTERPRISE AI · $1B FORWARD-DEPLOYED ENGINEERS",
+    "{{TECH_2_HEADLINE}}": "Amazon Joins the AI Deployment Arms Race With Its Own $1 Billion Engineer Unit",
+    "{{TECH_2_SUMMARY}}": "Days before Microsoft's move, AWS committed $1 billion to its own new Forward Deployed Engineering unit, embedding pods of five or six engineers with clients including the NBA, NFL and Southwest Airlines to get agentic AI systems live in roughly 45-day cycles. Between Amazon, Microsoft, OpenAI and Anthropic all standing up near-identical units within weeks of each other, the message from the top of the industry is unmistakable: knowing which AI tool exists isn't the bottleneck anymore, getting it actually working inside a real business is.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · IFR · NEW GLOBAL PRESIDENT ELECTED",
-    "{{ROBOT_1_HEADLINE}}": "Jane Heffner of Teradyne Robotics Elected New President of the International Federation of Robotics",
-    "{{ROBOT_1_SUMMARY}}": "The IFR — the peak global body tracking and setting direction for the industrial robotics industry — has elected Jane Heffner, Teradyne Robotics' Global Vice President of Channel Communication, as its new president, taking over the rotating role from Takayuki Ito of Fanuc. It's a leadership call rather than a factory deployment, but it lands the same week IFR data confirms global industrial robot installations hit an all-time high of US$16.7 billion — a reminder that the automation wave reshaping factories overseas is being steered by decisions being made right now.",
-    "{{ROBOT_1_URL}}": "https://ifr.org/ifr-press-releases/news/jane-heffner-is-new-president-of-ifr",
+    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · UBTECH · MASS-PRODUCED HUMANOID LAUNCHED",
+    "{{ROBOT_1_HEADLINE}}": "UBTECH Launches the World's First Mass-Produced Full-Size 'Ultra-Bionic' Humanoid Robot",
+    "{{ROBOT_1_SUMMARY}}": "Chinese robotics maker UBTECH unveiled its UWORLD U1 series this week — three models starting from roughly 119,800 RMB (around AUD $25,000), with 88 degrees of freedom and a biomimetic 'spine' letting it replicate about 90% of human movement. Orders have already passed 13,000 units ahead of first deliveries in September, positioning it as the first humanoid robot line built for genuine mass production rather than a one-off demo unit — another marker of how fast the hardware side of this industry is scaling, even if the price tag keeps it firmly in factory and research territory for now.",
+    "{{ROBOT_1_URL}}": "https://www.prnewswire.com/news-releases/ubtech-launches-uworld-u1-the-worlds-first-full-size-mass-produced-ultra-bionic-humanoid-robot-302815285.html",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australian Home Prices Post Biggest Monthly Fall in Three and a Half Years as New Financial Year Opens Weak",
-    "{{AUS_1_SUMMARY}}": "National home values fell 0.4% in June — the steepest monthly drop since December 2022 — with Sydney down 1.2% and Melbourne not far behind, as the ASX 200 also opened the new financial year down 0.6%. Analysts point to three RBA rate rises since February, energy price pressure from the Middle East conflict, and tightened tax concessions for property investors as the drivers — a reminder that a cooler housing market flows through to how confident clients feel about spending on the next job.",
-    "{{AUS_1_URL}}": "https://thenightly.com.au/australia/property-australian-home-prices-suffer-biggest-monthly-fall-since-december-2022-c-22511628",
+    "{{AUS_1_HEADLINE}}": "World-First Supermarket Price-Gouging Ban Takes Effect, Coles and Woolworths Face $10M Fines",
+    "{{AUS_1_SUMMARY}}": "Australia became the first country to outlaw supermarket price gouging this month, with new ACCC-enforced rules targeting Coles and Woolworths specifically — the only two retailers turning over more than $30 billion a year — with fines up to $10 million per breach. Ironically, the government's own report last year found no clear evidence of gouging by the pair, but the law is now live regardless.",
+    "{{AUS_1_URL}}": "https://ministers.treasury.gov.au/ministers/andrew-leigh-2025/media-releases/price-gouging-large-supermarkets-illegal-1-july-2026",
 
-    "{{AUS_2_HEADLINE}}": "Labor MP Tells Antisemitism Royal Commission His Office Was Vandalised, He's Had 10,000+ Abusive Messages",
-    "{{AUS_2_SUMMARY}}": "Melbourne federal MP Josh Burns testified this week at the Royal Commission on Antisemitism and Social Cohesion's Sydney hearing block, describing social media platforms as 'arenas of hate' and detailing the toll of sustained online abuse and a vandalised electorate office. The commission's hearings run through to July 10, examining how online platforms amplify hateful content — a live conversation for any business owner who's had to decide how to handle a nasty comment thread.",
+    "{{AUS_2_HEADLINE}}": "Australia Commits $2 Million in Emergency Aid to Venezuela's Earthquake Recovery",
+    "{{AUS_2_SUMMARY}}": "Foreign Minister Penny Wong announced $2 million in humanitarian funding this week for communities hit by the magnitude 7.2 and 7.5 earthquakes that struck west of Caracas on June 24, joining the US, UK and EU in funding emergency food, shelter and water for the roughly two million Venezuelans now in need.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Docklands' Firelight Festival Lights Up Melbourne's Waterfront This Weekend, July 3–5",
-    "{{VIC_1_SUMMARY}}": "Fire performers, fire pits, live music and winter market stalls take over Docklands from tonight through Sunday as part of the Firelight Festival, part of the city's push to keep the waterfront lively through the cooler months. If you're headed into the city this weekend and want to make the most of Melbourne's winter rather than hide from it, it's free to attend and runs into the evening each night.",
+    "{{VIC_1_HEADLINE}}": "Minor Flooding Continues Across North-East Victoria After Heavy Rain, Murray and Goulburn Rivers Affected",
+    "{{VIC_1_SUMMARY}}": "The Bureau of Meteorology's flood watch remains current for parts of north-east and central Victoria, with minor flood warnings in place for the Murray River upstream of Lake Hume, the Mitta Mitta and the Goulburn — a reminder that while Carrum Downs copes with the usual winter showers, some regional Victorian communities are dealing with a fair bit more this week.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🪐 ASTRONOMY · HOBBY-EBERLY & NEID TELESCOPES",
-    "{{SCI_1_HEADLINE}}": "Astronomers Confirm a Potentially Habitable Super-Earth Just 25 Light-Years From Us",
-    "{{SCI_1_SUMMARY}}": "US astronomers have confirmed and refined the properties of GJ 3378b, a rocky super-Earth about 2.3 times Earth's mass orbiting a faint red dwarf star every 21.45 days, sitting squarely in its star's habitable zone and receiving roughly 90% of the sunlight Earth gets. It's one of the closest potentially habitable worlds ever found, though it sits right on the 'cosmic shoreline' — the edge of the zone where a star's radiation can strip away a planet's atmosphere entirely — so whether it could actually host liquid water remains an open question the next generation of telescopes will need to settle.",
+    "{{SCI_1_FLAG}}": "🌞 SPACE WEATHER · SOLAR STORM · AURORA CHANCE THIS WEEKEND",
+    "{{SCI_1_HEADLINE}}": "The Sun Fired Off 10 Flares in 24 Hours — And the Resulting Storm Could Bring Aurora This Weekend",
+    "{{SCI_1_SUMMARY}}": "A powerful X1.1 solar flare on June 30 sent a coronal mass ejection toward Earth, with forecasters expecting G1–G2 geomagnetic storm conditions (a chance of G3) to peak overnight into Sunday — strong enough that the Aurora Australis has a real shot at being visible from parts of southern Victoria and the Mornington Peninsula if skies clear after today's showers. Worth a look outside after dark this weekend if you're up; solar activity is still ramping up toward the peak of the current 11-year solar cycle.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Google Just Made AI the Default Way People Search — Is Your Business Still Findable?",
-    "{{INSIGHT_BODY}}": "As of this week, Google is showing AI-generated answers above the normal blue links for everyone, by default, worldwide — which means a growing share of people looking for 'blasting and coatings near me' or 'industrial paint stripping Melbourne' never scroll down to a traditional listing at all. The AI answer is built from whatever text it can find and trust, so a website full of vague slogans and no specifics gets skipped over in favour of a competitor whose site plainly states what they do, where, and for whom. A genuinely useful move this week: ask an AI tool to read your own website and answer 'what does this business actually do, and would I trust it with my job?' as if it were a stranger — then fix whatever it couldn't answer clearly. Fifteen minutes now is cheaper than slowly going invisible to searches you can't see happening.",
+    "{{INSIGHT_TITLE}}": "Payday Super Has Landed — Is Your Payroll Actually Ready?",
+    "{{INSIGHT_BODY}}": "From this month, employers are legally required to pay superannuation at the same time as wages instead of quarterly — a rule called Payday Super — with the ATO able to hit late payments with a new, tougher penalty regime from day one. For a small trades business running payroll off a spreadsheet or last year's habits, that's a real trap: miss the same-day super transfer even once by accident and the penalty regime doesn't care that it was an oversight. A genuinely useful move this week: ask your bookkeeping software (or an AI assistant reading your payroll process) to confirm super is actually configured to run automatically alongside every pay cycle, not just at quarter's end like it always has. Fifteen minutes checking now is considerably cheaper than an ATO penalty notice later.",
 
     # Fun Facts
-    "{{FACT_1}}": "The Sydney Opera House was budgeted at $7 million and scheduled to take four years — it ended up costing $102 million and taking fourteen years to finish, yet it's now one of the most photographed buildings on Earth and has long since paid for itself many times over in tourism.",
+    "{{FACT_1}}": "The first chatbot, ELIZA, was built in 1966 by MIT's Joseph Weizenbaum to simulate a psychotherapist by simply rephrasing whatever the user typed as a question — some early users still insisted they were talking to something that truly understood them, a reaction Weizenbaum found so unsettling he later became one of AI's most prominent critics.",
 
-    "{{FACT_2}}": "Red dwarf stars — small, dim and cool compared to our Sun — make up roughly 75% of all stars in the Milky Way, which is why most of the nearby 'potentially habitable' exoplanets found so far, including one confirmed again just this week, orbit stars nothing like our own.",
+    "{{FACT_2}}": "Victoria's Ninety Mile Beach in Gippsland runs for approximately 151 kilometres without a single break, making it one of the longest continuous, uninterrupted beaches on Earth — roughly the driving distance from Carrum Downs to Wilsons Promontory in one unbroken stretch of sand.",
 
-    "{{FACT_3}}": "The PlayStation 2, launched in 2000, remains the best-selling video game console ever made at over 155 million units sold worldwide — more than the PS3, PS4, original Xbox and Xbox 360 combined.",
+    "{{FACT_3}}": "The humble spirit level — a sealed glass tube with liquid and an air bubble — was invented in 1661 by French scientist Melchisédech Thévenot, and the basic design hasn't meaningfully changed in the 364 years since; it still outperforms most digital levels for a fast, no-battery sanity check on site.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the locksmith's apprentice get promoted after just three months on the job?",
-    "{{JOKE_PUNCHLINE}}": "Turns out he was the only one on the team who'd never once locked the van, the office, or himself out.",
+    "{{JOKE_SETUP}}": "Why is a chimney sweep never short on work during a Melbourne winter?",
+    "{{JOKE_PUNCHLINE}}": "Because every homeowner who ignored their flue all summer suddenly remembers it exists on the first freezing morning in July.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "“Life isn't about waiting for the storm to pass, it's about learning to dance in the rain.”",
-    "{{CLOSING_ATTR}}": "— Vivian Greene",
-    "{{CLOSING_MESSAGE}}": "It's Friday, and the showers rolling through Carrum Downs today and tomorrow make a fair excuse to get the admin pile sorted before Monday's frosty, sunny start. This is the first full week of the new $26.44 minimum wage and a diesel bill that's crept up with the halved fuel excise — worth a quick look at both before you quote the next job. If you're in the city this weekend, Docklands' Firelight Festival kicks off tonight through Sunday, fire pits and all — as good a reason as any to get out once the tools are down.",
+    "{{CLOSING_QUOTE}}": "“Fall seven times, stand up eight.”",
+    "{{CLOSING_ATTR}}": "— Japanese Proverb",
+    "{{CLOSING_MESSAGE}}": "It's Saturday, and today's showers should ease into a cloudy but calmer Sunday before Monday brings a frosty, sunny start to the week — good timing if there's outdoor prep work on the list. Keep an eye out after dark this weekend too, with a decent chance of the Aurora Australis putting on a show over the Mornington Peninsula if the sky clears. And if you've got staff on the books, it's worth a five-minute check that your payroll is actually running Payday Super correctly now that it's live — better to catch it yourself than have the ATO catch it for you.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
