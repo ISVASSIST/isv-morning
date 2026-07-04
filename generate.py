@@ -4,91 +4,91 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Saturday, 04 July 2026",
+    "{{DATE}}": "Sunday, 05 July 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Sat 4 Jul
-    "{{WEATHER_1}}": "SAT 4 · 🌧 Showers · 8–15°C",
-    "{{WEATHER_2}}": "SUN 5 · ☁️ Cloudy · 9–14°C",
+    # Weather — Carrum Downs VIC, 5-day from Sun 5 Jul
+    "{{WEATHER_1}}": "SUN 5 · ☁️ Cloudy · 9–14°C",
+    "{{WEATHER_2}}": "MON 6 · ☀️ Sunny, frosty start · 3–15°C",
     "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "MON 6 · ☀️ Sunny, frosty start · 3–15°C",
+    "{{WEATHER_3}}": "TUE 7 · ⛅ Mostly sunny · 5–14°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "TUE 7 · ⛅ Mostly sunny · 5–14°C",
-    "{{WEATHER_5}}": "WED 8 · ⛅ Partly cloudy · 6–14°C",
-    "{{WEATHER_ALERT}}": "⚠ SHOWERS EASING TODAY · DIESEL & PETROL RISING AS FUEL EXCISE DISCOUNT HALVES",
+    "{{WEATHER_4}}": "WED 8 · ⛅ Partly cloudy · 6–14°C",
+    "{{WEATHER_5}}": "THU 9 · 🌧 Showers return · 7–13°C",
+    "{{WEATHER_ALERT}}": "⚠ FROSTY START MONDAY · ELECTRICITY DEFAULT OFFER PRICES DOWN FROM THIS MONTH",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇷 IRAN · KHAMENEI FUNERAL · WEEK OF MOURNING BEGINS",
-    "{{WORLD_1_HEADLINE}}": "Iran Begins a Week of Funeral Ceremonies for Slain Supreme Leader Khamenei",
-    "{{WORLD_1_SUMMARY}}": "Ayatollah Ali Khamenei's body lay in state in Tehran on Friday as officials, clerics and foreign dignitaries from more than 50 delegations paid their respects, opening a mourning period expected to run through July 9 across Iran and Iraq. Khamenei was killed alongside family members in the opening strikes of the US-Israeli attack on Tehran in February; Tehran's mayor has said turnout at this weekend's viewings, followed by Monday's funeral procession, could reach 20 million people. It's a moment likely to shape Middle East diplomacy for months, with US-Iran talks in Doha paused around the ceremonies.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/7/3/iran-begins-week-of-funeral-ceremonies-for-slain-supreme-leader-khamenei",
+    "{{WORLD_1_FLAG}}": "🇺🇸 UNITED STATES · AMERICA 250 · NATION MARKS QUARTER-MILLENNIUM",
+    "{{WORLD_1_HEADLINE}}": "The United States Marks Its 250th Birthday With the Largest Fireworks Display in History",
+    "{{WORLD_1_SUMMARY}}": "America celebrated 250 years of independence on Friday with tall ships from 30 nations sailing into New York Harbour, a record-breaking fireworks display, and a heat dome pushing Fourth of July temperatures toward all-time highs across more than half the country. World leaders including European Council President António Costa sent congratulatory messages marking the milestone, even as the Trump administration's migration policies continue to draw friction with allies. A reminder of how much the world still calibrates its calendar around the US, for better or worse.",
+    "{{WORLD_1_URL}}": "https://www.cbsnews.com/live-updates/july-4th-america-250-birthday/",
 
-    "{{WORLD_2_FLAG}}": "🇫🇷 SOUTHERN FRANCE · WILDFIRES · THOUSANDS EVACUATED",
-    "{{WORLD_2_HEADLINE}}": "Wildfires Scorch Southern France as Record Heatwave and Drought Fuel the Blazes",
-    "{{WORLD_2_SUMMARY}}": "Multiple fires are burning across southern France, with the largest blaze near the Spanish border in the Aude and Hérault regions having scorched around 900 hectares and prompting roughly 800 firefighters and 150 vehicles to be deployed. Nearly 5,000 people have been evacuated from coastal campsites as wind gusts up to 70km/h hamper containment, following an 11-day record-breaking heatwave through June. A reminder of how fast a dry, hot run of weeks turns into an emergency — a pattern playing out across southern Europe this northern summer.",
-    "{{WORLD_2_URL}}": "https://www.manilatimes.net/2026/07/03/world/wildfires-scorch-southern-france-as-heat-and-drought-fuel-blazes/2377748",
+    "{{WORLD_2_FLAG}}": "🇻🇦 VATICAN · CATHOLIC CHURCH · DEEPEST SCHISM SINCE 1988",
+    "{{WORLD_2_HEADLINE}}": "Vatican Declares Traditionalist Society in Schism, Excommunicates Its Bishops",
+    "{{WORLD_2_SUMMARY}}": "The Vatican formally declared the Society of St Pius X to be in schism this week, automatically excommunicating its bishops after the traditionalist group consecrated four new bishops on July 1 without papal authorisation. The SSPX's superior general rejected the ruling in a letter to Pope Leo XIV on Friday, calling it 'objectively unjust and invalid' — marking the most serious rupture in the Catholic Church since the original Lefebvre consecrations of 1988.",
+    "{{WORLD_2_URL}}": "https://www.nbcnews.com/world/the-vatican/vatican-declares-society-st-pius-x-schism-excommunicates-bishops-inval-rcna352691",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ FUEL PRICES · ACCC · EXCISE DISCOUNT HALVED",
-    "{{ECON_1_HEADLINE}}": "Petrol and Diesel Prices Jump as the Fuel Excise Discount Halves From July 1",
-    "{{ECON_1_SUMMARY}}": "The ACCC's latest weekly monitoring shows average retail petrol across the five largest capital cities rose to 158.1 cents a litre on July 1 (from 151.5c the day before), while diesel jumped to 179.1 cents a litre (from 173.5c) — the direct result of the temporary 32-cent fuel excise cut being halved to 16 cents from July 1, a measure due to run until August 2. Worth checking against whatever number you last quoted a job's fuel cost on, since the increase is landing in real time this week.",
-    "{{ECON_1_URL}}": "https://www.accc.gov.au/media-release/accc-to-monitor-fuel-prices-and-market-behaviour-as-fuel-excise-is-partly-restored",
+    "{{ECON_1_FLAG}}": "⛽ FUEL PRICES · FEDERAL GOVERNMENT · EXCISE RELIEF EXTENDED",
+    "{{ECON_1_HEADLINE}}": "Government Extends Fuel Excise Relief for Another Month, Keeping Petrol and Diesel 16 Cents Cheaper",
+    "{{ECON_1_SUMMARY}}": "The Albanese Government has extended the fuel excise discount for a further month, keeping petrol and diesel 16 cents a litre cheaper than normal through to August 2 — worth roughly $11 a tank — at a cost to the budget of around $400 million. The Heavy Vehicle Road User Charge has been cut by the same 16 cents for truck operators over the same period. It's smaller relief than the original 32-cent cut that applied through June, so don't assume last month's fuel line item still holds.",
+    "{{ECON_1_URL}}": "https://www.pm.gov.au/media/additional-fuel-excise-relief-month-july",
 
-    "{{ECON_2_FLAG}}": "🛒 ACCC · RETAIL · SUPERMARKET PRICE-GOUGING NOW ILLEGAL",
-    "{{ECON_2_HEADLINE}}": "World-First Law Banning Supermarket Price Gouging Takes Effect, Coles and Woolworths in the Crosshairs",
-    "{{ECON_2_SUMMARY}}": "From this month, Australia's new Food and Grocery Code amendments make it illegal for 'very large retailers' — in practice just Coles and Woolworths, the only two chains turning over more than $30 billion — to charge prices the ACCC deems excessive relative to supply cost plus a reasonable margin, with penalties up to $10 million or 10% of annual turnover per breach. It won't move the needle on trade material costs directly, but it's the clearest sign yet regulators are willing to intervene on pricing power — worth watching if it extends to other sectors down the track.",
+    "{{ECON_2_FLAG}}": "🔌 ENERGY PRICES · AER · DEFAULT OFFER FALLS UP TO 21%",
+    "{{ECON_2_HEADLINE}}": "Electricity Default Market Offer Prices Drop Sharply From July 1 — Small Business Rates Down Up to 21% in Some Regions",
+    "{{ECON_2_SUMMARY}}": "New Default Market Offer pricing took effect this month, cutting small business electricity rates by 7.6% to 21.2% in parts of NSW, 12.8% in South East Queensland and 15.2% in South Australia, depending on distribution zone. Unlike the federal energy rebates that ended last December, this saving happens automatically on the default offer — but only if you're actually on it. Worth a quick check with your retailer this week if you haven't looked at your rate since last financial year.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 MICROSOFT · ENTERPRISE AI · $2.5B FRONTIER COMPANY",
-    "{{TECH_1_HEADLINE}}": "Microsoft Launches $2.5 Billion 'Frontier Company' to Embed AI Engineers Inside Client Businesses",
-    "{{TECH_1_SUMMARY}}": "Microsoft announced a new $2.5 billion business unit this week, Microsoft Frontier Company, that will place around 6,000 AI and industry experts directly inside customer organisations — from LSEG to Unilever — to help them design, deploy and continually improve AI systems tied to measurable business outcomes. It's the clearest sign yet that the big platforms see 'someone helps you actually use the AI' as the next competitive battleground, not just better models — a service tier way beyond small-business budgets today, but a hint at where AI support is heading.",
-    "{{TECH_1_URL}}": "https://blogs.microsoft.com/blog/2026/07/02/microsoft-frontier-company-ai-engineering-that-amplifies-and-protects-your-intelligence/",
+    "{{TECH_1_FLAG}}": "🤖 ANTHROPIC · CLAUDE SONNET 5 · NEW DEFAULT MODEL LIVE",
+    "{{TECH_1_HEADLINE}}": "Anthropic Makes Claude Sonnet 5 the New Default AI Model for Free and Pro Users",
+    "{{TECH_1_SUMMARY}}": "Anthropic's Claude Sonnet 5 became the default model for Free and Pro users this week — its most agentic Sonnet yet, running close to flagship-level performance at a fraction of the price, with introductory pricing locked in until the end of August. For a small business owner who's never had to think about which AI model they're using, the practical upshot is simple: the free or cheap version of the tool just got meaningfully more capable overnight, with no action required.",
+    "{{TECH_1_URL}}": "https://www.anthropic.com/news/claude-sonnet-5",
 
-    "{{TECH_2_FLAG}}": "🤖 AMAZON · ENTERPRISE AI · $1B FORWARD-DEPLOYED ENGINEERS",
-    "{{TECH_2_HEADLINE}}": "Amazon Joins the AI Deployment Arms Race With Its Own $1 Billion Engineer Unit",
-    "{{TECH_2_SUMMARY}}": "Days before Microsoft's move, AWS committed $1 billion to its own new Forward Deployed Engineering unit, embedding pods of five or six engineers with clients including the NBA, NFL and Southwest Airlines to get agentic AI systems live in roughly 45-day cycles. Between Amazon, Microsoft, OpenAI and Anthropic all standing up near-identical units within weeks of each other, the message from the top of the industry is unmistakable: knowing which AI tool exists isn't the bottleneck anymore, getting it actually working inside a real business is.",
+    "{{TECH_2_FLAG}}": "🤖 SQUARE · AI COMMERCE · ORDERS PLACED INSIDE CHATGPT AND CLAUDE",
+    "{{TECH_2_HEADLINE}}": "Square Lets US Food and Beverage Sellers Take Orders Directly Inside ChatGPT and Claude",
+    "{{TECH_2_SUMMARY}}": "Square switched on a new integration this month letting customers discover a restaurant, browse its menu and place an order entirely inside a ChatGPT or Claude conversation — routing straight into the seller's existing POS with no setup and no added marketplace commission on top of standard processing fees. It's a small, concrete example of AI chat moving from 'assistant that answers questions' to 'assistant that takes the sale' — worth watching for how fast that idea spreads from ordering a burger to booking a tradie.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · UBTECH · MASS-PRODUCED HUMANOID LAUNCHED",
-    "{{ROBOT_1_HEADLINE}}": "UBTECH Launches the World's First Mass-Produced Full-Size 'Ultra-Bionic' Humanoid Robot",
-    "{{ROBOT_1_SUMMARY}}": "Chinese robotics maker UBTECH unveiled its UWORLD U1 series this week — three models starting from roughly 119,800 RMB (around AUD $25,000), with 88 degrees of freedom and a biomimetic 'spine' letting it replicate about 90% of human movement. Orders have already passed 13,000 units ahead of first deliveries in September, positioning it as the first humanoid robot line built for genuine mass production rather than a one-off demo unit — another marker of how fast the hardware side of this industry is scaling, even if the price tag keeps it firmly in factory and research territory for now.",
-    "{{ROBOT_1_URL}}": "https://www.prnewswire.com/news-releases/ubtech-launches-uworld-u1-the-worlds-first-full-size-mass-produced-ultra-bionic-humanoid-robot-302815285.html",
+    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · AGIBOT · HUMANOID ROBOT-AS-A-SERVICE LAUNCHES IN UK",
+    "{{ROBOT_1_HEADLINE}}": "AGIBOT Debuts Its A3 Humanoid Robot in Europe and Launches a UK Robot-as-a-Service Rental Model",
+    "{{ROBOT_1_SUMMARY}}": "Chinese robotics maker AGIBOT unveiled its A3 humanoid at a partner conference in London this week, alongside a new UK rental scheme offering the robot from £1,999 a day rather than requiring an outright purchase. It's a notable shift in how this hardware reaches smaller operators — renting a humanoid by the day rather than buying one outright is the same logic as hiring in a excavator for a job rather than owning your own, and it's a sign the economics are being built for exactly that kind of customer.",
+    "{{ROBOT_1_URL}}": "https://roboticsandautomationnews.com/2026/07/02/agibot-debuts-a3-humanoid-robot-in-europe-and-launches-uk-robot-as-a-service-model/103018/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "World-First Supermarket Price-Gouging Ban Takes Effect, Coles and Woolworths Face $10M Fines",
-    "{{AUS_1_SUMMARY}}": "Australia became the first country to outlaw supermarket price gouging this month, with new ACCC-enforced rules targeting Coles and Woolworths specifically — the only two retailers turning over more than $30 billion a year — with fines up to $10 million per breach. Ironically, the government's own report last year found no clear evidence of gouging by the pair, but the law is now live regardless.",
-    "{{AUS_1_URL}}": "https://ministers.treasury.gov.au/ministers/andrew-leigh-2025/media-releases/price-gouging-large-supermarkets-illegal-1-july-2026",
+    "{{AUS_1_HEADLINE}}": "Australia Doubles Maximum Penalty for Social Media Age-Law Breaches to $99 Million",
+    "{{AUS_1_SUMMARY}}": "The Government has doubled the maximum penalty for social media platforms that fail to keep under-16s off their services, from $49.5 million to $99 million, after studies found more than 85% of Australian teens under 16 are still finding ways onto Facebook, Instagram, Snapchat, TikTok and YouTube. The eSafety Commissioner can now compel platforms to prove what they've actually done to enforce the ban, rather than just claiming compliance.",
+    "{{AUS_1_URL}}": "https://www.pm.gov.au/media/stronger-powers-and-double-penalties-world-leading-social-media-law",
 
-    "{{AUS_2_HEADLINE}}": "Australia Commits $2 Million in Emergency Aid to Venezuela's Earthquake Recovery",
-    "{{AUS_2_SUMMARY}}": "Foreign Minister Penny Wong announced $2 million in humanitarian funding this week for communities hit by the magnitude 7.2 and 7.5 earthquakes that struck west of Caracas on June 24, joining the US, UK and EU in funding emergency food, shelter and water for the roughly two million Venezuelans now in need.",
+    "{{AUS_2_HEADLINE}}": "Australia and Vanuatu Sign Nakamal Agreement, Blocking Foreign Military Bases in the Pacific Nation",
+    "{{AUS_2_SUMMARY}}": "Prime Minister Albanese and Vanuatu's Prime Minister Jotham Napat signed the Nakamal Agreement in Canberra last week, with Vanuatu committing to allow no foreign military base on its territory in exchange for deeper Australian policing, training and maritime security support — a deal read widely as locking China out of a potential Pacific foothold.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Minor Flooding Continues Across North-East Victoria After Heavy Rain, Murray and Goulburn Rivers Affected",
-    "{{VIC_1_SUMMARY}}": "The Bureau of Meteorology's flood watch remains current for parts of north-east and central Victoria, with minor flood warnings in place for the Murray River upstream of Lake Hume, the Mitta Mitta and the Goulburn — a reminder that while Carrum Downs copes with the usual winter showers, some regional Victorian communities are dealing with a fair bit more this week.",
+    "{{VIC_1_HEADLINE}}": "Moira Deeming Wins Court Reprieve, Delaying Victorian Liberal Party's Bid to Disendorse Her",
+    "{{VIC_1_SUMMARY}}": "Victorian Liberal MP Moira Deeming secured a Supreme Court undertaking on Friday preventing the party from moving to disendorse her while her legal challenge against state president Brian Loughnane proceeds, with the matter now set down for a full day's hearing on 17 July. The dispute traces back to Deeming's allegation that a colleague put her in a headlock at a community event, a claim police investigated and found no case to answer on.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🌞 SPACE WEATHER · SOLAR STORM · AURORA CHANCE THIS WEEKEND",
-    "{{SCI_1_HEADLINE}}": "The Sun Fired Off 10 Flares in 24 Hours — And the Resulting Storm Could Bring Aurora This Weekend",
-    "{{SCI_1_SUMMARY}}": "A powerful X1.1 solar flare on June 30 sent a coronal mass ejection toward Earth, with forecasters expecting G1–G2 geomagnetic storm conditions (a chance of G3) to peak overnight into Sunday — strong enough that the Aurora Australis has a real shot at being visible from parts of southern Victoria and the Mornington Peninsula if skies clear after today's showers. Worth a look outside after dark this weekend if you're up; solar activity is still ramping up toward the peak of the current 11-year solar cycle.",
+    "{{SCI_1_FLAG}}": "🧬 MEDICAL RESEARCH · TUBERCULOSIS · NASAL VACCINE BREAKTHROUGH",
+    "{{SCI_1_HEADLINE}}": "New Nasal-Spray Vaccine Targets the Drug-Resistant Tuberculosis Bacteria That Hide From Antibiotics",
+    "{{SCI_1_SUMMARY}}": "Johns Hopkins researchers have developed an intranasal DNA vaccine that targets dormant 'persister' TB bacteria able to survive prolonged antibiotic treatment and cause relapse — in animal studies it cleared infections faster, cut lung inflammation and boosted existing drug performance against resistant strains, with immune responses still detectable six months later in primate trials. A genuinely new angle of attack on a disease that still kills more people worldwide each year than any other infection.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Payday Super Has Landed — Is Your Payroll Actually Ready?",
-    "{{INSIGHT_BODY}}": "From this month, employers are legally required to pay superannuation at the same time as wages instead of quarterly — a rule called Payday Super — with the ATO able to hit late payments with a new, tougher penalty regime from day one. For a small trades business running payroll off a spreadsheet or last year's habits, that's a real trap: miss the same-day super transfer even once by accident and the penalty regime doesn't care that it was an oversight. A genuinely useful move this week: ask your bookkeeping software (or an AI assistant reading your payroll process) to confirm super is actually configured to run automatically alongside every pay cycle, not just at quarter's end like it always has. Fifteen minutes checking now is considerably cheaper than an ATO penalty notice later.",
+    "{{INSIGHT_TITLE}}": "Your Electricity Bill Is About to Fall — Don't Let AI Sit This One Out",
+    "{{INSIGHT_BODY}}": "New Default Market Offer pricing landed this month, cutting small business electricity rates by anywhere from 7% to over 20% depending on your distribution zone — but only for businesses actually sitting on the default offer, not a locked-in market contract from a year or two back. For a business running compressors, generators and site equipment, power is a real line item, and most operators have never actually compared what they're paying against what's now on the table. This week's genuinely useful ten minutes: paste your last electricity bill's plan details into an AI assistant and ask it to compare your current rate against the new default offer for your postcode and usage profile — if there's a gap, that's a phone call to your retailer worth making before the next quarter's invoice lands.",
 
     # Fun Facts
-    "{{FACT_1}}": "The first chatbot, ELIZA, was built in 1966 by MIT's Joseph Weizenbaum to simulate a psychotherapist by simply rephrasing whatever the user typed as a question — some early users still insisted they were talking to something that truly understood them, a reaction Weizenbaum found so unsettling he later became one of AI's most prominent critics.",
+    "{{FACT_1}}": "Thomas Jefferson and John Adams — two of the men who negotiated the Declaration of Independence — both died on 4 July 1826, within five hours of each other, exactly fifty years to the day after it was adopted. A third founding father and president, James Monroe, also died on a 4 July, five years later in 1831.",
 
-    "{{FACT_2}}": "Victoria's Ninety Mile Beach in Gippsland runs for approximately 151 kilometres without a single break, making it one of the longest continuous, uninterrupted beaches on Earth — roughly the driving distance from Carrum Downs to Wilsons Promontory in one unbroken stretch of sand.",
+    "{{FACT_2}}": "Henry Ford's Model T was only ever sold in black from 1914 to 1925 — not for style, but because black japan enamel was the only paint formula that dried fast enough to keep pace with his moving assembly line; every other colour available at the time took days longer to cure.",
 
-    "{{FACT_3}}": "The humble spirit level — a sealed glass tube with liquid and an air bubble — was invented in 1661 by French scientist Melchisédech Thévenot, and the basic design hasn't meaningfully changed in the 364 years since; it still outperforms most digital levels for a fast, no-battery sanity check on site.",
+    "{{FACT_3}}": "Vegemite was invented in 1922 by Melbourne food technologist Cyril Callister, who was tasked with finding a use for the leftover brewer's yeast being discarded by Melbourne's breweries — turning a waste byproduct into a jar that's sat in Australian pantries for over a century.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why is a chimney sweep never short on work during a Melbourne winter?",
-    "{{JOKE_PUNCHLINE}}": "Because every homeowner who ignored their flue all summer suddenly remembers it exists on the first freezing morning in July.",
+    "{{JOKE_SETUP}}": "Why did the removalist quote every job with an extra hour built in?",
+    "{{JOKE_PUNCHLINE}}": "Because the one thing heavier than a queen-size bed is the couch that 'definitely fit through the door on the way in.'",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "“Fall seven times, stand up eight.”",
-    "{{CLOSING_ATTR}}": "— Japanese Proverb",
-    "{{CLOSING_MESSAGE}}": "It's Saturday, and today's showers should ease into a cloudy but calmer Sunday before Monday brings a frosty, sunny start to the week — good timing if there's outdoor prep work on the list. Keep an eye out after dark this weekend too, with a decent chance of the Aurora Australis putting on a show over the Mornington Peninsula if the sky clears. And if you've got staff on the books, it's worth a five-minute check that your payroll is actually running Payday Super correctly now that it's live — better to catch it yourself than have the ATO catch it for you.",
+    "{{CLOSING_QUOTE}}": "“Do the best you can until you know better. Then when you know better, do better.”",
+    "{{CLOSING_ATTR}}": "— Maya Angelou",
+    "{{CLOSING_MESSAGE}}": "It's a quiet, cloudy Sunday before a proper frosty start on Monday morning — worth allowing extra warm-up time for gear and vehicles before the first job. With the new electricity default offer now in effect and last week's Payday Super changes still bedding in, it's a good week to run the numbers rather than assume nothing's changed since June. Take the rest of today though — Monday will still be there in the morning.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
