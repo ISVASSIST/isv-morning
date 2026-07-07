@@ -774,3 +774,14 @@ JOKE: Why did the carpenter's small business always come out even at tax time?
 INSIGHT: AI Scams Are Getting Sharper — Your Business's Defences Need to Keep Pace
 QUOTE: "Success is not final, failure is not fatal: it is the courage to continue that counts." — Winston Churchill
 ---
+
+DATE: Wednesday, 08 July 2026
+SCIENCE: Machine learning paired with quantum physics discovers two new superconductors (YRu3B2, LuRu3B2) via kagome lattice flat bands, published ScienceDaily July 7 2026
+ROBOTICS: Apptronik opens Robot Park training facility in Austin and unveils Apollo 2 humanoid (bipedal and wheeled), Google DeepMind data partnership, published July 6 2026
+FACT: Spraying paint with compressed air dates back to the Southern Pacific Railroad in the early 1880s — decades before the aerosol spray can was developed in the 1940s as a US military insecticide dispenser.
+FACT: The 'Mechanical Turk', unveiled in 1770 by Wolfgang von Kempelen, appeared to be a chess-playing machine that beat Napoleon and Benjamin Franklin — actually an elaborate hoax with a human chess master hidden inside.
+FACT: Official currency was so scarce in early colonial Australia that rum became the de facto currency — the 'Rum Corps' officers who controlled its supply deposed the colonial governor in the 1808 Rum Rebellion.
+JOKE: Why did the gutter installer never worry about cash flow?
+INSIGHT: Diesel Prices Are Moving Again — How AI Can Build a Fair Fuel Surcharge Into Every Quote
+QUOTE: "It does not matter how slowly you go as long as you do not stop." — Confucius
+---
