@@ -4,91 +4,91 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Friday, 10 July 2026",
+    "{{DATE}}": "Saturday, 11 July 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Fri 10 Jul (BOM)
-    "{{WEATHER_1}}": "FRI 10 · 🌦️ Frosty start, showers easing · 7–13°C",
-    "{{WEATHER_2}}": "SAT 11 · 🌫️ Patchy fog, mostly dry · 5–14°C",
+    # Weather — Carrum Downs VIC, 5-day from Sat 11 Jul (BOM)
+    "{{WEATHER_1}}": "SAT 11 · 🌫️ Patchy fog, mostly dry · 5–14°C",
+    "{{WEATHER_2}}": "SUN 12 · ❄️ Frost & fog, sunny arvo · 3–15°C",
     "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "SUN 12 · ❄️ Frost & fog, sunny arvo · 3–15°C",
-    "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "MON 13 · 🌧️ Showers, windy · 9–14°C",
-    "{{WEATHER_5}}": "TUE 14 · 🌧️ Showers, windy N'ly · 8–15°C",
-    "{{WEATHER_ALERT}}": "⚠ FROST WARNING FOR VICTORIA THIS MORNING · SHOWERS & GUSTY N'LY WINDS RETURN MONDAY",
+    "{{WEATHER_3}}": "MON 13 · 🌧️ Showers, windy · 9–14°C",
+    "{{WEATHER_3_CLASS}}": "rain",
+    "{{WEATHER_4}}": "TUE 14 · 🌧️ Showers, windy N'ly · 8–15°C",
+    "{{WEATHER_5}}": "WED 15 · ⛅ Partly cloudy, cooler · 9–14°C",
+    "{{WEATHER_ALERT}}": "⚠ FROST WARNING FOR VICTORIA SUNDAY MORNING · SHOWERS & GUSTY WINDS RETURN MONDAY",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇷 US · IRAN · FRESH OVERNIGHT STRIKES, CEASEFIRE IN TATTERS",
-    "{{WORLD_1_HEADLINE}}": "US and Iran Trade Fresh Strikes for a Second Night After Trump Declares Ceasefire \"Over\"",
-    "{{WORLD_1_SUMMARY}}": "US forces hit around 90 targets across Iran overnight, including sites near the Strait of Hormuz, while Iran retaliated with drone and missile strikes on US bases in Kuwait, Bahrain and Qatar. Trump, capping the NATO summit in Ankara, called further negotiation with Tehran \"a waste of time\" — keeping the three-week-old ceasefire effectively dead and oil markets on edge.",
-    "{{WORLD_1_URL}}": "https://www.npr.org/2026/07/08/nx-s1-5883929/trump-nato-iran-strikes-press-conference",
+    "{{WORLD_1_FLAG}}": "🇮🇷🇺🇸 IRAN · US · FRAGILE PAUSE AFTER TWO DAYS OF STRIKES",
+    "{{WORLD_1_HEADLINE}}": "US-Iran Fighting Appears to Pause After Two Days of Fresh Strikes, Talks Set to Continue",
+    "{{WORLD_1_SUMMARY}}": "After the US hit roughly 170 targets across Iran over 48 hours of renewed strikes, both sides appear to have stepped back from the brink, with President Trump confirming Washington will continue talks with Tehran even as he insists the earlier ceasefire is officially \"over.\" Qatari negotiators have travelled to Iran to help restart diplomacy, with a US official saying strikes were deliberately paced to leave room for a deal.",
+    "{{WORLD_1_URL}}": "https://www.npr.org/2026/07/10/g-s1-132943/up-first-newsletter-iran-us-tps-haitians-syrians-eac-gaza-israel-hamas",
 
-    "{{WORLD_2_FLAG}}": "🇬🇧 UK · POLITICS · LABOUR LEADERSHIP RACE OPENS",
-    "{{WORLD_2_HEADLINE}}": "Nominations Open in UK Labour Leadership Race, With Andy Burnham the Likely Only Candidate",
-    "{{WORLD_2_SUMMARY}}": "Nominations opened Thursday in the contest to replace Keir Starmer as UK prime minister, with former Health Secretary Wes Streeting dropping his own bid to back Andy Burnham. If no rival candidate reaches the 81-MP threshold by 16 July, Burnham will be crowned Labour leader — and PM in waiting — unopposed at a special conference on 17 July.",
-    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/7/9/uk-labour-leadership-nominations-begin-whos-running-and-how-it-works",
+    "{{WORLD_2_FLAG}}": "🇮🇱🇵🇸 GAZA · CEASEFIRE · ISRAEL NOW HOLDS 70% OF TERRITORY",
+    "{{WORLD_2_HEADLINE}}": "Nine Months Into Its Ceasefire, Israel Now Controls Nearly 70% of Gaza",
+    "{{WORLD_2_SUMMARY}}": "New mapping shows Israeli forces have steadily expanded their zone of control since the October 2025 ceasefire, from around half of Gaza to almost 70% today, with the UN estimating 200 Palestinians killed near the shifting lines since the truce began. President Trump's peace plan, which calls for a full Israeli withdrawal and Hamas disarmament, remains stalled nine months on.",
+    "{{WORLD_2_URL}}": "https://www.npr.org/2026/07/10/nx-s1-5887357/israel-gaza-war-trump-ceasefire-military-control",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ FUEL WATCH · EXCISE RELIEF HALVED AS OIL SWINGS ON IRAN",
-    "{{ECON_1_HEADLINE}}": "Bowser Prices Under Pressure From Both Sides as Excise Relief Halves and Oil Whipsaws on Iran",
-    "{{ECON_1_SUMMARY}}": "Australia's fuel excise discount dropped from 32c to 16c a litre on 1 July, pushing capital-city petrol to around 158cpl and diesel to 179cpl even before this week's Iran-driven oil volatility, which has seen Brent swing between roughly $76 and $79 a barrel in a single session. Worth building a bit of buffer into quotes with a ute, van or diesel compressor on the books over winter.",
-    "{{ECON_1_URL}}": "https://www.mynrma.com.au/open-road/news/2026/fuel-excise-update",
+    "{{ECON_1_FLAG}}": "⛽ FUEL WATCH · SMES · 51% NOW CALL FUEL A MAJOR COST STRAIN",
+    "{{ECON_1_HEADLINE}}": "Fuel Costs Bite Harder for Australian Small Businesses as Excise Relief Winds Back",
+    "{{ECON_1_SUMMARY}}": "MYOB's latest Business Monitor shows 51% of small businesses now cite fuel as a major source of financial strain, more than double the 25% recorded last November, as the government's temporary excise relief steps down from 32c to 16c a litre this month before disappearing entirely from 2 August. Heavy vehicle operators face a further hit as the road user charge partially returns — worth building a bit of buffer into any quote with a ute, van or compressor on the road.",
+    "{{ECON_1_URL}}": "https://smbtech.au/news/fuel-cost-concerns-for-australian-smes-as-relief-is-pulled-back/",
 
-    "{{ECON_2_FLAG}}": "📉 ASX · MARKETS · FOURTH STRAIGHT RED SESSION",
-    "{{ECON_2_HEADLINE}}": "ASX 200 Falls for a Fourth Day Running as Iran Tensions and a Downgraded Growth Outlook Bite",
-    "{{ECON_2_SUMMARY}}": "The ASX200 slipped 0.26% to close at 8,762.5 points on Thursday, its fourth consecutive red session, after the IMF trimmed its 2026 Australian growth forecast citing energy prices and geopolitics. Gold eased for a third day to around US$4,080 an ounce, while a handful of small-cap debuts, including a 13% first-day pop for FDC Consolidated, offered a rare bright spot.",
+    "{{ECON_2_FLAG}}": "📈 ASX · MARKETS · FOUR-DAY SLIDE SNAPPED",
+    "{{ECON_2_HEADLINE}}": "ASX 200 Snaps Four-Day Losing Streak, Closing Friday Up 0.5% at 8,806 Points",
+    "{{ECON_2_SUMMARY}}": "Australian shares rebounded on Friday as banks and miners rallied behind a stronger Wall Street lead, even as renewed Iran-US strikes kept oil markets jittery. The benchmark still finished the week 0.4% lower overall — a reminder that volatility from the Middle East is filtering through to local portfolios and borrowing costs alike.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 OPENAI · GPT-5.6 · SOL, TERRA & LUNA GO FULLY PUBLIC",
-    "{{TECH_1_HEADLINE}}": "OpenAI's GPT-5.6 Lineup Clears Government Security Review, Launches to Everyone",
-    "{{TECH_1_SUMMARY}}": "GPT-5.6 Sol, Terra and Luna rolled out broadly across ChatGPT, the API and Codex on Thursday, ending a 12-day window where access to the flagship Sol model was limited to roughly 20 government-vetted partners under a new White House cybersecurity review. Terra and Luna are priced well below the outgoing GPT-5.5 lineup, which is worth a look if you're using ChatGPT for quoting, admin or customer replies and want the same quality for less.",
-    "{{TECH_1_URL}}": "https://www.techtimes.com/articles/319979/20260709/gpt-56-goes-public-after-12-day-white-house-gate-tests-voluntary-ai-framework.htm",
+    "{{TECH_1_FLAG}}": "🤖 OPENAI · CHATGPT WORK · AGENTS THAT FINISH THE JOB",
+    "{{TECH_1_HEADLINE}}": "OpenAI Launches ChatGPT Work, an Agent That Delivers Finished Docs and Spreadsheets, Not Just Chat",
+    "{{TECH_1_SUMMARY}}": "OpenAI's new ChatGPT Work agent, powered by the newly public GPT-5.6 model, takes a plain-English goal, gathers the context it needs, and hands back a finished spreadsheet, document or simple web app rather than just a conversation — with Codex now folded into the same desktop app for coding tasks. For a small business it's effectively a first-draft admin assistant: point it at a job note or invoice backlog and let it produce the paperwork while you check the final version.",
+    "{{TECH_1_URL}}": "https://www.digitalapplied.com/blog/chatgpt-work-openai-agent-launch-2026",
 
-    "{{TECH_2_FLAG}}": "📊 AI ADOPTION · SMALL BUSINESS · UPTAKE NEARLY DOUBLES",
-    "{{TECH_2_HEADLINE}}": "NAB Data Shows Regular AI Use Among Australian Small Businesses Nearly Doubled in 18 Months",
-    "{{TECH_2_SUMMARY}}": "Regular AI use among Australian SMEs climbed from 40% in mid-2024 to 69% in January 2026, with daily use more than tripling to 28%, and 79% of users reporting a real productivity gain. The biggest thing still holding businesses back isn't cost — it's not knowing where to start and worrying about getting it wrong.",
+    "{{TECH_2_FLAG}}": "⚡ AI MODELS · GROK 4.5 · CHEAPER AND FASTER — NOT ALWAYS RIGHT",
+    "{{TECH_2_HEADLINE}}": "Grok 4.5 Lands With a Big Efficiency Claim, But Independent Testers Flag a Hallucination Spike",
+    "{{TECH_2_SUMMARY}}": "SpaceXAI's new Grok 4.5 model reportedly uses 60% fewer tokens than rivals to solve the same benchmark tasks, at around 31 cents a task — a genuine cost win for anyone running AI-heavy admin at volume. But independent analysis firm Artificial Analysis also found its hallucination rate more than doubled versus the previous version, a useful reminder to double-check anything AI-generated before it goes out to a client.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 MEDICAL ROBOTICS · WORLD FIRST · HUMANOID ROBOTS PERFORM LIVE SURGERY",
-    "{{ROBOT_1_HEADLINE}}": "Teleoperated Humanoid Robots Complete Two Live Surgeries in UC San Diego World-First Trial",
-    "{{ROBOT_1_SUMMARY}}": "Researchers at UC San Diego used two Unitree G1 humanoid robots, controlled entirely by human operators via motion capture and foot pedals, to perform a gallbladder removal and a second procedure with no direct human hands in the operating field — coordinating both arms to hold tissue with one hand while cutting with the other. It's an early but striking sign that humanoid hardware is starting to move from warehouses and factory floors into far more delicate, high-stakes work.",
-    "{{ROBOT_1_URL}}": "https://today.ucsd.edu/story/surgeons-use-teleoperated-humanoid-robots-to-perform-live-surgery-a-world-first",
+    "{{ROBOT_1_FLAG}}": "🎨 ROBOTICS · COATINGS · NO-CODE PAINT COBOTS ENTER SPRAY BOOTHS",
+    "{{ROBOT_1_HEADLINE}}": "No-Code 'Cobot Painter' Brings Explosion-Proof Robotic Spraying to Industrial Paint Booths",
+    "{{ROBOT_1_SUMMARY}}": "Hirebotics' new Cobot Painter, built on FANUC's CRX-10iA/L Paint arm, is designed to run in solvent-heavy spray environments with an explosion-proof rating and no robotics programming required — part of a broader wave of eight-degree-of-freedom robotic arms reaching into tighter, more awkward industrial spaces. It's an early sign that robotic coating and finishing work, long considered too fiddly to automate, is starting to become commercially viable.",
+    "{{ROBOT_1_URL}}": "https://www.marketscale.com/industries/industrial-iot/physical-ai-converges-on-the-warehouse-floor-five-operational-moves-shaping-industrial-robotics-in-mid-2026",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australia Strikes Landmark Uranium Export Deal With India During Modi's Melbourne Visit",
-    "{{AUS_1_SUMMARY}}": "Australia has agreed to sell uranium to India for peaceful power generation, signed during a Melbourne visit by Prime Minister Narendra Modi that also produced new agreements on critical minerals, defence, technology and a planned space-tracking terminal on the Cocos Islands. It's Australia's latest move to diversify trade away from its heavy reliance on China.",
-    "{{AUS_1_URL}}": "https://www.aljazeera.com/news/2026/7/9/australia-india-strike-deal-on-uranium-exports-during-pm-modis-visit",
+    "{{AUS_1_HEADLINE}}": "Australia Confirms First Bird Flu Case in a Native (Non-Migratory) Seabird",
+    "{{AUS_1_SUMMARY}}": "Agriculture Minister Julie Collins confirmed H5N1 bird flu has been found for the first time in an Australian-born seabird, in the coastal town of Robe in South Australia, rather than a migratory bird — raising concern the virus may now be circulating locally rather than only arriving from overseas. Authorities say there's still no sign of spread into poultry and the risk to human health remains low.",
+    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/first-case-of-bird-flu-detected-in-local-wildlife/lx38jrhxh",
 
-    "{{AUS_2_HEADLINE}}": "RBA Holds Cash Rate Steady as It Weighs the Oil Shock Against Slowing Growth",
-    "{{AUS_2_SUMMARY}}": "The Reserve Bank left the cash rate unchanged this week, judging it appropriate to sit tight while it assesses the impact of three earlier rate rises alongside the Iran-driven oil supply disruption, with consumer spending growth already slowing and housing prices falling in some capital cities. The board meets again on 11 August.",
+    "{{AUS_2_HEADLINE}}": "SA Police Rule Out Telstra Outage as Cause of Death, After Senator's Claim Sparked Alarm",
+    "{{AUS_2_SUMMARY}}": "South Australian police have confirmed a woman's death this week was not linked to Wednesday's Telstra outage, despite an earlier claim from a Liberal senator that a Triple Zero call had failed to connect — the neighbour's calls for help actually went through on both counts. Communications Minister Anika Wells said it was a relief no deaths were linked to the outage, though the scare underlines how quickly a network failure can spiral into fear for small operators who rely on mobile coverage to run their business.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "NAIDOC Week Wraps Up With Free Federation Square Concert Today",
-    "{{VIC_1_SUMMARY}}": "Christine Anu headlines a free NAIDOC in the City concert at Federation Square from midday today, alongside a Koorie Heritage Trust market and workshops — a good excuse for a lunchtime detour into the city if you're doing a job nearby.",
+    "{{VIC_1_HEADLINE}}": "Tens of Thousands Turn Out for Modi's Docklands Rally as Protesters Gather Outside",
+    "{{VIC_1_SUMMARY}}": "Close to 30,000 people packed Docklands Stadium to see Indian PM Narendra Modi appear alongside Anthony Albanese and Premier Jacinta Allan on his third visit to Australia, while two separate protest groups — one over human rights concerns, another far-right — demonstrated outside. Worth allowing extra travel time if you're working anywhere near the Docklands precinct this weekend as the visit wraps up.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🌳 ECOLOGY · CARBON CYCLE · CLIMATE MODELS MAY BE OVERSTATING FOREST CARBON STORAGE",
-    "{{SCI_1_HEADLINE}}": "Oak Trees Keep Absorbing Carbon for Months After They Stop Growing, Study Finds",
-    "{{SCI_1_SUMMARY}}": "Researchers tracking oak trees at 137 US sites found that up to 36% of a tree's annual carbon uptake happens after its growth for the season has already stopped, breaking the long-standing assumption that more photosynthesis simply means more wood. Published in Science Advances, the finding suggests climate models may be overestimating how much carbon forests can actually lock away as wood in a warming world.",
+    "{{SCI_1_FLAG}}": "🕷️ ZOOLOGY · CONVERGENT EVOLUTION · A SMILEY FACE 7,000 MILES FROM HOME",
+    "{{SCI_1_HEADLINE}}": "New 'Happy-Face' Spider Species Found in the Himalayas — 7,000 Miles From Its Only Known Hawaiian Relative",
+    "{{SCI_1_SUMMARY}}": "Researchers surveying ants in the mountains of Uttarakhand, India stumbled on a spider bearing the same grinning face pattern as Hawaii's famous happy-face spider, and DNA testing confirmed it evolved the resemblance completely independently rather than being a relative. Both species also turned up on ginger plants an ocean apart, a coincidence scientists say raises fresh questions about how such specific, cartoonish markings evolve twice in unrelated corners of the planet.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "4 in 10 Aussie Small Businesses Are Already Using AI Daily — Are You?",
-    "{{INSIGHT_BODY}}": "New NAB data shows regular AI use among Australian small businesses has climbed from 40% to 69% in eighteen months, with daily use more than tripling — and 79% of those using it say it's genuinely lifted productivity, not just added another app to juggle. The businesses still sitting on the sidelines usually aren't held back by cost; they're held back by not knowing where to start. The fix isn't a big rollout — it's picking one repetitive task this week, a quote template, a job note, a follow-up email, and letting AI take the first draft while you keep the final say.",
+    "{{INSIGHT_TITLE}}": "ChatGPT Just Learned to Finish the Job, Not Just Chat About It — Here's What That Means for Your Paperwork",
+    "{{INSIGHT_BODY}}": "OpenAI's new ChatGPT Work agent doesn't just answer questions — point it at a goal and it goes away, gathers what it needs, and comes back with a finished spreadsheet, document or simple web page rather than a wall of text to tidy up yourself. For a small trades business that's a genuinely different kind of tool: instead of drafting a quote letter and editing it into shape, you could hand it your job notes and photos and get back something close to client-ready. It won't replace your judgement on pricing or scope, but it can cut the time between finishing a job and getting the paperwork out the door — which is exactly the kind of admin most tradies would rather not be doing at 9pm.",
 
     # Fun Facts
-    "{{FACT_1}}": "The world's first hydraulic press was patented by British engineer Joseph Bramah in 1795, built on Blaise Pascal's principle that pressure in a sealed fluid transmits equally in all directions — the same basic idea behind every hydraulic jack, lift and ram used on a job site today.",
+    "{{FACT_1}}": "The household wrench as we picture it today — with an adjustable jaw — was patented in 1922 by world heavyweight boxing champion Jack Johnson, who filed it under his own name while touring as an entertainer.",
 
-    "{{FACT_2}}": "The Eiffel Tower was held together by roughly 2.5 million rivets, each one driven by a four-man team: one to heat it red-hot, one to hold it, one to shape the head, and one to hammer it home — with crews placing up to 22,000 rivets a week at the peak of construction in 1889.",
+    "{{FACT_2}}": "Carrum Downs takes its name from the Bunurong word 'Karrum Karrum', meaning boomerang — the shape early Kulin peoples saw in the long, curved sweep of sandy coastline visible from Oliver's Hill in Frankston, long before the swampland was drained for farming in the early 1900s.",
 
-    "{{FACT_3}}": "Australia became the first country in the world to switch entirely to polymer banknotes, a project run by the CSIRO, the Reserve Bank and the University of Melbourne that began in 1968 and produced its first note — a $10 bicentennial commemorative — in January 1988.",
+    "{{FACT_3}}": "The humble can opener wasn't invented until 1858 — 48 years after the tin can itself. Until then, soldiers and settlers were advised to open cans with a bayonet, a hammer and chisel, or whatever was on hand.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the pool builder's small business never run dry?",
-    "{{JOKE_PUNCHLINE}}": "He always kept a healthy reserve — and made sure it was a deep one.",
+    "{{JOKE_SETUP}}": "Why did the asphalt contractor never lose his cool on a tricky job?",
+    "{{JOKE_PUNCHLINE}}": "He always knew how to smooth things over.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Well done is better than well said.\"",
-    "{{CLOSING_ATTR}}": "— Benjamin Franklin",
-    "{{CLOSING_MESSAGE}}": "It's a frosty start under this morning's Victorian frost warning, but Carrum Downs clears through the day to a mild top of 13°C, with a calmer, mostly dry weekend ahead before showers return Monday — a solid window to get outdoor jobs ticked off. Keep half an eye on the bowser too, with the fuel excise relief just halved and oil still swinging on the Iran standoff, a few more cents a litre wouldn't be a shock this week.",
+    "{{CLOSING_QUOTE}}": "\"The only impossible journey is the one you never begin.\"",
+    "{{CLOSING_ATTR}}": "— Tony Robbins",
+    "{{CLOSING_MESSAGE}}": "It's a foggy, still start to the weekend in Carrum Downs, clearing to a mild top of 14°C with no frost until tomorrow morning — a solid window to get outdoor jobs ticked off before showers and wind return Monday. With the ASX clawing back Friday's losses and Modi's Melbourne visit wrapping up nearby, it's a good quiet Saturday to get ahead before things pick up again next week.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
