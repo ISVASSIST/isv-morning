@@ -4,91 +4,91 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Saturday, 11 July 2026",
+    "{{DATE}}": "Sunday, 12 July 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Sat 11 Jul (BOM)
-    "{{WEATHER_1}}": "SAT 11 · 🌫️ Patchy fog, mostly dry · 5–14°C",
-    "{{WEATHER_2}}": "SUN 12 · ❄️ Frost & fog, sunny arvo · 3–15°C",
+    # Weather — Carrum Downs VIC, 5-day from Sun 12 Jul (BOM)
+    "{{WEATHER_1}}": "SUN 12 · ☀️ Clear, mild · 3–15°C",
+    "{{WEATHER_2}}": "MON 13 · ❄️ Frost early, partly cloudy · 2–17°C",
     "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "MON 13 · 🌧️ Showers, windy · 9–14°C",
+    "{{WEATHER_3}}": "TUE 14 · 🌧️ Showers, windy N'ly · 9–15°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "TUE 14 · 🌧️ Showers, windy N'ly · 8–15°C",
-    "{{WEATHER_5}}": "WED 15 · ⛅ Partly cloudy, cooler · 9–14°C",
-    "{{WEATHER_ALERT}}": "⚠ FROST WARNING FOR VICTORIA SUNDAY MORNING · SHOWERS & GUSTY WINDS RETURN MONDAY",
+    "{{WEATHER_4}}": "WED 15 · 🌧️ Showers, windy N'ly · 8–14°C",
+    "{{WEATHER_5}}": "THU 16 · ☁️ Cloudy, showers likely · 9–14°C",
+    "{{WEATHER_ALERT}}": "⚠ FROST RISK MONDAY MORNING · DAMAGING WINDS & SHOWERS BUILD FROM TUESDAY",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇷🇺🇸 IRAN · US · FRAGILE PAUSE AFTER TWO DAYS OF STRIKES",
-    "{{WORLD_1_HEADLINE}}": "US-Iran Fighting Appears to Pause After Two Days of Fresh Strikes, Talks Set to Continue",
-    "{{WORLD_1_SUMMARY}}": "After the US hit roughly 170 targets across Iran over 48 hours of renewed strikes, both sides appear to have stepped back from the brink, with President Trump confirming Washington will continue talks with Tehran even as he insists the earlier ceasefire is officially \"over.\" Qatari negotiators have travelled to Iran to help restart diplomacy, with a US official saying strikes were deliberately paced to leave room for a deal.",
-    "{{WORLD_1_URL}}": "https://www.npr.org/2026/07/10/g-s1-132943/up-first-newsletter-iran-us-tps-haitians-syrians-eac-gaza-israel-hamas",
+    "{{WORLD_1_FLAG}}": "🇮🇷🇺🇸 IRAN · US · HORMUZ STANDOFF DRAGS INTO NEW WEEK",
+    "{{WORLD_1_HEADLINE}}": "US Demands Iran Publicly Guarantee Safe Passage Through the Strait of Hormuz",
+    "{{WORLD_1_SUMMARY}}": "Washington is pushing Tehran to publicly commit to leaving the Strait of Hormuz open and dropping any talk of tolls, as Iranian and Omani officials met in Muscat to discuss \"appropriate mechanisms\" for safe shipping through the waterway that carries a fifth of the world's traded oil. President Trump has warned \"1,000 missiles\" are ready if Iran acts on threats against him, even as CNN reports US intelligence has found no evidence of a specific new assassination plot — a reminder the ceasefire remains fragile heading into another week.",
+    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/liveblog/2026/7/11/iran-war-live-us-demands-iran-publicly-state-strait-of-hormuz-open-for-all",
 
-    "{{WORLD_2_FLAG}}": "🇮🇱🇵🇸 GAZA · CEASEFIRE · ISRAEL NOW HOLDS 70% OF TERRITORY",
-    "{{WORLD_2_HEADLINE}}": "Nine Months Into Its Ceasefire, Israel Now Controls Nearly 70% of Gaza",
-    "{{WORLD_2_SUMMARY}}": "New mapping shows Israeli forces have steadily expanded their zone of control since the October 2025 ceasefire, from around half of Gaza to almost 70% today, with the UN estimating 200 Palestinians killed near the shifting lines since the truce began. President Trump's peace plan, which calls for a full Israeli withdrawal and Hamas disarmament, remains stalled nine months on.",
-    "{{WORLD_2_URL}}": "https://www.npr.org/2026/07/10/nx-s1-5887357/israel-gaza-war-trump-ceasefire-military-control",
+    "{{WORLD_2_FLAG}}": "🇺🇸 US · ENVIRONMENT · ENDANGERED SPECIES ACT NARROWED",
+    "{{WORLD_2_HEADLINE}}": "Trump Administration Rolls Back a Key Habitat Protection for Endangered Wildlife",
+    "{{WORLD_2_SUMMARY}}": "A rule finalised Friday narrows the definition of \"harm\" under the Endangered Species Act, meaning oil and gas drilling, mining and logging can now go ahead on critical habitat as long as the animals themselves aren't directly killed or injured. Environmental groups including Earthjustice say the change — first proposed in 2025 — opens the door to habitat destruction that could push already-vulnerable species toward extinction, and are preparing a legal challenge.",
+    "{{WORLD_2_URL}}": "https://www.npr.org/2026/07/11/nx-s1-5890025/trump-administration-imperiled-wildlife",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ FUEL WATCH · SMES · 51% NOW CALL FUEL A MAJOR COST STRAIN",
-    "{{ECON_1_HEADLINE}}": "Fuel Costs Bite Harder for Australian Small Businesses as Excise Relief Winds Back",
-    "{{ECON_1_SUMMARY}}": "MYOB's latest Business Monitor shows 51% of small businesses now cite fuel as a major source of financial strain, more than double the 25% recorded last November, as the government's temporary excise relief steps down from 32c to 16c a litre this month before disappearing entirely from 2 August. Heavy vehicle operators face a further hit as the road user charge partially returns — worth building a bit of buffer into any quote with a ute, van or compressor on the road.",
-    "{{ECON_1_URL}}": "https://smbtech.au/news/fuel-cost-concerns-for-australian-smes-as-relief-is-pulled-back/",
+    "{{ECON_1_FLAG}}": "⛽ FUEL WATCH · ACCC · BOWSER PRICES CLIMBING AGAIN",
+    "{{ECON_1_HEADLINE}}": "ACCC's Latest Weekly Report Confirms Petrol and Diesel Prices Rising as Excise Relief Halves",
+    "{{ECON_1_SUMMARY}}": "The ACCC's 18th weekly fuel monitoring report, covering the week to 8 July, shows retail petrol and diesel prices continuing to climb in capital cities and most regional areas now that the excise cut has stepped down from 32c to 16c a litre — with the discount disappearing entirely from 2 August. Worth locking in a fuel surcharge line in every quote over the next few weeks rather than absorbing the difference on jobs already priced.",
+    "{{ECON_1_URL}}": "https://www.accc.gov.au/about-us/publications/weekly-fuel-price-monitoring-update",
 
-    "{{ECON_2_FLAG}}": "📈 ASX · MARKETS · FOUR-DAY SLIDE SNAPPED",
-    "{{ECON_2_HEADLINE}}": "ASX 200 Snaps Four-Day Losing Streak, Closing Friday Up 0.5% at 8,806 Points",
-    "{{ECON_2_SUMMARY}}": "Australian shares rebounded on Friday as banks and miners rallied behind a stronger Wall Street lead, even as renewed Iran-US strikes kept oil markets jittery. The benchmark still finished the week 0.4% lower overall — a reminder that volatility from the Middle East is filtering through to local portfolios and borrowing costs alike.",
+    "{{ECON_2_FLAG}}": "🏦 RBA WATCH · WESTPAC · CUTS PUSHED BACK TO 2027, NOT BROUGHT FORWARD",
+    "{{ECON_2_HEADLINE}}": "Westpac Now Expects One More RBA Rate Rise Before Any Cuts Arrive in 2027",
+    "{{ECON_2_SUMMARY}}": "Westpac's chief economist has pushed her forecast for the RBA's first rate cut out to August 2027, still tipping a hike as likely next month and a second in September as inflation proves stickier than hoped. For anyone with equipment finance or a business loan on variable rates, it's a signal to plan for borrowing costs staying elevated well into next year rather than banking on relief any time soon.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 OPENAI · CHATGPT WORK · AGENTS THAT FINISH THE JOB",
-    "{{TECH_1_HEADLINE}}": "OpenAI Launches ChatGPT Work, an Agent That Delivers Finished Docs and Spreadsheets, Not Just Chat",
-    "{{TECH_1_SUMMARY}}": "OpenAI's new ChatGPT Work agent, powered by the newly public GPT-5.6 model, takes a plain-English goal, gathers the context it needs, and hands back a finished spreadsheet, document or simple web app rather than just a conversation — with Codex now folded into the same desktop app for coding tasks. For a small business it's effectively a first-draft admin assistant: point it at a job note or invoice backlog and let it produce the paperwork while you check the final version.",
-    "{{TECH_1_URL}}": "https://www.digitalapplied.com/blog/chatgpt-work-openai-agent-launch-2026",
+    "{{TECH_1_FLAG}}": "🕶️ WEARABLE TECH · SMART GLASSES · PRIVACY OVER RECORDING",
+    "{{TECH_1_HEADLINE}}": "New Camera-Free Smart Glasses Bet That Productivity Beats Recording Everyone Around You",
+    "{{TECH_1_SUMMARY}}": "Even Realities' new G2 glasses skip the camera and speaker entirely, using a monochrome heads-up display to show notes, directions and messages without anyone nearby worrying they're being filmed — a deliberate contrast to the camera-first smart glasses race. For a trades business, it's an early sign hands-free tech is heading toward quietly useful (checklists, measurements, job notes in your eyeline) rather than gimmicky.",
+    "{{TECH_1_URL}}": "https://techcrunch.com/2026/07/11/smart-glasses-without-a-camera-even-realities-bets-productivity-beats-recording-everyone/",
 
-    "{{TECH_2_FLAG}}": "⚡ AI MODELS · GROK 4.5 · CHEAPER AND FASTER — NOT ALWAYS RIGHT",
-    "{{TECH_2_HEADLINE}}": "Grok 4.5 Lands With a Big Efficiency Claim, But Independent Testers Flag a Hallucination Spike",
-    "{{TECH_2_SUMMARY}}": "SpaceXAI's new Grok 4.5 model reportedly uses 60% fewer tokens than rivals to solve the same benchmark tasks, at around 31 cents a task — a genuine cost win for anyone running AI-heavy admin at volume. But independent analysis firm Artificial Analysis also found its hallucination rate more than doubled versus the previous version, a useful reminder to double-check anything AI-generated before it goes out to a client.",
+    "{{TECH_2_FLAG}}": "🤖 AI AGENTS · $100M FUNDRAISE ON AUTOPILOT",
+    "{{TECH_2_HEADLINE}}": "AI Agent Startup Let Its Own Agent Run Its $100 Million Fundraising Round",
+    "{{TECH_2_SUMMARY}}": "An AI agent startup handed its own software the job of managing investor outreach, scheduling and follow-up for a $100 million raise — a striking, if extreme, example of founders trusting agents with genuinely high-stakes admin rather than just drafting emails. It's a useful data point for any business owner wondering how far \"let the AI handle it\" can realistically go before a human needs to step back in.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🎨 ROBOTICS · COATINGS · NO-CODE PAINT COBOTS ENTER SPRAY BOOTHS",
-    "{{ROBOT_1_HEADLINE}}": "No-Code 'Cobot Painter' Brings Explosion-Proof Robotic Spraying to Industrial Paint Booths",
-    "{{ROBOT_1_SUMMARY}}": "Hirebotics' new Cobot Painter, built on FANUC's CRX-10iA/L Paint arm, is designed to run in solvent-heavy spray environments with an explosion-proof rating and no robotics programming required — part of a broader wave of eight-degree-of-freedom robotic arms reaching into tighter, more awkward industrial spaces. It's an early sign that robotic coating and finishing work, long considered too fiddly to automate, is starting to become commercially viable.",
-    "{{ROBOT_1_URL}}": "https://www.marketscale.com/industries/industrial-iot/physical-ai-converges-on-the-warehouse-floor-five-operational-moves-shaping-industrial-robotics-in-mid-2026",
+    "{{ROBOT_1_FLAG}}": "✋ ROBOTICS · HUMANOID HANDS · NEAR-HUMAN DEXTERITY",
+    "{{ROBOT_1_HEADLINE}}": "1X Unveils a Tendon-Driven Robot Hand That Can Pour Tea, Zip a Jacket and Sort Grapes",
+    "{{ROBOT_1_SUMMARY}}": "1X Technologies' new hand for its Neo humanoid packs 25 degrees of freedom and high-resolution tactile sensors into a tendon-driven design accurate to within 0.2mm, letting it manage fiddly tasks like zippers and stacking coins that have tripped up earlier robot hands. The company says it's already tooled up to build 10,000 units a year — a reminder that the bottleneck for humanoids doing genuinely useful physical work has always been the hands, not the legs.",
+    "{{ROBOT_1_URL}}": "https://www.forbes.com/sites/johnkoetsier/2026/07/09/human-level-hands-1x-just-gave-humanoid-robot-neo-something-close/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australia Confirms First Bird Flu Case in a Native (Non-Migratory) Seabird",
-    "{{AUS_1_SUMMARY}}": "Agriculture Minister Julie Collins confirmed H5N1 bird flu has been found for the first time in an Australian-born seabird, in the coastal town of Robe in South Australia, rather than a migratory bird — raising concern the virus may now be circulating locally rather than only arriving from overseas. Authorities say there's still no sign of spread into poultry and the risk to human health remains low.",
-    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/first-case-of-bird-flu-detected-in-local-wildlife/lx38jrhxh",
+    "{{AUS_1_HEADLINE}}": "ACT Buys Canberra's CSIRO Ginninderra Site for $385 Million to Build 3,000 Homes",
+    "{{AUS_1_SUMMARY}}": "The ACT government has locked in a $385 million deal for 243 hectares of CSIRO's Ginninderra research station between Belconnen and Gungahlin, with about 15% of the new suburb earmarked for affordable, community and public housing. CSIRO says it will plough the proceeds back into research infrastructure, closing out a sale process that's dragged on since 2015.",
+    "{{AUS_1_URL}}": "https://www.canberratimes.com.au/story/9305684/act-buys-east-section-of-csiros-ginninderra-station-for-385m/",
 
-    "{{AUS_2_HEADLINE}}": "SA Police Rule Out Telstra Outage as Cause of Death, After Senator's Claim Sparked Alarm",
-    "{{AUS_2_SUMMARY}}": "South Australian police have confirmed a woman's death this week was not linked to Wednesday's Telstra outage, despite an earlier claim from a Liberal senator that a Triple Zero call had failed to connect — the neighbour's calls for help actually went through on both counts. Communications Minister Anika Wells said it was a relief no deaths were linked to the outage, though the scare underlines how quickly a network failure can spiral into fear for small operators who rely on mobile coverage to run their business.",
+    "{{AUS_2_HEADLINE}}": "Australians Living Longer as National Health Spend Hits $270 Billion, AIHW Reports",
+    "{{AUS_2_SUMMARY}}": "The Australian Institute of Health and Welfare's Australia's Health 2026 report puts total health spending at $270.5 billion for 2023–24, with life expectancy climbing back above pre-pandemic levels — 81.1 years for boys and 85.1 for girls born today. A solid reminder for anyone running a physical trade to keep an eye on their own wear and tear, not just the business's.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Tens of Thousands Turn Out for Modi's Docklands Rally as Protesters Gather Outside",
-    "{{VIC_1_SUMMARY}}": "Close to 30,000 people packed Docklands Stadium to see Indian PM Narendra Modi appear alongside Anthony Albanese and Premier Jacinta Allan on his third visit to Australia, while two separate protest groups — one over human rights concerns, another far-right — demonstrated outside. Worth allowing extra travel time if you're working anywhere near the Docklands precinct this weekend as the visit wraps up.",
+    "{{VIC_1_HEADLINE}}": "Severe Weather Warning Issued for Damaging Winds and Large Hail Across Gippsland",
+    "{{VIC_1_SUMMARY}}": "The Bureau has a severe weather warning current for parts of North East, East and West/South Gippsland, with damaging north to northwesterly winds gusting to around 100km/h over exposed ranges and a chance of large hail and isolated tornadoes. If you've got gear, scaffolding or a ute loaded up anywhere east of Melbourne this week, it's worth double-checking it's secured before the wind picks up.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🕷️ ZOOLOGY · CONVERGENT EVOLUTION · A SMILEY FACE 7,000 MILES FROM HOME",
-    "{{SCI_1_HEADLINE}}": "New 'Happy-Face' Spider Species Found in the Himalayas — 7,000 Miles From Its Only Known Hawaiian Relative",
-    "{{SCI_1_SUMMARY}}": "Researchers surveying ants in the mountains of Uttarakhand, India stumbled on a spider bearing the same grinning face pattern as Hawaii's famous happy-face spider, and DNA testing confirmed it evolved the resemblance completely independently rather than being a relative. Both species also turned up on ginger plants an ocean apart, a coincidence scientists say raises fresh questions about how such specific, cartoonish markings evolve twice in unrelated corners of the planet.",
+    "{{SCI_1_FLAG}}": "🦗 ZOOLOGY · INVASIVE SPECIES · GIANT ASIAN MANTISES SPREAD ACROSS EUROPE",
+    "{{SCI_1_HEADLINE}}": "Two Giant Asian Praying Mantis Species Formally Declared Invasive Across Europe",
+    "{{SCI_1_SUMMARY}}": "A new study has officially classified Hierodula tenuidentata and Hierodula patellifera — two large, fast-breeding Asian mantis species — as invasive after their populations exploded across Mediterranean and continental Europe over the past decade. Researchers say the mantises, boosted by climate change and urban heat, are preying on native insects and pollinators and out-competing (sometimes literally eating) Europe's native mantis species during mating.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "ChatGPT Just Learned to Finish the Job, Not Just Chat About It — Here's What That Means for Your Paperwork",
-    "{{INSIGHT_BODY}}": "OpenAI's new ChatGPT Work agent doesn't just answer questions — point it at a goal and it goes away, gathers what it needs, and comes back with a finished spreadsheet, document or simple web page rather than a wall of text to tidy up yourself. For a small trades business that's a genuinely different kind of tool: instead of drafting a quote letter and editing it into shape, you could hand it your job notes and photos and get back something close to client-ready. It won't replace your judgement on pricing or scope, but it can cut the time between finishing a job and getting the paperwork out the door — which is exactly the kind of admin most tradies would rather not be doing at 9pm.",
+    "{{INSIGHT_TITLE}}": "Interest Rates Are Still a Coin Toss — AI Cash Flow Forecasting Can Show You Trouble Before It Hits",
+    "{{INSIGHT_BODY}}": "With Westpac now tipping another RBA rate rise before any cut arrives in 2027, and fuel costs climbing again as excise relief winds back, this is exactly the kind of stretch where a cash flow surprise can catch a small trades business out. AI-powered forecasting tools now built into platforms like Xero and MYOB can chew through your invoicing history, upcoming super and wage obligations, and seasonal patterns to flag a likely shortfall weeks out — not after the account's already tight. It won't replace knowing your numbers yourself, but it turns a monthly guessing game into an early warning system, which matters more when borrowing costs aren't going anywhere soon.",
 
     # Fun Facts
-    "{{FACT_1}}": "The household wrench as we picture it today — with an adjustable jaw — was patented in 1922 by world heavyweight boxing champion Jack Johnson, who filed it under his own name while touring as an entertainer.",
+    "{{FACT_1}}": "Bunnings began life in 1886 as a timber and hardware yard in Fremantle founded by brothers Robert and Arthur Bunning — nearly a century before it became the trade warehouse chain that now supplies a huge share of Australia's tradies.",
 
-    "{{FACT_2}}": "Carrum Downs takes its name from the Bunurong word 'Karrum Karrum', meaning boomerang — the shape early Kulin peoples saw in the long, curved sweep of sandy coastline visible from Oliver's Hill in Frankston, long before the swampland was drained for farming in the early 1900s.",
+    "{{FACT_2}}": "The world's first industrial robot, Unimate, started work on a General Motors assembly line in New Jersey in 1961, lifting and stacking hot die-cast metal parts straight out of the machine — a job considered too dangerous and repetitive for human workers even then.",
 
-    "{{FACT_3}}": "The humble can opener wasn't invented until 1858 — 48 years after the tin can itself. Until then, soldiers and settlers were advised to open cans with a bayonet, a hammer and chisel, or whatever was on hand.",
+    "{{FACT_3}}": "David Unaipon, who appears on Australia's $50 note, held provisional patents for a mechanical sheep-shearing handpiece based on the principle of the boomerang — making him the only Australian to be pictured on a banknote alongside his own invention.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the asphalt contractor never lose his cool on a tricky job?",
-    "{{JOKE_PUNCHLINE}}": "He always knew how to smooth things over.",
+    "{{JOKE_SETUP}}": "Why did the locksmith get invited to every business networking event in town?",
+    "{{JOKE_PUNCHLINE}}": "Because he always knew how to open doors.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"The only impossible journey is the one you never begin.\"",
-    "{{CLOSING_ATTR}}": "— Tony Robbins",
-    "{{CLOSING_MESSAGE}}": "It's a foggy, still start to the weekend in Carrum Downs, clearing to a mild top of 14°C with no frost until tomorrow morning — a solid window to get outdoor jobs ticked off before showers and wind return Monday. With the ASX clawing back Friday's losses and Modi's Melbourne visit wrapping up nearby, it's a good quiet Saturday to get ahead before things pick up again next week.",
+    "{{CLOSING_QUOTE}}": "\"The most difficult thing is the decision to act, the rest is merely tenacity.\"",
+    "{{CLOSING_ATTR}}": "— Amelia Earhart",
+    "{{CLOSING_MESSAGE}}": "It's a clear, still Sunday in Carrum Downs with a top of 15°C — the last dry window before frost bites Monday morning and showery, blustery weather rolls in from Tuesday, so today's the day for any outdoor prep or coating work you can bring forward. Keep half an eye on the severe weather warning if you're heading further into Gippsland this week, and enjoy the World Cup semi-finals or the Storm's home game against the Titans if you get a quiet hour this afternoon.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
