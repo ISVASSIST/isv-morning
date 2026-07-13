@@ -4,91 +4,91 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Monday, 13 July 2026",
+    "{{DATE}}": "Tuesday, 14 July 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Mon 13 Jul (BOM)
-    "{{WEATHER_1}}": "MON 13 · 🌧️ Showers, windy NW'ly · 10–14°C",
-    "{{WEATHER_2}}": "TUE 14 · 🌦️ Showers, breezy · 9–13°C",
+    # Weather — Carrum Downs VIC, 5-day from Tue 14 Jul (BOM)
+    "{{WEATHER_1}}": "TUE 14 · 🌧️ Showers, breezy · 9–14°C",
+    "{{WEATHER_2}}": "WED 15 · 🌦️ Showers easing, windy · 8–14°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "WED 15 · ⛅ Partly cloudy, isolated shower · 7–14°C",
+    "{{WEATHER_3}}": "THU 16 · ⛅ Becoming cloudy, slight shower · 6–14°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "THU 16 · ❄️ Patchy frost, mostly dry · 6–15°C",
-    "{{WEATHER_5}}": "FRI 17 · ❄️ Patchy frost, mostly dry · 6–13°C",
-    "{{WEATHER_ALERT}}": "⚠ SHOWERY START TO THE WEEK · FROST RETURNS THU–FRI MORNINGS",
+    "{{WEATHER_4}}": "FRI 17 · ⛅ Partly cloudy, mostly dry · 6–13°C",
+    "{{WEATHER_5}}": "SAT 18 · ☀️ Partly cloudy to sunny · 5–14°C",
+    "{{WEATHER_ALERT}}": "⚠ SHOWERS EASE MIDWEEK · CLEARING TOWARD THE WEEKEND",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇷🇶🇦 IRAN · GULF · MISSILE STRIKES ESCALATE ACROSS FOUR NATIONS",
-    "{{WORLD_1_HEADLINE}}": "Iran Launches Missile and Drone Attacks on Qatar, UAE, Bahrain and Kuwait After Fresh US Strikes",
-    "{{WORLD_1_SUMMARY}}": "Iran unleashed simultaneous missile and drone attacks across the Gulf early Sunday, targeting the US Al-Udeid airbase in Qatar along with sites in the UAE, Bahrain and Kuwait, hours after Washington carried out a third round of strikes on Iranian targets over the Strait of Hormuz shipping attacks. Qatari air defences intercepted multiple ballistic missiles over Doha, while the UAE and Bahrain both activated air defence systems — a sharp escalation that puts the region's fragile ceasefire efforts back to square one heading into the new week.",
-    "{{WORLD_1_URL}}": "https://www.euronews.com/2026/07/12/iran-launches-attacks-on-qatar-uae-bahrain-kuwait-following-us-strikes",
+    "{{WORLD_1_FLAG}}": "🇺🇸🇮🇷 US · IRAN · HORMUZ BLOCKADE REIMPOSED, 20% SHIPPING FEE",
+    "{{WORLD_1_HEADLINE}}": "Trump Reinstates Strait of Hormuz Blockade, Demands 20% Fee on All Cargo Through It",
+    "{{WORLD_1_SUMMARY}}": "President Trump announced the US will restart its naval blockade of Iranian ports from Tuesday and impose a 20% charge on all cargo shipping through the Strait of Hormuz, covering what he called the cost of providing security in the region. It's the second US blockade of Iranian waters this year, coming as Iran's IRGC hit US-linked targets in Kuwait, Bahrain and Jordan overnight — a fresh escalation with direct flow-on risk to global oil and shipping costs, Australia included.",
+    "{{WORLD_1_URL}}": "https://www.cnbc.com/2026/07/13/trump-iran-hormuz-strait-charge-reimburse.html",
 
-    "{{WORLD_2_FLAG}}": "🇶🇦 QATAR · TRIBUTE · TRANSFORMATIVE FORMER RULER DIES",
-    "{{WORLD_2_HEADLINE}}": "Qatar's Former Emir Sheikh Hamad bin Khalifa Al Thani Dies at 74",
-    "{{WORLD_2_SUMMARY}}": "Sheikh Hamad, who ruled Qatar from 1995 to 2013 and founded Al Jazeera, has died, with the government declaring four days of national mourning. He's widely credited with transforming Qatar from a small Gulf state into a major diplomatic and economic power — a legacy looming large as the region faces one of its most dangerous weeks of the year.",
-    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/7/12/former-emir-of-qatar-sheikh-hamad-bin-khalifa-al-thani-dies-at-74",
+    "{{WORLD_2_FLAG}}": "🇺🇸 WASHINGTON · TRIBUTE · LONGTIME SENATOR DIES SUDDENLY",
+    "{{WORLD_2_HEADLINE}}": "US Senator Lindsey Graham Dies at 71 After Sudden Aortic Dissection",
+    "{{WORLD_2_SUMMARY}}": "South Carolina Senator Lindsey Graham, a leading Republican foreign policy voice and close Trump ally, died Saturday night at his Capitol Hill home from a ruptured aorta, his office confirmed. He'd served in the Senate since 2003 and was a key voice on the Ukraine and Middle East conflicts, and tributes have poured in from across the political aisle.",
+    "{{WORLD_2_URL}}": "https://www.npr.org/2026/07/12/nx-s1-5890790/us-sen-lindsey-graham-dies",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ FUEL WATCH · ACCC · BOWSER PRICES CLIMBING AGAIN",
-    "{{ECON_1_HEADLINE}}": "ACCC's Latest Weekly Report Confirms Petrol and Diesel Keep Climbing as Excise Relief Halves",
-    "{{ECON_1_SUMMARY}}": "The ACCC's latest weekly fuel monitoring update shows capital city petrol and diesel prices continuing to rise since the fuel excise cut was halved from 32c to 16c a litre on 1 July, with the discount disappearing altogether from 2 August. With Middle East tensions also pushing crude prices up, it's worth locking a fuel surcharge into quotes now rather than absorbing it on jobs already priced.",
+    "{{ECON_1_FLAG}}": "⛽ FUEL WATCH · HORMUZ FEE THREAT · BOWSER PRICES UNDER PRESSURE",
+    "{{ECON_1_HEADLINE}}": "20% Hormuz Shipping Fee Threatens Fresh Fuel Price Rises on Top of Already-Climbing Bowser Costs",
+    "{{ECON_1_SUMMARY}}": "The ACCC's latest weekly monitoring already had capital city petrol at 158.1c/L and diesel at 179.1c/L from 1 July as the fuel excise discount halved to 16c — and Trump's new 20% Hormuz shipping toll, layered on an active blockade, threatens to push global oil and freight costs higher still. Worth locking in a fuel surcharge clause on quotes now rather than absorbing another jump later.",
     "{{ECON_1_URL}}": "https://www.accc.gov.au/about-us/publications/weekly-fuel-price-monitoring-update",
 
-    "{{ECON_2_FLAG}}": "🏦 RBA WATCH · CASH RATE HELD AT 4.35% · FUEL-DRIVEN INFLATION FLAGGED",
-    "{{ECON_2_HEADLINE}}": "RBA Holds Cash Rate at 4.35%, Warns Higher Fuel Prices Are Feeding Through to Inflation",
-    "{{ECON_2_SUMMARY}}": "The Reserve Bank held the cash rate steady this month after three rises since the start of the year, but flagged that higher oil prices — driven by the Middle East conflict — are adding directly to inflation and starting to show up in the price of other goods and services. For anyone with equipment finance or a variable business loan, it's a signal that relief on borrowing costs is still a way off.",
+    "{{ECON_2_FLAG}}": "💰 PAYROLL · MINIMUM WAGE UP 4.75% · FIRST FULL PAY CYCLE HITS",
+    "{{ECON_2_HEADLINE}}": "National Minimum Wage Rise and Payday Super Both Bite in the Same Pay Cycle This Week",
+    "{{ECON_2_SUMMARY}}": "The National Minimum Wage rose 4.75% to $26.44 an hour ($1,004.90 a week) from the first full pay period after 1 July, landing in the same cycle as Payday Super's new requirement to pay super with every payday instead of quarterly. For any business running a team, that's higher wage costs and a tighter cash-flow cycle hitting at once — worth checking this week's payroll run lines up before it's overdue.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🖥️ MICROSOFT · TEAMS · AI OPT-OUT ADDED AFTER BACKLASH",
-    "{{TECH_1_HEADLINE}}": "Microsoft Lets Teams Meeting Hosts Switch AI Features Off Live, After User Backlash",
-    "{{TECH_1_SUMMARY}}": "Microsoft has added a toggle letting meeting organisers turn Copilot's AI note-taking and summary features on or off mid-meeting, responding to complaints about aggressive default rollouts. Meanwhile Google Ads cost-per-click has jumped 15% year-on-year, squeezing small business marketing budgets and making organic channels — reviews, referrals, local search — worth doubling down on.",
-    "{{TECH_1_URL}}": "https://www.forbes.com/sites/quickerbettertech/2026/07/12/small-business-technology-news-roundup-microsoft-makes-a-major-ai-u-turn/",
+    "{{TECH_1_FLAG}}": "🤝 BIG TECH · GOOGLE + MICROSOFT · ENTERPRISE AI AGENTS TEAM UP",
+    "{{TECH_1_HEADLINE}}": "Google and Microsoft Quietly Team Up With Salesforce, Snowflake and ServiceNow on a Shared AI Agent Standard",
+    "{{TECH_1_SUMMARY}}": "The five companies, which between them run the software holding most of the world's business data, are working toward a common technical standard for connecting AI agents to business systems — a direct answer to Anthropic's Model Context Protocol, which has become the default over the past 18 months. For any business running multiple apps (quoting, invoicing, scheduling), it's a sign these tools are getting closer to actually talking to each other properly, regardless of which AI vendor sits behind them.",
+    "{{TECH_1_URL}}": "https://thenextweb.com/news/google-cloud-next-ai-agents-agentic-era",
 
-    "{{TECH_2_FLAG}}": "⚖️ AI INDUSTRY · APPLE V OPENAI · TRADE SECRETS LAWSUIT",
-    "{{TECH_2_HEADLINE}}": "Apple Sues OpenAI Over Alleged Trade Secret Theft and Staff Poaching",
-    "{{TECH_2_SUMMARY}}": "Apple has filed suit in a California federal court alleging OpenAI ran a coordinated campaign to poach hardware and silicon staff and lift confidential technology — a reminder that the AI vendor landscape is more litigious and less settled than it looks from the outside, worth keeping in mind before locking a business into any single AI platform long-term.",
+    "{{TECH_2_FLAG}}": "🤖 AI MODEL WARS · ANTHROPIC EXTENDS FREE ACCESS AGAIN",
+    "{{TECH_2_HEADLINE}}": "Anthropic Extends Free Access to Its Top Claude Model Again After OpenAI's Latest Release",
+    "{{TECH_2_SUMMARY}}": "Anthropic has extended no-cost subscriber access to its flagship Claude Fable 5 model through July 19, its second extension in a week, directly responding to competitive pressure from OpenAI's newest ChatGPT release. Handy timing for anyone still deciding which AI subscription is worth paying for long-term.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🏭 ROBOTICS · SIMULATION · TRAINING ROBOTS BEFORE THEY HIT THE FLOOR",
-    "{{ROBOT_1_HEADLINE}}": "Robotics Teams Are Using \"Virtual Gyms\" to Train Warehouse Robots Before Deployment",
-    "{{ROBOT_1_SUMMARY}}": "Robotics engineers, including in a Toyota Material Handling Europe case study, are increasingly using high-fidelity simulation environments — \"virtual gyms\" — to train forklift and warehouse robots' perception and decision-making before they ever touch a real floor, cutting the costly, risky trial-and-error that used to happen live. It's the same logic worth applying to any new piece of automation or software before it goes anywhere near a real job.",
-    "{{ROBOT_1_URL}}": "https://www.therobotreport.com/why-robotics-teams-need-virtual-gyms-before-deployment/",
+    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · LAUNCH · HUMANOID BUILT FOR HARD-TO-STAFF JOBS",
+    "{{ROBOT_1_HEADLINE}}": "Robot.com Launches R-Noid Humanoid for the Repetitive, Hard-to-Staff Jobs Businesses Can't Fill",
+    "{{ROBOT_1_SUMMARY}}": "Robot.com has commercially launched R-noid, a humanoid robot explicitly targeted at multi-shift, repetitive, hard-to-staff roles across restaurant, packing, picking, folding and hosting jobs, spanning industrial, logistics, healthcare, food service and hospitality settings. It's part of a broader shift in 2026 from flashy robot demos toward robots aimed squarely at the labour-shortage roles small and mid-sized operators actually struggle to fill.",
+    "{{ROBOT_1_URL}}": "https://roboticsandautomationnews.com/2026/07/13/robot-com-launches-humanoid-built-for-the-work-that-burns-people-out/103259/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Union Blames Telstra's Offshoring Push for Nationwide Network Outage",
-    "{{AUS_1_SUMMARY}}": "The Communications Workers Union says last week's Telstra outage — which knocked out mobile, data and some Triple Zero calls nationally and halted V/Line's entire regional train network — is a direct result of the telco shifting hundreds of technical roles to Indian firm Infosys since February. Telstra maintains the cause was a software fault in its network timing servers unrelated to workforce changes, but the stoush is a live reminder to have a backup plan for whenever your main carrier goes down.",
-    "{{AUS_1_URL}}": "https://www.theaustraliatoday.com.au/utterly-shameful-union-blames-telstra-workforce-cuts-for-nationwide-outage/",
+    "{{AUS_1_HEADLINE}}": "Government Rules Out Any Support for Australian Men Held as Suspected IS Fighters in Iraq",
+    "{{AUS_1_SUMMARY}}": "Home Affairs Minister Tony Burke says the federal government will not lift a finger to help repatriate around 13 Australian men suspected of being former IS group fighters, held in Baghdad's Al-Karkh Central Prison and reportedly being considered for release by Iraqi and US officials. Burke said their choices reflected a rejection of Australian values.",
+    "{{AUS_1_URL}}": "https://thenightly.com.au/politics/australian-isis-detainees-in-iraq-could-be-released-from-al-karkh-central-prison-as-tony-burke-rules-out-help-c-22555008",
 
-    "{{AUS_2_HEADLINE}}": "NAB Survey: Business Confidence and Conditions Fall Further in Q2 as Middle East and Policy Uncertainty Bite",
-    "{{AUS_2_SUMMARY}}": "NAB's latest quarterly business survey shows both conditions and confidence weakening further in Q2, with more businesses citing geopolitical uncertainty and federal policy as headwinds, and wage costs still the single biggest issue firms report. A reminder that even with a solid job book, plenty of similar-sized operators are feeling the same cost and confidence squeeze right now.",
+    "{{AUS_2_HEADLINE}}": "Handwritten Arrival Cards to Be Scrapped for Digital Border Declarations at Australian Airports",
+    "{{AUS_2_SUMMARY}}": "The federal government says its new Australia Travel Declaration app will replace handwritten passenger arrival cards at all Australian airports in a national rollout from next year, aimed at improving biosecurity screening. It follows a trial of more than 450,000 passengers on Qantas international flights into Brisbane, Sydney and Melbourne since late 2024.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Melbourne Logs Its Coldest Week of 2026 as a Wetter Change Arrives",
-    "{{VIC_1_SUMMARY}}": "Melbourne recorded mornings as low as 3.2°C last week, with fog refusing to lift until early afternoon on some days — the city's coldest stretch so far in 2026 — before the cold front now moving through brings the shower and wind risk we're tracking today and tomorrow. Worth timing any outdoor coating work around the drier, frostier stretch forecast from Thursday.",
+    "{{VIC_1_HEADLINE}}": "Antisemitism Royal Commission Opens Melbourne Hearings Into Australian Universities",
+    "{{VIC_1_SUMMARY}}": "The Royal Commission on Antisemitism and Social Cohesion began its fourth hearing block in Melbourne today, running through Friday and focused specifically on antisemitism at Australian universities, including its impact on Jewish students and staff and how institutions have responded.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🕳️ PHYSICS · BLACK HOLES · 50-YEAR-OLD THEORY DEMONSTRATED IN THE LAB",
-    "{{SCI_1_HEADLINE}}": "Physicists Recreate Black-Hole Energy Extraction in a Tabletop Lab Experiment",
-    "{{SCI_1_SUMMARY}}": "Researchers at CUNY's Advanced Science Research Center built a stationary device using synthetic ultrafast rotation to physically demonstrate the Penrose process — a 50-year-old thought experiment for pulling energy out of a spinning black hole — turning pure theory into a lab result for the first time, with possible spin-off uses in optics and quantum communications.",
+    "{{SCI_1_FLAG}}": "💡 PHYSICS · OPTICS · 200-YEAR-OLD EXPERIMENT REVIVED FOR DATA STORAGE",
+    "{{SCI_1_HEADLINE}}": "Scientists Use a 200-Year-Old Light Trick to Create Exotic 'Optical Skyrmions'",
+    "{{SCI_1_SUMMARY}}": "NTU Singapore researchers found they can generate complex swirling light patterns called optical skyrmions simply by shining a laser at a small disc and exploiting the 200-year-old 'Poisson spot' effect, instead of relying on costly engineered materials. The technique produced four related field patterns at once and could feed into future data storage and communications technology, reported by ScienceDaily on 13 July.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Get Ahead of the Silica Dust Crackdown",
-    "{{INSIGHT_BODY}}": "WorkSafe Victoria is tightening its approach to respirable crystalline silica — while the legal exposure standard sits at 0.05 mg/m³, inspectors are increasingly benchmarking against the stricter 0.02 mg/m³ target as Victoria prepares to formally adopt the new national Workplace Exposure Standard from December 2026. For a business built on abrasive blasting, that means health monitoring records, baseline assessments and re-testing schedules for every exposed worker need to be watertight well before the transition lands. AI-assisted document tools can quietly do the heavy lifting here — auto-organising monitoring results, flagging workers due for re-testing, and building a clean, timestamped compliance trail — so if WorkSafe comes knocking, the evidence is already assembled rather than scrambled together after the fact.",
+    "{{INSIGHT_TITLE}}": "Payday Super Just Landed — Is Your Cash Flow Ready?",
+    "{{INSIGHT_BODY}}": "From 1 July, super has to go out with every pay run instead of quarterly, and this week most PAYG employers are hitting their first full pay cycle under the new rules. Treasury has openly flagged this as the reform most likely to catch out small businesses that had quietly been using the old quarterly lag as informal working capital — miss the seven-business-day transfer window and you're up for the shortfall plus interest plus an administrative penalty of up to 60%. An AI-linked payroll and cash-flow forecasting tool can flag the new weekly or fortnightly super hit before it lands rather than after the account's already short, which is worth setting up now rather than after the first missed deadline.",
 
     # Fun Facts
-    "{{FACT_1}}": "Between April 2025 and March 2026, the international Ocean Census initiative identified 1,121 new marine species — a 54% jump on the previous year — across 13 expeditions in 85 countries. Strikingly, 728 of those were found not on a new dive but by researchers finally identifying specimens that had been sitting unexamined in museum archives for years.",
+    "{{FACT_1}}": "The Economist created the tongue-in-cheek 'Big Mac Index' in 1986 to gauge whether currencies are over- or under-valued, comparing the price of a McDonald's Big Mac across countries as a rough proxy for purchasing power parity. It's since been picked up by real economists and even central banks as a genuinely useful, if silly-sounding, benchmark.",
 
-    "{{FACT_2}}": "The oldest known stone tools, unearthed at the Lomekwi 3 site in Kenya, date back 3.3 million years — older than the genus Homo itself, meaning some pre-human ancestor was deliberately shaping tools long before our own species existed.",
+    "{{FACT_2}}": "The famous 'Konami Code' cheat (Up, Up, Down, Down, Left, Right, Left, Right, B, A) first appeared in 1986's Gradius, added by developer Kazuhisa Hashimoto purely so he could playtest his own brutally difficult game without dying constantly. It went on to become gaming's most recognisable cheat code, embedded in dozens of later Konami titles.",
 
-    "{{FACT_3}}": "The teabag is usually credited to New York tea merchant Thomas Sullivan, who around 1908 mailed loose-tea samples in small silk pouches that customers started dunking straight into the pot. But two women, Roberta Lawson and Mary McLaren, had already patented a near-identical tea leaf holder back in 1901 — they just never got it into mass production before Sullivan's version took the credit.",
+    "{{FACT_3}}": "Monopoly's actual inventor was Lizzie Magie, who patented 'The Landlord's Game' in 1904 to demonstrate how landlords grow rich at tenants' expense under monopoly rents. Parker Brothers later bought the rights and marketed it as a celebration of property empire-building — the exact opposite of the message Magie intended.",
 
     # Joke
-    "{{JOKE_SETUP}}": "How can you tell if you've found a good tax accountant?",
-    "{{JOKE_PUNCHLINE}}": "They've got a loophole named after them.",
+    "{{JOKE_SETUP}}": "What did the upholsterer say when a customer complained about the quote?",
+    "{{JOKE_PUNCHLINE}}": "I don't pad the numbers — I pad the furniture.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"You don't have to be great to start, but you have to start to be great.\"",
-    "{{CLOSING_ATTR}}": "— Zig Ziglar",
-    "{{CLOSING_MESSAGE}}": "It's a wet, blustery start to the week in Carrum Downs with showers moving through today and tomorrow, so it's more of an indoor prep and paperwork day than one for outdoor coating work — school holidays wrap up today too, with kids back in the classroom this morning. Keep an eye on the news out of the Gulf as the week unfolds, and if you need a distraction tonight, Spain and France face off in Tuesday's World Cup semi-final.",
+    "{{CLOSING_QUOTE}}": "\"Genius is one percent inspiration and ninety-nine percent perspiration.\"",
+    "{{CLOSING_ATTR}}": "— Thomas Edison",
+    "{{CLOSING_MESSAGE}}": "It's a showery, breezy Tuesday in Carrum Downs with more rain easing through midweek before things dry out toward the weekend — a fair excuse to keep today's work indoors and the paperwork moving, especially with Payday Super and the new minimum wage both landing in this week's pay run. If you need a distraction tonight, France and Spain meet in the first World Cup semi-final, with the winner through to Sunday's final.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
