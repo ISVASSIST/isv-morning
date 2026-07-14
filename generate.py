@@ -4,91 +4,91 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Tuesday, 14 July 2026",
+    "{{DATE}}": "Wednesday, 15 July 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Tue 14 Jul (BOM)
-    "{{WEATHER_1}}": "TUE 14 · 🌧️ Showers, breezy · 9–14°C",
-    "{{WEATHER_2}}": "WED 15 · 🌦️ Showers easing, windy · 8–14°C",
-    "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "THU 16 · ⛅ Becoming cloudy, slight shower · 6–14°C",
+    # Weather — Carrum Downs VIC, 5-day from Wed 15 Jul (BOM)
+    "{{WEATHER_1}}": "WED 15 · 🌧️ Showers, windy · 7–13°C",
+    "{{WEATHER_2}}": "THU 16 · ☁️ Cloudy, slight shower · 8–13°C",
+    "{{WEATHER_2_CLASS}}": "",
+    "{{WEATHER_3}}": "FRI 17 · ☁️ Cloudy, slight shower · 8–13°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "FRI 17 · ⛅ Partly cloudy, mostly dry · 6–13°C",
-    "{{WEATHER_5}}": "SAT 18 · ☀️ Partly cloudy to sunny · 5–14°C",
-    "{{WEATHER_ALERT}}": "⚠ SHOWERS EASE MIDWEEK · CLEARING TOWARD THE WEEKEND",
+    "{{WEATHER_4}}": "SAT 18 · ⛅ Partly cloudy · 8–13°C",
+    "{{WEATHER_5}}": "SUN 19 · ⛅ Partly cloudy, patchy fog · 7–13°C",
+    "{{WEATHER_ALERT}}": "⚠ WINDY SHOWERS TODAY · DRYING OUT LATER IN THE WEEK",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇺🇸🇮🇷 US · IRAN · HORMUZ BLOCKADE REIMPOSED, 20% SHIPPING FEE",
-    "{{WORLD_1_HEADLINE}}": "Trump Reinstates Strait of Hormuz Blockade, Demands 20% Fee on All Cargo Through It",
-    "{{WORLD_1_SUMMARY}}": "President Trump announced the US will restart its naval blockade of Iranian ports from Tuesday and impose a 20% charge on all cargo shipping through the Strait of Hormuz, covering what he called the cost of providing security in the region. It's the second US blockade of Iranian waters this year, coming as Iran's IRGC hit US-linked targets in Kuwait, Bahrain and Jordan overnight — a fresh escalation with direct flow-on risk to global oil and shipping costs, Australia included.",
-    "{{WORLD_1_URL}}": "https://www.cnbc.com/2026/07/13/trump-iran-hormuz-strait-charge-reimburse.html",
+    "{{WORLD_1_FLAG}}": "🇺🇦🇪🇺 PARIS · UKRAINE · 10-NATION MISSILE DEFENCE COALITION ANNOUNCED",
+    "{{WORLD_1_HEADLINE}}": "Ukraine and Nine European Nations Announce New Ballistic Missile Defence Coalition",
+    "{{WORLD_1_SUMMARY}}": "Meeting in Paris with more than 30 countries in the so-called Coalition of the Willing, Ukraine and nine European nations — including Britain, France, Germany, Italy and Spain — announced a new shared coalition aimed at building ballistic missile defence capability across Europe. It's a fresh show of long-term commitment to Ukraine as Russia keeps testing the region's resolve, with leaders including Macron, Merz and Starmer among those at the table.",
+    "{{WORLD_1_URL}}": "https://www.pbs.org/newshour/world/ukraine-and-9-other-countries-form-coalition-to-protect-europe-from-ballistic-missiles",
 
-    "{{WORLD_2_FLAG}}": "🇺🇸 WASHINGTON · TRIBUTE · LONGTIME SENATOR DIES SUDDENLY",
-    "{{WORLD_2_HEADLINE}}": "US Senator Lindsey Graham Dies at 71 After Sudden Aortic Dissection",
-    "{{WORLD_2_SUMMARY}}": "South Carolina Senator Lindsey Graham, a leading Republican foreign policy voice and close Trump ally, died Saturday night at his Capitol Hill home from a ruptured aorta, his office confirmed. He'd served in the Senate since 2003 and was a key voice on the Ukraine and Middle East conflicts, and tributes have poured in from across the political aisle.",
-    "{{WORLD_2_URL}}": "https://www.npr.org/2026/07/12/nx-s1-5890790/us-sen-lindsey-graham-dies",
+    "{{WORLD_2_FLAG}}": "🇳🇿🎬 TRIBUTE · JURASSIC PARK STAR DIES AT 78 IN SYDNEY",
+    "{{WORLD_2_HEADLINE}}": "Jurassic Park Star Sam Neill Dies Aged 78 After Recovering From Cancer",
+    "{{WORLD_2_SUMMARY}}": "New Zealand actor Sam Neill, best known for playing Dr Alan Grant in Jurassic Park and for his role in The Piano, has died in Sydney aged 78, his family confirmed. He'd revealed in April he was cancer-free after a battle with a rare blood cancer, making the loss sudden despite the earlier good news.",
+    "{{WORLD_2_URL}}": "https://www.npr.org/2026/07/13/nx-s1-5891505/actor-sam-neill-dies",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ FUEL WATCH · HORMUZ FEE THREAT · BOWSER PRICES UNDER PRESSURE",
-    "{{ECON_1_HEADLINE}}": "20% Hormuz Shipping Fee Threatens Fresh Fuel Price Rises on Top of Already-Climbing Bowser Costs",
-    "{{ECON_1_SUMMARY}}": "The ACCC's latest weekly monitoring already had capital city petrol at 158.1c/L and diesel at 179.1c/L from 1 July as the fuel excise discount halved to 16c — and Trump's new 20% Hormuz shipping toll, layered on an active blockade, threatens to push global oil and freight costs higher still. Worth locking in a fuel surcharge clause on quotes now rather than absorbing another jump later.",
+    "{{ECON_1_FLAG}}": "⛽ FUEL WATCH · EXCISE RELIEF HALVES · BOWSER PRICES CLIMB AGAIN",
+    "{{ECON_1_HEADLINE}}": "Petrol Jumps 12c a Litre in a Week as the Fuel Excise Cut Gets Halved",
+    "{{ECON_1_SUMMARY}}": "The ACCC's latest weekly monitoring has capital city unleaded averaging 170.1c/L and diesel at 191.9c/L, up 12.2 cents on the previous week, as the fuel excise discount dropped from 32 cents to 16 cents a litre for July before reverting further from 2 August. Worth factoring a fresh look at your fuel surcharge line before the next job goes out the door.",
     "{{ECON_1_URL}}": "https://www.accc.gov.au/about-us/publications/weekly-fuel-price-monitoring-update",
 
-    "{{ECON_2_FLAG}}": "💰 PAYROLL · MINIMUM WAGE UP 4.75% · FIRST FULL PAY CYCLE HITS",
-    "{{ECON_2_HEADLINE}}": "National Minimum Wage Rise and Payday Super Both Bite in the Same Pay Cycle This Week",
-    "{{ECON_2_SUMMARY}}": "The National Minimum Wage rose 4.75% to $26.44 an hour ($1,004.90 a week) from the first full pay period after 1 July, landing in the same cycle as Payday Super's new requirement to pay super with every payday instead of quarterly. For any business running a team, that's higher wage costs and a tighter cash-flow cycle hitting at once — worth checking this week's payroll run lines up before it's overdue.",
+    "{{ECON_2_FLAG}}": "📉 ECONOMY · GROWTH FORECAST CUT · WEAKEST RUN SINCE THE EARLY '90S",
+    "{{ECON_2_HEADLINE}}": "Deloitte Slashes Australia's Growth Forecast, Warns of Weakest Stretch Since the Early-1990s Recession",
+    "{{ECON_2_SUMMARY}}": "Deloitte Access Economics has cut its 2026-27 growth forecast from 1.9% to just 1.3%, citing rising interest rates, weak consumer and business confidence, stalling housing investment and the drawn-out cost-of-living squeeze. It points to the longest run of sub-2% annual growth since the early 1990s recession — a reminder to keep a close eye on receivables and cash buffers rather than banking on a quick bounce-back.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤝 BIG TECH · GOOGLE + MICROSOFT · ENTERPRISE AI AGENTS TEAM UP",
-    "{{TECH_1_HEADLINE}}": "Google and Microsoft Quietly Team Up With Salesforce, Snowflake and ServiceNow on a Shared AI Agent Standard",
-    "{{TECH_1_SUMMARY}}": "The five companies, which between them run the software holding most of the world's business data, are working toward a common technical standard for connecting AI agents to business systems — a direct answer to Anthropic's Model Context Protocol, which has become the default over the past 18 months. For any business running multiple apps (quoting, invoicing, scheduling), it's a sign these tools are getting closer to actually talking to each other properly, regardless of which AI vendor sits behind them.",
-    "{{TECH_1_URL}}": "https://thenextweb.com/news/google-cloud-next-ai-agents-agentic-era",
+    "{{TECH_1_FLAG}}": "🤝 SOFTWARE · MICROSOFT U-TURN · MEETING AI HANDED BACK TO ORGANISERS",
+    "{{TECH_1_HEADLINE}}": "Microsoft Backs Down on Pushy AI in Teams, Lets Meeting Organisers Switch It Off",
+    "{{TECH_1_SUMMARY}}": "After backlash over features like the AI 'Facilitator' quietly monitoring meetings, Microsoft has introduced new controls letting Teams meeting organisers turn AI-powered features on or off live during a call. A small but useful sign that software vendors are finally giving users an actual off switch rather than just more AI by default.",
+    "{{TECH_1_URL}}": "https://www.forbes.com/sites/quickerbettertech/2026/07/12/small-business-technology-news-roundup-microsoft-makes-a-major-ai-u-turn/",
 
-    "{{TECH_2_FLAG}}": "🤖 AI MODEL WARS · ANTHROPIC EXTENDS FREE ACCESS AGAIN",
-    "{{TECH_2_HEADLINE}}": "Anthropic Extends Free Access to Its Top Claude Model Again After OpenAI's Latest Release",
-    "{{TECH_2_SUMMARY}}": "Anthropic has extended no-cost subscriber access to its flagship Claude Fable 5 model through July 19, its second extension in a week, directly responding to competitive pressure from OpenAI's newest ChatGPT release. Handy timing for anyone still deciding which AI subscription is worth paying for long-term.",
+    "{{TECH_2_FLAG}}": "📈 MARKETING · GOOGLE ADS · CLICK COSTS UP 15% IN A YEAR",
+    "{{TECH_2_HEADLINE}}": "Google Ads Costs Jumped 15% in the Past Year, Squeezing Small Business Marketing Budgets",
+    "{{TECH_2_SUMMARY}}": "New industry data shows average cost-per-click on Google Ads has risen around 15% year-on-year, partly driven by Google's AI Overviews cutting organic click volume and pushing more traffic through paid channels. If you're running any paid ads for the business, it's a good week to check what you're actually paying per lead rather than assuming last year's budget still buys the same result.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · LAUNCH · HUMANOID BUILT FOR HARD-TO-STAFF JOBS",
-    "{{ROBOT_1_HEADLINE}}": "Robot.com Launches R-Noid Humanoid for the Repetitive, Hard-to-Staff Jobs Businesses Can't Fill",
-    "{{ROBOT_1_SUMMARY}}": "Robot.com has commercially launched R-noid, a humanoid robot explicitly targeted at multi-shift, repetitive, hard-to-staff roles across restaurant, packing, picking, folding and hosting jobs, spanning industrial, logistics, healthcare, food service and hospitality settings. It's part of a broader shift in 2026 from flashy robot demos toward robots aimed squarely at the labour-shortage roles small and mid-sized operators actually struggle to fill.",
-    "{{ROBOT_1_URL}}": "https://roboticsandautomationnews.com/2026/07/13/robot-com-launches-humanoid-built-for-the-work-that-burns-people-out/103259/",
+    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · CHINA · HUMANOID MAKERS RACE TOWARD IPOs",
+    "{{ROBOT_1_HEADLINE}}": "Chinese Humanoid Robot Makers LimX and Unitree Both Push Toward IPOs This Week",
+    "{{ROBOT_1_SUMMARY}}": "LimX Dynamics confirmed a $200 million pre-IPO raise and plans to ship thousands of humanoids to the Middle East, while Unitree Robotics won approval for a Shanghai STAR Market listing that could raise around $619 million for new AI models and robot designs. It's another sign the humanoid robotics race has shifted from lab demos to a straight-out commercial and capital-markets sprint.",
+    "{{ROBOT_1_URL}}": "https://www.cnbc.com/2026/07/13/chinese-humanoid-startups-ipo-limx-unitree.html",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Government Rules Out Any Support for Australian Men Held as Suspected IS Fighters in Iraq",
-    "{{AUS_1_SUMMARY}}": "Home Affairs Minister Tony Burke says the federal government will not lift a finger to help repatriate around 13 Australian men suspected of being former IS group fighters, held in Baghdad's Al-Karkh Central Prison and reportedly being considered for release by Iraqi and US officials. Burke said their choices reflected a rejection of Australian values.",
-    "{{AUS_1_URL}}": "https://thenightly.com.au/politics/australian-isis-detainees-in-iraq-could-be-released-from-al-karkh-central-prison-as-tony-burke-rules-out-help-c-22555008",
+    "{{AUS_1_HEADLINE}}": "Albanese to Unveil Australia's First National AI Framework in Major Sydney Speech Today",
+    "{{AUS_1_SUMMARY}}": "Prime Minister Anthony Albanese delivers his 'AI in Australia's Interests' address in Sydney today, announcing a new Office of AI within his own department to coordinate a single national framework — covering everything from a digital duty of care and chatbot risks to children, through to AI's role in skills, manufacturing and defence.",
+    "{{AUS_1_URL}}": "https://www.canberratimes.com.au/story/9310618/anthony-albanese-established-new-pmc-ai-office-to-make-australia-world-first/",
 
-    "{{AUS_2_HEADLINE}}": "Handwritten Arrival Cards to Be Scrapped for Digital Border Declarations at Australian Airports",
-    "{{AUS_2_SUMMARY}}": "The federal government says its new Australia Travel Declaration app will replace handwritten passenger arrival cards at all Australian airports in a national rollout from next year, aimed at improving biosecurity screening. It follows a trial of more than 450,000 passengers on Qantas international flights into Brisbane, Sydney and Melbourne since late 2024.",
+    "{{AUS_2_HEADLINE}}": "New National Data Shows Cancer Outcomes Improving for Aboriginal and Torres Strait Islander People",
+    "{{AUS_2_SUMMARY}}": "A new AIHW report shows the cancer incidence rate for First Nations people fell from 342 to an estimated 315 per 100,000 between 2011 and 2025, with the mortality rate down from 148 to 105 deaths per 100,000 over the same period. Rates remain higher than for non-Indigenous Australians, but the improvement is outpacing the general population's.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Antisemitism Royal Commission Opens Melbourne Hearings Into Australian Universities",
-    "{{VIC_1_SUMMARY}}": "The Royal Commission on Antisemitism and Social Cohesion began its fourth hearing block in Melbourne today, running through Friday and focused specifically on antisemitism at Australian universities, including its impact on Jewish students and staff and how institutions have responded.",
+    "{{VIC_1_HEADLINE}}": "Victorian Parliament Passes Bill Banning Phones and Smartwatches in Every School",
+    "{{VIC_1_SUMMARY}}": "The Legislative Assembly has passed a bill extending Victoria's existing mobile phone ban to every school in the state, including non-government schools, and for the first time also covering wearables like smartwatches and wireless earbuds. It now heads to the Legislative Council, with the full ban set to apply from 28 January 2027.",
 
     # Science
-    "{{SCI_1_FLAG}}": "💡 PHYSICS · OPTICS · 200-YEAR-OLD EXPERIMENT REVIVED FOR DATA STORAGE",
-    "{{SCI_1_HEADLINE}}": "Scientists Use a 200-Year-Old Light Trick to Create Exotic 'Optical Skyrmions'",
-    "{{SCI_1_SUMMARY}}": "NTU Singapore researchers found they can generate complex swirling light patterns called optical skyrmions simply by shining a laser at a small disc and exploiting the 200-year-old 'Poisson spot' effect, instead of relying on costly engineered materials. The technique produced four related field patterns at once and could feed into future data storage and communications technology, reported by ScienceDaily on 13 July.",
+    "{{SCI_1_FLAG}}": "🔬 BIOLOGY · ITCH DECODED · HIDDEN NERVE NETWORK FOUND IN SKIN",
+    "{{SCI_1_HEADLINE}}": "Scientists Discover a Dedicated Nerve Network Behind Chronic 'Mechanical' Itch",
+    "{{SCI_1_SUMMARY}}": "University of Michigan researchers have identified a previously unknown class of fine 'vellus-like' hairs and a specialised set of touch-sensitive nerve cells that form a dedicated pathway for mechanical itch — distinct from the chemical itch triggered by mosquito bites or poison ivy. Because humans appear to have the same pathway, the findings, published in Neuron on 14 July, could point toward better treatments for chronic conditions like eczema.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Payday Super Just Landed — Is Your Cash Flow Ready?",
-    "{{INSIGHT_BODY}}": "From 1 July, super has to go out with every pay run instead of quarterly, and this week most PAYG employers are hitting their first full pay cycle under the new rules. Treasury has openly flagged this as the reform most likely to catch out small businesses that had quietly been using the old quarterly lag as informal working capital — miss the seven-business-day transfer window and you're up for the shortfall plus interest plus an administrative penalty of up to 60%. An AI-linked payroll and cash-flow forecasting tool can flag the new weekly or fortnightly super hit before it lands rather than after the account's already short, which is worth setting up now rather than after the first missed deadline.",
+    "{{INSIGHT_TITLE}}": "Google Ads Just Got 15% More Expensive — How AI Can Help You Spend Smarter, Not More",
+    "{{INSIGHT_BODY}}": "Cost-per-click on Google Ads has climbed roughly 15% over the past year, partly because Google's own AI Overviews are eating into free organic clicks and pushing more traffic through paid results — meaning the same ad budget now buys noticeably fewer leads than it did in 2025. Rather than simply raising spend to compensate, an AI tool that scores and pre-qualifies leads as they come in (or drafts faster, better follow-ups on the ones that matter) can lift your return per dollar without touching the ad budget at all — worth a look before your next campaign renews.",
 
     # Fun Facts
-    "{{FACT_1}}": "The Economist created the tongue-in-cheek 'Big Mac Index' in 1986 to gauge whether currencies are over- or under-valued, comparing the price of a McDonald's Big Mac across countries as a rough proxy for purchasing power parity. It's since been picked up by real economists and even central banks as a genuinely useful, if silly-sounding, benchmark.",
+    "{{FACT_1}}": "Sandpaper's earliest known ancestor comes from 13th-century China, where crushed seashells and sand were bonded to parchment with plant gum to smooth wood and stone — the same basic idea behind every sheet of abrasive paper still used on a job site today.",
 
-    "{{FACT_2}}": "The famous 'Konami Code' cheat (Up, Up, Down, Down, Left, Right, Left, Right, B, A) first appeared in 1986's Gradius, added by developer Kazuhisa Hashimoto purely so he could playtest his own brutally difficult game without dying constantly. It went on to become gaming's most recognisable cheat code, embedded in dozens of later Konami titles.",
+    "{{FACT_2}}": "Nintendo designer Shigeru Miyamoto based the original Legend of Zelda on childhood memories of exploring the fields, woods and a hidden cave near his hometown outside Kyoto — he wanted players to feel the same thrill of discovery he felt finding that cave as a boy.",
 
-    "{{FACT_3}}": "Monopoly's actual inventor was Lizzie Magie, who patented 'The Landlord's Game' in 1904 to demonstrate how landlords grow rich at tenants' expense under monopoly rents. Parker Brothers later bought the rights and marketed it as a celebration of property empire-building — the exact opposite of the message Magie intended.",
+    "{{FACT_3}}": "Baking soda and baking powder aren't interchangeable — baking soda is a pure base that needs an acid like buttermilk or brown sugar to react, while baking powder already contains its own acid (cream of tartar) plus a buffer, giving it a slower, two-stage rise baking soda can't do alone.",
 
     # Joke
-    "{{JOKE_SETUP}}": "What did the upholsterer say when a customer complained about the quote?",
-    "{{JOKE_PUNCHLINE}}": "I don't pad the numbers — I pad the furniture.",
+    "{{JOKE_SETUP}}": "Why did the carpet layer's business always land on its feet?",
+    "{{JOKE_PUNCHLINE}}": "He never let a customer walk all over him without a signed quote first.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Genius is one percent inspiration and ninety-nine percent perspiration.\"",
-    "{{CLOSING_ATTR}}": "— Thomas Edison",
-    "{{CLOSING_MESSAGE}}": "It's a showery, breezy Tuesday in Carrum Downs with more rain easing through midweek before things dry out toward the weekend — a fair excuse to keep today's work indoors and the paperwork moving, especially with Payday Super and the new minimum wage both landing in this week's pay run. If you need a distraction tonight, France and Spain meet in the first World Cup semi-final, with the winner through to Sunday's final.",
+    "{{CLOSING_QUOTE}}": "\"Amateurs sit and wait for inspiration, the rest of us just get up and go to work.\"",
+    "{{CLOSING_ATTR}}": "— Stephen King",
+    "{{CLOSING_MESSAGE}}": "It's a showery, blustery Wednesday in Carrum Downs, 7–13°C, easing into calmer, mostly cloudy days through the rest of the week. Albanese fronts the cameras in Sydney today to unveil the government's first proper national AI framework — worth a few minutes over lunch if you're thinking about where AI fits into the business long-term. And if you need a distraction tonight, Argentina and England meet in the first World Cup semi-final.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
