@@ -4,91 +4,91 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Thursday, 16 July 2026",
+    "{{DATE}}": "Friday, 17 July 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Thu 16 Jul (BOM)
-    "{{WEATHER_1}}": "THU 16 · ☁️ Cloudy, slight shower · 6–14°C",
-    "{{WEATHER_2}}": "FRI 17 · 🌧️➡️☀️ Showers early, clearing · 5–15°C",
+    # Weather — Carrum Downs VIC, 5-day from Fri 17 Jul (BOM)
+    "{{WEATHER_1}}": "FRI 17 · ☁️🌧️ Cloudy, shower or two · 8–15°C",
+    "{{WEATHER_2}}": "SAT 18 · 🌫️🌦️ Morning fog, shower developing · 8–14°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "SAT 18 · 🌫️☀️ Morning fog, sunny · 8–14°C",
+    "{{WEATHER_3}}": "SUN 19 · 🌫️☀️ Morning fog, then sunny · 6–14°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "SUN 19 · ❄️☀️ Frosty start, mostly sunny · 8–15°C",
-    "{{WEATHER_5}}": "MON 20 · ❄️🌤️ Frosty patches, breezy · 9–15°C",
-    "{{WEATHER_ALERT}}": "⚠ FROST & FOG RETURNING SAT–MON MORNINGS · NO SEVERE WARNINGS ACTIVE",
+    "{{WEATHER_4}}": "MON 20 · ❄️🌫️☀️ Frost & fog patches, mostly sunny · 5–14°C",
+    "{{WEATHER_5}}": "TUE 21 · 🌦️ Shower or two, cooler · 6–12°C",
+    "{{WEATHER_ALERT}}": "⚠ FROST & FOG PATCHES MON MORNING · NO SEVERE WARNINGS ACTIVE",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇷⚓ STRAIT OF HORMUZ · US STRIKES IRAN AGAIN · NAVAL BLOCKADE REINSTATED",
-    "{{WORLD_1_HEADLINE}}": "US Launches Fresh Strikes on Iran as Strait of Hormuz Standoff Escalates",
-    "{{WORLD_1_SUMMARY}}": "US forces carried out a fresh, roughly 90-minute wave of strikes on Iranian military targets near the Strait of Hormuz overnight, with CENTCOM saying the goal is to stop Iran threatening tankers transiting the strait. Iran says at least seven of its troops were killed and 260 people wounded, and its foreign ministry insists there are 'no plans for negotiations.' The US has also reimposed a naval blockade of Iranian ports, with daily tanker traffic through the strait down to a handful of vessels from the usual 18-22.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/liveblog/2026/7/15/live-trump-says-strikes-on-iran-will-continue-until-i-say",
+    "{{WORLD_1_FLAG}}": "🇮🇷⚓ STRAIT OF HORMUZ · US STRIKES CONTINUE FIFTH DAY · TANKER HIT NEAR EXPORT TERMINAL",
+    "{{WORLD_1_HEADLINE}}": "US Strikes Iran for a Fifth Straight Day, Hits Tanker Trying to Skirt Blockade",
+    "{{WORLD_1_SUMMARY}}": "US forces struck Iranian military targets for a fifth consecutive night and hit a sanctioned oil tanker attempting to evade the naval blockade near Iran's main export terminal. Iran has fired on US bases in Kuwait and Jordan in response, its health ministry says at least 35 people have been killed and over 300 injured in the latest strikes, and India has now barred its seafarers from sailing through the Strait of Hormuz altogether. A regional ceasefire agreed in April unravelled within weeks, and talks over the strait's long-term administration remain stalled.",
+    "{{WORLD_1_URL}}": "https://www.cnn.com/2026/07/16/world/live-news/iran-war-trump",
 
-    "{{WORLD_2_FLAG}}": "🇨🇩🏥 DR CONGO · EBOLA OUTBREAK TOPS 700 DEATHS · OUTPACING CONTACT TRACING",
-    "{{WORLD_2_HEADLINE}}": "Ebola Outbreak in Eastern Congo Passes 700 Deaths as It Outruns Contact Tracing",
-    "{{WORLD_2_SUMMARY}}": "Confirmed deaths from the Bundibugyo strain of Ebola in the Democratic Republic of Congo have passed 700, with more than 1,900 people infected across three provinces since the outbreak was first detected in May. The WHO says 80% of new cases can't be traced back to a known chain of transmission, and many victims are dying in their communities without ever reaching a clinic — there's still no approved vaccine or treatment for this particular strain.",
-    "{{WORLD_2_URL}}": "https://www.npr.org/2026/07/15/g-s1-133630/ebola-congo-deaths",
+    "{{WORLD_2_FLAG}}": "🇬🇧🏛️ WESTMINSTER · LABOUR LEADERSHIP CONTEST CLOSES · BURNHAM SET TO BE PM BY TOMORROW",
+    "{{WORLD_2_HEADLINE}}": "Andy Burnham Set to Become UK's Seventh PM in a Decade as Leadership Contest Closes",
+    "{{WORLD_2_SUMMARY}}": "Nominations for the UK Labour leadership closed today with Andy Burnham the only candidate to secure enough support, meaning the former Greater Manchester mayor could be sworn in as prime minister as early as tomorrow. He inherits the job after Keir Starmer's resignation last month, becoming Britain's seventh PM in ten years — a turnover rate not seen in nearly two centuries.",
+    "{{WORLD_2_URL}}": "https://www.pbs.org/newshour/world/andy-burnham-prepares-for-a-uk-labour-leadership-contest-that-may-be-a-coronation",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ OIL SHOCK · BRENT TOPS US$85 · GULF EXPORTS CUT ROUGHLY IN HALF",
-    "{{ECON_1_HEADLINE}}": "Oil Surges Past US$85 a Barrel as Iran Conflict Threatens a Fresh Bowser Hit",
-    "{{ECON_1_SUMMARY}}": "Brent crude climbed above $85 a barrel overnight, its third straight day of gains, after the latest US strikes on Iran and the reinstated naval blockade near the Strait of Hormuz. Gulf oil exports have fallen to roughly half their normal volume over the past week, and Goldman Sachs has floated Brent topping $110 by the fourth quarter if the disruption drags on — worth watching closely given how quickly bowser prices have already moved this year.",
-    "{{ECON_1_URL}}": "https://www.cnbc.com/2026/07/15/oil-prices-today-brent-wti-hormuz-blockade.html",
+    "{{ECON_1_FLAG}}": "⛽ AT THE BOWSER · EXCISE RELIEF HALVED · PRICES CLIMBING ACROSS EVERY CAPITAL",
+    "{{ECON_1_HEADLINE}}": "Petrol Prices Jump as Fuel Excise Discount Is Halved and Middle East Conflict Drags On",
+    "{{ECON_1_SUMMARY}}": "The federal government's temporary fuel excise cut dropped from 32 cents to 16 cents a litre on July 1, and combined with the ongoing Iran conflict it's pushed capital-city unleaded to a national average of 170.1 cents a litre and diesel to 191.9 cents — both up sharply on last month. The relief scheme is due to expire August 2, and with Brent still sitting near US$85 a barrel, there's little sign of the bowser easing off before then.",
+    "{{ECON_1_URL}}": "https://www.ibtimes.com.au/rising-petrol-prices-australia-causes-consumer-tips-1872184",
 
-    "{{ECON_2_FLAG}}": "📊 SENTIMENT · CONSUMER CONFIDENCE UP 4.1% · RELIEF MAY BE SHORT-LIVED",
-    "{{ECON_2_HEADLINE}}": "Consumer Sentiment Lifts as Fuel Prices Ease — Just Before the Latest Oil Spike",
-    "{{ECON_2_SUMMARY}}": "The Westpac-Melbourne Institute Consumer Sentiment Index jumped 4.1% to 83.9 in July, though it remains in the bottom 10% of readings in the survey's 50-year history. The lift was driven largely by relief at the bowser, with average pump prices easing to around $1.60 a litre during the survey week — before the fresh Middle East-driven oil spike above hit, which suggests any confidence gains could prove short-lived.",
+    "{{ECON_2_FLAG}}": "💱 CURRENCY · AUD NEAR 3-MONTH LOW · SAFE-HAVEN DEMAND FROM HORMUZ CRISIS",
+    "{{ECON_2_HEADLINE}}": "Australian Dollar Slides Near Three-Month Lows as Middle East Tensions Boost the Greenback",
+    "{{ECON_2_SUMMARY}}": "The Aussie dollar has been grinding lower against the US dollar this week as the Strait of Hormuz standoff drives money into safe-haven currencies, with Trump's reinstated naval blockade and talk of a 20% 'security levy' on cargo transiting the strait adding to the uncertainty. A weaker dollar makes imported tools, materials and equipment more expensive just as fuel costs are already climbing — a double hit worth factoring into any big purchases this quarter.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🇨🇳🤖 REGULATION · CHINA'S NEW AI LAW · HUMANLIKE CHATBOTS PULLED",
-    "{{TECH_1_HEADLINE}}": "China's New AI Companion Law Forces ByteDance and Alibaba to Shut Down Humanlike Chatbots",
-    "{{TECH_1_SUMMARY}}": "China's first dedicated rules for AI services that simulate human personality and emotional connection took effect today, and ByteDance's Doubao and Alibaba's Qwen have already disabled their custom companion-agent features to comply, following Tencent's Yuanbao two weeks ago. The rules require anti-addiction systems, age verification for under-14s and an always-available exit option — a preview of the kind of AI chatbot regulation now being debated in the US and Australia.",
-    "{{TECH_1_URL}}": "https://www.techtimes.com/articles/320525/20260715/china-ai-companion-law-takes-effect-doubao-qwen-shut-down-millions-lose-chat-data.htm",
+    "{{TECH_1_FLAG}}": "🤖 AI · GEMINI 3.5 PRO LAUNCHES TODAY · GOOGLE'S BIGGEST MODEL YET",
+    "{{TECH_1_HEADLINE}}": "Google's Gemini 3.5 Pro Goes Live Today With a Reported 2-Million-Token Context Window",
+    "{{TECH_1_SUMMARY}}": "Google DeepMind's next flagship model is set for general release today after a ground-up architectural rebuild, reportedly bringing a 2-million-token context window and a new 'Deep Think' reasoning mode. It lands the same week Shanghai's World AI Conference opens with Xi Jinping attending in person — a reminder of just how fast the ground is shifting under every AI tool your business already relies on.",
+    "{{TECH_1_URL}}": "https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm",
 
-    "{{TECH_2_FLAG}}": "🎨 SOFTWARE · CANVA CODE 2.0 · FREE AI WEBSITE BUILDER FOR EVERYONE",
-    "{{TECH_2_HEADLINE}}": "Canva Launches Code 2.0, Giving Every User — Even Free Accounts — an AI Website Builder",
-    "{{TECH_2_SUMMARY}}": "Canva has rolled out Code 2.0, letting any of its 265 million monthly users build a working website or app from a plain-language prompt, including everyone on the free tier. Unlike code-first rivals, Canva is betting the real bottleneck for small businesses isn't generating code but making the result look professional — you can drag in your own photos and branding and tweak it without touching a line of code.",
+    "{{TECH_2_FLAG}}": "💼 AI IMPLEMENTATION · ANTHROPIC & BLACKSTONE · $1.5B BET ON 'DOING', NOT JUST BUILDING",
+    "{{TECH_2_HEADLINE}}": "Anthropic and Blackstone Launch $1.5B Venture Betting the Real AI Money Is in Implementation",
+    "{{TECH_2_SUMMARY}}": "Anthropic has teamed up with Blackstone, Goldman Sachs and other major investors to launch a $1.5 billion venture called Ode with Anthropic, built entirely around helping businesses actually deploy AI rather than just build the models. It's a signal from the top of the industry that the next big opportunity isn't a smarter chatbot — it's the unglamorous work of getting existing tools properly wired into how a business actually runs, which is exactly the gap most small operators are sitting in right now.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🐕🤖 LOGISTICS · BOSTON DYNAMICS · SPOT TAKES ON THE 'PORCH GAP'",
-    "{{ROBOT_1_HEADLINE}}": "Boston Dynamics Trials Its Spot Robot for Last-Mile Doorstep Deliveries",
-    "{{ROBOT_1_SUMMARY}}": "Boston Dynamics is piloting a new job for its robot dog Spot — solving what it calls the 'porch gap,' the last stretch of a delivery where drivers lose time and strain their bodies navigating stairs, gravel and curbs. A driver loads parcels onto a rig on Spot's back, and the robot walks itself up to the door and back to the van, with Boston Dynamics already talking to logistics companies about scaling it up to around 200 packages a day per driver-robot team.",
-    "{{ROBOT_1_URL}}": "https://bostondynamics.com/blog/bridging-the-porch-gap/",
+    "{{ROBOT_1_FLAG}}": "🇨🇳🦾 FACTORY FLOOR · XIAOMI HUMANOID · 98% SUCCESS RATE ON PRODUCTION LINE",
+    "{{ROBOT_1_HEADLINE}}": "Xiaomi's Humanoid Robot Hits 98% Success Sorting Parts on a Live Car Production Line",
+    "{{ROBOT_1_SUMMARY}}": "Xiaomi CEO Lei Jun shared uncut footage of the company's humanoid robot continuously sorting centre console side covers on an EV assembly line, with the company reporting a 98% task success rate in testing. Xiaomi hasn't set a commercial launch date but says it plans to deploy 'a large number' of the robots across its own factories within five years — another data point in just how fast humanoid robots are moving from lab demos to actual repetitive shift work.",
+    "{{ROBOT_1_URL}}": "https://technode.com/2026/07/15/xiaomi-updates-progress-on-humanoid-robots-in-auto-factory-achieves-98-success-rate-in-some-tasks/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Labor Pitches Housing Tax Reform to Young Australians Locked Out of the Market",
-    "{{AUS_1_SUMMARY}}": "Treasurer Jim Chalmers, PM Anthony Albanese and Finance Minister Katy Gallagher have put out a pitch aimed squarely at young Australians shut out of the housing market, flagging changes to capital gains tax discounts and negative gearing on investment properties. The government argues these investor tax breaks have given property investors an unfair edge over first-home buyers, and is framing the move as 'levelling the playing field' ahead of budget changes.",
-    "{{AUS_1_URL}}": "https://www.newcastleherald.com.au/story/9244354/last-minute-budget-pitch-to-level-field-for-young/",
+    "{{AUS_1_HEADLINE}}": "Landmark Aboriginal Land Deal Protects an Area Two-Thirds the Size of Tasmania",
+    "{{AUS_1_SUMMARY}}": "A new Indigenous Protected Area covering more than 47,000 square kilometres of the Simpson Desert has been signed with Traditional Owners at the remote Uluperte homelands in the NT's southeast, managed by the Central Land Council. The deal pushes a quarter of Australia's landmass under some form of conservation agreement, meeting a major national environmental target, with traditional custodians saying it will help protect sacred sites and manage fire and feral animals.",
+    "{{AUS_1_URL}}": "https://www.newcastleherald.com.au/story/9311611/aboriginal-conservation-deal-boosts-environmental-goals/",
 
-    "{{AUS_2_HEADLINE}}": "Fortescue Ordered to Pay Yindjibarndi People $150 Million in Landmark Native Title Case",
-    "{{AUS_2_SUMMARY}}": "The Federal Court has finalised orders requiring mining giant Fortescue to pay roughly $150.3 million to the Yindjibarndi Aboriginal Corporation for mining on their WA Pilbara land since 2012 — the largest native title compensation order in Australian history. The orders cover four open-pit mines, a railway and waste dumps spread across more than 135 square kilometres of Yindjibarndi country, with the community noting it's still well short of the roughly $1.8 billion originally sought.",
+    "{{AUS_2_HEADLINE}}": "Cyberattack on Major GP Network Exposes Medical Records of Patients Across Three Cities",
+    "{{AUS_2_SUMMARY}}": "Partnered Health, which runs more than 60 medical and skin cancer clinics including sites in Sydney, Melbourne and Canberra, has confirmed a data breach at 21 of its clinics exposing patient names, Medicare numbers, and consultation and treatment records. The group has gone to the NSW Supreme Court seeking an injunction to stop the stolen data being used or published — a reminder that any business holding customer records, tradies included, is a target worth locking down properly.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victorian Liberal MP Moira Deeming Withdraws Court Case Over Disendorsement Push",
-    "{{VIC_1_SUMMARY}}": "Upper house Liberal MP Moira Deeming has withdrawn the Supreme Court injunction she'd taken out to delay her party's push to disendorse her, after submitting a formal statement and mediation proposal to the party's State Executive. The dispute traces back to her allegation that former Victorian Liberal leader Matthew Guy put her in a headlock in May, which Victoria Police found no CCTV evidence for — the party's move to strip her preselection for November's state election is still live.",
+    "{{VIC_1_HEADLINE}}": "Victoria Set to Scrap Group Voting Tickets Before November's State Election",
+    "{{VIC_1_SUMMARY}}": "The Allan government has introduced legislation to abolish group voting tickets for the Legislative Council, ending the practice that let so-called 'preference whisperers' broker preference deals behind closed doors. Victoria was the last state still using the system — from November's election, upper house voters will number their own preferences above the line instead.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔭 ASTRONOMY · HIDDEN DEAD STARS · FOUR WHITE DWARFS UNMASKED NEXT DOOR",
-    "{{SCI_1_HEADLINE}}": "Astronomers Find Four 'Invisible' Dead Stars Hiding in Our Cosmic Backyard",
-    "{{SCI_1_SUMMARY}}": "Using Hubble's ultraviolet vision, astronomers have unmasked four white dwarfs — the dense, burnt-out cores of long-dead stars — hiding in plain sight next to brighter companion stars, including one just 25 light-years from Earth that took nearly three decades to confirm. The trick was watching the brighter star wobble as an unseen object tugged it back and forth, then using UV light to fish the much fainter white dwarf's glow out of the glare — all four sit within 65 light-years of us, hinting our stellar neighbourhood may be hiding plenty more.",
+    "{{SCI_1_FLAG}}": "🔬 SKIN SCIENCE · HIDDEN COLLAGEN DAMAGE · CAUGHT BEFORE IT'S VISIBLE",
+    "{{SCI_1_HEADLINE}}": "New Optical Scanner Spots Skin Damage Years Before Wrinkles Ever Show",
+    "{{SCI_1_SUMMARY}}": "Researchers at Hiroshima University have combined advanced optical imaging with chiroptical spectroscopy to detect collagen breaking down at a molecular level — long before any visible signs of skin damage appear under a standard microscope. The technique picks up the earliest stage of deterioration, when collagen's internal twisted structure starts to unravel, well before the fibres themselves visibly break apart — a find with obvious spin-off potential for anyone whose job means a lot of UV exposure.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Your Website Doesn't Need a Developer Anymore — Canva's New AI Builder Proves It",
-    "{{INSIGHT_BODY}}": "Canva just rolled out Code 2.0, letting any of its 265 million users type a plain-language prompt and get a working website or app — including everyone on the free tier, not just paying subscribers. For a trades business that's been putting off a proper website, or paying a developer a few hundred dollars for basic changes, this closes that gap: drag in your own job photos and branding, tweak the layout, and publish without touching a line of code. It won't replace a serious custom build, but for a one-page quote-and-contact site or a landing page for a new service line, it might be the cheapest 20 minutes you spend on the business this month.",
+    "{{INSIGHT_TITLE}}": "A Health Network Just Got Hacked — Is Your Client List Any Safer?",
+    "{{INSIGHT_BODY}}": "Partnered Health's breach this week exposed the personal and medical details of patients across 21 clinics — a reminder that any business sitting on a folder of customer names, addresses and payment details is a target, not just big corporates. Most small trades operators keep quotes, invoices and site photos scattered across emails, a phone and maybe a shared drive, often with no real access control. AI-powered job management tools can actually tighten this up rather than add risk: centralising client records behind a single login, flagging unusual access, and making it trivial to see exactly who touched what and when. It won't stop every attack, but it closes the easiest door — the one where 'security' is just hoping nobody looks.",
 
     # Fun Facts
-    "{{FACT_1}}": "Corrosion quietly costs the global economy an estimated US$2.5 trillion a year — more than 3% of world GDP — and industry bodies estimate 15-20% of that could be prevented with coatings and protective treatments that already exist today.",
+    "{{FACT_1}}": "The modern spray gun traces back to a paint sprayer patented by Joseph Binks in 1887, built to whitewash the cavernous interior of the Chicago Board of Trade Building overnight — the same compressed-air mechanism still powers airless sprayers on job sites today.",
 
-    "{{FACT_2}}": "Sega picked blue for Sonic the Hedgehog specifically because it matched the company's own logo, and chose a hedgehog because its spiky defence read as 'attitude' next to Nintendo's plumber.",
+    "{{FACT_2}}": "Kangaroos and emus can't walk backwards, which is part of the reason both appear on Australia's coat of arms — chosen to represent a nation that only ever moves forward.",
 
-    "{{FACT_3}}": "A bottle of champagne holds roughly three times the pressure of a car tyre — about 90 psi — which is why an improperly aimed cork can travel more than 20 metres at speeds close to 50 km/h.",
+    "{{FACT_3}}": "The word 'freelance' originally meant a mercenary knight — literally a 'free lance' available for hire — and wasn't used in its modern sense until Sir Walter Scott coined it figuratively in his 1820 novel Ivanhoe.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the handyman start bringing two toolboxes to every job?",
-    "{{JOKE_PUNCHLINE}}": "One for the tools, one for all the 'quick, five-minute' favours that always turn into a full afternoon.",
+    "{{JOKE_SETUP}}": "A tradie's bookkeeper asked if his customer database was properly backed up and password protected.",
+    "{{JOKE_PUNCHLINE}}": "He said, 'Course it is — it's in a manila folder, and nobody's ever going to guess THAT password.'",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Do not be embarrassed by your failures, learn from them and start again.\"",
-    "{{CLOSING_ATTR}}": "— Richard Branson",
-    "{{CLOSING_MESSAGE}}": "It's a cool, mostly cloudy Thursday in Carrum Downs, 6-14°C with just a slim chance of a shower — dry enough to get outside work done before frostier mornings roll in over the weekend. Oil's back above US$85 a barrel overnight as the Iran standoff escalates, so if fuel felt a touch cheaper this week, don't bank on that lasting — worth another look at your surcharge line before it bites again.",
+    "{{CLOSING_QUOTE}}": "\"The men who have succeeded are men who have chosen one line and stuck to it.\"",
+    "{{CLOSING_ATTR}}": "— Andrew Carnegie",
+    "{{CLOSING_MESSAGE}}": "It's a cool, showery start to Friday in Carrum Downs, 8-15°C with a shower or two easing later — a decent window to knock over outdoor jobs before the fog and frost roll back in over the weekend. Fuel excise relief just got halved and Brent's still sitting near US$85, so if you haven't updated your surcharge line since June, today's the day — and if Gemini 3.5 Pro actually drops as promised, it's worth five minutes over your coffee to see what's changed.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
