@@ -895,3 +895,14 @@ JOKE: A stonemason's apprentice asked why he always finished every quote exactly
 INSIGHT: Canberra's Building an AI Office — Get Your Business Ahead of the Rules, Not Behind Them
 QUOTE: "Opportunities don't happen. You create them." — Chris Grosser
 ---
+
+DATE: Sunday, 19 July 2026
+SCIENCE: India's Skyroot Aerospace reaches orbit on first Vikram-1 launch, becoming third nation with private orbital launch capability — published 18 July 2026
+ROBOTICS: Samsung consolidates robotics teams into new 'HX' division to chase factory-floor humanoid robots — published 17 July 2026
+FACT: The word 'boycott' comes from Captain Charles Boycott, a land agent in 1880s Ireland who was so thoroughly shunned by local tenants and tradespeople that his name became the word for the tactic itself.
+FACT: Bamboo is the fastest-growing woody plant on Earth — some species can shoot up 91 centimetres in a single day, or roughly 4cm an hour.
+FACT: Pac-Man's four ghosts each run a different targeting algorithm rather than just chasing the player — Blinky hunts directly, Pinky aims ahead, Inky flanks using Blinky's position, and Clyde wanders off when close — one of the earliest well-known examples of distinct AI 'personalities' in software.
+JOKE: A welder's apprentice asked why his boss never rushed a joint, even with a client breathing down his neck about the deadline.
+INSIGHT: Your Compressor Won't Text You Before It Fails — AI-Powered Predictive Maintenance Is Starting To
+QUOTE: "The way to get started is to quit talking and begin doing." — Walt Disney
+---
