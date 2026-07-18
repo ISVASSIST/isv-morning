@@ -4,91 +4,91 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Saturday, 18 July 2026",
+    "{{DATE}}": "Sunday, 19 July 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Sat 18 Jul (BOM)
-    "{{WEATHER_1}}": "SAT 18 · 🌫️🌦️ Morning fog, shower developing · 8–14°C",
-    "{{WEATHER_2}}": "SUN 19 · 🌫️☀️ Morning fog, then sunny · 6–14°C",
+    # Weather — Carrum Downs VIC, 5-day from Sun 19 Jul (BOM)
+    "{{WEATHER_1}}": "SUN 19 · 🌫️❄️☀️ Morning frost & fog (SE suburbs), then sunny · 4–17°C",
+    "{{WEATHER_2}}": "MON 20 · 🌫️☀️ Morning fog patches, mostly sunny · 5–14°C",
     "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "MON 20 · ❄️🌫️☀️ Frost & fog patches, mostly sunny · 5–14°C",
-    "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "TUE 21 · 🌦️ Shower or two, cooler · 6–12°C",
-    "{{WEATHER_5}}": "WED 22 · 🌦️ Partly cloudy, shower chance · 7–16°C",
-    "{{WEATHER_ALERT}}": "⚠ MORNING FOG & SHOWERS TODAY · FROST PATCHES MONDAY · NO SEVERE WARNINGS ACTIVE",
+    "{{WEATHER_3}}": "TUE 21 · 🌦️ Shower or two, cooler · 6–12°C",
+    "{{WEATHER_3_CLASS}}": "rain",
+    "{{WEATHER_4}}": "WED 22 · 🌦️ Partly cloudy, shower chance · 7–16°C",
+    "{{WEATHER_5}}": "THU 23 · ⛅ Partly cloudy, mild · 7–15°C",
+    "{{WEATHER_ALERT}}": "⚠ FROST & FOG PATCHES THIS MORNING (SE SUBURBS) · SHOWERS RETURN TUESDAY · NO SEVERE WARNINGS ACTIVE",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇶🇦🇰🇼 GULF STATES · IRAN STRIKES SIXTH NIGHT · QATAR & KUWAIT INTERCEPT FRESH BARRAGE",
-    "{{WORLD_1_HEADLINE}}": "Qatar and Kuwait Intercept Fresh Iranian Strikes as US Bombs Iran for a Sixth Consecutive Night",
-    "{{WORLD_1_SUMMARY}}": "US Central Command launched a sixth straight night of airstrikes on Iranian targets around Bandar Abbas, while Kuwait's air defences intercepted 32 drones since dawn and Qatar shot down further incoming fire over Doha, wounding a child with falling shrapnel. Shipping through the Strait of Hormuz has all but stopped, with just three vessels transiting in the past 24 hours compared with roughly 110 a day before the conflict began, and there's still no sign either side is ready to de-escalate.",
-    "{{WORLD_1_URL}}": "https://www.cnn.com/2026/07/16/world/live-news/iran-war-trump",
+    "{{WORLD_1_FLAG}}": "🇰🇼🇯🇴 GULF & JORDAN · IRAN WIDENS TARGETS · DESALINATION PLANTS AND US ALLIES HIT",
+    "{{WORLD_1_HEADLINE}}": "Iran Widens Its Targets Beyond Military Sites, Striking Kuwaiti Infrastructure as Jordan Intercepts a Record Missile Barrage",
+    "{{WORLD_1_SUMMARY}}": "Washington says it struck bridges and military logistics infrastructure in southern Iran overnight, while Tehran retaliated by hitting a power and desalination plant in Kuwait for the second time this week, a US radar station in Oman, and military facilities in Bahrain, Jordan and — for the first time — Syria, a claim the US disputes. Jordan's military intercepted ten Iranian missiles in a single night, its highest count of the conflict so far, and Brent crude jumped to a one-month high above $88 a barrel on the news, with Iranian officials saying recent US strikes have now killed dozens and wounded hundreds more.",
+    "{{WORLD_1_URL}}": "https://www.foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-18-2026",
 
-    "{{WORLD_2_FLAG}}": "🇨🇳🤖 SHANGHAI · XI LAUNCHES 29-NATION AI BLOC · RIVAL TO US-LED AI RULES",
-    "{{WORLD_2_HEADLINE}}": "Xi Jinping Launches 29-Nation AI Alliance, Positions China as the World's Affordable AI Partner",
-    "{{WORLD_2_SUMMARY}}": "Speaking at Shanghai's World AI Conference, Xi Jinping unveiled the World AI Cooperation Organisation, a new 29-country bloc including Indonesia, Brazil, South Africa and Russia, and pledged 5,000 free AI training slots for developing nations over the next five years. He argued AI development shouldn't be a 'solo performance' by one country — a clear jab at Washington — as the US and China now openly compete over whose AI rules and hardware the rest of the world ends up standing on.",
-    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/7/17/chinas-xi-jinping-launches-new-ai-alliance-what-is-it",
+    "{{WORLD_2_FLAG}}": "⚽🌎 NEW JERSEY · WORLD CUP FINAL · SPAIN AND ARGENTINA CLASH FOR THE TROPHY",
+    "{{WORLD_2_HEADLINE}}": "Spain and Argentina Meet in Tonight's World Cup Final, Capping the First 48-Team Tournament Hosted Across Three Nations",
+    "{{WORLD_2_SUMMARY}}": "Spain and Argentina face off at MetLife Stadium in New Jersey (3pm ET Sunday, 5am Monday AEST), a day after France beat England in the third-place playoff in Miami. It's the first World Cup with 48 teams and the first ever hosted jointly by three countries — the USA, Mexico and Canada — and Lionel Messi has already become the first player to reach 10 career assists in World Cup history during this tournament, giving the final an extra layer of send-off theatre regardless of who lifts the trophy.",
+    "{{WORLD_2_URL}}": "https://www.espn.com/soccer/story/_/id/49382572/spain-vs-argentina-fifa-world-cup-2026-final-tv-channel-how-watch-kick-live-stream-injury-predicted-line-ups",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ AT THE BOWSER · ACCC WEEKLY REPORT · EXCISE CUT HALVED, HORMUZ CRISIS ADDS PRESSURE",
-    "{{ECON_1_HEADLINE}}": "ACCC's Latest Fuel Report Confirms Prices Still Climbing as Excise Relief Halves and Hormuz Crisis Drags On",
-    "{{ECON_1_SUMMARY}}": "The ACCC's 19th weekly fuel report, released July 17, shows capital-city unleaded averaging 170.1 cents a litre and diesel 191.9 cents, both up sharply since the temporary fuel excise cut dropped from 32 cents to 16 cents a litre on July 1. Darwin is now the most expensive capital at 215 cents a litre, and with the relief scheme due to expire August 2 and the Strait of Hormuz still effectively closed to shipping, there's no clear signal the bowser eases off before spring.",
-    "{{ECON_1_URL}}": "https://www.ibtimes.com.au/rising-petrol-prices-australia-causes-consumer-tips-1872184",
+    "{{ECON_1_FLAG}}": "⛽ OIL MARKETS · BRENT HITS ONE-MONTH HIGH · KUWAIT PLANT STRIKE SPOOKS TRADERS",
+    "{{ECON_1_HEADLINE}}": "Brent Crude Jumps to a One-Month High Above $88 a Barrel After Iran Strikes a Second Kuwaiti Desalination Plant",
+    "{{ECON_1_SUMMARY}}": "Brent crude futures surged about 4.6% to close at $88.10 a barrel on Friday, its highest level in a month, after Kuwait reported Iran had struck a power and water desalination plant for the second time this week, with retaliatory strikes also reported in Bahrain, Jordan, Oman, Qatar and Syria. With roughly 20% of the world's oil normally moving through the Strait of Hormuz and that flow still disrupted, expect the bowser to keep tracking this conflict rather than settling down, whatever the fuel excise relief scheme is doing in the background.",
+    "{{ECON_1_URL}}": "https://www.cnbc.com/2026/07/17/oil-price-today-brent-wti.html",
 
-    "{{ECON_2_FLAG}}": "📊 BUSINESS MOOD · NAB & WESTPAC SURVEYS · CONFIDENCE CLAWS BACK AS FEARS EASE",
-    "{{ECON_2_HEADLINE}}": "Business Confidence and Consumer Sentiment Both Lift as Worst-Case Middle East Fears Fail to Materialise",
-    "{{ECON_2_SUMMARY}}": "Westpac's July 17 briefing shows consumer sentiment up 4.1% for the month while NAB's business confidence index jumped nine points, both a relief rally after fears of a full-blown oil shock and unemployment spike didn't play out. The catch: consumers are still deeply pessimistic by historical standards and remain sensitive to the Hormuz conflict, which flared again mid-survey — a reminder that any bounce in trade inquiries right now is fragile, not a trend.",
+    "{{ECON_2_FLAG}}": "🏗️ SMALL BUSINESS · NEW FINANCIAL YEAR BITES · INSOLVENCY RISK RISING IN CONSTRUCTION",
+    "{{ECON_2_HEADLINE}}": "New Financial Year Compliance Costs Are Stacking Up, With Insolvency Risk Rising Fastest in Construction and Hospitality",
+    "{{ECON_2_SUMMARY}}": "The raft of changes that landed on July 1 — higher ASIC registration fees, Payday Super's new cash-flow timing, and a 4.75% minimum wage rise — has added compliance and cash-flow pressure right as analysts flag construction and hospitality as the industries most exposed to a coming uptick in insolvencies through the rest of this financial year. None of it is a crisis on its own, but stacked together it's exactly the kind of slow squeeze that catches thin-margin trades businesses off guard if the books aren't watched closely.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI · GEMINI 3.5 PRO GOES LIVE TODAY · GOOGLE'S BIGGEST REBUILD YET",
-    "{{TECH_1_HEADLINE}}": "Google's Gemini 3.5 Pro Launches Today After a Ground-Up Rebuild, Reportedly Packing a 2-Million-Token Context Window",
-    "{{TECH_1_SUMMARY}}": "Google DeepMind's next flagship model is rolling out today after engineers scrapped the original build entirely and restarted pretraining following structural failures in recursive tool-calling. Leaks point to a 2-million-token context window and a new 'Deep Think' reasoning tier — landing the same week Shanghai's AI conference opens with Xi Jinping in person, making today arguably the single biggest AI news day of the year so far.",
-    "{{TECH_1_URL}}": "https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm",
+    "{{TECH_1_FLAG}}": "🔐 AI SECURITY · MICROSOFT'S PROJECT PERCEPTION · CHEAPER RIVAL TO ANTHROPIC'S MYTHOS",
+    "{{TECH_1_HEADLINE}}": "Microsoft Prepares to Launch Project Perception, an AI Tool That Hunts and Fixes Software Vulnerabilities on the Cheap",
+    "{{TECH_1_SUMMARY}}": "Microsoft is set to release Project Perception this month, a security tool that routes each vulnerability-hunting task to whichever AI model — its own, OpenAI's or Anthropic's — handles it most cheaply, rather than running everything through the most expensive option. It's aimed at big enterprise security teams for now, but it's a preview of where AI-assisted cybersecurity tools are heading: cheaper, always-on vulnerability scanning that smaller software vendors, including whatever quoting or scheduling app your business runs on, will likely inherit within a year or two.",
+    "{{TECH_1_URL}}": "https://www.techrepublic.com/article/news-microsoft-project-perception-ai-security-tool/",
 
-    "{{TECH_2_FLAG}}": "📈 AI ADOPTION · NAB BUSINESS PULSE · 42% OF AUSSIE SMES NOW USING AI",
-    "{{TECH_2_HEADLINE}}": "42% of Australian Small Businesses Are Now Using AI Tools, NAB Data Shows — But Trust Is Still the Biggest Barrier",
-    "{{TECH_2_SUMMARY}}": "NAB's latest Business Pulse data shows 42% of Australian SMEs are now using AI tools day-to-day, with another 14% planning to adopt, led by property services, finance and business services. The bigger story is who's missing out: about 65% of non-adopters say it's a lack of trust or a preference to keep humans in control, and one in five say they simply don't know where to start — which is exactly the gap a single well-chosen tool, tried on one job this month, can start to close.",
+    "{{TECH_2_FLAG}}": "🤖 AI PRICING · CLAUDE'S FABLE 5 SETTLES · SUBSCRIPTION LIMBO ENDS",
+    "{{TECH_2_HEADLINE}}": "Anthropic Ends Months of Back-and-Forth, Locking Its Most Powerful Claude Model Into Paid Plans From Monday",
+    "{{TECH_2_SUMMARY}}": "After extending free access to its flagship Fable 5 model three times since June, Anthropic has settled on a permanent structure from July 20: Max and Team Premium subscribers keep it bundled in at half their usual usage limits, while Pro and Team Standard users move to pay-as-you-go credits plus a one-off $100 top-up. If your business runs job quotes, emails or admin through any AI chatbot, it's a reminder that the free-and-unlimited phase of this technology is ending — worth checking which plan you're actually on before the next bill lands.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🇨🇳🦾 FACTORY FLOOR · CHINA'S HUMANOID PUSH · THOUSANDS DEPLOYED TO LOGISTICS & BATTERY PLANTS",
-    "{{ROBOT_1_HEADLINE}}": "China Sends Thousands of Humanoid Robots Into Factories and Logistics Hubs to Learn on the Job",
-    "{{ROBOT_1_SUMMARY}}": "Chinese robotics startups are deploying humanoids into real workplaces faster than anywhere else, with Robotera machines working a dozen logistics hubs and Galbot robots doing heavy lifting at a battery plant for CATL, backed by a Beijing push to get 10,000 units into service by year's end. It's a shift from demo-stage 'look what it can do' videos to actual repetitive shift work — with China explicitly using the real-world data to train the robots' underlying AI faster than competitors can.",
-    "{{ROBOT_1_URL}}": "https://www.insurancejournal.com/news/international/2026/07/16/877906.htm",
+    "{{ROBOT_1_FLAG}}": "🇰🇷🤖 SEOUL · SAMSUNG'S HUMANOID PUSH · NEW 'HX' DIVISION TAKES SHAPE",
+    "{{ROBOT_1_HEADLINE}}": "Samsung Consolidates Its Robotics Teams Into a New 'HX' Division to Chase Factory-Floor Humanoid Robots",
+    "{{ROBOT_1_SUMMARY}}": "Samsung is merging robot research and commercialisation teams currently scattered across its Future Robotics Office, Samsung Research and Global Technology Research into a single new organisation, tentatively called 'HX' for Humanoid Experience, with a mandate to get robotic hands to factory-ready standard and eventually spin off into its own business division. It's the latest sign that the humanoid robot race isn't just Tesla and the Chinese makers — Korea's biggest manufacturer is now betting its own production lines will run on them too.",
+    "{{ROBOT_1_URL}}": "https://www.koreajoongangdaily.com/business/samsung-revamps-robotics-operations-for-humanoid-pushnbspfloats-new-hx-division/12778404",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australia Summons Laos Ambassador Over 'Bitterly Disappointing' Charges in Backpacker Methanol Deaths",
-    "{{AUS_1_SUMMARY}}": "Canberra summoned Laos' ambassador on Friday, saying it was 'deeply frustrated and bitterly disappointed' that Lao authorities are pursuing only minor charges — carrying up to a year's jail and a $1,600 fine — over the 2024 methanol poisoning deaths of Melbourne teenagers Holly Bowles and Bianca Jones. Foreign Minister Penny Wong says she'll press the issue directly with her Lao counterpart at next week's ASEAN meeting in Manila, after the victims' families said they were 'furious' at the proposed charges.",
-    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/podcast-episode/laos-ambassador-summoned-amid-methanol-victims-families-devastation-midday-news-bulletin-17-july-2026/xoid0c5db",
+    "{{AUS_1_HEADLINE}}": "Home Affairs Minister Admits There's 'No Easy Answer' to Australia's Decades-Long Parent Visa Backlog",
+    "{{AUS_1_SUMMARY}}": "Home Affairs Minister Tony Burke conceded there are no quick fixes to the parent visa backlog, which has swollen to around 157,000 applications with only 8,500 places allocated each year — leaving contributory visa applicants facing waits of roughly 15 years and non-contributory applicants up to 33 years. A 2023 expert panel recommended switching to a ballot system like New Zealand's and Canada's; Burke says a range of options are still on the table, but nothing is imminent.",
+    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/podcast-episode/minister-says-no-easy-solutions-to-parent-visa-backlog-midday-news-bulletin-18-july-2026/g3xrwi5xc",
 
-    "{{AUS_2_HEADLINE}}": "Canberra to Set Up a National AI Office and World-First Data Centre Standards",
-    "{{AUS_2_SUMMARY}}": "The federal government is establishing an Office of AI within Prime Minister and Cabinet and drafting Australian Standards for AI data centres, forcing big operators to fund their own power connections and hit water-efficiency targets, with legislation planned for 2027. It's aimed at the hyperscale end of the market, but it's a signal that the regulatory ground under every AI tool your business uses is about to start shifting.",
+    "{{AUS_2_HEADLINE}}": "Albanese Declares 'No Place' for Anti-Muslim Hatred as Government Acts on Islamophobia Under-Reporting",
+    "{{AUS_2_SUMMARY}}": "Prime Minister Anthony Albanese said there is no place in Australia for anti-Muslim hatred or racial intolerance, framing new measures as practical steps to strengthen social cohesion, while Home Affairs Minister Tony Burke said Islamophobia remains significantly under-reported nationally. The comments come as the Middle East conflict continues to spill into domestic community tensions here, with the government keen to be seen getting ahead of it rather than reacting to an incident.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victorian Liberals Formally Dump Moira Deeming as a Candidate Ahead of November's Election",
-    "{{VIC_1_SUMMARY}}": "The Victorian Liberal Party's state executive has voted to disendorse first-term MP Moira Deeming from her Western Metropolitan Legislative Council spot, following her allegation that colleague Matthew Guy 'headlocked' her at a community event — an account CCTV footage appeared to contradict. Deeming withdrew a Supreme Court challenge to the move earlier this week; the party will now restart candidate selection for the seat.",
+    "{{VIC_1_HEADLINE}}": "Run Melbourne Shuts CBD Roads From 3:30am, While Essendon and North Melbourne Host AFL Round 19 Today",
+    "{{VIC_1_SUMMARY}}": "Run Melbourne brings road closures and parking restrictions across the CBD from 3:30am to 1:30pm today, with extra train and tram services laid on and bus replacements running on the Hurstbridge line for scheduled works between Heidelberg and Greensborough — worth building into any Sunday morning run through the city. Footy-wise, Essendon hosts GWS at Marvel Stadium this afternoon and North Melbourne faces Melbourne, rounding out AFL Round 19.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔬 GUT HEALTH · CAMBRIDGE STUDY · 39 SWEETENERS TESTED, MOST CHANGE YOUR GUT BACTERIA",
-    "{{SCI_1_HEADLINE}}": "Cambridge Scientists Test 39 Sweeteners and Find Most Alter Gut Bacteria Growth in the Lab",
-    "{{SCI_1_SUMMARY}}": "University of Cambridge researchers grew 25 species of gut bacteria and exposed each to 39 common sweeteners — natural and artificial — finding around three-quarters changed how at least one species grew, with some slowing beneficial strains. They also found more than 100 cases where a sweetener behaved differently when combined with common medications or caffeine, with one combination — isosteviol and the antidepressant duloxetine — proving especially disruptive to gut diversity.",
+    "{{SCI_1_FLAG}}": "🚀 SPACE · INDIA JOINS THE CLUB · FIRST PRIVATE ORBITAL LAUNCH STICKS THE LANDING",
+    "{{SCI_1_HEADLINE}}": "India's Skyroot Aerospace Reaches Orbit on Its First Try, Becoming the World's Third Nation With a Private Orbital Launch Capability",
+    "{{SCI_1_SUMMARY}}": "Skyroot Aerospace's Vikram-1 rocket lifted off from the Satish Dhawan Space Centre on Saturday, reaching its planned 450-kilometre orbit just 15 minutes after liftoff and deploying two cubesats exactly on schedule despite a late technical hold. Called Mission Aagaman ('arrival' in Sanskrit), it makes India just the third country after the US and China with a commercial launch provider capable of reaching orbit — a major vote of confidence for a homegrown space industry that barely existed a decade ago.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Canberra's Building an AI Office — Get Your Business Ahead of the Rules, Not Behind Them",
-    "{{INSIGHT_BODY}}": "This week's federal announcement of a national Office of AI and legislated data centre standards is aimed at the big end of town, but regulation has a habit of trickling down to every business using the tools it's built for. Right now there's no compliance burden on a trades operator using AI for quotes, scheduling or customer chat — but that's the easiest time to start doing it properly: know which tools you use, where the data goes, and who's actually reviewing what the AI produces before it reaches a client. Get that habit locked in now, while it's optional, and you'll barely notice when it stops being optional.",
+    "{{INSIGHT_TITLE}}": "Your Compressor Won't Text You Before It Fails — AI-Powered Predictive Maintenance Is Starting To",
+    "{{INSIGHT_BODY}}": "A blown compressor or a spray rig going down mid-job doesn't just cost the repair — it costs the day, and sometimes the client. A new generation of predictive maintenance apps now plug into cheap vibration and temperature sensors on compressors, generators and spray equipment, watching for the small changes that come before a breakdown rather than waiting for the failure itself. None of this requires an enterprise budget anymore — a $50-a-month sensor and app combination can flag a bearing on its way out weeks before it seizes, which is usually the difference between a scheduled half-day and a lost week.",
 
     # Fun Facts
-    "{{FACT_1}}": "The QWERTY keyboard layout was designed in the 1870s partly to slow typists down — spacing out commonly paired letters so the mechanical arms on early typewriters wouldn't jam and lock up mid-sentence.",
+    "{{FACT_1}}": "The word 'boycott' comes from Captain Charles Boycott, a land agent in 1880s Ireland who was so thoroughly shunned by local tenants and tradespeople — nobody would harvest his crops, deliver his mail or serve him in shops — that his name became the word for the tactic itself.",
 
-    "{{FACT_2}}": "The Snowy Mountains Scheme, completed in 1974 after 25 years of work by labourers from more than 30 countries, remains the largest engineering project ever undertaken in Australia — 16 dams, 7 power stations and 225 kilometres of tunnels dug largely by hand and gelignite.",
+    "{{FACT_2}}": "Bamboo is the fastest-growing woody plant on Earth — some species can shoot up 91 centimetres in a single day, or roughly 4cm an hour, fast enough that you can genuinely watch it grow if you sit still long enough.",
 
-    "{{FACT_3}}": "The first commercial microwave oven, Raytheon's 1947 Radarange, stood 1.8 metres tall, weighed 340 kilograms and cost about $5,000 — roughly $70,000 today — which is why it took another 20 years to shrink into something that would fit on a kitchen bench.",
+    "{{FACT_3}}": "Pac-Man's four ghosts each run a different targeting algorithm rather than just chasing the player — Blinky hunts directly, Pinky aims ahead of you, Inky uses Blinky's position to flank, and Clyde wanders off when he gets close — making the 1980 arcade game one of the earliest well-known examples of distinct AI 'personalities' in software.",
 
     # Joke
-    "{{JOKE_SETUP}}": "A stonemason's apprentice asked why he always finished every quote exactly on time, never early, never late.",
-    "{{JOKE_PUNCHLINE}}": "He said, 'Mate, I've been laying stone long enough to know — rush a wall and it falls down, rush a client and they never call back.'",
+    "{{JOKE_SETUP}}": "A welder's apprentice asked why his boss never rushed a joint, even with a client breathing down his neck about the deadline.",
+    "{{JOKE_PUNCHLINE}}": "He said, 'Mate, a bad weld looks perfectly fine for about a week — after that, it's not my signature holding it together anymore, it's my licence.'",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Opportunities don't happen. You create them.\"",
-    "{{CLOSING_ATTR}}": "— Chris Grosser",
-    "{{CLOSING_MESSAGE}}": "It's a foggy, showery start to Saturday in Carrum Downs — 8–14°C, with the fog likely to lift by mid-morning and frost rolling back in for Monday. Business confidence just clawed back nine points and consumer sentiment's up too, but fuel's still climbing and the Hormuz crisis shows no sign of easing, so treat the bounce as fragile rather than a trend — and if Gemini 3.5 Pro lands as promised today, it's worth a look over the weekend coffee.",
+    "{{CLOSING_QUOTE}}": "\"The way to get started is to quit talking and begin doing.\"",
+    "{{CLOSING_ATTR}}": "— Walt Disney",
+    "{{CLOSING_MESSAGE}}": "It's a frosty, foggy start to Sunday in Carrum Downs before the sun gets through — 4–17°C, with showers not due back until Tuesday. Run Melbourne has the CBD half shut this morning if you're heading that way, footy's on at Marvel Stadium this afternoon, and the World Cup final kicks off in the small hours of Monday AEST — a fitting note to end the tournament on before Brent crude and the Hormuz situation are back on the desk tomorrow.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
