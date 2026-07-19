@@ -906,3 +906,14 @@ JOKE: A welder's apprentice asked why his boss never rushed a joint, even with a
 INSIGHT: Your Compressor Won't Text You Before It Fails — AI-Powered Predictive Maintenance Is Starting To
 QUOTE: "The way to get started is to quit talking and begin doing." — Walt Disney
 ---
+
+DATE: Monday, 20 July 2026
+SCIENCE: Nickel isotope analysis identifies dinosaur-killing Chicxulub asteroid as rare CO chondrite from outer solar system — UBC/Paris/Brussels/Vienna, published 18 July 2026
+ROBOTICS: Figure AI's Figure 02 humanoid completes 11-month BMW Spartanburg pilot, 90,000 sheet-metal parts loaded, 1.2 million steps logged — published 18 July 2026
+FACT: The Great Emu War of 1932 saw the Australian Army deploy machine guns against emus in Western Australia to protect wheat crops from the birds — the emus won, and the failed operation is still taught as a textbook case of underestimating the enemy.
+FACT: The 'over or under' toilet paper debate has an actual paper trail — Seth Wheeler's original 1891 patent diagram clearly shows the roll hanging over the front, which hasn't stopped the argument running for 135 years since.
+FACT: The word 'algorithm' comes from the 9th-century Persian mathematician Muhammad ibn Musa al-Khwarizmi, whose Latinised name gave us 'algorithm' directly and whose book title, Kitab al-Jabr, gave us 'algebra' as a bonus.
+JOKE: Why did the joiner refuse to trust a client's tape measure on a custom cabinet job?
+INSIGHT: The ATO's Debt Recovery Just Got Personal — How AI Can Keep Your Books Off the $35.9 Billion Naughty List
+QUOTE: "Little by little, one travels far." — J.R.R. Tolkien
+---
