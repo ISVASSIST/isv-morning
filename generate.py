@@ -4,91 +4,91 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Sunday, 19 July 2026",
+    "{{DATE}}": "Monday, 20 July 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Sun 19 Jul (BOM)
-    "{{WEATHER_1}}": "SUN 19 · 🌫️❄️☀️ Morning frost & fog (SE suburbs), then sunny · 4–17°C",
-    "{{WEATHER_2}}": "MON 20 · 🌫️☀️ Morning fog patches, mostly sunny · 5–14°C",
+    # Weather — Carrum Downs VIC, 5-day from Mon 20 Jul (BOM)
+    "{{WEATHER_1}}": "MON 20 · ☀️❄️ Morning frost near the hills, then mostly sunny · 5–16°C",
+    "{{WEATHER_2}}": "TUE 21 · 🌫️⛅ Morning fog near the hills, partly cloudy · 6–15°C",
     "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "TUE 21 · 🌦️ Shower or two, cooler · 6–12°C",
+    "{{WEATHER_3}}": "WED 22 · 🌦️ Showers likely, possible small hail (SE suburbs) · 7–15°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "WED 22 · 🌦️ Partly cloudy, shower chance · 7–16°C",
-    "{{WEATHER_5}}": "THU 23 · ⛅ Partly cloudy, mild · 7–15°C",
-    "{{WEATHER_ALERT}}": "⚠ FROST & FOG PATCHES THIS MORNING (SE SUBURBS) · SHOWERS RETURN TUESDAY · NO SEVERE WARNINGS ACTIVE",
+    "{{WEATHER_4}}": "THU 23 · 🌦️ Showers likely, hail chance (SE suburbs) · 6–14°C",
+    "{{WEATHER_5}}": "FRI 24 · ☁️ Cloudy, medium chance of showers · 6–14°C",
+    "{{WEATHER_ALERT}}": "⚠ MORNING FROST TODAY, FOG TUESDAY · SHOWERS & POSSIBLE HAIL WED–FRI · NO SEVERE WARNINGS ACTIVE",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇰🇼🇯🇴 GULF & JORDAN · IRAN WIDENS TARGETS · DESALINATION PLANTS AND US ALLIES HIT",
-    "{{WORLD_1_HEADLINE}}": "Iran Widens Its Targets Beyond Military Sites, Striking Kuwaiti Infrastructure as Jordan Intercepts a Record Missile Barrage",
-    "{{WORLD_1_SUMMARY}}": "Washington says it struck bridges and military logistics infrastructure in southern Iran overnight, while Tehran retaliated by hitting a power and desalination plant in Kuwait for the second time this week, a US radar station in Oman, and military facilities in Bahrain, Jordan and — for the first time — Syria, a claim the US disputes. Jordan's military intercepted ten Iranian missiles in a single night, its highest count of the conflict so far, and Brent crude jumped to a one-month high above $88 a barrel on the news, with Iranian officials saying recent US strikes have now killed dozens and wounded hundreds more.",
-    "{{WORLD_1_URL}}": "https://www.foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-18-2026",
+    "{{WORLD_1_FLAG}}": "🇯🇴🇮🇶 IRAN WAR · EIGHTH STRAIGHT NIGHT · NUCLEAR PLANT AND KUWAIT HIT AGAIN",
+    "{{WORLD_1_HEADLINE}}": "US Strikes Iran for an Eighth Consecutive Night as Washington Mourns Troops Killed in Jordan and Tehran Hits an Under-Construction Nuclear Plant",
+    "{{WORLD_1_SUMMARY}}": "US forces carried out a fresh wave of strikes on Iranian military infrastructure overnight, avenging two soldiers killed and one still missing after Friday's Iranian attack on a base in Jordan, with a further service member killed in Iraq on Saturday. Iran responded by striking an under-construction nuclear power plant and hitting Kuwait's power and desalination network for the second time in two days, while its foreign ministry declared the ceasefire memorandum 'suspended' — no large tanker has broadcast a crossing of the Strait of Hormuz since 15 July, a chokepoint that normally carries a fifth of the world's oil.",
+    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/liveblog/2026/7/19/iran-war-live-us-launches-new-strikes-trump-mourns-killed-soldiers",
 
-    "{{WORLD_2_FLAG}}": "⚽🌎 NEW JERSEY · WORLD CUP FINAL · SPAIN AND ARGENTINA CLASH FOR THE TROPHY",
-    "{{WORLD_2_HEADLINE}}": "Spain and Argentina Meet in Tonight's World Cup Final, Capping the First 48-Team Tournament Hosted Across Three Nations",
-    "{{WORLD_2_SUMMARY}}": "Spain and Argentina face off at MetLife Stadium in New Jersey (3pm ET Sunday, 5am Monday AEST), a day after France beat England in the third-place playoff in Miami. It's the first World Cup with 48 teams and the first ever hosted jointly by three countries — the USA, Mexico and Canada — and Lionel Messi has already become the first player to reach 10 career assists in World Cup history during this tournament, giving the final an extra layer of send-off theatre regardless of who lifts the trophy.",
-    "{{WORLD_2_URL}}": "https://www.espn.com/soccer/story/_/id/49382572/spain-vs-argentina-fifa-world-cup-2026-final-tv-channel-how-watch-kick-live-stream-injury-predicted-line-ups",
+    "{{WORLD_2_FLAG}}": "🇺🇸🇬🇧 MIAMI · TATE BROTHERS ARRESTED · NEW UK RAPE AND TRAFFICKING CHARGES",
+    "{{WORLD_2_HEADLINE}}": "Andrew and Tristan Tate Arrested in Miami as the UK Crown Prosecution Service Files a Fresh Wave of Rape and Trafficking Charges",
+    "{{WORLD_2_SUMMARY}}": "US Marshals took the influencer brothers into custody in Miami on Saturday, acting on a UK extradition request that now includes seven additional counts of rape and three of arranging or facilitating sex trafficking against Andrew, and two counts of rape and a trafficking count against Tristan, covering alleged offences dating back to 2010. Both men, who built vast followings selling business and 'masculinity' content to young men, are awaiting an extradition hearing while denying all charges through their lawyers.",
+    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/7/19/tate-brothers-arrested-in-miami-as-uk-adds-rape-trafficking-charges",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ OIL MARKETS · BRENT HITS ONE-MONTH HIGH · KUWAIT PLANT STRIKE SPOOKS TRADERS",
-    "{{ECON_1_HEADLINE}}": "Brent Crude Jumps to a One-Month High Above $88 a Barrel After Iran Strikes a Second Kuwaiti Desalination Plant",
-    "{{ECON_1_SUMMARY}}": "Brent crude futures surged about 4.6% to close at $88.10 a barrel on Friday, its highest level in a month, after Kuwait reported Iran had struck a power and water desalination plant for the second time this week, with retaliatory strikes also reported in Bahrain, Jordan, Oman, Qatar and Syria. With roughly 20% of the world's oil normally moving through the Strait of Hormuz and that flow still disrupted, expect the bowser to keep tracking this conflict rather than settling down, whatever the fuel excise relief scheme is doing in the background.",
-    "{{ECON_1_URL}}": "https://www.cnbc.com/2026/07/17/oil-price-today-brent-wti.html",
+    "{{ECON_1_FLAG}}": "⛽ FUEL SUPPLY · 174 STATIONS DRY NATIONWIDE · INDEPENDENTS HIT HARDEST",
+    "{{ECON_1_HEADLINE}}": "174 Australian Petrol Stations Are Reporting Outages as Hormuz Disruption and the Excise Restoration Squeeze Bowsers at Once",
+    "{{ECON_1_SUMMARY}}": "Live tracking shows 174 service stations around the country — 237 individual fuel-type outages — currently out of at least one fuel type, with independent operators making up 63% of affected sites versus 37% for the major chains, and NSW and SA the worst-hit states. It's less a national shortage than a logistics squeeze — tanker delivery backlogs and import-terminal disruption layered on top of the 16c/L excise restoration that landed 1 July — but for a business running utes and compressors on diesel, it's another reason to keep the tank topped up rather than running to empty.",
+    "{{ECON_1_URL}}": "https://petrolpulse.com.au/fuel-shortage",
 
-    "{{ECON_2_FLAG}}": "🏗️ SMALL BUSINESS · NEW FINANCIAL YEAR BITES · INSOLVENCY RISK RISING IN CONSTRUCTION",
-    "{{ECON_2_HEADLINE}}": "New Financial Year Compliance Costs Are Stacking Up, With Insolvency Risk Rising Fastest in Construction and Hospitality",
-    "{{ECON_2_SUMMARY}}": "The raft of changes that landed on July 1 — higher ASIC registration fees, Payday Super's new cash-flow timing, and a 4.75% minimum wage rise — has added compliance and cash-flow pressure right as analysts flag construction and hospitality as the industries most exposed to a coming uptick in insolvencies through the rest of this financial year. None of it is a crisis on its own, but stacked together it's exactly the kind of slow squeeze that catches thin-margin trades businesses off guard if the books aren't watched closely.",
+    "{{ECON_2_FLAG}}": "🧾 ATO CRACKDOWN · $35.9B SMALL BUSINESS DEBT · GARNISHEES AND CREDIT REPORTING RAMP UP",
+    "{{ECON_2_HEADLINE}}": "The Australian National Audit Office Finds Small Business Owes $35.9 Billion in Unpaid Tax, and the ATO Is Coming for It Harder",
+    "{{ECON_2_SUMMARY}}": "A new ANAO report shows collectable small business tax debt has ballooned 118% since 2018-19 to $35.9 billion — two-thirds of everything owed to the ATO nationally — and the Tax Office is responding with more garnishee notices, Director Penalty Notices and disclosure of overdue debts to credit reporting agencies. None of this changes what you owe, but it does change how fast the ATO will come looking for it — worth a proactive call to your bookkeeper if a BAS or two has slipped behind.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🔐 AI SECURITY · MICROSOFT'S PROJECT PERCEPTION · CHEAPER RIVAL TO ANTHROPIC'S MYTHOS",
-    "{{TECH_1_HEADLINE}}": "Microsoft Prepares to Launch Project Perception, an AI Tool That Hunts and Fixes Software Vulnerabilities on the Cheap",
-    "{{TECH_1_SUMMARY}}": "Microsoft is set to release Project Perception this month, a security tool that routes each vulnerability-hunting task to whichever AI model — its own, OpenAI's or Anthropic's — handles it most cheaply, rather than running everything through the most expensive option. It's aimed at big enterprise security teams for now, but it's a preview of where AI-assisted cybersecurity tools are heading: cheaper, always-on vulnerability scanning that smaller software vendors, including whatever quoting or scheduling app your business runs on, will likely inherit within a year or two.",
-    "{{TECH_1_URL}}": "https://www.techrepublic.com/article/news-microsoft-project-perception-ai-security-tool/",
+    "{{TECH_1_FLAG}}": "🔍 GOOGLE · AI MODE GOES ACTIONABLE · SEARCH NOW BOOKS AND BUYS FOR YOU",
+    "{{TECH_1_HEADLINE}}": "Google Expands AI Mode in Search So It Can Take Actions Through Instacart, Canva and YouTube Music, Not Just Answer Questions",
+    "{{TECH_1_SUMMARY}}": "Google has widened its AI Mode search feature for US users so that, instead of just summarising an answer, it can now complete tasks directly through partner apps — building a shopping cart on Instacart or generating a design in Canva from inside the search results. It's a small US rollout for now, but it's the clearest sign yet that search is shifting from 'find the answer' to 'do the task' — worth watching for when a similar action-taking search shows up on whatever tools your own business quoting or scheduling runs through.",
+    "{{TECH_1_URL}}": "https://www.buildfastwithai.com/blogs/ai-news-today-july-18-2026",
 
-    "{{TECH_2_FLAG}}": "🤖 AI PRICING · CLAUDE'S FABLE 5 SETTLES · SUBSCRIPTION LIMBO ENDS",
-    "{{TECH_2_HEADLINE}}": "Anthropic Ends Months of Back-and-Forth, Locking Its Most Powerful Claude Model Into Paid Plans From Monday",
-    "{{TECH_2_SUMMARY}}": "After extending free access to its flagship Fable 5 model three times since June, Anthropic has settled on a permanent structure from July 20: Max and Team Premium subscribers keep it bundled in at half their usual usage limits, while Pro and Team Standard users move to pay-as-you-go credits plus a one-off $100 top-up. If your business runs job quotes, emails or admin through any AI chatbot, it's a reminder that the free-and-unlimited phase of this technology is ending — worth checking which plan you're actually on before the next bill lands.",
+    "{{TECH_2_FLAG}}": "💸 AI PRICING · THREE FLAGSHIPS IN 24 HOURS · TOKEN COSTS COLLAPSE",
+    "{{TECH_2_HEADLINE}}": "A New AI Price War Just Pushed Flagship Model Costs Down to a Sixth of What They Were, as Grok 4.5, GPT-5.6 and Meta's Muse Spark All Launched Within a Day of Each Other",
+    "{{TECH_2_SUMMARY}}": "SpaceX AI's Grok 4.5, OpenAI's cut-price GPT-5.6 'Luna' tier and Meta's Muse Spark 1.1 all shipped within 24 hours of one another this month, dragging output token costs down to roughly $4-6 per million compared with $25-50 for last year's flagships. For a small business dabbling in AI tools for quoting, emails or admin, the practical upshot is the same capability is quietly getting cheaper every few months — worth revisiting whatever you dismissed as 'too expensive' six months ago.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🇰🇷🤖 SEOUL · SAMSUNG'S HUMANOID PUSH · NEW 'HX' DIVISION TAKES SHAPE",
-    "{{ROBOT_1_HEADLINE}}": "Samsung Consolidates Its Robotics Teams Into a New 'HX' Division to Chase Factory-Floor Humanoid Robots",
-    "{{ROBOT_1_SUMMARY}}": "Samsung is merging robot research and commercialisation teams currently scattered across its Future Robotics Office, Samsung Research and Global Technology Research into a single new organisation, tentatively called 'HX' for Humanoid Experience, with a mandate to get robotic hands to factory-ready standard and eventually spin off into its own business division. It's the latest sign that the humanoid robot race isn't just Tesla and the Chinese makers — Korea's biggest manufacturer is now betting its own production lines will run on them too.",
-    "{{ROBOT_1_URL}}": "https://www.koreajoongangdaily.com/business/samsung-revamps-robotics-operations-for-humanoid-pushnbspfloats-new-hx-division/12778404",
+    "{{ROBOT_1_FLAG}}": "🇺🇸🏭 SPARTANBURG · FIGURE'S BMW PILOT WRAPS · 90,000 PARTS, 1.2 MILLION STEPS",
+    "{{ROBOT_1_HEADLINE}}": "Figure AI Wraps an Eleven-Month Humanoid Pilot at BMW's Spartanburg Plant, Having Loaded 90,000 Sheet-Metal Parts Without a Sick Day",
+    "{{ROBOT_1_SUMMARY}}": "Figure AI's Figure 02 robot has completed an eleven-month pilot on BMW's Spartanburg production line, logging more than 1,250 operating hours, loading over 90,000 sheet-metal parts and clocking roughly 1.2 million steps while supporting production of more than 30,000 BMW X3s — one of a genuinely small handful of humanoid deployments doing real, documented, repetitive factory work rather than a demo reel. BMW is now folding lessons from the pilot into an expanded rollout of the newer Figure 03 model.",
+    "{{ROBOT_1_URL}}": "https://www.technology.org/2026/07/18/humanoid-robots-in-2026-what-is-actually-deployed/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Home Affairs Minister Admits There's 'No Easy Answer' to Australia's Decades-Long Parent Visa Backlog",
-    "{{AUS_1_SUMMARY}}": "Home Affairs Minister Tony Burke conceded there are no quick fixes to the parent visa backlog, which has swollen to around 157,000 applications with only 8,500 places allocated each year — leaving contributory visa applicants facing waits of roughly 15 years and non-contributory applicants up to 33 years. A 2023 expert panel recommended switching to a ballot system like New Zealand's and Canada's; Burke says a range of options are still on the table, but nothing is imminent.",
-    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/podcast-episode/minister-says-no-easy-solutions-to-parent-visa-backlog-midday-news-bulletin-18-july-2026/g3xrwi5xc",
+    "{{AUS_1_HEADLINE}}": "Government Adopts 35 of 54 Recommendations From Its Islamophobia Envoy, Including $41.9 Million for Mosque and School Security",
+    "{{AUS_1_SUMMARY}}": "The Albanese government has formally responded to special envoy Aftab Malik's report on Islamophobia, adopting 35 of his 54 recommendations, including education campaigns to counter misinformation and $41.9 million to boost security at mosques, Islamic schools and other Muslim faith-based institutions. Malik's calls for an independent review of counter-terrorism laws and a commission of inquiry into Islamophobia and anti-Arab racism went unanswered, ten months after his report first landed on the government's desk.",
+    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/government-response-islamophobia-report-aftab-malik-2026/25cw8s7z9",
 
-    "{{AUS_2_HEADLINE}}": "Albanese Declares 'No Place' for Anti-Muslim Hatred as Government Acts on Islamophobia Under-Reporting",
-    "{{AUS_2_SUMMARY}}": "Prime Minister Anthony Albanese said there is no place in Australia for anti-Muslim hatred or racial intolerance, framing new measures as practical steps to strengthen social cohesion, while Home Affairs Minister Tony Burke said Islamophobia remains significantly under-reported nationally. The comments come as the Middle East conflict continues to spill into domestic community tensions here, with the government keen to be seen getting ahead of it rather than reacting to an incident.",
+    "{{AUS_2_HEADLINE}}": "ACMA Pursues Telstra for Tens of Millions in Fines Over Its Nationwide Network Outage",
+    "{{AUS_2_SUMMARY}}": "The Australian Communications and Media Authority told a Senate inquiry it is pursuing civil penalties that could run into the tens of millions of dollars against Telstra over last week's nationwide outage, which knocked out calls, texts and data for customers across the country. For any small business that leans on a single telco for eftpos, alarm monitoring or booking calls, it's a reminder that 'my carrier is down' is no longer a rare excuse — worth knowing your backup before it happens to you.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Run Melbourne Shuts CBD Roads From 3:30am, While Essendon and North Melbourne Host AFL Round 19 Today",
-    "{{VIC_1_SUMMARY}}": "Run Melbourne brings road closures and parking restrictions across the CBD from 3:30am to 1:30pm today, with extra train and tram services laid on and bus replacements running on the Hurstbridge line for scheduled works between Heidelberg and Greensborough — worth building into any Sunday morning run through the city. Footy-wise, Essendon hosts GWS at Marvel Stadium this afternoon and North Melbourne faces Melbourne, rounding out AFL Round 19.",
+    "{{VIC_1_HEADLINE}}": "Victoria Police Investigate Fatal Monbulk Collision as Search Continues for Missing Ghin Ghin Kayaker",
+    "{{VIC_1_SUMMARY}}": "A man has died following a head-on collision in Monbulk in Melbourne's outer east this morning, while police continue searching the Goulburn River near Ghin Ghin for a man who reportedly overturned in a kayak yesterday. A sober start to the week — worth taking it easy on wet or fog-affected roads this morning before conditions clear.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🚀 SPACE · INDIA JOINS THE CLUB · FIRST PRIVATE ORBITAL LAUNCH STICKS THE LANDING",
-    "{{SCI_1_HEADLINE}}": "India's Skyroot Aerospace Reaches Orbit on Its First Try, Becoming the World's Third Nation With a Private Orbital Launch Capability",
-    "{{SCI_1_SUMMARY}}": "Skyroot Aerospace's Vikram-1 rocket lifted off from the Satish Dhawan Space Centre on Saturday, reaching its planned 450-kilometre orbit just 15 minutes after liftoff and deploying two cubesats exactly on schedule despite a late technical hold. Called Mission Aagaman ('arrival' in Sanskrit), it makes India just the third country after the US and China with a commercial launch provider capable of reaching orbit — a major vote of confidence for a homegrown space industry that barely existed a decade ago.",
+    "{{SCI_1_FLAG}}": "🦖☄️ PALAEONTOLOGY · DINO-KILLING ASTEROID ID'D · A RARE 'ODDBALL' FROM THE OUTER SOLAR SYSTEM",
+    "{{SCI_1_HEADLINE}}": "Scientists Identify the Exact Rare Meteorite Type That Killed the Dinosaurs, and It Wasn't What Anyone Expected",
+    "{{SCI_1_SUMMARY}}": "By analysing nickel isotopes preserved in debris from the Chicxulub impact, researchers from UBC, Paris, Brussels and Vienna have identified the dinosaur-killing asteroid as a rare CO chondrite — a class making up only a sliver of the roughly 5% of meteorites that are carbonaceous, likely originating from the outer solar system near Jupiter. Its low sulphur and carbon content suggests the mass extinction 66 million years ago was driven more by planet-cooling dust thrown into the atmosphere than by climate-wrecking gases baked into the rock itself, reshaping a decades-old assumption about exactly how the impact killed everything it did.",
 
     # Business Insight
-    "{{INSIGHT_TITLE}}": "Your Compressor Won't Text You Before It Fails — AI-Powered Predictive Maintenance Is Starting To",
-    "{{INSIGHT_BODY}}": "A blown compressor or a spray rig going down mid-job doesn't just cost the repair — it costs the day, and sometimes the client. A new generation of predictive maintenance apps now plug into cheap vibration and temperature sensors on compressors, generators and spray equipment, watching for the small changes that come before a breakdown rather than waiting for the failure itself. None of this requires an enterprise budget anymore — a $50-a-month sensor and app combination can flag a bearing on its way out weeks before it seizes, which is usually the difference between a scheduled half-day and a lost week.",
+    "{{INSIGHT_TITLE}}": "The ATO's Debt Recovery Just Got Personal — How AI Can Keep Your Books Off the $35.9 Billion Naughty List",
+    "{{INSIGHT_BODY}}": "The tax office isn't just sending reminder letters anymore — garnishee notices straight to your bank, Director Penalty Notices, and disclosure of overdue debts to credit reporting agencies are all now standard tools once a BAS or two slips behind. AI-powered bookkeeping apps that reconcile daily and flag a looming shortfall weeks out, rather than at lodgement time, cost a fraction of what a garnishee notice or a damaged credit file will — the businesses landing in that $35.9 billion pile overwhelmingly aren't the ones dodging tax, they're the ones who lost track of cash flow one quarter at a time.",
 
     # Fun Facts
-    "{{FACT_1}}": "The word 'boycott' comes from Captain Charles Boycott, a land agent in 1880s Ireland who was so thoroughly shunned by local tenants and tradespeople — nobody would harvest his crops, deliver his mail or serve him in shops — that his name became the word for the tactic itself.",
+    "{{FACT_1}}": "The Great Emu War of 1932 saw the Australian Army deploy machine guns against emus in Western Australia to protect wheat crops from the birds — the emus won, and the failed operation is still taught as a textbook case of underestimating the enemy.",
 
-    "{{FACT_2}}": "Bamboo is the fastest-growing woody plant on Earth — some species can shoot up 91 centimetres in a single day, or roughly 4cm an hour, fast enough that you can genuinely watch it grow if you sit still long enough.",
+    "{{FACT_2}}": "The 'over or under' toilet paper debate has an actual paper trail — Seth Wheeler's original 1891 patent diagram clearly shows the roll hanging over the front, which hasn't stopped the argument running for 135 years since.",
 
-    "{{FACT_3}}": "Pac-Man's four ghosts each run a different targeting algorithm rather than just chasing the player — Blinky hunts directly, Pinky aims ahead of you, Inky uses Blinky's position to flank, and Clyde wanders off when he gets close — making the 1980 arcade game one of the earliest well-known examples of distinct AI 'personalities' in software.",
+    "{{FACT_3}}": "The word 'algorithm' comes from the 9th-century Persian mathematician Muhammad ibn Musa al-Khwarizmi, whose Latinised name gave us 'algorithm' directly and whose book title, Kitab al-Jabr, gave us 'algebra' as a bonus.",
 
     # Joke
-    "{{JOKE_SETUP}}": "A welder's apprentice asked why his boss never rushed a joint, even with a client breathing down his neck about the deadline.",
-    "{{JOKE_PUNCHLINE}}": "He said, 'Mate, a bad weld looks perfectly fine for about a week — after that, it's not my signature holding it together anymore, it's my licence.'",
+    "{{JOKE_SETUP}}": "Why did the joiner refuse to trust a client's tape measure on a custom cabinet job?",
+    "{{JOKE_PUNCHLINE}}": "Because 'near enough' has ruined more kitchens than bad timber ever has.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"The way to get started is to quit talking and begin doing.\"",
-    "{{CLOSING_ATTR}}": "— Walt Disney",
-    "{{CLOSING_MESSAGE}}": "It's a frosty, foggy start to Sunday in Carrum Downs before the sun gets through — 4–17°C, with showers not due back until Tuesday. Run Melbourne has the CBD half shut this morning if you're heading that way, footy's on at Marvel Stadium this afternoon, and the World Cup final kicks off in the small hours of Monday AEST — a fitting note to end the tournament on before Brent crude and the Hormuz situation are back on the desk tomorrow.",
+    "{{CLOSING_QUOTE}}": "\"Little by little, one travels far.\"",
+    "{{CLOSING_ATTR}}": "— J.R.R. Tolkien",
+    "{{CLOSING_MESSAGE}}": "Monday starts frosty and sunny in Carrum Downs — 5–16°C — with fog settling in tomorrow and showers not due back until Wednesday, so it's a good window to get outdoor jobs done before the weather turns. Spain and Argentina's World Cup final wrapped up the tournament overnight, the Iran war ground into an eighth consecutive night of strikes, and the working week starts with the ATO tightening its grip on overdue debt — as good a Monday as any to get the books in order before anyone comes looking.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
