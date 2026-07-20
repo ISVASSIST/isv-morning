@@ -917,3 +917,14 @@ JOKE: Why did the joiner refuse to trust a client's tape measure on a custom cab
 INSIGHT: The ATO's Debt Recovery Just Got Personal — How AI Can Keep Your Books Off the $35.9 Billion Naughty List
 QUOTE: "Little by little, one travels far." — J.R.R. Tolkien
 ---
+
+DATE: Tuesday, 21 July 2026
+SCIENCE: Flatiron Institute/Boston University use tensor-network mathematics to solve a "quantum-only" entangled-qubit problem on an ordinary laptop, challenging a quantum supremacy claim — ScienceDaily, published 19 July 2026
+ROBOTICS: Unitree unveils the GD01, a rideable 500kg robot that transforms between bipedal and quadrupedal modes, at WAIC 2026 Shanghai — production priced from 3.9 million yuan, published 20 July 2026
+FACT: Bitcoin's pseudonymous creator, Satoshi Nakamoto, mined an estimated 1.1 million bitcoin back in 2009 — worth tens of billions of dollars today — and has never moved a single coin or been identified.
+FACT: Mario wasn't always a plumber — in the original 1981 arcade game Donkey Kong he was a carpenter named 'Jumpman', and only became a plumber two years later when Nintendo gave him his own game, Mario Bros., set in New York's sewers.
+FACT: Onions make you cry because cutting them releases an enzyme that produces a gas called syn-propanethial-S-oxide, which drifts up to your eyes and reacts with moisture to form a mild sulfuric acid — your tears are a defence reflex to flush it back out.
+JOKE: Why did the pest controller's small business always come out on top at tax time?
+INSIGHT: Your Bookkeeping Software Just Became an AI Coworker — What Xero's 'JAX' Means for a One-Person Office
+QUOTE: "It is never too late to be what you might have been." — George Eliot
+---
