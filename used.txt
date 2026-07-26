@@ -983,3 +983,14 @@ JOKE: A client asked a shopfitter for a 'quick' turnaround on a retail fit-out b
 INSIGHT: OpenAI Just Built a Program Specifically for Small Business — Here's What's Actually Useful In It
 QUOTE: "Difficulties strengthen the mind, as labor does the body." — Seneca
 ---
+
+DATE: Monday, 27 July 2026
+SCIENCE: Damaged fat cells become inflamed, lose their ability to store lipids and vanish, showing diabetes can result from losing healthy fat tissue, not just excess fat — published ScienceDaily 26 July 2026
+ROBOTICS: Elon Musk warns Tesla's Optimus humanoid robot faces a 'long and flat' production ramp, sourcing ~10,000 parts from a supply chain built from scratch — published 25 July 2026
+FACT: Wi-Fi's core technology traces back to Australia's CSIRO, developed in the early 1990s from radio-astronomy techniques originally built to detect faint signals from exploding mini black holes — CSIRO went on to collect several hundred million dollars in royalties from global tech companies for the patent.
+FACT: Grand Theft Auto V pulled in more than $1 billion in its first three days on sale back in 2013 and has since grossed over $8 billion — making it, by most measures, the highest-earning entertainment product in history, ahead of every film and album ever released.
+FACT: The Margherita pizza gets its name and colours from an actual royal visit — Naples chef Raffaele Esposito topped a pizza with basil, mozzarella and tomato to match the Italian flag for Queen Margherita of Savoy in 1889, and named it after her.
+JOKE: Why did the garage door installer's small business always run like clockwork?
+INSIGHT: Google's Notebook AI Just Learned to Do Maths — Here's What That Means for Your Job Costing
+QUOTE: "The first principle is that you must not fool yourself — and you are the easiest person to fool." — Richard Feynman
+---
