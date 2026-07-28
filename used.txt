@@ -1005,3 +1005,14 @@ JOKE: Why did the fire alarm technician never panic during a callout?
 INSIGHT: OpenAI's New 'ChatGPT Work' Agent Can Run Entire Admin Workflows — What That Means for a One-Person Trades Office
 QUOTE: "The harder the conflict, the more glorious the triumph." — Thomas Paine
 ---
+
+DATE: Wednesday, 29 July 2026
+SCIENCE: A weakening Atlantic current (AMOC) could supercharge California's atmospheric-river storms while starving Greenland of snow — Nature Communications, published 27 July 2026
+ROBOTICS: Stealth startup Enigma raises $71M seed betting that clunky interfaces, not AI capability, are robotics' real adoption bottleneck; launches robots.online
+FACT: The UK banned silica sand for abrasive blasting all the way back in 1949 under the Silicosis and Asbestos Regulations — decades ahead of most of the world on the silicosis risk, though the legal definition of "sand" stayed loose enough to need closing again with the 1999 COSHH update.
+FACT: Steel pipelines and ship hulls are often protected not by paint alone but by bolting on a block of zinc or magnesium — a sacrificial anode. Because zinc corrodes before steel does, it "sacrifices" itself and generates a small protective current that keeps the steel from rusting until the anode itself wears out and needs replacing.
+FACT: The Antikythera mechanism, recovered from a Roman-era shipwreck off Greece in 1901, is a 2,000-year-old bronze mechanical computer with over 30 surviving gearwheels that could predict eclipses and calculate Olympic Games dates — a level of engineering not replicated again for roughly 1,000 years.
+JOKE: A fitter and turner's apprentice asked why his boss always quoted jobs down to the exact cent instead of rounding up.
+INSIGHT: Wholesale Power Just Got 60% Cheaper in Victoria — Has Your Trade Business's Retail Plan Caught Up?
+QUOTE: "It's not what happens to you, but how you react to it that matters." — Epictetus
+---
