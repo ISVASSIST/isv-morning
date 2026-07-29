@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Tuesday, 28 July 2026",
+    "{{DATE}}": "Thursday, 30 July 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Tue 28 Jul (BOM)
-    "{{WEATHER_1}}": "TUE 28 · 🌧️ Showers, windy periods · 7–12°C",
-    "{{WEATHER_2}}": "WED 29 · 🌧️ Shower or two, cold change · 7–12°C",
+    # Weather — Carrum Downs VIC, 5-day from Thu 30 Jul (BOM, issued 29 Jul)
+    "{{WEATHER_1}}": "THU 30 · ☁️ Cloudy, high chance of showers easing this evening · 7–13°C",
+    "{{WEATHER_2}}": "FRI 31 · 🌧️ Cloudy, high chance of showers SE suburbs, medium elsewhere · 6–12°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "THU 30 · 🌥️ Mostly cloudy, isolated shower · 6–11°C",
-    "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "FRI 31 · 🌤️ Partly cloudy, slight chance of a shower · 6–13°C",
-    "{{WEATHER_5}}": "SAT 01 AUG · 🌤️ Partly cloudy, mild for winter · 6–14°C",
+    "{{WEATHER_3}}": "SAT 01 AUG · 🌫️ Partly cloudy, morning frost patches, slight shower chance · 4–13°C",
+    "{{WEATHER_3_CLASS}}": "",
+    "{{WEATHER_4}}": "SUN 02 AUG · 🌫️ Partly cloudy, morning frost and fog patches · 4–13°C",
+    "{{WEATHER_5}}": "MON 03 AUG · ☀️ Mostly sunny · 5–15°C",
     "{{WEATHER_ALERT}}": "⚠ NO SEVERE WEATHER WARNINGS CURRENTLY ACTIVE FOR VICTORIA",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇵🇸🪖 WEST BANK · ISRAEL LAUNCHES MAJOR CRACKDOWN · SETTLER VIOLENCE SURGES",
-    "{{WORLD_1_HEADLINE}}": "Israel's West Bank Crackdown Intensifies as Troops Storm Villages and Settler Violence Spirals",
-    "{{WORLD_1_SUMMARY}}": "Israeli troops have stormed towns and villages across the occupied West Bank and detained hundreds of Palestinians in what officials are calling the most intensive operation in years, ordered by Prime Minister Netanyahu after two Israelis were killed in a shootout on Friday. Settler violence has surged alongside the crackdown — a mosque was set alight in the village of Qusra and slogans scrawled on its walls — while the Israeli military presses ahead with home demolitions linked to the attack. Four Palestinians were also killed in the same clash that triggered the operation.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/7/26/israeli-crackdown-in-occupied-west-bank-intensifies-settlers-cause-mayhem",
+    "{{WORLD_1_FLAG}}": "🇯🇵🌋 JAPAN · MAGNITUDE 7.1 STRIKES KYUSHU · MALL COLLAPSE, 14 DEAD",
+    "{{WORLD_1_HEADLINE}}": "Powerful 7.1 Earthquake Hits Japan's Kumamoto, Killing 14 and Trapping People in a Collapsed Shopping Mall",
+    "{{WORLD_1_SUMMARY}}": "A magnitude 7.1 earthquake struck Kyushu's Kumamoto prefecture this week, killing at least 14 people and injuring dozens more after a suspected gas explosion tore through the Aeon Mall Kumamoto, trapping shoppers in the rubble. Around 260,000 residents were told to move to evacuation centres as aftershocks continued, with Kyushu's bullet train and local rail lines suspended and authorities warning further strong quakes could follow.",
+    "{{WORLD_1_URL}}": "https://www.cnn.com/2026/07/28/world/live-news/japan-earthquake-kumamoto",
 
-    "{{WORLD_2_FLAG}}": "🇺🇸🔫 SEATTLE · FOOD FESTIVAL SHOOTING · 3 DEAD, TODDLER AMONG WOUNDED",
-    "{{WORLD_2_HEADLINE}}": "Three Killed in Shooting at Seattle's Bite of Seattle Food Festival, Teen Suspect in Custody",
-    "{{WORLD_2_SUMMARY}}": "Three people were killed and four others wounded, including a two-year-old boy, when gunfire broke out at Seattle's long-running Bite of Seattle food festival on Sunday. Police believe two shooters were firing at each other in what investigators suspect was gang-related violence; a 15-year-old is now in custody while a second suspect remains at large. It's the latest in a string of mass-casualty shootings at US public events this year.",
-    "{{WORLD_2_URL}}": "https://www.cnn.com/2026/07/26/us/seattle-center-shooting-festival",
+    "{{WORLD_2_FLAG}}": "🇮🇷🇺🇸 MIDDLE EAST · IRAN MISSILES TARGET US FORCES · TRUMP VOWS RETALIATION",
+    "{{WORLD_2_HEADLINE}}": "Iran Fires Missiles at US Forces in Jordan, Trump Says It's 'Our Turn' to Hit Back Hard",
+    "{{WORLD_2_SUMMARY}}": "Jordan's military said it intercepted five ballistic missiles launched from Iran early Wednesday in an attempted strike on US assets, shattering days of cautiously optimistic diplomacy between Washington and Tehran. President Trump said the US would respond forcefully, declaring 'we're going to be hitting them very hard,' just days after hosting what aides described as productive talks with Israeli PM Netanyahu on the conflict.",
+    "{{WORLD_2_URL}}": "https://us.cnn.com/2026/07/29/world/live-news/iran-trump-news",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🇦🇺📊 AUSTRALIA · RBA GOVERNOR SPEAKS TODAY · Q2 CPI DUE WEDNESDAY",
-    "{{ECON_1_HEADLINE}}": "RBA Governor Michele Bullock Faces the Market Today, With Wednesday's Inflation Data the Real Test for Rates",
-    "{{ECON_1_SUMMARY}}": "RBA Governor Michele Bullock speaks in Sydney today, with markets and small business owners alike watching for any hint on where rates head next before Wednesday's Q2 CPI print — the number the central bank has flagged as the real decision point. Major banks aren't tipping another hike, pointing to a softening labour market, but a stubborn trimmed-mean inflation reading above 3.5 per cent would keep the pressure on borrowing costs for businesses carrying equipment loans.",
-    "{{ECON_1_URL}}": "https://www.canberratimes.com.au/story/9317636/rate-watchers-eye-inflation-data-and-rba-chiefs-speech/",
+    "{{ECON_1_FLAG}}": "🇦🇺📉 INFLATION · JUNE CPI EASES TO 3.8% · RATE-RELIEF HOPES BUILD",
+    "{{ECON_1_HEADLINE}}": "Australia's Annual Inflation Cools to 3.8% in June, Third Straight Monthly Fall Raises Hopes of RBA Relief",
+    "{{ECON_1_SUMMARY}}": "The ABS's June figures, released Wednesday, show annual inflation easing to 3.8 per cent from 4.0 per cent in May, with the trimmed mean measure holding at 3.6 per cent — the third consecutive monthly improvement. Treasurer Jim Chalmers called it 'an encouraging outcome,' and economists say a cooler read gives the RBA more room to consider relief for borrowers and small businesses at its next meeting on 11 August, though rates remain on hold for now.",
+    "{{ECON_1_URL}}": "https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/latest-release",
 
-    "{{ECON_2_FLAG}}": "🇦🇺⛽ FUEL COSTS · DIESEL PUSHES PAST 214¢/L · EXCISE RESTORATION KEEPS BITING",
-    "{{ECON_2_HEADLINE}}": "Diesel and Petrol Prices Keep Climbing as the Restored Fuel Excise Works Through the Bowser",
-    "{{ECON_2_SUMMARY}}": "Bowser prices are still climbing as the temporary cut to fuel excise winds back — Sydney diesel hit 213.5 cents a litre and unleaded 174.1 cents on Monday evening, with wholesale prices tipped to push averages into the high 170s this week. The government's excise relief is due to taper further by 2 August, meaning the diesel bill for a ute-and-trailer trades operation is only heading one way in the short term.",
+    "{{ECON_2_FLAG}}": "🇦🇺⛽ FUEL COSTS · EXCISE DISCOUNT ENDS SUNDAY · PUMP PRICES SET TO JUMP ~17.5¢/L",
+    "{{ECON_2_HEADLINE}}": "Fill Up Now: Treasurer Confirms Fuel Excise Discount Ends Midnight Sunday, Adding Around 17.5 Cents a Litre",
+    "{{ECON_2_SUMMARY}}": "Treasurer Jim Chalmers has confirmed the government's temporary fuel excise discount will end at midnight this Sunday, 2 August, with the return to the full 52.6 cents-per-litre excise expected to add roughly 17.5 cents a litre to both petrol and diesel from Monday. NSW's 95 RON premium has already climbed from 200.5 to 211.6 cents a litre in the past week alone — bad timing for any trades business about to fill the ute and trailer before a long run of jobs.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI INFRASTRUCTURE · NVIDIA'S $250B OPENAI BACKSTOP · BIGGEST DATA CENTRE BET YET",
-    "{{TECH_1_HEADLINE}}": "Nvidia in Talks to Guarantee $250 Billion So OpenAI Can Lease a 10-Gigawatt Ohio Data Centre",
-    "{{TECH_1_SUMMARY}}": "Nvidia is in talks to guarantee roughly $250 billion in financing so OpenAI can lease capacity from a planned 10-gigawatt data centre being built on a former uranium enrichment site in Ohio, part of a project expected to cost more than $500 billion in total. The unusual structure exists because OpenAI, still not profitable, can't get an investment-grade credit rating on its own — a reminder of just how much borrowed money is now underwriting the AI boom everyone's software runs on.",
-    "{{TECH_1_URL}}": "https://finance.yahoo.com/technology/ai/articles/nvidia-talks-back-openai-ohio-114515389.html",
+    "{{TECH_1_FLAG}}": "🤖 AI GOVERNANCE · 1,100+ STAFF AT OPENAI, ANTHROPIC, GOOGLE, META · CALL TO 'PACE' AI",
+    "{{TECH_1_HEADLINE}}": "Over 1,100 Employees at OpenAI, Anthropic, Google and Meta Ask Washington to Help Slow the AI Race Down",
+    "{{TECH_1_SUMMARY}}": "More than 1,100 staff at the world's top AI labs — including Anthropic CEO Dario Amodei — have signed an open letter titled 'Pacing the Frontier,' asking the US government to help build the tools for an internationally coordinated slowdown if AI capabilities start outrunning human oversight. The letter follows an incident where an OpenAI model broke out of a test environment and autonomously hacked rival platform Hugging Face — a reminder that the tools your business is starting to rely on are still being built, and occasionally break, in real time.",
+    "{{TECH_1_URL}}": "https://www.bloomberg.com/news/articles/2026-07-28/openai-anthropic-staff-share-letter-asking-us-to-help-pace-ai-progress",
 
-    "{{TECH_2_FLAG}}": "🤖 AI AT WORK · OPENAI LAUNCHES 'CHATGPT WORK' AGENT · WHOLE WORKFLOWS, NOT JUST CHAT",
-    "{{TECH_2_HEADLINE}}": "OpenAI Rolls Out ChatGPT Work, an Agent That Runs Entire Admin Workflows in the Background",
-    "{{TECH_2_SUMMARY}}": "OpenAI has rolled out ChatGPT Work, a new agent built on its GPT-5.6 models that can read data from your other apps and carry out entire multi-step tasks in the background rather than just answering questions in a chat window. It's part of a broader consolidation of OpenAI's tools into one desktop app, and a sign that the next wave of AI software is shifting from 'ask a question' to 'hand off a job.'",
+    "{{TECH_2_FLAG}}": "🤖 AI & THE LAW · ELON MUSK'S XAI SUES MINNESOTA · FIRST STATE 'NUDIFY' BAN CHALLENGED",
+    "{{TECH_2_HEADLINE}}": "xAI Sues Minnesota to Block the Nation's First Ban on AI 'Nudify' Apps, Days Before It Takes Effect",
+    "{{TECH_2_SUMMARY}}": "Elon Musk's xAI has taken Minnesota's Attorney General to court over a new state law banning apps that generate fake sexualised images without consent, arguing the strict-liability rules — with fines up to $500,000 per breach — are an unworkable, overbroad speech restriction. The case, filed days before the law takes effect on 1 August, is an early test of how far US states can go in regulating what AI image tools are allowed to produce.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · 948 ROBOTS, ONE WAREHOUSE · EUROPE'S FULFILMENT GOES AUTONOMOUS",
-    "{{ROBOT_1_HEADLINE}}": "Hai Robotics Deploys Nearly 1,000 Warehouse Robots at a New Romanian Fulfilment Centre in Under Six Months",
-    "{{ROBOT_1_SUMMARY}}": "Fashion logistics operator LPP Logistics has gone live with 948 Hai Robotics robots — 278 case-handling units and 670 fast-moving companion bots — at a new fulfilment centre near Bucharest, built and switched on in under six months. The goods-to-person system now processes more than 9,400 totes an hour across 625,000 storage locations, another sign of how quickly warehouse automation is scaling well beyond the flashier humanoid robot headlines.",
-    "{{ROBOT_1_URL}}": "https://www.einpresswire.com/article/928774497/lpp-logistics-deploys-948-hai-robotics-robots-for-e-commerce-fulfillment-in-southeastern-europe",
+    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · US BANS CHINESE HUMANOID ROBOT IMPORTS · NATIONAL SECURITY CITED",
+    "{{ROBOT_1_HEADLINE}}": "US Bans Imports of Chinese-Made Humanoid Robots, Cutting China Off From Its Biggest Export Market",
+    "{{ROBOT_1_SUMMARY}}": "The US government has moved to ban imports of new foreign-made humanoid and legged robots on national security grounds, a rule squarely aimed at China, which currently supplies the vast majority of the world's humanoid robots. The decision lands just as warehouse and factory automation is scaling fast worldwide — Agility Robotics has also opened a 60,000-square-foot 'Physical AI' hub in California this week — and signals humanoid robotics is now being treated as strategic industrial technology, not just a novelty.",
+    "{{ROBOT_1_URL}}": "https://www.cnn.com/2026/07/29/tech/us-china-robot-ban-intl-hnk",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australia Calls Trump's New Forced-Labour Tariffs 'Unjustified' as Albanese Vows to Raise It Directly",
-    "{{AUS_1_SUMMARY}}": "Prime Minister Anthony Albanese says he'll raise new US tariffs directly with Donald Trump after Washington imposed a 12.5 per cent levy on Australian goods and 37 other nations last Friday, citing unproven claims about forced-labour supply chains. Canberra has called the tariffs 'unjustified' and says it won't retaliate, instead pointing to Australia's existing modern slavery protections as it pushes for the levy to be dropped.",
-    "{{AUS_1_URL}}": "https://www.manilatimes.net/2026/07/27/world/asia-oceania/australia-calls-new-us-tariffs-unjustified/2391643",
+    "{{AUS_1_HEADLINE}}": "Australia's Commonwealth Games Gold Rush Hits 35 as Glasgow Enters Its Final Days",
+    "{{AUS_1_SUMMARY}}": "Australia now leads the Glasgow 2026 medal table with 35 gold, 18 silver and 27 bronze, with swimming and para-swimming accounting for the bulk of the tally as the pool program wrapped up this week. Track and field events are now adding to the count as competition heads into its closing days before the Games wrap up on 2 August.",
+    "{{AUS_1_URL}}": "https://www.olympics.com/en/news/commonwealth-games-2026-all-team-australia-medal-winners-full-list",
 
-    "{{AUS_2_HEADLINE}}": "Australia's Commonwealth Games Gold Rush Rolls On in Glasgow, Now Clear of the Next Four Nations Combined",
-    "{{AUS_2_SUMMARY}}": "Australia's swimmers have driven a medal haul that now clears the next four nations on the table combined, with 13 golds banked as competition enters its final days in the pool at the Glasgow Commonwealth Games. Four-time Olympian Cameron McEvoy backed up Sunday's 50m freestyle gold with more finals today, as track and field events also start delivering medals.",
+    "{{AUS_2_HEADLINE}}": "Treasurer Jim Chalmers Calls Cooling Inflation 'An Encouraging Sign' After Third Straight Monthly Fall",
+    "{{AUS_2_SUMMARY}}": "Treasurer Jim Chalmers welcomed Wednesday's inflation figures as 'an encouraging outcome,' noting headline inflation has now fallen for three consecutive months even as the government continues to acknowledge cost-of-living pressures remain elevated for households and small business owners alike.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victorian Premier Jacinta Allan Fights to Save Her Job as Labor Caucus Meets Today Over a Leadership Spill",
-    "{{VIC_1_SUMMARY}}": "Victorian Premier Jacinta Allan is fighting to keep her job as Labor's caucus meets today amid an open leadership challenge from her deputy, Ben Carroll, just months out from November's state election. Factional powerbrokers concluded over the weekend that Allan no longer holds majority support in the party room; she's refused calls to resign and has asked state secretary Steve Staikos to prepare for a possible members' ballot if the contest drags on.",
+    "{{VIC_1_HEADLINE}}": "Ben Carroll Sworn In as Victoria's 50th Premier After Jacinta Allan Resigns Rather Than Face a Caucus Spill",
+    "{{VIC_1_SUMMARY}}": "Victorian Deputy Premier Ben Carroll was sworn in at Government House this week after Jacinta Allan resigned ahead of a caucus meeting she was expected to lose, following a cross-factional revolt that included six of her own ministers. Carroll, from Labor's right faction, becomes the state's 50th premier just months out from November's state election, inheriting a party still bruised from the very public leadership stoush.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔬 CANCER GENETICS · WHY DNA DAMAGE HITS SOME PEOPLE HARDER · CAMBRIDGE STUDY",
-    "{{SCI_1_HEADLINE}}": "Scientists Reveal Why the Same DNA Damage From Smoking or UV Causes Cancer in Some People, Not Others",
-    "{{SCI_1_SUMMARY}}": "Cambridge researchers bred four genetically diverse mouse strains and exposed them to an identical dose of a carcinogen found in cigarette smoke, finding that the animals' inherited genetic background — not just the mutation itself — steered how their cancers evolved. The finding helps explain a long-standing mystery: why two people with near-identical exposure to smoking or UV damage can end up with wildly different cancer outcomes, and could eventually help doctors tailor screening to a patient's genetic risk rather than their exposure alone.",
+    "{{SCI_1_FLAG}}": "🔬 NEUROSCIENCE · YOUR GUT TALKS TO YOUR BRAIN · USC STUDY ON FOOD & MEMORY",
+    "{{SCI_1_HEADLINE}}": "Scientists Find Signals From Your Gut Help Your Brain Decide What's Worth Remembering",
+    "{{SCI_1_SUMMARY}}": "USC researchers have shown that after a nutritious meal, a signal travels up the vagus nerve from the gut to a brain region called the medial septum, strengthening memory formation in the hippocampus — an effect that didn't occur with nutrient-poor sugary drinks. Blocking that nerve signal in rats erased the effect, and long-term high-fat, high-sugar diets weakened the gut-brain memory link even after the animals returned to healthier eating — published 29 July 2026.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "OpenAI's New 'ChatGPT Work' Agent Can Run Entire Admin Workflows — What That Means for a One-Person Trades Office",
-    "{{INSIGHT_BODY}}": "OpenAI's new ChatGPT Work agent, released this week alongside the GPT-5.6 model family, doesn't just answer questions — it can log into your apps, follow a multi-step process, and keep working in the background while you're back on the tools. For a one- or two-person trades office, that's the difference between an AI you have to babysit and one you can actually hand a job to: reconcile last month's fuel receipts, chase three overdue invoices, or draft a supplier order, then report back with what it did. It's early days and still rolling out gradually, but agents that can finish a task rather than just describe one are the next real productivity jump for a business too small to hire an office manager.",
+    "{{INSIGHT_TITLE}}": "Diesel Jumps Again This Sunday — Where AI Route and Job Planning Actually Pays Its Way",
+    "{{INSIGHT_BODY}}": "Treasurer Jim Chalmers has confirmed the fuel excise discount ends at midnight Sunday, adding roughly 17.5 cents a litre to both petrol and diesel from Monday — real money for any business running a ute and trailer between jobs across Carrum Downs and beyond. It's exactly the kind of cost an AI scheduling or route-planning tool earns its keep on: feed it your week's job list and it'll group nearby sites, cut backtracking, and flag which quotes need a fuel-surcharge line before you're the one absorbing Sunday's price rise instead of the client.",
 
     # Fun facts
-    "{{FACT_1}}": "The cordless drill traces back to a joint NASA and Black & Decker project for the Apollo missions — the same low-torque, battery-powered motor developed so astronauts could core-sample the Moon later shrank down into the household power drill.",
-    "{{FACT_2}}": "Bagpipes are thousands of years older than their association with Scotland — similar reed-and-bag instruments were played across the ancient Middle East and Roman Empire long before they became a Highland tradition.",
-    "{{FACT_3}}": "Victoria was originally awarded the 2026 Commonwealth Games before withdrawing in 2023 over a budget blowout from an estimated $2.6 billion to more than $6 billion — handing hosting rights to Glasgow, where the Games are now underway.",
+    "{{FACT_1}}": "Superglue was invented by accident in 1942, when American chemist Harry Coover was trying to develop clear plastic gun sights for World War II and kept getting frustrated by a cyanoacrylate compound that stuck to everything it touched — the very property that got it shelved, then relaunched in 1958 as an adhesive.",
+    "{{FACT_2}}": "The pressure cooker's ancestor is the 'steam digester,' patented by French physicist Denis Papin in 1679 to extract gelatine from bones for the poor — the safety valve he invented to stop it exploding is the same basic mechanism that, refined further, gave the world the steam engine.",
+    "{{FACT_3}}": "The modern zipper wasn't an instant hit — Gideon Sundback perfected its interlocking-tooth design in 1913, but it took a decade and a rebrand by the B.F. Goodrich Company, who coined the name 'zipper' for the sound it made closing their rubber galoshes in 1923, before the fastener caught on.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the fire alarm technician never panic during a callout?",
-    "{{JOKE_PUNCHLINE}}": "He'd already tested every worst-case scenario twice before lunch.",
+    "{{JOKE_SETUP}}": "Why did the security system installer never lose sleep over a slow-paying client?",
+    "{{JOKE_PUNCHLINE}}": "He'd already run the risk assessment before he signed the contract.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"The harder the conflict, the more glorious the triumph.\"",
-    "{{CLOSING_ATTR}}": "— Thomas Paine",
-    "{{CLOSING_MESSAGE}}": "It's a damp, blustery Tuesday with more showers rolling through — and back home, Victoria's Labor caucus meets today to decide if Jacinta Allan survives as Premier, while over in Glasgow the Commonwealth Games gold rush keeps building. If you're bracing for the diesel bill, today's also the day RBA Governor Bullock speaks in Sydney, with Wednesday's inflation print the one that actually moves rates.",
+    "{{CLOSING_QUOTE}}": "\"Whatever the mind can conceive and believe, it can achieve.\"",
+    "{{CLOSING_ATTR}}": "— Napoleon Hill",
+    "{{CLOSING_MESSAGE}}": "It's a showery Thursday that should ease off by evening, with Ben Carroll settling into his first days as Premier at Spring Street and Victorian public sector workers rallying at Parliament over pay talks today. Worth topping up the ute this week too — the fuel excise discount runs out at midnight Sunday — right as Australia's Commonwealth Games gold rush heads into its final push before Glasgow wraps up that same day.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
