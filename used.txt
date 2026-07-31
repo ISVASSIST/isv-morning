@@ -1038,3 +1038,14 @@ JOKE: Why did the lift technician's small business never miss a scheduled mainte
 INSIGHT: Construction and Utilities Are Still Booming While Retail Stalls — Is Your Client Mix Built for a Two-Speed Economy?
 QUOTE: "The best preparation for tomorrow is doing your best today." — H. Jackson Brown Jr.
 ---
+
+DATE: Saturday, 01 August 2026
+SCIENCE: Supermassive black hole's "exhaust winds" found blasting energy 300,000 light-years into deep space — Tohoku University / XRISM, published 29-31 July 2026
+ROBOTICS: Google DeepMind unveils Gemini Robotics 2, first AI system to control a humanoid's whole body — legs, torso, arms and hands — from one model, published 30-31 July 2026
+FACT: Daylight saving wasn't invented for farmers — it was first seriously proposed in 1895 by George Hudson, a New Zealand postal clerk and amateur entomologist, who wanted more evening daylight to go hunting for insects after his day job. Germany was the first country to adopt it nationally, in 1916, purely to save coal during the First World War.
+FACT: The world's first true skyscraper wasn't in New York — it was Chicago's ten-storey Home Insurance Building, completed in 1885, the first tall building to hang its outer walls on an internal steel frame rather than load-bearing masonry. That single idea is still the basic principle behind every modern high-rise.
+FACT: The Post-it Note exists because of a failed product. In 1968, 3M chemist Spencer Silver was trying to invent an ultra-strong adhesive and instead created one that was oddly weak and reusable — it sat around with no obvious use for six years until a colleague used it to stop his hymn-book bookmarks falling out at choir practice.
+JOKE: What's the difference between a builder's quote and a weather forecast?
+INSIGHT: Show It Once, Claude Remembers It Forever — Anthropic's New 'Record a Skill' Feature
+QUOTE: "The only place where success comes before work is in the dictionary." — Vidal Sassoon
+---
