@@ -1049,3 +1049,14 @@ JOKE: What's the difference between a builder's quote and a weather forecast?
 INSIGHT: Show It Once, Claude Remembers It Forever — Anthropic's New 'Record a Skill' Feature
 QUOTE: "The only place where success comes before work is in the dictionary." — Vidal Sassoon
 ---
+
+DATE: Sunday, 02 August 2026
+SCIENCE: Superheated magma found to radically change how a volcano erupts — University of Manchester, 2021 Tajogaite eruption study, published ScienceDaily late July/1 August 2026
+ROBOTICS: Unitree opens IPO subscription in Shanghai, first profitable humanoid robot maker to list publicly, ¥42 billion valuation — published 31 July 2026
+FACT: Frost can form on your ute's windscreen even when the forecast says the air temperature never dropped below zero — flat surfaces radiate their own heat into a clear night sky and cool well below the surrounding air, a process called radiative cooling, which is why grass and glass can frost over on a night logged as '4°C.'
+FACT: Glasgow, hosting this year's Commonwealth Games, first hosted the event in 2014 — making it only the second city ever to host the Games twice, after London held them in 1934 and 2002.
+FACT: The fluorescent 'hi-vis' colours on modern safety vests trace back to brothers Bob and Joe Switzer, who accidentally discovered fluorescent pigments in their parents' garage in the 1930s while experimenting with UV light to treat one brother's eye injury — the pigments became DayGlo paint and eventually the orange and yellow now standard on every job site.
+JOKE: Why did the rigger's small business never drop a client?
+INSIGHT: Fake Supplier Invoices Are Getting Harder to Spot — Here's How AI Can Help You Catch One Before You Pay It
+QUOTE: "I attribute my success to this: I never gave or took any excuse." — Florence Nightingale
+---
