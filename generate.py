@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Sunday, 02 August 2026",
+    "{{DATE}}": "Monday, 03 August 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Sun 02 Aug (BOM)
-    "{{WEATHER_1}}": "SUN 02 · ☀️ Sunny, patches of morning frost · 3–17°C",
-    "{{WEATHER_2}}": "MON 03 · 🌧️ Showers, possible small hail · 9–14°C",
+    # Weather — Carrum Downs VIC, 5-day from Mon 03 Aug (BOM)
+    "{{WEATHER_1}}": "MON 03 · 🌧️ Showers, easing this evening · 8–15°C",
+    "{{WEATHER_2}}": "TUE 04 · 🌧️ Showers, most likely SE suburbs · 5–12°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "TUE 04 · 🌧️ Showers, easing later · 8–14°C",
+    "{{WEATHER_3}}": "WED 05 · 🌦️ Isolated shower, chance easing · 6–13°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "WED 05 · ⛅ Partly cloudy, drier · 7–15°C",
-    "{{WEATHER_5}}": "THU 06 · 🌦️ Shower or two, clearing · 7–13°C",
-    "{{WEATHER_ALERT}}": "⚠ NO SEVERE WEATHER WARNINGS CURRENTLY ACTIVE FOR VICTORIA",
+    "{{WEATHER_4}}": "THU 06 · 🌦️ Shower or two, morning/arvo · 6–13°C",
+    "{{WEATHER_5}}": "FRI 07 · ⛅ Partly cloudy, drier · 6–14°C",
+    "{{WEATHER_ALERT}}": "⚠ SEVERE WEATHER WARNING CURRENT FOR DAMAGING WINDS · GIPPSLAND, ALPINE & SW VIC (NOT METRO MELBOURNE)",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇪🇸🇲🇦 CEUTA · BORDER CRISIS DEATH TOLL CLIMBS TO 67 · 60,000 CROSSED FRONTIER IN 24 HOURS",
-    "{{WORLD_1_HEADLINE}}": "Death Toll in Spain's Ceuta Border Crisis Reaches 67 as Tens of Thousands Cross Back Into Morocco",
-    "{{WORLD_1_SUMMARY}}": "Around 60,000 migrants breached the frontier of Spain's North African enclave Ceuta over a single 24-hour period, most swimming around breakwaters or crossing on foot, in a stampede that killed dozens by drowning or crush injuries. Spain is now installing a 500-metre containment barrier and says most who entered have already returned to Morocco — a stark reminder of how quickly a stable border situation can unravel, though the direct impact on Australian trade is minimal.",
-    "{{WORLD_1_URL}}": "https://www.npr.org/2026/08/01/nx-s1-5916271/ceuta-spain-border-morocco",
+    "{{WORLD_1_FLAG}}": "🇮🇱🇵🇸 GAZA · ISRAELI STRIKES KILL NINE DESPITE HAMAS SIGNING ONTO US-BACKED DISARMAMENT DEAL",
+    "{{WORLD_1_HEADLINE}}": "Israeli Strikes Kill Nine in Gaza as a Senior Minister Vows Attacks Won't Stop Despite Hamas's Disarmament Deal",
+    "{{WORLD_1_SUMMARY}}": "A senior Israeli minister says strikes on Gaza will continue even after Hamas signed onto a US-backed disarmament plan brokered through Trump's Board of Peace, with Sunday's strikes on Gaza City, Deir al-Balah and Khan Younis marking the deadliest day there in weeks. It's a reminder that a signed deal on paper doesn't automatically mean the fighting stops on the ground.",
+    "{{WORLD_1_URL}}": "https://www.timesofisrael.com/senior-minister-says-israel-not-halting-attacks-in-gaza-as-9-said-killed-in-idf-strikes",
 
-    "{{WORLD_2_FLAG}}": "🇮🇷🇺🇸 MIDEAST · TRUMP THREATENS FRESH IRAN STRIKES · US EMBASSIES TELL CITIZENS TO BE READY TO LEAVE",
-    "{{WORLD_2_HEADLINE}}": "Trump Threatens New Strikes on Iran as US Embassies Across the Middle East Warn Citizens to Prepare to Depart",
-    "{{WORLD_2_SUMMARY}}": "US missions in Amman, Jerusalem, Muscat, Baghdad and Beirut issued security alerts warning of 'unforeseen escalation' after Trump vowed to hit Iran 'very hard' again in a push to reopen the Strait of Hormuz. It's the kind of flashpoint that tends to move oil markets fast — worth watching given roughly a fifth of the world's traded oil passes through that strait, with any spike likely to show up at the bowser here within days.",
-    "{{WORLD_2_URL}}": "https://www.washingtonpost.com/world/2026/08/01/trump-iran-strait-hormuz-israel-gaza-mideast/6818cc9c-8d86-11f1-8912-d71e69d679d7_story.html",
+    "{{WORLD_2_FLAG}}": "🇮🇷🇺🇸 IRAN · TRUMP SAYS HE'S CALLING OFF A PLANNED STRIKE, CITING 'RAPID' PROGRESS TOWARD A DEAL",
+    "{{WORLD_2_HEADLINE}}": "Trump Says He's Cancelling a Planned Strike on Iran, Citing Rapid Progress Toward a Deal",
+    "{{WORLD_2_SUMMARY}}": "President Trump said he's calling off a planned attack on Iran contingent on both sides 'rapidly' reaching an agreement, pointing to progress on reopening the Strait of Hormuz after days of threatening fresh strikes. A step back from the brink is good news for oil markets generally, given roughly a fifth of the world's traded oil passes through that strait.",
+    "{{WORLD_2_URL}}": "https://www.cnn.com/2026/08/02/world/live-news/iran-war-trump",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🇦🇺⛽ FUEL · EXCISE DISCOUNT ENDS AT MIDNIGHT TONIGHT · PETROL AND DIESEL SET TO JUMP FROM MONDAY",
-    "{{ECON_1_HEADLINE}}": "Fuel Excise Discount Ends at Midnight Tonight, With Petrol and Diesel Both Set to Rise From Monday",
-    "{{ECON_1_SUMMARY}}": "Treasurer Jim Chalmers has confirmed the remaining fuel excise discount disappears at midnight tonight, with unleaded expected to rise by up to 16 cents a litre from Monday plus a further indexation increase on top. Diesel is already averaging around 231 cents a litre nationally, so tonight's the last cheap fill before it and the ute both cost more from tomorrow.",
-    "{{ECON_1_URL}}": "https://www.carexpert.com.au/car-news/fuel-prices-to-rise-when-excise-cut-ends-within-days",
+    "{{ECON_1_FLAG}}": "🇦🇺⛽ FUEL · EXCISE DISCOUNT HAS OFFICIALLY ENDED TODAY · PETROL AND DIESEL BOTH RISING NATIONWIDE",
+    "{{ECON_1_HEADLINE}}": "The Fuel Excise Discount Has Officially Ended Today, With Petrol and Diesel Prices Rising Nationwide",
+    "{{ECON_1_SUMMARY}}": "From today the remaining fuel excise discount is gone and the excise rate itself has risen to 53.7 cents a litre with an added CPI-linked adjustment on top, pushing unleaded up by as much as 16 cents a litre on a price that had already climbed more than 34 cents a litre since June. Diesel was already averaging around 231 cents a litre before today's change, so it's worth shopping around for the cheapest servo near your sites this week.",
+    "{{ECON_1_URL}}": "https://www.indexbox.io/blog/accc-fuel-report-prices-rise-as-fuel-excise-cut-expires/",
 
-    "{{ECON_2_FLAG}}": "🇦🇺📊 SMALL BUSINESS · AUSTRALIAN SMES NOW THE LEAST OPTIMISTIC IN THE ASIA-PACIFIC",
-    "{{ECON_2_HEADLINE}}": "Australian Small Businesses Are the Least Optimistic in the Asia-Pacific, New Regional Survey Finds",
-    "{{ECON_2_SUMMARY}}": "CPA Australia's Asia-Pacific Small Business Survey found just 53 per cent of Australian small businesses expect to grow in 2026, well below the 70 per cent survey average and the lowest growth expectation of the 11 markets surveyed. It's a useful gut-check for benchmarking your own outlook against the wider small business sector rather than assuming everyone else is having an easier run.",
+    "{{ECON_2_FLAG}}": "🇦🇺🏦 INTEREST RATES · ALL FOUR MAJOR BANKS NOW EXPECT THE RBA TO HOLD RATES STEADY THIS MONTH",
+    "{{ECON_2_HEADLINE}}": "All Four Major Banks Now Agree the RBA Will Hold Interest Rates Steady at Its August Meeting",
+    "{{ECON_2_SUMMARY}}": "With the RBA's next call due August 11, Westpac has joined CommBank, NAB and ANZ in expecting the cash rate to stay on hold, with most economists now pushing any further relief out to 2027. If you've been banking on a rate cut to ease loan repayments on the ute or plant finance, it's worth planning as if that relief isn't coming this year.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI ECONOMICS · CHINA'S DEEPSEEK RELEASES FRONTIER-CLASS MODEL AT A TENTH OF WESTERN PRICING",
-    "{{TECH_1_HEADLINE}}": "DeepSeek Quietly Releases a Frontier-Class AI Model at Roughly a Tenth of the Price of Its Western Rivals",
-    "{{TECH_1_SUMMARY}}": "DeepSeek's V4 Flash model officially exited preview this week priced at 14 US cents per million input tokens, matching or beating larger rivals on agent benchmarks despite the bargain price. It's another data point in a now-familiar pattern — useful AI capability keeps getting cheaper every few months — worth keeping in mind before you commit to a pricier subscription for the software you're using to run quotes or admin.",
-    "{{TECH_1_URL}}": "https://www.digitalapplied.com/blog/deepseek-v4-flash-0731-official-release-agent-benchmarks",
+    "{{TECH_1_FLAG}}": "🇪🇺🤖 AI REGULATION · EU TRANSPARENCY RULES FOR AI SYSTEMS OFFICIALLY START TODAY",
+    "{{TECH_1_HEADLINE}}": "New EU Rules Requiring AI Systems to Disclose Themselves to Users Officially Start Today",
+    "{{TECH_1_SUMMARY}}": "From today, the European Commission's AI Act transparency obligations require chatbots to identify themselves as AI, deepfakes to be labelled, and AI-generated content to carry machine-readable marks, with fines of up to €15 million for non-compliance. It doesn't apply directly to an Australian trades business, but it's a clear signal of where AI disclosure expectations are heading globally — worth getting ahead of before a client asks.",
+    "{{TECH_1_URL}}": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august",
 
-    "{{TECH_2_FLAG}}": "🎓 AI ACCESS · OPENAI COMMITS $250M TO GIVE 100,000 RESEARCHERS FREE ACCESS TO ITS TOP MODELS",
-    "{{TECH_2_HEADLINE}}": "OpenAI Commits $250 Million to Give 100,000 Researchers Free Access to Its Best AI Models",
-    "{{TECH_2_SUMMARY}}": "OpenAI's new 'ChatGPT for Academic Researchers' program starts with 10,000 scientists this year, scaling to 100,000 by 2027, each able to bring four collaborators along for free. It shows how hard the big AI labs are competing on giving capability away for loyalty right now — a trend that tends to flow through to cheaper or free tiers for everyday users and small businesses over time.",
+    "{{TECH_2_FLAG}}": "🎥 AI TOOLS · GOOGLE GIVING AWAY 10 FREE AI-GENERATED VIDEOS IN GEMINI — OFFER ENDS TOMORROW",
+    "{{TECH_2_HEADLINE}}": "Google Is Giving Away 10 Free AI-Generated Videos Through Gemini, but the Offer Ends Tomorrow",
+    "{{TECH_2_SUMMARY}}": "Gemini users without a paid Google AI plan can generate, edit and remix up to ten videos at no cost using Gemini's Veo-powered 'Omni' tool until 11:59pm PT tomorrow, August 4. It's a genuinely free way to knock out a few before/after job clips or a quick social post for the business before the trial window closes.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · UNITREE OPENS IPO BOOK-BUILDING · FIRST PROFITABLE HUMANOID ROBOT MAKER TO GO PUBLIC",
-    "{{ROBOT_1_HEADLINE}}": "Unitree Opens IPO Subscription in Shanghai, Set to Become the First Profitable Humanoid Robot Maker to List Publicly",
-    "{{ROBOT_1_SUMMARY}}": "Unitree shipped more than 5,500 humanoid robots in 2025 and is targeting 20,000 this year, with book-building opening this week ahead of a Shanghai STAR Market listing at a roughly ¥42 billion valuation. It's the first real market test of whether humanoid robotics is an actual profitable business today rather than just a well-funded hype story.",
-    "{{ROBOT_1_URL}}": "https://www.techtimes.com/articles/322574/20260731/unitree-ipo-subscription-opens-profitable-robot-maker-vs-39b-no-revenue-figure-ai.htm",
+    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · TEXAS STARTUP PERSONA AI SHARES REAL WELDING TEST FOOTAGE FOR ITS SHIPYARD HUMANOID",
+    "{{ROBOT_1_HEADLINE}}": "Persona AI Shares Real-World Welding Test Footage From Its Heavy-Duty Shipyard Humanoid Robot",
+    "{{ROBOT_1_SUMMARY}}": "Houston-based Persona AI has released footage of its Gen 1 humanoid being teleoperated through a genuine welding job in an industrial fabrication shop, part of the data-gathering push behind its HD Hyundai shipyard deployment and a steel-fabrication pilot in Louisiana. It's a reminder that a lot of the humanoid robotics push is now landing squarely in heavy industry — welding, grinding and structural fabrication — the exact kind of physical trade work AI was supposed to leave alone the longest.",
+    "{{ROBOT_1_URL}}": "https://mikekalil.com/blog/persona-ai-humanoid-robot-welder/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Bluey Learns to Speak Yolŋu Matha as Garma Festival Celebrates a First for Indigenous Language on Screen",
-    "{{AUS_1_SUMMARY}}": "Five episodes of Bluey dubbed entirely in Yolŋu Matha by local voice talent screened for the first time at the Garma Festival in Arnhem Land, produced by Yolŋu Radio, ABC and Ludo Studio alongside the Aboriginal Resource and Development Services. A genuinely heartwarming story out of Australia's largest Indigenous gathering, running through the weekend.",
-    "{{AUS_1_URL}}": "https://www.dailyadvertiser.com.au/story/9321152/bluey-big-ideas-and-bukmak-all-in-as-garma-lights-up/",
+    "{{AUS_1_HEADLINE}}": "Census Night Is Just Over a Week Away, With Every Person in Australia Counted on 11 August",
+    "{{AUS_1_SUMMARY}}": "The 2026 Census falls on Tuesday 11 August, with around 30,000 ABS field staff deployed to make sure everyone — including people experiencing homelessness or in hospital — gets counted, and login letters landing in letterboxes now. This year's count is also the first to ask Australians aged 16 and over about sexual orientation and gender, and allows up to four ancestries to be listed instead of two.",
+    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/census-2026-guide-when-is-census-night-and-everything-you-need-to-know/7grekdcbf",
 
-    "{{AUS_2_HEADLINE}}": "Australia Wraps Up Its Best-Ever Commonwealth Games as Glasgow's Closing Ceremony Hands the Torch to Ahmedabad 2030",
-    "{{AUS_2_SUMMARY}}": "Team Australia heads into tonight's closing ceremony with 55 gold medals and 128 medals overall, comfortably topping the table ahead of Canada and England, with swimming, athletics and even 3x3 basketball all contributing. Simple Minds headlines the handover show at Glasgow's Hydro arena before the Games move to India in 2030.",
+    "{{AUS_2_HEADLINE}}": "One in Five Australians Are Now Delaying a Doctor's Visit Purely Because of Cost, New Report Finds",
+    "{{AUS_2_SUMMARY}}": "Finder's 2026 Health Report found one in five Australians are putting off GP visits due to cost, with dental, physio and preventative scans among the first things people cut, and 1.5 million Australians now cancelling private health cover altogether. A sobering number worth keeping in mind if you're weighing up staff health benefits or just your own next check-up.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victoria Has the Cheapest Petrol in the Country Tonight — That Won't Survive the Weekend",
-    "{{VIC_1_SUMMARY}}": "Victoria currently has the lowest average unleaded price of any state at 197.1 cents a litre, but that edge disappears once the federal fuel excise discount ends at midnight and prices rise nationwide from Monday. If you're planning to fill up the ute or any site plant, tonight is genuinely the cheapest it'll be for a while.",
+    "{{VIC_1_HEADLINE}}": "Melbourne's West Gets Its First New Tram in Over a Decade as the City's $1.85 Billion Fleet Overhaul Begins",
+    "{{VIC_1_SUMMARY}}": "The first of 100 new Dandenong-built G Class trams has rolled into the newly opened Maidstone Tram Depot, carrying roughly double the passengers of the old fleet and marking the start of Victoria's biggest tram rollout in years. Good news if any of your crews rely on the tram network to get between city-fringe jobs.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🌋 GEOLOGY · 'SUPERHEATED' MAGMA FOUND TO RADICALLY CHANGE HOW VOLCANOES ERUPT",
-    "{{SCI_1_HEADLINE}}": "Scientists Discover 'Superheated' Magma Can Radically Change How a Volcano Erupts",
-    "{{SCI_1_SUMMARY}}": "A University of Manchester-led team studying magma from the 2021 Tajogaite eruption on La Palma found that magma heated beyond the temperature at which crystals normally form delays crystallisation as it rises toward the surface, changing how the eruption unfolds. It's a previously overlooked mechanism that could improve eruption forecasting at similar volcanoes worldwide, published this week.",
+    "{{SCI_1_FLAG}}": "🥩 NUTRITION SCIENCE · MAJOR REVIEW OF 350+ STUDIES FINDS EATING LESS PROTEIN MAY ACTUALLY SLOW AGING",
+    "{{SCI_1_HEADLINE}}": "A Major Review of More Than 350 Studies Finds Eating Less Protein Could Slow Aging, Not Speed It Up",
+    "{{SCI_1_SUMMARY}}": "A sweeping Cell Press review published this month found current high-protein guidance may be overselling what most people actually need, with the ideal intake depending heavily on age and activity level rather than a single blanket number. Handy context next time a supplement ad tells you more protein is automatically better.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "Fake Supplier Invoices Are Getting Harder to Spot — Here's How AI Can Help You Catch One Before You Pay It",
-    "{{INSIGHT_BODY}}": "Invoice fraud has moved on from obviously dodgy emails — scammers now intercept a genuine supplier's invoice, quietly swap the BSB and account number, and send it back through what looks like the same email thread, banking on nobody double-checking a bill from a supplier they've paid a hundred times before. For a small trades business without a dedicated accounts team, an AI tool can act as that second set of eyes — cross-checking a new invoice's bank details against what that supplier used last time and flagging anything that's changed before you hit pay. It won't replace calling the supplier on a known number to confirm a big or unusual invoice, but it's a genuinely low-effort habit to build into the two minutes before you process payment.",
+    "{{INSIGHT_TITLE}}": "The EU Just Made AI Disclosure Compulsory — Should Your Quotes Say When AI Helped Write Them?",
+    "{{INSIGHT_BODY}}": "From today, new European rules require businesses to tell customers when they're dealing with an AI system or AI-generated content — a rule that doesn't apply directly to a Carrum Downs trades business, but points at where client expectations are heading. If you're using AI to draft quotes, follow-up emails or job reports, a simple line like 'drafted with AI assistance, reviewed by [name]' costs nothing and can actually build trust rather than undermine it — most clients care less that AI was involved and more that a human checked the numbers before it landed in their inbox. Worth building into your templates now, before a client asks first.",
 
     # Fun facts
-    "{{FACT_1}}": "Frost can form on your ute's windscreen even when the forecast says the air temperature never dropped below zero — flat surfaces radiate their own heat into a clear night sky and cool well below the surrounding air, a process called radiative cooling, which is why grass and glass can frost over on a night logged as '4°C.'",
-    "{{FACT_2}}": "Glasgow, hosting this year's Commonwealth Games, first hosted the event in 2014 — making it only the second city ever to host the Games twice, after London held them in 1934 and 2002.",
-    "{{FACT_3}}": "The fluorescent 'hi-vis' colours on modern safety vests trace back to brothers Bob and Joe Switzer, who accidentally discovered fluorescent pigments in their parents' garage in the 1930s while experimenting with UV light to treat one brother's eye injury — the pigments became DayGlo paint and eventually the orange and yellow now standard on every job site.",
+    "{{FACT_1}}": "The 'black box' flight recorder fitted to every commercial aircraft today was invented by an Australian, David Warren, working at Melbourne's Aeronautical Research Laboratories in the 1950s — partly driven by the loss of his own father in a 1934 plane crash. The real units are painted bright orange, not black, purely so wreckage search teams can actually spot them.",
+    "{{FACT_2}}": "Ned Kelly's famous suit of armour wasn't custom-forged steel plate — bush blacksmiths hammered it together from stolen plough mouldboards in 1880, and the finished set weighed around 44 kilograms. It stopped dozens of police bullets at Glenrowan, but Kelly's unprotected legs were what finally brought him down.",
+    "{{FACT_3}}": "The 'flat white' — one of Australia's biggest coffee exports — has a genuinely disputed birthplace between Sydney and Wellington, but one of the earliest documented menu listings was at Sydney's Moors Espresso Bar back in 1985, decades before the drink caught on in London and New York.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the rigger's small business never drop a client?",
-    "{{JOKE_PUNCHLINE}}": "He always double-checked the sling before he trusted the load.",
+    "{{JOKE_SETUP}}": "Why did the line marking contractor's small business never run over budget?",
+    "{{JOKE_PUNCHLINE}}": "He'd already drawn the line on what he was prepared to spend.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"I attribute my success to this: I never gave or took any excuse.\"",
-    "{{CLOSING_ATTR}}": "— Florence Nightingale",
-    "{{CLOSING_MESSAGE}}": "It's a crisp, frosty start to Sunday in Carrum Downs before a mostly sunny day, with showers moving in from tomorrow — so it's worth grabbing any outdoor jobs today while it's dry. Fill the ute before midnight if you can, since fuel goes up nationwide from tomorrow, and keep an eye out tonight for the Commonwealth Games closing ceremony, with Australia sitting on its best-ever medal haul.",
+    "{{CLOSING_QUOTE}}": "\"Strive not to be a success, but rather to be of value.\"",
+    "{{CLOSING_ATTR}}": "— Albert Einstein",
+    "{{CLOSING_MESSAGE}}": "It's a showery start to the week in Carrum Downs, with today's rain expected to ease by this evening before a cooler, drier stretch moves in — a good excuse to keep indoor jobs on the board this morning. Fuel officially got more expensive nationwide from today with the excise discount gone, so budget for it on your next tank if you didn't fill up over the weekend. And keep an eye on the Middle East this week — Trump's talk of calling off a strike on Iran is a good sign for oil prices staying steady rather than spiking.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
