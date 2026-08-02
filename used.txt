@@ -1060,3 +1060,14 @@ JOKE: Why did the rigger's small business never drop a client?
 INSIGHT: Fake Supplier Invoices Are Getting Harder to Spot — Here's How AI Can Help You Catch One Before You Pay It
 QUOTE: "I attribute my success to this: I never gave or took any excuse." — Florence Nightingale
 ---
+
+DATE: Monday, 03 August 2026
+SCIENCE: Major Cell Press review of 350+ studies finds eating less protein could slow aging — published ScienceDaily August 1 2026
+ROBOTICS: Persona AI shares real welding test footage from its heavy-duty shipyard humanoid, teleoperated in an industrial fabrication shop — HD Hyundai shipyard deployment and Louisiana steel-fabrication pilot underway
+FACT: The 'black box' flight recorder fitted to every commercial aircraft today was invented by an Australian, David Warren, working at Melbourne's Aeronautical Research Laboratories in the 1950s — partly driven by the loss of his own father in a 1934 plane crash. The real units are painted bright orange, not black, purely so wreckage search teams can actually spot them.
+FACT: Ned Kelly's famous suit of armour wasn't custom-forged steel plate — bush blacksmiths hammered it together from stolen plough mouldboards in 1880, and the finished set weighed around 44 kilograms. It stopped dozens of police bullets at Glenrowan, but Kelly's unprotected legs were what finally brought him down.
+FACT: The 'flat white' — one of Australia's biggest coffee exports — has a genuinely disputed birthplace between Sydney and Wellington, but one of the earliest documented menu listings was at Sydney's Moors Espresso Bar back in 1985, decades before the drink caught on in London and New York.
+JOKE: Why did the line marking contractor's small business never run over budget?
+INSIGHT: The EU Just Made AI Disclosure Compulsory — Should Your Quotes Say When AI Helped Write Them?
+QUOTE: "Strive not to be a success, but rather to be of value." — Albert Einstein
+---
