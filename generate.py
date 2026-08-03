@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Monday, 03 August 2026",
+    "{{DATE}}": "Tuesday, 04 August 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Mon 03 Aug (BOM)
-    "{{WEATHER_1}}": "MON 03 · 🌧️ Showers, easing this evening · 8–15°C",
-    "{{WEATHER_2}}": "TUE 04 · 🌧️ Showers, most likely SE suburbs · 5–12°C",
+    # Weather — Carrum Downs VIC, 5-day from Tue 04 Aug (BOM)
+    "{{WEATHER_1}}": "TUE 04 · 🌧️ Showers, most likely SE suburbs, easing tonight · 5–12°C",
+    "{{WEATHER_2}}": "WED 05 · 🌦️ Shower or two, most likely later in the day · 6–13°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "WED 05 · 🌦️ Isolated shower, chance easing · 6–13°C",
+    "{{WEATHER_3}}": "THU 06 · 🌦️ Shower or two, similar pattern · 6–13°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "THU 06 · 🌦️ Shower or two, morning/arvo · 6–13°C",
-    "{{WEATHER_5}}": "FRI 07 · ⛅ Partly cloudy, drier · 6–14°C",
-    "{{WEATHER_ALERT}}": "⚠ SEVERE WEATHER WARNING CURRENT FOR DAMAGING WINDS · GIPPSLAND, ALPINE & SW VIC (NOT METRO MELBOURNE)",
+    "{{WEATHER_4}}": "FRI 07 · ⛅ Partly cloudy, drier stretch begins · 6–14°C",
+    "{{WEATHER_5}}": "SAT 08 · ⛅ Mostly cloudy, isolated shower chance · 6–14°C",
+    "{{WEATHER_ALERT}}": "No severe weather warnings current for Melbourne / Carrum Downs",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇱🇵🇸 GAZA · ISRAELI STRIKES KILL NINE DESPITE HAMAS SIGNING ONTO US-BACKED DISARMAMENT DEAL",
-    "{{WORLD_1_HEADLINE}}": "Israeli Strikes Kill Nine in Gaza as a Senior Minister Vows Attacks Won't Stop Despite Hamas's Disarmament Deal",
-    "{{WORLD_1_SUMMARY}}": "A senior Israeli minister says strikes on Gaza will continue even after Hamas signed onto a US-backed disarmament plan brokered through Trump's Board of Peace, with Sunday's strikes on Gaza City, Deir al-Balah and Khan Younis marking the deadliest day there in weeks. It's a reminder that a signed deal on paper doesn't automatically mean the fighting stops on the ground.",
-    "{{WORLD_1_URL}}": "https://www.timesofisrael.com/senior-minister-says-israel-not-halting-attacks-in-gaza-as-9-said-killed-in-idf-strikes",
+    "{{WORLD_1_FLAG}}": "🇮🇱🇵🇸 GAZA · ISRAELI STRIKES KILL 18 AS NETANYAHU SPOKESMAN CASTS DOUBT ON PUBLICLY DISCLOSED PEACE DEAL",
+    "{{WORLD_1_HEADLINE}}": "Israeli Strikes Kill 18 in Gaza as a Netanyahu Spokesman Says the Publicly Announced Peace Deal 'Doesn't Reflect Israel's Positions'",
+    "{{WORLD_1_SUMMARY}}": "Israeli airstrikes hit Gaza for a second straight day, killing at least 18 Palestinians across Gaza City, Deir al-Balah and Khan Younis, even as the Board of Peace announced Hamas had accepted the next phase of last year's ceasefire roadmap — a claim a Netanyahu spokesman quickly disputed. Israel has now expanded its territorial control to roughly two-thirds of Gaza, up from just over half when the ceasefire began, another reminder that a headline deal doesn't always match what's happening on the ground.",
+    "{{WORLD_1_URL}}": "https://www.newstribune.com/news/2026/aug/03/israeli-strikes-kill-18-in-gaza-minister-says-no-deal-to-halt-attacks/",
 
-    "{{WORLD_2_FLAG}}": "🇮🇷🇺🇸 IRAN · TRUMP SAYS HE'S CALLING OFF A PLANNED STRIKE, CITING 'RAPID' PROGRESS TOWARD A DEAL",
-    "{{WORLD_2_HEADLINE}}": "Trump Says He's Cancelling a Planned Strike on Iran, Citing Rapid Progress Toward a Deal",
-    "{{WORLD_2_SUMMARY}}": "President Trump said he's calling off a planned attack on Iran contingent on both sides 'rapidly' reaching an agreement, pointing to progress on reopening the Strait of Hormuz after days of threatening fresh strikes. A step back from the brink is good news for oil markets generally, given roughly a fifth of the world's traded oil passes through that strait.",
-    "{{WORLD_2_URL}}": "https://www.cnn.com/2026/08/02/world/live-news/iran-war-trump",
+    "{{WORLD_2_FLAG}}": "🇮🇷🇺🇸 IRAN · US AND IRANIAN NEGOTIATORS SET TO RESUME DIRECT TALKS TODAY OVER A HORMUZ DEAL",
+    "{{WORLD_2_HEADLINE}}": "US and Iranian Negotiators Are Set to Resume Direct Talks Today as Trump Holds Off a Planned Strike",
+    "{{WORLD_2_SUMMARY}}": "Trump says he's holding off a strike on Iran that would have been the largest since World War II, with negotiators due back at the table today after Iran reportedly agreed in principle to fully reopen the Strait of Hormuz to commercial shipping. Oil prices dropped more than $5 a barrel on the news, given roughly a fifth of the world's traded oil passes through that strait — worth watching this week if today's talks hold.",
+    "{{WORLD_2_URL}}": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-kuwait-jordan-air-base/",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🇦🇺⛽ FUEL · EXCISE DISCOUNT HAS OFFICIALLY ENDED TODAY · PETROL AND DIESEL BOTH RISING NATIONWIDE",
-    "{{ECON_1_HEADLINE}}": "The Fuel Excise Discount Has Officially Ended Today, With Petrol and Diesel Prices Rising Nationwide",
-    "{{ECON_1_SUMMARY}}": "From today the remaining fuel excise discount is gone and the excise rate itself has risen to 53.7 cents a litre with an added CPI-linked adjustment on top, pushing unleaded up by as much as 16 cents a litre on a price that had already climbed more than 34 cents a litre since June. Diesel was already averaging around 231 cents a litre before today's change, so it's worth shopping around for the cheapest servo near your sites this week.",
-    "{{ECON_1_URL}}": "https://www.indexbox.io/blog/accc-fuel-report-prices-rise-as-fuel-excise-cut-expires/",
+    "{{ECON_1_FLAG}}": "🇦🇺🏠 HOUSING · NATIONAL HOME VALUES POST THEIR STEEPEST MONTHLY FALL IN ALMOST FOUR YEARS",
+    "{{ECON_1_HEADLINE}}": "Australian Home Values Just Recorded Their Steepest Monthly Fall in Nearly Four Years",
+    "{{ECON_1_SUMMARY}}": "National home values dropped 0.7% in July — the biggest single-month fall since December 2022 — with Sydney down 1.4% and Melbourne down 1.2%, as high interest rates keep squeezing buyers. A softer housing market can mean smaller reno and maintenance budgets from homeowners, so it's worth watching which of your regular residential clients start trimming scope on upcoming jobs.",
+    "{{ECON_1_URL}}": "https://www.bloomberg.com/news/articles/2026-08-02/australia-s-housing-market-worsens-with-falls-getting-steeper",
 
-    "{{ECON_2_FLAG}}": "🇦🇺🏦 INTEREST RATES · ALL FOUR MAJOR BANKS NOW EXPECT THE RBA TO HOLD RATES STEADY THIS MONTH",
-    "{{ECON_2_HEADLINE}}": "All Four Major Banks Now Agree the RBA Will Hold Interest Rates Steady at Its August Meeting",
-    "{{ECON_2_SUMMARY}}": "With the RBA's next call due August 11, Westpac has joined CommBank, NAB and ANZ in expecting the cash rate to stay on hold, with most economists now pushing any further relief out to 2027. If you've been banking on a rate cut to ease loan repayments on the ute or plant finance, it's worth planning as if that relief isn't coming this year.",
+    "{{ECON_2_FLAG}}": "🇦🇺⛽ FUEL · EXCISE RISE NOW FULLY IN EFFECT · ACCC WATCHING FOR PRICE GOUGING AT THE BOWSER",
+    "{{ECON_2_HEADLINE}}": "The Fuel Excise Increase Is Now Fully in Effect, With the ACCC Watching for Price Gouging at the Bowser",
+    "{{ECON_2_SUMMARY}}": "With the excise now sitting at 53.7 cents a litre following Sunday's rise, capital city petrol and diesel have already climbed as much as 42 cents a litre in places, and the consumer watchdog has been urged to keep a close eye on retailers padding margins on top of the legitimate increase. Worth comparing a couple of servos near your sites this week rather than assuming the nearest bowser is still the cheapest.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🇪🇺🤖 AI REGULATION · EU TRANSPARENCY RULES FOR AI SYSTEMS OFFICIALLY START TODAY",
-    "{{TECH_1_HEADLINE}}": "New EU Rules Requiring AI Systems to Disclose Themselves to Users Officially Start Today",
-    "{{TECH_1_SUMMARY}}": "From today, the European Commission's AI Act transparency obligations require chatbots to identify themselves as AI, deepfakes to be labelled, and AI-generated content to carry machine-readable marks, with fines of up to €15 million for non-compliance. It doesn't apply directly to an Australian trades business, but it's a clear signal of where AI disclosure expectations are heading globally — worth getting ahead of before a client asks.",
-    "{{TECH_1_URL}}": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august",
+    "{{TECH_1_FLAG}}": "🤖 GOOGLE WORKSPACE · GEMINI NOW LETS YOU DROP TIMESTAMPED COMMENTS ON VIDEOS IN GOOGLE DRIVE",
+    "{{TECH_1_HEADLINE}}": "Google Drive Now Lets You Anchor Comments to an Exact Moment in a Video, Rolling Out From Today",
+    "{{TECH_1_SUMMARY}}": "From today, Google Workspace users can leave comments pinned to a specific timestamp on any video stored in Drive, rather than just commenting on the file as a whole. A genuinely practical one for a trades business — it means a foreman can flag the exact second in a site walkthrough or toolbox-talk video that needs fixing, instead of writing a paragraph trying to describe where in the clip the problem is.",
+    "{{TECH_1_URL}}": "https://workspaceupdates.googleblog.com/2026/",
 
-    "{{TECH_2_FLAG}}": "🎥 AI TOOLS · GOOGLE GIVING AWAY 10 FREE AI-GENERATED VIDEOS IN GEMINI — OFFER ENDS TOMORROW",
-    "{{TECH_2_HEADLINE}}": "Google Is Giving Away 10 Free AI-Generated Videos Through Gemini, but the Offer Ends Tomorrow",
-    "{{TECH_2_SUMMARY}}": "Gemini users without a paid Google AI plan can generate, edit and remix up to ten videos at no cost using Gemini's Veo-powered 'Omni' tool until 11:59pm PT tomorrow, August 4. It's a genuinely free way to knock out a few before/after job clips or a quick social post for the business before the trial window closes.",
+    "{{TECH_2_FLAG}}": "🇨🇳🤖 AI MODELS · DEEPSEEK RELEASES ITS CHEAP, HIGH-AGENCY V4-FLASH MODEL TO THE PUBLIC",
+    "{{TECH_2_HEADLINE}}": "DeepSeek Has Publicly Released Its V4-Flash Model, Undercutting Rivals on Price for Agentic AI Work",
+    "{{TECH_2_SUMMARY}}": "Chinese AI lab DeepSeek this week pushed its V4-Flash model out of preview and into general release, with stronger autonomous 'agent' capabilities and lower running costs than its earlier version. It's a reminder that the AI tools doing your admin and quoting don't need to be the most famous or expensive ones on the market — cheaper, capable models are landing every few weeks now.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · TEXAS STARTUP PERSONA AI SHARES REAL WELDING TEST FOOTAGE FOR ITS SHIPYARD HUMANOID",
-    "{{ROBOT_1_HEADLINE}}": "Persona AI Shares Real-World Welding Test Footage From Its Heavy-Duty Shipyard Humanoid Robot",
-    "{{ROBOT_1_SUMMARY}}": "Houston-based Persona AI has released footage of its Gen 1 humanoid being teleoperated through a genuine welding job in an industrial fabrication shop, part of the data-gathering push behind its HD Hyundai shipyard deployment and a steel-fabrication pilot in Louisiana. It's a reminder that a lot of the humanoid robotics push is now landing squarely in heavy industry — welding, grinding and structural fabrication — the exact kind of physical trade work AI was supposed to leave alone the longest.",
-    "{{ROBOT_1_URL}}": "https://mikekalil.com/blog/persona-ai-humanoid-robot-welder/",
+    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · EX-GOOGLE DEEPMIND TEAM LAUNCHES REIMAGINE ROBOTICS, ROBOTS THAT LEARN ON THE JOB",
+    "{{ROBOT_1_HEADLINE}}": "A New Robotics Startup Founded by Ex-Google DeepMind Leaders Has Launched Robots That 'Learn on the Job'",
+    "{{ROBOT_1_SUMMARY}}": "Reimagine Robotics, founded by former leaders of Google DeepMind's Applied Robotics team, has come out of stealth with a system that lets ordinary factory workers train a robot directly on the line, cutting what used to take a day of specialist programming down to about 10 minutes. It's already running in advanced manufacturing and electronics disassembly sites — another sign the barrier to using a robot on the floor is dropping fast, not just for giant firms with in-house coders.",
+    "{{ROBOT_1_URL}}": "https://www.therobotreport.com/reimagine-robotics-emerges-stealth-with-robotslearn-on-the-job/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Census Night Is Just Over a Week Away, With Every Person in Australia Counted on 11 August",
-    "{{AUS_1_SUMMARY}}": "The 2026 Census falls on Tuesday 11 August, with around 30,000 ABS field staff deployed to make sure everyone — including people experiencing homelessness or in hospital — gets counted, and login letters landing in letterboxes now. This year's count is also the first to ask Australians aged 16 and over about sexual orientation and gender, and allows up to four ancestries to be listed instead of two.",
-    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/census-2026-guide-when-is-census-night-and-everything-you-need-to-know/7grekdcbf",
+    "{{AUS_1_HEADLINE}}": "New National Health Report Finds Overweight and Obesity Have Overtaken Smoking as Australia's Leading Cause of Ill Health",
+    "{{AUS_1_SUMMARY}}": "The Australian Institute of Health and Welfare's Australia's Health 2026 report finds about two in three adults now live with overweight or obesity, which has overtaken tobacco as the leading risk factor behind disease and death — even as overall life expectancy keeps climbing, now 81.1 years for men and 85.1 for women. Worth a thought if your business is one of the many trades with long hours, servo lunches and not much time for a proper feed.",
+    "{{AUS_1_URL}}": "https://www.aihw.gov.au/news-media/media-releases/2026/july/latest-report-card-on-australia-s-health-reveals-areas-of-improvement-and-challenges",
 
-    "{{AUS_2_HEADLINE}}": "One in Five Australians Are Now Delaying a Doctor's Visit Purely Because of Cost, New Report Finds",
-    "{{AUS_2_SUMMARY}}": "Finder's 2026 Health Report found one in five Australians are putting off GP visits due to cost, with dental, physio and preventative scans among the first things people cut, and 1.5 million Australians now cancelling private health cover altogether. A sobering number worth keeping in mind if you're weighing up staff health benefits or just your own next check-up.",
+    "{{AUS_2_HEADLINE}}": "A New Poll Shows One Nation Now Running Slightly Ahead of Labor Nationally, With the Nationals Leader Open to Working With Them",
+    "{{AUS_2_SUMMARY}}": "The latest Redbridge poll has One Nation edging ahead of Labor for the second time in four months, and Nationals leader Matt Canavan says he's 'willing to co-operate' with the party as its support climbs. A sign the political ground is shifting well before the next federal contest, regardless of where your own vote sits.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Melbourne's West Gets Its First New Tram in Over a Decade as the City's $1.85 Billion Fleet Overhaul Begins",
-    "{{VIC_1_SUMMARY}}": "The first of 100 new Dandenong-built G Class trams has rolled into the newly opened Maidstone Tram Depot, carrying roughly double the passengers of the old fleet and marking the start of Victoria's biggest tram rollout in years. Good news if any of your crews rely on the tram network to get between city-fringe jobs.",
+    "{{VIC_1_HEADLINE}}": "A Qantas Flight Bound for Chile Was Diverted to Melbourne Overnight, Stranding Nearly 200 Passengers",
+    "{{VIC_1_SUMMARY}}": "Qantas flight QF27 left Sydney for Santiago on Sunday night but developed a problem about 4.5 hours in, forcing the Boeing 787 to turn back across the Tasman and land in Melbourne around 11pm rather than Sydney, which was shut by its overnight curfew. Passengers were put up overnight before continuing on a replacement flight — a good reminder that even a well-planned schedule can end up somewhere nobody booked.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🥩 NUTRITION SCIENCE · MAJOR REVIEW OF 350+ STUDIES FINDS EATING LESS PROTEIN MAY ACTUALLY SLOW AGING",
-    "{{SCI_1_HEADLINE}}": "A Major Review of More Than 350 Studies Finds Eating Less Protein Could Slow Aging, Not Speed It Up",
-    "{{SCI_1_SUMMARY}}": "A sweeping Cell Press review published this month found current high-protein guidance may be overselling what most people actually need, with the ideal intake depending heavily on age and activity level rather than a single blanket number. Handy context next time a supplement ad tells you more protein is automatically better.",
+    "{{SCI_1_FLAG}}": "🌿 PHARMACOLOGY · SCIENTISTS MAP HOW TWO POISONOUS PLANTS BUILD COMPOUNDS THAT COULD INSPIRE NEW MEDICINES",
+    "{{SCI_1_HEADLINE}}": "Scientists Have Mapped How Two Poisonous Plants Build Their Toxins — and the Same Chemistry Could Inspire New Medicines",
+    "{{SCI_1_SUMMARY}}": "Researchers have identified six enzymes that wolfsbane and larkspur use to build a complex, medically promising compound, opening a path to producing similar chemicals in the lab rather than relying on foraging dangerous plants. A handy reminder that some of the nastiest things growing in a paddock are also where a fair bit of modern medicine quietly comes from.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "The EU Just Made AI Disclosure Compulsory — Should Your Quotes Say When AI Helped Write Them?",
-    "{{INSIGHT_BODY}}": "From today, new European rules require businesses to tell customers when they're dealing with an AI system or AI-generated content — a rule that doesn't apply directly to a Carrum Downs trades business, but points at where client expectations are heading. If you're using AI to draft quotes, follow-up emails or job reports, a simple line like 'drafted with AI assistance, reviewed by [name]' costs nothing and can actually build trust rather than undermine it — most clients care less that AI was involved and more that a human checked the numbers before it landed in their inbox. Worth building into your templates now, before a client asks first.",
+    "{{INSIGHT_TITLE}}": "House Prices Just Had Their Worst Month in Nearly Four Years — Is Your Quoting Fast Enough for a Tighter Market?",
+    "{{INSIGHT_BODY}}": "National home values just posted their steepest monthly fall in almost four years, with Melbourne down 1.2% in July alone — a sign more homeowners will be trimming reno and maintenance budgets rather than committing to big-ticket jobs. In a more price-sensitive market, the trades that win aren't always the cheapest — they're often the ones who get a proper quote back to the customer before a nervous homeowner gets three more quotes and cold feet. An AI tool that pulls from your past job costings can turn a same-day site visit into a same-day formal quote, and that turnaround speed alone can matter more than shaving a few dollars off the price. Worth testing on your next few enquiries and watching whether it moves your win rate.",
 
     # Fun facts
-    "{{FACT_1}}": "The 'black box' flight recorder fitted to every commercial aircraft today was invented by an Australian, David Warren, working at Melbourne's Aeronautical Research Laboratories in the 1950s — partly driven by the loss of his own father in a 1934 plane crash. The real units are painted bright orange, not black, purely so wreckage search teams can actually spot them.",
-    "{{FACT_2}}": "Ned Kelly's famous suit of armour wasn't custom-forged steel plate — bush blacksmiths hammered it together from stolen plough mouldboards in 1880, and the finished set weighed around 44 kilograms. It stopped dozens of police bullets at Glenrowan, but Kelly's unprotected legs were what finally brought him down.",
-    "{{FACT_3}}": "The 'flat white' — one of Australia's biggest coffee exports — has a genuinely disputed birthplace between Sydney and Wellington, but one of the earliest documented menu listings was at Sydney's Moors Espresso Bar back in 1985, decades before the drink caught on in London and New York.",
+    "{{FACT_1}}": "The Sydney Harbour Bridge was built from both shores at once using six million hand-driven rivets, with the two halves of the steel arch meeting in the middle in 1930 to within a few millimetres of true — all worked out with slide rules and drafting tables, decades before computer modelling existed.",
+    "{{FACT_2}}": "The QWERTY keyboard layout wasn't designed for speed — Christopher Latham Sholes arranged it in the 1870s specifically to separate commonly paired letters and slow typists down, so the mechanical arms of early typewriters wouldn't jam and tangle.",
+    "{{FACT_3}}": "The Wright brothers' first powered flight in 1903 covered just 37 metres — shorter than the wingspan of a modern Boeing 747-8, which stretches 68.4 metres tip to tip.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the line marking contractor's small business never run over budget?",
-    "{{JOKE_PUNCHLINE}}": "He'd already drawn the line on what he was prepared to spend.",
+    "{{JOKE_SETUP}}": "Why did the electrician's small business never get its wires crossed at tax time?",
+    "{{JOKE_PUNCHLINE}}": "Because he always kept his books properly earthed.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Strive not to be a success, but rather to be of value.\"",
-    "{{CLOSING_ATTR}}": "— Albert Einstein",
-    "{{CLOSING_MESSAGE}}": "It's a showery start to the week in Carrum Downs, with today's rain expected to ease by this evening before a cooler, drier stretch moves in — a good excuse to keep indoor jobs on the board this morning. Fuel officially got more expensive nationwide from today with the excise discount gone, so budget for it on your next tank if you didn't fill up over the weekend. And keep an eye on the Middle East this week — Trump's talk of calling off a strike on Iran is a good sign for oil prices staying steady rather than spiking.",
+    "{{CLOSING_QUOTE}}": "\"It always seems impossible until it's done.\"",
+    "{{CLOSING_ATTR}}": "— Nelson Mandela",
+    "{{CLOSING_MESSAGE}}": "It's a showery start to Tuesday in Carrum Downs, with today's rain most likely over the south-east suburbs and easing tonight before a similar pattern repeats through the week. The fuel excise rise is now fully baked into prices at the bowser, so budget for it on your next fill, and keep an eye on the Middle East today — direct US-Iran talks are due to resume, and a good outcome there could take some heat out of oil prices for everyone.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
