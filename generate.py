@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Tuesday, 04 August 2026",
+    "{{DATE}}": "Wednesday, 05 August 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Tue 04 Aug (BOM)
-    "{{WEATHER_1}}": "TUE 04 · 🌧️ Showers, most likely SE suburbs, easing tonight · 5–12°C",
-    "{{WEATHER_2}}": "WED 05 · 🌦️ Shower or two, most likely later in the day · 6–13°C",
+    # Weather — Carrum Downs VIC, 5-day from Wed 05 Aug (BOM)
+    "{{WEATHER_1}}": "WED 05 · 🌧️ Showers, most likely SE suburbs · 7–15°C",
+    "{{WEATHER_2}}": "THU 06 · 🌦️ Shower or two, easing chance · 7–15°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "THU 06 · 🌦️ Shower or two, similar pattern · 6–13°C",
-    "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "FRI 07 · ⛅ Partly cloudy, drier stretch begins · 6–14°C",
-    "{{WEATHER_5}}": "SAT 08 · ⛅ Mostly cloudy, isolated shower chance · 6–14°C",
+    "{{WEATHER_3}}": "FRI 07 · ⛅ Partly cloudy, drier stretch begins · 7–15°C",
+    "{{WEATHER_3_CLASS}}": "",
+    "{{WEATHER_4}}": "SAT 08 · ⛅ Shower or two later in the day · 8–17°C",
+    "{{WEATHER_5}}": "SUN 09 · 🌧️ Windy, wettest day of the run · 9–16°C",
     "{{WEATHER_ALERT}}": "No severe weather warnings current for Melbourne / Carrum Downs",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇱🇵🇸 GAZA · ISRAELI STRIKES KILL 18 AS NETANYAHU SPOKESMAN CASTS DOUBT ON PUBLICLY DISCLOSED PEACE DEAL",
-    "{{WORLD_1_HEADLINE}}": "Israeli Strikes Kill 18 in Gaza as a Netanyahu Spokesman Says the Publicly Announced Peace Deal 'Doesn't Reflect Israel's Positions'",
-    "{{WORLD_1_SUMMARY}}": "Israeli airstrikes hit Gaza for a second straight day, killing at least 18 Palestinians across Gaza City, Deir al-Balah and Khan Younis, even as the Board of Peace announced Hamas had accepted the next phase of last year's ceasefire roadmap — a claim a Netanyahu spokesman quickly disputed. Israel has now expanded its territorial control to roughly two-thirds of Gaza, up from just over half when the ceasefire began, another reminder that a headline deal doesn't always match what's happening on the ground.",
-    "{{WORLD_1_URL}}": "https://www.newstribune.com/news/2026/aug/03/israeli-strikes-kill-18-in-gaza-minister-says-no-deal-to-halt-attacks/",
+    "{{WORLD_1_FLAG}}": "🇮🇷🇶🇦 IRAN · QATARI-MEDIATED DRAFT DEAL REPORTEDLY 'IN VERY PROGRESSIVE STAGES' TO END THE US-IRAN WAR",
+    "{{WORLD_1_HEADLINE}}": "A Qatari-Mediated Draft Deal Is Reportedly 'In Very Progressive Stages' to End the US-Iran War",
+    "{{WORLD_1_SUMMARY}}": "Draft agreements are said to be circulating via Qatari mediation aimed at ending the 2026 US-Iran conflict, with Trump reportedly speaking directly with Qatar's emir, though no formal US-Iran talks are yet confirmed. Iran is separately working to establish a controlled safe shipping corridor through the Strait of Hormuz — worth watching given how directly that strait affects global oil and freight costs.",
+    "{{WORLD_1_URL}}": "https://www.cnn.com/2026/08/04/world/live-news/iran-war-trump",
 
-    "{{WORLD_2_FLAG}}": "🇮🇷🇺🇸 IRAN · US AND IRANIAN NEGOTIATORS SET TO RESUME DIRECT TALKS TODAY OVER A HORMUZ DEAL",
-    "{{WORLD_2_HEADLINE}}": "US and Iranian Negotiators Are Set to Resume Direct Talks Today as Trump Holds Off a Planned Strike",
-    "{{WORLD_2_SUMMARY}}": "Trump says he's holding off a strike on Iran that would have been the largest since World War II, with negotiators due back at the table today after Iran reportedly agreed in principle to fully reopen the Strait of Hormuz to commercial shipping. Oil prices dropped more than $5 a barrel on the news, given roughly a fifth of the world's traded oil passes through that strait — worth watching this week if today's talks hold.",
-    "{{WORLD_2_URL}}": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-kuwait-jordan-air-base/",
+    "{{WORLD_2_FLAG}}": "🇷🇺🇺🇦 UKRAINE · NINE KILLED AS RUSSIA AND UKRAINE TRADE ESCALATING LONG-RANGE STRIKES",
+    "{{WORLD_2_HEADLINE}}": "Nine Killed as Russia and Ukraine Trade Escalating Long-Range Missile and Drone Strikes",
+    "{{WORLD_2_SUMMARY}}": "At least nine people died — five in Russia, four in Ukraine — in a fresh round of long-range strikes, including a Ukrainian drone hit on a warehouse in the Moscow region. There's no sign of a resolution, and the escalation keeps regional energy and shipping risk elevated for anyone watching fuel costs.",
+    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/8/4/nine-killed-in-escalating-long-range-strikes-between-russia-and-ukraine",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🇦🇺🏠 HOUSING · NATIONAL HOME VALUES POST THEIR STEEPEST MONTHLY FALL IN ALMOST FOUR YEARS",
-    "{{ECON_1_HEADLINE}}": "Australian Home Values Just Recorded Their Steepest Monthly Fall in Nearly Four Years",
-    "{{ECON_1_SUMMARY}}": "National home values dropped 0.7% in July — the biggest single-month fall since December 2022 — with Sydney down 1.4% and Melbourne down 1.2%, as high interest rates keep squeezing buyers. A softer housing market can mean smaller reno and maintenance budgets from homeowners, so it's worth watching which of your regular residential clients start trimming scope on upcoming jobs.",
-    "{{ECON_1_URL}}": "https://www.bloomberg.com/news/articles/2026-08-02/australia-s-housing-market-worsens-with-falls-getting-steeper",
+    "{{ECON_1_FLAG}}": "🇦🇺⛽ FUEL · TEMPORARY EXCISE CUT HAS ENDED, PUMP PRICES ALREADY CLIMBING",
+    "{{ECON_1_HEADLINE}}": "The Temporary Fuel Excise Cut Has Ended, and Pump Prices Are Already Climbing",
+    "{{ECON_1_SUMMARY}}": "The government's 16-cent-a-litre fuel excise relief expired on 2 August, with the excise back to 53.7 cents a litre plus indexation from 3 August — the ACCC says it's watching retailers closely for any extra padding on top of the legitimate rise. Victoria's still the cheapest state at the pump, but worth comparing a couple of servos near your sites this week rather than assuming yesterday's cheapest is still today's.",
+    "{{ECON_1_URL}}": "https://theconversation.com/australias-fuel-discount-is-ending-what-does-this-mean-for-petrol-prices-288279",
 
-    "{{ECON_2_FLAG}}": "🇦🇺⛽ FUEL · EXCISE RISE NOW FULLY IN EFFECT · ACCC WATCHING FOR PRICE GOUGING AT THE BOWSER",
-    "{{ECON_2_HEADLINE}}": "The Fuel Excise Increase Is Now Fully in Effect, With the ACCC Watching for Price Gouging at the Bowser",
-    "{{ECON_2_SUMMARY}}": "With the excise now sitting at 53.7 cents a litre following Sunday's rise, capital city petrol and diesel have already climbed as much as 42 cents a litre in places, and the consumer watchdog has been urged to keep a close eye on retailers padding margins on top of the legitimate increase. Worth comparing a couple of servos near your sites this week rather than assuming the nearest bowser is still the cheapest.",
+    "{{ECON_2_FLAG}}": "🇦🇺📋 TAX · SMALL BUSINESS LOBBY WANTS LOSS CARRY-BACK RELIEF EXTENDED TO TRUSTS AND SOLE TRADERS",
+    "{{ECON_2_HEADLINE}}": "Small Business Lobby COSBOA Wants Loss Carry-Back Tax Relief Extended to Trusts and Sole Traders",
+    "{{ECON_2_SUMMARY}}": "COSBOA has told a Senate committee the government's proposed loss carry-back reform shouldn't be limited to companies — it should cover trusts, partnerships and sole traders too, the structures most small trades businesses actually use. Worth watching if you don't operate as a company, since as drafted you'd miss a tax break your incorporated competitors could claim.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 GOOGLE WORKSPACE · GEMINI NOW LETS YOU DROP TIMESTAMPED COMMENTS ON VIDEOS IN GOOGLE DRIVE",
-    "{{TECH_1_HEADLINE}}": "Google Drive Now Lets You Anchor Comments to an Exact Moment in a Video, Rolling Out From Today",
-    "{{TECH_1_SUMMARY}}": "From today, Google Workspace users can leave comments pinned to a specific timestamp on any video stored in Drive, rather than just commenting on the file as a whole. A genuinely practical one for a trades business — it means a foreman can flag the exact second in a site walkthrough or toolbox-talk video that needs fixing, instead of writing a paragraph trying to describe where in the clip the problem is.",
-    "{{TECH_1_URL}}": "https://workspaceupdates.googleblog.com/2026/",
+    "{{TECH_1_FLAG}}": "🤖 OPENAI · PASSES 1 BILLION ACTIVE USERS, CUTS ITS CHEAPEST MODEL'S PRICE BY 80%",
+    "{{TECH_1_HEADLINE}}": "OpenAI Passes 1 Billion Active Users and Cuts Its Cheapest AI Model's Price by 80%",
+    "{{TECH_1_SUMMARY}}": "OpenAI says its models now serve more than a billion active users and over 2 million businesses, and it's just cut API pricing on its cheapest model by 80% and its mid-tier model by 20%. The trend keeps holding — the AI tools worth trialling in your business keep getting cheaper to run, not more expensive.",
+    "{{TECH_1_URL}}": "https://www.ghacks.net/2026/08/04/openai-reaches-one-billion-active-users-and-cuts-gpt-5-6-luna-and-terra-prices-by-up-to-80/",
 
-    "{{TECH_2_FLAG}}": "🇨🇳🤖 AI MODELS · DEEPSEEK RELEASES ITS CHEAP, HIGH-AGENCY V4-FLASH MODEL TO THE PUBLIC",
-    "{{TECH_2_HEADLINE}}": "DeepSeek Has Publicly Released Its V4-Flash Model, Undercutting Rivals on Price for Agentic AI Work",
-    "{{TECH_2_SUMMARY}}": "Chinese AI lab DeepSeek this week pushed its V4-Flash model out of preview and into general release, with stronger autonomous 'agent' capabilities and lower running costs than its earlier version. It's a reminder that the AI tools doing your admin and quoting don't need to be the most famous or expensive ones on the market — cheaper, capable models are landing every few weeks now.",
+    "{{TECH_2_FLAG}}": "🌐 AI TRANSLATION · TOOLS ARE NOW HIGHLY FLUENT, BUT RESEARCHERS WARN TONE STILL GETS LOST",
+    "{{TECH_2_HEADLINE}}": "AI Translation Tools Are Getting Remarkably Fluent — But Researchers Warn Tone and Nuance Still Slip Through",
+    "{{TECH_2_SUMMARY}}": "University of Essex researchers note today's AI speech and text translators are now highly accurate on the words themselves, but still miss hesitation, tone and ambiguity that carry real meaning in a conversation. Handy to keep in mind if you're using a translation app with a client or crew member on site rather than trusting it word for word.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 ROBOTICS · EX-GOOGLE DEEPMIND TEAM LAUNCHES REIMAGINE ROBOTICS, ROBOTS THAT LEARN ON THE JOB",
-    "{{ROBOT_1_HEADLINE}}": "A New Robotics Startup Founded by Ex-Google DeepMind Leaders Has Launched Robots That 'Learn on the Job'",
-    "{{ROBOT_1_SUMMARY}}": "Reimagine Robotics, founded by former leaders of Google DeepMind's Applied Robotics team, has come out of stealth with a system that lets ordinary factory workers train a robot directly on the line, cutting what used to take a day of specialist programming down to about 10 minutes. It's already running in advanced manufacturing and electronics disassembly sites — another sign the barrier to using a robot on the floor is dropping fast, not just for giant firms with in-house coders.",
-    "{{ROBOT_1_URL}}": "https://www.therobotreport.com/reimagine-robotics-emerges-stealth-with-robotslearn-on-the-job/",
+    "{{ROBOT_1_FLAG}}": "🇨🇳🦾 ROBOTICS · HUMANOID ROBOT MAKER UNITREE OPENS BOOK-BUILDING TODAY FOR ITS SHANGHAI IPO",
+    "{{ROBOT_1_HEADLINE}}": "Humanoid Robot Maker Unitree Opens Book-Building Today for a Shanghai IPO Valuing It at ¥42 Billion",
+    "{{ROBOT_1_SUMMARY}}": "Unitree — the world's top-shipping humanoid robot maker in 2025 — opened institutional book-building today for its Shanghai STAR Market listing, aiming to raise about ¥4.2 billion at a ¥42 billion valuation floor, with public subscription due 10 August. It's a sign the humanoid robotics sector is shifting from prototype hype into real, capital-market-priced mass production.",
+    "{{ROBOT_1_URL}}": "https://www.yuantalks.com/unitree-robotics-launches-star-market-ipo-bookbuilding-on-august-5/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "New National Health Report Finds Overweight and Obesity Have Overtaken Smoking as Australia's Leading Cause of Ill Health",
-    "{{AUS_1_SUMMARY}}": "The Australian Institute of Health and Welfare's Australia's Health 2026 report finds about two in three adults now live with overweight or obesity, which has overtaken tobacco as the leading risk factor behind disease and death — even as overall life expectancy keeps climbing, now 81.1 years for men and 85.1 for women. Worth a thought if your business is one of the many trades with long hours, servo lunches and not much time for a proper feed.",
-    "{{AUS_1_URL}}": "https://www.aihw.gov.au/news-media/media-releases/2026/july/latest-report-card-on-australia-s-health-reveals-areas-of-improvement-and-challenges",
+    "{{AUS_1_HEADLINE}}": "Royal Commission Into Antisemitism Hears Evidence on Sydney Opera House and NSW Parliament Protests",
+    "{{AUS_1_SUMMARY}}": "The Royal Commission on Antisemitism and Social Cohesion held a Sydney hearing block examining policing and conduct at protests outside the Opera House and NSW Parliament, part of its wider inquiry following the Bondi Beach terror attack.",
+    "{{AUS_1_URL}}": "https://asc.royalcommission.gov.au/hearings",
 
-    "{{AUS_2_HEADLINE}}": "A New Poll Shows One Nation Now Running Slightly Ahead of Labor Nationally, With the Nationals Leader Open to Working With Them",
-    "{{AUS_2_SUMMARY}}": "The latest Redbridge poll has One Nation edging ahead of Labor for the second time in four months, and Nationals leader Matt Canavan says he's 'willing to co-operate' with the party as its support climbs. A sign the political ground is shifting well before the next federal contest, regardless of where your own vote sits.",
+    "{{AUS_2_HEADLINE}}": "Household Spending Beat Forecasts in June, Rising 0.8% on Stronger Car Sales and Recreation",
+    "{{AUS_2_SUMMARY}}": "The ABS Monthly Household Spending Indicator showed spending up 0.8% in June, well ahead of the 0.2% expected, driven by new vehicle sales and recreation — a sign the economy isn't slowing as fast as hoped, with the RBA's next rate call due 10–11 August.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "A Qantas Flight Bound for Chile Was Diverted to Melbourne Overnight, Stranding Nearly 200 Passengers",
-    "{{VIC_1_SUMMARY}}": "Qantas flight QF27 left Sydney for Santiago on Sunday night but developed a problem about 4.5 hours in, forcing the Boeing 787 to turn back across the Tasman and land in Melbourne around 11pm rather than Sydney, which was shut by its overnight curfew. Passengers were put up overnight before continuing on a replacement flight — a good reminder that even a well-planned schedule can end up somewhere nobody booked.",
+    "{{VIC_1_HEADLINE}}": "New Premier Ben Carroll Unveils His Cabinet and Flags a Royal Commission Into the Construction Sector",
+    "{{VIC_1_SUMMARY}}": "Following Jacinta Allan's resignation, new Premier Ben Carroll has named a reshuffled Cabinet — including a new Minister for AI and Digital Economy — and says his first act will be calling a royal commission into the construction sector, complete with a special prosecutor, to examine cost blowouts and dodgy practices industry-wide.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🌿 PHARMACOLOGY · SCIENTISTS MAP HOW TWO POISONOUS PLANTS BUILD COMPOUNDS THAT COULD INSPIRE NEW MEDICINES",
-    "{{SCI_1_HEADLINE}}": "Scientists Have Mapped How Two Poisonous Plants Build Their Toxins — and the Same Chemistry Could Inspire New Medicines",
-    "{{SCI_1_SUMMARY}}": "Researchers have identified six enzymes that wolfsbane and larkspur use to build a complex, medically promising compound, opening a path to producing similar chemicals in the lab rather than relying on foraging dangerous plants. A handy reminder that some of the nastiest things growing in a paddock are also where a fair bit of modern medicine quietly comes from.",
+    "{{SCI_1_FLAG}}": "⚡ ENERGY · GERMAN ENGINEERS RUN A COMPRESSORLESS HYDROGEN TURBINE ON CONTROLLED EXPLOSIONS",
+    "{{SCI_1_HEADLINE}}": "German Engineers Just Ran a Hydrogen Turbine With No Compressor at All — Using Controlled Detonations Instead",
+    "{{SCI_1_SUMMARY}}": "Researchers at Germany's Karlsruhe Institute of Technology generated electricity for a record 303 seconds from a hydrogen turbine that skips the compressor entirely — the part that normally eats about half a gas turbine's power — using detonation waves travelling faster than sound to do the compressing instead. A neat reminder that some of the biggest efficiency gains in industrial equipment still come from removing a part, not adding one.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "House Prices Just Had Their Worst Month in Nearly Four Years — Is Your Quoting Fast Enough for a Tighter Market?",
-    "{{INSIGHT_BODY}}": "National home values just posted their steepest monthly fall in almost four years, with Melbourne down 1.2% in July alone — a sign more homeowners will be trimming reno and maintenance budgets rather than committing to big-ticket jobs. In a more price-sensitive market, the trades that win aren't always the cheapest — they're often the ones who get a proper quote back to the customer before a nervous homeowner gets three more quotes and cold feet. An AI tool that pulls from your past job costings can turn a same-day site visit into a same-day formal quote, and that turnaround speed alone can matter more than shaving a few dollars off the price. Worth testing on your next few enquiries and watching whether it moves your win rate.",
+    "{{INSIGHT_TITLE}}": "Victoria Just Called a Construction Royal Commission — Is Your Paper Trail Ready for More Scrutiny?",
+    "{{INSIGHT_BODY}}": "New Premier Ben Carroll's first act was to call a royal commission into the construction sector, with a special prosecutor to examine cost blowouts and dodgy practices industry-wide. For a small subcontractor like Industrial Services Victoria, that kind of scrutiny usually rolls downhill — head contractors start demanding cleaner paper trails, more detailed sign-offs, and better evidence that work was done to spec and on time. An AI tool that logs site photos, timestamps and job notes as you go turns what used to be a scramble through old text messages into a ready-made file if a job is ever questioned — cheap insurance against a much bigger headache.",
 
     # Fun facts
-    "{{FACT_1}}": "The Sydney Harbour Bridge was built from both shores at once using six million hand-driven rivets, with the two halves of the steel arch meeting in the middle in 1930 to within a few millimetres of true — all worked out with slide rules and drafting tables, decades before computer modelling existed.",
-    "{{FACT_2}}": "The QWERTY keyboard layout wasn't designed for speed — Christopher Latham Sholes arranged it in the 1870s specifically to separate commonly paired letters and slow typists down, so the mechanical arms of early typewriters wouldn't jam and tangle.",
-    "{{FACT_3}}": "The Wright brothers' first powered flight in 1903 covered just 37 metres — shorter than the wingspan of a modern Boeing 747-8, which stretches 68.4 metres tip to tip.",
+    "{{FACT_1}}": "The Bluetooth logo isn't a random symbol — it's a bind rune combining the initials of Harald 'Bluetooth' Gormsson, the 10th-century Danish king who united Denmark and Norway, written in the Younger Futhark runic alphabet. Engineers named the wireless standard after him because, like the king, it was meant to unite different systems under one connection.",
+    "{{FACT_2}}": "The rotary lawnmower was invented in a suburban Sydney garden shed in 1952, when Mervyn Victor Richardson built the first Victa mower using a war-surplus aircraft fuel tank as the cutting deck. It went on to become the world's biggest-selling lawnmower brand, exported to more than 30 countries.",
+    "{{FACT_3}}": "The Chiko Roll was invented in Bendigo, Victoria, in 1951 by Frank McEncroe, who wanted a footy-crowd snack that could be eaten one-handed with no plate or cutlery. It was originally called the 'Chicken Roll' despite containing no chicken at all, and was renamed Chiko Roll before it hit the shelves.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the electrician's small business never get its wires crossed at tax time?",
-    "{{JOKE_PUNCHLINE}}": "Because he always kept his books properly earthed.",
+    "{{JOKE_SETUP}}": "A skip bin hire operator was asked how he always knew exactly which size bin a job needed before he'd even seen the site.",
+    "{{JOKE_PUNCHLINE}}": "He said years on the job taught him one rule — customers always underestimate by exactly one size, every time.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"It always seems impossible until it's done.\"",
-    "{{CLOSING_ATTR}}": "— Nelson Mandela",
-    "{{CLOSING_MESSAGE}}": "It's a showery start to Tuesday in Carrum Downs, with today's rain most likely over the south-east suburbs and easing tonight before a similar pattern repeats through the week. The fuel excise rise is now fully baked into prices at the bowser, so budget for it on your next fill, and keep an eye on the Middle East today — direct US-Iran talks are due to resume, and a good outcome there could take some heat out of oil prices for everyone.",
+    "{{CLOSING_QUOTE}}": "\"Don't watch the clock; do what it does. Keep going.\"",
+    "{{CLOSING_ATTR}}": "— Sam Levenson",
+    "{{CLOSING_MESSAGE}}": "It's a showery start to Wednesday in Carrum Downs, with the wettest stretch easing off by Friday's partly cloudy break before rain returns for the weekend. The fuel excise increase is now fully baked into prices at the bowser, so budget for it on your next fill — and if you're running anything other than a company structure, keep an eye on the loss carry-back tax debate in Canberra this week, since it could decide whether you get the same relief your incorporated competitors do.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
