@@ -4,89 +4,90 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Friday, 07 August 2026",
+    "{{DATE}}": "Saturday, 08 August 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Fri 07 Aug (BOM)
-    "{{WEATHER_1}}": "FRI 07 · 🌦️ Windy, showers likely later · 8–15°C",
-    "{{WEATHER_2}}": "SAT 08 · 🌧️ High chance of showers, wetter in the hills · 8–16°C",
+    # Weather — Carrum Downs VIC, 5-day from Sat 08 Aug (BOM)
+    "{{WEATHER_1}}": "SAT 08 · 🌦️ Partly cloudy, showers most likely early morning · 6–14°C",
+    "{{WEATHER_2}}": "SUN 09 · 🌧️ High chance of showers, windy in the afternoon · 7–17°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "SUN 09 · 🌬️ Windy with a shower or two · 9–16°C",
+    "{{WEATHER_3}}": "MON 10 · 🌬️ Cloudy, very high chance of rain, windy · 8–15°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "MON 10 · ⛅ Partly cloudy, drier stretch · 7–15°C",
-    "{{WEATHER_5}}": "TUE 11 · ☀️ Mostly sunny, cooler start · 6–14°C",
-    "{{WEATHER_ALERT}}": "No severe weather warnings current for Melbourne / Carrum Downs",
+    "{{WEATHER_4}}": "TUE 11 · 🌧️ Very high chance of rain, easing later · 8–12°C",
+    "{{WEATHER_5}}": "WED 12 · 🌦️ Showers morning, easing to light rain · 8–10°C",
+    "{{WEATHER_ALERT}}": "No severe weather warnings current for Melbourne / Carrum Downs, but a genuinely wet, windy spell builds Sunday through Tuesday",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇺🇦🇷🇺 UKRAINE · RUSSIAN BARRAGE KILLS 17 IN KYIV REGION, NO MISSILES INTERCEPTED",
-    "{{WORLD_1_HEADLINE}}": "Russian Missile and Drone Barrage Kills 17 in Kyiv Region as Air Defences Come Up Empty",
-    "{{WORLD_1_SUMMARY}}": "A huge overnight barrage of 24 ballistic missiles, four Zircon/Onyx missiles and 115 drones hit Kyiv and its surrounding region, killing 17 and wounding 44 — Ukraine's air force says none of the missiles were intercepted, with warehouses, a brewery and a rail station among the targets. President Zelenskyy says allies have supplied only a third of the promised Patriot interceptors this year, keeping the war's energy and shipping risk elevated for anyone watching global fuel costs.",
-    "{{WORLD_1_URL}}": "https://www.cnn.com/2026/08/05/europe/russia-ukraine-kyiv-attack-intl-hnk",
+    "{{WORLD_1_FLAG}}": "🇸🇩 SUDAN · DRONE STRIKES AND A WORSENING CHOLERA OUTBREAK BATTER BESIEGED EL-OBEID",
+    "{{WORLD_1_HEADLINE}}": "Drone Strikes and a Worsening Cholera Outbreak Batter Sudan's Besieged City of El-Obeid",
+    "{{WORLD_1_SUMMARY}}": "Residents of the half-million-strong city of El-Obeid describe skies filled with as many as 40 drones at a time, with strikes now hitting schools, a market, fuel stations, water points and the city's main power station — crippling medical facilities just as cholera tears through some communities. The UN warns of a growing risk of mass atrocities as Sudan's civil war, which has killed at least 59,000 people since 2023, grinds on with no resolution in sight.",
+    "{{WORLD_1_URL}}": "https://www.npr.org/2026/08/07/nx-s1-5921212/el-obeid-sudan-war",
 
-    "{{WORLD_2_FLAG}}": "🇮🇱🇵🇸 GAZA · ISRAEL REJECTS KEY TERMS OF TRUMP-BACKED HAMAS DISARMAMENT PLAN",
-    "{{WORLD_2_HEADLINE}}": "Israel Pushes Back on Trump's Hamas Disarmament Plan as Gaza Ceasefire Wobbles",
-    "{{WORLD_2_SUMMARY}}": "Days after Trump's 15-point disarmament roadmap was unveiled, Israel has told the White House it has 'serious security concerns,' judging Hamas intends to store rather than surrender its weapons — while Hamas insists it never agreed to full disarmament. It's the latest sign the ceasefire remains fragile, with no resolution yet in sight.",
-    "{{WORLD_2_URL}}": "https://foreignpolicy.com/2026/08/06/hamas-disarmament-deal-netanyahu-israel-gaza/",
+    "{{WORLD_2_FLAG}}": "🇮🇷 IRAN · PARLIAMENT MOVES TO BAN US AND ISRAELI SHIPS FROM THE STRAIT OF HORMUZ",
+    "{{WORLD_2_HEADLINE}}": "Iran's Parliament Reviews a Bill to Ban US and Israeli Ships From the Strait of Hormuz",
+    "{{WORLD_2_SUMMARY}}": "The draft bill would bar vessels linked to the US, Israel and other 'hostile' countries from the strait until Iran is compensated for war damage, while charging other commercial vessels fees of up to 7% of cargo value to transit — with 20% fines for violations. The Trump administration has rejected the plan outright, but with roughly a fifth of the world's oil passing through the strait, it's another reason global fuel and shipping costs remain jumpy.",
+    "{{WORLD_2_URL}}": "https://www.npr.org/2026/08/06/nx-s1-5923623/iran-strait-hormuz-us-israel-ban",
 
     # Economics
-    "{{ECON_1_FLAG}}": "🇦🇺⛽ FUEL · CAPITAL CITY PRICES UP 42.1C/L AS EXCISE CUT ENDS, ACCC WARNS OF $100M FINES",
-    "{{ECON_1_HEADLINE}}": "Capital City Fuel Prices Jump 42.1 Cents a Litre as the ACCC Puts Servos on Notice",
-    "{{ECON_1_SUMMARY}}": "With excise relief fully wound back from 3 August, the ACCC's latest monitoring shows capital city pump prices up 42.1c/L, and Treasurer Jim Chalmers has asked the regulator to watch retailers closely — servos and suppliers now face fines up to $100 million per offence for price gouging. Worth comparing a couple of servos near your sites this week rather than assuming yesterday's cheapest is still today's.",
-    "{{ECON_1_URL}}": "https://www.indexbox.io/blog/accc-fuel-report-prices-rise-as-fuel-excise-cut-expires/",
+    "{{ECON_1_FLAG}}": "🇦🇺⛽ FUEL · UNLEADED PRICES SET TO CLIMB INTO THE MID-TO-HIGH 210S THIS WEEK",
+    "{{ECON_1_HEADLINE}}": "Bowser Prices Are Set to Climb Further This Week as Wholesale Costs Catch Up With the Excise Rise",
+    "{{ECON_1_SUMMARY}}": "The NRMA's latest weekly fuel report has average regular unleaded already up 45.9c/L since 30 June, and expects prices to push into the mid-to-high 210s cents per litre over the coming week as wholesale costs keep catching up with the 3 August excise rebate removal. Worth locking in a fill-up early in the week rather than waiting, and flagging the trend in any job costed more than a few days out.",
+    "{{ECON_1_URL}}": "https://www.mynrma.com.au/cars-and-driving/fuel-finder/weekly-report",
 
-    "{{ECON_2_FLAG}}": "🇦🇺🏦 RATES · RBA'S BIG AUGUST CALL LANDS TUESDAY, HOLD AT 4.35% THE FIRM FAVOURITE",
-    "{{ECON_2_HEADLINE}}": "All Four Big Banks Expect the RBA to Hold at 4.35% Next Tuesday — But It's Not a Sure Thing",
-    "{{ECON_2_SUMMARY}}": "The Reserve Bank's rate call lands Tuesday 11 August alongside its full quarterly forecasts, and CBA, NAB, ANZ and Westpac all expect a hold after June's inflation came in softer than expected — though markets still price a 20–30% chance of a surprise hike. Worth holding off on any big loan or equipment finance decisions until the dust settles early next week.",
+    "{{ECON_2_FLAG}}": "🇦🇺🏦 RATES · ALL 37 ECONOMISTS IN A REUTERS POLL EXPECT THE RBA TO HOLD AT 4.35% TUESDAY",
+    "{{ECON_2_HEADLINE}}": "Every One of 37 Economists in a Reuters Poll Expects the RBA to Hold Rates Tuesday",
+    "{{ECON_2_SUMMARY}}": "The Reserve Bank hands down its decision at 2:30pm Tuesday 11 August, with Governor Michele Bullock's press conference an hour later, and a unanimous hold call from economists means the bigger story will be the tone of the statement rather than the number itself. June's inflation came in softer than expected, but with the trimmed mean still above target, it's worth waiting for Tuesday's language before locking in any big loan or equipment finance decision.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI TOOLS · META LAUNCHES 'MUSE CODE' TO TAKE ON CLAUDE CODE AND OPENAI CODEX",
-    "{{TECH_1_HEADLINE}}": "Meta Launches Muse Code, a Terminal AI Agent Built to Handle Whole Codebases",
-    "{{TECH_1_SUMMARY}}": "Meta's new Muse Code agent can plan, write and validate code changes across large repositories in one sitting, launching in beta with a pay-as-you-go tier and a cheaper 'contributor' tier for developers who let Meta train on their data. It's another sign the AI coding-agent race is now a genuine three-way fight between Meta, Anthropic and OpenAI — good news for anyone hoping today's AI tool prices keep falling.",
-    "{{TECH_1_URL}}": "https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/",
+    "{{TECH_1_FLAG}}": "💾 HARDWARE · SAMSUNG UNVEILS NEXT-GEN AI MEMORY IT SAYS COULD RUN 8X FASTER",
+    "{{TECH_1_HEADLINE}}": "Samsung Unveils Next-Gen AI Memory Chips It Says Could Run Eight Times Faster Than Today's",
+    "{{TECH_1_SUMMARY}}": "At the Future of Memory and Storage event in Santa Clara, Samsung previewed zHBM, zNAND-O and a 400-layer V10 BV-NAND chip — concept designs it says could deliver roughly eight times the performance of today's HBM5 memory for AI systems. None of it ships yet, but it's a sign the industry is racing to build its way out of the same AI-driven memory crunch that's been pushing up laptop and PC prices all year.",
+    "{{TECH_1_URL}}": "https://news.samsung.com/global/samsung-unveils-next-gen-3d-memory-vision-at-fms-2026-charting-the-future-of-ai-infrastructure",
 
-    "{{TECH_2_FLAG}}": "💻 HARDWARE · AI-DRIVEN MEMORY CHIP SHORTAGE IS PUSHING UP PC AND LAPTOP PRICES",
-    "{{TECH_2_HEADLINE}}": "AI Data Centres Are Eating So Much Memory That HP, Asus and Acer Are Turning to Chinese Chips",
-    "{{TECH_2_SUMMARY}}": "AI data-centre buildouts are set to consume 70% of the world's memory chip production this year, tripling DRAM costs in 18 months and pushing memory to 40–60% of a PC's total cost — forcing HP, Asus and Acer to start using Chinese CXMT chips in some models sold outside the US. If a work laptop or tablet is due for replacement, it's worth budgeting for a higher price tag than last time.",
+    "{{TECH_2_FLAG}}": "🤖 AI TALENT · GOOGLE'S JEFF DEAN LEAVES TO LAUNCH A NEW AI-FOR-SCIENCE STARTUP",
+    "{{TECH_2_HEADLINE}}": "Google AI Chief Jeff Dean Departs to Launch an AI Research Startup With Former Colleagues",
+    "{{TECH_2_SUMMARY}}": "Dean is stepping down from Google to found Discovery Loop, a public benefit corporation aimed at using AI to speed up scientific research, alongside fellow Google veterans Sanjay Ghemawat, Quoc Le and Oriol Vinyals. It's the latest sign of how fierce the fight for top AI talent has become between the big labs — a race that's ultimately what keeps pushing better, cheaper AI tools down to small business level.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🇨🇳🦾 ROBOTICS · UNITREE PRICES ITS $904M SHANGHAI IPO, DEEPSEEK TAKES A STAKE",
-    "{{ROBOT_1_HEADLINE}}": "Humanoid Robot Maker Unitree Prices Its $904 Million Shanghai IPO as DeepSeek Takes a Stake",
-    "{{ROBOT_1_SUMMARY}}": "Unitree priced its STAR Market listing at 150.80 yuan a share, raising about $904 million in what will be mainland China's first publicly traded humanoid robot maker — with AI startup DeepSeek buying a 2.31% stake and agreeing to jointly develop AI models for the robots. Another marker of humanoid robotics shifting from prototype hype into real, capital-market-priced mass production.",
-    "{{ROBOT_1_URL}}": "https://www.bloomberg.com/news/articles/2026-08-06/china-s-unitree-seeks-904-million-in-first-mainland-robotic-ipo",
+    "{{ROBOT_1_FLAG}}": "🇨🇳🤖 ROBOTICS · BYD CONFIRMS ITS FIRST HUMANOID ROBOT DEBUTS IN SHOWROOMS THIS MONTH",
+    "{{ROBOT_1_HEADLINE}}": "BYD Confirms Its First Humanoid Robot, Xiao Di, Is Debuting in Car Showrooms This Month",
+    "{{ROBOT_1_SUMMARY}}": "The world's largest EV maker says Xiao Di is a fully functional prototype, not just a concept — able to greet customers, translate across six Chinese dialects and six foreign languages, and demonstrate vehicles at its Di Space showrooms. Executive VP Stella Li says the goal is 'two or three robots in every store,' making BYD the latest Chinese manufacturer chasing Tesla into the humanoid robot race.",
+    "{{ROBOT_1_URL}}": "https://www.scmp.com/business/china-business/article/3362362/byd-debut-first-humanoid-robots-august-rivalry-tesla-intensifies",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Royal Commission Into Antisemitism Opens Its Eighth Hearing Block in Sydney",
-    "{{AUS_1_SUMMARY}}": "The Royal Commission on Antisemitism and Social Cohesion, set up after the Bondi Beach terror attack, is running Sydney hearings from 5–14 August, with Commissioner Virginia Bell examining evidence as the inquiry builds toward its December final report.",
-    "{{AUS_1_URL}}": "https://asc.royalcommission.gov.au/hearings",
+    "{{AUS_1_HEADLINE}}": "Vietnam's President Arrives for a Landmark First State Visit to Australia",
+    "{{AUS_1_SUMMARY}}": "General Secretary and President To Lam lands for a state visit running 9–12 August, meeting Prime Minister Albanese in Canberra on Tuesday to discuss deepening the two countries' Comprehensive Strategic Partnership across defence, trade, energy and digital cooperation — his first visit to Australia since taking office.",
+    "{{AUS_1_URL}}": "https://www.pm.gov.au/media/visit-australia-general-secretary-and-president-socialist-republic-vietnam",
 
-    "{{AUS_2_HEADLINE}}": "Home Prices Keep Falling Nationally as Inflation Drops to Pre-War Levels",
-    "{{AUS_2_SUMMARY}}": "Home prices are falling across most of the country as the housing downturn continues, with the Treasurer welcoming inflation numbers that have now dropped back to levels last seen before the Middle East conflict — a mixed bag of cheaper cost-of-living pressure alongside a cooling property market.",
+    "{{AUS_2_HEADLINE}}": "Census Night Lands Tuesday — Here's What Households and Businesses Need to Know",
+    "{{AUS_2_SUMMARY}}": "The 2026 Census falls on Tuesday 11 August, with the ABS reminding households to complete it as soon as their letter or paper form arrives — the data feeds directly into planning for local infrastructure, services and the kind of demand data councils and businesses use to understand their area.",
+    "{{AUS_2_URL}}": "https://www.abs.gov.au/media-centre/media-releases/one-week-until-census-night-0",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "CFA Chief Officer Jason Heffernan Announces He's Stepping Down",
-    "{{VIC_1_SUMMARY}}": "Chief Officer Jason Heffernan AFSM has told the CFA Board and Victorian Government he's stepping down, staying on until November to give the organisation time to recruit before the 2026/27 fire season — the news lands as Victorian crews remain deployed overseas supporting Canada's fire response.",
+    "{{VIC_1_HEADLINE}}": "Manslaughter Charge Laid Over Death of Sunshine Grocer Van Viet Truong",
+    "{{VIC_1_SUMMARY}}": "A 15-year-old boy has been charged with manslaughter after Van Viet Truong, owner of the Hong Hung Asian Grocery in Melbourne's west, died from injuries suffered while going to a fellow retail worker's aid during an alleged theft last Saturday — a case that's prompted Sunshine traders to meet with police and a local MP over round-the-clock patrols for the strip.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🧬 BIOLOGY · FERTILISATION MAY DEPEND ON SPERM TEAMWORK, NOT JUST A SOLO RACE",
-    "{{SCI_1_HEADLINE}}": "Forget the Sperm Race — New Research Says Fertilisation May Depend on Teamwork",
-    "{{SCI_1_SUMMARY}}": "Evolutionary biologists from Syracuse, Siena and Szeged universities find that in many species, sperm don't compete purely as individuals — they cooperate in coordinated groups to reach and fertilise an egg, upending the simple 'fastest swimmer wins' model taught for decades. A reminder that even well-worn science can turn out to be more of a team sport than assumed.",
+    "{{SCI_1_FLAG}}": "🦈 PALAEONTOLOGY · LOST MEGALODON FOSSILS FOUND ON A MUSEUM SHELF CONFIRM A 79-FOOT GIANT",
+    "{{SCI_1_HEADLINE}}": "Megalodon Fossils Thought Destroyed in 1989 Turn Up on a Museum Shelf, Confirming a 79-Foot Giant",
+    "{{SCI_1_SUMMARY}}": "Enormous 11-million-year-old vertebrae from a single Megalodon, found in Denmark and long presumed destroyed during a 1989 museum move, have turned up unnoticed on a shelf at the Natural History Museum of Denmark. At 23cm across, they're the largest Megalodon vertebrae on record, strengthening evidence the giant shark could exceed 24 metres in length and live for nearly a century.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "AI's Memory Chip Shortage Is About to Make Your Next Laptop Cost More",
-    "{{INSIGHT_BODY}}": "AI data centres are now soaking up such a huge share of the world's memory chip supply that DRAM costs have tripled in eighteen months, and memory alone now makes up 40-60% of what a PC actually costs to build — enough that even HP, Asus and Acer are turning to Chinese-made chips to keep prices in check. For a small operation running quoting apps, job photos and admin off a laptop or tablet, it's a nudge to replace ageing gear sooner rather than later, or at least budget for a noticeably bigger bill next time one dies. It's also a neat reminder that the AI tools making your paperwork faster are, indirectly, one of the reasons the hardware underneath it all keeps getting dearer.",
+    "{{INSIGHT_TITLE}}": "A Hard Week for Melbourne Retailers Is a Reminder — AI-Powered CCTV Can Flag Trouble Before It Escalates",
+    "{{INSIGHT_BODY}}": "This week's tragic death of a Sunshine shop owner, after he went to help a colleague confront an alleged theft, is a stark reminder that a quiet shopfront or yard can turn dangerous fast. Modern AI-powered camera systems don't just record after the fact — they can flag unusual movement, loitering or a group approaching after hours, and push an alert straight to your phone before anything escalates, rather than leaving footage to be reviewed once it's too late. For a small operation with a yard, storeroom or shopfront sitting empty overnight, it's worth a serious look at whether your current setup is just recording, or actually watching.",
 
     # Fun facts
-    "{{FACT_1}}": "The tape measure tradies carry today traces back to a single 1868 patent — American Alvin J. Fellows was first to combine a concave-convex steel blade with a spring-loaded case, letting the tape hold itself rigid when extended instead of flopping over like the cloth and wooden folding rules that came before it.",
-    "{{FACT_2}}": "The Leaning Tower of Pisa tilts because it was built on soft, uneven subsoil just three metres down — engineers didn't stabilise it until 1990–2001, when they removed 38 cubic metres of soil from underneath the north side to reduce the lean from 5.5 to under 4 degrees, deliberately stopping short of making it perfectly straight.",
-    "{{FACT_3}}": "The jackhammer's ancestor was a steam-powered rock drill patented in 1849 by Massachusetts engineer Jonathan Couch — designed to bore through granite for one of the era's first mechanised tunnelling projects, decades before compressed air made the tool portable enough for a job site.",
+    "{{FACT_1}}": "The Hills Hoist rotary clothesline was built by Adelaide returned serviceman Lance Hill in his own backyard in 1945, after his wife's old rope line kept tangling in a tree — his cog-and-pinion winding mechanism to raise and lower the whole frame became the basis of a company that turned an unremarkable backyard fix into an Australian household fixture.",
+    "{{FACT_2}}": "The wine cask, or 'goon bag,' was patented in 1965 by South Australian winemaker Thomas Angove as a collapsible bladder in a box — the airtight, non-drip tap that made it actually practical wasn't added until Penfolds employee Charles Malpas refined the design two years later, in 1967.",
+    "{{FACT_3}}": "The pneumatic tyre wasn't invented by an engineer — Scottish-born vet John Boyd Dunlop came up with it in 1887 in Belfast, wrapping his son's solid-rubber bicycle wheels in an inflated rubber hose to smooth out the ride, and patented the idea the following year, decades before it became standard on every vehicle on the road.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the solar installer's small business never have a bad month?",
-    "{{JOKE_PUNCHLINE}}": "Because he always made sure the outlook stayed bright, rain or shine.",
+    "{{JOKE_SETUP}}": "Why did the mobile car detailer never double-book a client?",
+    "{{JOKE_PUNCHLINE}}": "Because his diary was as spotless as the cars he left behind.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Energy and persistence conquer all things.\"",
-    "{{CLOSING_ATTR}}": "— Benjamin Franklin",
-    "{{CLOSING_MESSAGE}}": "It's a windy, showery start to Friday in Carrum Downs, with the wet stretch easing into a drier, sunnier run by Monday and Tuesday. Fuel prices are now fully reflecting the excise increase, so factor the higher bowser price into this week's job costings, and keep Tuesday 11 August marked for the RBA's rate call before committing to any big equipment finance.",
+    "{{CLOSING_QUOTE}}": "\"The most dangerous phrase in the language is, 'We've always done it this way.'\"",
+    "{{CLOSING_ATTR}}": "— Grace Hopper",
+    "{{CLOSING_MESSAGE}}": "It's a partly cloudy Saturday in Carrum Downs, with showers building into a genuinely wet, windy stretch from Sunday right through to Tuesday — worth getting any outdoor jobs locked in early while the weather holds. Keep Tuesday 11 August marked for both the RBA's rate call and census night, and if you're around the yard this weekend, it's a fair prompt to check your own site security is actually watching, not just recording.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
