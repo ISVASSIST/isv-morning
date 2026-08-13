@@ -1170,3 +1170,14 @@ JOKE: Why did the artificial turf installer's small business never have a slow s
 INSIGHT: Every Big AI Assistant Just Passed a Billion Users — Your Business Doesn't Need the 'Best' One, Just One You'll Actually Use
 QUOTE: "In the midst of chaos, there is also opportunity." — Sun Tzu
 ---
+
+DATE: Friday, 14 August 2026
+SCIENCE: New research finds individual human cortical neurons carry out far more complex computations than previously thought, with a single neuron's processing power roughly comparable to a small deep neural network — published ScienceDaily 12 August 2026
+ROBOTICS: Unitree's Shanghai STAR Market IPO allocation results due today, ahead of listing as China's first publicly listed humanoid robot maker — priced 150.80 yuan/share, oversubscribed 8,000x+ by retail investors
+FACT: The Southern Cross windmill, first built in 1876 by South Australian blacksmith brothers Robert and George Griffiths, used a fixed, curved steel-blade design that needed no gears or oiling — pumping bore water across the outback for well over a century with only basic upkeep.
+FACT: The Sunshine Harvester, built by H.V. McKay in Ballarat from 1885, was the first machine to strip, thresh and clean wheat in a single pass across a paddock — the landmark 1907 Harvester Judgment, which set Australia's first 'fair and reasonable' minimum wage, used the company's own production costs as its benchmark case.
+FACT: The Australian term 'smoko' for a work break traces back to 19th-century shearing sheds and mining camps, where scheduled tea-and-tobacco breaks were common practice long before the word was formally written into union awards.
+JOKE: Why did the TV antenna and aerial installer never miss a payment from a client?
+INSIGHT: Microsoft Just Culled Its Own AI Features — The Lesson for Your Trades Business
+QUOTE: "Nothing will work unless you do." — Maya Angelou
+---
