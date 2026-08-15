@@ -1192,3 +1192,14 @@ JOKE: Why did the food truck operator's small business never run short of regula
 INSIGHT: The Working-At-Height Threshold Just Dropped to Two Metres — Is Your Paperwork Still Written for Three?
 QUOTE: "You do not rise to the level of your goals. You fall to the level of your systems." — James Clear
 ---
+
+DATE: Sunday, 16 August 2026
+SCIENCE: Stanford researchers find blood-derived immune cells flood into the aging human brain and become microglia, a uniquely human trait not seen in mice or other primates — published in Nature, covered ScienceDaily 14 August 2026
+ROBOTICS: BMW deploys Figure AI's Figure 03 humanoid robot for parts sequencing at its Spartanburg, South Carolina plant, following on from Figure 02's work on 30,000+ BMW X3 units — published Slashdot/WSJ 14 August 2026
+FACT: The Richter and moment magnitude scales are logarithmic, not linear — a magnitude 7.7 earthquake like the one that struck Indonesia this week releases roughly 30 times more energy than a magnitude 6.7, and close to a thousand times more than a magnitude 5.7.
+FACT: Radiation fog — the kind that regularly blankets Melbourne's outer suburbs on still winter mornings — forms when the ground loses heat rapidly overnight under clear skies, cooling the air just above it below its dew point, which is why it often burns off from the CBD first while low-lying areas stay socked in for hours.
+FACT: The Esky, now shorthand for any portable cooler in Australian English, started life in 1952 as the 'Esky Auto Box' — a portable ice box built by Sydney company Malley's and named as a playful abbreviation of 'Eskimo.'
+JOKE: Why did the pressure-washing contractor's small business always come up clean at tax time?
+INSIGHT: One AI Provider Just Hiked Prices Over 1,100% Overnight — Don't Build Your Business on a Single Tool
+QUOTE: "You can't build a reputation on what you're going to do." — Henry Ford
+---
