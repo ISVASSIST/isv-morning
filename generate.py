@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Sunday, 16 August 2026",
+    "{{DATE}}": "Monday, 17 August 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Sun 16 Aug (BOM)
-    "{{WEATHER_1}}": "SUN 16 · 🌤️ Morning fog clearing to a mostly sunny afternoon, light winds · 6–14°C",
-    "{{WEATHER_2}}": "MON 17 · ☁️ Cloudy, cooler top, light winds · 9–14°C",
+    # Weather — Carrum Downs VIC, 5-day from Mon 17 Aug (BOM)
+    "{{WEATHER_1}}": "MON 17 · 🌤️ Morning fog clearing to a mostly sunny afternoon, light winds · 6–18°C",
+    "{{WEATHER_2}}": "TUE 18 · ⛅ Patchy morning fog, then mostly sunny to partly cloudy · 7–20°C",
     "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "TUE 18 · ⛅ Partly cloudy, winds picking up in the afternoon · 8–15°C",
-    "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "WED 19 · ⛅ Partly cloudy, similar mild conditions continuing · 8–16°C",
-    "{{WEATHER_5}}": "THU 20 · 🌥️ Mostly cloudy, chance of a shower returning · 8–15°C",
-    "{{WEATHER_ALERT}}": "No BOM warnings currently listed for Carrum Downs — a calm, mild stretch after last week's active weather, just morning fog to plan around early on",
+    "{{WEATHER_3}}": "WED 19 · 🌦️ Cloudy, showers increasing later in the day, winds picking up · 11–18°C",
+    "{{WEATHER_3_CLASS}}": "rain",
+    "{{WEATHER_4}}": "THU 20 · 🌧️ Cloudy, very high chance of showers on and off · 10–16°C",
+    "{{WEATHER_5}}": "FRI 21 · 🌧️ Cloudy, rain likely during the morning and afternoon · 9–15°C",
+    "{{WEATHER_ALERT}}": "No severe weather warnings for Carrum Downs or Melbourne metro — just a Strong Wind Warning current for Port Phillip Wednesday as showers and stronger northwesterlies move in, so it's worth getting outdoor blasting or coating work done in the first half of the week while conditions stay calm",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇩 INDONESIA · EARTHQUAKE DEATH TOLL PASSES 45 AFTER MAGNITUDE 7.7 QUAKE STRIKES OFF FLORES ISLAND",
-    "{{WORLD_1_HEADLINE}}": "Indonesia Earthquake Death Toll Passes 45 After Magnitude 7.7 Quake Strikes Off Flores Island",
-    "{{WORLD_1_SUMMARY}}": "A magnitude 7.7 earthquake struck early Saturday about 68 kilometres north-northwest of Ende in East Nusa Tenggara province, killing more than 45 people as dozens of aftershocks — the strongest a magnitude 6.1 — continued shaking the region. At least 157 houses were flattened and nearly 200 more damaged, with around 2,000 villagers moved into temporary shelters as rescue crews work through the rubble.",
-    "{{WORLD_1_URL}}": "https://www.thenationalnews.com/news/asia/2026/08/15/indonesia-earthquake-death-toll-latest-news/",
+    "{{WORLD_1_FLAG}}": "🇺🇦🇷🇺 UKRAINE · KYIV LAUNCHES ONE OF ITS LARGEST DRONE ATTACKS OF THE WAR, KILLING AT LEAST SIX IN RUSSIA",
+    "{{WORLD_1_HEADLINE}}": "Ukraine Launches One of Its Largest Drone Attacks of the War, Killing at Least Six in Russia",
+    "{{WORLD_1_SUMMARY}}": "Ukraine fired hundreds of drones at targets across multiple Russian regions overnight Saturday, with Russia's military saying it destroyed 822 of them; an 83-year-old man was killed in the Moscow region and five people died when a roughly 150-drone strike hit towns in the Rostov region, damaging homes, a railway station and sparking a forest fire. It's one of Kyiv's largest aerial assaults of the war so far, and also struck a major retail warehouse near Podolsk, south of Moscow.",
+    "{{WORLD_1_URL}}": "https://www.npr.org/2026/08/16/nx-s1-5933006/ukraine-aerial-attack-6-dead-russia",
 
-    "{{WORLD_2_FLAG}}": "🇱🇧🇮🇱 LEBANON · ISRAELI STRIKES KILL 11 IN SOUTH LEBANON IN ONE OF THE DEADLIEST ATTACKS SINCE THE JUNE TRUCE",
-    "{{WORLD_2_HEADLINE}}": "Israeli Strikes Kill 11, Including Three Children, in Southern Lebanon in One of the Deadliest Attacks Since the June Truce",
-    "{{WORLD_2_SUMMARY}}": "At least 11 people, including three children, were killed in overnight Israeli strikes on the villages of Ansar and Deir Al Zahrani in southern Lebanon, with Israel's military saying it hit Hezbollah infrastructure in response to actions against its soldiers. Lebanon's prime minister rejected claims those killed were military targets, calling it one of the deadliest incidents since the fragile truce between Israel and Hezbollah took hold in June.",
-    "{{WORLD_2_URL}}": "https://www.usnews.com/news/world/articles/2026-08-15/israeli-strike-kills-seven-in-south-lebanon-state-news-reports",
+    "{{WORLD_2_FLAG}}": "🇮🇹 ITALY · THIEVES STEAL FOUR RENAISSANCE MASTERPIECES FROM A SICILY MUSEUM DURING FERRAGOSTO FESTIVITIES",
+    "{{WORLD_2_HEADLINE}}": "Thieves Steal Four Renaissance Masterpieces From a Sicily Museum During Ferragosto Festivities",
+    "{{WORLD_2_SUMMARY}}": "Thieves broke into Messina's Museo Interdisciplinare Regionale, bypassing the alarm system and forcing open an armoured display case to steal four works attributed to Renaissance master Antonello da Messina, including three panels of the 1473 San Gregorio Polyptych. The break-in happened during Italy's Ferragosto holiday and the city's La Vara religious festival, when Messina was packed with distracted crowds; the local culture chief called it \"a disaster.\"",
+    "{{WORLD_2_URL}}": "https://www.euronews.com/culture/2026/08/16/thieves-bypass-security-to-steal-four-renaissance-artworks-from-sicily-museum",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽🇦🇺 FUEL · PETROL AND DIESEL PRICES EASE SLIGHTLY THIS WEEK EVEN AS THE FULL FUEL EXCISE BITES",
-    "{{ECON_1_HEADLINE}}": "Petrol and Diesel Prices Ease Slightly This Week as Lower International Benchmarks Offset the Full Fuel Excise",
-    "{{ECON_1_SUMMARY}}": "The ACCC's latest weekly monitoring shows average retail petrol and diesel prices in Australia's five largest cities ticked down slightly this week on softer international benchmark prices, even after the fuel excise was fully restored to 53.7c/L in early August. Prices are still running 30c/L higher for petrol and 65c/L higher for diesel than before the Middle East conflict flared, so it's still worth shopping around before you fill the ute.",
-    "{{ECON_1_URL}}": "https://www.accc.gov.au/about-us/publications/weekly-fuel-price-monitoring-update",
+    "{{ECON_1_FLAG}}": "🏠🇦🇺 HOUSING · SYDNEY'S HOUSE PRICE CORRECTION ACCELERATES, NOW DOWN MORE THAN 6% FROM ITS PEAK",
+    "{{ECON_1_HEADLINE}}": "Sydney's House Price Correction Accelerates, Now Down More Than 6% From Its Peak",
+    "{{ECON_1_SUMMARY}}": "Sydney dwelling values have now fallen more than 6% from their peak, with the decline accelerating to 1.4% over just the past 28 days — a pace of roughly 17% a year if it continues. ANZ is now forecasting a 10.6% national peak-to-trough fall, with Sydney leading the way at -14.5%. For a Carrum Downs blasting and coatings business, it's worth watching: renovation, new-build and property fit-out work — a real slice of the pipeline — tends to soften as home values keep falling.",
+    "{{ECON_1_URL}}": "https://www.macrobusiness.com.au/2026/08/sydneys-house-price-correction-hits-new-milestone/",
 
-    "{{ECON_2_FLAG}}": "🇦🇺💵 AUD · AUSSIE DOLLAR HOLDS NEAR SEVEN-MONTH HIGHS AROUND US70.6c AS THE RBA STAYS PATIENT",
-    "{{ECON_2_HEADLINE}}": "Australian Dollar Holds Near Seven-Month Highs Around US70.6c as the RBA Signals Patience on Rates",
-    "{{ECON_2_SUMMARY}}": "The Aussie dollar is sitting around US70.6c, close to its highest levels in months, after the RBA held its cash rate at 4.35% and signalled it's watching incoming data rather than rushing another move either way. A firmer dollar is good news if you're importing gear or materials, though it can nibble at margins if any of your work has an export angle.",
+    "{{ECON_2_FLAG}}": "⛽🇦🇺 FUEL · PETROL AND DIESEL PRICES KEEP EASING AS INTERNATIONAL BENCHMARK COSTS SOFTEN",
+    "{{ECON_2_HEADLINE}}": "Petrol and Diesel Prices Keep Easing as International Benchmark Costs Soften",
+    "{{ECON_2_SUMMARY}}": "The ACCC's most recent fuel price monitoring shows average retail petrol and diesel prices across Australia's five largest cities are now down 56c/L and 81c/L respectively from their end-March peak, as softer international benchmark costs flow through at the bowser. It's still worth budgeting on the high side for a fleet of utes, compressors and a blast truck, but for once the trend is running in your favour rather than against it.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖💸 AI PRICING · DEEPSEEK HIKES SOME API PRICES BY OVER 1,100% FROM TODAY, SHIFTING TO PEAK AND OFF-PEAK RATES",
-    "{{TECH_1_HEADLINE}}": "DeepSeek Hikes Some AI Model Prices by Over 1,100% From Today, Introducing Peak and Off-Peak Rates",
-    "{{TECH_1_SUMMARY}}": "Chinese AI lab DeepSeek's new pricing takes effect today, with some token rates for its V4 models rising more than 1,100% during peak hours (01:00–04:00 and 06:00–10:00 UTC) as the company tries to spread demand away from its busiest periods. It's a reminder that behind-the-scenes pricing on the AI tools plugged into your quoting or admin can shift overnight — worth knowing which ones you're actually paying for, and what happens to the bill if a provider changes the rules.",
-    "{{TECH_1_URL}}": "https://qz.com/deepseek-api-price-increase-v4-peak-off-peak-081326",
+    "{{TECH_1_FLAG}}": "🤖🖼️ AI TOOLS · GOOGLE SHUTS DOWN ITS IMAGEN 4 IMAGE MODELS TODAY, PUSHING DEVELOPERS TO NEWER 'NANO BANANA' MODELS",
+    "{{TECH_1_HEADLINE}}": "Google Shuts Down Its Imagen 4 Image Models Today, Pushing Developers Toward Newer 'Nano Banana' Models",
+    "{{TECH_1_SUMMARY}}": "Google is retiring its Imagen 4 family of AI image-generation models — standard, fast and ultra — from its Gemini API today, steering developers toward its newer Gemini image models instead. It's a practical reminder for anyone using an AI tool to knock up social posts, before-and-after job photos or quote graphics: if that tool is built on someone else's AI model under the hood, it can be switched off with a deadline you never see coming.",
+    "{{TECH_1_URL}}": "https://kingy.ai/ai-launch-tracker/google-will-shut-down-three-imagen-4-api-models-august-17/",
 
-    "{{TECH_2_FLAG}}": "🤖🏢 AI RACE · MICROSOFT STARTS MERGING CONSUMER AND BUSINESS COPILOT INTO ONE APP, WITH A CHOICE OF AI MODEL",
-    "{{TECH_2_HEADLINE}}": "Microsoft Starts Merging Its Consumer and Business Copilot Apps Into One, Giving Users a Choice of GPT-5.6 or Claude",
-    "{{TECH_2_SUMMARY}}": "Microsoft has begun rolling out a unified Copilot app that combines its consumer and Microsoft 365 business tools into a single experience, starting with a small group of users this week ahead of a broader rollout. The bigger change under the hood is choice — users can now pick between OpenAI's and Anthropic's models rather than being locked into one — worth watching if your business leans on Microsoft's ecosystem for email, documents or admin.",
+    "{{TECH_2_FLAG}}": "🤖💻 AI TOOLS · ANTHROPIC ADDS AN 'AUTO-CONTINUE' FEATURE SO STALLED AI CODING SESSIONS RESUME THEMSELVES",
+    "{{TECH_2_HEADLINE}}": "Anthropic Adds an 'Auto-Continue' Feature So Stalled AI Coding Sessions Resume Themselves",
+    "{{TECH_2_SUMMARY}}": "Anthropic has added a small but useful feature to its Claude Code desktop app this month: an auto-continue option that automatically resumes a stalled AI session the moment your usage limit resets, rather than you having to remember to retry manually. It's part of a broader shift toward AI tools that quietly manage themselves in the background — worth keeping an eye on if you're relying on any AI tool for admin or quoting and don't want to be the one babysitting it.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🏭🤖 ROBOTICS · HUMANOID ROBOTS MOVE ONTO CAR FACTORY FLOORS AS BMW'S FIGURE 03 TAKES OVER PARTS SEQUENCING",
-    "{{ROBOT_1_HEADLINE}}": "Humanoid Robots Are Moving Onto Car Factory Floors, With BMW's Figure 03 Now Taking Over Parts Sequencing",
-    "{{ROBOT_1_SUMMARY}}": "At BMW's Spartanburg, South Carolina plant, Figure AI's Figure 03 humanoid robot is now handling parts sequencing in logistics, building on its predecessor Figure 02, which helped assemble more than 30,000 BMW X3 units. A BMW logistics executive says the robots are \"still slower than humans\" but \"advancing fast\" — another sign humanoid automation is moving past the demo stage and into real production work, one task at a time.",
-    "{{ROBOT_1_URL}}": "https://hardware.slashdot.org/story/26/08/14/215204/robots-that-walk-and-talk-are-coming-to-car-factories",
+    "{{ROBOT_1_FLAG}}": "🚀🤖 ROBOTICS · NASA'S NEXT MOON MISSION WILL TEST WHETHER A TEAM OF ROVERS CAN THINK FOR THEMSELVES",
+    "{{ROBOT_1_HEADLINE}}": "NASA's Next Moon Mission Will Test Whether a Team of Rovers Can Think for Themselves",
+    "{{ROBOT_1_SUMMARY}}": "NASA's CADRE mission will send three small rovers to the Moon later this year, where they'll spend about two weeks mapping terrain as a self-coordinating team — electing a \"leader,\" dividing up tasks and replanning on the fly if one rover's battery runs low, with no joystick and no human sign-off on individual moves. It's the first time NASA has run multiple robots beyond Earth as a single autonomous system, and the same fleet-coordination software is exactly the kind of thing now migrating into warehouse robots, autonomous forklifts and construction-site machinery that need to work without constant supervision.",
+    "{{ROBOT_1_URL}}": "https://phys.org/news/2026-08-exploring-moon-require-rovers.html",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Prime Minister Marks Five Years Since the Fall of Kabul With a Message of Solidarity for Afghanistan",
-    "{{AUS_1_SUMMARY}}": "Australia's Prime Minister expressed solidarity with the people of Afghanistan on the fifth anniversary of the Taliban's return to power, as Taliban officials marked the milestone with celebrations in Kabul while a UN official warned of a deepening rights crisis. The anniversary lands as debate continues in Australia and allied nations over the legacy of the 20-year Afghan campaign and the thousands of former interpreters and support staff who were resettled here.",
-    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/podcast-episode/pm-expresses-solidarity-with-people-of-afghanistan-on-anniversary-midday-news-bulletin-15-august-2026/9mi0aoqeo",
+    "{{AUS_1_HEADLINE}}": "Federal and NSW Governments Strike Deal on a Major Post-Bondi Gun Buyback Scheme",
+    "{{AUS_1_SUMMARY}}": "The Commonwealth and NSW governments have agreed to jointly fund a national gun buyback scheme in response to December's Bondi Beach terror attack, with NSW first to launch on 2 November 2026. Firearm owners exceeding new four-gun ownership limits will be compensated $650–$1,000 per weapon, with costs split evenly between federal and state governments and a second phase targeting higher-value firearms planned for early 2027.",
+    "{{AUS_1_URL}}": "https://www.sbs.com.au/news/article/major-federal-state-gun-buyback-scheme/qh4ymqbmu",
 
-    "{{AUS_2_HEADLINE}}": "Severe Storms Bring Flash Flooding to Adelaide and Damaging Winds to NSW and East Gippsland",
-    "{{AUS_2_SUMMARY}}": "A broad low-pressure system has brought flooding, large hail and damaging winds across eastern and southern Australia this weekend, with the Bremer River at Wanstead Road in South Australia exceeding minor flood level and severe weather warnings current for damaging winds above 90km/h about the NSW Eastern Ranges and East Gippsland coast. Worth checking any exposed sites, scaffolding or signage in those areas before Monday.",
+    "{{AUS_2_HEADLINE}}": "Australian Swim Team Caps a Historic Pan Pacific Championships With 35 Medals",
+    "{{AUS_2_SUMMARY}}": "The Dolphins finished the Pan Pacific Championships in Irvine, California with a record 15 gold, 11 silver and 9 bronze medals — nearly double their haul from 2018 — despite missing several of their biggest stars. On the final night, Lani Pallister beat American legend Katie Ledecky in the 800m freestyle and Sam Short broke Grant Hackett's long-standing Australian 1500m freestyle record.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "H5 Bird Flu Confirmed in a Little Penguin for the First Time as Vaccinations Begin at Phillip Island",
-    "{{VIC_1_SUMMARY}}": "Victoria has recorded its first H5 bird flu detection in a little penguin, prompting authorities to begin vaccinating more than 5,000 penguins at Phillip Island and St Kilda from Monday evening, while three further wild bird detections confirmed the virus has now spread into East Gippsland. There are still no detections in commercial poultry, and the human health risk remains low.",
+    "{{VIC_1_HEADLINE}}": "Victorian Opposition Pledges a $50 Weekly Toll Cap for Small-Business Fleets Ahead of November's Election",
+    "{{VIC_1_SUMMARY}}": "Victorian Opposition Leader Jess Wilson has pledged to cap weekly toll costs at $50 for two years for cars, vans and small-business fleets of up to five vehicles — rising to a permanent $60 cap from mid-2027 — while Premier Ben Carroll countered with a plan to recruit 200 retired police officers for back-of-house duties. The competing pitches mark the opening moves ahead of Victoria's state election on 28 November, and the toll cap would directly cover a small trade fleet running EastLink or CityLink daily.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🧠 SCIENCE · STANFORD FINDS BLOOD IMMUNE CELLS FLOOD INTO THE AGING BRAIN, OVERTURNING A LONG-HELD ASSUMPTION",
-    "{{SCI_1_HEADLINE}}": "Stanford Researchers Find Immune Cells From the Blood Flood Into the Aging Human Brain, Upending Decades of Assumptions",
-    "{{SCI_1_SUMMARY}}": "Stanford scientists have found that large numbers of immune cells from the bloodstream begin entering the human brain as early as middle age, transforming into microglia — the brain's resident immune cells — in a way that doesn't happen in mice or other primates. Published in Nature, the discovery could open new paths for treating Alzheimer's and other neurological disease, since people with certain blood-cell mutations were found to be far less likely to develop the condition.",
+    "{{SCI_1_FLAG}}": "🦴 SCIENCE · A 1950s FOSSIL SITTING IN A MUSEUM DRAWER TURNS OUT TO BE A BRAND NEW ICE AGE SPECIES",
+    "{{SCI_1_HEADLINE}}": "A 1950s Fossil Sitting in a Museum Drawer Turns Out to Be a Brand New Ice Age Species",
+    "{{SCI_1_SUMMARY}}": "A single fossil bone from Los Angeles's La Brea Tar Pits, collected in the 1950s and sitting unexamined in a museum collection for nearly 30 years, has just been identified as Spea labreae — a new species of Ice Age spadefoot toad and only the second extinct amphibian ever found in North America. A researcher finally re-examining the Tar Pits' amphibian bones spotted subtle features on an incomplete hip bone that set it apart from every known species, a reminder that genuinely new discoveries are still hiding in plain sight in old museum drawers.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "One AI Provider Just Hiked Prices Over 1,100% Overnight — Don't Build Your Business on a Single Tool",
-    "{{INSIGHT_BODY}}": "DeepSeek's new pricing landed today with some token rates up more than 1,100% during peak hours — a sharp reminder that the AI tools quietly running your quoting, admin or customer replies sit behind pricing that can change overnight, with little warning and no negotiation. If your business leans on one AI subscription for anything business-critical, it's worth a five-minute check this week: what would it actually cost you if that provider doubled its price tomorrow, and do you have a fallback tool you could switch to without missing a beat?",
+    "{{INSIGHT_TITLE}}": "AI Can Now Scan a Job-Site Photo for Missing PPE — Is It Worth Adding to Your Safety Checklist?",
+    "{{INSIGHT_BODY}}": "A new wave of AI vision tools can scan an ordinary job-site photo and flag a missing hard hat, respirator or hi-vis vest before an inspector does, built on the same image-recognition tech behind everyday phone apps. For a blasting and coatings business already juggling WorkSafe paperwork on every job, running a quick AI photo check before a client walk-through or audit could catch an issue while it's still cheap to fix, rather than after a stop-work notice lands. It's no substitute for a proper safety system — but as a five-minute second pair of eyes before someone official turns up, it's worth a look.",
 
     # Fun facts
-    "{{FACT_1}}": "The Richter and moment magnitude scales are logarithmic, not linear — a magnitude 7.7 earthquake like the one that struck Indonesia this week releases roughly 30 times more energy than a magnitude 6.7, and close to a thousand times more than a magnitude 5.7.",
-    "{{FACT_2}}": "Radiation fog — the kind that regularly blankets Melbourne's outer suburbs on still winter mornings — forms when the ground loses heat rapidly overnight under clear skies, cooling the air just above it below its dew point, which is why it often burns off from the CBD first while low-lying areas stay socked in for hours.",
-    "{{FACT_3}}": "The Esky, now shorthand for any portable cooler in Australian English, started life in 1952 as the 'Esky Auto Box' — a portable ice box built by Sydney company Malley's and named as a playful abbreviation of 'Eskimo.'",
+    "{{FACT_1}}": "Pong, the 1972 game credited with kicking off the video game industry, was first tested in a single bar in Sunnyvale, California — the prototype machine broke within days, not from a fault, but because it was jammed solid with quarters.",
+    "{{FACT_2}}": "Worcestershire sauce was invented by accident — 1830s Worcester chemists John Lea and William Perrins mixed a batch, hated the taste, and abandoned the barrel in a cellar for two years before rediscovering it fully fermented and genuinely good.",
+    "{{FACT_3}}": "The wheelbarrow is believed to have first appeared in China around the 2nd century AD, with a single wheel positioned to carry the full load — a design clever enough that one person could shift what would otherwise take two.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the pressure-washing contractor's small business always come up clean at tax time?",
-    "{{JOKE_PUNCHLINE}}": "Because he never let anything build up — receipts included.",
+    "{{JOKE_SETUP}}": "Why did the scaffolding contractor's small business always stand up to scrutiny at tax time?",
+    "{{JOKE_PUNCHLINE}}": "Because every figure was properly braced before it went out the door.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"You can't build a reputation on what you're going to do.\"",
-    "{{CLOSING_ATTR}}": "— Henry Ford",
-    "{{CLOSING_MESSAGE}}": "It's a milder, calmer Sunday in Carrum Downs with the morning fog set to clear to sunshine by afternoon — good timing if you're catching up on the backyard or getting ahead before Monday. With Victoria's penguins now getting their bird flu jabs, an AI provider hiking prices overnight, and humanoid robots quietly clocking on at car factories overseas, it's a good day to switch off for a bit before the week kicks back into gear.",
+    "{{CLOSING_QUOTE}}": "\"Believe you can and you're halfway there.\"",
+    "{{CLOSING_ATTR}}": "— Theodore Roosevelt",
+    "{{CLOSING_MESSAGE}}": "It's a sunny start to the week in Carrum Downs once the morning fog burns off, with the calm holding until Wednesday's wind and showers roll in — good conditions for getting outdoor jobs finished while they last. Between Sydney's housing correction, a fossil that sat unexamined in a drawer for 30 years before turning out to be a brand new species, and the Dolphins wrapping up a record-breaking Pan Pacs campaign, today's a fair reminder that patience with the details usually pays off — on a job site or anywhere else.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
