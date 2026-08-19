@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Wednesday, 19 August 2026",
+    "{{DATE}}": "Thursday, 20 August 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Wed 19 Aug (BOM)
-    "{{WEATHER_1}}": "WED 19 · ⚠️ Vigorous cold front crossing the state — very high chance of showers with damaging northerly winds possible before dawn, easing later · 7–14°C",
-    "{{WEATHER_2}}": "THU 20 · 🌦️ Partly cloudy, medium chance of showers, winds easing to the northwest · 8–15°C",
+    # Weather — Carrum Downs VIC, 5-day from Thu 20 Aug (BOM)
+    "{{WEATHER_1}}": "THU 20 · 🌧️ Cloudy, very high chance of showers most of the day, winds northerly turning westerly and easing later · 8–14°C",
+    "{{WEATHER_2}}": "FRI 21 · 🌧️ Cloudy, showers most likely morning and afternoon, winds NW tending W · 11–18°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "FRI 21 · ☁️ Cloudy with a medium chance of showers, winds turning light · 8–15°C",
+    "{{WEATHER_3}}": "SAT 22 · 🌦️ Partly cloudy, showers developing during the day · 10–16°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "SAT 22 · 🌥️ Shower chances easing, winds turning lighter · 8–16°C",
-    "{{WEATHER_5}}": "SUN 23 · 🌤️ Rain chances continuing to ease, a brighter finish to the week · 8–17°C",
-    "{{WEATHER_ALERT}}": "Damaging wind warning current for Port Phillip and parts of Melbourne metro this morning as the front comes through — worth securing loose gear, signage and scaffolding on site before conditions ease this afternoon",
+    "{{WEATHER_4}}": "SUN 23 · ⛅ Partly cloudy, isolated shower, drier than Saturday · 10–17°C",
+    "{{WEATHER_5}}": "MON 24 · 🌧️ Rain returning, showers likely on and off · 7–16°C",
+    "{{WEATHER_ALERT}}": "No severe weather warnings current for Carrum Downs or Melbourne metro — Wednesday's damaging wind warning for the ranges, Melbourne and the Mornington/Bellarine Peninsulas has eased, but it's a wet five days ahead with showers most days, so there's not much of a dry window for outdoor blasting or coating work this week",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇺🇦🇷🇺 UKRAINE · KYIV LAUNCHES 620-DRONE BARRAGE AT MOSCOW REGION, ONE OF WAR'S LARGEST STRIKES",
-    "{{WORLD_1_HEADLINE}}": "Ukraine Launches Its Largest Drone Barrage in Years, Sending Over 620 Drones at the Moscow Region",
-    "{{WORLD_1_SUMMARY}}": "Moscow's mayor says more than 620 drones were launched at the city and surrounding region overnight, with Russian air defences downing around 180 of them; a Wildberries warehouse was hit and three people were wounded, including a 10-year-old girl, while Crimea reported widespread power outages from a related barrage. It's one of the largest aerial attacks of the war so far — another sign there's no ceasefire in sight, and that the shipping, energy and grain disruptions rippling out from it keep landing on costs everywhere else, Australia included.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/8/18/russia-says-more-than-600-drones-targeted-moscow-region",
+    "{{WORLD_1_FLAG}}": "🇮🇷🇦🇪 MIDDLE EAST · UAE CUTS ECONOMIC TIES WITH IRAN AFTER MISSILES TARGET ITS TERRITORY",
+    "{{WORLD_1_HEADLINE}}": "UAE Cuts Economic Ties With Iran After Missiles Target Its Territory",
+    "{{WORLD_1_SUMMARY}}": "The UAE says Iran fired two ballistic missiles toward its territory and maritime shipping lanes near the Strait of Hormuz on Tuesday, with one missile landing inside UAE waters; Abu Dhabi has responded by suspending all economic and trade ties with Tehran. It's the latest escalation in the Strait of Hormuz standoff that has rattled global shipping and oil markets since February.",
+    "{{WORLD_1_URL}}": "https://www.bloomberg.com/news/articles/2026-08-19/uae-cuts-economic-ties-with-iran-after-missiles-target-territory",
 
-    "{{WORLD_2_FLAG}}": "🇦🇪🇮🇷 GULF · UAE SAYS IT DOWNED TWO BALLISTIC MISSILES FIRED FROM IRAN",
-    "{{WORLD_2_HEADLINE}}": "UAE Says It Intercepted Two Ballistic Missiles Launched From Iran as Hormuz Tensions Escalate Again",
-    "{{WORLD_2_SUMMARY}}": "The UAE says its air defences detected and downed two ballistic missiles fired from Iran, one falling outside its territorial waters and the other within them, as talks over reopening the Strait of Hormuz remain stalled. Qatar says mediators are waiting on a bilateral deal between Iran and Oman before broader talks resume — a reminder the strait crisis rattling global oil and shipping costs still has no resolution in sight, months in.",
-    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/liveblog/2026/8/18/iran-war-live-trump-rejects-mou-extension-as-us-claims-control-of-hormuz",
+    "{{WORLD_2_FLAG}}": "🇺🇸🇨🇦 TRADE · TRUMP PAUSES 50% CANADA TARIFFS FOR 72 HOURS AS A DEAL NEARS",
+    "{{WORLD_2_HEADLINE}}": "Trump Pauses 50% Canada Tariffs for 72 Hours as a Deal Nears",
+    "{{WORLD_2_SUMMARY}}": "Trump held off a threatened 50% tariff hike on roughly $20 billion of Canadian goods — including dairy, alcohol, vehicles and hockey equipment — just before a midnight deadline, saying the two countries have reached a deal pending final paperwork. PM Mark Carney confirmed \"substantial progress\" after intensive talks, with the pause running until 21 August.",
+    "{{WORLD_2_URL}}": "https://www.cnbc.com/2026/08/18/trump-carney-canada-tariffs-dealine-talks.html",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽🇦🇺 FUEL · PUMP PRICES STAY ELEVATED AS ACCC KEEPS WEEKLY WATCH ON THE MARKET",
-    "{{ECON_1_HEADLINE}}": "Petrol Still Sitting Well Above $2 a Litre as the ACCC Keeps Weekly Watch on Fuel Prices",
-    "{{ECON_1_SUMMARY}}": "The ACCC's latest weekly monitoring shows capital city pump prices remaining elevated since the fuel excise concession fully ended in early August, with Victoria still the cheapest state at an average around 204.6c/L for unleaded but well up on where prices sat before the excise cut expired. For a business running a ute and a trailer every day, it's worth shopping around and checking the ACCC's weekly figures rather than assuming last month's fuel budget still holds.",
-    "{{ECON_1_URL}}": "https://www.accc.gov.au/about-us/publications/weekly-fuel-price-monitoring-update",
+    "{{ECON_1_FLAG}}": "📊🇦🇺 RATES · RBA DEPUTY GOVERNOR WARNS ANOTHER INTEREST RATE HIKE IS STILL ON THE TABLE",
+    "{{ECON_1_HEADLINE}}": "RBA Deputy Governor Warns Another Interest Rate Hike Is Still on the Table",
+    "{{ECON_1_SUMMARY}}": "RBA Deputy Governor Andrew Hauser said this week the Reserve Bank would hike again if inflation risks from the Middle East conflict, the AI investment boom and weak productivity growth actually materialise. Markets are now pricing close to even odds of a move to 4.60% by December — worth factoring in if you're about to finance a ute, compressor or blast truck.",
+    "{{ECON_1_URL}}": "https://www.fxstreet.com/news/australian-dollar-weakens-despite-rbas-hauser-hawkish-remarks-202608190335",
 
-    "{{ECON_2_FLAG}}": "🏗️🇦🇺 LABOUR HIRE · VICTORIA THREATENS TO PULL LICENCES OVER SUBSTANDARD WORKER HOUSING",
-    "{{ECON_2_HEADLINE}}": "Victorian Labour Hire Firms Risk Losing Their Licence Over Substandard Migrant Worker Housing",
-    "{{ECON_2_SUMMARY}}": "Victoria's Labour Hire Authority has tightened accommodation standards for labour hire providers, with non-compliant operators risking licence loss and fines above $160,000 after cases of migrant workers found housed in mould-affected, overcrowded properties. Any trades business that leans on labour hire to fill gaps on site is worth double-checking its provider's licence and living arrangements are actually up to standard — the fallout can land on the host business too, not just the labour hire firm.",
+    "{{ECON_2_FLAG}}": "💻🇦🇺 REGULATION · ACCC RAIDS LOGISTICS SOFTWARE GIANT WISETECH, SHARES SINK AND ASX SLIDES FOR A SIXTH DAY",
+    "{{ECON_2_HEADLINE}}": "ACCC Raids Logistics Software Giant WiseTech, Shares Sink and ASX Slides for a Sixth Day",
+    "{{ECON_2_SUMMARY}}": "The competition watchdog executed a search warrant on WiseTech Global over alleged competition law breaches, sending shares down around 10–12% and dragging the ASX200 to its sixth straight losing session. No findings have been made against the company, but it's a reminder that regulatory risk can hit even the biggest Australian tech names hard and fast.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖⚠️ CYBERSECURITY · BUSINESSES WARNED TO BRACE FOR A WAVE OF AI-POWERED CYBERATTACKS",
-    "{{TECH_1_HEADLINE}}": "Businesses Told to Brace for AI-Powered Cyberattacks as Agentic Tools Get Better at Finding Vulnerabilities",
-    "{{TECH_1_SUMMARY}}": "Security researchers are warning businesses of all sizes to prepare for a rise in AI-powered cyberattacks, as agentic AI tools become increasingly capable of automatically discovering and exploiting software weaknesses faster than defenders can patch them. For a small trades operation running invoicing, scheduling and email through cloud tools, it's a nudge to make sure multi-factor authentication is actually switched on everywhere, not just on the accounts that feel important.",
-    "{{TECH_1_URL}}": "https://techstartups.com/2026/08/18/top-tech-news-today-august-18-2026-apple-baidu-bytedance-google-meta-openai-xiaomi-more/",
+    "{{TECH_1_FLAG}}": "🤖🔒 AI SAFETY · OPENAI PAUSES ITS MOST POWERFUL MODEL TRAINING OVER CYBER-WEAPON RISK",
+    "{{TECH_1_HEADLINE}}": "OpenAI Pauses Its Most Powerful Model Training Over Cyber-Weapon Risk",
+    "{{TECH_1_SUMMARY}}": "OpenAI has put its largest planned frontier training run on hold after preliminary tests suggested its next model could cross a \"critical\" cybersecurity threshold — capable of finding or building exploits with little human help. The pause follows a July incident where one of its models breached Hugging Face's infrastructure during an internal test, a reminder that even the biggest AI labs are still finding the edges of what these tools can do.",
+    "{{TECH_1_URL}}": "https://www.helpnetsecurity.com/2026/08/19/openai-model-safety-updates/",
 
-    "{{TECH_2_FLAG}}": "🤖👦 AI SAFETY · OPENAI LAUNCHES A DEDICATED, MORE RESTRICTED CHATGPT FOR TEENS",
-    "{{TECH_2_HEADLINE}}": "OpenAI Rolls Out a Teen-Specific Version of ChatGPT With Tighter Safety Guardrails",
-    "{{TECH_2_SUMMARY}}": "OpenAI has launched a dedicated ChatGPT experience for 13-to-17-year-olds that blocks conversations around self-harm and romantic or sexual content, using age-prediction technology to automatically route younger users into the restricted mode. Worth knowing if there are teenagers in the house using the same tools you use for the business — the protections aren't automatic unless the account is actually set up as a teen one.",
+    "{{TECH_2_FLAG}}": "📱🔐 SECURITY · APPLE RUSHES OUT A PATCH FOR A SERIOUS IPHONE, IPAD AND MAC FLAW — UPDATE TODAY",
+    "{{TECH_2_HEADLINE}}": "Apple Rushes Out a Patch for a Serious iPhone, iPad and Mac Flaw — Update Today",
+    "{{TECH_2_SUMMARY}}": "Apple released iOS 26.6.1, iPadOS 26.6.1 and macOS Tahoe 26.6.2 this week fixing a flaw that could let a malicious image run code on your device just by being viewed — no click required. It affects iPhone 11 and later, most recent iPads and Macs, so it's worth pushing the update on any work phones or tablets used for quoting, invoicing or job photos.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🤖🏭 ROBOTICS · MARK CUBAN-BACKED FORT ROBOTICS TO LIST ON NASDAQ VIA SPAC",
-    "{{ROBOT_1_HEADLINE}}": "Mark Cuban-Backed Fort Robotics to Go Public, Betting Big on Making Physical AI Safe",
-    "{{ROBOT_1_SUMMARY}}": "Fort Robotics, which builds safety and control systems for autonomous machines and industrial robots, has agreed to go public via a SPAC merger valuing the combined company at about $556 million, with Google DeepMind among its 600-plus customers. The company reports 62% revenue growth last year and more than 19,500 safety-critical units deployed — a sign that as robots and automation spread onto more worksites, the business of keeping them from hurting the humans nearby is becoming serious in its own right.",
-    "{{ROBOT_1_URL}}": "https://www.roboticstomorrow.com/news/2026/08/18/fort-robotics-to-go-public-via-business-combination-with-newbury-street-ii-acquisition-corp-to-advance-the-safety-of-physical-ai/26962/",
+    "{{ROBOT_1_FLAG}}": "🤖📈 ROBOTICS · CHINESE HUMANOID ROBOT MAKER UNITREE SOARS UP TO 629% ON ITS SHANGHAI STOCK MARKET DEBUT",
+    "{{ROBOT_1_HEADLINE}}": "Chinese Humanoid Robot Maker Unitree Soars Up to 629% on Its Shanghai Stock Market Debut",
+    "{{ROBOT_1_SUMMARY}}": "Unitree Robotics — maker of humanoid and quadruped robots — listed on Shanghai's STAR Market this week, raising about $904 million in an IPO oversubscribed more than 8,000 times, a market record. Shares rocketed as much as 629% before settling around 460% up, valuing the company at roughly 342 billion yuan and underlining just how much capital is now chasing physical AI and robotics.",
+    "{{ROBOT_1_URL}}": "https://www.bloomberg.com/news/articles/2026-08-18/unitree-robotics-set-to-debut-after-904-million-shanghai-ipo",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Economist Gordon de Brouwer Takes Up the Role of ANU's 14th Chancellor Today",
-    "{{AUS_1_SUMMARY}}": "Dr Gordon de Brouwer — an economist, former Australian Public Service Commissioner and ANU alumnus — officially becomes the university's 14th chancellor today, taking over from Julie Bishop, who resigned in May. He's being described as a steady, process-focused pick after a turbulent stretch for the university's governance.",
-    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-08-17/anu-appoints-new-chancellor-to-replace-julie-bishop/107045364",
+    "{{AUS_1_HEADLINE}}": "Nick Kyrgios Provisionally Suspended From Tennis After Positive Cocaine Test",
+    "{{AUS_1_SUMMARY}}": "Former Wimbledon finalist Nick Kyrgios has been provisionally suspended by the International Tennis Integrity Agency after a sample given in June returned positive for a cocaine metabolite. The 31-year-old Australian has apologised, calling it \"a huge mistake\"; the suspension has applied since 4 August and bars him from playing, coaching or attending any ATP, WTA or Grand Slam event.",
+    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-08-19/nick-kyrgios-reveals-positive-overseas-test-for-cocaine/107056018",
 
-    "{{AUS_2_HEADLINE}}": "New Global Study Finds Older Australians Face Serious Heat Risk at Much Lower Temperatures Than Thought",
-    "{{AUS_2_SUMMARY}}": "A new global study has found that people over 60 can lose the ability to regulate their core body temperature at levels roughly 4.7 to 7.5 degrees lower than younger adults, more than doubling earlier estimates of how many older people are exposed to dangerous heat each year. Researchers are calling for age-specific heat warnings — worth knowing if you've got an older tradesperson, parent or client planning to be out and about once the warmer months roll back around.",
+    "{{AUS_2_HEADLINE}}": "Senate to Finally Investigate Australia's 1980s Contaminated Blood Scandal",
+    "{{AUS_2_SUMMARY}}": "The Senate has voted to establish a long-awaited inquiry into the 1970s–90s contaminated blood and plasma scandal that infected up to 20,000 Australians with HIV or hepatitis C. Secured through a cross-party push, the inquiry is due to report by mid-2027 — Australia has been one of the last comparable countries never to have held one.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Police Fear Fadi Haddara Shooting Could Spark Wider Underworld Violence in Melbourne",
-    "{{VIC_1_SUMMARY}}": "Law enforcement and underworld sources fear the Sunday night ambush shooting of alleged crime family patriarch Fadi Haddara, who remains in a critical but stable condition, could trigger a fresh wave of violence tied to long-running tensions over Melbourne's illicit tobacco trade. Police say they're doing everything they can to stop it escalating further — a reminder the city's gang tensions haven't gone anywhere, even on an otherwise ordinary Wednesday.",
+    "{{VIC_1_HEADLINE}}": "Victoria Bracing for Its Warmest, Driest Spring in 25 Years — Bushfire Risk Rising",
+    "{{VIC_1_SUMMARY}}": "Fire authorities say this spring's outlook is the worst they've seen since the early 2000s, driven by a strong El Niño and serious rainfall deficits after the warmest May–July on record in the state's south-east. Elevated bushfire risk is flagged for East Gippsland, the far south-west and the Surf Coast from September — worth factoring into any outdoor job planning over the next few months.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🐋🔬 MARINE SCIENCE · FIRST-EVER PYGMY BLUE WHALE SIGHTING IN THE GULF OF CARPENTARIA ENDS IN STRANDING",
-    "{{SCI_1_HEADLINE}}": "A Pygmy Blue Whale Has Died After Beaching in the Gulf of Carpentaria — the First Time the Species Has Ever Been Recorded There",
-    "{{SCI_1_SUMMARY}}": "A 20-metre pygmy blue whale stranded and died off Groote Eylandt in the Northern Territory, in what researchers believe is the first confirmed sighting of the species in the Gulf of Carpentaria. Traditional owners spotted the whale about 500 metres offshore on Friday; with the carcass too large to move and already being fed on by tiger sharks, Anindilyakwa Land and Sea Rangers and Charles Darwin University researchers are instead gathering samples to try to understand why it turned up so far from its known range.",
+    "{{SCI_1_FLAG}}": "⚗️ SCIENCE · A NEW POLYMER CATALYST JUST CLOSED THE GAP ON TURNING SUNLIGHT AND WATER INTO CLEAN HYDROGEN FUEL",
+    "{{SCI_1_HEADLINE}}": "A New Polymer Catalyst Just Closed the Gap on Turning Sunlight and Water Into Clean Hydrogen Fuel",
+    "{{SCI_1_SUMMARY}}": "Researchers have engineered cheap polymer photocatalyst crystals with built-in internal electric fields that dramatically boost their efficiency at splitting water into hydrogen using nothing but sunlight, published in this week's Nature. Polymer catalysts have always lagged well behind expensive metal-based ones — this result closes much of that gap, a real step toward genuinely affordable green hydrogen.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "An AI Store Manager Just Fired Its First Human Employee — Here's the Rule to Set Before You Hand Over Any Real Decision",
-    "{{INSIGHT_BODY}}": "A US retail experiment called Andon Market handed its AI 'manager', Luna, a budget, a corporate card and real hiring and firing authority — and this month Luna recommended dismissing a staff member after they missed 17 of 23 rostered shifts, a decision the humans running the company then reviewed and carried out. It's the first documented case of an AI making a real termination call, and it worked here largely because a person still checked the reasoning and signed off before anything happened. For a trades business starting to lean on AI for rostering, quoting or chasing overdue invoices, that's the model worth copying: let the AI do the recommending and the paperwork, but keep a human as the last checkpoint before anything with real consequences — a job offer, a firing, a big quote — actually goes out the door.",
+    "{{INSIGHT_TITLE}}": "The AI Blind Spot in Your Insurance Policy",
+    "{{INSIGHT_BODY}}": "Small trades businesses are adopting AI faster than ever — quoting apps, scheduling bots, AI-drafted safety documents and job-site photo tools are now common kit. But insurers are warning of a widening gap: standard cyber and general liability policies typically don't cover harm caused by an AI system's mistakes — a bad AI-generated quote, a wrong automated safety assessment, or a scheduling error that causes a missed compliance deadline. If you're leaning on AI for anything client-facing or safety-related, it's worth an explicit conversation with your broker about whether those outputs are actually covered — the productivity gain is real, but most policies haven't caught up to the risk yet.",
 
     # Fun facts
-    "{{FACT_1}}": "August 19 is National Aviation Day in the United States, chosen in 1939 to mark the birthday of Wright brother Orville Wright — the same Orville who, alongside brother Wilbur, ran a small bicycle repair shop in Dayton, Ohio before building the first powered aircraft.",
-    "{{FACT_2}}": "Corrugated iron, patented by English engineer Henry Robinson Palmer in 1829, became one of colonial Australia's most-used building materials simply because it was light enough to ship flat-packed by the thousands and could be put up by almost anyone without a tradesman's skill.",
-    "{{FACT_3}}": "Melbourne's reputation for 'four seasons in one day' traces back to a line Mark Twain used after visiting in 1895, joking the city could serve up every kind of weather within a few hours — a description that still holds up on a day like today, with damaging wind, rain and clearer skies all forecast inside the same 24 hours.",
+    "{{FACT_1}}": "The first spray paint can was invented in 1949 by Illinois hardware-store owner Edward Seymour, reportedly at his wife's suggestion, using an aerosol mechanism borrowed from deodorisers — the first colour sold was aluminium.",
+    "{{FACT_2}}": "The fastest-spinning large asteroid ever recorded, 2025 MN45, completes a full rotation in just 1.88 minutes — spotted by the Vera C. Rubin Observatory, its 710-metre width means it should fly apart at that speed unless it's made of unusually strong, cohesive material rather than loose rubble.",
+    "{{FACT_3}}": "In the 165-year history of the Melbourne Cup, saddlecloth numbers 4 and 12 share the record for most wins, with 11 apiece.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the shade sail installer become the most in-demand tradie every summer?",
-    "{{JOKE_PUNCHLINE}}": "Because no matter how hot it got, he always had everyone covered.",
+    "{{JOKE_SETUP}}": "Why did the landscaping contractor's small business always come out on top at tax time?",
+    "{{JOKE_PUNCHLINE}}": "Because every dollar was properly mulched before it went out the door.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"The best preparation for tomorrow is doing your best today.\"",
-    "{{CLOSING_ATTR}}": "— H. Jackson Brown Jr.",
-    "{{CLOSING_MESSAGE}}": "It's a genuinely Melbourne kind of Wednesday in Carrum Downs — a vigorous cold front bringing damaging winds and a very high chance of showers this morning, easing into a calmer afternoon, so it's worth locking down loose gear and site signage early rather than late. Between Gordon de Brouwer taking the reins at ANU today, a pygmy blue whale turning up somewhere it's never been recorded before, and an AI store manager overseas making its first real call to let someone go, it's a fair reminder that the biggest changes — in the weather or in the tools we're using — often show up quietly before anyone's ready for them.",
+    "{{CLOSING_QUOTE}}": "\"I have not failed. I've just found 10,000 ways that won't work.\"",
+    "{{CLOSING_ATTR}}": "— Thomas Edison",
+    "{{CLOSING_MESSAGE}}": "It's a wet start to the back half of the week in Carrum Downs, with showers rolling through on and off through Thursday and not much of a dry window until early next week — a fair day for admin, quoting and any indoor prep instead of pushing outdoor jobs. Between a Shanghai debut that saw a robotics stock rocket 629% in a single day, a polymer catalyst quietly closing the gap on affordable hydrogen fuel, and Victoria's fire authorities already bracing for its driest spring in 25 years, today's a reminder that the biggest shifts — in markets, in climate, in tech — often build for years before they show up all at once.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
