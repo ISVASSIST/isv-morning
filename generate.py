@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Friday, 21 August 2026",
+    "{{DATE}}": "Saturday, 22 August 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Fri 21 Aug (BOM)
-    "{{WEATHER_1}}": "FRI 21 · ☁️ Cloudy, chance of a shower · 9–16°C",
-    "{{WEATHER_2}}": "SAT 22 · 🌦️ Showers, morning and afternoon · 9–15°C",
+    # Weather — Carrum Downs VIC, 5-day from Sat 22 Aug (BOM)
+    "{{WEATHER_1}}": "SAT 22 · ☁️ Cloudy, slight chance of a shower · 7–16°C",
+    "{{WEATHER_2}}": "SUN 23 · 🌦️ Showers, most likely morning and afternoon · 8–17°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "SUN 23 · 🌧️ Partly cloudy, light rain · 7–12°C",
+    "{{WEATHER_3}}": "MON 24 · 🌧️ Cloudy, medium chance of showers · 11–18°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "MON 24 · ☁️ Cloudy, isolated shower · 7–14°C",
-    "{{WEATHER_5}}": "TUE 25 · 🌦️ Patchy rain clearing · 8–14°C",
-    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or Carrum Downs — Wednesday's damaging wind warning has eased — but with showers likely Saturday and Sunday, Monday or Tuesday is the better window for any exterior coating or blasting work that needs a dry surface",
+    "{{WEATHER_4}}": "TUE 25 · ⛅ Partly cloudy, isolated shower · 9–14°C",
+    "{{WEATHER_5}}": "WED 26 · ☁️ Mostly cloudy, chance of a shower easing · 8–14°C",
+    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or Carrum Downs — only minor to moderate flood warnings remain, for the Avoca, Kiewa, Loddon and Ovens/King Rivers well north of the city. With showers likely through the weekend into Monday, Tuesday or Wednesday is the better window for any exterior coating or blasting work that needs a dry surface.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇨🇳 CHINA · EVERGRANDE FOUNDER SENTENCED TO LIFE",
-    "{{WORLD_1_HEADLINE}}": "Evergrande Founder Hui Ka Yan Jailed for Life",
-    "{{WORLD_1_SUMMARY}}": "A Shenzhen court sentenced Hui Ka Yan, founder of collapsed property giant China Evergrande, to life imprisonment for fraud, embezzlement and bribery, confiscating all his personal property. Evergrande and its main operating unit were separately fined roughly $1.31 billion and 7 billion yuan, among the largest corporate penalties ever handed down in a Chinese criminal case, closing out the fallout from the firm's 2021 collapse under more than $300 billion in liabilities.",
-    "{{WORLD_1_URL}}": "https://www.npr.org/2026/08/20/nx-s1-5939335/chinese-sentence-founder-evergrande",
+    "{{WORLD_1_FLAG}}": "🇵🇪 PERU · POWERFUL QUAKE SHAKES SOUTHERN ANDES",
+    "{{WORLD_1_HEADLINE}}": "Magnitude 6.7 Earthquake Rattles Peru's Southern Andes",
+    "{{WORLD_1_SUMMARY}}": "A magnitude 6.7 earthquake struck at an intermediate depth of 108km near Coracora in Peru's Ayacucho region on Thursday, injuring at least two people and damaging homes, health centres and schools across the Ica and Arequipa regions. Peru's position on the Pacific Ring of Fire means the country is well drilled for seismic events, and authorities reported no major structural collapse despite the quake's strength.",
+    "{{WORLD_1_URL}}": "https://www.washingtonpost.com/world/2026/08/20/peru-earthquake-andes-mountains/c56dfb8e-9cc6-11f1-9cc4-2dc9b46e2d5c_story.html",
 
-    "{{WORLD_2_FLAG}}": "🇺🇦 UKRAINE · RUSSIA SHIFTS ENERGY WAR TOWARD WINTER",
-    "{{WORLD_2_HEADLINE}}": "Ukraine Races to Winter-Proof Its Power Grid as Strikes Continue",
-    "{{WORLD_2_SUMMARY}}": "With Russian strikes hitting Naftogaz facilities and power substations through summer, Ukraine has begun an unusually early push to build smaller distributed power sources and shield its grid, fearing a repeat of last winter's crippling bombardment campaign. Kyiv residents sheltered in metro stations during fresh overnight strikes this week as officials warned the \"energy war\" is entering its next phase.",
-    "{{WORLD_2_URL}}": "https://www.washingtontimes.com/news/2026/aug/20/ukraine-braces-winter-russia-shifts-energy-war-heat-water/",
+    "{{WORLD_2_FLAG}}": "🏴‍☠️ YEMEN · SOMALI PIRACY AT A 10-YEAR HIGH",
+    "{{WORLD_2_HEADLINE}}": "Somali Pirates Hijack Suspected Iranian Shadow-Fleet Tanker Off Yemen",
+    "{{WORLD_2_SUMMARY}}": "Gunmen seized the Eritrean-flagged tanker SIBU 1 roughly 136 nautical miles off the Yemeni port of Al-Mukalla, the second hijacking in the region in four days and possibly the fifteenth of the year, according to maritime trackers. Analysts say the surge — the worst in over a decade — is being fuelled by regional conflict pulling naval patrols away from anti-piracy duties.",
+    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/8/20/gunmen-seize-tanker-off-yemen-amid-resurgence-of-somali-piracy",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽🇦🇺 FUEL PRICES · EXCISE BACK TO FULL RATE",
-    "{{ECON_1_HEADLINE}}": "Bowser Prices Stay Elevated as Fuel Excise Returns in Full",
-    "{{ECON_1_SUMMARY}}": "Since the temporary fuel excise cut fully expired on 2 August, the excise has sat back at 53.7 cents a litre, and the ACCC's latest monitoring shows average retail petrol and diesel prices across Australia's five biggest cities running well above the discounted levels of a few weeks ago. Victoria currently has among the cheapest average unleaded prices of any state, but every business running a ute or van is still feeling the pinch at the pump.",
-    "{{ECON_1_URL}}": "https://www.accc.gov.au/about-us/publications/weekly-fuel-price-monitoring-update",
+    "{{ECON_1_FLAG}}": "💵 CURRENCY · AUD HITS 11-WEEK HIGH",
+    "{{ECON_1_HEADLINE}}": "Australian Dollar Extends Longest Winning Streak Since 2020",
+    "{{ECON_1_SUMMARY}}": "The Aussie pushed to an 11-week high of US$0.7134 on Friday, its eighth straight weekly gain, as a global bond sell-off and a failed US Treasury buyback plan kept the US dollar under pressure. A stronger dollar cuts both ways for a small business — cheaper imported gear and consumables, but it also chips away at the competitiveness of any export-exposed customers on your books.",
+    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-08-21/asx-markets-business-live-news-august-21-2026/107061908",
 
-    "{{ECON_2_FLAG}}": "📉🇦🇺 JOBS MARKET · UNEMPLOYMENT AT POST-COVID HIGH",
-    "{{ECON_2_HEADLINE}}": "Unemployment Climbs to 4.5%, the Highest Since the Pandemic",
-    "{{ECON_2_SUMMARY}}": "ABS figures released yesterday show Australia's seasonally adjusted unemployment rate rose to 4.5% in July, with 691,500 people now out of work as part-time roles fell faster than full-time hiring could offset. Economists say the softer labour market makes a further RBA rate rise in September less likely, which is at least one less cost pressure for small business owners carrying loans on plant or a ute.",
+    "{{ECON_2_FLAG}}": "📊 FEDERAL BUDGET · DEBT PASSES $1 TRILLION",
+    "{{ECON_2_HEADLINE}}": "Australia's Gross Debt Ticks Over $1 Trillion for the First Time",
+    "{{ECON_2_SUMMARY}}": "The Australian Office of Financial Management issued a further $4.1 billion of debt on Thursday, tipping the Commonwealth's total borrowings past $1,000.8 billion — about 34% of GDP — almost twenty years to the week after the Howard government declared net debt eliminated. It's a symbolic milestone more than an immediate cost, but it adds weight to the case that further RBA rate cuts are further away than businesses carrying loans might like.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI COMMERCE · GOOGLE'S AI NOW CALLS SHOPS FOR YOU",
-    "{{TECH_1_HEADLINE}}": "Google Launches \"Let Google Call\" — AI Agents That Ring Local Stores",
-    "{{TECH_1_SUMMARY}}": "Google's new feature uses its Gemini-powered voice agent to phone nearby stores on a shopper's behalf, check stock and pricing, then text back a summary — the AI is required to identify itself as an automated caller, and businesses can opt out. It's paired with an \"agentic checkout\" tool that can complete a purchase via Google Pay once the shopper approves, pushing AI further into everyday retail transactions.",
-    "{{TECH_1_URL}}": "https://www.techbuzz.ai/articles/google-unleashes-shopping-ai-bots-that-call-stores-and-buy-for-you",
+    "{{TECH_1_FLAG}}": "💳 RETAIL · WALMART FINALLY GOES CONTACTLESS",
+    "{{TECH_1_HEADLINE}}": "Walmart to Accept Apple Pay and Google Pay Across US Stores",
+    "{{TECH_1_SUMMARY}}": "After a decade of favouring its own in-house Walmart Pay system, the retail giant confirmed Friday it will roll out contactless tap-to-pay — including Apple Pay and Google Pay — to all US stores and Sam's Club locations by year's end, starting at select sites from 24 August. Even the biggest holdouts eventually cave to the payment method customers actually want — worth a thought if your own EFTPOS setup is still card-only.",
+    "{{TECH_1_URL}}": "https://techcrunch.com/2026/08/21/walmart-to-finally-start-accepting-apple-pay-and-google-pay/",
 
-    "{{TECH_2_FLAG}}": "💾 AI CHIPS · GOOGLE-MARVELL MEGA-DEAL",
-    "{{TECH_2_HEADLINE}}": "Marvell Hands Google a $12.2 Billion Stake Option in AI Chip Deal",
-    "{{TECH_2_SUMMARY}}": "Chipmaker Marvell has given Google the right to buy up to $12.2 billion of its shares, tied to Google's purchases of custom AI inference, storage and networking chips — a deal that could be worth roughly $120 billion in revenue for Marvell through 2033 and sent its stock up more than 11% overnight, underlining how much money is now flowing into the physical infrastructure behind everyday AI tools.",
+    "{{TECH_2_FLAG}}": "🤖 WORKPLACE AI · GOOGLE CHAT GETS AN AI BRAIN",
+    "{{TECH_2_HEADLINE}}": "Google Rolls Out \"Ask Gemini\" Inside Google Chat",
+    "{{TECH_2_SUMMARY}}": "Google has begun replacing Google Chat's old side panel with \"Ask Gemini,\" letting Workspace users search across Gmail, Drive and Calendar, generate images and manage events without leaving a conversation. It's rolling out to Business and Enterprise Workspace tiers now, with usage limits relaxed until 1 October so teams can properly test it before the meter starts running.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🤖 ROBOTICS · BEIJING'S ROBOT GAMES OPEN THIS WEEKEND",
-    "{{ROBOT_1_HEADLINE}}": "Beijing Gears Up for the World Humanoid Robot Games",
-    "{{ROBOT_1_SUMMARY}}": "Beijing is putting the finishing touches on the second World Humanoid Robot Games, opening 22 August at the National Speed Skating Oval with a reported 2,056 robots from 666 teams — sharply up on last year — competing across more than 30 events testing agility, manipulation and autonomy. Household service robots have been doing trial runs around the city this week ahead of the Games, a sign of how fast the sector is moving from lab demos to public competition.",
-    "{{ROBOT_1_URL}}": "https://news.cgtn.com/news/2026-08-19/Household-robots-gear-up-for-World-Humanoid-Robot-Games-2026-1PJMzWOxAbK/p.html",
+    "{{ROBOT_1_FLAG}}": "🚜 INDUSTRIAL AUTOMATION · SELF-DRIVING YARD GEAR",
+    "{{ROBOT_1_HEADLINE}}": "Agtonomy's Autonomy Platform Learns to Reverse Into Tight Spaces on Its Own",
+    "{{ROBOT_1_SUMMARY}}": "Agtonomy has added fully autonomous multi-point turning to its commercial off-road autonomy platform, letting retrofitted Kubota and Bobcat equipment execute complex manoeuvres in tight headland spaces without a driver. Each vehicle now streams more than two terabytes of field data per hour back to the platform — a sign of how fast heavy equipment autonomy is moving from open paddocks toward the tighter, more cluttered spaces every trades yard actually has to deal with.",
+    "{{ROBOT_1_URL}}": "https://www.therobotreport.com/agtonomy-releases-new-autonomous-multi-point-turning-features/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Fortescue Produces First Hot Metal at Pilbara Green Iron Plant",
-    "{{AUS_1_SUMMARY}}": "Fortescue's $75 million Christmas Creek pilot plant has produced its first molten metal using a renewable-powered furnace instead of coking coal, a milestone toward commercial \"green iron\" production in the Pilbara. The plant is expected to eventually produce more than 1,500 tonnes a year as the company works to prove cheap green power can make low-carbon steelmaking commercially viable.",
-    "{{AUS_1_URL}}": "https://www.miningweekly.com/article/fortescue-produces-first-hot-metal-towards-green-iron-production-in-australia-2026-08-19",
+    "{{AUS_1_HEADLINE}}": "Origin Energy Confirms Hacker Accessed Full Bank Details of 60 Customers",
+    "{{AUS_1_SUMMARY}}": "Origin Energy's investigation into a July data breach has confirmed a hacker accessed the complete bank account numbers of around 60 customers and ID document numbers for 100 more, out of roughly 900,000 people affected overall. Authorities have traced the attack to a former contractor linked to a Manila call centre — a reminder that even a giant utility's customer database isn't bulletproof, let alone a small business running its books on a shared laptop.",
+    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-08-21/origin-energy-hack-update-60-customers-bank-account-access/107062636",
 
-    "{{AUS_2_HEADLINE}}": "Drones Breach Restricted Airspace at RAAF Base Williamtown Again",
-    "{{AUS_2_SUMMARY}}": "Police have confirmed drones breached restricted airspace around RAAF Base Williamtown — home to most of Australia's F-35A fighter jets — for the second time in a month, following a similar incursion in July. Investigators are working with the ADF to identify who is operating the drones; Australia's most sensitive defence sites logged 147 such breaches last financial year, more than double the year before.",
+    "{{AUS_2_HEADLINE}}": "Flannel Flower Crowned Australia's Favourite Wildflower",
+    "{{AUS_2_SUMMARY}}": "The flannel flower took out National Science Week's wildflower poll with 16,567 of the roughly 70,000 votes cast, narrowly beating the flying duck orchid into second place. Despite looking like a daisy, it's actually a relative of carrots and parsley — one of 14 Australian species in a plant family better known for what's on the dinner plate than what's growing on the east coast scrub.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victoria Launches $50m Royal Commission Into Construction Sector Corruption",
-    "{{VIC_1_SUMMARY}}": "Premier Ben Carroll has appointed former SA chief justice Christopher Kourakis to lead a royal commission investigating corruption, criminality and misconduct on major projects within Victoria's Big Build program, with a final report due within 12 months. For local trades and subcontractors it's a clear signal that scrutiny of contracts, paperwork and project oversight across the construction sector is about to get a lot tighter.",
+    "{{VIC_1_HEADLINE}}": "Victorian Regulator Orders Childcare Giant to Shut 65 Centres Overnight",
+    "{{VIC_1_SUMMARY}}": "The Victorian Early Childhood Regulatory Authority has suspended Ignite Minds Family Day Care for 90 days and stood down four educators, after an inspection blitz found unresolved fencing, sleeping-safety and strangulation risks the regulator had already flagged. It's a sharp reminder of how quickly a Victorian regulator will shut a business down when compliance notices go unresolved.",
 
     # Science
-    "{{SCI_1_FLAG}}": "☕ HEALTH SCIENCE · YOUR COFFEE HABIT, EXPLAINED",
-    "{{SCI_1_HEADLINE}}": "Coffee Drinkers Have Less Body Fat, More Muscle and Distinct Hormones, Study Finds",
-    "{{SCI_1_SUMMARY}}": "Analysing more than 2,264 people in Finland's Northern Finland Birth Cohort, University of Oulu researchers found that despite similar BMI, the heaviest coffee drinkers carried about 6% less visceral fat and had the highest skeletal muscle mass, along with distinct sex-hormone patterns and lower levels of amino acids linked to insulin resistance. It's an observational study, so it can't prove coffee causes the effect — but it adds to a growing pile of evidence that habitual coffee drinking tracks with healthier metabolism.",
+    "{{SCI_1_FLAG}}": "🏃 EXERCISE SCIENCE · THE POWER OF A SHORT, SHARP EFFORT",
+    "{{SCI_1_HEADLINE}}": "Three Minutes of Sprinting Beats 90 Minutes of Moderate Exercise, Study Finds",
+    "{{SCI_1_SUMMARY}}": "Rockefeller University researchers found that six 30-second all-out sprints altered nearly a quarter of the proteins measured in participants' blood and more than 200 metabolites, compared with barely a quarter of one per cent after 90 minutes of steady cycling. Many of the affected proteins are linked to lower risk of obesity and type 2 diabetes — welcome news for anyone whose idea of a workout is sprinting for the ute when it starts raining on an uncovered load.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "Google's AI Agents Are Now Calling Local Businesses — Is Yours Ready to Pick Up?",
-    "{{INSIGHT_BODY}}": "Google's new \"Let Google Call\" feature has quietly started ringing local businesses on customers' behalf, using an AI voice agent to check stock, pricing and availability before texting the customer a summary. For a trades business like ISV, that cuts both ways: a caller from an unfamiliar number identifying itself as an automated Google agent isn't a scam to hang up on, it's a genuine lead worth a straight answer — and the businesses that respond clearly and quickly will win the booking before a human ever gets involved. It's also worth flipping around: the same kind of AI calling agent can be pointed at your own supplier list to chase stock and pricing on abrasives, coatings and consumables without anyone on your team losing an afternoon on hold.",
+    "{{INSIGHT_TITLE}}": "The Robots Making Headlines Aren't Coming for Your Ute Yet — But Your Paperwork Should Already Be Automated",
+    "{{INSIGHT_BODY}}": "This week's robotics news is a two-tonne autonomous forklift teaching itself to reverse into tight loading docks — genuinely impressive engineering, but years away from anything that helps a two-truck coatings business on a Tuesday morning. The AI that actually moves the needle for an operation like ISV is far less glamorous: a model that drafts your quotes, chases overdue invoices, and turns a stack of job-site photos into a client report before you've finished your coffee. Chasing the flashiest new robot headline is a distraction — picking one reliable AI tool and using it on the same task every single day is what actually pays back.",
 
     # Fun facts
-    "{{FACT_1}}": "Melbourne's CBD grid, surveyed by Robert Hoddle in 1837, has main streets 99 feet (30 metres) wide — Hoddle fought off the Governor's order to narrow them to 66 feet, arguing wide streets were needed so bullock drays hauling goods through town wouldn't block horse-drawn traffic making turns.",
-    "{{FACT_2}}": "The world's first video game to display graphics on a screen was OXO, a version of noughts-and-crosses built in 1952 by Alexander Douglas on Cambridge's EDSAC computer as part of his PhD thesis — players entered moves with a rotary telephone dial and played against a genuinely artificially intelligent opponent, two decades before Pong.",
-    "{{FACT_3}}": "The idea that a business's reputation and customer relationships are a saleable asset in their own right — what accountants now call \"goodwill\" — was cemented in British law by an 1896 House of Lords case, Trego v Hunt, involving a dispute between two Victorian-era varnish manufacturers.",
+    "{{FACT_1}}": "The first robot built in Japan, Gakutensoku, was unveiled in 1929 by biologist Makoto Nishimura — powered entirely by compressed air, it could change its facial expression and move its head and hands, decades before anyone coined the term \"robotics.\"",
+    "{{FACT_2}}": "Canada holds more natural lakes than the rest of the world combined — roughly two million of them, holding close to a fifth of the planet's fresh surface water.",
+    "{{FACT_3}}": "Female sharks have evolved noticeably thicker skin than males of the same species — up to twice as thick in some — because males often bite down on females to hold on during mating.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the portable toilet hire business never worry about a cash flow problem?",
-    "{{JOKE_PUNCHLINE}}": "Because business was always flush.",
+    "{{JOKE_SETUP}}": "Why did the deck builder's small business never wobble, even in a tough economy?",
+    "{{JOKE_PUNCHLINE}}": "Because everything he built started with solid foundations.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Discipline is the bridge between goals and accomplishment.\"",
-    "{{CLOSING_ATTR}}": "— Jim Rohn",
-    "{{CLOSING_MESSAGE}}": "A showery start to the weekend in Carrum Downs means it's worth locking in any exterior coating work before Saturday's rain rolls in, then eyeing Monday or Tuesday for the next dry run. Between Victoria's new construction Royal Commission and Google's AI now cold-calling shops on customers' behalf, it's a week that's a good reminder to keep your own paperwork and phone manner just as sharp as your tools.",
+    "{{CLOSING_QUOTE}}": "\"Done is better than perfect.\"",
+    "{{CLOSING_ATTR}}": "— Sheryl Sandberg",
+    "{{CLOSING_MESSAGE}}": "Showers are on the cards through the weekend and into Monday in Carrum Downs, so if there's exterior coating work that needs a dry surface, Tuesday or Wednesday is shaping up as the better window. Between Origin Energy's breach update, Walmart finally catching up on tap-to-pay, and a childcare operator losing 65 centres overnight for letting compliance slide, it's a Saturday that's a decent nudge to check your own paperwork and payment systems are as tidy as your tools.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
