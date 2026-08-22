@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Saturday, 22 August 2026",
+    "{{DATE}}": "Sunday, 23 August 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Sat 22 Aug (BOM)
-    "{{WEATHER_1}}": "SAT 22 · ☁️ Cloudy, slight chance of a shower · 7–16°C",
-    "{{WEATHER_2}}": "SUN 23 · 🌦️ Showers, most likely morning and afternoon · 8–17°C",
+    # Weather — Carrum Downs VIC, 5-day from Sun 23 Aug (BOM)
+    "{{WEATHER_1}}": "SUN 23 · ⛅ Partly cloudy, slight chance of a shower · 6–18°C",
+    "{{WEATHER_2}}": "MON 24 · ☁️ Cloudy, showers most likely evening · 6–18°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "MON 24 · 🌧️ Cloudy, medium chance of showers · 11–18°C",
+    "{{WEATHER_3}}": "TUE 25 · 🌧️ Cloudy, high chance of showers · 10–18°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "TUE 25 · ⛅ Partly cloudy, isolated shower · 9–14°C",
-    "{{WEATHER_5}}": "WED 26 · ☁️ Mostly cloudy, chance of a shower easing · 8–14°C",
-    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or Carrum Downs — only minor to moderate flood warnings remain, for the Avoca, Kiewa, Loddon and Ovens/King Rivers well north of the city. With showers likely through the weekend into Monday, Tuesday or Wednesday is the better window for any exterior coating or blasting work that needs a dry surface.",
+    "{{WEATHER_4}}": "WED 26 · ☁️ Cloudy, showers most likely morning · 11–16°C",
+    "{{WEATHER_5}}": "THU 27 · ⛅ Partly cloudy, showers most likely evening · 10–18°C",
+    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or Carrum Downs. Tuesday is shaping up as the wettest day of the run, with shower risk again Monday evening and Wednesday morning — today, Sunday, is the best dry window this week for any exterior coating or blasting work.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇵🇪 PERU · POWERFUL QUAKE SHAKES SOUTHERN ANDES",
-    "{{WORLD_1_HEADLINE}}": "Magnitude 6.7 Earthquake Rattles Peru's Southern Andes",
-    "{{WORLD_1_SUMMARY}}": "A magnitude 6.7 earthquake struck at an intermediate depth of 108km near Coracora in Peru's Ayacucho region on Thursday, injuring at least two people and damaging homes, health centres and schools across the Ica and Arequipa regions. Peru's position on the Pacific Ring of Fire means the country is well drilled for seismic events, and authorities reported no major structural collapse despite the quake's strength.",
-    "{{WORLD_1_URL}}": "https://www.washingtonpost.com/world/2026/08/20/peru-earthquake-andes-mountains/c56dfb8e-9cc6-11f1-9cc4-2dc9b46e2d5c_story.html",
+    "{{WORLD_1_FLAG}}": "🇻🇦 VATICAN · POPE'S FIRST VISIT TO SAN MARINO IN 15 YEARS",
+    "{{WORLD_1_HEADLINE}}": "Pope Leo XIV Visits San Marino, Warns Against Power Placed Above Human Dignity",
+    "{{WORLD_1_SUMMARY}}": "Pope Leo XIV made the first papal visit to the tiny republic of San Marino in over 15 years on Saturday, using the trip and a nearby Rimini gathering to warn against political and economic systems that put power above the individual. He's only the third pope ever to visit, after John Paul II in 1982 and Benedict XVI in 2011.",
+    "{{WORLD_1_URL}}": "https://www.washingtonpost.com/world/2026/08/22/pope-leo-san-marino-abortion-politics-freedom-power/dc91f60c-9e0c-11f1-9cc4-2dc9b46e2d5c_story.html",
 
-    "{{WORLD_2_FLAG}}": "🏴‍☠️ YEMEN · SOMALI PIRACY AT A 10-YEAR HIGH",
-    "{{WORLD_2_HEADLINE}}": "Somali Pirates Hijack Suspected Iranian Shadow-Fleet Tanker Off Yemen",
-    "{{WORLD_2_SUMMARY}}": "Gunmen seized the Eritrean-flagged tanker SIBU 1 roughly 136 nautical miles off the Yemeni port of Al-Mukalla, the second hijacking in the region in four days and possibly the fifteenth of the year, according to maritime trackers. Analysts say the surge — the worst in over a decade — is being fuelled by regional conflict pulling naval patrols away from anti-piracy duties.",
-    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/8/20/gunmen-seize-tanker-off-yemen-amid-resurgence-of-somali-piracy",
+    "{{WORLD_2_FLAG}}": "🇲🇽 MEXICO · CATTLE TRADE REOPENS AFTER SCREWWORM SCARE",
+    "{{WORLD_2_HEADLINE}}": "Mexico Resumes Cattle Exports to US After Year-Long Screwworm Ban",
+    "{{WORLD_2_SUMMARY}}": "The US will reopen the Douglas, Arizona border crossing to Mexican cattle from Monday, ending a ban imposed over the flesh-eating New World screwworm parasite. Strict RFID tagging and staged daily quotas — starting at 700 head, rising to 900 — apply, a reminder that even livestock now travels with a full paper trail.",
+    "{{WORLD_2_URL}}": "https://www.washingtonpost.com/business/2026/08/22/mexico-us-cattle-livestock-resume-imports-screwworm/554979be-9e10-11f1-9cc4-2dc9b46e2d5c_story.html",
 
     # Economics
-    "{{ECON_1_FLAG}}": "💵 CURRENCY · AUD HITS 11-WEEK HIGH",
-    "{{ECON_1_HEADLINE}}": "Australian Dollar Extends Longest Winning Streak Since 2020",
-    "{{ECON_1_SUMMARY}}": "The Aussie pushed to an 11-week high of US$0.7134 on Friday, its eighth straight weekly gain, as a global bond sell-off and a failed US Treasury buyback plan kept the US dollar under pressure. A stronger dollar cuts both ways for a small business — cheaper imported gear and consumables, but it also chips away at the competitiveness of any export-exposed customers on your books.",
-    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-08-21/asx-markets-business-live-news-august-21-2026/107061908",
+    "{{ECON_1_FLAG}}": "🔋 ENERGY · BATTERIES SPIKE WHOLESALE POWER PRICES",
+    "{{ECON_1_HEADLINE}}": "Mass Battery Charging Pushes WA Wholesale Power Prices Above $350/MWh",
+    "{{ECON_1_SUMMARY}}": "Australia now ranks third globally for battery storage capacity, but in WA's grid, mass overnight battery charging is spiking wholesale spot prices to extreme highs as batteries compete for power in narrow windows. Worth remembering if you're weighing up a battery system as a guaranteed bill-cutter for the workshop — timing and grid conditions matter as much as the hardware.",
+    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-08-22/batteries-pushed-power-prices-up-in-midnight-charging-surge/107047470",
 
-    "{{ECON_2_FLAG}}": "📊 FEDERAL BUDGET · DEBT PASSES $1 TRILLION",
-    "{{ECON_2_HEADLINE}}": "Australia's Gross Debt Ticks Over $1 Trillion for the First Time",
-    "{{ECON_2_SUMMARY}}": "The Australian Office of Financial Management issued a further $4.1 billion of debt on Thursday, tipping the Commonwealth's total borrowings past $1,000.8 billion — about 34% of GDP — almost twenty years to the week after the Howard government declared net debt eliminated. It's a symbolic milestone more than an immediate cost, but it adds weight to the case that further RBA rate cuts are further away than businesses carrying loans might like.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL · PUMP PRICES CLIMB AGAIN",
+    "{{ECON_2_HEADLINE}}": "National Petrol Average Rises to 204.1c/L as Wholesale Costs Jump",
+    "{{ECON_2_SUMMARY}}": "The ACCC's latest weekly fuel monitoring shows the national unleaded average up 3.7c to 204.1c/L, driven by a 3% jump in wholesale import costs that typically flows through to bowsers over the next week or two. Diesel remains elevated following the fuel excise cut's expiry on 3 August — worth factoring into any quotes with a lot of driving between jobs.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "💳 RETAIL · WALMART FINALLY GOES CONTACTLESS",
-    "{{TECH_1_HEADLINE}}": "Walmart to Accept Apple Pay and Google Pay Across US Stores",
-    "{{TECH_1_SUMMARY}}": "After a decade of favouring its own in-house Walmart Pay system, the retail giant confirmed Friday it will roll out contactless tap-to-pay — including Apple Pay and Google Pay — to all US stores and Sam's Club locations by year's end, starting at select sites from 24 August. Even the biggest holdouts eventually cave to the payment method customers actually want — worth a thought if your own EFTPOS setup is still card-only.",
-    "{{TECH_1_URL}}": "https://techcrunch.com/2026/08/21/walmart-to-finally-start-accepting-apple-pay-and-google-pay/",
+    "{{TECH_1_FLAG}}": "🎵 AI TRANSPARENCY · APPLE MUSIC TO LABEL AI TRACKS",
+    "{{TECH_1_HEADLINE}}": "Apple Music Will Require \"Made With AI\" Labels on AI-Generated Songs",
+    "{{TECH_1_SUMMARY}}": "Apple has told record labels and distributors that any track with a \"material portion\" generated by AI must now be tagged, with visible labels rolling out to listeners later this year — a shift from the optional labelling it trialled in March. It's a preview of where disclosure rules are headed more broadly: if AI helps write a quote or a report you send a client, transparency about it may soon be less optional everywhere, not just in music.",
+    "{{TECH_1_URL}}": "https://macdailynews.com/2026/08/21/apple-music-to-introduce-made-with-ai-labels-for-ai-generated-music-later-this-year/",
 
-    "{{TECH_2_FLAG}}": "🤖 WORKPLACE AI · GOOGLE CHAT GETS AN AI BRAIN",
-    "{{TECH_2_HEADLINE}}": "Google Rolls Out \"Ask Gemini\" Inside Google Chat",
-    "{{TECH_2_SUMMARY}}": "Google has begun replacing Google Chat's old side panel with \"Ask Gemini,\" letting Workspace users search across Gmail, Drive and Calendar, generate images and manage events without leaving a conversation. It's rolling out to Business and Enterprise Workspace tiers now, with usage limits relaxed until 1 October so teams can properly test it before the meter starts running.",
+    "{{TECH_2_FLAG}}": "📦 LOGISTICS · AMAZON DRONES HEAD TO 500 CITIES",
+    "{{TECH_2_HEADLINE}}": "Amazon Plans Sixfold Expansion of Prime Air Drone Delivery to Nearly 500 US Cities",
+    "{{TECH_2_SUMMARY}}": "Amazon is scaling Prime Air from 11 sites to close to 500 US cities and towns by the end of the year, each covering about 175 square miles with 30–60 minute delivery windows. It's a reminder that \"last mile\" logistics is being reinvented fast — the same pressure that's pushing bigger players to rethink how parts and consumables reach a job site could reach small-business supply chains sooner than expected.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🚜 INDUSTRIAL AUTOMATION · SELF-DRIVING YARD GEAR",
-    "{{ROBOT_1_HEADLINE}}": "Agtonomy's Autonomy Platform Learns to Reverse Into Tight Spaces on Its Own",
-    "{{ROBOT_1_SUMMARY}}": "Agtonomy has added fully autonomous multi-point turning to its commercial off-road autonomy platform, letting retrofitted Kubota and Bobcat equipment execute complex manoeuvres in tight headland spaces without a driver. Each vehicle now streams more than two terabytes of field data per hour back to the platform — a sign of how fast heavy equipment autonomy is moving from open paddocks toward the tighter, more cluttered spaces every trades yard actually has to deal with.",
-    "{{ROBOT_1_URL}}": "https://www.therobotreport.com/agtonomy-releases-new-autonomous-multi-point-turning-features/",
+    "{{ROBOT_1_FLAG}}": "🤖 HUMANOID ROBOTS · 2,000+ ROBOTS COMPETE IN BEIJING",
+    "{{ROBOT_1_HEADLINE}}": "Second World Humanoid Robot Games Opens in Beijing With Over 2,000 Robots",
+    "{{ROBOT_1_SUMMARY}}": "More than 2,056 humanoid robots from 666 teams across 16 countries are competing in Beijing through 26 August — robot numbers have roughly doubled and team numbers are up 138% on last year's event. One training-session robot reportedly crashed hard enough to nearly break itself in half — a reminder that even the cutting edge of robotics still has its share of on-the-job stumbles, same as any apprentice's first week.",
+    "{{ROBOT_1_URL}}": "https://news.cgtn.com/news/2026-08-21/Live-Second-World-Humanoid-Robot-Games-open-in-Beijing--1PNdFcjqPLO/p.html",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Origin Energy Confirms Hacker Accessed Full Bank Details of 60 Customers",
-    "{{AUS_1_SUMMARY}}": "Origin Energy's investigation into a July data breach has confirmed a hacker accessed the complete bank account numbers of around 60 customers and ID document numbers for 100 more, out of roughly 900,000 people affected overall. Authorities have traced the attack to a former contractor linked to a Manila call centre — a reminder that even a giant utility's customer database isn't bulletproof, let alone a small business running its books on a shared laptop.",
-    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-08-21/origin-energy-hack-update-60-customers-bank-account-access/107062636",
+    "{{AUS_1_HEADLINE}}": "Third Woman Engages Lawyer Over Sydney Swans Hotel Scandal",
+    "{{AUS_1_SUMMARY}}": "A third woman linked to an alleged incident at a Pullman Hotel in East Melbourne on 17 August has engaged Slater & Gordon to explore civil action, with five Swans players still suspended for the rest of the season.",
+    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-08-22/third-woman-legal-representation-civil-sydney-swans-scandal/107066742",
 
-    "{{AUS_2_HEADLINE}}": "Flannel Flower Crowned Australia's Favourite Wildflower",
-    "{{AUS_2_SUMMARY}}": "The flannel flower took out National Science Week's wildflower poll with 16,567 of the roughly 70,000 votes cast, narrowly beating the flying duck orchid into second place. Despite looking like a daisy, it's actually a relative of carrots and parsley — one of 14 Australian species in a plant family better known for what's on the dinner plate than what's growing on the east coast scrub.",
+    "{{AUS_2_HEADLINE}}": "Australia on Track for Wettest El Niño Year on Record",
+    "{{AUS_2_SUMMARY}}": "Despite the Bureau of Meteorology declaring a strong El Niño — usually a byword for drought — repeated rainbands have made 2026 unusually wet nationally, though forecasters expect the pattern to flip toward a hotter, drier spring and summer.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victorian Regulator Orders Childcare Giant to Shut 65 Centres Overnight",
-    "{{VIC_1_SUMMARY}}": "The Victorian Early Childhood Regulatory Authority has suspended Ignite Minds Family Day Care for 90 days and stood down four educators, after an inspection blitz found unresolved fencing, sleeping-safety and strangulation risks the regulator had already flagged. It's a sharp reminder of how quickly a Victorian regulator will shut a business down when compliance notices go unresolved.",
+    "{{VIC_1_HEADLINE}}": "Victorian Government Pledges $230m for 10 Free Walk-In Dental Clinics",
+    "{{VIC_1_SUMMARY}}": "Premier Ben Carroll announced the funding at Labor's \"100 Days Out\" rally ahead of the November state election — seven clinics for metro Melbourne, three regional, aiming to treat over 100,000 patients a year once the first sites open in mid-2027.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🏃 EXERCISE SCIENCE · THE POWER OF A SHORT, SHARP EFFORT",
-    "{{SCI_1_HEADLINE}}": "Three Minutes of Sprinting Beats 90 Minutes of Moderate Exercise, Study Finds",
-    "{{SCI_1_SUMMARY}}": "Rockefeller University researchers found that six 30-second all-out sprints altered nearly a quarter of the proteins measured in participants' blood and more than 200 metabolites, compared with barely a quarter of one per cent after 90 minutes of steady cycling. Many of the affected proteins are linked to lower risk of obesity and type 2 diabetes — welcome news for anyone whose idea of a workout is sprinting for the ute when it starts raining on an uncovered load.",
+    "{{SCI_1_FLAG}}": "🦷 MEDICINE · YOUR TEETH MAY PREDICT SURGERY OUTCOMES",
+    "{{SCI_1_HEADLINE}}": "Tooth Count Linked to Survival After Pancreatic Cancer Surgery, Study Finds",
+    "{{SCI_1_SUMMARY}}": "In a study of 339 patients, those with 21 or more natural teeth survived a median of roughly 60 months after pancreatic surgery, compared with about 39 months for those with fewer — researchers think tooth loss tracks decades of inflammation and frailty rather than causing the outcome directly. A genuinely odd but well-evidenced reminder that the basics — including a dental check-up — aren't unrelated to how well your body handles a big medical event.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "The Robots Making Headlines Aren't Coming for Your Ute Yet — But Your Paperwork Should Already Be Automated",
-    "{{INSIGHT_BODY}}": "This week's robotics news is a two-tonne autonomous forklift teaching itself to reverse into tight loading docks — genuinely impressive engineering, but years away from anything that helps a two-truck coatings business on a Tuesday morning. The AI that actually moves the needle for an operation like ISV is far less glamorous: a model that drafts your quotes, chases overdue invoices, and turns a stack of job-site photos into a client report before you've finished your coffee. Chasing the flashiest new robot headline is a distraction — picking one reliable AI tool and using it on the same task every single day is what actually pays back.",
+    "{{INSIGHT_TITLE}}": "The ATO Already Knows What You Paid Your Subbies",
+    "{{INSIGHT_BODY}}": "The Taxable Payments Annual Report deadline lands this Friday, 28 August, and this year the Tax Office is matching around $21 billion in reported contractor payments straight against what those contractors declared on their own returns — no human needed to flag a mismatch. If you pay subcontractors, a typo or a missing invoice on your side is exactly the kind of thing that now surfaces automatically. The fix isn't dodging the report, it's using the AI-assisted reconciliation most modern accounting software (Xero, MYOB) already has — five minutes cross-checking contractor payments against invoices before you lodge beats a please-explain letter in October.",
 
     # Fun facts
-    "{{FACT_1}}": "The first robot built in Japan, Gakutensoku, was unveiled in 1929 by biologist Makoto Nishimura — powered entirely by compressed air, it could change its facial expression and move its head and hands, decades before anyone coined the term \"robotics.\"",
-    "{{FACT_2}}": "Canada holds more natural lakes than the rest of the world combined — roughly two million of them, holding close to a fifth of the planet's fresh surface water.",
-    "{{FACT_3}}": "Female sharks have evolved noticeably thicker skin than males of the same species — up to twice as thick in some — because males often bite down on females to hold on during mating.",
+    "{{FACT_1}}": "Isaac Asimov coined the word \"robotics\" in his 1941 short story Liar! — he later admitted he assumed the word already existed, genuinely surprised to learn he'd invented an entirely new term rather than borrowed one.",
+    "{{FACT_2}}": "A newly described \"supergiant\" isopod, Bathynomus vaderi, found off Vietnam's coast, grows over 30cm long and was named for its Darth Vader–helmet-shaped head — locals had been eating it as seafood for years before scientists realised it was a new species.",
+    "{{FACT_3}}": "Global robot density in manufacturing hit 162 robots for every 10,000 workers in 2023, with automation leaders South Korea and Japan both topping 400 — roughly one robot for every 25 factory workers in those countries.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the deck builder's small business never wobble, even in a tough economy?",
-    "{{JOKE_PUNCHLINE}}": "Because everything he built started with solid foundations.",
+    "{{JOKE_SETUP}}": "What do you call a welder who never shows up to the job?",
+    "{{JOKE_PUNCHLINE}}": "A ne'er-do-weld.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Done is better than perfect.\"",
-    "{{CLOSING_ATTR}}": "— Sheryl Sandberg",
-    "{{CLOSING_MESSAGE}}": "Showers are on the cards through the weekend and into Monday in Carrum Downs, so if there's exterior coating work that needs a dry surface, Tuesday or Wednesday is shaping up as the better window. Between Origin Energy's breach update, Walmart finally catching up on tap-to-pay, and a childcare operator losing 65 centres overnight for letting compliance slide, it's a Saturday that's a decent nudge to check your own paperwork and payment systems are as tidy as your tools.",
+    "{{CLOSING_QUOTE}}": "\"The only way to make sense out of change is to plunge into it, move with it, and join the dance.\"",
+    "{{CLOSING_ATTR}}": "— Alan Watts",
+    "{{CLOSING_MESSAGE}}": "Today's your best dry window of the week in Carrum Downs before showers build back in from Monday evening through Tuesday, so it's a decent Sunday to get any outdoor coating work sorted while the going's good. With the ATO's contractor-payment deadline five days out and battery-driven power price swings back in the news, it's also a fair prompt to spend ten quiet minutes on the books before the week gets away from you.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
