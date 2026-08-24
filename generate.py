@@ -4,89 +4,90 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Monday, 24 August 2026",
+    "{{DATE}}": "Tuesday, 25 August 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Mon 24 Aug (BOM)
-    "{{WEATHER_1}}": "MON 24 · ☁️ Cloudy, showers most likely evening · 6–18°C",
-    "{{WEATHER_2}}": "TUE 25 · 🌧️ Cloudy, very high chance of showers · 10–16°C",
+    # Weather — Carrum Downs VIC, 5-day from Tue 25 Aug (BOM)
+    "{{WEATHER_1}}": "TUE 25 · 🌧️ Partly cloudy, high chance of showers, most likely this afternoon and evening · 10–15°C",
+    "{{WEATHER_2}}": "WED 26 · 🌧️ Cloudy, very high chance of rain, most likely morning and afternoon · 11–16°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "WED 26 · ☁️ Cloudy, showers most likely morning · 11–17°C",
-    "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "THU 27 · ⛅ Partly cloudy, slight chance of a shower · 10–17°C",
-    "{{WEATHER_5}}": "FRI 28 · ⛅ Partly cloudy · 9–17°C",
-    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or Carrum Downs, though a flood watch remains in place for the Ovens and King Rivers in Victoria's north-east. Tuesday is shaping up as the wettest day of the run, with showers building back in from this evening — today's daylight hours and Thursday/Friday are the better dry windows for any outdoor coating or blasting work.",
+    "{{WEATHER_3}}": "THU 27 · ⛅ Partly cloudy, medium chance of a shower, most likely morning · 10–17°C",
+    "{{WEATHER_3_CLASS}}": "",
+    "{{WEATHER_4}}": "FRI 28 · ⛅ Partly cloudy, slight chance of a shower · 9–17°C",
+    "{{WEATHER_5}}": "SAT 29 · ☀️ Partly cloudy, mostly dry · 8–16°C",
+    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or Carrum Downs. A vigorous low is bringing this week's heaviest rain today into Wednesday morning, easing from Thursday — Friday and Saturday are your best windows for any outdoor coating or blasting work.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇷 IRAN · TEHRAN DISMISSES 'DESPERATE' NEW U.S. SANCTIONS",
-    "{{WORLD_1_HEADLINE}}": "Iran Dismisses Trump's New Sanctions as a Sign of 'Desperation,' Pakistan Sends Army Chief to Mediate",
-    "{{WORLD_1_SUMMARY}}": "Iran's foreign minister said Sunday that Washington's looming new sanctions package — described by the US Treasury Secretary as \"the toughest sanctions in history\" — is a sign the US has failed to defeat Tehran militarily and will fail economically too. Pakistan's army chief is due in Tehran today as a mediator, a reminder the Middle East standoff behind this year's oil price swings is still nowhere near resolved.",
-    "{{WORLD_1_URL}}": "https://www.nbcnews.com/world/iran/iran-says-desperate-new-sanctions-will-fail-mediator-pakistan-sends-ar-rcna593979",
+    "{{WORLD_1_FLAG}}": "🇮🇷 IRAN · US LAUNCHES 'ECONOMIC D-DAY' SANCTIONS CAMPAIGN",
+    "{{WORLD_1_HEADLINE}}": "US Treasury Unveils Sweeping New Iran Sanctions in What Trump Calls an 'Economic D-Day'",
+    "{{WORLD_1_SUMMARY}}": "Treasury Secretary Scott Bessent unveiled a broad new sanctions campaign against Iran, dubbed \"Operation Economic Outcast,\" targeting brokers, shipping networks and shell companies across the UAE, Hong Kong, China, Singapore and Europe that move Iranian oil and revenue to the IRGC. Iran has vowed to respond \"in a seismic manner,\" another sign the standoff behind this year's oil price volatility is far from resolved.",
+    "{{WORLD_1_URL}}": "https://www.npr.org/2026/08/24/g-s1-139743/treasury-secretary-scott-bessent-to-unveil-new-economic-sanctions-on-iran",
 
-    "{{WORLD_2_FLAG}}": "🌪️ HAWAII · TROPICAL STORM BEARS DOWN ON BIG ISLAND",
-    "{{WORLD_2_HEADLINE}}": "Tropical Storm Moke Threatens Hawaii's Big Island With Up to 15 Inches of Rain",
-    "{{WORLD_2_SUMMARY}}": "Hawaii's Big Island is opening shelters and urging residents in flood-prone areas to leave early as Tropical Storm Moke tracks in with forecast rainfall of 5 to 15 inches — just a week after Hurricane Lala's deadly flooding and landslides battered the same island. A stark reminder that back-to-back extreme weather events are becoming the norm, not the exception, in a lot of places right now.",
-    "{{WORLD_2_URL}}": "https://www.npr.org/2026/08/23/nx-s1-5941769/tropical-storm-moke-hawaii",
+    "{{WORLD_2_FLAG}}": "🎯 RUSSIA-UKRAINE · DRONES HIT RETAILER'S WAREHOUSES AGAIN",
+    "{{WORLD_2_HEADLINE}}": "Ukrainian Drones Strike Russian Online Retailer's Warehouses for a Third Straight Night",
+    "{{WORLD_2_SUMMARY}}": "Ukrainian drones killed at least ten people and hit logistics centres belonging to Russian online retailer Ozon — Russia's answer to Amazon — across southern Russia and occupied Crimea overnight, the third consecutive night the retailer's warehouses have been targeted. Ozon evacuated more than 300 staff from its largest facility in Orenburg as the campaign against Russian commercial infrastructure keeps widening.",
+    "{{WORLD_2_URL}}": "https://kyivindependent.com/ukraine-strikes-wildberries-rival-in-russias-orenburg/",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ FUEL · MELBOURNE PRICES SPAN 183c TO 300c TODAY",
-    "{{ECON_1_HEADLINE}}": "Melbourne Petrol Prices Range From 183.5c to Over 300c a Litre This Morning",
-    "{{ECON_1_SUMMARY}}": "Live pricing across Melbourne's 1,172 stations today shows unleaded ranging from 183.5c/L at the cheapest (Preston) to over 300c/L at the priciest, averaging 201.5c/L — a reminder that shopping around before you fill the ute can be worth $50-plus on a single tank. Tuesday to Thursday is typically the cheapest stretch of Melbourne's price cycle, though the Middle East conflict has been disrupting the usual pattern since February.",
+    "{{ECON_1_FLAG}}": "⛽ FUEL · MELBOURNE AVERAGE EASES TO $2.00 A LITRE",
+    "{{ECON_1_HEADLINE}}": "Melbourne Petrol Prices Ease to $2.00 Average, 5c Cheaper Than Yesterday",
+    "{{ECON_1_SUMMARY}}": "Melbourne's average unleaded price has eased to around $2.00 a litre today, 5 cents down on yesterday and 12 cents below the early-August peak of $2.12, with prices still ranging from 183.5c/L at the cheapest Preston station to over 300c/L at the priciest across the city's 1,172 stations. Tuesday to Thursday is typically the cheapest stretch of Melbourne's price cycle, so today and tomorrow are reasonable days to fill the ute before prices likely start climbing again toward the weekend.",
     "{{ECON_1_URL}}": "https://petrolmate.com.au/city/vic/melbourne",
 
-    "{{ECON_2_FLAG}}": "🏦 BANKING · BENDIGO BANK REPORTS AS ASX SLIDES",
-    "{{ECON_2_HEADLINE}}": "Bendigo Bank Reports Full-Year Results Today After ASX's Second Straight Losing Week",
-    "{{ECON_2_SUMMARY}}": "The ASX 200 closed out Friday down for a second consecutive week, weighed by high oil prices, jittery US bond markets and a sell-off in the big banks tied to housing gloom — with three of the big four already flagging double-digit drops in new home loan applications since May's budget. Bendigo Bank's results today will be watched for whether regional lenders are feeling the same squeeze, worth a glance if you're comparing business finance rates.",
+    "{{ECON_2_FLAG}}": "📉 PROFESSIONAL SERVICES · KPMG AXES 5% OF ITS AUSTRALIAN STAFF",
+    "{{ECON_2_HEADLINE}}": "KPMG Cuts 27 Partners and 360 Jobs as Audit Scandal Fallout Deepens",
+    "{{ECON_2_SUMMARY}}": "KPMG's Australian arm is cutting 27 partners and around 360 jobs, mostly from its consulting division, after client contracts dried up in the wake of last year's audit leaks scandal and consulting revenue fell almost 17% for the year. A reminder that even the Big Four aren't immune to a tighter market for professional services — a decent moment to check whether your own accounting or advisory fees are still competitive.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "📢 AI ADVERTISING · CHATGPT ADS LAND IN EUROPE TODAY",
-    "{{TECH_1_HEADLINE}}": "OpenAI Rolls Out ChatGPT Ads to 31 European Markets Today",
-    "{{TECH_1_SUMMARY}}": "OpenAI's ad business — which launched as a US pilot in February and has since rolled out to Australia, the UK, Canada and others — expands to 31 European countries today, six months in. Ads only ever show to Free and Go tier users, never Plus or Pro, and contextual (non-personalised) ads don't require consent under GDPR — a preview of how disclosure and consent rules are likely to keep tightening around AI tools generally, not just chat ads.",
-    "{{TECH_1_URL}}": "https://openai.com/index/chatgpt-ads-expands-across-europe/",
+    "{{TECH_1_FLAG}}": "🔍 AI SEARCH · NVIDIA IN TALKS FOR $30BN+ PERPLEXITY STAKE",
+    "{{TECH_1_HEADLINE}}": "Nvidia Reportedly in Talks to Back AI Search Startup Perplexity at a $30 Billion-Plus Valuation",
+    "{{TECH_1_SUMMARY}}": "Nvidia is discussing a fresh funding round for AI search company Perplexity that could value it above $30 billion, more than 50% higher than a year ago, as Perplexity's annualised revenue jumps past $750 million on the back of its AI agent tools. It's the latest sign chipmakers are moving beyond just selling the hardware behind AI tools to taking direct stakes in the software layer small businesses increasingly rely on.",
+    "{{TECH_1_URL}}": "https://www.benzinga.com/trading-ideas/long-ideas/26/08/61383040/nvidia-perplexity-investment-ai-strategy",
 
-    "{{TECH_2_FLAG}}": "💰 AI PRICING · FLAGSHIP MODELS GET CHEAPER AGAIN",
-    "{{TECH_2_HEADLINE}}": "OpenAI Cuts Its Flagship Model Price Over 20%, Google Halves Gemini Flash Pricing",
-    "{{TECH_2_SUMMARY}}": "OpenAI trimmed benchmark pricing on its top-tier GPT-5.6 Sol model by more than 20% this weekend — the first cut to its flagship since July — while Google's new Gemini 3.7 Flash landed at roughly half the price of its predecessor. Competition between the big AI labs keeps pushing the cost of using these tools down, which is good news if you're paying monthly for an AI assistant to help with quotes or admin.",
+    "{{TECH_2_FLAG}}": "🔬 AI HARDWARE · PUSH FOR CHEAPER ON-DEVICE AI CHIPS",
+    "{{TECH_2_HEADLINE}}": "STMicroelectronics and Singapore University Launch Four-Year Lab for Cheaper On-Device AI Chips",
+    "{{TECH_2_SUMMARY}}": "STMicroelectronics and the National University of Singapore have opened a joint research lab chasing more energy-efficient semiconductors that can run AI workloads directly on a device rather than in the cloud — the kind of advance that eventually flows through to cheaper, faster AI features in everyday tools and machinery, not just server farms.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🏃 HUMANOID ROBOTS · SPRINT WORLD RECORD SET IN BEIJING",
-    "{{ROBOT_1_HEADLINE}}": "Chinese Humanoid Robot Beats Usain Bolt's 100m World Record at Beijing Games",
-    "{{ROBOT_1_SUMMARY}}": "Tiangong Ultra ran 100 metres in 9.39 seconds at the opening of the second World Humanoid Robot Games in Beijing, beating Bolt's 9.58-second record from 2009 — a huge leap from the same robot's 21.5-second time at last year's inaugural games. Runner-up robot Lightning also beat Bolt's mark at 9.47 seconds, though not every competitor had a clean run — one reportedly crashed hard into the safety barrier at full speed, so even world-record pace still comes with its share of on-the-job stumbles.",
-    "{{ROBOT_1_URL}}": "https://www.abc.net.au/news/2026-08-22/the-robot-that-can-beat-usain-bolt/107067592",
+    "{{ROBOT_1_FLAG}}": "🤖 INDUSTRIAL ROBOTS · WORLD ROBOT CONFERENCE WRAPS IN BEIJING",
+    "{{ROBOT_1_HEADLINE}}": "2026 World Robot Conference Closes in Beijing With 311 New Robots Unveiled",
+    "{{ROBOT_1_SUMMARY}}": "The week-long World Robot Conference wrapped up in Beijing having drawn over 300 exhibitors from 26 countries and 3,000-plus products on display, including a newly unveiled 4-metre-tall hybrid hydraulic-electric humanoid capable of handling loads from a few kilograms up to several hundred tonnes. The event's focus this year shifted noticeably from flashy demos toward real factory and logistics deployments, underscoring how fast industrial automation is moving from showcase to shop floor.",
+    "{{ROBOT_1_URL}}": "https://en.people.cn/n3/2026/0823/c90000-20491301.html",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australia Confirms First Bird Flu Case in a Mammal After Fur Seal Found in SA",
-    "{{AUS_1_SUMMARY}}": "A long-nosed fur seal found at Beachport on SA's south-east coast has tested positive for H5N1 bird flu, Australia's first confirmed case in a mammal, as authorities also brace for the strain to hit sea lion breeding colonies following mass seabird deaths nearby.",
-    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-08-23/australias-first-bird-flu-case-in-mammal-confirmed-in-sa/107068380",
+    "{{AUS_1_HEADLINE}}": "Renting a Unit Now Costs More Than Half Take-Home Pay in Every Australian Capital",
+    "{{AUS_1_SUMMARY}}": "Housing advocacy group Everybody's Home says a single worker on the median $74,100 income now spends 56% of take-home pay renting an average capital-city apartment, with vacancy rates as low as 1.2% pushing advertised rents up almost 8% over the past year.",
+    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-08-24/everybodys-home-rental-increases-half-average-income/107070036",
 
-    "{{AUS_2_HEADLINE}}": "$17m Robot Upgrade Halves Casual Workforce, Doubles Output at WA Avocado Shed",
-    "{{AUS_2_SUMMARY}}": "One of WA's largest avocado packing sheds has installed nine Japanese-made robots at its Manjimup facility, cutting its casual workforce roughly in half while doubling output — driven by high labour costs and uncertainty over overseas worker schemes rather than any grand automation strategy.",
+    "{{AUS_2_HEADLINE}}": "Albanese Rules Out Any Change to WA's $47bn GST Deal Despite Call to Scrap It",
+    "{{AUS_2_SUMMARY}}": "On his first WA visit since a Productivity Commission report branded the 2018 GST carve-up a \"costly mistake\" that has cost federal taxpayers almost $23 billion, the Prime Minister repeated there will be \"no change whatsoever\" to the arrangement while he remains in office.",
+    "{{AUS_2_URL}}": "https://www.abc.net.au/news/2026-08-24/anthony-albanese-pledges-no-change-to-wa-gst-deal/107071388",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Can the Coalition Really Win Government Back at November's Victorian Election?",
-    "{{VIC_1_SUMMARY}}": "With the poll now under 100 days away, the Coalition under Jess Wilson is optimistic about retaking government, while new Premier Ben Carroll's Labor is bracing to lose traditionally safe western and north-western Melbourne seats like Sunbury, Sydenham, Melton and Yan Yean to One Nation or the Coalition.",
+    "{{VIC_1_HEADLINE}}": "Doctors Warn of Possible Contaminated Batch Behind Seventh Liver Toxicity Case From Fake Weight-Loss Peptides",
+    "{{VIC_1_SUMMARY}}": "Victorian doctors say a seventh patient has been hospitalised with acute liver toxicity after using a counterfeit peptide sold online as the weight-loss drug retatrutide, with the cluster's local pattern pointing to a contaminated batch rather than one-off bad luck.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🕳️ ASTROPHYSICS · WHY SOME STARS KEEP SURVIVING BLACK HOLES",
-    "{{SCI_1_HEADLINE}}": "Astronomers Find Stars That Keep Surviving Repeated Brushes With Supermassive Black Holes",
-    "{{SCI_1_SUMMARY}}": "Some stars orbit so close to supermassive black holes that they get partially torn apart on every pass, producing a flare of light each time — and researchers now think stars that were already spinning extremely fast before capture explain both how they got trapped in such tight orbits and why those repeat flares mysteriously fade a little more with each pass.",
+    "{{SCI_1_FLAG}}": "😴 HEALTH SCIENCE · THE SLEEP SWEET SPOT FOR SLOWER AGING",
+    "{{SCI_1_HEADLINE}}": "Scientists Pin Down the Sleep Range Linked to the Slowest Biological Aging",
+    "{{SCI_1_SUMMARY}}": "A Columbia University-led analysis of 23 biological aging clocks across 17 organ systems in the UK Biobank found a clear U-shaped pattern: people sleeping between 6.4 and 7.8 hours a night aged the slowest, while both short sleep (under 6 hours) and long sleep (over 8 hours) were linked to faster aging throughout the body, not just the brain.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "The Big Four Are Fighting for Loans Again — What a New 'Mortgage War' Means for Your Equipment Finance",
-    "{{INSIGHT_BODY}}": "NAB, ANZ, Westpac and CommBank have all reported sharp pull-backs in new home loan applications since May's federal budget — down as much as 20% at Westpac — and banking analysts are calling it the start of a fresh 'mortgage war' as lenders compete harder to keep volumes up. That same competitive pressure typically flows through to business and equipment finance within a few months, as banks look for growth wherever they can find it. If your ute, compressor or blast pot finance is coming up for renewal, or you've been sitting on the same commercial loan rate for a couple of years, this is a reasonable window to ask an AI-assisted comparison tool (or your broker) to run the numbers again — a rate that looked competitive in a tighter lending market may not be the best on offer once the banks start chasing business again.",
+    "{{INSIGHT_TITLE}}": "KPMG Just Cut 5% of Its Australian Workforce — What It Means for What You Pay Your Accountant",
+    "{{INSIGHT_BODY}}": "KPMG's Australian arm is axing 27 partners and around 360 jobs after a bruising year of lost contracts and a 17% slide in consulting revenue — proof that even the biggest professional services firms are under real pricing pressure right now, not just small operators. That pressure tends to flow down: as big firms compete harder to hold onto clients, mid-sized and boutique accounting and bookkeeping practices are increasingly leaning on AI-assisted tools — automated BAS prep, bank reconciliation, anomaly-flagging — to protect their own margins without lifting fees. If your bookkeeping or BAS costs haven't been reviewed in a year or two, it's a reasonable time to ask your accountant what tasks they've automated on their end, and whether that saving is actually being passed on to you.",
 
     # Fun facts
-    "{{FACT_1}}": "The Sony PlayStation 2 has sold more than 155 million units since its 2000 launch, making it the best-selling games console of all time — more than any single console from any generation since, including today's.",
-    "{{FACT_2}}": "Baking soda and baking powder aren't interchangeable: baking powder already contains its own acid, while baking soda needs an acidic ingredient like buttermilk or vinegar to activate — swap one for the other and you can end up with a dense, bitter result.",
-    "{{FACT_3}}": "The Sydney Harbour Bridge was held together with more than six million hand-driven rivets — a riveting gang could drive around 700 a shift, each one heated in a coke fire, thrown red-hot through the air, and caught in a cone before it was hammered into place.",
+    "{{FACT_1}}": "Melbourne's Skipping Girl Vinegar sign in Abbotsford, first lit in 1936, is believed to be the city's first animated neon sign — when the original was pulled down in 1968, locals protested so loudly that a near-identical replica went up two years later and still runs today.",
+    "{{FACT_2}}": "The jerrycan, still basically unchanged after 88 years, was engineered in 1937 by a German firm to a military brief: stamped from two pressed-steel halves with no seams, rivets or fittings that could work loose and leak, and shaped so one soldier could carry two full cans at once.",
+    "{{FACT_3}}": "The Royal Game of Ur, played in Mesopotamia around 2500 BC, sat unplayed for over 4,000 years until British Museum curator Irving Finkel deciphered a 2,000-year-old clay tablet of rules in the 1980s — you can now play the exact same game your Bronze Age counterpart did.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the retaining wall builder become such a reliable small business owner?",
-    "{{JOKE_PUNCHLINE}}": "He never let anything slide — least of all an unpaid invoice.",
+    "{{JOKE_SETUP}}": "Why did the pergola builder never argue with a customer about the quote?",
+    "{{JOKE_PUNCHLINE}}": "Because he always built in a bit of shade before things got heated.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"He that will not sail till all dangers are over must never put to sea.\"",
-    "{{CLOSING_ATTR}}": "— Thomas Fuller",
-    "{{CLOSING_MESSAGE}}": "It's a cloudy start to the week in Carrum Downs with showers building back in this evening, so today's daylight hours are your best bet for anything outdoors before Tuesday turns into the wet day of the run. With the ASX just closing out a second rough week and the big banks jostling harder for loans, it's also a decent Monday to check whether your own finance rates are still competitive — and if you need a break from the numbers, the World Humanoid Robot Games are still running in Beijing through Wednesday.",
+    "{{CLOSING_QUOTE}}": "\"Well begun is half done.\"",
+    "{{CLOSING_ATTR}}": "— Aristotle",
+    "{{CLOSING_MESSAGE}}": "It's the wettest day of the week in Carrum Downs, with showers building through this afternoon and evening before Wednesday's system moves through properly — Friday and Saturday are shaping up as the better windows for anything outdoors. Between KPMG's job cuts, Melbourne's rent squeeze back in the headlines and the usual Tuesday dip in petrol prices, it's a fair day to run your own numbers as well as everyone else's.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
