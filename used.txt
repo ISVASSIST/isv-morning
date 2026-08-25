@@ -1302,3 +1302,14 @@ JOKE: Why did the pergola builder never argue with a customer about the quote?
 INSIGHT: KPMG Just Cut 5% of Its Australian Workforce — What It Means for What You Pay Your Accountant
 QUOTE: "Well begun is half done." — Aristotle
 ---
+
+DATE: Wednesday, 26 August 2026
+SCIENCE: Backyard bird feeders flagged as potential H5N1 hotspots as Australia's bird flu outbreak spreads — ScienceDaily, published 24 August 2026
+ROBOTICS: Xpeng's robotics unit raises over $900 million at a $6.3 billion valuation for its IRON humanoid, China's largest embodied AI funding round — published 24 August 2026
+FACT: The AI term "hallucination" didn't start with chatbots — computer vision researchers used it back in the 2000s to describe image-processing software "hallucinating" plausible-looking details into blurry photos.
+FACT: Garnet only became an industrial abrasive by accident — New York's Barton family started commercially mining it in the 1870s after noticing it was tough enough to shred the sandpaper being used to grind it smooth.
+FACT: VisiCalc, released for the Apple II in 1979, is credited as the world's first spreadsheet program — inventor Dan Bricklin said the idea came from watching a professor erase and rewrite numbers on a classroom blackboard.
+JOKE: Why did the EV charger installer never stress about a slow week?
+INSIGHT: Coles Just Set Aside $235 Million for Underpaying Staff — Could an AI Payroll Check Catch Your Mistake First?
+QUOTE: "Obstacles are those frightful things you see when you take your eyes off your goal." — Henry Ford
+---
