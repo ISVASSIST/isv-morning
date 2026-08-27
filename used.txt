@@ -1324,3 +1324,14 @@ JOKE: What did the knife sharpener say when a customer asked for a discount?
 INSIGHT: Victoria's Work-From-Home Law Lands September 1 — Small Trades Get Until 2027, But Worth Setting Up Now
 QUOTE: "Don't give up. Don't ever give up." — Jim Valvano
 ---
+
+DATE: Friday, 28 August 2026
+SCIENCE: AI searches 100 million 3D-printing settings to find a cheaper way to print NASA's GRCop-42 rocket alloy — Washington State University, ScienceDaily 27 August 2026
+ROBOTICS: Figure AI passes 1,000 commercially deployed humanoid robots, producing Figure 03 at roughly one per hour at its BotQ facility — analysts say it now leads Tesla Optimus in US production, published 27 August 2026
+FACT: Every vehicle sold in Australia since the mid-2000s carries an OBD-II diagnostic port, originally mandated in the US in 1996 purely for emissions testing — the same port that now lets a $50 Bluetooth dongle and a phone app read fault codes that used to need a dealer-only scan tool costing thousands.
+FACT: The air fryer sitting on an estimated one in three Australian kitchen benches isn't new technology — Philips only patented the countertop version in 2010, but it's really a compact version of the rapid-air convection ovens commercial kitchens have used since the 1950s.
+FACT: Dry ice blasting — firing frozen CO2 pellets at surfaces to strip coatings and contamination — was developed by NASA's Marshall Space Flight Center in the 1980s to clean rocket engine components, and leaves no secondary waste because the pellets sublimate straight back into gas on impact.
+JOKE: Why did the generator technician's small business never lose power, even during a state-wide blackout?
+INSIGHT: Two of the Big Four Now Expect a Rate Hike — Here's How AI Cash-Flow Forecasting Can Buy You a Buffer
+QUOTE: "A goal without a plan is just a wish." — Antoine de Saint-Exupéry
+---
