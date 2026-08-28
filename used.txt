@@ -1335,3 +1335,14 @@ JOKE: Why did the generator technician's small business never lose power, even d
 INSIGHT: Two of the Big Four Now Expect a Rate Hike — Here's How AI Cash-Flow Forecasting Can Buy You a Buffer
 QUOTE: "A goal without a plan is just a wish." — Antoine de Saint-Exupéry
 ---
+
+DATE: Saturday, 29 August 2026
+SCIENCE: NASA and SpaceX clear the Nancy Grace Roman Space Telescope for its planned Sunday launch on a Falcon Heavy rocket — field of view 100x wider than Hubble's, expected to find ~100,000 exoplanets — published 28 August 2026
+ROBOTICS: Hugging Face and Pollen Robotics unveil Microduck, a $399 open-source 25cm waddling, roller-skating biped robot — published 27 August 2026
+FACT: Sandblasting was patented in 1870 by American engineer Benjamin Chew Tilghman, who got the idea after noticing that windblown desert sand had etched and frosted glass windowpanes.
+FACT: Two years before the Atari 2600, the Fairchild Channel F (1976) was the first home console to use interchangeable ROM game cartridges, but is now largely forgotten outside gaming history circles.
+FACT: The old claim that a duck's quack doesn't echo was debunked in 2003 by University of Salford acoustics engineer Trevor Cox, who recorded a duck inside an anechoic chamber and proved it does echo, just faintly.
+JOKE: Why did the pool fencing installer's small business always pass its council inspection on the first try?
+INSIGHT: Petrol Just Cracked $2 a Litre in Melbourne — Is Your Callout Fee Still Doing the Job?
+QUOTE: "The best way out is always through." — Robert Frost
+---
