@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Saturday, 29 August 2026",
+    "{{DATE}}": "Sunday, 30 August 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Sat 29 Aug (BOM)
-    "{{WEATHER_1}}": "SAT 29 · ⛈️ Showers, chance of a storm, most likely PM · 7–17°C",
-    "{{WEATHER_2}}": "SUN 30 · 🌧️ Cloudy, very high chance of showers, windy · 8–14°C",
+    # Weather — Carrum Downs VIC, 5-day from Sun 30 Aug (BOM)
+    "{{WEATHER_1}}": "SUN 30 · ⛅ Partly cloudy, mild · 8–16°C",
+    "{{WEATHER_2}}": "MON 31 · 🌦️ Partly cloudy, slight shower chance · 7–15°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "MON 31 · ⛅ Clearing, sunny spells, cooler start · 6–16°C",
+    "{{WEATHER_3}}": "TUE 1 SEP · ☀️ Morning fog clearing to sunny, unusually warm · 9–22°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "TUE 1 SEP · ☀️ Mostly sunny and mild · 8–18°C",
-    "{{WEATHER_5}}": "WED 2 SEP · 🌤️ Partly cloudy, isolated late shower · 9–17°C",
-    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or the Mornington Peninsula. Sunday's the pick of a wet, blustery stretch with north-westerlies gusting 25–35 km/h, before it clears into a dry, mild run from Monday — today's still your best outdoor window before the wind and rain properly set in tomorrow.",
+    "{{WEATHER_4}}": "WED 2 SEP · 🌧️ Cloudy, showers most likely morning, cooler · 10–17°C",
+    "{{WEATHER_5}}": "THU 3 SEP · 🌦️ Showers, windy northwesterly change · 9–16°C",
+    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or the Mornington Peninsula. Melbourne just had its warmest winter on record, and Tuesday's forecast 22°C will be the warmest first day of spring in five years — before showers and a gusty north-westerly change return from midweek.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇳🇴 NORWAY · KING HARALD V DIES AGED 89",
-    "{{WORLD_1_HEADLINE}}": "Norway's King Harald V Dies Aged 89, Son Ascends as King Haakon",
-    "{{WORLD_1_SUMMARY}}": "Europe's oldest reigning monarch died at Oslo's Rikshospitalet on Friday after treatment for haemolytic anaemia, ending a 35-year reign remembered for modernising the Norwegian monarchy; his son immediately succeeded him as King Haakon VIII.",
-    "{{WORLD_1_URL}}": "https://www.abc.net.au/news/2026-08-28/norway-king-harald-dies/107091974",
+    "{{WORLD_1_FLAG}}": "🇳🇵 NEPAL · FLOOD DEATH TOLL CLIMBS, NEARLY 3,000 MISSING",
+    "{{WORLD_1_HEADLINE}}": "Nepal-Tibet Flood Death Toll Hits 676 as Nearly 3,000 Remain Missing",
+    "{{WORLD_1_SUMMARY}}": "Satellite imagery shows a huge chunk of Himalayan glacier ice broke away and slammed into a river below, triggering flash floods that have now killed at least 676 people in Nepal and Tibet; Australian woman Cara Severino has been found safe, but dozens of other Australians remain unaccounted for.",
+    "{{WORLD_1_URL}}": "https://www.abc.net.au/news/2026-08-29/death-toll-rises-as-rescuers-work-through-flood-devastation/107092742",
 
-    "{{WORLD_2_FLAG}}": "🇨🇩 DR CONGO · EBOLA OUTBREAK MAY BE FAR BIGGER THAN REPORTED",
-    "{{WORLD_2_HEADLINE}}": "Congo's Record Ebola Outbreak May Be Three Times Worse Than Official Count",
-    "{{WORLD_2_SUMMARY}}": "The DRC's Ebola outbreak — already the deadliest in the country's history with 5,794 confirmed cases and 2,786 deaths across 54 health zones — may be undercounted by as much as three times, Africa CDC warns, as a vaccination drive for frontline health workers got under way this week in Kisangani.",
-    "{{WORLD_2_URL}}": "https://www.bloomberg.com/news/articles/2026-08-27/congo-ebola-cases-may-be-three-times-higher-than-official-count-africa-cdc-says",
+    "{{WORLD_2_FLAG}}": "🇳🇴 NORWAY · TENS OF THOUSANDS MOURN KING HARALD V",
+    "{{WORLD_2_HEADLINE}}": "Tens of Thousands Lay Flowers for King Harald V as Norway Crowns King Haakon VIII",
+    "{{WORLD_2_SUMMARY}}": "A sea of flowers covered the square outside Oslo's royal palace on Saturday as Norwegians paid tribute to King Harald V, a day after his death at 89; his son, Crown Prince Haakon, has become King Haakon VIII and addressed the nation for the first time as monarch.",
+    "{{WORLD_2_URL}}": "https://www.nbcnews.com/world/europe/tens-thousands-mourn-king-harald-v-oslo-norway-enters-new-royal-era-rcna594999",
 
     # Economics
-    "{{ECON_1_FLAG}}": "📈 RATES · NAB JOINS CBA, ANZ TIPPING BACK-TO-BACK HIKES",
-    "{{ECON_1_HEADLINE}}": "NAB Joins CBA and ANZ in Forecasting Rate Rises to a 15-Year High",
-    "{{ECON_1_SUMMARY}}": "NAB has followed CBA and ANZ in tipping the RBA to lift the cash rate in both September and November, potentially to 4.85% — the highest since the GFC — as fuel-driven inflation keeps core price pressure elevated, adding to the cost of carrying equipment finance or a business loan.",
-    "{{ECON_1_URL}}": "https://www.savings.com.au/news/nab-tips-september-cash-rate-hike-cba-says-november",
+    "{{ECON_1_FLAG}}": "💱 AUD · DOLLAR HITS 3-MONTH HIGH ON RATE HIKE BETS",
+    "{{ECON_1_HEADLINE}}": "Australian Dollar Jumps to a 3-Month High as Markets Price In a September Rate Hike",
+    "{{ECON_1_SUMMARY}}": "The Aussie dollar climbed to around 72 US cents — its best level since May — after hotter-than-expected July inflation data pushed the market-implied chance of a September RBA hike to about 50%, with Goldman Sachs now tipping the cash rate to reach 4.60% by November; a stronger dollar eases the cost of imported tools and equipment even as borrowing costs look set to rise.",
+    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-08-28/asx-markets-business-news-live-updates/107087998",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL · PETROL AVERAGING OVER $2/L AS EXCISE FULLY RETURNS",
-    "{{ECON_2_HEADLINE}}": "Melbourne Petrol Prices Push Past $2 a Litre as Full Fuel Excise Bites",
-    "{{ECON_2_SUMMARY}}": "With the fuel excise cut fully unwound since 3 August, Melbourne's average unleaded price has climbed to around 206.5 cents a litre — some stations over $2.79 — and the ACCC says it's watching retailers closely for price gouging as trades businesses absorb the extra cost at the bowser.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL · MELBOURNE UNLEADED STILL AVERAGING OVER $2/L",
+    "{{ECON_2_HEADLINE}}": "Melbourne Petrol Still Averaging Above $2 a Litre as Full Excise Bites",
+    "{{ECON_2_SUMMARY}}": "With the fuel excise cut fully unwound since 3 August, Melbourne's average unleaded price is sitting around 206.5 cents a litre — some stations charging close to $2.80 — and national prices are running about 13.6 cents higher than a month ago, adding real pressure to every kilometre a trades vehicle covers between jobs.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "⚖️ AI POLICY · JUDGE BLOCKS PENTAGON'S ANTHROPIC BLACKLIST",
-    "{{TECH_1_HEADLINE}}": "Federal Judge Rules Pentagon's Blacklisting of Anthropic Was Illegal",
-    "{{TECH_1_SUMMARY}}": "A US judge struck down the Defense Department's designation of Anthropic as a \"supply chain risk,\" ruling the administration retaliated against the AI firm for refusing to let its Claude models be used for autonomous weapons or mass surveillance — a case with real implications for how far governments can pressure AI developers on safety terms.",
-    "{{TECH_1_URL}}": "https://www.cnbc.com/2026/08/28/judge-blocks-pentagon-blacklist--anthropic-.html",
+    "{{TECH_1_FLAG}}": "⚔️ AI SUPPLY CHAIN · OPENAI CUTS OFF CURSOR AFTER SPACEX TAKEOVER",
+    "{{TECH_1_HEADLINE}}": "OpenAI to Cut Cursor's Access to Its Models After SpaceX Acquisition",
+    "{{TECH_1_SUMMARY}}": "OpenAI has told Cursor it will lose access to OpenAI models by 12 November, roughly three months after SpaceX completed its takeover of the coding-tool maker — a reminder that any business built on a single AI vendor's goodwill can lose access almost overnight if the ownership or terms change.",
+    "{{TECH_1_URL}}": "https://www.businesstoday.in/technology/story/openai-vs-elon-musk-why-cursor-is-losing-access-to-openai-models-from-november-12-552049-2026-08-29",
 
-    "{{TECH_2_FLAG}}": "💬 AI ADOPTION · ONE-THIRD OF US ADULTS NOW ASK AI ABOUT HEALTH",
-    "{{TECH_2_HEADLINE}}": "A Third of US Adults Now Use AI Chatbots for Health Questions, Pew Finds",
-    "{{TECH_2_SUMMARY}}": "New Pew Research polling finds 34% of Americans have used an AI chatbot for a health-related task — mostly quick symptom checks and low-cost information — though fewer than a third feel comfortable sharing personal health data with the tools, a sign trust is still catching up to adoption.",
+    "{{TECH_2_FLAG}}": "🇦🇺 AI POLICY · AUSTRALIA'S 'SLIDING DOORS' MOMENT ON AI",
+    "{{TECH_2_HEADLINE}}": "Australia Weighs How to Cash In on the AI Data Centre Boom",
+    "{{TECH_2_SUMMARY}}": "With global tech giants racing to build data centres locally, the federal government is launching a push to get major Australian companies buying more homegrown AI technology, arguing the country's appeal as a data-centre destination gives it rare leverage to secure cheaper computing power for local businesses.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦆 PHYSICAL AI · HUGGING FACE LAUNCHES $399 OPEN-SOURCE ROBOT",
-    "{{ROBOT_1_HEADLINE}}": "Hugging Face Unveils Microduck, a $399 Waddling, Roller-Skating Robot",
-    "{{ROBOT_1_SUMMARY}}": "Built with Pollen Robotics, the 25cm open-source biped packs 15 motors, a camera and lidar into a duck-shaped body that can pick up small objects with its beak, recover from falls and even roller-skate — a sign the cost of getting hands-on with real-world robotics keeps dropping fast.",
-    "{{ROBOT_1_URL}}": "https://techcrunch.com/2026/08/27/hugging-face-is-selling-a-cute-399-open-source-duck-robot-microduck/",
+    "{{ROBOT_1_FLAG}}": "🤖 HUMANOIDS · CHINESE AUTOMAKERS CHASE TESLA INTO ROBOTS",
+    "{{ROBOT_1_HEADLINE}}": "Chinese Automakers Race Tesla Into Humanoid Robots as a New Profit Line",
+    "{{ROBOT_1_SUMMARY}}": "BYD has unveiled its own humanoid, Xiao Di, for showroom duty, Chery's robotics arm AiMOGA is reportedly prepping an IPO, and Xpeng is said to be planning to pour up to US$13.8 billion into its Iron humanoid programme — with Changan, GAC, Li Auto, SAIC and Seres all chasing the same bet as Tesla that robots, not cars, could be the next big margin driver.",
+    "{{ROBOT_1_URL}}": "https://techcrunch.com/2026/08/28/chinese-automakers-are-following-teslas-bet-that-robots-are-the-next-big-profit-machine/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australia Sends $5 Million in Aid to Nepal as 39 Citizens Remain Missing",
-    "{{AUS_1_SUMMARY}}": "The Albanese Government has committed $5 million in flood relief for Nepal-China border communities and deployed extra consular staff, as the number of missing Australians climbed to 39 following the catastrophic glacial flood.",
-    "{{AUS_1_URL}}": "https://www.southasiatimes.com.au/south-asia/nepal/nepal-floods-australia-5m-aid-39-missing/",
+    "{{AUS_1_HEADLINE}}": "Melbourne and Sydney Just Had Their Warmest Winter on Record",
+    "{{AUS_1_SUMMARY}}": "Bureau of Meteorology data confirms Melbourne and Sydney recorded their warmest winter since records began in the 1850s, with Canberra also hitting its highest-ever winter temperatures — and forecasters say a scorching spring is likely to follow.",
+    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-08-29/spring-scorcher-to-follow-record-warm-winter-australia-weather/107090824",
 
-    "{{AUS_2_HEADLINE}}": "Albanese Intervenes to Guarantee Refugee Intake Stays at 20,000",
-    "{{AUS_2_SUMMARY}}": "The Prime Minister personally stepped in this week to reverse a planned cut to Australia's humanitarian intake after a backbench revolt, confirming the 20,000-place annual quota will continue rather than dropping to 13,750.",
+    "{{AUS_2_HEADLINE}}": "Bird Flu Detected in a Dolphin for the First Time as Outbreak Tops 350 Events",
+    "{{AUS_2_SUMMARY}}": "South Australian authorities have confirmed the country's first H5N1 detection in a dolphin, found dead at Goolwa, as Australia's bird flu outbreak — now more than 350 confirmed events across over 20 species — continues to spread from the coast into inland waterways.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "CBD Stabbing Victim Speaks Out, Calls for Tougher Consequences for Street Violence",
-    "{{VIC_1_SUMMARY}}": "Cherie Holt, stabbed four times and assaulted alongside her 10-year-old son near Victoria Police headquarters this week, has called publicly for tougher penalties, reigniting debate over street violence in Melbourne's CBD.",
+    "{{VIC_1_HEADLINE}}": "Premier Ben Carroll Scraps $134,000 Dan Andrews Statue",
+    "{{VIC_1_SUMMARY}}": "New Victorian Premier Ben Carroll has cancelled a taxpayer-funded bronze statue of predecessor Daniel Andrews outside Treasury Place, saying \"gratitude does not require a taxpayer-funded statue,\" after polling found almost three-quarters of Victorians opposed the plan.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🚀 SPACE · NASA'S ROMAN TELESCOPE 'GO' FOR SUNDAY LAUNCH",
-    "{{SCI_1_HEADLINE}}": "NASA's Roman Space Telescope Cleared for Sunday Launch",
-    "{{SCI_1_SUMMARY}}": "NASA and SpaceX have cleared the Nancy Grace Roman Space Telescope for its planned Sunday liftoff on a Falcon Heavy rocket from Kennedy Space Center — a mission with a field of view 100 times wider than Hubble's, expected to detect around 100,000 new exoplanets over its lifetime, more than every previous planet-hunting mission combined.",
+    "{{SCI_1_FLAG}}": "👁️ VISION · EYE DROPS RESTORE SIGHT IN BLIND MICE",
+    "{{SCI_1_HEADLINE}}": "Light-Activated Eye Drops Restore Sight in Completely Blind Mice",
+    "{{SCI_1_SUMMARY}}": "A Barcelona-led research consortium has developed light-activated drugs that mimic degenerated photoreceptor cells, restoring light-driven behaviour in mice blinded by conditions similar to macular degeneration — with two of the most promising compounds working as simple eye drops, pointing to a possible future treatment path that needs no gene therapy or implant.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "Petrol Just Cracked $2 a Litre in Melbourne — Is Your Callout Fee Still Doing the Job?",
-    "{{INSIGHT_BODY}}": "With the fuel excise fully restored and Melbourne's average unleaded price now sitting above 206 cents a litre, every kilometre between jobs is costing more than it did a month ago. Many small trades operators haven't touched their callout or travel fee since well before this year's excise changes, quietly eating the difference on every job outside their core radius. A quick AI-assisted review of your last three months of job locations against current fuel costs — most accounting or job-management software can now do this in minutes — can show exactly where your travel fee needs to move, before the next fuel jump makes the gap even bigger.",
+    "{{INSIGHT_TITLE}}": "The Top 1% of Businesses Now Spend $7,400 a Month Per Employee on AI — You Don't Need to Get Close",
+    "{{INSIGHT_BODY}}": "New data on US business AI spending shows the most aggressive corporate adopters now spend over $7,400 per employee per month on AI tools, more than 600 times what a typical business spends. It's a striking number, but it's also the wrong benchmark for a small trades operation — those companies are running AI research labs, not answering phones and chasing invoices. A handful of well-chosen, low-cost tools covering quoting, scheduling and admin can free up hours a week for a fraction of a fraction of that spend; the businesses actually falling behind aren't the ones with small budgets, they're the ones that haven't started at all.",
 
     # Fun facts
-    "{{FACT_1}}": "Sandblasting was patented in 1870 by American engineer Benjamin Chew Tilghman, who got the idea after noticing that windblown desert sand had etched and frosted glass windowpanes — a natural process he then recreated on demand with compressed air.",
-    "{{FACT_2}}": "Two years before the Atari 2600, the Fairchild Channel F (1976) was the first home console to use interchangeable ROM game cartridges — but a higher price and Atari's marketing muscle meant it's now largely forgotten outside gaming history circles.",
-    "{{FACT_3}}": "The old claim that a duck's quack doesn't echo was debunked in 2003 by University of Salford acoustics engineer Trevor Cox, who recorded a duck inside an anechoic chamber and proved it echoes perfectly well — just too faintly for most people to notice.",
+    "{{FACT_1}}": "The word \"ketchup\" didn't start with tomatoes — it comes from \"kê-tsiap,\" a fermented fish sauce from the Hokkien-speaking regions of China, brought back by British traders in the 17th century; tomatoes weren't added to Western recipes until the early 1800s.",
+    "{{FACT_2}}": "The \"blue chip\" used to describe a safe, reliable company on the stock market borrows its name from poker, where the blue chip has traditionally carried the highest value of any colour on the table.",
+    "{{FACT_3}}": "Alan Turing never claimed his 1950 \"Turing Test\" proved machines could think — he proposed it as a practical stand-in for a question he considered unanswerable, originally calling it simply \"the imitation game.\"",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the pool fencing installer's small business always pass its council inspection on the first try?",
-    "{{JOKE_PUNCHLINE}}": "Because he never left a gap — in the fence or the paperwork.",
+    "{{JOKE_SETUP}}": "Why did the mobile mechanic's small business never miss a job?",
+    "{{JOKE_PUNCHLINE}}": "Because his workshop went wherever the breakdown was.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"The best way out is always through.\"",
-    "{{CLOSING_ATTR}}": "— Robert Frost",
-    "{{CLOSING_MESSAGE}}": "It's a showery, blustery Saturday in Carrum Downs with Sunday set to be even wetter before it clears from Monday, so today's a fair one to keep outdoor jobs flexible. With petrol now over $2 a litre and a third big bank tipping a rate rise, it's a good weekend to run the numbers on your travel fees and finance before both costs climb further.",
+    "{{CLOSING_QUOTE}}": "\"What we think, we become.\"",
+    "{{CLOSING_ATTR}}": "— Buddha",
+    "{{CLOSING_MESSAGE}}": "It's a mild, partly cloudy last Sunday of winter in Carrum Downs, with Tuesday set to bring the warmest first day of spring in five years before showers and a blustery change roll back through midweek — a fair window to get outdoor jobs done before spring properly turns it on. With the dollar firming and a September rate move now live in the mix, it's a good week to line up quotes on any imported gear before either one moves further.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
