@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Sunday, 30 August 2026",
+    "{{DATE}}": "Monday, 31 August 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Sun 30 Aug (BOM)
-    "{{WEATHER_1}}": "SUN 30 · ⛅ Partly cloudy, mild · 8–16°C",
-    "{{WEATHER_2}}": "MON 31 · 🌦️ Partly cloudy, slight shower chance · 7–15°C",
+    # Weather — Carrum Downs VIC, 5-day from Mon 31 Aug (BOM)
+    "{{WEATHER_1}}": "MON 31 · ⛅ Partly cloudy, mild, slight shower chance · 8–15°C",
+    "{{WEATHER_2}}": "TUE 1 SEP · 🌦️ Partly cloudy, showers most likely early morning · 7–14°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "TUE 1 SEP · ☀️ Morning fog clearing to sunny, unusually warm · 9–22°C",
-    "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "WED 2 SEP · 🌧️ Cloudy, showers most likely morning, cooler · 10–17°C",
-    "{{WEATHER_5}}": "THU 3 SEP · 🌦️ Showers, windy northwesterly change · 9–16°C",
-    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or the Mornington Peninsula. Melbourne just had its warmest winter on record, and Tuesday's forecast 22°C will be the warmest first day of spring in five years — before showers and a gusty north-westerly change return from midweek.",
+    "{{WEATHER_3}}": "WED 2 SEP · 🌧️ Showers likely, windy northerly change · 9–16°C",
+    "{{WEATHER_3_CLASS}}": "rain",
+    "{{WEATHER_4}}": "THU 3 SEP · 🌧️ Cloudy, very high chance of rain, windy · 9–15°C",
+    "{{WEATHER_5}}": "FRI 4 SEP · 🌦️ Showers easing, cooler · 8–14°C",
+    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or the Mornington Peninsula. Today is the last day of winter — a mild, partly cloudy send-off — before a wetter, windier pattern builds through Wednesday and Thursday as spring gets underway.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇳🇵 NEPAL · FLOOD DEATH TOLL CLIMBS, NEARLY 3,000 MISSING",
-    "{{WORLD_1_HEADLINE}}": "Nepal-Tibet Flood Death Toll Hits 676 as Nearly 3,000 Remain Missing",
-    "{{WORLD_1_SUMMARY}}": "Satellite imagery shows a huge chunk of Himalayan glacier ice broke away and slammed into a river below, triggering flash floods that have now killed at least 676 people in Nepal and Tibet; Australian woman Cara Severino has been found safe, but dozens of other Australians remain unaccounted for.",
-    "{{WORLD_1_URL}}": "https://www.abc.net.au/news/2026-08-29/death-toll-rises-as-rescuers-work-through-flood-devastation/107092742",
+    "{{WORLD_1_FLAG}}": "🇳🇵 NEPAL · FLOOD TOLL CLIMBS TO 750, THOUSANDS STILL MISSING",
+    "{{WORLD_1_HEADLINE}}": "Nepal-Tibet Flood Death Toll Rises to 750 as Over 3,000 Remain Missing",
+    "{{WORLD_1_SUMMARY}}": "The death toll from last week's catastrophic Himalayan flash floods has climbed to 750 across Nepal and Tibet, with more than 3,000 people still unaccounted for; officials say 734 of the dead were in Nepal, where 7,514 people have been rescued so far, while 16 deaths and 546 missing have been confirmed on the Chinese side of the border.",
+    "{{WORLD_1_URL}}": "https://abcnews.com/International/nepal-tibet-flood-death-toll-rises-750-officials/story?id=136067514",
 
-    "{{WORLD_2_FLAG}}": "🇳🇴 NORWAY · TENS OF THOUSANDS MOURN KING HARALD V",
-    "{{WORLD_2_HEADLINE}}": "Tens of Thousands Lay Flowers for King Harald V as Norway Crowns King Haakon VIII",
-    "{{WORLD_2_SUMMARY}}": "A sea of flowers covered the square outside Oslo's royal palace on Saturday as Norwegians paid tribute to King Harald V, a day after his death at 89; his son, Crown Prince Haakon, has become King Haakon VIII and addressed the nation for the first time as monarch.",
-    "{{WORLD_2_URL}}": "https://www.nbcnews.com/world/europe/tens-thousands-mourn-king-harald-v-oslo-norway-enters-new-royal-era-rcna594999",
+    "{{WORLD_2_FLAG}}": "🇮🇸 ICELAND · VOTERS REJECT REOPENING EU MEMBERSHIP TALKS",
+    "{{WORLD_2_HEADLINE}}": "Iceland Narrowly Votes Against Restarting EU Membership Talks",
+    "{{WORLD_2_SUMMARY}}": "Icelanders voted 52.8% to 47.2% against resuming European Union accession negotiations in a closely fought referendum, where control over fishing rights outweighed the case for closer security ties with Europe; Reykjavik was the only region where a majority backed reopening talks.",
+    "{{WORLD_2_URL}}": "https://www.abc.net.au/news/2026-08-30/iceland-eu-referendum-result/107095748",
 
     # Economics
-    "{{ECON_1_FLAG}}": "💱 AUD · DOLLAR HITS 3-MONTH HIGH ON RATE HIKE BETS",
-    "{{ECON_1_HEADLINE}}": "Australian Dollar Jumps to a 3-Month High as Markets Price In a September Rate Hike",
-    "{{ECON_1_SUMMARY}}": "The Aussie dollar climbed to around 72 US cents — its best level since May — after hotter-than-expected July inflation data pushed the market-implied chance of a September RBA hike to about 50%, with Goldman Sachs now tipping the cash rate to reach 4.60% by November; a stronger dollar eases the cost of imported tools and equipment even as borrowing costs look set to rise.",
-    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-08-28/asx-markets-business-news-live-updates/107087998",
+    "{{ECON_1_FLAG}}": "📉 ASX · SHARES SLIDE AS BANKS FLAG AN EARLIER RATE HIKE",
+    "{{ECON_1_HEADLINE}}": "ASX Posts Worst Session Since June as Three of the Big Four Banks Warn a Rate Hike Could Land Sooner",
+    "{{ECON_1_SUMMARY}}": "The S&P/ASX200 fell just under 1% in its worst session since early June after ANZ and CommBank economists brought forward their call for a rate rise to November and NAB flagged a possible move as soon as the RBA's 29 September meeting, following a hotter-than-expected 3.6% trimmed-mean inflation reading; a September or November hike would land squarely in the middle of spring trading for anyone carrying equipment finance or a business loan.",
+    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-08-27/asx-markets-business-news-live-updates-thursday-27-august/107083084",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL · MELBOURNE UNLEADED STILL AVERAGING OVER $2/L",
-    "{{ECON_2_HEADLINE}}": "Melbourne Petrol Still Averaging Above $2 a Litre as Full Excise Bites",
-    "{{ECON_2_SUMMARY}}": "With the fuel excise cut fully unwound since 3 August, Melbourne's average unleaded price is sitting around 206.5 cents a litre — some stations charging close to $2.80 — and national prices are running about 13.6 cents higher than a month ago, adding real pressure to every kilometre a trades vehicle covers between jobs.",
+    "{{ECON_2_FLAG}}": "⛽ DIESEL · NATIONAL AVERAGE NOW PAST $2.50 A LITRE",
+    "{{ECON_2_HEADLINE}}": "Diesel Climbs Past $2.50 a Litre Nationally as Full Excise Bites Harder Than Petrol",
+    "{{ECON_2_SUMMARY}}": "With the temporary fuel excise cut fully unwound since 3 August, the national diesel average has climbed to around 252 cents a litre against roughly 205 cents for unleaded — a gap that hits trade vehicles, generators and diesel-powered compressors hardest, on top of prices already running about 13.6 cents higher than a month ago.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "⚔️ AI SUPPLY CHAIN · OPENAI CUTS OFF CURSOR AFTER SPACEX TAKEOVER",
-    "{{TECH_1_HEADLINE}}": "OpenAI to Cut Cursor's Access to Its Models After SpaceX Acquisition",
-    "{{TECH_1_SUMMARY}}": "OpenAI has told Cursor it will lose access to OpenAI models by 12 November, roughly three months after SpaceX completed its takeover of the coding-tool maker — a reminder that any business built on a single AI vendor's goodwill can lose access almost overnight if the ownership or terms change.",
-    "{{TECH_1_URL}}": "https://www.businesstoday.in/technology/story/openai-vs-elon-musk-why-cursor-is-losing-access-to-openai-models-from-november-12-552049-2026-08-29",
+    "{{TECH_1_FLAG}}": "⚖️ AI COPYRIGHT · MUSIC PUBLISHERS SUE ANTHROPIC OVER CLAUDE",
+    "{{TECH_1_HEADLINE}}": "Sony Music Publishing and Warner Chappell Sue Anthropic Over Song Lyrics Used to Train Claude",
+    "{{TECH_1_SUMMARY}}": "Two of the three major music publishers have filed a multi-billion-dollar lawsuit accusing Anthropic of illegally torrenting and scraping tens of thousands of copyrighted songs — including 'Eye of the Tiger' and 'All I Want for Christmas Is You' — to train its Claude models, seeking up to $150,000 per work; a reminder that the AI tools a business leans on can carry legal risk from well outside its own four walls.",
+    "{{TECH_1_URL}}": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/",
 
-    "{{TECH_2_FLAG}}": "🇦🇺 AI POLICY · AUSTRALIA'S 'SLIDING DOORS' MOMENT ON AI",
-    "{{TECH_2_HEADLINE}}": "Australia Weighs How to Cash In on the AI Data Centre Boom",
-    "{{TECH_2_SUMMARY}}": "With global tech giants racing to build data centres locally, the federal government is launching a push to get major Australian companies buying more homegrown AI technology, arguing the country's appeal as a data-centre destination gives it rare leverage to secure cheaper computing power for local businesses.",
+    "{{TECH_2_FLAG}}": "🤖 AI LABOUR · AMAZON SHUTS DOWN 21-YEAR-OLD 'ARTIFICIAL AI' PLATFORM",
+    "{{TECH_2_HEADLINE}}": "Amazon to Close Mechanical Turk on 30 September After 21 Years",
+    "{{TECH_2_SUMMARY}}": "Amazon is shutting down Mechanical Turk, the crowdsourced task marketplace Jeff Bezos once called 'artificial artificial intelligence,' after newer data-labelling startups and far more capable AI models made the platform redundant — a small sign of how quickly the tools underneath the AI boom keep turning over.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🤖 HUMANOIDS · CHINESE AUTOMAKERS CHASE TESLA INTO ROBOTS",
-    "{{ROBOT_1_HEADLINE}}": "Chinese Automakers Race Tesla Into Humanoid Robots as a New Profit Line",
-    "{{ROBOT_1_SUMMARY}}": "BYD has unveiled its own humanoid, Xiao Di, for showroom duty, Chery's robotics arm AiMOGA is reportedly prepping an IPO, and Xpeng is said to be planning to pour up to US$13.8 billion into its Iron humanoid programme — with Changan, GAC, Li Auto, SAIC and Seres all chasing the same bet as Tesla that robots, not cars, could be the next big margin driver.",
-    "{{ROBOT_1_URL}}": "https://techcrunch.com/2026/08/28/chinese-automakers-are-following-teslas-bet-that-robots-are-the-next-big-profit-machine/",
+    "{{ROBOT_1_FLAG}}": "🦾 INDUSTRIAL HUMANOIDS · ATLAS GOES INTO MASS PRODUCTION",
+    "{{ROBOT_1_HEADLINE}}": "Boston Dynamics Moves All-Electric Atlas Into Mass Production for Factory and Hazardous-Site Work",
+    "{{ROBOT_1_SUMMARY}}": "Boston Dynamics and Hyundai are scaling up production of the all-electric Atlas humanoid, which swaps the old hydraulic system for high-torque electric actuators aimed at the reliability and energy-efficiency problems that kept earlier versions as lab demos; fleets are already doing logistics and material-handling work at Hyundai's Georgia Metaplant, built to be tough enough for hazardous, awkward jobs yet dexterous enough to handle variable parts.",
+    "{{ROBOT_1_URL}}": "https://newatlas.com/ai-humanoids/boston-dynamics-production-atlas-hyundai/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Melbourne and Sydney Just Had Their Warmest Winter on Record",
-    "{{AUS_1_SUMMARY}}": "Bureau of Meteorology data confirms Melbourne and Sydney recorded their warmest winter since records began in the 1850s, with Canberra also hitting its highest-ever winter temperatures — and forecasters say a scorching spring is likely to follow.",
-    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-08-29/spring-scorcher-to-follow-record-warm-winter-australia-weather/107090824",
+    "{{AUS_1_HEADLINE}}": "Adelaide Reveals $96 Million MotoGP Street Circuit Design, Nearly 400 Parklands Trees to Go",
+    "{{AUS_1_SUMMARY}}": "South Australian Premier Peter Malinauskas has unveiled the design for a 4.13km MotoGP street circuit through Adelaide's eastern parklands, with 42 significant trees and 335 others to be removed for the 2027-targeted track; the government says it will replant at a 10-to-1 ratio and put $15 million toward habitat restoration along the Torrens River.",
+    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-08-30/sa-motogp-street-circuit-design-released/107094958",
 
-    "{{AUS_2_HEADLINE}}": "Bird Flu Detected in a Dolphin for the First Time as Outbreak Tops 350 Events",
-    "{{AUS_2_SUMMARY}}": "South Australian authorities have confirmed the country's first H5N1 detection in a dolphin, found dead at Goolwa, as Australia's bird flu outbreak — now more than 350 confirmed events across over 20 species — continues to spread from the coast into inland waterways.",
+    "{{AUS_2_HEADLINE}}": "Queensland's Toughest-in-the-Country E-Bike and E-Scooter Laws Start Today",
+    "{{AUS_2_SUMMARY}}": "From today, Queensland riders need to be at least 16 and hold a driver's licence to ride an e-bike or e-scooter solo, with under-16s banned from riding unsupervised — among the strictest e-mobility licensing rules in the world, though a three-month grace period applies for anyone seeking a medical exemption.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Premier Ben Carroll Scraps $134,000 Dan Andrews Statue",
-    "{{VIC_1_SUMMARY}}": "New Victorian Premier Ben Carroll has cancelled a taxpayer-funded bronze statue of predecessor Daniel Andrews outside Treasury Place, saying \"gratitude does not require a taxpayer-funded statue,\" after polling found almost three-quarters of Victorians opposed the plan.",
+    "{{VIC_1_HEADLINE}}": "Premier Ben Carroll Commits Extra $352 Million to Double Pothole Repairs This Year",
+    "{{VIC_1_SUMMARY}}": "Premier Ben Carroll has announced an extra $352 million in road funding to lift the number of potholes fixed this year from 250,000 to 500,000, prioritising the Princes and Western highways and other regional roads, with most repairs expected through the second half of the year and into January when conditions are driest.",
 
     # Science
-    "{{SCI_1_FLAG}}": "👁️ VISION · EYE DROPS RESTORE SIGHT IN BLIND MICE",
-    "{{SCI_1_HEADLINE}}": "Light-Activated Eye Drops Restore Sight in Completely Blind Mice",
-    "{{SCI_1_SUMMARY}}": "A Barcelona-led research consortium has developed light-activated drugs that mimic degenerated photoreceptor cells, restoring light-driven behaviour in mice blinded by conditions similar to macular degeneration — with two of the most promising compounds working as simple eye drops, pointing to a possible future treatment path that needs no gene therapy or implant.",
+    "{{SCI_1_FLAG}}": "🔴 MARS · A HIDDEN HEAT DIVIDE DEEP INSIDE THE RED PLANET",
+    "{{SCI_1_HEADLINE}}": "Scientists Discover Mars's Southern Interior Is Hundreds of Degrees Hotter Than Its North — and Possibly Still Molten",
+    "{{SCI_1_SUMMARY}}": "A Caltech-led gravity study published in Nature finds Mars's interior beneath its southern hemisphere runs 200-400°C hotter than the north and may be partially molten, a discovery that could help explain the planet's lopsided magnetism, seismic quirks and the timing of its ancient, wetter past.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "The Top 1% of Businesses Now Spend $7,400 a Month Per Employee on AI — You Don't Need to Get Close",
-    "{{INSIGHT_BODY}}": "New data on US business AI spending shows the most aggressive corporate adopters now spend over $7,400 per employee per month on AI tools, more than 600 times what a typical business spends. It's a striking number, but it's also the wrong benchmark for a small trades operation — those companies are running AI research labs, not answering phones and chasing invoices. A handful of well-chosen, low-cost tools covering quoting, scheduling and admin can free up hours a week for a fraction of a fraction of that spend; the businesses actually falling behind aren't the ones with small budgets, they're the ones that haven't started at all.",
+    "{{INSIGHT_TITLE}}": "Construction Is Australia's Most AI-Shy Industry — That's Actually Good News for You",
+    "{{INSIGHT_BODY}}": "Regular AI use across Australian small and medium businesses has jumped from 40% to 69% in under two years, but construction and agriculture remain the stragglers, both still under 30% adoption — the lowest of any sector tracked. It's tempting to read that as trades being behind, but it also means the bar most tradies are being judged against is still low: a handful of well-used tools for quoting, scheduling and follow-up admin puts you ahead of most of the industry, not just even with it. The businesses that will feel the squeeze aren't the ones moving carefully — they're the ones that never move at all.",
 
     # Fun facts
-    "{{FACT_1}}": "The word \"ketchup\" didn't start with tomatoes — it comes from \"kê-tsiap,\" a fermented fish sauce from the Hokkien-speaking regions of China, brought back by British traders in the 17th century; tomatoes weren't added to Western recipes until the early 1800s.",
-    "{{FACT_2}}": "The \"blue chip\" used to describe a safe, reliable company on the stock market borrows its name from poker, where the blue chip has traditionally carried the highest value of any colour on the table.",
-    "{{FACT_3}}": "Alan Turing never claimed his 1950 \"Turing Test\" proved machines could think — he proposed it as a practical stand-in for a question he considered unanswerable, originally calling it simply \"the imitation game.\"",
+    "{{FACT_1}}": "One of the first video games with a graphical display, Tennis for Two, was built in 1958 by physicist William Higinbotham on an oscilloscope at Brookhaven National Laboratory for a public open house — an analog computer simulated gravity, and visitors could even adjust the setting to play under the gravity of the Moon or Jupiter.",
+    "{{FACT_2}}": "Chicken tikka masala, often called Britain's true national dish, is widely credited to a Glasgow curry house in the 1970s, where a chef reportedly added a tin of tomato soup to a dry chicken tikka after a customer complained it needed gravy.",
+    "{{FACT_3}}": "The Zamboni ice resurfacer was invented in 1949 by Californian rink owner Frank Zamboni, who got sick of it taking well over an hour of tractor towing and hand squeegeeing to resurface his own rink between skating sessions.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the mobile mechanic's small business never miss a job?",
-    "{{JOKE_PUNCHLINE}}": "Because his workshop went wherever the breakdown was.",
+    "{{JOKE_SETUP}}": "Why did the asbestos removal contractor become the most trusted businessman in town?",
+    "{{JOKE_PUNCHLINE}}": "Because he was the only tradie who always came clean.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"What we think, we become.\"",
-    "{{CLOSING_ATTR}}": "— Buddha",
-    "{{CLOSING_MESSAGE}}": "It's a mild, partly cloudy last Sunday of winter in Carrum Downs, with Tuesday set to bring the warmest first day of spring in five years before showers and a blustery change roll back through midweek — a fair window to get outdoor jobs done before spring properly turns it on. With the dollar firming and a September rate move now live in the mix, it's a good week to line up quotes on any imported gear before either one moves further.",
+    "{{CLOSING_QUOTE}}": "\"Spring is the time of plans and projects.\"",
+    "{{CLOSING_ATTR}}": "— Leo Tolstoy",
+    "{{CLOSING_MESSAGE}}": "It's the last day of winter in Carrum Downs — mild and partly cloudy today before a wetter, windier pattern builds through Wednesday and Thursday as spring properly arrives tomorrow. With three of the big four banks now tipping a rate rise as soon as September, and diesel sitting well above $2.50 a litre, it's a fair Monday to get outdoor jobs moving early and double-check any finance or fuel budgeting before the numbers shift again.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
