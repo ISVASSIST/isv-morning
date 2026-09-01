@@ -4,90 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Tuesday, 01 September 2026",
+    "{{DATE}}": "Wednesday, 02 September 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Tue 1 Sep (BOM)
-    "{{WEATHER_1}}": "TUE 1 SEP · 🌬️ Mostly sunny, very windy, high chance of a shower late · 8–15°C",
-    "{{WEATHER_2}}": "WED 2 SEP · 🌧️ Cloudy, high chance of showers, most likely morning · 9–16°C",
+    # Weather — Carrum Downs VIC, 5-day from Wed 2 Sep (BOM)
+    "{{WEATHER_1}}": "WED 2 SEP · 🌦️ Shower or two easing by late morning, breezy nor'wester · 12–18°C",
+    "{{WEATHER_2}}": "THU 3 SEP · 🌧️ Cloudy, high chance of showers morning and arvo, blustery nor'wester · 10–17°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "THU 3 SEP · 🌧️ Showers, easing later, blustery nor'wester · 8–15°C",
+    "{{WEATHER_3}}": "FRI 4 SEP · 🌧️ Partly cloudy, very high chance of showers later in the day · 11–17°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "FRI 4 SEP · ⛅ Partly cloudy, isolated shower, cooler · 7–14°C",
-    "{{WEATHER_5}}": "SAT 5 SEP · ☀️ Mostly sunny, light winds, settling down · 7–15°C",
-    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or the Mornington Peninsula. Spring's first week is arriving with a proper blast of northerly wind and showers rather than sunshine, easing back to calmer, drier conditions by the weekend.",
+    "{{WEATHER_4}}": "SAT 5 SEP · ⛅ Partly cloudy, high chance of a shower · 8–18°C",
+    "{{WEATHER_5}}": "SUN 6 SEP · ☁️ Cloudy, medium chance of a shower later in the day · 13–17°C",
+    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or the Mornington Peninsula — a damaging winds warning covers the alpine ranges only. Expect a showery, blustery run through the week before it eases into a cloudier, calmer weekend.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇷 STRAIT OF HORMUZ · US AND IRAN TRADE STRIKES, OIL SURGES",
-    "{{WORLD_1_HEADLINE}}": "US Strikes Iranian Launchers Near Strait of Hormuz, Iran Retaliates, Ending Weeks of Calm",
-    "{{WORLD_1_SUMMARY}}": "US forces struck two Iranian rocket launchers on Larak Island on Sunday after spotting Revolutionary Guard units preparing to fire mines into the Strait of Hormuz, and Iran struck back early Monday — the first exchange of attacks in a month, sending Brent crude up more than 3% to above $90 a barrel and reviving fears of a fresh squeeze on global fuel supply.",
-    "{{WORLD_1_URL}}": "https://www.cnn.com/2026/08/30/politics/us-iran-strikes-larak-island",
+    "{{WORLD_1_FLAG}}": "🇮🇷 STRAIT OF HORMUZ · TRUMP VOWS TO 'HIT' IRAN HARDER AFTER FRESH CLASHES",
+    "{{WORLD_1_HEADLINE}}": "Trump Warns Iran of a 'Much Harder' Strike as US-Iran Clashes Resume Near the Strait of Hormuz",
+    "{{WORLD_1_SUMMARY}}": "US Central Command struck Iranian minelaying forces near the Strait of Hormuz over the weekend, and Iran's Revolutionary Guard retaliated with missile strikes on US bases in Jordan, which said it intercepted at least eight of them; Trump warned Monday that Iran would be hit 'at a much harder and higher level' if it strikes again, rattling oil markets already on edge over the shipping chokepoint.",
+    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/9/1/hit-them-hard-does-trump-have-another-new-iran-strategy-can-it-work",
 
-    "{{WORLD_2_FLAG}}": "🇳🇵 NEPAL-TIBET · FLOOD DEATH TOLL TOPS 900, 4,700+ MISSING",
-    "{{WORLD_2_HEADLINE}}": "Nepal-Tibet Flood Death Toll Surpasses 900 as More Than 4,700 Remain Missing",
-    "{{WORLD_2_SUMMARY}}": "The toll from the Himalayan flash floods that struck the Nepal-Tibet border ten days ago has climbed past 900, with 903 confirmed dead in Nepal alone and more than 4,700 still missing; four more Australians were identified among the missing on Monday as rescue efforts along the Trishuli River continue.",
-    "{{WORLD_2_URL}}": "https://abcnews.com/International/nepal-tibet-flood-death-toll-surpasses-900-officials/story?id=136081207",
+    "{{WORLD_2_FLAG}}": "🌏 BISHKEK · SCO SUMMIT WRAPS WITH NEW TRADE AND LOGISTICS PACT",
+    "{{WORLD_2_HEADLINE}}": "Shanghai Cooperation Organisation Summit Closes With 13 New Agreements, Including a Five-Year Logistics Plan",
+    "{{WORLD_2_SUMMARY}}": "Leaders from China, Russia, India, Pakistan and Central Asian states wrapped the 26th SCO summit in Bishkek with the 'Bishkek Declaration' and 13 outcome agreements, including a 2026–2030 plan to build out regional ports and logistics hubs and the adoption of English as an official SCO language, as the bloc's chairmanship passes to Pakistan.",
+    "{{WORLD_2_URL}}": "https://aninews.in/news/world/asia/sco-summit-yields-13-outcome-agreements-spanning-counter-terrorism-climate-action-and-digital-cooperation20260901180249/",
 
     # Economics
-    "{{ECON_1_FLAG}}": "📉 ASX · STAR ENTERTAINMENT LOSS DEEPENS MARKET SLIDE",
-    "{{ECON_1_HEADLINE}}": "ASX Closes Lower as Star Entertainment's $307 Million Loss Raises Fresh Doubts Over Its Survival",
-    "{{ECON_1_SUMMARY}}": "The S&P/ASX 200 slipped 0.18% to 9,076 points on Monday, weighed down by losses in the gold, metals and mining sectors and a subdued lead from Wall Street, as casino operator Star Entertainment posted a $307 million annual loss that has analysts openly questioning whether the company can keep trading.",
-    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-08-31/asx-markets-business-live-news-wall-street-slides/107095734",
+    "{{ECON_1_FLAG}}": "📉 ASX · OIL SURGE ON US-IRAN TENSIONS WEIGHS ON TECH STOCKS",
+    "{{ECON_1_HEADLINE}}": "ASX Edges Lower as Renewed US-Iran Conflict Sends Oil Above US$91 a Barrel",
+    "{{ECON_1_SUMMARY}}": "The ASX 200 closed down about 0.1% at 9,066 points on Tuesday, with energy stocks the standout gainer (+1.2%) while tech and consumer discretionary shares dropped 1.4–1.7%, as Brent crude climbed above US$91 a barrel on fears the US-Iran clashes near the Strait of Hormuz could disrupt Middle East oil supply.",
+    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-09-01/asx-markets-business-live-news-house-prices-fall/107100764",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL · OIL JUMPS ON HORMUZ STRIKES, BOWSER RISES LOOM",
-    "{{ECON_2_HEADLINE}}": "Oil Prices Jump After Fresh US-Iran Strikes, Setting Up Another Round of Bowser Pain This Week",
-    "{{ECON_2_SUMMARY}}": "Brent crude rose more than 3% to above $90 a barrel after Sunday's exchange of strikes near the Strait of Hormuz, adding fresh upward pressure on a diesel price already sitting around $2.30 a litre nationally and Melbourne unleaded near 207 cents a litre — bad timing for any business still absorbing last month's full return of the fuel excise.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL · MELBOURNE BOWSER PRICES CLIMBING AS OIL SURGES",
+    "{{ECON_2_HEADLINE}}": "Melbourne Petrol Heads Into the Rising Leg of the Cycle Just as Oil Jumps on Middle East Tensions",
+    "{{ECON_2_SUMMARY}}": "Victoria's average unleaded price sat at 196.8 cents a litre on Tuesday (national average 205.3 cents, diesel 253.3 cents), with Melbourne now in the rising leg of its local price cycle — a climb likely to get a further push from Brent crude's jump above US$91 a barrel on the fresh US-Iran clashes.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI FOR SMBs · CASHFREE'S 'RELAY' AUTOMATES PAYMENT CHASING",
-    "{{TECH_1_HEADLINE}}": "Cashfree Launches 'Relay', an AI Agent That Chases Late Payments and Runs Payment Admin for Small Businesses",
-    "{{TECH_1_SUMMARY}}": "Payments platform Cashfree has taken its AI 'Super Agent' Relay from beta to general availability, letting small businesses describe in plain language what they want handled — retrying failed payments, chasing abandoned invoices, confirming orders, filing disputes before deadlines — with Cashfree citing an average small business spending 60 hours a week on payment admin that Relay aims to cut to under 45 minutes.",
-    "{{TECH_1_URL}}": "https://ibsintelligence.com/ibsi-news/cashfrees-relay-brings-ai-agents-to-smb-payment-operations/",
+    "{{TECH_1_FLAG}}": "🛒 SCAMS · ACCC WARNS AI IS SUPERCHARGING FAKE ONLINE STORES",
+    "{{TECH_1_HEADLINE}}": "ACCC Warns Generative AI Is Making Fake 'Ghost Store' Scams Impersonating Real Businesses Harder to Spot",
+    "{{TECH_1_SUMMARY}}": "The ACCC says scammers are now using generative AI to spin up professional-looking fake online stores in minutes — complete with AI-generated product photos, descriptions and fake reviews — often impersonating real Australian businesses, warning shoppers 'can no longer rely on appearance alone.' Worth knowing if your business has a website or social presence someone could convincingly clone.",
+    "{{TECH_1_URL}}": "https://www.smartcompany.com.au/artificial-intelligence/accc-warns-ai-ghost-stores-online-shopping/",
 
-    "{{TECH_2_FLAG}}": "🍎 APPLE · JOHN TERNUS TAKES OVER AS CEO TODAY, AI STRATEGY IN FOCUS",
-    "{{TECH_2_HEADLINE}}": "Tim Cook Steps Aside as Apple CEO Today, Handing John Ternus a Company Under Pressure to Fix Its AI Strategy",
-    "{{TECH_2_SUMMARY}}": "Apple's leadership change takes effect today, with hardware chief John Ternus becoming CEO and Tim Cook moving to executive chairman — a transition announced back in April that now lands squarely on Ternus's desk just as Apple races to catch up on Siri and Apple Intelligence after a string of delays.",
-    "{{TECH_2_URL}}": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/",
+    "{{TECH_2_FLAG}}": "📊 AI ADOPTION · TREASURY SAYS AUSSIE BUSINESS AI USE IS 'WIDE BUT SHALLOW'",
+    "{{TECH_2_HEADLINE}}": "Treasury Warns Australian Businesses' AI Adoption Is 'Widespread But Shallow'",
+    "{{TECH_2_SUMMARY}}": "Advice to Treasurer Jim Chalmers found roughly two-thirds of Australian businesses report some AI use, but fewer than one in ten report 'significant' adoption — meaning the economy risks missing AI's productivity upside unless businesses move past basic chatbot use into real operational change.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🧹 PHYSICAL AI · HUMANOID MAKER BUYS ITS WAY INTO CLEANING ROBOTS",
-    "{{ROBOT_1_HEADLINE}}": "Humanoid Robot Maker NEURA Robotics Acquires Cleaning Specialist ADLATUS, Fresh Off a €1.2 Billion Raise",
-    "{{ROBOT_1_SUMMARY}}": "German humanoid developer NEURA Robotics has bought Ulm-based ADLATUS Robotics outright, folding its autonomous cleaning machines into NEURA's 'physical AI' platform weeks after closing a €1.2 billion funding round — a sign the humanoid robotics boom is starting to reach the unglamorous, everyday equipment that keeps commercial floors and factories running.",
-    "{{ROBOT_1_URL}}": "https://tech.eu/2026/08/24/neura-robotics-acquires-adlatus-to-bring-physical-ai-to-autonomous-cleaning",
+    "{{ROBOT_1_FLAG}}": "🐕 PHYSICAL AI · US HOMELAND SECURITY EYES ROBOT DOGS FOR HAZARD WORK",
+    "{{ROBOT_1_HEADLINE}}": "US Homeland Security Plans to Buy Boston Dynamics' Spot Robots for Hazardous-Site Inspection",
+    "{{ROBOT_1_SUMMARY}}": "A Department of Homeland Security funding document shows US authorities want to spend up to $2 million on Boston Dynamics' four-legged Spot robots, fitted with cameras and hazardous-gas sensors, for remote inspection and hazard assessment in high-risk environments rather than direct enforcement — with a formal tender expected around 4 September.",
+    "{{ROBOT_1_URL}}": "https://www.wbur.org/news/2026/08/31/ice-robot-dogs-immigration-enforcement-boston-dynamics",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Federal Government Unveils 'Right to Erasure' in Sweeping Draft Privacy Law Overhaul",
-    "{{AUS_1_SUMMARY}}": "The Attorney-General has released draft privacy reforms including a 'right to erasure' letting people demand large platforms delete their personal data, alongside a new IDLock identity-verification tool coming to MyGov from 2027; the erasure right applies only to platforms with $500 million-plus revenue or 2.5 million monthly users, with submissions open until 18 September.",
-    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-08-31/attorney-general-says-no-ban-on-smart-glasses-draft-privacy-laws/107097852",
+    "{{AUS_1_HEADLINE}}": "Australian Government Bond Yields Hit a 15-Year High Amid Global Debt Sell-Off",
+    "{{AUS_1_SUMMARY}}": "The yield on Australia's benchmark 10-year government bond jumped as much as 10 basis points to 5.19% on Tuesday, its highest level since July 2011, as a deepening global bond sell-off on inflation fears pushed yields higher in Japan, Britain and the US in tandem.",
+    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-01/australian-government-10-year-bond-hits-15-year-high/107103096",
 
-    "{{AUS_2_HEADLINE}}": "One Nation Wins First-Ever WA Lower House Seat in Secret Harbour By-Election Upset",
-    "{{AUS_2_SUMMARY}}": "One Nation's Luke Herdegen has claimed the traditionally safe Labor seat of Secret Harbour with 42.3% of the vote, the party's first lower house win in Western Australian history, in a result analysts say reflects growing voter frustration with the major parties in outer-suburban seats.",
+    "{{AUS_2_HEADLINE}}": "Missing Australian Found Alive Six Days After Deadly Nepal-Tibet Border Floods",
+    "{{AUS_2_SUMMARY}}": "One of 43 Australians reported missing after the catastrophic Nepal-Tibet border floods has been found alive in Tibet, with DFAT confirming contact on Tuesday morning — the second Australian located safe in recent days, bringing the number still missing down to 42.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victoria Opens Australia's First Offshore Wind Auction, Chasing Power for 1.5 Million Homes",
-    "{{VIC_1_SUMMARY}}": "Energy Minister Jaclyn Symes has opened bidding for the state's first 2 gigawatts of offshore wind off the Gippsland coast, with contracts assessed on cost, deliverability and benefits for local workers and businesses, and expected to be awarded in 2028 — a long runway, but one that could eventually mean cheaper, more secure power for energy-hungry trades and manufacturers.",
+    "{{VIC_1_HEADLINE}}": "Melbourne's First 'Kindred People' Festival Opens Today, Putting First Nations Culture Centre Stage",
+    "{{VIC_1_SUMMARY}}": "A new Indigenous-led festival of First Nations arts, culture and knowledge kicks off today across Monash University's campuses, running through Sunday with music, theatre, dance and a dedicated two-day knowledge-sharing program — organisers hope it becomes a biennial fixture on Melbourne's cultural calendar.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🐍 BIOLOGY · WHY SNAKE EMBRYOS ALWAYS COIL THE SAME WAY",
-    "{{SCI_1_HEADLINE}}": "Scientists Finally Explain Why Snake Embryos Almost Always Coil to the Right",
-    "{{SCI_1_SUMMARY}}": "Examining more than 800 embryo images, a UBC-led team found the coiling direction comes down to simple mechanics — the body elongates faster than the shorter gut can keep pace, and the yolk sitting on the embryo's left side pushes the curling body to curve right; published in Current Biology on 31 August, the finding helps explain how snakes build one of the animal kingdom's most extreme body plans.",
+    "{{SCI_1_FLAG}}": "🚀 SPACE STATION · SIXTH-EVER ALL-FEMALE SPACEWALK COMPLETED",
+    "{{SCI_1_HEADLINE}}": "NASA and ESA Astronauts Complete Only the Sixth All-Female Spacewalk in History",
+    "{{SCI_1_SUMMARY}}": "NASA's Jessica Meir and ESA's Sophie Adenot spent about 6.5 hours outside the International Space Station on Tuesday, replacing a docking-navigation mirror on the Harmony module, running cable and camera swaps, and prepping the Alpha Magnetic Spectrometer for future maintenance — Meir's seventh career spacewalk, moving her into third place all-time among NASA women spacewalkers.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "Canberra's New 'Right to Erasure' Privacy Law Is Aimed at Big Tech — But the Habit It's Asking For Applies to You Too",
-    "{{INSIGHT_BODY}}": "The draft privacy reforms unveiled yesterday technically only bite platforms with $500 million-plus in revenue, so no trades business needs to panic about compliance. But the 'right to erasure' reflects where community expectations are heading on personal data, and most small operators are sitting on more of it than they realise — customer phone numbers and addresses in a phone, before-and-after job photos with someone's house in the background, quotes with names and details saved in an AI tool. It costs nothing to start being deliberate about it now: know what you're storing, delete what you don't need, and ask any AI tool you use where customer data actually goes. Getting ahead of a habit is a lot cheaper than retrofitting one after a law forces the issue.",
+    "{{INSIGHT_TITLE}}": "Government Bond Yields Just Hit a 15-Year High — Here's What It Means If You're Financing a Ute or a Compressor",
+    "{{INSIGHT_BODY}}": "Australia's benchmark 10-year bond yield jumped to 5.19% on Tuesday, its highest level since 2011, as a global bond sell-off on inflation fears pushes borrowing costs up in lockstep from Tokyo to London. Bond yields aren't your equipment loan rate, but they're the base rate lenders build on — when they climb this fast, business finance and lease rates tend to follow within weeks, not months. If you've been putting off financing a new compressor, blast pot or ute, it's worth getting a quote locked in now rather than waiting for a 'better time' that a global bond sell-off is currently working against. Worth a call to your broker this week rather than next.",
 
     # Fun facts
-    "{{FACT_1}}": "Laminated safety glass was discovered by accident in 1903, when French chemist Édouard Bénédictus dropped a glass flask coated in dried collagen film and found it had cracked into a spiderweb pattern instead of shattering — he later recalled a newspaper report about car accident injuries from broken windscreens and patented the idea within weeks.",
-    "{{FACT_2}}": "The traffic cone — the 'witches hat' on every job site — was patented in 1943 by Los Angeles street painter Charles D. Scanlon, who made it from rubber specifically so cars could drive over it without damage, unlike the wooden markers it replaced.",
-    "{{FACT_3}}": "Despite producing only a sliver of the world's diamonds by volume, Western Australia's Argyle mine supplied more than 90% of the world's pink diamonds before it closed in 2020 — prices for the rare stones have kept climbing ever since, as none of the handful of mines still operating produce them in meaningful numbers.",
+    "{{FACT_1}}": "The retractable, spring-return tape measure was patented in 1868 by Connecticut clockmaker Alvin J. Fellows, who adapted a clock-spring mechanism into a pocket-sized metal case, replacing the folding wooden rulers tradesmen had carried for generations.",
+    "{{FACT_2}}": "Space Invaders was such a hit in Japan after its 1978 release that arcades reportedly drained the country's supply of 100-yen coins, prompting the Japanese Mint to roughly quadruple production of the coin that year.",
+    "{{FACT_3}}": "The word 'salary' traces back to the Latin salarium, the allowance Roman soldiers were paid partly to cover salt — one of the ancient world's most valuable commodities, prized for preserving food long before refrigeration existed.",
 
     # Joke
-    "{{JOKE_SETUP}}": "A young auto electrician was asked how he always found a fault in a car's wiring faster than anyone else in town.",
-    "{{JOKE_PUNCHLINE}}": "He said the trick was never chasing the spark — always tracing it back to where the current started.",
+    "{{JOKE_SETUP}}": "Why did the pest controller's small business always have healthy cash flow?",
+    "{{JOKE_PUNCHLINE}}": "Because he never let a late payment nest for long.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Do the difficult things while they are easy and do the great things while they are small.\"",
-    "{{CLOSING_ATTR}}": "— Lao Tzu",
-    "{{CLOSING_MESSAGE}}": "It's the first day of spring in Carrum Downs, and it's arriving with a proper blast of northerly wind and showers rather than sunshine — a fair excuse to get any indoor quoting or admin done before conditions ease by the weekend. With oil prices jumping on fresh Middle East strikes and the diesel bill already elevated, it's worth locking in any fuel-sensitive quotes now rather than waiting for the bowser to catch up.",
+    "{{CLOSING_QUOTE}}": "\"The secret of getting ahead is getting started.\"",
+    "{{CLOSING_ATTR}}": "— Mark Twain",
+    "{{CLOSING_MESSAGE}}": "It's hump day in Carrum Downs, with a shower or two easing off by late morning before a breezy nor'wester takes over — a decent window to get outdoor jobs done early. Over in Melbourne's south-east, the inaugural Kindred People festival kicks off today at Monash, a bit of good local news in a week otherwise dominated by rising bond yields and climbing bowser prices.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
