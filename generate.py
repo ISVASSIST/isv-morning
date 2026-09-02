@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Wednesday, 02 September 2026",
+    "{{DATE}}": "Thursday, 03 September 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Wed 2 Sep (BOM)
-    "{{WEATHER_1}}": "WED 2 SEP · 🌦️ Shower or two easing by late morning, breezy nor'wester · 12–18°C",
-    "{{WEATHER_2}}": "THU 3 SEP · 🌧️ Cloudy, high chance of showers morning and arvo, blustery nor'wester · 10–17°C",
+    # Weather — Carrum Downs VIC, 5-day from Thu 3 Sep (BOM)
+    "{{WEATHER_1}}": "THU 3 SEP · 🌤️ Slight chance of a shower, breezy nor'wester easing later · 9–15°C",
+    "{{WEATHER_2}}": "FRI 4 SEP · 🌦️ Partly cloudy, medium chance of a shower in the early morning · 6–14°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "FRI 4 SEP · 🌧️ Partly cloudy, very high chance of showers later in the day · 11–17°C",
+    "{{WEATHER_3}}": "SAT 5 SEP · 🌧️ Cloudy, high chance of showers in the afternoon and evening · 7–17°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "SAT 5 SEP · ⛅ Partly cloudy, high chance of a shower · 8–18°C",
-    "{{WEATHER_5}}": "SUN 6 SEP · ☁️ Cloudy, medium chance of a shower later in the day · 13–17°C",
-    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or the Mornington Peninsula — a damaging winds warning covers the alpine ranges only. Expect a showery, blustery run through the week before it eases into a cloudier, calmer weekend.",
+    "{{WEATHER_4}}": "SUN 6 SEP · ☀️ Mostly sunny, breezy nor'wester, moderate UV · 9–18°C",
+    "{{WEATHER_5}}": "MON 7 SEP · 🌧️ Very high chance of rain, strong northerly winds · 11–16°C",
+    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or the Mornington Peninsula. A showery, blustery spell builds through the weekend before a wetter, windier start to next week.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇷 STRAIT OF HORMUZ · TRUMP VOWS TO 'HIT' IRAN HARDER AFTER FRESH CLASHES",
-    "{{WORLD_1_HEADLINE}}": "Trump Warns Iran of a 'Much Harder' Strike as US-Iran Clashes Resume Near the Strait of Hormuz",
-    "{{WORLD_1_SUMMARY}}": "US Central Command struck Iranian minelaying forces near the Strait of Hormuz over the weekend, and Iran's Revolutionary Guard retaliated with missile strikes on US bases in Jordan, which said it intercepted at least eight of them; Trump warned Monday that Iran would be hit 'at a much harder and higher level' if it strikes again, rattling oil markets already on edge over the shipping chokepoint.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/9/1/hit-them-hard-does-trump-have-another-new-iran-strategy-can-it-work",
+    "{{WORLD_1_FLAG}}": "🇺🇦 KYIV · PUTIN AND ZELENSKYY TRADE THREATS AS STRIKES ESCALATE",
+    "{{WORLD_1_HEADLINE}}": "Putin and Zelenskyy Trade Threats as Russia Fires Missiles and Drones at Kyiv and Mykolaiv",
+    "{{WORLD_1_SUMMARY}}": "Russia launched Iskander missiles and 174 drones at Ukraine overnight into Tuesday, striking a Kyiv university during class hours and damaging homes and cars in Mykolaiv, while Ukraine's forces hit drone control centres and troop concentrations; Putin and Zelenskyy then traded threats over next steps, with Zelenskyy warning that Russian airspace is unsafe for foreign flights given Ukraine's long-range drone strikes.",
+    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/9/2/putin-and-zelenskyy-issue-threats-as-strikes-rock-ukraine-russia",
 
-    "{{WORLD_2_FLAG}}": "🌏 BISHKEK · SCO SUMMIT WRAPS WITH NEW TRADE AND LOGISTICS PACT",
-    "{{WORLD_2_HEADLINE}}": "Shanghai Cooperation Organisation Summit Closes With 13 New Agreements, Including a Five-Year Logistics Plan",
-    "{{WORLD_2_SUMMARY}}": "Leaders from China, Russia, India, Pakistan and Central Asian states wrapped the 26th SCO summit in Bishkek with the 'Bishkek Declaration' and 13 outcome agreements, including a 2026–2030 plan to build out regional ports and logistics hubs and the adoption of English as an official SCO language, as the bloc's chairmanship passes to Pakistan.",
-    "{{WORLD_2_URL}}": "https://aninews.in/news/world/asia/sco-summit-yields-13-outcome-agreements-spanning-counter-terrorism-climate-action-and-digital-cooperation20260901180249/",
+    "{{WORLD_2_FLAG}}": "🇺🇸 WASHINGTON · HOUSE AVERTS SHUTDOWN WITH FUNDING PUSHED TO DECEMBER",
+    "{{WORLD_2_HEADLINE}}": "US House Passes Stopgap Funding Bill, Averting a Government Shutdown Ahead of the Midterms",
+    "{{WORLD_2_SUMMARY}}": "The US House voted 370-48 on Tuesday to fund the federal government through 11 December, an unusually early resolution that avoids a shutdown before the November midterms and pushes the next spending fight into the new year; the bill also delays a contentious overhaul of federal grant rules until the same date and now heads to the president's desk.",
+    "{{WORLD_2_URL}}": "https://www.npr.org/2026/09/01/nx-s1-5951536/house-government-funding-vote-midterms",
 
     # Economics
-    "{{ECON_1_FLAG}}": "📉 ASX · OIL SURGE ON US-IRAN TENSIONS WEIGHS ON TECH STOCKS",
-    "{{ECON_1_HEADLINE}}": "ASX Edges Lower as Renewed US-Iran Conflict Sends Oil Above US$91 a Barrel",
-    "{{ECON_1_SUMMARY}}": "The ASX 200 closed down about 0.1% at 9,066 points on Tuesday, with energy stocks the standout gainer (+1.2%) while tech and consumer discretionary shares dropped 1.4–1.7%, as Brent crude climbed above US$91 a barrel on fears the US-Iran clashes near the Strait of Hormuz could disrupt Middle East oil supply.",
-    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-09-01/asx-markets-business-live-news-house-prices-fall/107100764",
+    "{{ECON_1_FLAG}}": "📉 ASX · MARKET SLIPS AS OIL JUMPS AND RATE-HIKE TALK BUILDS",
+    "{{ECON_1_HEADLINE}}": "ASX Falls Almost 1% as Oil Hits a Two-Month High and Strong GDP Growth Fuels RBA Rate-Hike Bets",
+    "{{ECON_1_SUMMARY}}": "The ASX 200 closed down 37.5 points (-0.41%) at 9,038.50 on Tuesday after June-quarter GDP came in stronger than expected, pushing traders' odds of a September RBA rate hike to around 70% — a mood echoed on Wall Street, where the Dow, S&P 500 and Nasdaq all fell overnight on the same rate-hike jitters.",
+    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-09-02/asx-markets-business-live-news/107105482",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL · MELBOURNE BOWSER PRICES CLIMBING AS OIL SURGES",
-    "{{ECON_2_HEADLINE}}": "Melbourne Petrol Heads Into the Rising Leg of the Cycle Just as Oil Jumps on Middle East Tensions",
-    "{{ECON_2_SUMMARY}}": "Victoria's average unleaded price sat at 196.8 cents a litre on Tuesday (national average 205.3 cents, diesel 253.3 cents), with Melbourne now in the rising leg of its local price cycle — a climb likely to get a further push from Brent crude's jump above US$91 a barrel on the fresh US-Iran clashes.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL · MELBOURNE BOWSERS SIT MID-CYCLE, PATTERN STILL DISRUPTED",
+    "{{ECON_2_HEADLINE}}": "Melbourne Fuel Holds Near 200c/L, With the Usual Price Cycle Still Disrupted by Middle East Tensions",
+    "{{ECON_2_SUMMARY}}": "Melbourne's 14-day average unleaded price sits around 199.8–203c/L, with the cheapest sites near 186–187.5c/L in the outer suburbs and diesel averaging around 234.5c/L in Preston — but the usual predictable price cycle that normally lets drivers time a cheap fill has barely run in Sydney, Melbourne, Brisbane or Adelaide since the Middle East conflict began in late February, making bowser prices harder to plan around than usual.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🛒 SCAMS · ACCC WARNS AI IS SUPERCHARGING FAKE ONLINE STORES",
-    "{{TECH_1_HEADLINE}}": "ACCC Warns Generative AI Is Making Fake 'Ghost Store' Scams Impersonating Real Businesses Harder to Spot",
-    "{{TECH_1_SUMMARY}}": "The ACCC says scammers are now using generative AI to spin up professional-looking fake online stores in minutes — complete with AI-generated product photos, descriptions and fake reviews — often impersonating real Australian businesses, warning shoppers 'can no longer rely on appearance alone.' Worth knowing if your business has a website or social presence someone could convincingly clone.",
-    "{{TECH_1_URL}}": "https://www.smartcompany.com.au/artificial-intelligence/accc-warns-ai-ghost-stores-online-shopping/",
+    "{{TECH_1_FLAG}}": "🏥 AI IN HEALTHCARE · CHATGPT NOW PLUGS INTO EPIC PATIENT RECORDS",
+    "{{TECH_1_HEADLINE}}": "OpenAI Adds Epic Health Record Integration to ChatGPT, Giving Clinicians Read-Only Patient Data Access",
+    "{{TECH_1_SUMMARY}}": "OpenAI announced healthcare organisations can now connect their Epic electronic health record systems to ChatGPT for Healthcare, alongside a new plugin linking to nine official datasets including PubMed and CMS Coverage; UCSF Health is piloting it, with physicians rating 99.1% of nearly 4,400 evaluated responses as safe — a sign of how fast AI is being wired into serious, high-stakes systems, not just chatbots.",
+    "{{TECH_1_URL}}": "https://techcrunch.com/2026/09/01/chatgpt-health-adds-epic-integration-for-clinicians-to-import-patient-data/",
 
-    "{{TECH_2_FLAG}}": "📊 AI ADOPTION · TREASURY SAYS AUSSIE BUSINESS AI USE IS 'WIDE BUT SHALLOW'",
-    "{{TECH_2_HEADLINE}}": "Treasury Warns Australian Businesses' AI Adoption Is 'Widespread But Shallow'",
-    "{{TECH_2_SUMMARY}}": "Advice to Treasurer Jim Chalmers found roughly two-thirds of Australian businesses report some AI use, but fewer than one in ten report 'significant' adoption — meaning the economy risks missing AI's productivity upside unless businesses move past basic chatbot use into real operational change.",
+    "{{TECH_2_FLAG}}": "🔐 AI SECURITY · OPENAI'S NEWEST MODEL CROSSES A 'CRITICAL' CYBER THRESHOLD",
+    "{{TECH_2_HEADLINE}}": "OpenAI Says Its Astra Model Is the First to Cross a 'Critical' Cybersecurity Capability Threshold",
+    "{{TECH_2_SUMMARY}}": "OpenAI confirmed its Astra model scored a perfect result on ExploitBench and autonomously found two real zero-day vulnerabilities in testing, making it the first model to cross the 'Critical' cybersecurity bar in the company's own risk framework — access to its sharpest capabilities is being tightly restricted to vetted testers for now, but it's an early signal that AI-assisted hacking tools are getting genuinely capable, not just theoretical.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🐕 PHYSICAL AI · US HOMELAND SECURITY EYES ROBOT DOGS FOR HAZARD WORK",
-    "{{ROBOT_1_HEADLINE}}": "US Homeland Security Plans to Buy Boston Dynamics' Spot Robots for Hazardous-Site Inspection",
-    "{{ROBOT_1_SUMMARY}}": "A Department of Homeland Security funding document shows US authorities want to spend up to $2 million on Boston Dynamics' four-legged Spot robots, fitted with cameras and hazardous-gas sensors, for remote inspection and hazard assessment in high-risk environments rather than direct enforcement — with a formal tender expected around 4 September.",
-    "{{ROBOT_1_URL}}": "https://www.wbur.org/news/2026/08/31/ice-robot-dogs-immigration-enforcement-boston-dynamics",
+    "{{ROBOT_1_FLAG}}": "🦾 DEXTEROUS AI · A WEARABLE DEVICE THAT TEACHES ROBOTS TO USE THEIR HANDS",
+    "{{ROBOT_1_HEADLINE}}": "Chinese Robotics Firm X Square Robot Unveils TwinDEX, a Wearable Rig for Training Robot Hands",
+    "{{ROBOT_1_SUMMARY}}": "X Square Robot this week introduced TwinDEX, a matched pair of three-finger, nine-degree-of-freedom devices — one worn by a human to collect fine hand-manipulation data, the other fitted to a robot as its end effector — aimed at making dexterous tasks like picking, sorting and assembly far cheaper to teach robots without needing expensive robot hardware for every hour of training data.",
+    "{{ROBOT_1_URL}}": "https://www.prnewswire.com/news-releases/twindex-introduces-a-scalable-path-from-robot-free-data-collection-to-real-world-dexterous-manipulation-302867559.html",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australian Government Bond Yields Hit a 15-Year High Amid Global Debt Sell-Off",
-    "{{AUS_1_SUMMARY}}": "The yield on Australia's benchmark 10-year government bond jumped as much as 10 basis points to 5.19% on Tuesday, its highest level since July 2011, as a deepening global bond sell-off on inflation fears pushed yields higher in Japan, Britain and the US in tandem.",
-    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-01/australian-government-10-year-bond-hits-15-year-high/107103096",
+    "{{AUS_1_HEADLINE}}": "UN Report Warns 1.5°C Warming Threshold Likely to Be Breached, as Albanese Defends Pre-COP Talks in Fiji",
+    "{{AUS_1_SUMMARY}}": "A new UN report warns the world is on track to breach the 1.5°C warming benchmark within five years and is unlikely to hold warming below 1.8°C, landing as Prime Minister Anthony Albanese defended Australia's role co-hosting Pacific pre-COP talks in Fiji and Tuvalu ahead of COP31, which Australia will help lead as President of Negotiations in Antalya, Türkiye, this November.",
+    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-02/global-warming-breach-likely-as-albanese-defends-pre-cop-meeting/107108178",
 
-    "{{AUS_2_HEADLINE}}": "Missing Australian Found Alive Six Days After Deadly Nepal-Tibet Border Floods",
-    "{{AUS_2_SUMMARY}}": "One of 43 Australians reported missing after the catastrophic Nepal-Tibet border floods has been found alive in Tibet, with DFAT confirming contact on Tuesday morning — the second Australian located safe in recent days, bringing the number still missing down to 42.",
+    "{{AUS_2_HEADLINE}}": "Hundreds of AI-Issued Seatbelt Fines Dropped in WA After Police Couldn't Prove Drivers Knew",
+    "{{AUS_2_SUMMARY}}": "WA Police have overturned about 5,700 of the 81,412 seatbelt infringements issued by AI-assisted road safety cameras since last October, after prosecutors accepted 'reasonable defences' from drivers fined for passengers — including children and neurodivergent people — wearing seatbelts incorrectly; detected infractions are still down 76% year-on-year even as the fine-dropping continues.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Melbourne's First 'Kindred People' Festival Opens Today, Putting First Nations Culture Centre Stage",
-    "{{VIC_1_SUMMARY}}": "A new Indigenous-led festival of First Nations arts, culture and knowledge kicks off today across Monash University's campuses, running through Sunday with music, theatre, dance and a dedicated two-day knowledge-sharing program — organisers hope it becomes a biennial fixture on Melbourne's cultural calendar.",
+    "{{VIC_1_HEADLINE}}": "North Melbourne and Coach Alastair Clarkson Part Ways After Four Seasons",
+    "{{VIC_1_SUMMARY}}": "North Melbourne says 'gaping holes' in Alastair Clarkson's game plan led the club to end his tenure early despite a contract through 2027, with president Dr Sonja Hood saying Clarkson remained well liked by players but the list needed a fresh voice — the Kangaroos finished 14th with nine wins this year, their best season under him since 2019.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🚀 SPACE STATION · SIXTH-EVER ALL-FEMALE SPACEWALK COMPLETED",
-    "{{SCI_1_HEADLINE}}": "NASA and ESA Astronauts Complete Only the Sixth All-Female Spacewalk in History",
-    "{{SCI_1_SUMMARY}}": "NASA's Jessica Meir and ESA's Sophie Adenot spent about 6.5 hours outside the International Space Station on Tuesday, replacing a docking-navigation mirror on the Harmony module, running cable and camera swaps, and prepping the Alpha Magnetic Spectrometer for future maintenance — Meir's seventh career spacewalk, moving her into third place all-time among NASA women spacewalkers.",
+    "{{SCI_1_FLAG}}": "🍵 HEALTHY AGEING · TEA LINKED TO STRONGER BONES IN OLDER WOMEN",
+    "{{SCI_1_HEADLINE}}": "Flinders University Study of Nearly 10,000 Women Finds Tea Drinking Linked to Higher Hip Bone Density",
+    "{{SCI_1_SUMMARY}}": "Tracking almost 10,000 women aged 65 and over for a decade, Flinders University researchers found regular tea drinkers had slightly higher hip bone mineral density, an important marker for osteoporosis risk; moderate coffee didn't appear harmful, but drinking more than five cups a day was linked to lower bone density — the study was published in the journal Nutrients.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "Government Bond Yields Just Hit a 15-Year High — Here's What It Means If You're Financing a Ute or a Compressor",
-    "{{INSIGHT_BODY}}": "Australia's benchmark 10-year bond yield jumped to 5.19% on Tuesday, its highest level since 2011, as a global bond sell-off on inflation fears pushes borrowing costs up in lockstep from Tokyo to London. Bond yields aren't your equipment loan rate, but they're the base rate lenders build on — when they climb this fast, business finance and lease rates tend to follow within weeks, not months. If you've been putting off financing a new compressor, blast pot or ute, it's worth getting a quote locked in now rather than waiting for a 'better time' that a global bond sell-off is currently working against. Worth a call to your broker this week rather than next.",
+    "{{INSIGHT_TITLE}}": "OpenAI's Newest Model Can Now Find Real Software Flaws On Its Own — Here's What That Means for Your Basic Cyber Hygiene",
+    "{{INSIGHT_BODY}}": "OpenAI confirmed this week that its Astra model is the first to cross what it calls a 'Critical' cybersecurity threshold, scoring a perfect result on a benchmark for turning known flaws into working exploits and independently discovering two real zero-day vulnerabilities in testing. Access to its sharpest capabilities is being kept tightly restricted for now, but the direction is clear: tools that once needed a skilled human hacker are becoming more automatable every year. A small trades business isn't the target of a nation-state, but it is exactly the kind of soft, under-patched target automated scanning tools sweep up along the way. The unglamorous basics — unique passwords on your invoicing and banking logins, software updates you've been putting off, and a phone-call habit before paying any changed bank details — are cheap insurance against a threat that's only getting more automated.",
 
     # Fun facts
-    "{{FACT_1}}": "The retractable, spring-return tape measure was patented in 1868 by Connecticut clockmaker Alvin J. Fellows, who adapted a clock-spring mechanism into a pocket-sized metal case, replacing the folding wooden rulers tradesmen had carried for generations.",
-    "{{FACT_2}}": "Space Invaders was such a hit in Japan after its 1978 release that arcades reportedly drained the country's supply of 100-yen coins, prompting the Japanese Mint to roughly quadruple production of the coin that year.",
-    "{{FACT_3}}": "The word 'salary' traces back to the Latin salarium, the allowance Roman soldiers were paid partly to cover salt — one of the ancient world's most valuable commodities, prized for preserving food long before refrigeration existed.",
+    "{{FACT_1}}": "The Allen key (hex key) was patented in 1910 by Connecticut toolmaker William G. Allen, whose Allen Manufacturing Company held exclusive rights to the hexagonal socket screw system for years before rival tool makers could legally copy it.",
+    "{{FACT_2}}": "The give-way-to-the-right roundabout rule now standard from Melbourne to London wasn't obvious until British transport researcher Frank Blackmore tested it in the 1960s — his UK Road Research Laboratory studies found it cut collisions so sharply that the design was exported worldwide within a decade.",
+    "{{FACT_3}}": "The lamington — Australia's chocolate-and-coconut sponge square — is said to owe its existence to Queensland Governor Lord Lamington's household around 1900, after a cook dipped day-old sponge cake in chocolate and rolled it in coconut to stretch it for unexpected guests.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the pest controller's small business always have healthy cash flow?",
-    "{{JOKE_PUNCHLINE}}": "Because he never let a late payment nest for long.",
+    "{{JOKE_SETUP}}": "Why did the gas fitter's small business never run out of work?",
+    "{{JOKE_PUNCHLINE}}": "Because he always left every job airtight — literally and financially.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"The secret of getting ahead is getting started.\"",
-    "{{CLOSING_ATTR}}": "— Mark Twain",
-    "{{CLOSING_MESSAGE}}": "It's hump day in Carrum Downs, with a shower or two easing off by late morning before a breezy nor'wester takes over — a decent window to get outdoor jobs done early. Over in Melbourne's south-east, the inaugural Kindred People festival kicks off today at Monash, a bit of good local news in a week otherwise dominated by rising bond yields and climbing bowser prices.",
+    "{{CLOSING_QUOTE}}": "\"Success is the sum of small efforts, repeated day in and day out.\"",
+    "{{CLOSING_ATTR}}": "— Robert Collier",
+    "{{CLOSING_MESSAGE}}": "It's Thursday in Carrum Downs, with just a slight chance of a shower this morning before a breezy nor'wester takes over — a decent window to get outdoor jobs sorted before the wetter, blustery stretch building for the weekend. Down the road, North Melbourne's split from long-time coach Alastair Clarkson is dominating the footy conversation, while back on the books it's Tuesday's GDP figures and the fresh RBA rate-hike chatter that are actually worth your attention this week.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
