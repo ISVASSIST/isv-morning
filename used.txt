@@ -1401,3 +1401,14 @@ JOKE: Why did the gas fitter's small business never run out of work?
 INSIGHT: OpenAI's Newest Model Can Now Find Real Software Flaws On Its Own — Here's What That Means for Your Basic Cyber Hygiene
 QUOTE: "Success is the sum of small efforts, repeated day in and day out." — Robert Collier
 ---
+
+DATE: Friday, 04 September 2026
+SCIENCE: ISRO launches GSLV-F17 carrying the EOS-05 satellite, attempting India's first-ever geosynchronous Earth-imaging orbit — launched 4 September 2026
+ROBOTICS: Realbotix launches a pilot with a major European telco testing humanoid robots as live-event presenters and hosts — published 3 September 2026
+FACT: The first commercial sunscreen was cooked up in a backyard in Adelaide in 1932, when chemist H.A. Milton Blake used a kerosene heater to brew batches of French-perfumed 'sunburn vanishing cream' — his small operation grew into Hamilton Laboratories, which still makes sunscreen today.
+FACT: The safety pin was invented in 1849 by New York mechanic Walter Hunt, who twisted a length of brass wire while trying to think of a way to pay off a $15 debt — he sold the patent rights for just $400 and never made another cent from an invention that's still unchanged in every sewing kit today.
+FACT: Nobody actually knows who invented the stubby holder — Australians have claimed it since at least the 1970s, with rival stories crediting a fisherman insulating his beer with old drink cans and a 1980s pioneer who first used wetsuit neoprene, and the true inventor will probably never be settled.
+JOKE: Why did the hot water system installer's small business never run cold?
+INSIGHT: Google Just Put a Voice Assistant Inside Gmail and Docs — A Genuinely Low-Effort Way to Try AI On the Tools
+QUOTE: "When you can do the common things in life in an uncommon way, you will command the attention of the world." — George Washington Carver
+---
