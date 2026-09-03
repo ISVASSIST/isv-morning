@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Thursday, 03 September 2026",
+    "{{DATE}}": "Friday, 04 September 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Thu 3 Sep (BOM)
-    "{{WEATHER_1}}": "THU 3 SEP · 🌤️ Slight chance of a shower, breezy nor'wester easing later · 9–15°C",
-    "{{WEATHER_2}}": "FRI 4 SEP · 🌦️ Partly cloudy, medium chance of a shower in the early morning · 6–14°C",
+    # Weather — Carrum Downs VIC, 5-day from Fri 4 Sep (BOM)
+    "{{WEATHER_1}}": "FRI 4 SEP · 🌦️ Partly cloudy, medium chance of a shower in the early morning · 6–14°C",
+    "{{WEATHER_2}}": "SAT 5 SEP · 🌧️ Partly cloudy, high chance of showers in the afternoon and evening, breezy nor'wester · 7–17°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "SAT 5 SEP · 🌧️ Cloudy, high chance of showers in the afternoon and evening · 7–17°C",
+    "{{WEATHER_3}}": "SUN 6 SEP · 🌧️ Cloudy, very high chance of rain, strong to gale-force north to north-easterly winds · 10–15°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "SUN 6 SEP · ☀️ Mostly sunny, breezy nor'wester, moderate UV · 9–18°C",
-    "{{WEATHER_5}}": "MON 7 SEP · 🌧️ Very high chance of rain, strong northerly winds · 11–16°C",
-    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or the Mornington Peninsula. A showery, blustery spell builds through the weekend before a wetter, windier start to next week.",
+    "{{WEATHER_4}}": "MON 7 SEP · 🌧️ Cloudy, very high chance of rain easing later, gusty north to north-westerly winds · 10–14°C",
+    "{{WEATHER_5}}": "TUE 8 SEP · 🌤️ Clearing, slight chance of an early shower, winds becoming light · 8–15°C",
+    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or the Mornington Peninsula. A wet, blustery spell moves through this weekend and into Monday before clearing by Tuesday.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇺🇦 KYIV · PUTIN AND ZELENSKYY TRADE THREATS AS STRIKES ESCALATE",
-    "{{WORLD_1_HEADLINE}}": "Putin and Zelenskyy Trade Threats as Russia Fires Missiles and Drones at Kyiv and Mykolaiv",
-    "{{WORLD_1_SUMMARY}}": "Russia launched Iskander missiles and 174 drones at Ukraine overnight into Tuesday, striking a Kyiv university during class hours and damaging homes and cars in Mykolaiv, while Ukraine's forces hit drone control centres and troop concentrations; Putin and Zelenskyy then traded threats over next steps, with Zelenskyy warning that Russian airspace is unsafe for foreign flights given Ukraine's long-range drone strikes.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/9/2/putin-and-zelenskyy-issue-threats-as-strikes-rock-ukraine-russia",
+    "{{WORLD_1_FLAG}}": "🇪🇬 CAIRO · XI VISITS EGYPT FOR FIRST TIME IN A DECADE",
+    "{{WORLD_1_HEADLINE}}": "China's Xi Meets Egypt's Sisi in Cairo, Marking Beijing's First State Visit to the Country in 10 Years",
+    "{{WORLD_1_SUMMARY}}": "Xi Jinping held talks with President Abdel Fattah el-Sisi in Cairo this week, urging Middle Eastern countries to oppose external interference and back regional dialogue on peace and security as both leaders discussed the six-month US-Israel war on Iran; the two nations also signed an agreement to launch a third phase of the Suez Canal industrial zone, deepening Beijing's roughly $10 billion in investment across Egypt.",
+    "{{WORLD_1_URL}}": "https://www.npr.org/2026/09/03/nx-s1-5954184/chinas-xi-visits-egypt-for-the-first-time-in-a-decade",
 
-    "{{WORLD_2_FLAG}}": "🇺🇸 WASHINGTON · HOUSE AVERTS SHUTDOWN WITH FUNDING PUSHED TO DECEMBER",
-    "{{WORLD_2_HEADLINE}}": "US House Passes Stopgap Funding Bill, Averting a Government Shutdown Ahead of the Midterms",
-    "{{WORLD_2_SUMMARY}}": "The US House voted 370-48 on Tuesday to fund the federal government through 11 December, an unusually early resolution that avoids a shutdown before the November midterms and pushes the next spending fight into the new year; the bill also delays a contentious overhaul of federal grant rules until the same date and now heads to the president's desk.",
-    "{{WORLD_2_URL}}": "https://www.npr.org/2026/09/01/nx-s1-5951536/house-government-funding-vote-midterms",
+    "{{WORLD_2_FLAG}}": "🇺🇸 NEW YORK · MADURO CLAIMS HEAD-OF-STATE IMMUNITY IN DRUG CASE",
+    "{{WORLD_2_HEADLINE}}": "Ousted Venezuelan Leader Nicolás Maduro Asks US Judge to Dismiss Drug Trafficking Case on Immunity Grounds",
+    "{{WORLD_2_SUMMARY}}": "Lawyers for Nicolás Maduro and his wife, Cilia Flores, filed papers in Manhattan federal court arguing the judge must reject the indictment because it cannot be brought against a foreign head of state; the pair have been held in a Brooklyn jail since US forces seized them in a night-time raid on their Caracas home in January, with oral arguments on the dismissal motion now set for 17 November.",
+    "{{WORLD_2_URL}}": "https://www.npr.org/2026/09/03/g-s1-141764/ex-venezuelan-president-nicolas-maduro-and-wife-seek-to-end-drug-charges-case-on-immunity-grounds",
 
     # Economics
-    "{{ECON_1_FLAG}}": "📉 ASX · MARKET SLIPS AS OIL JUMPS AND RATE-HIKE TALK BUILDS",
-    "{{ECON_1_HEADLINE}}": "ASX Falls Almost 1% as Oil Hits a Two-Month High and Strong GDP Growth Fuels RBA Rate-Hike Bets",
-    "{{ECON_1_SUMMARY}}": "The ASX 200 closed down 37.5 points (-0.41%) at 9,038.50 on Tuesday after June-quarter GDP came in stronger than expected, pushing traders' odds of a September RBA rate hike to around 70% — a mood echoed on Wall Street, where the Dow, S&P 500 and Nasdaq all fell overnight on the same rate-hike jitters.",
-    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-09-02/asx-markets-business-live-news/107105482",
+    "{{ECON_1_FLAG}}": "📈 ASX · MARKET SNAPS BACK AS HORMUZ FEARS EASE",
+    "{{ECON_1_HEADLINE}}": "ASX 200 Snaps Three-Day Losing Streak as Strait of Hormuz Tensions Ease and Banks Rebound",
+    "{{ECON_1_SUMMARY}}": "The ASX 200 climbed back toward 9,011 points on Thursday, supported by an absence of fresh US strikes on Iran for the first time in three sessions and a rebound in the big banks after August's sharp sell-off, while gold and mining stocks also firmed as some of the heat came out of the recent rally in energy prices and bond yields.",
+    "{{ECON_1_URL}}": "https://www.marketindex.com.au/news/asx-200-live-today-thursday-3rd-september",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL · MELBOURNE BOWSERS SIT MID-CYCLE, PATTERN STILL DISRUPTED",
-    "{{ECON_2_HEADLINE}}": "Melbourne Fuel Holds Near 200c/L, With the Usual Price Cycle Still Disrupted by Middle East Tensions",
-    "{{ECON_2_SUMMARY}}": "Melbourne's 14-day average unleaded price sits around 199.8–203c/L, with the cheapest sites near 186–187.5c/L in the outer suburbs and diesel averaging around 234.5c/L in Preston — but the usual predictable price cycle that normally lets drivers time a cheap fill has barely run in Sydney, Melbourne, Brisbane or Adelaide since the Middle East conflict began in late February, making bowser prices harder to plan around than usual.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL · MELBOURNE BOWSERS STILL RUNNING ABOVE 200C/L",
+    "{{ECON_2_HEADLINE}}": "Melbourne Unleaded Still Averaging Above 200c/L, With the Normal Price Cycle Yet to Properly Return",
+    "{{ECON_2_SUMMARY}}": "Melbourne drivers are paying an average of roughly 203–206.5c/L for unleaded, with the cheapest sites near 186.5c/L in Preston and diesel still elevated, as the region's usual predictable discounting cycle remains largely disrupted months on from the Middle East conflict — NRMA modelling shows regular unleaded up close to 50c/L since excise was fully restored in early August, making it worth comparing prices before a big fill rather than assuming a cheap patch is coming.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🏥 AI IN HEALTHCARE · CHATGPT NOW PLUGS INTO EPIC PATIENT RECORDS",
-    "{{TECH_1_HEADLINE}}": "OpenAI Adds Epic Health Record Integration to ChatGPT, Giving Clinicians Read-Only Patient Data Access",
-    "{{TECH_1_SUMMARY}}": "OpenAI announced healthcare organisations can now connect their Epic electronic health record systems to ChatGPT for Healthcare, alongside a new plugin linking to nine official datasets including PubMed and CMS Coverage; UCSF Health is piloting it, with physicians rating 99.1% of nearly 4,400 evaluated responses as safe — a sign of how fast AI is being wired into serious, high-stakes systems, not just chatbots.",
-    "{{TECH_1_URL}}": "https://techcrunch.com/2026/09/01/chatgpt-health-adds-epic-integration-for-clinicians-to-import-patient-data/",
+    "{{TECH_1_FLAG}}": "🤝 AI DEALS · NVIDIA CONFIRMS $12.9BN HUGGING FACE ACQUISITION",
+    "{{TECH_1_HEADLINE}}": "Nvidia Confirms It Will Buy AI Model Hub Hugging Face for $12.9 Billion",
+    "{{TECH_1_SUMMARY}}": "Nvidia confirmed it is acquiring Hugging Face, the platform hosting roughly three million AI models, a million applications and half a million datasets used by more than 18 million developers, in a deal signalling how central open AI infrastructure has become to the chipmaker's strategy — a sign of just how much consolidation is happening at the plumbing layer underneath the AI tools small businesses are starting to use.",
+    "{{TECH_1_URL}}": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/",
 
-    "{{TECH_2_FLAG}}": "🔐 AI SECURITY · OPENAI'S NEWEST MODEL CROSSES A 'CRITICAL' CYBER THRESHOLD",
-    "{{TECH_2_HEADLINE}}": "OpenAI Says Its Astra Model Is the First to Cross a 'Critical' Cybersecurity Capability Threshold",
-    "{{TECH_2_SUMMARY}}": "OpenAI confirmed its Astra model scored a perfect result on ExploitBench and autonomously found two real zero-day vulnerabilities in testing, making it the first model to cross the 'Critical' cybersecurity bar in the company's own risk framework — access to its sharpest capabilities is being tightly restricted to vetted testers for now, but it's an early signal that AI-assisted hacking tools are getting genuinely capable, not just theoretical.",
+    "{{TECH_2_FLAG}}": "🎙️ PRACTICAL AI · GOOGLE ADDS VOICE FEATURES TO GMAIL, DOCS AND KEEP",
+    "{{TECH_2_HEADLINE}}": "Google Launches Conversational AI Voice Features Inside Gmail, Docs and Keep",
+    "{{TECH_2_SUMMARY}}": "Google has rolled out voice-driven AI features letting users ask questions about their inbox or documents and complete tasks with natural-language dictation directly inside Gmail, Docs and Keep, without switching to a separate chatbot app — a small but genuinely practical step for anyone who'd rather talk through a job note or reply than type one out on a phone.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 DEXTEROUS AI · A WEARABLE DEVICE THAT TEACHES ROBOTS TO USE THEIR HANDS",
-    "{{ROBOT_1_HEADLINE}}": "Chinese Robotics Firm X Square Robot Unveils TwinDEX, a Wearable Rig for Training Robot Hands",
-    "{{ROBOT_1_SUMMARY}}": "X Square Robot this week introduced TwinDEX, a matched pair of three-finger, nine-degree-of-freedom devices — one worn by a human to collect fine hand-manipulation data, the other fitted to a robot as its end effector — aimed at making dexterous tasks like picking, sorting and assembly far cheaper to teach robots without needing expensive robot hardware for every hour of training data.",
-    "{{ROBOT_1_URL}}": "https://www.prnewswire.com/news-releases/twindex-introduces-a-scalable-path-from-robot-free-data-collection-to-real-world-dexterous-manipulation-302867559.html",
+    "{{ROBOT_1_FLAG}}": "🤖 HUMANOID ROBOTS · CAN A ROBOT 'HOLD THE ROOM'?",
+    "{{ROBOT_1_HEADLINE}}": "Robotics Firm Realbotix Launches Pilot Putting Humanoid Robots in Front of Live Audiences for a European Telco",
+    "{{ROBOT_1_SUMMARY}}": "Realbotix has begun a pilot with a major European telecommunications company testing whether its humanoid robots can work as presenters, hosts and brand ambassadors at live events and product demonstrations, not just in one-on-one interactions — an early test of humanoid robots moving from labs and warehouses into customer-facing, audience-scale roles.",
+    "{{ROBOT_1_URL}}": "https://www.globenewswire.com/news-release/2026/09/03/3355897/0/en/onconetix-acquisition-target-realbotix-launches-pilot-with-leading-european-telecommunications-company-to-deploy-humanoid-robots-in-live-presentations-and-events.html",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "UN Report Warns 1.5°C Warming Threshold Likely to Be Breached, as Albanese Defends Pre-COP Talks in Fiji",
-    "{{AUS_1_SUMMARY}}": "A new UN report warns the world is on track to breach the 1.5°C warming benchmark within five years and is unlikely to hold warming below 1.8°C, landing as Prime Minister Anthony Albanese defended Australia's role co-hosting Pacific pre-COP talks in Fiji and Tuvalu ahead of COP31, which Australia will help lead as President of Negotiations in Antalya, Türkiye, this November.",
-    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-02/global-warming-breach-likely-as-albanese-defends-pre-cop-meeting/107108178",
+    "{{AUS_1_HEADLINE}}": "SA Ambulance Ramping Hits a Record High as Independent Review Finds the State's Health System Has 'Deteriorated'",
+    "{{AUS_1_SUMMARY}}": "Patients spent 5,891 hours ramped outside South Australian public hospitals in August, a new record, landing the same day an independent review tabled in state parliament found SA's public health system has 'deteriorated' since 2022, with the share of metro patients handed over from paramedics within 30 minutes collapsing from more than 92% a decade ago to under half today.",
+    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-03/ambulance-ramping-hits-record-high-at-sa-hospitals/107110560",
 
-    "{{AUS_2_HEADLINE}}": "Hundreds of AI-Issued Seatbelt Fines Dropped in WA After Police Couldn't Prove Drivers Knew",
-    "{{AUS_2_SUMMARY}}": "WA Police have overturned about 5,700 of the 81,412 seatbelt infringements issued by AI-assisted road safety cameras since last October, after prosecutors accepted 'reasonable defences' from drivers fined for passengers — including children and neurodivergent people — wearing seatbelts incorrectly; detected infractions are still down 76% year-on-year even as the fine-dropping continues.",
+    "{{AUS_2_HEADLINE}}": "Small Businesses Turn to Blue Lights to Spot Fake Notes as Counterfeit Cash Seizures Surge",
+    "{{AUS_2_SUMMARY}}": "Business owners are increasingly scanning banknotes with blue lights at the till as the Australian Border Force reports a sharp jump in counterfeit currency entering the country, with more than $2.5 million in fake notes seized across 330 packages since last year and a single August haul of $747,000 — authorities say the fakes, mostly arriving from Asia, are of increasing quality and some now bear 'strong similarities' to genuine notes.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "North Melbourne and Coach Alastair Clarkson Part Ways After Four Seasons",
-    "{{VIC_1_SUMMARY}}": "North Melbourne says 'gaping holes' in Alastair Clarkson's game plan led the club to end his tenure early despite a contract through 2027, with president Dr Sonja Hood saying Clarkson remained well liked by players but the list needed a fresh voice — the Kangaroos finished 14th with nine wins this year, their best season under him since 2019.",
+    "{{VIC_1_HEADLINE}}": "Man Fights for Life After Melton Tobacconist Firebombing Goes Wrong",
+    "{{VIC_1_SUMMARY}}": "A man in his 20s is in a critical condition after police say a targeted firebombing at a Melton tobacconist early Thursday went wrong, engulfing him in flames after accelerant was allegedly poured inside the shop and ignited; investigators believe the men involved were burned in the fire they are accused of starting, and Victoria Police are still hunting two others believed to be linked to the attack.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🍵 HEALTHY AGEING · TEA LINKED TO STRONGER BONES IN OLDER WOMEN",
-    "{{SCI_1_HEADLINE}}": "Flinders University Study of Nearly 10,000 Women Finds Tea Drinking Linked to Higher Hip Bone Density",
-    "{{SCI_1_SUMMARY}}": "Tracking almost 10,000 women aged 65 and over for a decade, Flinders University researchers found regular tea drinkers had slightly higher hip bone mineral density, an important marker for osteoporosis risk; moderate coffee didn't appear harmful, but drinking more than five cups a day was linked to lower bone density — the study was published in the journal Nutrients.",
+    "{{SCI_1_FLAG}}": "🛰️ SPACE FIRST · INDIA ATTEMPTS ITS FIRST GEOSYNCHRONOUS EARTH-IMAGING LAUNCH",
+    "{{SCI_1_HEADLINE}}": "ISRO Attempts a Milestone Launch, Sending Its First Imaging Satellite Toward Geosynchronous Orbit",
+    "{{SCI_1_SUMMARY}}": "India's space agency ISRO launched its GSLV-F17 rocket carrying the EOS-05 Earth observation satellite in the early hours of Friday, aiming to place a satellite in geosynchronous orbit for the first time in the country's history — a feat ISRO has never previously pulled off — with the 2,367kg spacecraft designed to keep a high, steady watch over the same patch of Earth for continuous imaging.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "OpenAI's Newest Model Can Now Find Real Software Flaws On Its Own — Here's What That Means for Your Basic Cyber Hygiene",
-    "{{INSIGHT_BODY}}": "OpenAI confirmed this week that its Astra model is the first to cross what it calls a 'Critical' cybersecurity threshold, scoring a perfect result on a benchmark for turning known flaws into working exploits and independently discovering two real zero-day vulnerabilities in testing. Access to its sharpest capabilities is being kept tightly restricted for now, but the direction is clear: tools that once needed a skilled human hacker are becoming more automatable every year. A small trades business isn't the target of a nation-state, but it is exactly the kind of soft, under-patched target automated scanning tools sweep up along the way. The unglamorous basics — unique passwords on your invoicing and banking logins, software updates you've been putting off, and a phone-call habit before paying any changed bank details — are cheap insurance against a threat that's only getting more automated.",
+    "{{INSIGHT_TITLE}}": "Google Just Put a Voice Assistant Inside Gmail and Docs — A Genuinely Low-Effort Way to Try AI On the Tools",
+    "{{INSIGHT_BODY}}": "Google this week rolled out conversational AI voice features directly inside Gmail, Docs and Keep, letting you dictate a message, ask a question about your inbox, or draft a document just by talking, without downloading a separate chatbot app. For a small trades business that hasn't touched AI yet, that's a much lower bar than it sounds: no new software, no learning curve, no bill — just talking to tools you already have open every day. The obvious use is a quote or job note dictated between jobs while your hands are still dirty, or a client email drafted by voice while you're driving between sites (hands-free, parked, or via a passenger — never while driving). It won't replace your invoicing software, but as a way to actually start using AI rather than reading about it, talking to Gmail is about as close to zero-risk as it gets.",
 
     # Fun facts
-    "{{FACT_1}}": "The Allen key (hex key) was patented in 1910 by Connecticut toolmaker William G. Allen, whose Allen Manufacturing Company held exclusive rights to the hexagonal socket screw system for years before rival tool makers could legally copy it.",
-    "{{FACT_2}}": "The give-way-to-the-right roundabout rule now standard from Melbourne to London wasn't obvious until British transport researcher Frank Blackmore tested it in the 1960s — his UK Road Research Laboratory studies found it cut collisions so sharply that the design was exported worldwide within a decade.",
-    "{{FACT_3}}": "The lamington — Australia's chocolate-and-coconut sponge square — is said to owe its existence to Queensland Governor Lord Lamington's household around 1900, after a cook dipped day-old sponge cake in chocolate and rolled it in coconut to stretch it for unexpected guests.",
+    "{{FACT_1}}": "The first commercial sunscreen was cooked up in a backyard in Adelaide in 1932, when chemist H.A. Milton Blake used a kerosene heater to brew batches of French-perfumed 'sunburn vanishing cream' — his small operation grew into Hamilton Laboratories, which still makes sunscreen today.",
+    "{{FACT_2}}": "The safety pin was invented in 1849 by New York mechanic Walter Hunt, who twisted a length of brass wire while trying to think of a way to pay off a $15 debt — he sold the patent rights for just $400 and never made another cent from an invention that's still unchanged in every sewing kit today.",
+    "{{FACT_3}}": "Nobody actually knows who invented the stubby holder — Australians have claimed it since at least the 1970s, with rival stories crediting a fisherman insulating his beer with old drink cans and a 1980s pioneer who first used wetsuit neoprene, and the true inventor will probably never be settled.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the gas fitter's small business never run out of work?",
-    "{{JOKE_PUNCHLINE}}": "Because he always left every job airtight — literally and financially.",
+    "{{JOKE_SETUP}}": "Why did the hot water system installer's small business never run cold?",
+    "{{JOKE_PUNCHLINE}}": "Because he never let a quote go lukewarm — every job got followed up before it had the chance to cool off.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Success is the sum of small efforts, repeated day in and day out.\"",
-    "{{CLOSING_ATTR}}": "— Robert Collier",
-    "{{CLOSING_MESSAGE}}": "It's Thursday in Carrum Downs, with just a slight chance of a shower this morning before a breezy nor'wester takes over — a decent window to get outdoor jobs sorted before the wetter, blustery stretch building for the weekend. Down the road, North Melbourne's split from long-time coach Alastair Clarkson is dominating the footy conversation, while back on the books it's Tuesday's GDP figures and the fresh RBA rate-hike chatter that are actually worth your attention this week.",
+    "{{CLOSING_QUOTE}}": "\"When you can do the common things in life in an uncommon way, you will command the attention of the world.\"",
+    "{{CLOSING_ATTR}}": "— George Washington Carver",
+    "{{CLOSING_MESSAGE}}": "It's Friday in Carrum Downs, with just a medium chance of an early shower before a wet, blustery spell rolls through the weekend and into Monday — worth getting outdoor jobs wrapped up today if you can. Over in Cairo, Xi Jinping's first visit to Egypt in a decade is reshaping the week's world news, while closer to home, business owners scanning banknotes with blue lights over a counterfeit cash surge is a timely reminder to keep an eye on what's coming across the counter this week.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
