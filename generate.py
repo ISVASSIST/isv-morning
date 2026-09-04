@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Friday, 04 September 2026",
+    "{{DATE}}": "Saturday, 05 September 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Fri 4 Sep (BOM)
-    "{{WEATHER_1}}": "FRI 4 SEP · 🌦️ Partly cloudy, medium chance of a shower in the early morning · 6–14°C",
-    "{{WEATHER_2}}": "SAT 5 SEP · 🌧️ Partly cloudy, high chance of showers in the afternoon and evening, breezy nor'wester · 7–17°C",
+    # Weather — Carrum Downs VIC, 5-day from Sat 5 Sep (BOM)
+    "{{WEATHER_1}}": "SAT 5 SEP · ⛈️ Cloudy, very high chance of showers, chance of a thunderstorm (possibly severe) morning/afternoon · 9–17°C",
+    "{{WEATHER_2}}": "SUN 6 SEP · 🌧️ Cloudy, high chance of showers about the ranges, medium chance elsewhere, gusty nor'easter · 10–16°C",
     "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "SUN 6 SEP · 🌧️ Cloudy, very high chance of rain, strong to gale-force north to north-easterly winds · 10–15°C",
+    "{{WEATHER_3}}": "MON 7 SEP · 🌧️ Cloudy, very high chance of rain, most likely morning and afternoon, winds turning westerly · 10–14°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "MON 7 SEP · 🌧️ Cloudy, very high chance of rain easing later, gusty north to north-westerly winds · 10–14°C",
-    "{{WEATHER_5}}": "TUE 8 SEP · 🌤️ Clearing, slight chance of an early shower, winds becoming light · 8–15°C",
-    "{{WEATHER_ALERT}}": "No severe weather warnings are current for Melbourne metro or the Mornington Peninsula. A wet, blustery spell moves through this weekend and into Monday before clearing by Tuesday.",
+    "{{WEATHER_4}}": "TUE 8 SEP · 🌤️ Improving, decreasing chance of a shower, winds easing · 8–15°C",
+    "{{WEATHER_5}}": "WED 9 SEP · ☀️ Clearing, just a slight chance of an early shower, light winds · 7–14°C",
+    "{{WEATHER_ALERT}}": "No severe thunderstorm warning current as of this morning, but the Bureau is flagging a chance of a severe storm with damaging winds today. A wet, blustery run continues through the weekend into Monday before easing Tuesday.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇪🇬 CAIRO · XI VISITS EGYPT FOR FIRST TIME IN A DECADE",
-    "{{WORLD_1_HEADLINE}}": "China's Xi Meets Egypt's Sisi in Cairo, Marking Beijing's First State Visit to the Country in 10 Years",
-    "{{WORLD_1_SUMMARY}}": "Xi Jinping held talks with President Abdel Fattah el-Sisi in Cairo this week, urging Middle Eastern countries to oppose external interference and back regional dialogue on peace and security as both leaders discussed the six-month US-Israel war on Iran; the two nations also signed an agreement to launch a third phase of the Suez Canal industrial zone, deepening Beijing's roughly $10 billion in investment across Egypt.",
-    "{{WORLD_1_URL}}": "https://www.npr.org/2026/09/03/nx-s1-5954184/chinas-xi-visits-egypt-for-the-first-time-in-a-decade",
+    "{{WORLD_1_FLAG}}": "🇳🇵 TRISHULI · TWO PULLED ALIVE FROM NEPAL TUNNEL, NINE DAYS ON",
+    "{{WORLD_1_HEADLINE}}": "Search Teams Rescue Two Workers Alive From a Nepal Hydropower Tunnel, Nine Days After Deadly Floods",
+    "{{WORLD_1_SUMMARY}}": "Rescuers pulled mechanical foreman Sanjay Shah and supervisor Kabir Maharjan alive from the flood-buried Trishuli 3A hydropower tunnel on Friday, more than a week after a glacier collapse triggered flash flooding that has now killed over 1,300 people across Nepal; hundreds are still believed trapped in other tunnels, and the rescue has lifted hopes more survivors can be found.",
+    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/9/4/nepal-search-teams-rescue-two-workers-from-hydropower-tunnel",
 
-    "{{WORLD_2_FLAG}}": "🇺🇸 NEW YORK · MADURO CLAIMS HEAD-OF-STATE IMMUNITY IN DRUG CASE",
-    "{{WORLD_2_HEADLINE}}": "Ousted Venezuelan Leader Nicolás Maduro Asks US Judge to Dismiss Drug Trafficking Case on Immunity Grounds",
-    "{{WORLD_2_SUMMARY}}": "Lawyers for Nicolás Maduro and his wife, Cilia Flores, filed papers in Manhattan federal court arguing the judge must reject the indictment because it cannot be brought against a foreign head of state; the pair have been held in a Brooklyn jail since US forces seized them in a night-time raid on their Caracas home in January, with oral arguments on the dismissal motion now set for 17 November.",
-    "{{WORLD_2_URL}}": "https://www.npr.org/2026/09/03/g-s1-141764/ex-venezuelan-president-nicolas-maduro-and-wife-seek-to-end-drug-charges-case-on-immunity-grounds",
+    "{{WORLD_2_FLAG}}": "🇷🇺 VLADIVOSTOK · PUTIN SEES A CHANCE FOR A UKRAINE DEAL",
+    "{{WORLD_2_HEADLINE}}": "Putin Says a Ukraine Peace Deal Is Still Possible as Zelenskiy Reports US Negotiators Set to Visit Both Countries",
+    "{{WORLD_2_SUMMARY}}": "Vladimir Putin told an economic forum in Russia's Far East that a peace agreement remains possible, though he said fresh Ukrainian strikes on shipping and a Kyiv warning to civilian aircraft over Russian airspace were making talks harder; Volodymyr Zelenskiy said US negotiators would soon travel to both Moscow and Kyiv, with no formal peace talks having taken place since February despite 4.5 years of war.",
+    "{{WORLD_2_URL}}": "https://www.nbcnews.com/world/ukraine/ukraine-new-dynamic-peace-efforts-vladimir-putin-chance-deal-rcna595914",
 
     # Economics
-    "{{ECON_1_FLAG}}": "📈 ASX · MARKET SNAPS BACK AS HORMUZ FEARS EASE",
-    "{{ECON_1_HEADLINE}}": "ASX 200 Snaps Three-Day Losing Streak as Strait of Hormuz Tensions Ease and Banks Rebound",
-    "{{ECON_1_SUMMARY}}": "The ASX 200 climbed back toward 9,011 points on Thursday, supported by an absence of fresh US strikes on Iran for the first time in three sessions and a rebound in the big banks after August's sharp sell-off, while gold and mining stocks also firmed as some of the heat came out of the recent rally in energy prices and bond yields.",
-    "{{ECON_1_URL}}": "https://www.marketindex.com.au/news/asx-200-live-today-thursday-3rd-september",
+    "{{ECON_1_FLAG}}": "📈 RBA WATCH · THIRD MAJOR BANK NOW TIPS A RATE HIKE",
+    "{{ECON_1_HEADLINE}}": "NAB, Deutsche Bank and Now UBS All Expect the RBA to Lift Rates on September 29",
+    "{{ECON_1_SUMMARY}}": "A growing list of banks now expects the Reserve Bank to raise the cash rate from 4.35% to 4.6% at its 29 September meeting, after inflation data showed the trimmed mean measure holding at 3.6%; ANZ and CBA still expect the hike to land in November instead, while Westpac is the lone holdout tipping no move at all before year's end, leaving anyone about to lock in equipment or vehicle finance watching the next three weeks closely.",
+    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-09-04/asx-markets-business-news-live-updates/107113674",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL · MELBOURNE BOWSERS STILL RUNNING ABOVE 200C/L",
-    "{{ECON_2_HEADLINE}}": "Melbourne Unleaded Still Averaging Above 200c/L, With the Normal Price Cycle Yet to Properly Return",
-    "{{ECON_2_SUMMARY}}": "Melbourne drivers are paying an average of roughly 203–206.5c/L for unleaded, with the cheapest sites near 186.5c/L in Preston and diesel still elevated, as the region's usual predictable discounting cycle remains largely disrupted months on from the Middle East conflict — NRMA modelling shows regular unleaded up close to 50c/L since excise was fully restored in early August, making it worth comparing prices before a big fill rather than assuming a cheap patch is coming.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL · MELBOURNE UNLEADED HOLDING JUST OVER 200C/L",
+    "{{ECON_2_HEADLINE}}": "Melbourne Unleaded Averaging Around 203c/L as Diesel Sits Above 234c/L at the Cheapest Sites",
+    "{{ECON_2_SUMMARY}}": "Melbourne bowsers are averaging roughly 202.8c/L for unleaded (cheapest E10 sites near 186.2c/L) and from about 234.5c/L for diesel at the cheapest outlets, with prices still elevated months on from the Middle East-driven spike — worth shopping around by suburb before a big fill, since the gap between the cheapest and priciest sites in Melbourne is still running well over 15c/L.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤝 AI DEALS · NVIDIA CONFIRMS $12.9BN HUGGING FACE ACQUISITION",
-    "{{TECH_1_HEADLINE}}": "Nvidia Confirms It Will Buy AI Model Hub Hugging Face for $12.9 Billion",
-    "{{TECH_1_SUMMARY}}": "Nvidia confirmed it is acquiring Hugging Face, the platform hosting roughly three million AI models, a million applications and half a million datasets used by more than 18 million developers, in a deal signalling how central open AI infrastructure has become to the chipmaker's strategy — a sign of just how much consolidation is happening at the plumbing layer underneath the AI tools small businesses are starting to use.",
-    "{{TECH_1_URL}}": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/",
+    "{{TECH_1_FLAG}}": "🧠 AI MILESTONE · OPENAI RELEASES GPT-6 ASTRA, DECLARES 'AGI ERA'",
+    "{{TECH_1_HEADLINE}}": "OpenAI Releases GPT-6 Astra and Declares the Arrival of the 'AGI Era'",
+    "{{TECH_1_SUMMARY}}": "OpenAI released its GPT-6 Astra model, with the company declaring it marks the arrival of an 'AGI era'; the model scored 63% on the ARC-AGI-3 reasoning benchmark, beat the human baseline on action efficiency, and used fewer moves than the median human across 96% of test levels — a big claim, and one worth watching rather than acting on, but a sign of how fast the tools underneath everyday AI apps are moving.",
+    "{{TECH_1_URL}}": "https://techstartups.com/2026/09/04/top-tech-news-today-september-4-2026-amazon-google-microsoft-nvidia-openai-tesla-more/",
 
-    "{{TECH_2_FLAG}}": "🎙️ PRACTICAL AI · GOOGLE ADDS VOICE FEATURES TO GMAIL, DOCS AND KEEP",
-    "{{TECH_2_HEADLINE}}": "Google Launches Conversational AI Voice Features Inside Gmail, Docs and Keep",
-    "{{TECH_2_SUMMARY}}": "Google has rolled out voice-driven AI features letting users ask questions about their inbox or documents and complete tasks with natural-language dictation directly inside Gmail, Docs and Keep, without switching to a separate chatbot app — a small but genuinely practical step for anyone who'd rather talk through a job note or reply than type one out on a phone.",
+    "{{TECH_2_FLAG}}": "🎙️ PRACTICAL AI · MICROSOFT CUTS TRANSCRIPTION PRICE 72%",
+    "{{TECH_2_HEADLINE}}": "Microsoft Releases Cheaper, Faster Speech-to-Text Model Covering 60 Languages",
+    "{{TECH_2_SUMMARY}}": "Microsoft AI released MAI-Transcribe-2, a speech-recognition model it says beats rivals from OpenAI, Google and ElevenLabs on speed and accuracy, pricing it at 10 cents per audio hour through the end of 2026 — down about 72% from the $0.36 it charged five months ago — while adding speaker separation and word-level timestamps across 60 languages, making accurate voice-to-text a much cheaper add-on for anyone's note-taking or invoicing app.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🤖 HUMANOID ROBOTS · CAN A ROBOT 'HOLD THE ROOM'?",
-    "{{ROBOT_1_HEADLINE}}": "Robotics Firm Realbotix Launches Pilot Putting Humanoid Robots in Front of Live Audiences for a European Telco",
-    "{{ROBOT_1_SUMMARY}}": "Realbotix has begun a pilot with a major European telecommunications company testing whether its humanoid robots can work as presenters, hosts and brand ambassadors at live events and product demonstrations, not just in one-on-one interactions — an early test of humanoid robots moving from labs and warehouses into customer-facing, audience-scale roles.",
-    "{{ROBOT_1_URL}}": "https://www.globenewswire.com/news-release/2026/09/03/3355897/0/en/onconetix-acquisition-target-realbotix-launches-pilot-with-leading-european-telecommunications-company-to-deploy-humanoid-robots-in-live-presentations-and-events.html",
+    "{{ROBOT_1_FLAG}}": "🚕 ROBOTAXIS · FEDS PROBE TESLA'S DRIVERLESS CYBERCAB DAY ONE",
+    "{{ROBOT_1_HEADLINE}}": "US Regulators Open a Federal Investigation Into Tesla's Steering-Wheel-Free Cybercab, a Day After Its Launch",
+    "{{ROBOT_1_SUMMARY}}": "The US National Highway Traffic Safety Administration opened an Office of Defects Investigation into Tesla's Cybercab within a day of the driverless, steering-wheel-free robotaxi hitting the streets of Austin, examining the data behind Tesla's safety certification for a vehicle that has no steering wheel, mirrors or brake pedal; the probe covers roughly 1,000 vehicles already in service.",
+    "{{ROBOT_1_URL}}": "https://techcrunch.com/2026/09/04/feds-launch-investigation-into-teslas-cybercab-deployment/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "SA Ambulance Ramping Hits a Record High as Independent Review Finds the State's Health System Has 'Deteriorated'",
-    "{{AUS_1_SUMMARY}}": "Patients spent 5,891 hours ramped outside South Australian public hospitals in August, a new record, landing the same day an independent review tabled in state parliament found SA's public health system has 'deteriorated' since 2022, with the share of metro patients handed over from paramedics within 30 minutes collapsing from more than 92% a decade ago to under half today.",
-    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-03/ambulance-ramping-hits-record-high-at-sa-hospitals/107110560",
+    "{{AUS_1_HEADLINE}}": "Australia Deploys Specialist Drone Teams and a Further $3 Million to the Nepal Disaster Response",
+    "{{AUS_1_SUMMARY}}": "The federal government is sending a 15-person Disaster Assistance Response Team, including drone specialists from Fire and Rescue NSW and the Queensland Fire Department, to help map and search flood-hit areas of Nepal, alongside a further $3 million to match public donations — taking Australia's humanitarian support past $11 million as 36 Australians remain unaccounted for.",
+    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-03/australia-deploys-drones-to-nepal-as-death-toll-passes-1200/107111120",
 
-    "{{AUS_2_HEADLINE}}": "Small Businesses Turn to Blue Lights to Spot Fake Notes as Counterfeit Cash Seizures Surge",
-    "{{AUS_2_SUMMARY}}": "Business owners are increasingly scanning banknotes with blue lights at the till as the Australian Border Force reports a sharp jump in counterfeit currency entering the country, with more than $2.5 million in fake notes seized across 330 packages since last year and a single August haul of $747,000 — authorities say the fakes, mostly arriving from Asia, are of increasing quality and some now bear 'strong similarities' to genuine notes.",
+    "{{AUS_2_HEADLINE}}": "CFMEU Delegate Charged Over Alleged Drug Dealing at Melbourne Construction Sites",
+    "{{AUS_2_SUMMARY}}": "Victoria Police allege a 35-year-old union delegate was part of a trio importing steroids and other drugs through the mail and selling them across Melbourne construction sites, after Taskforce Hawk raided properties at Mulgrave, Heathmont and Fitzroy on Thursday; the man faces trafficking and weapons charges alongside two co-accused, all bailed to face Melbourne Magistrates' Court in January.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Man Fights for Life After Melton Tobacconist Firebombing Goes Wrong",
-    "{{VIC_1_SUMMARY}}": "A man in his 20s is in a critical condition after police say a targeted firebombing at a Melton tobacconist early Thursday went wrong, engulfing him in flames after accelerant was allegedly poured inside the shop and ignited; investigators believe the men involved were burned in the fire they are accused of starting, and Victoria Police are still hunting two others believed to be linked to the attack.",
+    "{{VIC_1_HEADLINE}}": "Bird Flu Confirmed in a Victorian Fox for the First Time, With a Dolphin Death Also Suspected",
+    "{{VIC_1_SUMMARY}}": "Authorities have confirmed H5 bird flu killed a fox at Torquay, south-west of Melbourne — Victoria's first known case of the virus in a mammal — and suspect it's also behind the death of a dolphin found at nearby Lorne, a week after a dolphin died of bird flu on South Australia's Fleurieu Peninsula.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🛰️ SPACE FIRST · INDIA ATTEMPTS ITS FIRST GEOSYNCHRONOUS EARTH-IMAGING LAUNCH",
-    "{{SCI_1_HEADLINE}}": "ISRO Attempts a Milestone Launch, Sending Its First Imaging Satellite Toward Geosynchronous Orbit",
-    "{{SCI_1_SUMMARY}}": "India's space agency ISRO launched its GSLV-F17 rocket carrying the EOS-05 Earth observation satellite in the early hours of Friday, aiming to place a satellite in geosynchronous orbit for the first time in the country's history — a feat ISRO has never previously pulled off — with the 2,367kg spacecraft designed to keep a high, steady watch over the same patch of Earth for continuous imaging.",
+    "{{SCI_1_FLAG}}": "🐾 PALAEONTOLOGY · THE 'AMERICAN CHEETAH' WASN'T A CHEETAH",
+    "{{SCI_1_HEADLINE}}": "Ancient DNA Reveals the Extinct 'American Cheetah' Was Actually a Fish-Eating Cousin of the Puma",
+    "{{SCI_1_SUMMARY}}": "A UC Santa Cruz-led study analysing ancient DNA and isotopes from fossils as far north as the Yukon has found that Miracinonyx trumani, long nicknamed the 'American cheetah,' is genetically closest to the puma, not true cheetahs, and that its northern Arctic population specialised in eating salmon and other fish to survive — extending the species' known range 20 degrees of latitude further north than previously thought.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "Google Just Put a Voice Assistant Inside Gmail and Docs — A Genuinely Low-Effort Way to Try AI On the Tools",
-    "{{INSIGHT_BODY}}": "Google this week rolled out conversational AI voice features directly inside Gmail, Docs and Keep, letting you dictate a message, ask a question about your inbox, or draft a document just by talking, without downloading a separate chatbot app. For a small trades business that hasn't touched AI yet, that's a much lower bar than it sounds: no new software, no learning curve, no bill — just talking to tools you already have open every day. The obvious use is a quote or job note dictated between jobs while your hands are still dirty, or a client email drafted by voice while you're driving between sites (hands-free, parked, or via a passenger — never while driving). It won't replace your invoicing software, but as a way to actually start using AI rather than reading about it, talking to Gmail is about as close to zero-risk as it gets.",
+    "{{INSIGHT_TITLE}}": "Microsoft Just Cut AI Transcription Prices 72% — A Cheap Way to Turn Site Voice Notes Into Paperwork",
+    "{{INSIGHT_BODY}}": "Microsoft's newest speech-to-text model dropped to 10 cents an audio hour this week, down from 36 cents, while adding better accuracy, speaker separation and word-level timestamps across 60 languages. That price drop matters more than it sounds for a small trades business: transcription is the unglamorous engine behind a lot of AI tools you might already be using or considering — voice memos turned into job notes, a recorded site walk-through turned into a scope of works, or a phone call with a client turned into a written record of what was actually agreed. If you've held off on any app that promises to turn talk into text because the running cost felt uncertain, this is the kind of quiet infrastructure price cut that makes it cheaper to actually try. It won't write your quote for you, but it can save you twenty minutes of typing up notes after every site visit.",
 
     # Fun facts
-    "{{FACT_1}}": "The first commercial sunscreen was cooked up in a backyard in Adelaide in 1932, when chemist H.A. Milton Blake used a kerosene heater to brew batches of French-perfumed 'sunburn vanishing cream' — his small operation grew into Hamilton Laboratories, which still makes sunscreen today.",
-    "{{FACT_2}}": "The safety pin was invented in 1849 by New York mechanic Walter Hunt, who twisted a length of brass wire while trying to think of a way to pay off a $15 debt — he sold the patent rights for just $400 and never made another cent from an invention that's still unchanged in every sewing kit today.",
-    "{{FACT_3}}": "Nobody actually knows who invented the stubby holder — Australians have claimed it since at least the 1970s, with rival stories crediting a fisherman insulating his beer with old drink cans and a 1980s pioneer who first used wetsuit neoprene, and the true inventor will probably never be settled.",
+    "{{FACT_1}}": "Duct tape was invented in 1942 by Permacel, a division of Johnson & Johnson, to make a waterproof tape the US military could use to quickly reseal ammunition cases in the field — it was originally called 'duck tape' for its cotton duck-cloth backing, and wasn't put to work sealing actual air ducts until well after the war ended.",
+    "{{FACT_2}}": "The cigarette lighter socket found in almost every ute and van today was standardised in the 1920s purely for lighting cigarettes in the dash — it only became the default 12-volt power socket for phone chargers, tyre inflators and fridges decades later, essentially by accident, because the plug shape was already everywhere.",
+    "{{FACT_3}}": "The world's first webcam wasn't built for video calls — in 1991, computer scientists at Cambridge University pointed a camera at a coffee pot in another room and streamed the image to their desks, so they wouldn't waste a walk down the hall only to find it empty.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the hot water system installer's small business never run cold?",
-    "{{JOKE_PUNCHLINE}}": "Because he never let a quote go lukewarm — every job got followed up before it had the chance to cool off.",
+    "{{JOKE_SETUP}}": "A bore and water-well driller was asked how his small business always managed to find water on blocks where three other contractors had already given up and gone home.",
+    "{{JOKE_PUNCHLINE}}": "He said it wasn't a lucky divining rod — it was refusing to lock in a fixed price until after the test hole came back clean.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"When you can do the common things in life in an uncommon way, you will command the attention of the world.\"",
-    "{{CLOSING_ATTR}}": "— George Washington Carver",
-    "{{CLOSING_MESSAGE}}": "It's Friday in Carrum Downs, with just a medium chance of an early shower before a wet, blustery spell rolls through the weekend and into Monday — worth getting outdoor jobs wrapped up today if you can. Over in Cairo, Xi Jinping's first visit to Egypt in a decade is reshaping the week's world news, while closer to home, business owners scanning banknotes with blue lights over a counterfeit cash surge is a timely reminder to keep an eye on what's coming across the counter this week.",
+    "{{CLOSING_QUOTE}}": "\"What lies behind us and what lies ahead of us are tiny matters compared to what lives within us.\"",
+    "{{CLOSING_ATTR}}": "— Ralph Waldo Emerson",
+    "{{CLOSING_MESSAGE}}": "It's a wet, blustery Saturday in Carrum Downs, with a chance of a severe thunderstorm this morning and afternoon before easing tonight — worth keeping half an eye on the radar if you're on the tools outdoors. Overnight, the rescue of two workers alive from a Nepal hydropower tunnel nine days on is the kind of story worth pausing on, a reminder of what patient, methodical work can still pull off against long odds.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
