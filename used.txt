@@ -1412,3 +1412,14 @@ JOKE: Why did the hot water system installer's small business never run cold?
 INSIGHT: Google Just Put a Voice Assistant Inside Gmail and Docs — A Genuinely Low-Effort Way to Try AI On the Tools
 QUOTE: "When you can do the common things in life in an uncommon way, you will command the attention of the world." — George Washington Carver
 ---
+
+DATE: Saturday, 05 September 2026
+SCIENCE: UC Santa Cruz-led ancient DNA study finds the extinct American cheetah (Miracinonyx trumani) was actually a fish-eating cousin of the puma, not a true cheetah, Current Biology, published 4 September 2026
+ROBOTICS: US NHTSA opens a federal Office of Defects Investigation into Tesla's steering-wheel-free Cybercab robotaxi, a day after its Austin launch, published 4 September 2026
+FACT: Duct tape was invented in 1942 by Permacel, a division of Johnson & Johnson, to make a waterproof tape the US military could use to quickly reseal ammunition cases in the field, it was originally called duck tape for its cotton duck-cloth backing, and wasn't put to work sealing actual air ducts until well after the war ended.
+FACT: The cigarette lighter socket found in almost every ute and van today was standardised in the 1920s purely for lighting cigarettes in the dash, it only became the default 12-volt power socket for phone chargers, tyre inflators and fridges decades later, essentially by accident, because the plug shape was already everywhere.
+FACT: The world's first webcam wasn't built for video calls, in 1991 computer scientists at Cambridge University pointed a camera at a coffee pot in another room and streamed the image to their desks, so they wouldn't waste a walk down the hall only to find it empty.
+JOKE: A bore and water-well driller was asked how his small business always managed to find water on blocks where three other contractors had already given up and gone home.
+INSIGHT: Microsoft Just Cut AI Transcription Prices 72% — A Cheap Way to Turn Site Voice Notes Into Paperwork
+QUOTE: "What lies behind us and what lies ahead of us are tiny matters compared to what lives within us." — Ralph Waldo Emerson
+---
