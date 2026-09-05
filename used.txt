@@ -1423,3 +1423,14 @@ JOKE: A bore and water-well driller was asked how his small business always mana
 INSIGHT: Microsoft Just Cut AI Transcription Prices 72% — A Cheap Way to Turn Site Voice Notes Into Paperwork
 QUOTE: "What lies behind us and what lies ahead of us are tiny matters compared to what lives within us." — Ralph Waldo Emerson
 ---
+
+DATE: Sunday, 06 September 2026
+SCIENCE: LUX-ZEPLIN dark matter detector records a single unexplained particle collision, a 2.6-sigma hint of a heavier-than-expected WIMP, 1.5km underground in a former South Dakota gold mine, reported early September 2026
+ROBOTICS: Humanoid robot maker Figure signs a $3.5 billion compute deal with Nscale (scaling to over $6 billion) to deploy up to 100,000 Nvidia Vera Rubin GPUs training its Helix AI models, published 3 September 2026
+FACT: Pierre de Fermat scribbled his famous theorem in the margin of a book in 1637, claiming he had a proof too large to fit — it took 358 years and Andrew Wiles's seven-year effort to finally prove it in 1994, and this week Anthropic says its Claude model produced the first fully computer-checked version of that proof, running to 13 million lines of code.
+FACT: The LUX-ZEPLIN dark matter detector sits 1.5 kilometres underground in a former gold mine in South Dakota, submerged in 10 tonnes of liquid xenon and shielded by a mountain of rock, purely so cosmic rays can't drown out the one-in-a-trillion chance of spotting a genuine dark matter particle colliding with an atom.
+FACT: The term 'blue-collar' dates to 1920s America, when manual labourers wore hard-wearing chambray or denim work shirts — dyed blue partly because it hid dirt and grease better than the white dress shirts worn by office workers — giving rise to the blue-collar/white-collar divide that's still used almost a century later.
+JOKE: A carpet cleaner was asked why his small business never had a single unhappy customer, no matter how bad the stain.
+INSIGHT: Google's Gemini Spark Can Now Manage a Whole Photo Library — Point the Same Idea at Job Photos Instead of Holiday Snaps
+QUOTE: "Nothing in this world can take the place of persistence." — Calvin Coolidge
+---
