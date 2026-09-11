@@ -1489,3 +1489,14 @@ JOKE: Why did the termite inspector's small business partner ask him to look ove
 INSIGHT: Rates Are Poised to Rise Again — How AI Can Help You Build a Cost-Escalation Clause Into Every Quote
 QUOTE: "If I have seen further, it is by standing on the shoulders of giants." — Isaac Newton
 ---
+
+DATE: Saturday, 12 September 2026
+SCIENCE: Physicists suggest time itself may carry a tiny fundamental uncertainty based on quantum collapse models, setting an ultimate limit on clock precision — published ScienceDaily 10 September 2026
+ROBOTICS: Hexagon Robotics and Schaeffler open a purpose-built "Humanoid Gym" to train the AEON humanoid robot on real factory tasks ahead of a planned 1,000+ unit deployment — published 11 September 2026
+FACT: The Phillips-head screw was designed in the 1930s by Henry F. Phillips so a power driver would "cam out" once it hit the right torque, preventing overtightening on the Cadillac production line that first adopted it in 1936.
+FACT: A "second" is officially defined by 9,192,631,770 oscillations of a caesium-133 atom, and the best caesium fountain clocks drift by less than one second over roughly 300 million years.
+FACT: The chocolate chip cookie was an accident — in 1938 Ruth Wakefield of the Toll House Inn substituted chopped Nestlé chocolate expecting it to melt into the dough; it held its shape instead, and Nestlé later paid her with a lifetime supply of chocolate for the recipe.
+JOKE: Why did the bouncy castle hire operator never worry about a quiet winter?
+INSIGHT: Your Documents Just Got Easier to Find — Turn ChatGPT's New Dropbox and SharePoint Search Into an Instant Job Paper Trail
+QUOTE: "I would rather have questions that can't be answered than answers that can't be questioned." — Richard Feynman
+---
