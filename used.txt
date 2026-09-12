@@ -1500,3 +1500,14 @@ JOKE: Why did the bouncy castle hire operator never worry about a quiet winter?
 INSIGHT: Your Documents Just Got Easier to Find — Turn ChatGPT's New Dropbox and SharePoint Search Into an Instant Job Paper Trail
 QUOTE: "I would rather have questions that can't be answered than answers that can't be questioned." — Richard Feynman
 ---
+
+DATE: Sunday, 13 September 2026
+SCIENCE: A 66-million-year-old feather preserved inside fossilised dinosaur droppings — the first fossil feather ever found in a coprolite — may explain why some bird lineages survived the asteroid impact, Field Museum, published Current Biology, 11 September 2026
+ROBOTICS: UltraSense Systems launches an ultrasound-based tactile sensing platform that reads touch through a protected sub-surface layer, aimed at humanoid hands and industrial grippers that need to survive years of contact without wearing out — published The Robot Report, 12 September 2026
+FACT: The Bab el-Mandeb Strait separating Yemen from the Horn of Africa narrows to about 29 kilometres across at its tightest point, yet roughly 10% of the world's seaborne oil trade passes through it — which is why this week's Houthi advance into the strait rattled energy markets far beyond Yemen's borders.
+FACT: The term "BRICS" wasn't coined by a diplomat but by Goldman Sachs economist Jim O'Neill in a 2001 research paper grouping Brazil, Russia, India and China as future growth engines — the acronym outlived the paper and grew into the 10-plus-nation bloc that met in New Delhi this week.
+FACT: Australia's 000 emergency number was chosen in 1961 partly because "0" sits at the very end of a rotary dial, making it the easiest digit to find by feel in the dark or in a panic — a design logic that still shapes how seriously any outage affecting it is taken today.
+JOKE: Why did the blinds and curtains installer's small business never miss a deadline?
+INSIGHT: Ask, Don't Build: What Slack's New Live Dashboards Mean for a Business Your Size
+QUOTE: "Inaction breeds doubt and fear. Action breeds confidence and courage." — Dale Carnegie
+---
