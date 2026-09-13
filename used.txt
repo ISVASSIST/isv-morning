@@ -1511,3 +1511,14 @@ JOKE: Why did the blinds and curtains installer's small business never miss a de
 INSIGHT: Ask, Don't Build: What Slack's New Live Dashboards Mean for a Business Your Size
 QUOTE: "Inaction breeds doubt and fear. Action breeds confidence and courage." — Dale Carnegie
 ---
+
+DATE: Monday, 14 September 2026
+SCIENCE: Physicists confirm the optical Magnus effect — a laser beam pushing a trapped calcium ion sideways — for the first time, published Physical Review Letters / ScienceDaily 12 September 2026
+ROBOTICS: Lyte, founded by ex-Apple Face ID engineers, raises $165M Series C at a $1.6B valuation to build custom perception chips and sensors for robots — published The Robot Report, 2 September 2026
+FACT: The Java Sea, where a ferry carrying 243 people capsized this week, has an average depth of only about 46 metres — shallow enough that its notoriously sudden squalls can still overturn a large vessel in minutes.
+FACT: Kalgoorlie's Super Pit — where an $18 million mining shovel caught fire this week — is Australia's largest open-cut gold mine, roughly 3.5km long and 1.5km wide, and easily visible from space.
+FACT: The "optical Magnus effect" confirmed by physicists this week is named after the same 19th-century effect that curves a spinning soccer or cricket ball — only here it's a laser beam nudging a single atom sideways by a few hundred nanometres.
+JOKE: Why did the skylight installer never worry about a rainy day?
+INSIGHT: Real-Time AI Voice Calls Just Got Cheap Enough to Actually Use
+QUOTE: "The science of today is the technology of tomorrow." — Edward Teller
+---
