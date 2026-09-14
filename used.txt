@@ -1522,3 +1522,14 @@ JOKE: Why did the skylight installer never worry about a rainy day?
 INSIGHT: Real-Time AI Voice Calls Just Got Cheap Enough to Actually Use
 QUOTE: "The science of today is the technology of tomorrow." — Edward Teller
 ---
+
+DATE: Tuesday, 15 September 2026
+SCIENCE: A wearable device (U-RHYTHM) reveals nighttime hormone surges exposing a frequently missed cause of high blood pressure (primary aldosteronism) — UK-led study (Bristol/Manchester/Bergen/Stockholm/Athens), published ScienceDaily 13 September 2026
+ROBOTICS: Unitree launches the G1+, a fully upgraded version of its G1 humanoid robot with six upgrades across motion, perception and battery life — announced 14 September 2026
+FACT: The Bessemer process, patented by Henry Bessemer in 1856, was the first method to mass-produce steel cheaply — blasting air through molten pig iron to burn off impurities in minutes rather than the better part of a day's blacksmith labour — the reason steel could become the backbone of bridges, rail and blast furnaces everywhere, including the one that just went cold for good at Whyalla this week.
+FACT: Singapore's fertility rate has fallen to just 0.87 births per woman, against the roughly 2.1 a developed economy needs to hold its population steady — a shortfall serious enough that the government is now offering close to $55,000 in support per child.
+FACT: The diplomatic train that dodged a Russian drone near the Ukraine-Poland border this week left its station ahead of schedule specifically to avoid being targeted — the same tactic used to move VIPs through active front lines since at least the First World War.
+JOKE: A commercial window tinting installer was asked how his small business always kept every client happy, even in the middle of a Melbourne heatwave.
+INSIGHT: Anthropic Just Launched an AI Tool for Financial Advisers — Your Bookkeeping Software Already Has the Trades Version
+QUOTE: "Today's accomplishments were yesterday's impossibilities." — Robert H. Schuller
+---
