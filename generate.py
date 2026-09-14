@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Monday, 14 September 2026",
+    "{{DATE}}": "Tuesday, 15 September 2026",
 
-    # Weather — Carrum Downs VIC, 5-day from Mon 14 Sep (BOM Melbourne-area forecast)
-    "{{WEATHER_1}}": "MON 14 SEP · 🌤️ Mostly sunny, medium chance of a shower late afternoon and evening, northerly winds 30–45km/h decreasing 20–30km/h · 14–23°C",
-    "{{WEATHER_2}}": "TUE 15 SEP · 🌧️ Cloudy, high chance of showers most likely in the morning, winds N–NW 20–30km/h turning W 15–20km/h · 11–16°C",
-    "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "WED 16 SEP · ⛈️ Partly cloudy, very high chance of showers with possible small hail in the afternoon and evening, W turning SW 25–35km/h · 9–13°C",
+    # Weather — Carrum Downs VIC, 5-day from Tue 15 Sep (BOM Melbourne-area forecast)
+    "{{WEATHER_1}}": "TUE 15 SEP · ⛅ Cloudy with a slight chance of a shower near the ranges, mostly dry on the coast, winds light becoming N–NW 15–25km/h · 9–15°C",
+    "{{WEATHER_2}}": "WED 16 SEP · ☀️ Sunny, winds northerly 20–30km/h · 8–17°C",
+    "{{WEATHER_2_CLASS}}": "",
+    "{{WEATHER_3}}": "THU 17 SEP · 🌦️ Partly cloudy, medium chance of showers, winds N–NW shifting SW during the day · 9–16°C",
     "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "THU 17 SEP · ⛅ Sunny, slight chance of a shower easing through the day · 9–15°C",
-    "{{WEATHER_5}}": "FRI 18 SEP · ☀️ Sunny and warming up, little to no chance of rain · 11–21°C",
-    "{{WEATHER_ALERT}}": "No severe weather warning current for Victoria — a mild, mostly dry start to the week gives way to a wetter, cooler midweek change with possible small hail Wednesday, before clearing and warming again by Friday.",
+    "{{WEATHER_4}}": "FRI 18 SEP · 🌧️ Cloudy, high chance of showers most likely in the morning, winds N–NW easing then W 15–20km/h · 10–15°C",
+    "{{WEATHER_5}}": "SAT 19 SEP · ⛈️ Partly cloudy, high chance of showers with possible small hail in the afternoon, winds W turning SW 25–35km/h · 9–14°C",
+    "{{WEATHER_ALERT}}": "No severe weather warning current for Victoria — a dry, mild start to the week gives way to increasing showers from Thursday, with possible small hail by Saturday afternoon.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇮🇩 JAVA SEA · FERRY CAPSIZES, ABOUT 130 MISSING IN INDONESIA'S WORST MARITIME DISASTER THIS YEAR",
-    "{{WORLD_1_HEADLINE}}": "Indonesian Ferry Capsizes in the Java Sea, Leaving About 130 Missing After 243 People Were Aboard",
-    "{{WORLD_1_SUMMARY}}": "The passenger ferry Virgo Transport 8 lost contact and capsized in rough seas early Sunday while sailing from Surabaya to Banjarmasin, with waves reported up to three metres before the captain's distress call. Six bodies have been recovered and more than 100 survivors rescued by nearby commercial vessels and navy warships, with search operations continuing in the shallow, squall-prone Java Sea.",
-    "{{WORLD_1_URL}}": "https://www.npr.org/2026/09/13/g-s1-143114/about-130-missing-after-indonesian-passenger-ship-overturns",
+    "{{WORLD_1_FLAG}}": "🇺🇦 UKRAINE · RUSSIAN DRONE HITS TRAIN NEAR POLISH BORDER MINUTES AFTER A DIPLOMATIC DELEGATION PASSED THROUGH",
+    "{{WORLD_1_HEADLINE}}": "Russian Drone Strikes a Train Near the Ukraine-Poland Border Just After a Delegation Including Boris Johnson Rolled Through",
+    "{{WORLD_1_SUMMARY}}": "A diplomatic train carrying former UK PM Boris Johnson, former Swedish PM Carl Bildt and EU security advisers left Yahodyn station ahead of schedule after a conference in Kyiv — narrowly avoiding a Russian drone that struck the platform and track minutes later. A separate train still at the station, carrying former CIA director David Petraeus, was also hit; no casualties were reported, but the strike underlines how close Western officials are now operating to the front line.",
+    "{{WORLD_1_URL}}": "https://www.npr.org/2026/09/14/g-s1-143140/russian-drone-hits-train-near-ukraine-poland-border-soon-after-dignitaries-passed-through/",
 
-    "{{WORLD_2_FLAG}}": "🇺🇦 UKRAINE · RUSSIA HITS POWER GRID OVERNIGHT AS KYIV STRIKES A RUSSIAN OIL REFINERY",
-    "{{WORLD_2_HEADLINE}}": "Russia Pounds Ukrainian Power Stations Overnight While Kyiv's Drones Strike a Russian Oil-Refining Hub",
-    "{{WORLD_2_SUMMARY}}": "Russia launched a fresh wave of drones and missiles at Ukrainian energy infrastructure overnight, while Ukrainian forces struck an oil-refining hub deep inside Russian territory in a tit-for-tat exchange now well into the war's fifth year, as US envoys continue shuttling between Moscow and Kyiv trying to broker fresh talks.",
-    "{{WORLD_2_URL}}": "https://www.bloomberg.com/news/articles/2026-09-13/russia-strikes-ukraine-power-sites-as-kyiv-targets-refining-hub",
+    "{{WORLD_2_FLAG}}": "🇨🇳 AI DIPLOMACY · BEIJING CALLS ANTHROPIC CEO'S AI WARNING 'FEARMONGERING' AHEAD OF THE TRUMP-XI SUMMIT",
+    "{{WORLD_2_HEADLINE}}": "China Rejects Anthropic CEO's Call to Curb Its AI Development as 'Fearmongering'",
+    "{{WORLD_2_SUMMARY}}": "An essay from Anthropic's Dario Amodei warning that a Chinese lead in AI would pose 'grave danger' to the world drew a sharp rebuke from Beijing's Foreign Ministry, which accused the industry of stoking Cold War-style panic days before Xi Jinping is due in Washington for a September 24 summit with Trump on trade, AI chips and Taiwan. A reminder that the rules governing which AI tools you get to use are being fought over well above your pay grade.",
+    "{{WORLD_2_URL}}": "https://www.bloomberg.com/news/articles/2026-09-14/china-rejects-ai-fearmongering-after-amodei-urges-slowdown",
 
     # Economics
-    "{{ECON_1_FLAG}}": "📈 RATES · RBA HIKE ODDS NEAR 80% AS HAWKISH SIGNALS AND THE OIL SHOCK COLLIDE",
-    "{{ECON_1_HEADLINE}}": "Markets Now Price Close to an 80% Chance of an RBA Rate Hike This Month as Inflation and Oil Both Run Hot",
-    "{{ECON_1_SUMMARY}}": "The Australian dollar pushed toward a four-month high this week after RBA Deputy Governor Andrew Hauser flagged that the September board meeting will focus squarely on whether to raise rates again, with markets now pricing close to an 80% chance of a hike to 4.60% on 29 September. A hike would add further pressure to overdraft and equipment-finance rates just as fuel costs bite into margins.",
-    "{{ECON_1_URL}}": "https://www.fxstreet.com/news/australian-dollar-softens-to-near-07150-us-cpi-inflation-data-looms-202609110251",
+    "{{ECON_1_FLAG}}": "📈 RATES · INFLATION NOW 'PROBLEM NUMBER ONE' AS RBA HIKE ODDS TOP 75%",
+    "{{ECON_1_HEADLINE}}": "RBA Says Inflation Is Economic Problem Number One as Markets Price a 75%+ Chance of a Rate Hike This Month",
+    "{{ECON_1_SUMMARY}}": "With the cash rate already lifted three times this year, the Reserve Bank is signalling inflation remains its central concern, and markets are now pricing at least a 75% chance of a hike to a 15-year high of 4.6% at the September 29 board meeting. NAB, Deutsche Bank, UBS and Morgan Stanley have all shifted to forecasting a hike this month rather than November, which flows straight through to overdraft and equipment-finance rates.",
+    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-09-15/rba-inflation-economy-interest-rates/107151344",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL · PETROL HITS $2.11/L AS STRAIT OF HORMUZ TANKER ATTACKS RIPPLE THROUGH TO THE BOWSER",
-    "{{ECON_2_HEADLINE}}": "Australian Petrol Climbs to $2.11 a Litre, Up From $1.55 in July, as Tanker Attacks Rattle the Strait of Hormuz",
-    "{{ECON_2_SUMMARY}}": "Average unleaded prices have climbed to $2.11 a litre nationally as both sides in the Middle East conflict target oil tankers in the Strait of Hormuz, pushing crude back above US$100 a barrel. Economists warn the pain isn't over yet, with further pump-price rises still working their way through the supply chain — worth locking in a fuel surcharge on quotes now rather than eating the cost later.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL · PUMP PRICES SET TO CLIMB FURTHER AS MIDDLE EAST CONFLICT ESCALATES",
+    "{{ECON_2_HEADLINE}}": "Australian Fuel Prices Expected to Rise Again as Middle East Conflict Escalates",
+    "{{ECON_2_SUMMARY}}": "Average unleaded is already sitting around $2.11 a litre nationally, and analysts warn there's more to come as the conflict widens and crude holds above US$100 a barrel — only about a third of the recent spike in landed fuel costs has reached the bowser so far. Worth building a fuel surcharge into quotes now rather than absorbing another jump in a fortnight.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🍏 APPLE · SIRI FINALLY GETS ITS AI OVERHAUL AS IOS 27 ROLLS OUT TODAY",
-    "{{TECH_1_HEADLINE}}": "Apple's Long-Awaited Siri AI Overhaul Rolls Out Today in iOS 27, Starting in English Only",
-    "{{TECH_1_SUMMARY}}": "iOS 27 lands today with the AI-rebuilt Siri Apple has spent two years promising — able to see what's on your screen, act across apps and draw on your calendar and email with permission — though it starts in English only, with daily usage caps and a paid 'expanded access' tier flagged for later. Worth a look once it's on your phone, if only to see how far behind ChatGPT or Claude it still is for actual work tasks.",
-    "{{TECH_1_URL}}": "https://www.macrumors.com/2026/09/09/apple-siri-ai-usage-limits/",
+    "{{TECH_1_FLAG}}": "💼 AI IN FINANCE · ANTHROPIC LAUNCHES CLAUDE FOR FINANCIAL ADVISERS, WIRED DIRECTLY INTO PORTFOLIO DATA",
+    "{{TECH_1_HEADLINE}}": "Anthropic Launches 'Claude for Financial Advisors', Connecting Its AI Directly to Real Client Portfolios",
+    "{{TECH_1_SUMMARY}}": "The new tool plugs Claude straight into investment analytics and wealth-management software from BlackRock, Charles Schwab and Addepar, so advisers can prep for client meetings and review portfolios without re-typing numbers into a chat window. The bigger trend for a small operator: 'wire the AI into your real numbers, not just a chat box' is already available through everyday bookkeeping software like Xero — you don't need a bespoke version built for your trade to start using it.",
+    "{{TECH_1_URL}}": "https://money.usnews.com/investing/news/articles/2026-09-14/anthropic-targets-financial-advisers-with-new-claude-tool",
 
-    "{{TECH_2_FLAG}}": "🎙️ VOICE AI · OPENAI'S NEW REAL-TIME VOICE MODEL COSTS 5 CENTS A MINUTE",
-    "{{TECH_2_HEADLINE}}": "OpenAI Opens Up GPT-Live-1, a Real-Time Voice AI Model, to Developers at 5 Cents a Minute",
-    "{{TECH_2_SUMMARY}}": "OpenAI has released GPT-Live-1 through its API, a 'full-duplex' voice model that listens and talks at the same time rather than waiting for you to finish — priced at just 5 US cents a minute. It's the kind of building block that's making a decent AI phone-answering or booking assistant a realistic, cheap option for a small operation, not just a call centre.",
+    "{{TECH_2_FLAG}}": "📞 AI RECEPTIONISTS · AUSTRALIAN-ACCENT AI PHONE AGENTS ARE NOW CHEAP ENOUGH FOR A ONE-TRUCK BUSINESS",
+    "{{TECH_2_HEADLINE}}": "AI Phone-Answering Services With Natural Australian Accents Are Maturing Fast for Small Trades Businesses",
+    "{{TECH_2_SUMMARY}}": "A wave of Australian-hosted AI receptionist services now start from under $100 a month, answering calls around the clock, qualifying jobs, sending SMS follow-ups and booking straight into trade-specific software like ServiceM8, simPRO or AroFlo. The catch is where the call audio actually gets processed — an obvious overseas accent still makes plenty of callers hang up, and routing audio offshore can raise its own privacy questions, so it's worth asking any provider exactly where the data goes before you sign up.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "👁️ ROBOT PERCEPTION · EX-APPLE FACE ID ENGINEERS RAISE $165M TO GIVE ROBOTS A TRUSTWORTHY VIEW OF THE WORLD",
-    "{{ROBOT_1_HEADLINE}}": "Startup Founded by Apple's Face ID Engineers Raises $165M to Build Robots' Sense of Sight",
-    "{{ROBOT_1_SUMMARY}}": "Lyte, founded by engineers who built Apple's Face ID sensors, has raised a $165 million Series C at a $1.6 billion valuation to build custom perception chips and sensors that let robots reliably sense where they are and what's moving around them. Better, cheaper perception hardware is exactly the unglamorous layer that decides whether a robot arm or mobile robot can be trusted on a real, cluttered factory or warehouse floor rather than just a demo stage.",
-    "{{ROBOT_1_URL}}": "https://www.therobotreport.com/lyte-raises-165m-help-robots-better-sense-their-surroundings/",
+    "{{ROBOT_1_FLAG}}": "🦾 HUMANOID ROBOTS · UNITREE UPGRADES ITS G1 HUMANOID TO THE G1+, SHARPENING PERCEPTION AND BATTERY LIFE",
+    "{{ROBOT_1_HEADLINE}}": "Unitree Launches the G1+, a Fully Upgraded Version of Its Popular Humanoid Robot",
+    "{{ROBOT_1_SUMMARY}}": "The refresh brings six upgrades across motion performance, perception and intelligence — stronger neck and joint movement, better visual and tactile sensing, longer battery life and improved far-field voice pickup so the robot can be commanded across a noisy work floor. It's another sign the humanoid robot market is iterating like a consumer electronics category now, not a research demo — hardware generations arriving every few months rather than every few years.",
+    "{{ROBOT_1_URL}}": "https://panews.io/articles/01a09ef1-21bc-762f-a419-1d09651f7797",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "$18 Million Mining Shovel Gutted by Fire at Kalgoorlie's Super Pit, Operator Escapes Unhurt",
-    "{{AUS_1_SUMMARY}}": "WorkSafe WA is investigating after fire engulfed the cab of a 750-tonne Komatsu PC8000 shovel — one of the largest mechanical shovels in the world — during a night shift at Kalgoorlie's Super Pit on 9 September. The operator escaped without injury, but the $18 million machine, due for retirement in November anyway, is a write-off.",
-    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-13/fire-destroys-cab-of-shovel-at-kalgoorlie-super-pit/107142366",
+    "{{AUS_1_HEADLINE}}": "Whyalla Steelworks' Blast Furnace Confirmed Permanently Closed, About 500 Jobs to Go",
+    "{{AUS_1_SUMMARY}}": "Administrators confirmed on Monday the furnace will never be relit, ending months of failed restart attempts since an unplanned shutdown in April. A $10.2 million support package has been announced for the roughly 500 employees and 100-plus labour-hire workers affected, while the sale of the wider steelworks to Jindal Steel or M Resources remains on track by year's end.",
+    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-14/hundreds-of-jobs-to-go-at-whyalla-steelworks/107149844",
 
-    "{{AUS_2_HEADLINE}}": "Balcony Solar Set to Become Legal, Opening Rooftop-Free Solar to Millions of Renters",
-    "{{AUS_2_SUMMARY}}": "Australia's energy ministers have agreed to explore a pathway for 'plug-in' balcony solar, which could let apartment dwellers and renters — almost 3 million households — plug a small solar panel straight into a power point for the first time. Campaigners want a firm timeline by December on when the ban actually lifts.",
+    "{{AUS_2_HEADLINE}}": "SA Health Staffer Reprimanded for Snooping on AFL Legend Tony Modra's Medical Records",
+    "{{AUS_2_SUMMARY}}": "One of three SA Health employees investigated for inappropriately accessing Modra's records after his serious truck crash injury in June has been formally reprimanded, with two more investigations still open. A pointed reminder that any business holding client or patient data needs a genuine access log, not just a password.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "World-First Trial Finds Floating Wetlands Cut a Phillip Island Wastewater Lagoon's Emissions by 30%",
-    "{{VIC_1_SUMMARY}}": "A two-year RMIT, Westernport Water and CSIRO trial found a 330-square-metre floating garden of native reeds and sedges cut a wastewater lagoon's carbon dioxide emissions by up to 36%, methane by up to 66% and nitrogen by 18%, compared with an untreated lagoon — a low-tech fix with obvious appeal for any business running its own wastewater ponds.",
+    "{{VIC_1_HEADLINE}}": "Melbourne's Auction Clearance Rate Holds Above 60%, Among the Strongest of Any Australian Capital",
+    "{{VIC_1_SUMMARY}}": "Melbourne's weekly clearance rate sat at roughly 64% heading into the weekend, comfortably ahead of the sub-52% national average, as buyers keep moving despite the prospect of another rate rise this month — a sign the local property and renovation pipeline is still healthy even while household budgets tighten elsewhere.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔬 QUANTUM PHYSICS · A LASER'S SIDEWAYS \"CURVEBALL\" ON A SINGLE ATOM, CONFIRMED FOR THE FIRST TIME",
-    "{{SCI_1_HEADLINE}}": "Physicists Catch a Laser Beam Pushing an Atom Sideways for the First Time",
-    "{{SCI_1_SUMMARY}}": "Researchers trapped a single calcium ion and fired a tightly focused laser at it, confirming a decades-old prediction called the optical Magnus effect — the beam interacts most strongly with the atom slightly off-centre, the same physics that curves a spinning table-tennis ball through the air. It matters beyond curiosity: because lasers are used to control quantum computer qubits, the effect could introduce errors — or offer a new way to link qubits together.",
+    "{{SCI_1_FLAG}}": "🔬 CARDIOLOGY · A WEARABLE PATCH CATCHES A HIDDEN CAUSE OF HIGH BLOOD PRESSURE THAT ROUTINE TESTS MISS",
+    "{{SCI_1_HEADLINE}}": "Scientists Find a Hidden Cause of High Blood Pressure That Routine Tests Can Miss",
+    "{{SCI_1_SUMMARY}}": "A UK-led team fitted 60 patients with a waist-worn device called U-RHYTHM, sampling fluid beneath the skin every 20 minutes for 24 hours, and found bursts of hormone production overnight — while asleep — in people with a condition called primary aldosteronism, which affects up to one in five people with high blood pressure and is rarely caught by a single daytime blood test. It could shift hypertension diagnosis away from one-off pinpricks and towards tracking the body's rhythm over a full day and night.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "Real-Time AI Voice Calls Just Got Cheap Enough to Actually Use",
-    "{{INSIGHT_BODY}}": "OpenAI's new GPT-Live model talks and listens at the same time — no more waiting for you to finish a sentence — and it costs about 5 cents a minute through the API, roughly the price of the call itself. That's the kind of pricing that turns 'an AI answering the phone' from a novelty into something a two-person outfit could actually wire up to take bookings and rough quotes while you're on the tools, with a human doing the follow-up call once you're back at the desk.",
+    "{{INSIGHT_TITLE}}": "Anthropic Just Launched an AI Tool for Financial Advisers — Your Bookkeeping Software Already Has the Trades Version",
+    "{{INSIGHT_BODY}}": "Claude for Financial Advisors, launched this week, connects Anthropic's AI directly to real portfolio data from BlackRock, Schwab and Addepar so advisers stop re-typing numbers into a chat window and start asking questions about the actual figures. The same idea — wiring AI straight into your real numbers instead of a generic chatbot — is already sitting inside the bookkeeping software plenty of trades businesses already pay for, from Xero to MYOB. You don't need to wait for someone to build a 'tradie edition'; the AI copilot in your existing accounting software is the trades equivalent, and it's worth ten minutes this week finding out what yours can already do.",
 
     # Fun facts
-    "{{FACT_1}}": "The Java Sea, where a ferry carrying 243 people capsized this week, has an average depth of only about 46 metres — shallow enough that its notoriously sudden squalls can still overturn a large vessel in minutes.",
-    "{{FACT_2}}": "Kalgoorlie's Super Pit — where an $18 million mining shovel caught fire this week — is Australia's largest open-cut gold mine, roughly 3.5km long and 1.5km wide, and easily visible from space.",
-    "{{FACT_3}}": "The \"optical Magnus effect\" confirmed by physicists this week is named after the same 19th-century effect that curves a spinning soccer or cricket ball — only here it's a laser beam nudging a single atom sideways by a few hundred nanometres.",
+    "{{FACT_1}}": "The Bessemer process, patented by Henry Bessemer in 1856, was the first method to mass-produce steel cheaply — blasting air through molten pig iron to burn off impurities in minutes rather than the better part of a day's blacksmith labour. It's the reason steel could become the backbone of bridges, rail and blast furnaces everywhere, including the one that just went cold for good at Whyalla this week.",
+    "{{FACT_2}}": "Singapore's fertility rate has fallen to just 0.87 births per woman, against the roughly 2.1 a developed economy needs to hold its population steady — a shortfall serious enough that the government is now offering close to $55,000 in support per child, a reminder that a modern economy's biggest long-term problem can end up being its labour supply rather than its factories.",
+    "{{FACT_3}}": "The diplomatic train that dodged a Russian drone near the Ukraine-Poland border this week left its station ahead of schedule specifically to avoid being targeted — the same tactic used to move VIPs through active front lines since at least the First World War, when unmarked, unscheduled services were the safest way to move anyone worth targeting.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the skylight installer never worry about a rainy day?",
-    "{{JOKE_PUNCHLINE}}": "Because he'd already sealed the deal before the first drop fell.",
+    "{{JOKE_SETUP}}": "A commercial window tinting installer was asked how his small business always kept every client happy, even in the middle of a Melbourne heatwave.",
+    "{{JOKE_PUNCHLINE}}": "He said the secret was simple: never let the quote get too transparent before the job's actually locked in.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"The science of today is the technology of tomorrow.\"",
-    "{{CLOSING_ATTR}}": "— Edward Teller",
-    "{{CLOSING_MESSAGE}}": "It's a mild, mostly sunny start to the week around Carrum Downs, with the wetter, cooler change holding off until Wednesday — a good window to get outdoor jobs ticked off before then. Locally the week's news cuts both ways: another rate rise looks increasingly likely and fuel's not getting any cheaper, but voice AI and other practical tools are also getting cheap enough to actually save a trades business time, not just talk about it.",
+    "{{CLOSING_QUOTE}}": "\"Today's accomplishments were yesterday's impossibilities.\"",
+    "{{CLOSING_ATTR}}": "— Robert H. Schuller",
+    "{{CLOSING_MESSAGE}}": "It's a dry, mild start to the week around Carrum Downs, with showers building from Thursday and a chance of small hail by Saturday — a good window to get outdoor jobs done before then. Locally the week's news is a mixed bag: Whyalla's blast furnace has gone cold for good and another rate rise looks increasingly likely, but Melbourne's auction market is still humming along above 60%, and Tuesday's a fair day to make sure your own numbers — and your AI tools — are working as hard as you are.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
