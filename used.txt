@@ -1533,3 +1533,14 @@ JOKE: A commercial window tinting installer was asked how his small business alw
 INSIGHT: Anthropic Just Launched an AI Tool for Financial Advisers — Your Bookkeeping Software Already Has the Trades Version
 QUOTE: "Today's accomplishments were yesterday's impossibilities." — Robert H. Schuller
 ---
+
+DATE: Wednesday, 16 September 2026
+SCIENCE: Scientists are building a microscope powered by a quantum computer, combining electron microscopy with quantum computing to extract more information per electron while reducing sample damage — published ScienceDaily 12 September 2026
+ROBOTICS: Agility Robotics unveils Digit 5, a humanoid robot with new legs, upgraded batteries and a safety architecture that lets it work beside people with no physical barriers — published The Robot Report, 15 September 2026
+FACT: Agility Robotics' new Digit 5 humanoid, unveiled this week, is built to work within arm's reach of people with no safety cage at all — a shift only possible because collaborative-robot safety standards, which took regulators the better part of two decades to write for industrial arms, are now being adapted for robots that walk around on legs.
+FACT: The 159-litre oil barrel used to price every 'oil hits $100' headline traces back to 19th-century Pennsylvania producers, who simply grabbed whatever cask was lying around in bulk at the time — old herring barrels — meaning the unit behind today's oil market panic is a 160-year-old fish-packing measurement.
+FACT: Israel's Knesset is elected entirely by nationwide proportional representation with no local electorates at all, which is why a brand-new party like Gadi Eisenkot's Yashar, formed only this year, can leap to the top of the polls within months rather than needing years to win seats one district at a time.
+JOKE: A bricklayer was asked how his small business always kept every course dead straight, even on a job that had to be rushed.
+INSIGHT: Oil at $100-Plus a Barrel Isn't a One-Off Anymore — How AI Can Help You Reprice Before It Costs You
+QUOTE: "You miss 100% of the shots you don't take." — Wayne Gretzky
+---
