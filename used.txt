@@ -1555,3 +1555,14 @@ JOKE: A vinyl wrap installer was asked how his small business always kept every 
 INSIGHT: Anthropic Just Wired Claude Straight Into QuickBooks and HubSpot — Your Invoicing Software May Have Just Got a Free Upgrade
 QUOTE: "If you do build a great experience, customers tell each other about that." — Jeff Bezos
 ---
+
+DATE: Friday, 18 September 2026
+SCIENCE: NASA's New Horizons finds first evidence of liquid — most likely liquid nitrogen — recently flowing on Pluto's surface, SwRI-led study — covered ScienceDaily 16 September 2026
+ROBOTICS: China's D-Robotics closes a $400 million Series C, the country's largest robotics funding round in four years, to expand its Sunrise robot-chip lineup and a full-stack robot software platform — announced 17 September 2026
+FACT: Sweden elects its parliament using the 'modified Sainte-Laguë method', a proportional system specifically designed so the biggest party can't scoop up extra seats — which is exactly why this week's wafer-thin left-wing election win still leaves weeks of coalition haggling before anyone can actually govern.
+FACT: Liquid nitrogen can only exist on Earth in a narrow band between about -210°C and -196°C — so when NASA's New Horizons probe spotted signs of it recently flowing across Pluto's icy heart, it meant enough geothermal heat is escaping from 5.9 billion kilometres out to keep a liquid moving on one of the coldest surfaces in the solar system.
+FACT: The Golden Plains Wind Farm west of Geelong, about to double in size, is already the single largest wind farm anywhere in the Southern Hemisphere — and on its own supplies close to 9% of all the electricity Victoria uses in a year.
+JOKE: A concrete resurfacing contractor was asked how his small business always kept every quote rock solid, even when clients tried to talk him down on price.
+INSIGHT: Claude Just Got One Interface for Everything — Docs and Slides Are Now Built Straight Into the Chat
+QUOTE: "A goal properly set is halfway reached." — Zig Ziglar
+---
