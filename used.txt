@@ -441,6 +441,17 @@ FACT: FIFA World Cup 2026 is the first with 48 teams across 16 four-team groups 
 FACT: Concrete re-absorbs approximately 4 billion tonnes of CO₂ per year through natural carbonation — equivalent to around 43% of the carbon released during cement production
 JOKE: What do you call a tradie who finishes every job on time, under budget, and has all invoices paid before June 30?
 INSIGHT: AI-Powered Invoice Follow-Up: The Easiest Revenue You're Not Chasing
+
+DATE: Saturday, 19 September 2026
+SCIENCE: MIT-designed $100 pocket muon detector (CosmicWatch) reveals the constant stream of cosmic particles passing through everyone — covered ScienceDaily 17 September 2026
+ROBOTICS: China's Agibot overtakes Unitree as top global humanoid robot shipper, H1 2026 shipments up almost 300% year-on-year — reported roboticsandautomationnews.com 18 September 2026
+FACT: The Melbourne Cricket Ground, where this year's AFL Grand Final will be played on 26 September after Fremantle's stunning comeback win over Sydney, can hold more than 100,000 people — roughly double the entire population of Hobart.
+FACT: A shower of subatomic particles called muons, created when cosmic rays slam into Earth's upper atmosphere, is passing through your body at a rate of roughly one per second right now — completely harmless, and detectable with a hobbyist device costing about $100.
+FACT: The first CCTV system was installed in Germany in 1942 by Siemens engineer Walter Bruch, so military officials could watch V-2 rocket launches from a safe distance without risking a camera operator's life.
+JOKE: A security camera installer was asked how his small business always managed to win back a customer who'd started shopping around for a cheaper quote.
+INSIGHT: Claude Is Now Helping Write Its Own Next Version — What That Says About Handing Over Repeat Work
+QUOTE: "Everything you've ever wanted is on the other side of fear." — George Addair
+---
 QUOTE: "A ship in harbour is safe — but that is not what ships are built for." — John A. Shedd
 ---
 DATE: Saturday, 06 June 2026
