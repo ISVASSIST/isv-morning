@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Friday, 18 September 2026",
+    "{{DATE}}": "Saturday, 19 September 2026",
 
-    # Weather — Carrum Downs / Melbourne bayside, 5-day from Fri 18 Sep
-    "{{WEATHER_1}}": "FRI 18 SEP · 🌤️ Mostly sunny, patchy morning fog/frost near the hills easing by mid-morning, winds N–NW 15–25km/h · 7–22°C",
-    "{{WEATHER_2}}": "SAT 19 SEP · ☀️ Sunny, winds northerly 20–30km/h · 12–25°C",
+    # Weather — Carrum Downs / Melbourne bayside, 5-day from Sat 19 Sep
+    "{{WEATHER_1}}": "SAT 19 SEP · ☀️ Sunny, winds N–NW 25–35km/h easing W–NW in the afternoon · 12–25°C",
+    "{{WEATHER_2}}": "SUN 20 SEP · ☀️ Sunny, slight chance of an evening shower, winds N 25–35km/h increasing to 35–50km/h before turning westerly · 14–24°C",
     "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "SUN 20 SEP · ☀️ Mostly sunny, winds N–NW shifting SW later · 14–24°C",
-    "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "MON 21 SEP · ☁️ Cloudy, cooler change moves through, winds SW 15–25km/h · 11–15°C",
-    "{{WEATHER_5}}": "TUE 22 SEP · 🌤️ Partly cloudy, slight chance of a shower, winds S–SW 15–20km/h · 8–17°C",
-    "{{WEATHER_ALERT}}": "No severe weather warning current for Victoria — today's fog clears into a sunny, near-25°C weekend before a cooler change with cloud moves in Monday.",
+    "{{WEATHER_3}}": "MON 21 SEP · ☁️ Cloudy, medium chance of a morning shower as a cooler change comes through, winds W–SW turning S 20–30km/h · 11–15°C",
+    "{{WEATHER_3_CLASS}}": "rain",
+    "{{WEATHER_4}}": "TUE 22 SEP · 🌤️ Sunny, chance of morning frost near the hills, light winds · 8–17°C",
+    "{{WEATHER_5}}": "WED 23 SEP · ☀️ Mostly sunny, light winds becoming NW–NE · 10–19°C",
+    "{{WEATHER_ALERT}}": "No severe weather warning current for Victoria — a breezy, sunny start to the weekend gives way to a cooler change with showers Monday morning before it clears again.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇨🇦🇪🇺 CANADA–EU · CARNEY EMBRACES VON DER LEYEN'S OFFER TO MAKE CANADA THE BLOC'S FIRST 'ASSOCIATE MEMBER'",
-    "{{WORLD_1_HEADLINE}}": "Carney Welcomes EU's 'Associate Member' Offer for Canada, Says Deeper Ties Stop Any Country 'Controlling Our Markets'",
-    "{{WORLD_1_SUMMARY}}": "Addressing the European Parliament in Strasbourg, Canadian PM Mark Carney embraced Ursula von der Leyen's proposal to make Canada the EU's first-ever associate member, floating deeper integration on trade, defence, critical minerals, AI, energy and space — a direct response to Trump-era tariffs and talk of Canada becoming the '51st state.'",
-    "{{WORLD_1_URL}}": "https://www.cnbc.com/2026/09/17/carney-canada-eu-associate-member.html",
+    "{{WORLD_1_FLAG}}": "🇮🇷🇺🇸 IRAN WAR · TRUMP SAYS HE'S HAD 'DIRECT' CONTACT WITH IRAN, HOPES WAR IS NEARING ITS END",
+    "{{WORLD_1_HEADLINE}}": "Trump Claims Direct Contact With Iran, Says War Is 'Hopefully' Close to Over",
+    "{{WORLD_1_SUMMARY}}": "Trump told reporters Iran had reached out to the US directly and wants to make a deal after seven months of war, though Tehran has not confirmed any contact and a senior Iranian official publicly rejected talks a day earlier — a reminder that ceasefire optimism and continued Middle East volatility are currently running side by side.",
+    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/9/17/trump-claims-direct-talks-with-iran-is-diplomacy-picking-up-again",
 
-    "{{WORLD_2_FLAG}}": "🇸🇪 SWEDEN · LEFT-WING BLOC SEALS NARROW ELECTION WIN, PM TO RESIGN",
-    "{{WORLD_2_HEADLINE}}": "Sweden's Prime Minister Says He Will Resign After Left-Wing Bloc Narrowly Wins General Election",
-    "{{WORLD_2_SUMMARY}}": "Sweden's governing coalition conceded defeat after a knife-edge result handed the left-wing opposition a narrow majority, with weeks of coalition negotiations expected before a new government can be sworn in.",
-    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/9/17/sweden-prime-minister-to-resign-as-left-wing-bloc-seals-narrow-election-win",
+    "{{WORLD_2_FLAG}}": "🏔️ CLIMATE · STUDY LINKS DEADLY NEPAL-TIBET FLOODS TO HUMAN-CAUSED HIMALAYAN WARMING",
+    "{{WORLD_2_HEADLINE}}": "Scientists Say Climate Change Was a Major Factor in the Nepal-Tibet Floods That Killed Over 1,400 People",
+    "{{WORLD_2_SUMMARY}}": "A World Weather Attribution report found July–August temperatures in the region ran about 1.5°C warmer due to human-caused climate change, thinning glaciers and weakening slopes ahead of the flash floods and debris flows that devastated the Trishuli River valley on both sides of the Nepal–China border in late August.",
+    "{{WORLD_2_URL}}": "https://www.aljazeera.com/news/2026/9/17/climate-change-had-major-role-in-triggering-nepal-floods-scientists-say",
 
     # Economics
-    "{{ECON_1_FLAG}}": "📈 MARKETS · ASX CLIMBS AS RBA RATE-HIKE ODDS RISE AFTER THE FED MOVES",
-    "{{ECON_1_HEADLINE}}": "ASX Adds 0.4% to a Six-Week High as Markets Price in Near-90% Chance of an RBA Rate Hike This Month",
-    "{{ECON_1_SUMMARY}}": "The ASX 200 closed up 0.4% at 8,732 on Thursday even as traders priced in a near-90% chance the Reserve Bank lifts rates later this month, after the US Federal Reserve's unanimous 25-basis-point hike overnight — a reminder that equipment finance and overdraft costs could tighten again before Christmas.",
-    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-09-17/asx-markets-business-live-news-september-19-2026/107162296",
+    "{{ECON_1_FLAG}}": "🏦 RATES · RBA GOVERNOR TELLS PARLIAMENT THE BANK MUST DECIDE IF RATES ARE HIGH ENOUGH",
+    "{{ECON_1_HEADLINE}}": "RBA Governor Bullock Flags Inflation Risks Are Building Again as Markets Price In a 70–75% Chance of a Rate Hike Next Week",
+    "{{ECON_1_SUMMARY}}": "Fronting a parliamentary economics committee, Michele Bullock said growth is slowing but pointed to the Middle East conflict, the AI boom and extreme weather as fresh upside risks to inflation, ahead of the RBA board's next meeting on 28–29 September — worth watching if you're financing a ute, compressor or new gear on variable terms.",
+    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-09-18/rba-governor-talks-interest-rates-at-parliamentary-hearing/107167676",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL · DIESEL PUSHES TOWARD $2.70 A LITRE AS AVERAGE PUMP PRICES KEEP CLIMBING",
-    "{{ECON_2_HEADLINE}}": "National Average Diesel Price Climbs to Almost $2.69 a Litre, Unleaded Above $2.25, as Fuel Costs Keep Squeezing Trade Vehicles",
-    "{{ECON_2_SUMMARY}}": "The latest fuel price tracking has diesel averaging around 268.9 cents a litre and 91-octane unleaded around 225.4 cents nationally, both up sharply on where they sat a fortnight ago — meaning the fuel line on a standing quote is worth another look before it eats into margin.",
+    "{{ECON_2_FLAG}}": "⛽ FUEL · DIESEL NEARS 269c A LITRE AS MIDDLE EAST ESCALATION KEEPS PUSHING PRICES UP",
+    "{{ECON_2_HEADLINE}}": "National Diesel Average Climbs to Almost 269c a Litre as Middle East Shipping Disruptions Keep Fuel Costs Rising",
+    "{{ECON_2_SUMMARY}}": "Diesel is now averaging close to 268.9c a litre nationally and unleaded around 225.4c, both up sharply over the past fortnight as fighting around the Bab el-Mandeb and Strait of Hormuz shipping routes squeezes oil supply — Victoria's average is still the cheapest of any state, but the fuel line on every quote is worth another look.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "🤖 AI TOOLS · ANTHROPIC MERGES CHAT AND COWORK, ADDS FREE DOCS AND SLIDES",
-    "{{TECH_1_HEADLINE}}": "Anthropic Folds Claude Chat and Cowork Into One Interface, Adds Built-In Docs and Slides Tools",
-    "{{TECH_1_SUMMARY}}": "Claude's chat, Cowork and Artifacts workspace are now one interface that automatically routes each request, with new Docs and Slides tools joining the Claude Design feature launched earlier this year — meaning a quote, a toolbox talk or a client one-pager can now be drafted and formatted without leaving the chat window or buying separate software.",
-    "{{TECH_1_URL}}": "https://www.thestar.com.my/tech/tech-news/2026/09/17/anthropic-to-fold-claude-ai-features-into-one-interface-launches-document-tools",
+    "{{TECH_1_FLAG}}": "🤖 AI DEVELOPMENT · ANTHROPIC SAYS CLAUDE NOW LEADS A QUARTER OF ITS OWN R&D",
+    "{{TECH_1_HEADLINE}}": "Anthropic Says Its Claude Model Is Now Helping Build the Next Version of Itself",
+    "{{TECH_1_SUMMARY}}": "Anthropic revealed Claude is completing most of its assigned research and development tasks 'end-to-end from a high-level prompt' under human supervision, now leading about 26% of the company's model R&D work — up from zero in February — a fast-moving sign of how much repeatable technical work can already be handed to an AI system with the right oversight.",
+    "{{TECH_1_URL}}": "https://www.nbcnews.com/tech/tech-news/anthropic-says-model-claude-helping-build-next-version-rcna598494",
 
-    "{{TECH_2_FLAG}}": "👑 AI SAFETY · KING CHARLES WARNS GLOBAL AI LEADERS OF 'EXISTENTIAL DANGERS'",
-    "{{TECH_2_HEADLINE}}": "King Charles Hosts OpenAI, Anthropic, Nvidia and Google DeepMind Leaders, Warns of AI's 'Existential Dangers'",
-    "{{TECH_2_SUMMARY}}": "Charles convened AI industry leaders at his Dumfries House estate in Scotland to press the case for guardrails before the most powerful systems become too capable to rein in — a governance push that echoes Anthropic's own recent calls to slow the frontier down.",
+    "{{TECH_2_FLAG}}": "🔓 AI SECURITY · RESEARCHERS USED CLAUDE TO BREACH A RIVAL AI LAB'S PRIVATE SYSTEMS",
+    "{{TECH_2_HEADLINE}}": "Security Researchers Used Anthropic's Claude to Penetrate OpenAI's Private Software Systems in a Bug Bounty Test",
+    "{{TECH_2_SUMMARY}}": "Independent researchers used Claude to gain access to an OpenAI employee's account and reach the company's private GitHub service, then stopped and reported the find rather than dig further — a useful reminder that today's AI tools are already capable enough to expose weak passwords and reused logins in any small business's own systems.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🧠 ROBOT CHIPS · CHINA'S D-ROBOTICS RAISES $400M TO BUILD 'THE BRAIN FOR EVERY ROBOT'",
-    "{{ROBOT_1_HEADLINE}}": "D-Robotics Closes $400 Million Series C, China's Largest Robotics Funding Round in Four Years",
-    "{{ROBOT_1_SUMMARY}}": "The Chinese robot-chip and software maker will use the funding to expand its Sunrise chip lineup — already shipped in more than 8 million units — and build a software platform spanning everything from mature robot categories to general-purpose humanoids, underlining how much of the coming robot boom is being built on Chinese silicon.",
-    "{{ROBOT_1_URL}}": "https://theaiinsider.tech/2026/09/17/chinas-d-robotics-raises-400m-in-series-c-funding-to-expand-ai-robotics-platform/",
+    "{{ROBOT_1_FLAG}}": "🦾 HUMANOID ROBOTS · CHINA'S AGIBOT OVERTAKES UNITREE AS TOP GLOBAL SHIPPER",
+    "{{ROBOT_1_HEADLINE}}": "Agibot Claims Top Spot in Global Humanoid Robot Shipments as First-Half Volumes Nearly Quadruple",
+    "{{ROBOT_1_SUMMARY}}": "Global humanoid robot shipments surged to more than 22,000 units in the first half of 2026 — up almost 300% on last year — with Shanghai's Agibot overtaking Unitree to lead the market on the back of industrial and commercial deployments, underlining how fast this technology is scaling even before it reaches a job site anywhere near Carrum Downs.",
+    "{{ROBOT_1_URL}}": "https://roboticsandautomationnews.com/2026/09/18/agibot-claims-top-spot-in-global-humanoid-robot-shipments-in-first-half-of-2026/104930/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Business Groups and Miners Welcome Labor's Migration Overhaul, But Farmers Warn of Worse Labour Shortages",
-    "{{AUS_1_SUMMARY}}": "A day after Tony Burke unveiled the government's migration changes, business groups, miners and the housing industry welcomed the shake-up, while the National Farmers Federation warned it puts food security and regional economies at risk.",
-    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-18/business-groups-and-miners-welcome-labors-migration-policies/107163600",
+    "{{AUS_1_HEADLINE}}": "Australia and New Zealand Could Follow Canada Into a New 'Associate Member' Status With the EU",
+    "{{AUS_1_SUMMARY}}": "European Parliament President Roberta Metsola floated Australia and New Zealand as candidates for a still-undefined 'associate membership' status with the EU, days after Ursula von der Leyen made the same offer to Canada — though New Zealand says no such talks have actually started.",
+    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-18/mark-carney-canada-associate-member-eu-welcome/107166490",
 
-    "{{AUS_2_HEADLINE}}": "Bigger, Taller Vehicles Linked to Higher Pedestrian Death Risk in New 13-Year Australian Crash Study",
-    "{{AUS_2_SUMMARY}}": "Melbourne University researchers examined more than 10,000 Victorian crashes from 2012 to mid-2025 and found every 10cm of extra vehicle height raised the odds of a pedestrian fatality by 11% — a risk that showed up specifically for women and children as utes and SUVs have replaced sedans.",
+    "{{AUS_2_HEADLINE}}": "Australia's Flu Season Peaks Unusually Late, But Total Cases Running Well Below Last Year's Toll",
+    "{{AUS_2_SUMMARY}}": "Health authorities say this year's influenza surge has arrived later than usual across several states, but a more effective vaccine match means the overall case count is tracking well below 2025's record toll of more than 1,700 flu-related deaths.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Australia's Biggest Wind Farm to Double in Size as a Quarter of Its Output Goes Straight to Data Centres",
-    "{{VIC_1_SUMMARY}}": "The Golden Plains Wind Farm near Geelong — already the largest in the Southern Hemisphere and good for about 9% of Victoria's annual power demand — is expanding from 756 megawatts to 1.3 gigawatts, with Amazon and Equinix locking up more than a quarter of the extra capacity for their data centres.",
+    "{{VIC_1_HEADLINE}}": "650+ Young Musicians Take Over Queen Victoria Market for Melbourne Youth Orchestras' 'Big Busk'",
+    "{{VIC_1_SUMMARY}}": "More than 650 young musicians perform today across a main stage and multiple busking spots at Queen Victoria Market as part of Melbourne Youth Orchestras' annual Big Busk — one of several free events on this weekend, alongside the Chinese Traditional Cultural Festival's return to Fed Square.",
 
     # Science
-    "{{SCI_1_FLAG}}": "❄️ PLANETARY SCIENCE · NEW HORIZONS SPOTS SIGNS OF LIQUID NITROGEN FLOWING ON PLUTO'S SURFACE",
-    "{{SCI_1_HEADLINE}}": "NASA's New Horizons Finds First Evidence of Liquid Recently Flowing on Pluto's Surface",
-    "{{SCI_1_SUMMARY}}": "Southwest Research Institute scientists comparing New Horizons images to Greenland ice-sheet imagery found dark, damp-looking features on the edge of Pluto's heart-shaped glacier, most likely liquid nitrogen seeping up from below — the first sign that any liquid has moved across Pluto's surface in the probe's decade of observations.",
+    "{{SCI_1_FLAG}}": "🌌 PHYSICS · A $100 POCKET DETECTOR REVEALS THE COSMIC PARTICLES RAINING THROUGH YOU RIGHT NOW",
+    "{{SCI_1_HEADLINE}}": "MIT-Designed $100 Detector Shows the Invisible Stream of Cosmic Particles Passing Through All of Us",
+    "{{SCI_1_SUMMARY}}": "CosmicWatch, a pocket-sized muon detector built from around $100 of parts by MIT's Spencer Axani, started as a student project and is now used everywhere from high school classrooms to professional physics experiments and balloon missions — a neat reminder that a shower of invisible cosmic particles passes through your body every second of every day, including this one.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "Claude Just Got One Interface for Everything — Docs and Slides Are Now Built Straight Into the Chat",
-    "{{INSIGHT_BODY}}": "Anthropic has folded its separate Cowork and Artifacts tools into the main Claude chat window, adding ready-made Docs and Slides features alongside the Claude Design tool from earlier this year — so instead of switching apps to format a quote, write up a toolbox talk or put together a one-page client proposal, it's now one conversation that produces a finished document. For a business running on a laptop and a phone rather than a full office software stack, that's one less subscription to juggle and one less reason paperwork waits until Sunday night. It's rolling out to Pro and Max plans over the coming weeks — worth a look next time a job needs a proper write-up, not just a text message.",
+    "{{INSIGHT_TITLE}}": "Claude Is Now Helping Write Its Own Next Version — What That Says About Handing Over Repeat Work",
+    "{{INSIGHT_BODY}}": "Anthropic says its Claude model now leads about a quarter of the company's own research and development work, running many tasks end-to-end from a single prompt with a human checking the result — up from doing none of that work back in February. You don't need to be training AI models to take the lesson: the same pattern of 'let AI run the repeatable bit, then look over the output' is exactly how a one-truck or one-office trades business gets the most out of AI right now, whether that's drafting quotes, chasing overdue invoices or turning yesterday's job notes into today's paperwork. Start with one task you already do the same way every time, let AI take the first pass, and keep checking the work until you trust it enough to check less often.",
 
     # Fun facts
-    "{{FACT_1}}": "Sweden elects its parliament using the 'modified Sainte-Laguë method', a proportional system specifically designed so the biggest party can't scoop up extra seats — which is exactly why this week's wafer-thin left-wing election win still leaves weeks of coalition haggling before anyone can actually govern.",
-    "{{FACT_2}}": "Liquid nitrogen can only exist on Earth in a narrow band between about -210°C and -196°C — so when NASA's New Horizons probe spotted signs of it recently flowing across Pluto's icy heart, it meant enough geothermal heat is escaping from 5.9 billion kilometres out to keep a liquid moving on one of the coldest surfaces in the solar system.",
-    "{{FACT_3}}": "The Golden Plains Wind Farm west of Geelong, about to double in size, is already the single largest wind farm anywhere in the Southern Hemisphere — and on its own supplies close to 9% of all the electricity Victoria uses in a year.",
+    "{{FACT_1}}": "The Melbourne Cricket Ground, where this year's AFL Grand Final will be played on 26 September after Fremantle's stunning comeback win over Sydney, can hold more than 100,000 people — roughly double the entire population of Hobart.",
+    "{{FACT_2}}": "A shower of subatomic particles called muons, created when cosmic rays slam into Earth's upper atmosphere, is passing through your body at a rate of roughly one per second right now — completely harmless, and detectable with a hobbyist device costing about $100.",
+    "{{FACT_3}}": "The first CCTV system was installed in Germany in 1942 by Siemens engineer Walter Bruch, so military officials could watch V-2 rocket launches from a safe distance without risking a camera operator's life.",
 
     # Joke
-    "{{JOKE_SETUP}}": "A concrete resurfacing contractor was asked how his small business always kept every quote rock solid, even when clients tried to talk him down on price.",
-    "{{JOKE_PUNCHLINE}}": "He said he never let the numbers crack under pressure.",
+    "{{JOKE_SETUP}}": "A security camera installer was asked how his small business always managed to win back a customer who'd started shopping around for a cheaper quote.",
+    "{{JOKE_PUNCHLINE}}": "He said he never let a client walk away without keeping half an eye on the relationship.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"A goal properly set is halfway reached.\"",
-    "{{CLOSING_ATTR}}": "— Zig Ziglar",
-    "{{CLOSING_MESSAGE}}": "It's Friday, and Carrum Downs should shake off this morning's fog for a sunny run into the weekend, with the mercury pushing 25°C by Saturday. Worth a beat to see whether Anthropic's newly merged Claude interface can take one piece of paperwork off your plate before you clock off — and keep an eye on the fuel line in any quote going out today, with diesel still sitting north of $2.60 a litre.",
+    "{{CLOSING_QUOTE}}": "\"Everything you've ever wanted is on the other side of fear.\"",
+    "{{CLOSING_ATTR}}": "— George Addair",
+    "{{CLOSING_MESSAGE}}": "It's Saturday, and Carrum Downs should get a breezy, sunny start to the weekend before a cooler change moves through with showers on Monday morning — good timing if there's an outdoor job on the books today. Grand Final fever is officially on after Fremantle's escape act at the SCG, and it might be worth a beat to see whether handing Claude one repeatable admin task this weekend, the way Anthropic says it's now doing with its own R&D, could free up an hour before Monday hits.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
