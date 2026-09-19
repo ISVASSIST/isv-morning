@@ -1577,3 +1577,14 @@ JOKE: A concrete resurfacing contractor was asked how his small business always 
 INSIGHT: Claude Just Got One Interface for Everything — Docs and Slides Are Now Built Straight Into the Chat
 QUOTE: "A goal properly set is halfway reached." — Zig Ziglar
 ---
+
+DATE: Sunday, 20 September 2026
+SCIENCE: Trinity College Dublin decodes Jupiter-like weather patterns on starless brown dwarf SIMP 0136 using JWST data — reported 17 September 2026
+ROBOTICS: Hirebotics adds line-tracking and linear-rail capabilities to its collaborative robots (incl. Cobot Painter), extending automated finishing work beyond fixed cells — The Robot Report, 19 September 2026
+FACT: Greenland — back in the headlines this week over a new US-Denmark security deal — holds the world's second-largest ice sheet after Antarctica: roughly 2.9 million cubic kilometres of ice up to 3km thick, enough to lift global sea levels by about 7.4 metres if it ever fully melted, despite the island itself having a population under 57,000.
+FACT: McCormick Place in Chicago, where Hirebotics and Universal Robots just showed off new cobot technology at this month's IMTS manufacturing show, is the largest convention centre in North America — over 2.6 million square feet of exhibition space, roughly the floor area of 45 American football fields laid end to end.
+FACT: The term 'GPU' — now the hottest hardware in the AI boom — was coined by Nvidia in 1999 as marketing for the GeForce 256, which the company called the world's first 'Graphics Processing Unit'; back then it was built purely to render video game graphics faster, decades before anyone used one to train an AI model.
+JOKE: Why did the backyard shed builder never worry about a quiet month?
+INSIGHT: A Cobot Just Learned to Follow a Moving Part — What It Does (and Doesn't) Mean for a Finishing Business Like Yours
+QUOTE: "The wind and the waves are always on the side of the ablest navigators." — Edward Gibbon
+---
