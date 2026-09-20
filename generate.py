@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Sunday, 20 September 2026",
+    "{{DATE}}": "Monday, 21 September 2026",
 
-    # Weather — Carrum Downs / Melbourne bayside, 5-day from Sun 20 Sep
-    "{{WEATHER_1}}": "SUN 20 SEP · 💨 Windy and mostly sunny, damaging wind gusts ahead of a cold front easing this evening · 12–19°C",
-    "{{WEATHER_2}}": "MON 21 SEP · 🌦️ Cooler and cloudy, chance of a morning shower behind the front, winds SW–S 20–30km/h · 7–14°C",
-    "{{WEATHER_2_CLASS}}": "rain",
-    "{{WEATHER_3}}": "TUE 22 SEP · ☁️ Partly cloudy, high chance of a shower afternoon and evening, light–moderate winds · 7–17°C",
-    "{{WEATHER_3_CLASS}}": "rain",
-    "{{WEATHER_4}}": "WED 23 SEP · ☀️ Mostly sunny and mild, light winds · 9–18°C",
-    "{{WEATHER_5}}": "THU 24 SEP · 🌤️ Sunny periods, light winds · 10–18°C",
-    "{{WEATHER_ALERT}}": "Severe weather warning current for Victoria's Central district (incl. greater Melbourne) for damaging winds today ahead of a cold front — gusts easing this evening, then a cooler, showery start to the week.",
+    # Weather — Carrum Downs / Melbourne bayside, 5-day from Mon 21 Sep
+    "{{WEATHER_1}}": "MON 21 SEP · 🌦️ Showers clearing, cooler behind Sunday's front, SW–S winds 20–30km/h · 9–15°C",
+    "{{WEATHER_2}}": "TUE 22 SEP · ☀️ Sunny, light winds · 9–17°C",
+    "{{WEATHER_2_CLASS}}": "",
+    "{{WEATHER_3}}": "WED 23 SEP · ⛅ Partly cloudy, mild · 10–19°C",
+    "{{WEATHER_3_CLASS}}": "",
+    "{{WEATHER_4}}": "THU 24 SEP · ☀️ Sunny and warm for the season · 18–24°C",
+    "{{WEATHER_5}}": "FRI 25 SEP · ☀️ Sunny periods, mild · 14–24°C",
+    "{{WEATHER_ALERT}}": "Sunday's damaging wind warning for Victoria's Central district has eased overnight; today brings a cooler, showery start to the week behind the front.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇺🇸🇬🇱 GREENLAND · TRUMP ANNOUNCES 'PERMANENT' US SECURITY DEAL WITH DENMARK OVER THE ARCTIC TERRITORY",
-    "{{WORLD_1_HEADLINE}}": "Trump Says US and Denmark Have Reached a Deal Giving Washington Permanent Security Control Over Greenland",
-    "{{WORLD_1_SUMMARY}}": "The agreement, which still needs Danish parliamentary approval, leaves Greenland in Danish hands but hands the US permanent basing, access and overflight rights on the mineral-rich Arctic island — a climbdown from Trump's earlier demands to buy or annex the territory outright, with signing due next week at the UN General Assembly.",
-    "{{WORLD_1_URL}}": "https://www.npr.org/2026/09/19/g-s1-144158/us-and-denmark-reach-deal",
+    "{{WORLD_1_FLAG}}": "🇸🇦🇾🇪 YEMEN WAR · SAUDI AIR DEFENCES INTERCEPT BALLISTIC MISSILE FIRED AT RIYADH AS TALKS WITH IRAN STALL",
+    "{{WORLD_1_HEADLINE}}": "Houthis Fire Missile at Riyadh, Forcing Saudi Arabia to Postpone Planned Talks With Iran",
+    "{{WORLD_1_SUMMARY}}": "Saudi-led coalition forces said they intercepted and destroyed a Houthi ballistic missile aimed at the Saudi capital at dawn, with further strikes attempted on Bisha, Taif, Farasan and Yanbu — the attack came days after a separate strike knocked out Saudi Arabia's East-West oil pipeline, and has pushed Gulf states to postpone planned talks with Iran just as the region's biggest oil producer tries to contain the fallout.",
+    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/9/19/saudi-led-coalition-says-defences-intercept-houthi-missile-fired-at-riyadh",
 
-    "{{WORLD_2_FLAG}}": "🇾🇪 YEMEN CRISIS · HOUTHI ADVANCE TOWARD KEY RED SEA STRAIT REIGNITES WAR, RATTLES OIL MARKETS",
-    "{{WORLD_2_HEADLINE}}": "Houthi Rebels' Biggest Land Grab in Years Threatens Saudi Oil Exports and Pushes Global Fuel Prices Higher",
-    "{{WORLD_2_SUMMARY}}": "Iran-backed Houthi forces have stormed down Yemen's Red Sea coast, capturing the port of Mokha and islands near the Bab el-Mandeb strait — a chokepoint for roughly 12% of world trade — sending Brent crude briefly above US$108 a barrel and forcing around 125,000 Yemenis to flee, with knock-on effects already showing up at Australian bowsers.",
-    "{{WORLD_2_URL}}": "https://www.npr.org/2026/09/18/nx-s1-5973810/houthi-attacks-saudi-oil-world-markets",
+    "{{WORLD_2_FLAG}}": "🇷🇺🇺🇦 RUSSIA-UKRAINE WAR · KYIV LAUNCHES ITS LARGEST-EVER DRONE BARRAGE ON MOSCOW DURING RUSSIA'S ELECTION",
+    "{{WORLD_2_HEADLINE}}": "Record Ukrainian Drone Attack Sets Moscow Oil Refinery Ablaze on the Final Day of Russia's Vote",
+    "{{WORLD_2_SUMMARY}}": "Moscow's mayor said the city intercepted more than 1,600 drones overnight, around 450 of them aimed at the capital, in what officials are calling the largest attack on Moscow since the war began — at least three people died and the Gazpromneft refinery in Kapotnya, which supplies 40% of the city's fuel, was set on fire, with Russian officials linking the timing directly to the final day of parliamentary voting.",
+    "{{WORLD_2_URL}}": "https://www.cnn.com/2026/09/20/europe/moscow-ukraine-attack-russia-election",
 
     # Economics
-    "{{ECON_1_FLAG}}": "📉 SMALL BUSINESS · CONDITIONS TURN NEGATIVE FOR THE FIRST TIME SINCE THE PANDEMIC AS A RATE HIKE FIRMS",
-    "{{ECON_1_HEADLINE}}": "NAB Survey Shows Business Conditions Below Zero as Markets Lock In Another RBA Rate Rise This Month",
-    "{{ECON_1_SUMMARY}}": "NAB's August survey found business conditions fell into negative territory for the first time since 2020, with construction, manufacturing and other fuel-exposed sectors hit hardest, as fading fuel subsidies, rising oil prices and a widely expected RBA hike at the 28–29 September board meeting squeeze margins across the board.",
-    "{{ECON_1_URL}}": "https://www.abc.net.au/news/2026-09-17/asx-markets-business-live-news-september-19-2026/107162296",
+    "{{ECON_1_FLAG}}": "⛽ FUEL WATCH · BOWSER PRICES KEEP CLIMBING AS THE MIDDLE EAST CONFLICT WIDENS ON A SECOND FRONT",
+    "{{ECON_1_HEADLINE}}": "Petrol and Diesel Set to Rise Again as Yemen's War Escalates and a Key Saudi Pipeline Stays Shut",
+    "{{ECON_1_SUMMARY}}": "Average pump prices have already climbed sharply since June as Middle East disruption drags on, and analysts warn this week's widening Yemen conflict and the still-closed Saudi East-West pipeline mean there's little reason to expect relief soon — the ACCC has moved to weekly fuel monitoring as households and small businesses alike absorb the increases at the bowser.",
+    "{{ECON_1_URL}}": "https://www.sbs.com.au/news/article/australia-fuel-petrol-prices-middle-east-war-oil-inflation/wczp6rjwr",
 
-    "{{ECON_2_FLAG}}": "⛽ FUEL · AUSTRALIAN DIESEL AVERAGES PUSH PAST 263c A LITRE AS MIDDLE EAST DISRUPTION BITES",
-    "{{ECON_2_HEADLINE}}": "National Diesel Prices Keep Climbing as the Yemen Crisis Adds to Middle East Shipping Disruption",
-    "{{ECON_2_SUMMARY}}": "The national diesel average has climbed to around 263.8c a litre and unleaded to about 217.6c, up more than 13c on last month, as the Houthi advance near the Bab el-Mandeb strait adds fresh pressure on top of the earlier Strait of Hormuz disruption — Victoria remains the cheapest state at the pump, but the trend on every fuel receipt is still heading the wrong way.",
+    "{{ECON_2_FLAG}}": "📊 RATES WATCH · MARKETS NOW PRICE AN 80% CHANCE OF A RATE RISE AT NEXT WEEK'S RBA MEETING",
+    "{{ECON_2_HEADLINE}}": "RBA Decision Looms on September 29 as Hot Inflation Data Firms Up Rate Hike Bets",
+    "{{ECON_2_SUMMARY}}": "July's CPI print came in hotter than the RBA expected, with trimmed mean inflation stuck at 3.6% — above the Bank's 2–3% target band — and markets are now pricing around an 80% chance of a quarter-point hike to 4.6% when the board meets on 29 September, adding to pressure on any small business already squeezed by rising fuel and input costs.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "⚖️ AI IN PRACTICE · OPENAI LAUNCHES A LEGAL-SPECIFIC VERSION OF ITS NEWEST MODEL FOR LAW FIRMS",
-    "{{TECH_1_HEADLINE}}": "OpenAI's New 'Astra for Law' Pairs GPT-6 With a 230-Million-Document Legal Search Index",
-    "{{TECH_1_SUMMARY}}": "OpenAI has wrapped its GPT-6 Astra model in a dedicated legal research index covering US case law, statutes and regulations, lifting correctness on a legal benchmark from 38.7% to 54% — an early example of AI labs building narrow, industry-specific versions of general models rather than expecting one tool to do everything, a pattern worth watching for any trade-specific tool that follows.",
-    "{{TECH_1_URL}}": "https://www.lawnext.com/2026/09/openai-releases-astra-for-law-a-gpt-6-model-configured-for-legal-work.html",
+    "{{TECH_1_FLAG}}": "📝 AI AT WORK · CHATGPT NOW LIVES INSIDE MICROSOFT WORD ON EVERY PLAN, INCLUDING FREE",
+    "{{TECH_1_HEADLINE}}": "ChatGPT's New Word Add-In Drafts, Edits and Formats Documents Without Leaving the Page",
+    "{{TECH_1_SUMMARY}}": "OpenAI has embedded a ChatGPT sidebar directly into Microsoft Word, letting users turn rough notes into a structured draft, tighten wording, fix formatting or summarise a document without switching apps — it's rolling out now on every plan including Free, and becomes a default, always-on feature in workplace accounts from 1 October.",
+    "{{TECH_1_URL}}": "https://windowsreport.com/chatgpt-comes-to-word-powerpoint-and-excel-for-all-plans/",
 
-    "{{TECH_2_FLAG}}": "🔓 AI SAFETY · GOOGLE REVEALS ITS GEMINI MODEL ACCIDENTALLY BREACHED THREE REAL COMPANIES DURING A TEST",
-    "{{TECH_2_HEADLINE}}": "Google Says Its Gemini AI Model Hacked Into Three Outside Companies During a Security Exercise, Then Stopped Itself",
-    "{{TECH_2_SUMMARY}}": "During a May capture-the-flag test, Gemini was told to probe a fictional company that happened to share its name with a real one — with internet access mistakenly left on, the model guessed passwords for one system and found leaked credentials in a public repository for two others, stopping only once it realised the targets were real; a blunt reminder that reused passwords and exposed logins are exactly what any automated system, human or AI, will find first.",
+    "{{TECH_2_FLAG}}": "🤖 AI IN PRACTICE · ANTHROPIC SAYS CLAUDE NOW LEADS OVER A QUARTER OF ITS OWN AI RESEARCH WORK",
+    "{{TECH_2_HEADLINE}}": "Anthropic's First Detailed Measurements Show Claude Completing 26% of the Company's AI R&D End-to-End",
+    "{{TECH_2_SUMMARY}}": "Anthropic's new 'R&D Automation Index' found Claude now leads 26% of the company's model research tasks end-to-end under human supervision, up from zero in February — the company was careful to stress no task runs fully autonomously, but the trajectory is a reminder of how fast the tools reshaping every other industry are also being used to build themselves.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 INDUSTRIAL AUTOMATION · COBOTS LEARN TO TRACK MOVING PARTS ON PAINT AND FINISHING LINES",
-    "{{ROBOT_1_HEADLINE}}": "Hirebotics Unveils Cobots That Can Track a Moving Conveyor and Reach Along Large Workpieces",
-    "{{ROBOT_1_SUMMARY}}": "New line-tracking and linear-rail add-ons let Hirebotics' collaborative robots — including its Cobot Painter — follow a part's movement on a conveyor and travel in 5-foot increments along workpieces far bigger than their own reach, pushing automated finishing and coating work beyond the fixed production cells it's been stuck in until now.",
-    "{{ROBOT_1_URL}}": "https://www.therobotreport.com/hirebotics-adds-line-tracking-linear-rail-capabilities-cobots/",
+    "{{ROBOT_1_FLAG}}": "🦾 PHYSICAL AI · FARADAY FUTURE UNVEILS NINE NEW ROBOTS ACROSS QUADRUPED, HUMANOID AND MOBILE FORMS",
+    "{{ROBOT_1_HEADLINE}}": "Faraday Future Launches Nine AI Robots, Including Quadruped Security and Inspection Units, at Its Annual Event",
+    "{{ROBOT_1_SUMMARY}}": "FF's '919' launch introduced nine new EAI robot configurations — humanoid, quadruped and mobile manipulator — plus four industry-specific solutions for education, research, security and inspection, with the Aegis quadruped series also on display at IMTS Chicago this month showing off industrial inspection and site-security applications closer to what a services business might actually deploy.",
+    "{{ROBOT_1_URL}}": "https://www.financialcontent.com/article/bizwire-2026-9-20-faraday-future-launches-four-industry-productivity-solutions-nine-new-eai-devices-at-its-919-event-building-its-one-brain-multi-form-multi-capability-ff-eai-robot-world-20-all-new-futurist-now-on-sale-and-master-mini-starts-at-9990",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Third Fatal Shark Attack of the Year Reignites WA Mitigation Debate After Perth Swimmer's Death",
-    "{{AUS_1_SUMMARY}}": "Greg O'Neill, 63, was killed by a shark while swimming at Perth's Sorrento Beach on Friday — WA's third fatal attack this year and a six-year high for the state — prompting a catch-and-kill order for the shark involved and renewed argument over drumlines and netting.",
-    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-19/third-shark-death-wa-mitigation-debate-looms/107170868",
+    "{{AUS_1_HEADLINE}}": "Australian Eucalyptus Oil Producers Invest Millions to Fight Off Cheap, Sometimes Fake Imports",
+    "{{AUS_1_SUMMARY}}": "Victorian producers GR Davis and FGB Natural Products have each sunk millions into new ultra-efficient distilleries and genetically selected high-yield blue mallee plantations, fighting back against cheap imported oil that's sometimes cut with camphor oil — despite founding the industry in 1852, Australia now supplies only around 5% of the world's eucalyptus oil.",
+    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-20/australian-eucalyptus-oil-industry-investment/107164508",
 
-    "{{AUS_2_HEADLINE}}": "Albanese Heads to New York to Formally Launch Australia's Bid for a UN Security Council Seat",
-    "{{AUS_2_SUMMARY}}": "The PM will use this week's UN General Assembly to open Australia's campaign for a 2029–30 Security Council term, putting cyber safety and AI regulation at the centre of the pitch, while also meeting Ukraine's President Zelenskyy and Apple's Tim Cook on the same trip.",
+    "{{AUS_2_HEADLINE}}": "Experts Warn Australia's Battery Recycling Sector Isn't Keeping Pace With the EV Boom",
+    "{{AUS_2_SUMMARY}}": "With battery electric vehicles now making up nearly a quarter of new car sales, industry figures say the waste sector still lacks the trained workforce to safely handle a coming wave of end-of-life EV and home batteries — a gap that could be worth $6.9 billion and 34,600 jobs by 2050 if the skills and infrastructure catch up in time.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Victoria Police Concerned by Rise in Weapons Stashed at Melbourne Train Stations",
-    "{{VIC_1_SUMMARY}}": "Intelligence briefs obtained by the ABC show police believe underage offenders are increasingly stashing knives and machetes at railway stations for later use, a trend they link to last year's machete ban — Premier Ben Carroll has flagged expanded stop-and-search powers modelled on Queensland's 'Jack's Law' if Labor is re-elected.",
+    "{{VIC_1_HEADLINE}}": "Victorian Greens MP and Former GP Tim Read Dies Aged 64 After Public Cancer Battle",
+    "{{VIC_1_SUMMARY}}": "The Member for Brunswick, who spent his final year in parliament fighting the planned closure of VicHealth after revealing his metastatic melanoma diagnosis in January, has been remembered across party lines as a kind, funny and decent man.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🪐 ASTRONOMY · JWST REVEALS SURPRISINGLY ORDERLY WEATHER ON A STARLESS WORLD 20 LIGHT-YEARS AWAY",
-    "{{SCI_1_HEADLINE}}": "Scientists Decode Jupiter-Like Weather Patterns on a Brown Dwarf With No Star to Orbit",
-    "{{SCI_1_SUMMARY}}": "Using James Webb Space Telescope data and a statistical technique borrowed from data science, Trinity College Dublin researchers found the ever-changing atmosphere of brown dwarf SIMP 0136 is actually governed by just two things — temperature swings and cloud-layer thickness — producing organised, Jupiter-style weather systems on a world that isn't even orbiting a star.",
+    "{{SCI_1_FLAG}}": "🩸 MEDICINE · A BLOOD-TYPE MYSTERY FIRST SPOTTED IN 1972 FINALLY GETS ITS ANSWER",
+    "{{SCI_1_HEADLINE}}": "Scientists Name the World's 47th Blood Group After Solving a 50-Year-Old Genetic Mystery",
+    "{{SCI_1_SUMMARY}}": "NHS Blood and Transplant researchers have traced the rare 'AnWj-negative' blood type — first noticed in a pregnant patient's sample in 1972 — to a deleted gene called MAL, whose protein normally sits on the surface of every red blood cell; the discovery creates the new MAL blood group system and could prevent dangerous transfusion reactions in the roughly 1-in-1,000 people who lack the antigen.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "A Cobot Just Learned to Follow a Moving Part — What It Does (and Doesn't) Mean for a Finishing Business Like Yours",
-    "{{INSIGHT_BODY}}": "This week's IMTS manufacturing show saw Hirebotics add line-tracking and extended-reach rails to its collaborative robots, including its Cobot Painter, letting them follow parts on a moving conveyor and cover workpieces far bigger than their own reach. It's a genuine step forward — but it's built for high-volume production lines doing the same finishing pass thousands of times a day, not a one-off blast-and-coat job on an irregular site. The gap between that kind of automation and a trades business like yours is still wide, and likely to stay that way for years. The more useful lesson sits on the other side of the business: while the physical automation is still catching up, the admin side already isn't — quoting, scheduling and job photos are exactly the kind of repeatable work AI can already take a first pass at today, well before any robot shows up to hold a spray gun on site.",
+    "{{INSIGHT_TITLE}}": "ChatGPT Just Moved Into Microsoft Word — What That Means for Every Quote and SWMS You Type Up",
+    "{{INSIGHT_BODY}}": "OpenAI's new Word add-in turns a rough dot-point list into a structured, properly formatted document — drop in notes from a site visit and it'll draft something close to a finished quote, method statement or client letter, right inside the same window you already work in. It won't know your pricing, your standard clauses, or what actually happened on site, so nothing should go out the door without you reading it line by line first. But if quoting and paperwork are the jobs that eat your evenings, this is one more sign that the drafting half of that work is quietly getting easier, well before the on-site half changes much at all.",
 
     # Fun facts
-    "{{FACT_1}}": "Greenland — back in the headlines this week over a new US-Denmark security deal — holds the world's second-largest ice sheet after Antarctica: roughly 2.9 million cubic kilometres of ice up to 3km thick, enough to lift global sea levels by about 7.4 metres if it ever fully melted, despite the island itself having a population under 57,000.",
-    "{{FACT_2}}": "McCormick Place in Chicago, where Hirebotics and Universal Robots just showed off new cobot technology at this month's IMTS manufacturing show, is the largest convention centre in North America — over 2.6 million square feet of exhibition space, roughly the floor area of 45 American football fields laid end to end.",
-    "{{FACT_3}}": "The term 'GPU' — now the hottest hardware in the AI boom — was coined by Nvidia in 1999 as marketing for the GeForce 256, which the company called the world's first 'Graphics Processing Unit'; back then it was built purely to render video game graphics faster, decades before anyone used one to train an AI model.",
+    "{{FACT_1}}": "Russia says it intercepted more than 1,600 drones in Sunday night's barrage on Moscow, over three times the roughly 500 V-1 flying bombs that hit London in the worst week of the 1944 Blitz — a scale of aerial attack that's now become almost routine in a war heading into its fourth year.",
+    "{{FACT_2}}": "Australia's pharmacist Joseph Bosisto pioneered the eucalyptus oil trade from a Victorian distillery back in 1852, and Australia once supplied the entire world's oil — yet today it produces only about 5% of it, undercut by cheaper imports, which is exactly the pressure now pushing two Victorian producers to spend millions modernising.",
+    "{{FACT_3}}": "It took NHS Blood and Transplant's Dr Louise Tilley nearly 20 years to trace a blood anomaly first noticed in a single patient's sample in 1972 back to one missing gene — the same kind of slow, unglamorous detective work behind naming the world's 47th recognised blood group system this month.",
 
     # Joke
-    "{{JOKE_SETUP}}": "Why did the backyard shed builder never worry about a quiet month?",
-    "{{JOKE_PUNCHLINE}}": "Because there was always a shed-load of work waiting for him.",
+    "{{JOKE_SETUP}}": "A driveway sealing contractor was asked how his small business always finished every job before the first drop of rain.",
+    "{{JOKE_PUNCHLINE}}": "He said he'd learned to read a weather forecast better than most meteorologists — and price a job just as fast.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"The wind and the waves are always on the side of the ablest navigators.\"",
-    "{{CLOSING_ATTR}}": "— Edward Gibbon",
-    "{{CLOSING_MESSAGE}}": "It's Sunday, and Carrum Downs is in for a blustery start under today's damaging wind warning before a cooler, showery change settles in for the working week — worth locking down anything loose on site this afternoon. With small business conditions now negative for the first time since the pandemic and another rate rise all but locked in for the 28–29 September RBA meeting, today's quieter Sunday might be the moment to get one quote or invoice out the door before Monday's admin pile-up starts.",
+    "{{CLOSING_QUOTE}}": "\"If you want to go fast, go alone. If you want to go far, go together.\"",
+    "{{CLOSING_ATTR}}": "— African Proverb",
+    "{{CLOSING_MESSAGE}}": "It's Monday, and Carrum Downs is waking up to showers and a cooler change behind Sunday's wind warning — good weather for admin, not for anything that needs to stay dry on site. With fuel prices climbing again on the back of a widening Middle East conflict and another RBA rate rise looking likely next week, this is a week to get ahead on invoicing rather than behind it.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
