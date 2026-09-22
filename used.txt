@@ -1610,3 +1610,14 @@ JOKE: A bathroom renovator was asked how her small business always finished ever
 INSIGHT: Google Meet Just Switched Automatic Note-Taking On by Default — Check This Setting Before Your Next Client Call
 QUOTE: "Diligence is the mother of good fortune." — Miguel de Cervantes
 ---
+
+DATE: Wednesday, 23 September 2026
+SCIENCE: Researchers name a newly discovered "fire amoeba" (Incendiamoeba cascadensis) found dividing normally at 63°C in Cascade Range hot springs, smashing the previous heat-tolerance record for eukaryotic life — published 22 September 2026
+ROBOTICS: NVIDIA releases Isaac ROS 5.0, a GPU-accelerated robotics software toolkit already adopted by Intrinsic, Mentee Robotics, EKUMEN and Flexiv, announced at ROSCon Toronto — 22 September 2026
+FACT: The United Nations General Assembly has held its September leaders' week in the same New York hall since it opened in 1952, with heads of state still speaking from the same green marble rostrum installed then — meaning Macron's Gaza speech this week was delivered from the same podium generations of leaders have used for over seven decades.
+FACT: Until this week, the record for heat tolerance in a eukaryote — any organism with a nucleus, from amoebas to humans — sat at around 60°C; the newly described 'fire amoeba', found in hot springs in California's Cascade Range, pushed that ceiling to 63°C and was seen dividing normally at that temperature, redrawing the line scientists use to define the upper limit of complex life.
+FACT: The Reserve Bank of Australia has only set policy through a single published 'cash rate target' since 1990 — before that it leaned on direct controls over how much banks could lend rather than one headline number the whole country watches, which is part of why Monday's expected move to 4.60% gets so much more airtime than similar tightening cycles once did.
+JOKE: A locksmith was asked how his small business always managed to start a job on time, even when a client lost the only key an hour before the appointment.
+INSIGHT: OpenAI's New Sol and Luna Models Just Made AI Noticeably Cheaper — A Good Moment to Try It If You Haven't
+QUOTE: "The best time to plant a tree was 20 years ago. The second best time is now." — Chinese Proverb
+---
