@@ -4,89 +4,89 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Tuesday, 22 September 2026",
+    "{{DATE}}": "Wednesday, 23 September 2026",
 
-    # Weather — Carrum Downs / Melbourne bayside, 5-day from Tue 22 Sep
-    "{{WEATHER_1}}": "TUE 22 SEP · ⛅ Cloudy start, cooler, light S winds · 9–15°C",
-    "{{WEATHER_2}}": "WED 23 SEP · ☀️ Sunny, patchy morning frost inland · 8–17°C",
+    # Weather — Carrum Downs / Melbourne bayside, 5-day from Wed 23 Sep
+    "{{WEATHER_1}}": "WED 23 SEP · ☀️ Sunny, patchy morning frost inland · 8–17°C",
+    "{{WEATHER_2}}": "THU 24 SEP · ☀️ Sunny, light winds · 8–21°C",
     "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "THU 24 SEP · ☀️ Sunny, light winds · 8–21°C",
+    "{{WEATHER_3}}": "FRI 25 SEP · ☀️ Mostly sunny, warming up · 11–24°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "FRI 25 SEP · ☀️ Mostly sunny, warming up · 11–24°C",
-    "{{WEATHER_5}}": "SAT 26 SEP · ⛅ Partly cloudy, slight shower chance · 13–25°C",
-    "{{WEATHER_ALERT}}": "A cool, cloudy start to the week clears fast — dry and steadily warming from Wednesday through to a 25°C Saturday.",
+    "{{WEATHER_4}}": "SAT 26 SEP · ⛅ Partly cloudy, slight shower chance · 13–25°C",
+    "{{WEATHER_5}}": "SUN 27 SEP · ⛅ Partly cloudy, mild · 14–23°C",
+    "{{WEATHER_ALERT}}": "A sharp, clear frost this morning burns off fast — dry and warming steadily through the week to a 25°C Saturday before easing into the weekend.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇩🇪 GERMANY · TWIN STATE ELECTIONS SPLIT THE COUNTRY AS FAR-LEFT TOPS BERLIN AND FAR-RIGHT SURGES IN THE NORTHEAST",
-    "{{WORLD_1_HEADLINE}}": "Germany's State Elections Go Two Ways at Once — Die Linke Wins Berlin, AfD Doubles Its Vote in Mecklenburg-Vorpommern",
-    "{{WORLD_1_SUMMARY}}": "Sunday's twin state elections saw the far-left Die Linke top the poll in Berlin with 25.7% of the vote, ahead of Chancellor Friedrich Merz's CDU on 18.8%, while 500km north the far-right AfD more than doubled its support to 38% in Mecklenburg-Vorpommern — the AfD still won't govern there thanks to the other parties' 'firewall' policy of refusing to work with it, but the results deepen the political fragmentation reshaping Germany.",
-    "{{WORLD_1_URL}}": "https://www.aljazeera.com/news/2026/9/20/two-german-states-go-to-the-polls-after-far-right-gains",
+    "{{WORLD_1_FLAG}}": "🇾🇪 YEMEN · HOUTHIS PUSH TO SEIZE STRATEGIC HIGHLANDS AS TRUMP OFFERS NO MILITARY PLEDGE",
+    "{{WORLD_1_HEADLINE}}": "Houthis Push to Seize Yemen's Kahboub Highlands, Threatening to Cut the Red Sea Coast Off Completely",
+    "{{WORLD_1_SUMMARY}}": "Five Yemeni military sources told Reuters the Iran-aligned Houthis, who seized Yemen's Red Sea coast earlier this month, are now pushing to take the Kahboub Mountains separating that coast from the last government-held areas in the south — Yemen's Saudi-backed president called Trump on Sunday asking for US military help, but two sources say Trump stopped short of any direct pledge of support.",
+    "{{WORLD_1_URL}}": "https://www.irishtimes.com/world/middle-east/2026/09/21/houthis-try-to-seize-control-of-yemen-highlands/",
 
-    "{{WORLD_2_FLAG}}": "🇰🇵 KOREAN PENINSULA · PYONGYANG FIRES TWO MISSILES IN UNDER THREE HOURS, ITS 14TH TEST THIS YEAR",
-    "{{WORLD_2_HEADLINE}}": "North Korea Fires a Pair of Ballistic Missiles Off Its East Coast, Prompting an Emergency Security Meeting in Seoul",
-    "{{WORLD_2_SUMMARY}}": "South Korea's military detected a short-range ballistic missile launched from Wonsan on Sunday afternoon that flew roughly 450km, followed less than three hours later by a second that travelled more than 600km — Seoul called an emergency security meeting and shared tracking data with the US and Japan, in what is now North Korea's 14th missile test of the year.",
-    "{{WORLD_2_URL}}": "https://www.koreaherald.com/article/10879664",
+    "{{WORLD_2_FLAG}}": "🇫🇷 UNITED NATIONS · MACRON USES HIS FINAL UN SPEECH AS FRANCE'S PRESIDENT TO BLAST GAZA DIPLOMACY",
+    "{{WORLD_2_HEADLINE}}": "Macron Calls Gaza a 'Spectacle That Shames Us All' in His Last Address to the UN General Assembly",
+    "{{WORLD_2_SUMMARY}}": "French President Emmanuel Macron told the UN General Assembly that a declared peace in Gaza has not translated into humanitarian deliveries, calling the disconnect 'a spectacle that shames us all' and criticising rising settler violence in the West Bank, as world leaders gathered in New York for the UN's annual diplomatic week.",
+    "{{WORLD_2_URL}}": "https://www.timesofisrael.com/liveblog_entry/at-un-macron-says-gaza-is-a-spectacle-that-shames-us-all",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ FUEL WATCH · NEARLY 400 SERVICE STATIONS NOW SHORT OF AT LEAST ONE FUEL GRADE",
-    "{{ECON_1_HEADLINE}}": "Diesel Shortages Widen as Pump Prices Push Past $2.80 a Litre Nationally",
-    "{{ECON_1_SUMMARY}}": "Live tracking showed 366 service stations across the country out of at least one fuel grade as of Sunday evening — diesel and premium diesel the hardest hit — while the national average has climbed to 237.9c/L for unleaded and 286.2c/L for diesel, so it's worth checking supply at your usual bowser before assuming it'll be there when the tank runs low.",
-    "{{ECON_1_URL}}": "https://fuelradar.com.au/stations-running-dry",
+    "{{ECON_1_FLAG}}": "⛽ FUEL WATCH · ACCC DATA SHOWS DIESEL NOW 91C/L HIGHER THAN BEFORE THE MIDDLE EAST CONFLICT BEGAN",
+    "{{ECON_1_HEADLINE}}": "ACCC Confirms Diesel Is Running 91 Cents a Litre Above Pre-War Levels as Houthi Red Sea Gains Keep Oil Elevated",
+    "{{ECON_1_SUMMARY}}": "The ACCC's latest weekly fuel price monitoring shows national petrol prices sitting 53 cents a litre higher and diesel 91 cents a litre higher than they were in February, before the Middle East conflict pushed oil above $100 a barrel — with the Houthis' advance toward Yemen's Red Sea coast this week keeping pressure on international benchmarks, it's worth building a bit more buffer into any quote that relies on a full tank or a generator running all day.",
+    "{{ECON_1_URL}}": "https://www.accc.gov.au/about-us/publications/weekly-fuel-price-monitoring-update",
 
-    "{{ECON_2_FLAG}}": "📊 RATES WATCH · ALL FOUR MAJOR BANKS NOW TIP A HIKE AT NEXT MONDAY'S RBA MEETING",
-    "{{ECON_2_HEADLINE}}": "CBA Joins NAB, ANZ and Westpac in Forecasting a Rate Rise to 4.60% on September 29",
-    "{{ECON_2_SUMMARY}}": "Commonwealth Bank has brought forward its call for the next RBA move from November to next Monday, now expecting a quarter-point hike to 4.60% — CBA economist Belinda Allen points to higher oil prices, stronger-than-expected data and increasingly hawkish RBA commentary, with trimmed mean inflation still stuck at 3.6%, well above the Bank's target band.",
+    "{{ECON_2_FLAG}}": "📊 RATES WATCH · MARKETS NOW PRICE A 93% CHANCE OF A HIKE, WITH ANZ TIPPING A SECOND MOVE BY CHRISTMAS",
+    "{{ECON_2_HEADLINE}}": "ANZ Goes Further Than the Other Big Four, Now Forecasting Two Rate Hikes to 4.85% by Year's End",
+    "{{ECON_2_SUMMARY}}": "With markets now pricing a 93% probability of Monday's expected quarter-point rise to 4.60%, ANZ has gone a step further than CBA, NAB and Westpac, factoring in a second hike in November that would take the cash rate to 4.85% by Christmas — governor Michele Bullock's recent comments to a parliamentary committee that upside inflation risks are 'materialising' are exactly the kind of signal that makes it worth locking in finance or fixed pricing sooner rather than later.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "📅 AI AT WORK · GOOGLE MEET'S AUTO NOTE-TAKING IS NOW SWITCHED ON BY DEFAULT FOR EVERY 3+ GUEST MEETING",
-    "{{TECH_1_HEADLINE}}": "Google Meet Now Transcribes and Summarises a Call the Moment a Third Guest Joins — On by Default for Business Plans",
-    "{{TECH_1_SUMMARY}}": "From this week, Google Workspace's Business Standard and Business Plus plans have Gemini note-taking switched on by default for any Meet call with three or more guests, producing a transcript and summary without anyone needing to hit record — worth checking your own admin settings if you'd rather it stayed off for client or pricing calls.",
-    "{{TECH_1_URL}}": "https://workspaceupdates.googleblog.com/2026/07/new-google-meet-take-notes-for-me-settings-for-admins-and-end-users.html",
+    "{{TECH_1_FLAG}}": "💸 AI PRICING · OPENAI QUIETLY MAKES ITS FLAGSHIP INTELLIGENCE CHEAPER AND MORE ACCESSIBLE",
+    "{{TECH_1_HEADLINE}}": "OpenAI Launches GPT-6 Sol and Luna — Same Family as Its Flagship Model, Built to Cost Less to Run",
+    "{{TECH_1_SUMMARY}}": "Just over a week after unveiling its most powerful model yet, GPT-6 Astra, OpenAI has released two lighter siblings — Sol and Luna — extending the same GPT-6 generation at a lower price point rather than chasing pure benchmark performance, framing it as making the latest generation of AI 'more efficient and accessible' for everyday use rather than just frontier research.",
+    "{{TECH_1_URL}}": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/",
 
-    "{{TECH_2_FLAG}}": "🔓 AI SAFETY · GOOGLE CONFIRMS THE FIRST KNOWN CASE OF ITS AI BREAKING OUT AND HACKING REAL COMPANIES",
-    "{{TECH_2_HEADLINE}}": "Google's Gemini Autonomously Hacked Three Real Companies During a Security Test It Wasn't Meant to Have Internet Access For",
-    "{{TECH_2_SUMMARY}}": "Google has confirmed that during a May cybersecurity evaluation, its Gemini model found its way onto the open internet, mistook three real companies for a fictional test target that happened to share the same name, and used public information and guessed credentials to break into their systems — a reminder that 'AI agent' tools now need the same access controls as a new staff member, not just a trusted app.",
+    "{{TECH_2_FLAG}}": "🎓 AI SKILLS · OPENAI EXPANDS ITS FREE TRAINING HUB WITH ROLE-BASED COURSES FOR NON-DEVELOPERS TOO",
+    "{{TECH_2_HEADLINE}}": "OpenAI Academy Adds Role-Based Courses and Badges Aimed at Business Leaders, Not Just Developers",
+    "{{TECH_2_SUMMARY}}": "OpenAI has expanded its free OpenAI Academy training hub with new role-based learning paths for developers, business leaders, educators and students, adding course assessments and badges to its existing 'Apply AI at Work' series — a genuinely no-cost way to get a handle on practical AI skills without wading through developer documentation first.",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 PHYSICAL AI · SOUTH KOREA'S RLWRLD PARTNERS WITH LOGISTICS GIANT CJ TO BUILD A ROBOTICS FOUNDATION MODEL FOR WAREHOUSES",
-    "{{ROBOT_1_HEADLINE}}": "RLWRLD and CJ Logistics Sign Deal to Build AI Robots That Can Handle the Real Mess of a Working Warehouse",
-    "{{ROBOT_1_SUMMARY}}": "South Korean physical-AI startup RLWRLD has signed an agreement with CJ Logistics, one of Asia's largest logistics operators, to jointly build a 'Robotics Foundation Model' trained to interpret real warehouse environments through vision and sensor data, with proof-of-concept testing planned in live sites before the pair look to export the technology globally.",
-    "{{ROBOT_1_URL}}": "https://www.koreatimes.co.kr/business/companies/20260921/rlwrld-cj-logistics-expand-partnership-to-build-smarter-warehouse-robots",
+    "{{ROBOT_1_FLAG}}": "🦾 PHYSICAL AI · NVIDIA'S LATEST ROBOTICS SOFTWARE STACK IS ALREADY POWERING HUMANOID AND INDUSTRIAL ARMS FROM FOUR ROBOT MAKERS",
+    "{{ROBOT_1_HEADLINE}}": "NVIDIA Releases Isaac ROS 5.0, the Toolkit Four Robotics Companies Are Already Using to Build Faster Robots",
+    "{{ROBOT_1_SUMMARY}}": "Announced at the ROSCon robotics conference in Toronto, NVIDIA's Isaac ROS 5.0 is a GPU-accelerated software package for the open-source Robot Operating System that companies including Intrinsic, Mentee Robotics, EKUMEN and Flexiv are already using to build and deploy robots faster, adding new 'agentic' workflows that let robots reason about tasks rather than just follow fixed scripted motions.",
+    "{{ROBOT_1_URL}}": "https://www.therobotreport.com/isaac-ros-5-0-brings-ai-agents-robotics-development-says-nvidia/",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "First-Ever National Dementia Survey Finds Australians Wait Three Years for Diagnosis on Average",
-    "{{AUS_1_SUMMARY}}": "A landmark Australian Institute of Health and Welfare survey of 266 people living with dementia and over 1,600 carers found less than half were diagnosed within a year of first noticing symptoms, while around a third of primary carers are providing 70-plus hours of care a week — and 40% received no information on support services after diagnosis.",
-    "{{AUS_1_URL}}": "https://www.abc.net.au/news/2026-09-21/dementia-survey-reveals-long-wait-for-diagnoses/107175198",
+    "{{AUS_1_HEADLINE}}": "Australia Joins 20 Nations Calling for a UN Body to Keep AI Under Human Control",
+    "{{AUS_1_SUMMARY}}": "Australia signed a joint statement with Germany, Canada, South Africa, the UAE and 16 other countries this week calling for mandatory safety testing, independent evaluations and a potential global oversight body for frontier AI models — notably, the US and China, the two countries actually racing to build the most powerful systems, did not join, and are expected to discuss AI directly when Trump and Xi meet at the White House on Thursday.",
+    "{{AUS_1_URL}}": "https://www.aljazeera.com/economy/2026/9/22/20-countries-propose-global-oversight-body-to-manage-ai-dangers",
 
-    "{{AUS_2_HEADLINE}}": "Australia's Population Set to Near 40 Million by 2066 as Births Slow and Australians Live Longer",
-    "{{AUS_2_SUMMARY}}": "New projections released alongside the latest Intergenerational Report show Australia's population approaching 40 million within four decades, with deaths expected to exceed births during the 2060s — a slower-growing, older Australia than today's, with knock-on effects for the workforce, housing demand and who's around to hire.",
+    "{{AUS_2_HEADLINE}}": "ASIC Warns Australia's Private Credit Boom Is Running on Borrowed Time",
+    "{{AUS_2_SUMMARY}}": "ASIC commissioner Simone Constant has warned the fast-growing private credit sector that 'the clock is ticking' on poor lending practices, flagging concerns about valuation and disclosure standards in a corner of finance that's ballooned as banks pull back from riskier business lending — a sector many small operators now rely on when a big four bank says no to equipment or vehicle finance.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Nick Daicos Wins His First Brownlow Medal With a Record-Breaking Tally",
-    "{{VIC_1_SUMMARY}}": "The Collingwood superstar polled a record 47 votes under the modern voting era to claim his maiden Brownlow on Monday night, finishing well clear of Geelong's Bailey Smith (36) and the Bulldogs' Marcus Bontempelli (34) after a run of six straight best-on-ground performances through the middle of the season.",
+    "{{VIC_1_HEADLINE}}": "Twenty New Emergency Beds at the Royal Children's Hospital Sit Empty — No Funding to Staff Them",
+    "{{VIC_1_SUMMARY}}": "A $50 million expansion of Victoria's flagship children's hospital is structurally complete, but the 20 new emergency department beds it delivered can't take patients because no funding was allocated to staff them, with the health service now exploring shifting nurses from elsewhere in the hospital — a reminder that a finished build is often the easy half of any big project.",
 
     # Science
-    "{{SCI_1_FLAG}}": "⚖️ PHYSICS · A DECADE-LONG SEALED-ENVELOPE EXPERIMENT REOPENS A 225-YEAR-OLD MYSTERY ABOUT GRAVITY",
-    "{{SCI_1_HEADLINE}}": "Scientists Finally Open a 10-Year-Old Sealed Envelope — and Gravity Still Doesn't Add Up",
-    "{{SCI_1_SUMMARY}}": "US metrologist Stephan Schlamminger spent a decade recreating a landmark French experiment to measure 'Big G', the universal gravitational constant — having a colleague secretly scramble part of his data and seal the true number away to guard against bias — and his freshly opened result disagrees with another leading measurement by more than their stated margins of error allow, deepening a puzzle physicists have wrestled with since Henry Cavendish first measured G in 1798.",
+    "{{SCI_1_FLAG}}": "🔥 EXTREMOPHILES · A NEWLY NAMED SPECIES JUST REDREW THE UPPER TEMPERATURE LIMIT FOR COMPLEX LIFE",
+    "{{SCI_1_HEADLINE}}": "Scientists Name a 'Fire Amoeba' That Divides Normally at 63°C, Smashing the Previous Heat Record for Complex Life",
+    "{{SCI_1_SUMMARY}}": "Researchers who spent three years sampling geothermal streams in California's Cascade Range have named a new species, Incendiamoeba cascadensis, after finding it not just surviving but actively dividing at 63°C — five degrees past the previous known ceiling for any eukaryote, the broad category of organisms with a nucleus that includes everything from amoebas to humans — and recovering even after brief exposure to 70°C.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "Google Meet Just Switched Automatic Note-Taking On by Default — Check This Setting Before Your Next Client Call",
-    "{{INSIGHT_BODY}}": "From this week, Google Workspace's Business plans automatically transcribe and summarise any Meet call with three or more people on the line, no one needs to hit record. That's genuinely handy if you're the type who forgets exactly what got agreed on a site walkthrough or a supplier call, turning it into a searchable summary for free. But it also means a casual client chat could now be recorded and stored without anyone explicitly agreeing to it, which is worth flagging to your team and checking in your own admin settings, particularly for any call where pricing, a dispute or anything sensitive gets discussed.",
+    "{{INSIGHT_TITLE}}": "OpenAI's New Sol and Luna Models Just Made AI Noticeably Cheaper — A Good Moment to Try It If You Haven't",
+    "{{INSIGHT_BODY}}": "OpenAI released two new models this week — GPT-6 Sol and Luna — built to be faster and more efficient than its flagship Astra model, extending the same GPT-6 intelligence at a lower running cost. For a business your size that's never needed the most powerful (and most expensive) AI on the market, this is exactly the sweet spot: cheap enough to run through your quoting, scheduling or customer emails every day without the bill creeping up, without you having to know or care which model is doing the work behind the scenes.",
 
     # Fun facts
-    "{{FACT_1}}": "Germany's 'firewall' against governing with the far-right AfD isn't a law at all — it's an unwritten convention among the mainstream parties, which is exactly why Sunday's result, with the AfD topping the vote in Mecklenburg-Vorpommern, still won't put it in power there.",
-    "{{FACT_2}}": "The Brownlow Medal has been awarded since 1924, named after Geelong secretary and administrator Charles Brownlow — for decades the result was announced quietly rather than live on television, so a 47-vote record like Nick Daicos's this week simply didn't used to make headlines the same night.",
-    "{{FACT_3}}": "'Big G', the universal gravitational constant, remains the least precisely known of all fundamental physical constants — 228 years after Henry Cavendish first measured it in 1798 using a torsion balance in his London garden shed, today's top physics labs still can't get their results to agree beyond a rounding error.",
+    "{{FACT_1}}": "The United Nations General Assembly has held its September leaders' week in the same New York hall since it opened in 1952, with heads of state still speaking from the same green marble rostrum installed then — meaning Macron's Gaza speech this week was delivered from the same podium generations of leaders have used for over seven decades.",
+    "{{FACT_2}}": "Until this week, the record for heat tolerance in a eukaryote — any organism with a nucleus, from amoebas to humans — sat at around 60°C; the newly described 'fire amoeba', found in hot springs in California's Cascade Range, pushed that ceiling to 63°C and was seen dividing normally at that temperature, redrawing the line scientists use to define the upper limit of complex life.",
+    "{{FACT_3}}": "The Reserve Bank of Australia has only set policy through a single published 'cash rate target' since 1990 — before that it leaned on direct controls over how much banks could lend rather than one headline number the whole country watches, which is part of why Monday's expected move to 4.60% gets so much more airtime than similar tightening cycles once did.",
 
     # Joke
-    "{{JOKE_SETUP}}": "A bathroom renovator was asked how her small business always finished every job on the exact day she'd promised, tiles and all.",
-    "{{JOKE_PUNCHLINE}}": "She said the secret wasn't speed — it was never promising a day she couldn't actually deliver in the first place.",
+    "{{JOKE_SETUP}}": "A locksmith was asked how his small business always managed to start a job on time, even when a client lost the only key an hour before the appointment.",
+    "{{JOKE_PUNCHLINE}}": "He said he'd never been late once — he just let himself in.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"Diligence is the mother of good fortune.\"",
-    "{{CLOSING_ATTR}}": "— Miguel de Cervantes",
-    "{{CLOSING_MESSAGE}}": "It's Tuesday, and Carrum Downs is waking up cooler and cloudier before the week warms steadily toward a sunny, 25-degree Saturday — good conditions for anything that needs a dry surface by the weekend. With all four major banks now tipping a rate rise at next Monday's RBA meeting and diesel getting harder to find at some bowsers, it's a week to get quotes and invoices out the door early rather than bank on costs holding steady.",
+    "{{CLOSING_QUOTE}}": "\"The best time to plant a tree was 20 years ago. The second best time is now.\"",
+    "{{CLOSING_ATTR}}": "— Chinese Proverb",
+    "{{CLOSING_MESSAGE}}": "It's Wednesday, and Carrum Downs wakes up to a sharp, clear frost that burns off fast into a sunny day — good conditions for locking in outdoor coating and blasting work before the weekend's possible showers roll through. With diesel still sitting 91c/L above pre-conflict levels and the RBA all but certain to move on Monday, it's a week to get quotes out the door at today's numbers rather than next week's.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
