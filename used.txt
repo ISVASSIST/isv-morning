@@ -1621,3 +1621,14 @@ JOKE: A locksmith was asked how his small business always managed to start a job
 INSIGHT: OpenAI's New Sol and Luna Models Just Made AI Noticeably Cheaper — A Good Moment to Try It If You Haven't
 QUOTE: "The best time to plant a tree was 20 years ago. The second best time is now." — Chinese Proverb
 ---
+
+DATE: Friday, 25 September 2026
+SCIENCE: New modelling of Uranus's moon Ariel's fractured surface suggests it may once have hidden a subsurface ocean over 100 miles deep, with similar evidence emerging for neighbouring moon Miranda — covered ScienceDaily 23 September 2026
+ROBOTICS: IFR's World Robotics 2025 report shows the global operational stock of industrial robots hit a record 5 million units, more than double the count seven years ago, after 600,000+ new installations in 2025 — published 25 September 2026
+FACT: Victoria's AFL Grand Final Friday, introduced in 2015, remains the only state-wide public holiday anywhere in Australia built entirely around a single sporting event the day before it's even played.
+FACT: The subsurface ocean scientists now think once existed on Uranus's moon Ariel would have been more than 100 miles deep — over 40 times deeper than the Pacific Ocean's average depth of about 2.5 miles, despite Ariel itself being barely a third the diameter of our own Moon.
+FACT: China alone accounted for more than half of the 600,000-plus new industrial robots installed worldwide in 2025, part of why the International Federation of Robotics' new global tally of 5 million operating robots is more than double the count from just seven years ago.
+JOKE: A rendering contractor was asked how his small business always left every wall looking flawless, even on jobs where two other tradies had already tried and failed.
+INSIGHT: An AI Agent Just Breached a Federal Government Website — What That Means Before You Plug One Into Your Own Systems
+QUOTE: "Alone we can do so little; together we can do so much." — Helen Keller
+---
