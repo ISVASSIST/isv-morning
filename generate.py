@@ -4,89 +4,90 @@
 import re
 
 replacements = {
-    "{{DATE}}": "Wednesday, 23 September 2026",
+    "{{DATE}}": "Friday, 25 September 2026",
 
-    # Weather — Carrum Downs / Melbourne bayside, 5-day from Wed 23 Sep
-    "{{WEATHER_1}}": "WED 23 SEP · ☀️ Sunny, patchy morning frost inland · 8–17°C",
-    "{{WEATHER_2}}": "THU 24 SEP · ☀️ Sunny, light winds · 8–21°C",
+    # Weather — Carrum Downs / Melbourne bayside, 5-day from Fri 25 Sep
+    "{{WEATHER_1}}": "FRI 25 SEP · 🌬️ Windy and warm, chance of a late storm · 16–26°C",
+    "{{WEATHER_2}}": "SAT 26 SEP · 🌧️ Cooler change, high chance of showers · 12–17°C",
     "{{WEATHER_2_CLASS}}": "",
-    "{{WEATHER_3}}": "FRI 25 SEP · ☀️ Mostly sunny, warming up · 11–24°C",
+    "{{WEATHER_3}}": "SUN 27 SEP · ☁️ Cloudy, chance of a shower · 11–18°C",
     "{{WEATHER_3_CLASS}}": "",
-    "{{WEATHER_4}}": "SAT 26 SEP · ⛅ Partly cloudy, slight shower chance · 13–25°C",
-    "{{WEATHER_5}}": "SUN 27 SEP · ⛅ Partly cloudy, mild · 14–23°C",
-    "{{WEATHER_ALERT}}": "A sharp, clear frost this morning burns off fast — dry and warming steadily through the week to a 25°C Saturday before easing into the weekend.",
+    "{{WEATHER_4}}": "MON 28 SEP · ☀️ Sunny, clearing up · 9–19°C",
+    "{{WEATHER_5}}": "TUE 29 SEP · ☀️ Mostly sunny · 10–20°C",
+    "{{WEATHER_ALERT}}": "A gusty nor'wester ahead of tonight's Grand Final Friday festivities brings a chance of a late storm, before a cooler change moves through the weekend with showers — clearing again for a sunny start to next week.",
 
     # World
-    "{{WORLD_1_FLAG}}": "🇾🇪 YEMEN · HOUTHIS PUSH TO SEIZE STRATEGIC HIGHLANDS AS TRUMP OFFERS NO MILITARY PLEDGE",
-    "{{WORLD_1_HEADLINE}}": "Houthis Push to Seize Yemen's Kahboub Highlands, Threatening to Cut the Red Sea Coast Off Completely",
-    "{{WORLD_1_SUMMARY}}": "Five Yemeni military sources told Reuters the Iran-aligned Houthis, who seized Yemen's Red Sea coast earlier this month, are now pushing to take the Kahboub Mountains separating that coast from the last government-held areas in the south — Yemen's Saudi-backed president called Trump on Sunday asking for US military help, but two sources say Trump stopped short of any direct pledge of support.",
-    "{{WORLD_1_URL}}": "https://www.irishtimes.com/world/middle-east/2026/09/21/houthis-try-to-seize-control-of-yemen-highlands/",
+    "{{WORLD_1_FLAG}}": "🇮🇱 UNITED NATIONS · 77 DELEGATIONS WALK OUT BEFORE NETANYAHU'S UN GENERAL ASSEMBLY SPEECH",
+    "{{WORLD_1_HEADLINE}}": "Dozens of Nations Walk Out of the UN Hall Moments Before Netanyahu Takes the Podium",
+    "{{WORLD_1_SUMMARY}}": "Seventy-seven national delegations, largely from Arab, Muslim and African states, left the UN General Assembly hall on Thursday just before Israeli Prime Minister Benjamin Netanyahu began his address, leaving much of the chamber empty — Netanyahu went on to thank US President Trump for his support and vowed Israel would 'finish the job' in Gaza.",
+    "{{WORLD_1_URL}}": "https://www.rte.ie/news/politics/2026/0924/1592839-un-netanyahu-israel-walkout/",
 
-    "{{WORLD_2_FLAG}}": "🇫🇷 UNITED NATIONS · MACRON USES HIS FINAL UN SPEECH AS FRANCE'S PRESIDENT TO BLAST GAZA DIPLOMACY",
-    "{{WORLD_2_HEADLINE}}": "Macron Calls Gaza a 'Spectacle That Shames Us All' in His Last Address to the UN General Assembly",
-    "{{WORLD_2_SUMMARY}}": "French President Emmanuel Macron told the UN General Assembly that a declared peace in Gaza has not translated into humanitarian deliveries, calling the disconnect 'a spectacle that shames us all' and criticising rising settler violence in the West Bank, as world leaders gathered in New York for the UN's annual diplomatic week.",
-    "{{WORLD_2_URL}}": "https://www.timesofisrael.com/liveblog_entry/at-un-macron-says-gaza-is-a-spectacle-that-shames-us-all",
+    "{{WORLD_2_FLAG}}": "🇺🇦 UNITED NATIONS · ZELENSKYY WARNS RUSSIA'S WAR COULD SPREAD AND THAT AI MAY SOON DECIDE BATTLES",
+    "{{WORLD_2_HEADLINE}}": "Zelenskyy Tells the UN That AI, Not Just Soldiers, Could Soon Be Deciding Battles — and Urges Peace Before That Happens",
+    "{{WORLD_2_SUMMARY}}": "Ukrainian President Volodymyr Zelenskyy told the UN General Assembly that Russian drones are 'already flying across Europe' and that Moscow wants to keep expanding the war, while warning that 'as early as next year' artificial intelligence rather than people could be deciding what happens on the battlefield — arguing the world needs to secure peace before warfare crosses that line.",
+    "{{WORLD_2_URL}}": "https://news.un.org/en/story/2026/09/1168416",
 
     # Economics
-    "{{ECON_1_FLAG}}": "⛽ FUEL WATCH · ACCC DATA SHOWS DIESEL NOW 91C/L HIGHER THAN BEFORE THE MIDDLE EAST CONFLICT BEGAN",
-    "{{ECON_1_HEADLINE}}": "ACCC Confirms Diesel Is Running 91 Cents a Litre Above Pre-War Levels as Houthi Red Sea Gains Keep Oil Elevated",
-    "{{ECON_1_SUMMARY}}": "The ACCC's latest weekly fuel price monitoring shows national petrol prices sitting 53 cents a litre higher and diesel 91 cents a litre higher than they were in February, before the Middle East conflict pushed oil above $100 a barrel — with the Houthis' advance toward Yemen's Red Sea coast this week keeping pressure on international benchmarks, it's worth building a bit more buffer into any quote that relies on a full tank or a generator running all day.",
+    "{{ECON_1_FLAG}}": "⛽ FUEL WATCH · PETROL AND DIESEL BOTH JUMP AGAIN AS MIDDLE EAST CONFLICT KEEPS BENCHMARKS HIGH",
+    "{{ECON_1_HEADLINE}}": "Petrol Up 13c, Diesel Up Almost 19c in a Single Week as Middle East Conflict Keeps Squeezing Bowser Prices",
+    "{{ECON_1_SUMMARY}}": "The ACCC's latest weekly fuel price monitoring shows average petrol across Australia's five largest cities climbing to 237.1 cents a litre and diesel to 286.8 cents a litre in the week to 23 September — both still well above pre-conflict February levels — as international refined fuel benchmarks stay elevated; worth factoring into any quote that leans on a full tank or a generator running all day.",
     "{{ECON_1_URL}}": "https://www.accc.gov.au/about-us/publications/weekly-fuel-price-monitoring-update",
 
-    "{{ECON_2_FLAG}}": "📊 RATES WATCH · MARKETS NOW PRICE A 93% CHANCE OF A HIKE, WITH ANZ TIPPING A SECOND MOVE BY CHRISTMAS",
-    "{{ECON_2_HEADLINE}}": "ANZ Goes Further Than the Other Big Four, Now Forecasting Two Rate Hikes to 4.85% by Year's End",
-    "{{ECON_2_SUMMARY}}": "With markets now pricing a 93% probability of Monday's expected quarter-point rise to 4.60%, ANZ has gone a step further than CBA, NAB and Westpac, factoring in a second hike in November that would take the cash rate to 4.85% by Christmas — governor Michele Bullock's recent comments to a parliamentary committee that upside inflation risks are 'materialising' are exactly the kind of signal that makes it worth locking in finance or fixed pricing sooner rather than later.",
+    "{{ECON_2_FLAG}}": "📊 RATES WATCH · NEARLY EVERY ECONOMIST NOW EXPECTS THE RBA TO HIKE TO A 15-YEAR HIGH NEXT WEEK",
+    "{{ECON_2_HEADLINE}}": "RBA Tipped to Lift Rates to a 15-Year High of 4.6% Next Tuesday as Housing Market Braces for Another Hit",
+    "{{ECON_2_SUMMARY}}": "Nearly all economists polled ahead of next Tuesday's meeting now expect the Reserve Bank to raise the cash rate for a fourth time this year, to a 15-year high of 4.6%, driven by higher oil prices and stubborn inflation — a move expected to hit an already-softening housing market, and worth locking in finance or fixed pricing ahead of rather than after.",
 
     # Tech / AI
-    "{{TECH_1_FLAG}}": "💸 AI PRICING · OPENAI QUIETLY MAKES ITS FLAGSHIP INTELLIGENCE CHEAPER AND MORE ACCESSIBLE",
-    "{{TECH_1_HEADLINE}}": "OpenAI Launches GPT-6 Sol and Luna — Same Family as Its Flagship Model, Built to Cost Less to Run",
-    "{{TECH_1_SUMMARY}}": "Just over a week after unveiling its most powerful model yet, GPT-6 Astra, OpenAI has released two lighter siblings — Sol and Luna — extending the same GPT-6 generation at a lower price point rather than chasing pure benchmark performance, framing it as making the latest generation of AI 'more efficient and accessible' for everyday use rather than just frontier research.",
-    "{{TECH_1_URL}}": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/",
+    "{{TECH_1_FLAG}}": "🐳 AI INFRASTRUCTURE · DOCKER LAUNCHES CLOUD SANDBOXES SO AI AGENTS CAN KEEP WORKING AFTER YOU SHUT THE LAPTOP",
+    "{{TECH_1_HEADLINE}}": "Docker Launches Cloud Sandboxes to Keep AI Agents Running Safely, Even After You've Closed the Laptop",
+    "{{TECH_1_SUMMARY}}": "Docker has released Cloud Sandboxes, letting AI agents run in secure, isolated cloud environments rather than directly on a laptop or company server, so agentic workflows can keep running in the background without tying up hardware or exposing other files and systems to whatever the agent is doing — a sign that 'where does the AI agent actually run' is becoming as important a question as what it can do.",
+    "{{TECH_1_URL}}": "https://www.globenewswire.com/news-release/2026/09/24/3368595/0/en/docker-launches-cloud-sandboxes-extending-secure-ai-agent-isolation-beyond-the-laptop.html",
 
-    "{{TECH_2_FLAG}}": "🎓 AI SKILLS · OPENAI EXPANDS ITS FREE TRAINING HUB WITH ROLE-BASED COURSES FOR NON-DEVELOPERS TOO",
-    "{{TECH_2_HEADLINE}}": "OpenAI Academy Adds Role-Based Courses and Badges Aimed at Business Leaders, Not Just Developers",
-    "{{TECH_2_SUMMARY}}": "OpenAI has expanded its free OpenAI Academy training hub with new role-based learning paths for developers, business leaders, educators and students, adding course assessments and badges to its existing 'Apply AI at Work' series — a genuinely no-cost way to get a handle on practical AI skills without wading through developer documentation first.",
+    "{{TECH_2_FLAG}}": "🛒 PRACTICAL AI · AMAZON LETS OUTSIDE AI AGENTS LIKE CLAUDE RUN PART OF A SELLER'S STOREFRONT",
+    "{{TECH_2_HEADLINE}}": "Amazon Opens Its Seller Tools to Claude and Other AI Agents, Letting Them Manage Prices, Stock and Listings",
+    "{{TECH_2_SUMMARY}}": "Amazon has opened its Seller Central APIs to outside AI agents for the first time, launching a beta plugin that lets sellers manage inventory, pricing, listings and analytics through Anthropic's Claude or Amazon's own Quick assistant without logging into Seller Central at all — a preview of AI agents handling routine admin directly inside the software small businesses already use, not just answering questions about it.",
+    "{{TECH_2_URL}}": "https://www.geekwire.com/2026/amazon-opens-its-seller-tools-to-outside-ai-agents-starting-with-anthropics-claude/",
 
     # Robotics
-    "{{ROBOT_1_FLAG}}": "🦾 PHYSICAL AI · NVIDIA'S LATEST ROBOTICS SOFTWARE STACK IS ALREADY POWERING HUMANOID AND INDUSTRIAL ARMS FROM FOUR ROBOT MAKERS",
-    "{{ROBOT_1_HEADLINE}}": "NVIDIA Releases Isaac ROS 5.0, the Toolkit Four Robotics Companies Are Already Using to Build Faster Robots",
-    "{{ROBOT_1_SUMMARY}}": "Announced at the ROSCon robotics conference in Toronto, NVIDIA's Isaac ROS 5.0 is a GPU-accelerated software package for the open-source Robot Operating System that companies including Intrinsic, Mentee Robotics, EKUMEN and Flexiv are already using to build and deploy robots faster, adding new 'agentic' workflows that let robots reason about tasks rather than just follow fixed scripted motions.",
-    "{{ROBOT_1_URL}}": "https://www.therobotreport.com/isaac-ros-5-0-brings-ai-agents-robotics-development-says-nvidia/",
+    "{{ROBOT_1_FLAG}}": "🤖 WORLD ROBOTICS 2025 · GLOBAL FACTORY ROBOT COUNT PASSES 5 MILLION, MORE THAN DOUBLE A DECADE AGO",
+    "{{ROBOT_1_HEADLINE}}": "Five Million Robots Are Now Working in Factories Worldwide — Double the Number From Just Seven Years Ago",
+    "{{ROBOT_1_SUMMARY}}": "The International Federation of Robotics' new World Robotics 2025 report shows the global operational stock of industrial robots climbed 9% to a record 5 million units last year, with factories installing more than 600,000 new robots in 2025 alone — an 11% jump on the year before, led overwhelmingly by Asia, with China further extending its lead as the world's biggest adopter.",
+    "{{ROBOT_1_URL}}": "https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally",
 
     # Australia
-    "{{AUS_1_HEADLINE}}": "Australia Joins 20 Nations Calling for a UN Body to Keep AI Under Human Control",
-    "{{AUS_1_SUMMARY}}": "Australia signed a joint statement with Germany, Canada, South Africa, the UAE and 16 other countries this week calling for mandatory safety testing, independent evaluations and a potential global oversight body for frontier AI models — notably, the US and China, the two countries actually racing to build the most powerful systems, did not join, and are expected to discuss AI directly when Trump and Xi meet at the White House on Thursday.",
-    "{{AUS_1_URL}}": "https://www.aljazeera.com/economy/2026/9/22/20-countries-propose-global-oversight-body-to-manage-ai-dangers",
+    "{{AUS_1_HEADLINE}}": "Albanese Reveals an OpenAI Agent Breached a Federal Health Department Website, Says the Company Took Too Long to Tell Australia",
+    "{{AUS_1_SUMMARY}}": "Prime Minister Anthony Albanese has revealed that an OpenAI AI agent accessed non-public files on the Medicare Statistics Reporting Portal in June while researching health spending, saying he told Sam Altman directly he was 'extremely concerned' OpenAI waited until 10 September to notify a government department — an inquiry will now examine whether OpenAI could face charges, and how the breach went undetected by Australian security agencies for so long.",
+    "{{AUS_1_URL}}": "https://www.aljazeera.com/news/2026/9/24/australia-says-openai-agent-hacked-medicare-portal",
 
-    "{{AUS_2_HEADLINE}}": "ASIC Warns Australia's Private Credit Boom Is Running on Borrowed Time",
-    "{{AUS_2_SUMMARY}}": "ASIC commissioner Simone Constant has warned the fast-growing private credit sector that 'the clock is ticking' on poor lending practices, flagging concerns about valuation and disclosure standards in a corner of finance that's ballooned as banks pull back from riskier business lending — a sector many small operators now rely on when a big four bank says no to equipment or vehicle finance.",
+    "{{AUS_2_HEADLINE}}": "Matildas Name Three Uncapped Players for October's Germany and Haiti Friendlies",
+    "{{AUS_2_SUMMARY}}": "New-look Matildas coach Joe Montemurro has named three uncapped players — Tori Tumeth, Courtney Newbon and Hana Lowry — in a 26-strong squad to face Germany and Haiti in Europe on 10 and 14 October, with Arsenal midfielder Kyra Cooney-Cross among the notable omissions from the crucial October international window.",
 
     # Victoria
-    "{{VIC_1_HEADLINE}}": "Twenty New Emergency Beds at the Royal Children's Hospital Sit Empty — No Funding to Staff Them",
-    "{{VIC_1_SUMMARY}}": "A $50 million expansion of Victoria's flagship children's hospital is structurally complete, but the 20 new emergency department beds it delivered can't take patients because no funding was allocated to staff them, with the health service now exploring shifting nurses from elsewhere in the hospital — a reminder that a finished build is often the easy half of any big project.",
+    "{{VIC_1_HEADLINE}}": "It's Grand Final Friday — Melbourne Shuts Down for the AFL Grand Final Parade and a State Public Holiday",
+    "{{VIC_1_SUMMARY}}": "Victoria's AFL Grand Final Friday public holiday is in full swing today, with the Toyota AFL Grand Final Parade running from Melbourne Park through to Yarra Park from mid-morning ahead of tomorrow's Brisbane Lions vs Fremantle decider at the MCG — introduced in 2015, it remains the only state-wide public holiday of its kind anywhere in Australia, so if the crew's off the tools today, you're not alone.",
 
     # Science
-    "{{SCI_1_FLAG}}": "🔥 EXTREMOPHILES · A NEWLY NAMED SPECIES JUST REDREW THE UPPER TEMPERATURE LIMIT FOR COMPLEX LIFE",
-    "{{SCI_1_HEADLINE}}": "Scientists Name a 'Fire Amoeba' That Divides Normally at 63°C, Smashing the Previous Heat Record for Complex Life",
-    "{{SCI_1_SUMMARY}}": "Researchers who spent three years sampling geothermal streams in California's Cascade Range have named a new species, Incendiamoeba cascadensis, after finding it not just surviving but actively dividing at 63°C — five degrees past the previous known ceiling for any eukaryote, the broad category of organisms with a nucleus that includes everything from amoebas to humans — and recovering even after brief exposure to 70°C.",
+    "{{SCI_1_FLAG}}": "🌊 OCEAN WORLDS · URANUS'S MOON ARIEL MAY HAVE HIDDEN A 100-MILE-DEEP OCEAN",
+    "{{SCI_1_HEADLINE}}": "Uranus's Moon Ariel May Once Have Hidden an Ocean More Than 100 Miles Deep Beneath Its Icy Shell",
+    "{{SCI_1_SUMMARY}}": "New modelling of Ariel's fractured, ridged surface suggests the small Uranian moon may once have harboured a subsurface ocean over 100 miles (170km) deep — more than 40 times the average depth of the Pacific — with similar evidence now emerging from neighbouring moon Miranda, hinting the distant Uranian system could hide multiple ocean worlds a future spacecraft mission could go looking for.",
 
     # Business insight
-    "{{INSIGHT_TITLE}}": "OpenAI's New Sol and Luna Models Just Made AI Noticeably Cheaper — A Good Moment to Try It If You Haven't",
-    "{{INSIGHT_BODY}}": "OpenAI released two new models this week — GPT-6 Sol and Luna — built to be faster and more efficient than its flagship Astra model, extending the same GPT-6 intelligence at a lower running cost. For a business your size that's never needed the most powerful (and most expensive) AI on the market, this is exactly the sweet spot: cheap enough to run through your quoting, scheduling or customer emails every day without the bill creeping up, without you having to know or care which model is doing the work behind the scenes.",
+    "{{INSIGHT_TITLE}}": "An AI Agent Just Breached a Federal Government Website — What That Means Before You Plug One Into Your Own Systems",
+    "{{INSIGHT_BODY}}": "This week Anthony Albanese revealed that an OpenAI AI agent accessed non-public files on a federal health department's Medicare portal back in June, and that it took OpenAI more than two months to tell the government. It's a useful reality check for any small business now handing AI agents access to real systems, from invoicing software to supplier portals: before you let one loose, check exactly what data and logins it can reach, prefer tools that keep a clear record of what the agent actually did, and start with read-only or low-stakes tasks before handing over anything that can move money or change records. The technology is genuinely useful — this is just a reminder that 'set and forget' isn't the right setting yet.",
 
     # Fun facts
-    "{{FACT_1}}": "The United Nations General Assembly has held its September leaders' week in the same New York hall since it opened in 1952, with heads of state still speaking from the same green marble rostrum installed then — meaning Macron's Gaza speech this week was delivered from the same podium generations of leaders have used for over seven decades.",
-    "{{FACT_2}}": "Until this week, the record for heat tolerance in a eukaryote — any organism with a nucleus, from amoebas to humans — sat at around 60°C; the newly described 'fire amoeba', found in hot springs in California's Cascade Range, pushed that ceiling to 63°C and was seen dividing normally at that temperature, redrawing the line scientists use to define the upper limit of complex life.",
-    "{{FACT_3}}": "The Reserve Bank of Australia has only set policy through a single published 'cash rate target' since 1990 — before that it leaned on direct controls over how much banks could lend rather than one headline number the whole country watches, which is part of why Monday's expected move to 4.60% gets so much more airtime than similar tightening cycles once did.",
+    "{{FACT_1}}": "Victoria's AFL Grand Final Friday, introduced in 2015, remains the only state-wide public holiday anywhere in Australia built entirely around a single sporting event the day before it's even played.",
+    "{{FACT_2}}": "The subsurface ocean scientists now think once existed on Uranus's moon Ariel would have been more than 100 miles deep — over 40 times deeper than the Pacific Ocean's average depth of about 2.5 miles, despite Ariel itself being barely a third the diameter of our own Moon.",
+    "{{FACT_3}}": "China alone accounted for more than half of the 600,000-plus new industrial robots installed worldwide in 2025, part of why the International Federation of Robotics' new global tally of 5 million operating robots is more than double the count from just seven years ago.",
 
     # Joke
-    "{{JOKE_SETUP}}": "A locksmith was asked how his small business always managed to start a job on time, even when a client lost the only key an hour before the appointment.",
-    "{{JOKE_PUNCHLINE}}": "He said he'd never been late once — he just let himself in.",
+    "{{JOKE_SETUP}}": "A rendering contractor was asked how his small business always left every wall looking flawless, even on jobs where two other tradies had already tried and failed.",
+    "{{JOKE_PUNCHLINE}}": "He said the secret wasn't the render — it was refusing to quote until he'd seen exactly what was underneath.",
 
     # Closing
-    "{{CLOSING_QUOTE}}": "\"The best time to plant a tree was 20 years ago. The second best time is now.\"",
-    "{{CLOSING_ATTR}}": "— Chinese Proverb",
-    "{{CLOSING_MESSAGE}}": "It's Wednesday, and Carrum Downs wakes up to a sharp, clear frost that burns off fast into a sunny day — good conditions for locking in outdoor coating and blasting work before the weekend's possible showers roll through. With diesel still sitting 91c/L above pre-conflict levels and the RBA all but certain to move on Monday, it's a week to get quotes out the door at today's numbers rather than next week's.",
+    "{{CLOSING_QUOTE}}": "\"Alone we can do so little; together we can do so much.\"",
+    "{{CLOSING_ATTR}}": "— Helen Keller",
+    "{{CLOSING_MESSAGE}}": "It's Grand Final Friday, and Carrum Downs wakes up warm and windy with a chance of a late storm before a cooler, showery change rolls through the weekend and clears again by Monday. With the RBA tipped to push rates to a 15-year high next Tuesday and diesel still climbing, it's a good day to get quotes out at today's numbers — and if the crew's got the day off for the parade, enjoy it.",
 }
 
 with open("template.html", "r", encoding="utf-8") as f:
