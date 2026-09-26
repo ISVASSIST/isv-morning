@@ -1632,3 +1632,14 @@ JOKE: A rendering contractor was asked how his small business always left every 
 INSIGHT: An AI Agent Just Breached a Federal Government Website — What That Means Before You Plug One Into Your Own Systems
 QUOTE: "Alone we can do so little; together we can do so much." — Helen Keller
 ---
+
+DATE: Sunday, 27 September 2026
+SCIENCE: Physicists directly observe "Bethe strings" — multi-particle bound states predicted by Hans Bethe in 1931 — in an ultracold cesium gas, an Innsbruck-led team, published Nature Communications, covered 26 September 2026
+ROBOTICS: China's AGIBOT ships its 20,000th embodied-AI robot, deploying 300+ robots into daily operations at Chimelong Spaceship Park — announced 24 September 2026
+FACT: In 1931, physicist Hans Bethe predicted that particles in certain one-dimensional quantum systems could bind together into multi-particle 'strings' — a prediction so difficult to test that it took until this week, 95 years later, for scientists to directly observe one, using cesium atoms cooled to a few billionths of a degree above absolute zero.
+FACT: Brisbane's grand final win this week made it the first club in the 128-year history of the VFL/AFL to complete two separate three-peats, having also swept the flag from 2001 to 2003 under an entirely different generation of players.
+FACT: The Australian Army's Tiger attack helicopters, retired this week after exactly 22 years of service, are being replaced by AH-64E Apaches — a helicopter the US Army will have flown, and used in real combat, for closer to 40 years by the time Australia's own fleet catches up in age.
+JOKE: A marine mechanic working out of Carrum Downs was asked how his small business always got tinnies and cruisers back on the water before the next long weekend, no matter how long the queue at the ramp.
+INSIGHT: Card Surcharges Are Banned From Wednesday — Here's How to Reprice Without an Awkward Conversation at Every Job
+QUOTE: "Sunshine is delicious, rain is refreshing, wind braces us up, snow is exhilarating; there is really no such thing as bad weather, only different kinds of good weather." — John Ruskin
+---
