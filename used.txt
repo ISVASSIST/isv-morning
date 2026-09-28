@@ -1654,3 +1654,14 @@ JOKE: A signwriter was asked how his small business always got a client's shopfr
 INSIGHT: Microsoft Just Put Every One of Its AI Tools in a Single App — What a Tradie Actually Gets Out of It
 QUOTE: "The best preparation for tomorrow is doing your best today." — H. Jackson Brown Jr.
 ---
+
+DATE: Tuesday, 29 September 2026
+SCIENCE: A single infusion of the CRISPR therapy CTX310 (targeting ANGPTL3) cut LDL cholesterol by up to 52.5% and triglycerides by 47.8% for a full year in first-in-human trial — ScienceDaily / NEJM, 25-27 September 2026
+ROBOTICS: Unitree launches the Dex5-S 22-degree-of-freedom human-sized robot hand from US$6,500 — launched 21 September 2026 (no verifiable newer story found)
+FACT: The CRISPR therapy CTX310 targets ANGPTL3 because people who are naturally born without working copies of that gene tend to have very low cholesterol and triglycerides — so scientists effectively copied a rare, harmless natural variation rather than inventing something new.
+FACT: Nor'easters are named for the direction their winds blow from — the northeast — and they usually peak between December and February, which is why this weekend's September storm along the US East Coast was such a rarity.
+FACT: The Strait of Hormuz, at the heart of this week's oil jump, is only about 39 kilometres wide at its narrowest point, yet roughly a fifth of the world's oil normally passes through it.
+JOKE: A stonemason was asked how his small business kept customers so loyal, even when the quote came in higher than the other blokes'.
+INSIGHT: Backpacker Visa Caps Are Coming — How AI Can Soak Up the Admin When Labour Stays Tight
+QUOTE: "Courage is not the absence of fear, but the triumph over it." — Nelson Mandela
+---
