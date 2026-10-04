@@ -1720,3 +1720,14 @@ INSIGHT: Your Shopfront Is Now an AI Conversation: Check What AI Says About Your
 QUOTE: "Do the hard jobs first. The easy jobs will take care of themselves." — Dale Carnegie
 ---
 
+
+DATE: Monday, 5 October 2026
+SCIENCE: Chang'e-6 lunar soil contains gamma iron, a surprising magnetic time capsule — ScienceDaily, 1 October 2026
+ROBOTICS: Astribot brings T1 humanoid (from US$18,000) to North America at IROS 2026 — 2 October 2026
+FACT: Gamma iron, found in Chang'e-6 Moon soil, is a form of iron normally stable only above roughly 900°C, yet it survived on the lunar surface because impacts froze it in place inside glass.
+FACT: Astribot's T1 humanoid starts at US$18,000, which is cheaper than many new utes sold in Australia.
+FACT: Brazil's president is elected by two-round voting: if nobody wins more than 50% of valid votes, the top two candidates face a runoff three weeks later, which this year falls on 25 October.
+JOKE: A fencing contractor was asked how his small business never ran out of work, even in a slow year.
+INSIGHT: Photos In, Paperwork Out: Let AI Turn Your Job Photos Into Quotes and Handover Notes
+QUOTE: "It does not matter how slowly you go as long as you do not stop." — Confucius
+---
