@@ -1731,3 +1731,14 @@ JOKE: A fencing contractor was asked how his small business never ran out of wor
 INSIGHT: Photos In, Paperwork Out: Let AI Turn Your Job Photos Into Quotes and Handover Notes
 QUOTE: "It does not matter how slowly you go as long as you do not stop." — Confucius
 ---
+
+DATE: Tuesday, 6 October 2026
+SCIENCE: Astronomers find first likely second-generation "phoenix" planet orbiting white dwarf HS 0209+0832 — University of Warwick/Hubble, 5 October 2026
+ROBOTICS: FCC restrictions on new foreign-made mobile robots could accelerate shift to local AI — The Robot Report, 5 October 2026
+FACT: Niobium, found at about 1,000 times solar levels in the white dwarf HS 0209+0832's atmosphere, is the same metal added in tiny amounts to high-strength steel for pipelines and bridges.
+FACT: Optogenetics grew from Chlamydomonas, a single-celled green alga that swims toward light using rhodopsin proteins, the same family of proteins found in your eyes.
+FACT: The Nobel Prize in Physiology or Medicine comes with 12 million Swedish crowns, about US$1.7 million, which the three optogenetics winners will split between them.
+JOKE: A roof plumber was asked how his small business never lost a customer, even when he turned up in the rain.
+INSIGHT: Free AI Is Becoming Ad-Funded: Pay for the Tier Where Your Customer Data Stays Private
+QUOTE: "Whatever you can do, or dream you can, begin it. Boldness has genius, power and magic in it." — Johann Wolfgang von Goethe
+---
