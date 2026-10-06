@@ -1742,3 +1742,14 @@ JOKE: A roof plumber was asked how his small business never lost a customer, eve
 INSIGHT: Free AI Is Becoming Ad-Funded: Pay for the Tier Where Your Customer Data Stays Private
 QUOTE: "Whatever you can do, or dream you can, begin it. Boldness has genius, power and magic in it." — Johann Wolfgang von Goethe
 ---
+
+DATE: Wednesday, 7 October 2026
+SCIENCE: Francis Halzen wins 2026 Nobel Prize in Physics for IceCube high-energy neutrino detection — announced 6 October 2026
+ROBOTICS: Boston Dynamics opens Metaplant Application Center to train Atlas humanoids — The Robot Report, 6 October 2026
+FACT: IceCube, the detector behind this year's physics Nobel, uses a full cubic kilometre of Antarctic ice instrumented with light sensors to spot neutrinos.
+FACT: Roughly 100 trillion neutrinos from the Sun pass through your body every second, and almost none of them interact with a single atom of you.
+FACT: Mistral trained its new 1-trillion-parameter Large 4 model in about two months on 4,000 Nvidia Grace Blackwell GPUs housed in European data centres.
+JOKE: Why did the carpenter refuse to do a quote on the back of a napkin?
+INSIGHT: Cheap AI Gadgets Can Ship Your Customer Data Overseas: Vet Any Smart Device Before It Goes on a Job Site
+QUOTE: "Excellence is not an act, but a habit." — Will Durant
+---
