@@ -56,8 +56,8 @@ replacements = {
 '{{FACT_3}}': 'Mistral trained its new 1-trillion-parameter Large 4 model in about two months on 4,000 Nvidia Grace Blackwell GPUs housed in European data centres.',
 '{{JOKE_SETUP}}': 'Why did the carpenter refuse to do a quote on the back of a napkin?',
 '{{JOKE_PUNCHLINE}}': 'Because last time the numbers all came out in the wash, and so did the deposit.',
-'{{CLOSING_QUOTE}}': '"Fall seven times, stand up eight."',
-'{{CLOSING_ATTR}}': '— Japanese Proverb',
+'{{CLOSING_QUOTE}}': '"Excellence is not an act, but a habit."',
+'{{CLOSING_ATTR}}': '— Will Durant',
 '{{CLOSING_MESSAGE}}': "It's Wednesday 7 October, dry and mild today with sunshine building Thursday and Friday, so line up your outdoor coating jobs for the warm window before showers arrive Saturday. With diesel terminal prices still high, keep that fuel line in every quote.",
 }
 
