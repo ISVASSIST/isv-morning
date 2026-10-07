@@ -56,8 +56,8 @@ replacements = {
 '{{FACT_3}}': 'About 70% of the diesel sold in Australia is imported, mainly from Japan, South Korea and Singapore, which is why overseas shocks hit local pump and freight prices so quickly.',
 '{{JOKE_SETUP}}': 'What did the painter say to the client who wanted a quote on the spot?',
 '{{JOKE_PUNCHLINE}}': '"Give me a minute, I like to go over my numbers with a second coat."',
-'{{CLOSING_QUOTE}}': '"Opportunity is missed by most people because it is dressed in overalls and looks like work."',
-'{{CLOSING_ATTR}}': '— Thomas Edison',
+'{{CLOSING_QUOTE}}': '"The secret of getting ahead is getting started."',
+'{{CLOSING_ATTR}}': '— Mark Twain',
 '{{CLOSING_MESSAGE}}': "It's Thursday 8 October, sunny and 23°C with Friday even warmer, so get the outdoor coating jobs done before showers arrive Saturday. With Woolworths' freight fuel levy climbing, keep a fuel line in every quote.",
 }
 
