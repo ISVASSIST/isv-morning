@@ -1762,5 +1762,5 @@ FACT: Universal Robots, the cobot maker at the centre of this week's legal settl
 FACT: About 70% of the diesel sold in Australia is imported, mainly from Japan, South Korea and Singapore, which is why overseas shocks hit local pump and freight prices so quickly.
 JOKE: What did the painter say to the client who wanted a quote on the spot?
 INSIGHT: Before You Plug In Any AI Tool, Ask One Question: How Fast Will You Tell Me If It Goes Wrong?
-QUOTE: "The secret of getting ahead is getting started." — Mark Twain
+QUOTE: "Little strokes fell great oaks." — Benjamin Franklin
 ---
