@@ -1764,3 +1764,14 @@ JOKE: What did the painter say to the client who wanted a quote on the spot?
 INSIGHT: Before You Plug In Any AI Tool, Ask One Question: How Fast Will You Tell Me If It Goes Wrong?
 QUOTE: "Little strokes fell great oaks." — Benjamin Franklin
 ---
+
+DATE: Friday, 9 October 2026
+SCIENCE: James Webb Telescope finds strong evidence of an atmosphere on lava world HD 3167 b — reported 7 October 2026
+ROBOTICS: Boston Dynamics appoints former Amazon Alexa AI chief Rohit Prasad as CEO — The Robot Report, 6–7 October 2026
+FACT: Boston Dynamics began in 1992 as a spin-off from MIT, founded by Marc Raibert, and Hyundai bought a controlling stake in 2021.
+FACT: HD 3167 b orbits its star in about 24 hours, so a full year on this lava world is shorter than a single working day.
+FACT: Australia's rate of inflation hit 4.0% in August 2026, up from 3.5% in July, according to reporting on the ABS figures.
+JOKE: Why did the chippy always get paid on time?
+INSIGHT: AI Just Got 75% Cheaper: Use the Small Model for Routine Paperwork
+QUOTE: "Rome was not built in a day, but they were laying bricks every hour." — John Heywood
+---
