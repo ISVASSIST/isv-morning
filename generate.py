@@ -56,8 +56,8 @@ replacements = {
 '{{FACT_3}}': 'A six-month study found high-intensity interval training helped older adults lose body fat while keeping muscle, unlike moderate workouts, which caused some lean muscle loss.',
 '{{JOKE_SETUP}}': 'Why did the formwork carpenter never panic when a client wanted the job done yesterday?',
 '{{JOKE_PUNCHLINE}}': '"He said he\'d already set the deadline in concrete, just not that one."',
-'{{CLOSING_QUOTE}}': '"Opportunity is missed by most people because it is dressed in overalls and looks like work."',
-'{{CLOSING_ATTR}}': '— Thomas Edison',
+'{{CLOSING_QUOTE}}': '"Make hay while the sun shines."',
+'{{CLOSING_ATTR}}': '— English Proverb',
 '{{CLOSING_MESSAGE}}': "It's Sunday 11 October, sunny and up to 25°C, so make the most of it before showers arrive tonight and Monday brings possible thunderstorms. Pack the tools and get any outdoor jobs sorted today.",
 }
 
