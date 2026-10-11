@@ -1797,3 +1797,14 @@ JOKE: Why did the formwork carpenter never panic when a client wanted the job do
 INSIGHT: AI Tools Get Switched Off: Keep Your Quotes and Customer Data in Files You Own
 QUOTE: "Make hay while the sun shines." — English Proverb
 ---
+
+DATE: Monday, 12 October 2026
+SCIENCE: Vienna team builds first self-stabilising thorium-229 nuclear clock, published in Nature 7 October 2026 — ScienceDaily, 10 October 2026
+ROBOTICS: Renault puts Wandercraft's Calvin-40 humanoid into service at French EV plant, ~350 more planned — letsdatascience, date unconfirmed
+FACT: The USGS first reported Friday's Panama earthquake as magnitude 8.0, then revised it down to 7.7 as more seismic data came in.
+FACT: The new thorium-229 nuclear clock is estimated to drift by about one second in 30 million years, yet its makers say it is not yet as good as the best optical atomic clocks.
+FACT: The International Federation of Robotics estimates only about 7,000 humanoid robots were sold worldwide in 2025, mostly for collecting AI training data rather than doing productive work.
+JOKE: Why did the glazier never lose a customer over a late job?
+INSIGHT: Sandbox First: Trial Any AI Agent on Dummy Jobs Before It Touches Real Customers
+QUOTE: "A bad workman always blames his tools." — English Proverb
+---
