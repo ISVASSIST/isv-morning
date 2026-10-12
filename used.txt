@@ -1808,3 +1808,14 @@ JOKE: Why did the glazier never lose a customer over a late job?
 INSIGHT: Sandbox First: Trial Any AI Agent on Dummy Jobs Before It Touches Real Customers
 QUOTE: "A bad workman always blames his tools." — English Proverb
 ---
+
+DATE: Tuesday, 13 October 2026
+SCIENCE: A 100-year-old mushroom disease involves more than 17 species of harmful bacteria, not one — ScienceDaily, 11 October 2026
+ROBOTICS: BYD unveils design of its first self-developed humanoid robot via patent published 9 October 2026 — carnewschina
+FACT: The Economics Nobel is formally the Sveriges Riksbank Prize, created by Sweden's central bank in 1968, so it is not one of the five original prizes in Alfred Nobel's will.
+FACT: Hurricane Isaias was the first hurricane to make landfall on the US mainland in exactly two years, in an unusually quiet Atlantic season.
+FACT: Anthropic says Claude Haiku 5.5 scored 72.4% on a computer-use test subset where its predecessor managed only 15.7%.
+JOKE: Why did the excavator operator keep winning tenders against bigger firms?
+INSIGHT: Write Your Quoting Process Down First: AI Can Only Copy a Process You Can Describe
+QUOTE: "Measure twice, cut once." — English Proverb
+---
