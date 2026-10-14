@@ -1830,3 +1830,14 @@ JOKE: Why did the roofer's bookkeeper never worry about a tax audit?
 INSIGHT: Photograph Every Job Before and After: Your Best Training Data for Any AI Tool
 QUOTE: "Do one thing every day that scares you." — Eleanor Roosevelt
 ---
+
+DATE: Thursday, 15 October 2026
+SCIENCE: Oxford physicists recreate a bizarre quantum effect (particle responds to a magnetic field without travelling through it) on a hybrid quantum computer — ScienceDaily, 13 October 2026
+ROBOTICS: Promise Robotics signs multi-year deal with D.R. Horton to build 1,250+ US homes via Factory-as-a-Service — The Robot Report, 13 October 2026
+FACT: The James Webb Space Telescope's 6.5-metre primary mirror is made of 18 hexagonal beryllium segments coated in a thin layer of gold.
+FACT: A diesel engine has no spark plugs: it squeezes air so hard it gets hot enough, above 500°C, to ignite the fuel on its own.
+FACT: The magnetic-field quantum effect behind this week's Oxford story was first predicted by physicists Yakir Aharonov and David Bohm in 1959.
+JOKE: Why did the bricklayer never worry about a slow month?
+INSIGHT: Let AI Draft Your Complaint and Defect Replies: You Check the Facts, Then Press Send
+QUOTE: "Courage is grace under pressure." — Ernest Hemingway
+---
