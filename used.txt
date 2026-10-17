@@ -1862,3 +1862,14 @@ JOKE: Why did the landscaper never worry about a late-paying client?
 INSIGHT: Ask AI to Check Your Quote Against the Job Brief for Missed Items
 QUOTE: "Slow and steady wins the race." — Aesop
 ---
+
+DATE: Sunday, 18 October 2026
+SCIENCE: USC scientists find a way to create a never-ending supply of cancer-fighting immune cells — ScienceDaily, ~15 October 2026
+ROBOTICS: Boston Dynamics shows a new humanoid hand — The Robot Report, 16 October 2026
+FACT: Cancer cells that are unusually small can be more aggressive than larger ones, according to Virginia Tech researchers.
+FACT: Agility Robotics' Digit humanoid runs roughly 4 hours per charge, so warehouses use a rotating fleet to cover a full shift.
+FACT: Australia's federal public service pay offer on the table this week is 9 per cent, per the Canberra Times.
+JOKE: Why did the carpenter never worry about being behind schedule?
+INSIGHT: Ask AI to Reshuffle Your Week Around the Forecast and Your Fuel Runs
+QUOTE: "The harder you work, the luckier you get." — Gary Player
+---
