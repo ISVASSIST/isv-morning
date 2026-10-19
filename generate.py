@@ -56,8 +56,8 @@ replacements = {
 '{{FACT_3}}': "The RBA's cash rate of 4.60% is the highest since late 2011, according to recent commentary.",
 '{{JOKE_SETUP}}': "Why did the sparky's invoices always get paid first?",
 '{{JOKE_PUNCHLINE}}': '"Because he made sure customers knew the quote was current."',
-'{{CLOSING_QUOTE}}': '"The man who moves a mountain begins by carrying away small stones."',
-'{{CLOSING_ATTR}}': '— Confucius',
+'{{CLOSING_QUOTE}}': '"Perseverance is not a long race; it is many short races one after the other."',
+'{{CLOSING_ATTR}}': '— Walter Elliot',
 '{{CLOSING_MESSAGE}}': "It's a warm, mostly cloudy Tuesday with a shower or storm possible tomorrow arvo, so get the outdoor work done today. Rates are up and diesel is near $2.80, so a price check could be worth ten minutes this week.",
 }
 
