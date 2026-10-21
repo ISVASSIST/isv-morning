@@ -56,8 +56,8 @@ replacements = {
 '{{FACT_3}}': "IDC estimated first-half 2026 humanoid robot shipments at around 25,000 units, with China accounting for 77.9% of them.",
 '{{JOKE_SETUP}}': "Why did the plumber always get the tough jobs?",
 '{{JOKE_PUNCHLINE}}': '"Because he never let a little pressure get to him."',
-'{{CLOSING_QUOTE}}': '"Fall seven times, stand up eight."',
-'{{CLOSING_ATTR}}': '— Japanese Proverb',
+'{{CLOSING_QUOTE}}': '"A stitch in time saves nine."',
+'{{CLOSING_ATTR}}': '— English Proverb',
 '{{CLOSING_MESSAGE}}': "It's Thursday and the first 30-degree day since March, so water, shade and early starts on site. Tomorrow is just as hot with gusty winds, then a cold front on Saturday. Get the outdoor work done while it's dry.",
 }
 
