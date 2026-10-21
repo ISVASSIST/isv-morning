@@ -1893,3 +1893,14 @@ JOKE: Why did the electrician's apprentice never get lost on site?
 INSIGHT: Let AI Draft Your Hot-Weather Safety Checklists: You Review, Then Sign
 QUOTE: "A journey of a thousand miles begins with a single step." — Lao Tzu
 ---
+DATE: Thursday, 22 October 2026
+SCIENCE: Natural compound kills C. difficile gut bacteria while sparing beneficial microbes — Helmholtz Centre for Infection Research via ScienceDaily, ~20 October 2026
+ROBOTICS: AGCO to deploy Agility Robotics' Digit humanoid in a Kansas factory as Agility heads toward SPAC listing — The Robot Report, 21 October 2026
+FACT: Brent crude briefly hit a five-month high of US$111.99 a barrel on Tuesday before settling lower.
+FACT: Agility Robotics' Digit has been deployed at nine customer sites, according to The Robot Report.
+FACT: IDC estimated first-half 2026 humanoid robot shipments at around 25,000 units, with China accounting for 77.9% of them.
+JOKE: Why did the plumber always get the tough jobs?
+INSIGHT: Give AI the Least Access It Needs: Keep Customer and Bank Details Out of Chat Tools
+QUOTE: "A stitch in time saves nine." — English Proverb
+---
+
