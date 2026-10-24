@@ -1924,3 +1924,13 @@ JOKE: Why did the awning installer stay so calm when the storm warning came thro
 INSIGHT: Let AI Write Plain-English Aftercare Sheets: Cure Times and Care Instructions Customers Will Actually Read
 QUOTE: "Rivers know this: there is no hurry. We shall get there some day." — A. A. Milne
 ---
+DATE: Sunday, 25 October 2026
+SCIENCE: Seven-year Neurology study links exercise over eight hours a week to almost no cognitive decline in Parkinson's — ScienceDaily, 22 October 2026
+ROBOTICS: HOJ Innovations deploys an AMR fleet at Hunter Douglas's Salt Lake City fulfilment centre, replacing an overhead conveyor — Robotics 24/7, ~24 October 2026
+FACT: After the PHP2Shell disclosure, government websites in France, the Netherlands, Belgium and Australia were reportedly taken offline as a precaution.
+FACT: The Bureau of Meteorology has said Melbourne could see 30 to 40 mm of rain from Saturday night into Sunday.
+FACT: Wiz says the PHP flaws affect every PHP release of the past decade, going back to version 5.4.
+JOKE: Why did the concreter love a quiet Sunday?
+INSIGHT: Ask AI to Compare Supplier Price Lists and Flag Increases Before You Quote
+QUOTE: "Rest is not idleness." — John Lubbock
+---
