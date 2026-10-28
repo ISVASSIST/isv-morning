@@ -1964,3 +1964,13 @@ JOKE: Why did the forklift driver win Employee of the Month?
 INSIGHT: Let AI Chase Your Overdue Invoices Politely
 QUOTE: "Tough times never last, but tough people do." — Robert H. Schuller
 ---
+DATE: Thursday, 29 October 2026
+SCIENCE: A single sauna session temporarily surges white blood cells through the bloodstream, University of Eastern Finland — ScienceDaily, 28 October 2026
+ROBOTICS: ANYbotics begins delivering ANYmal X legged inspection robot for explosive atmospheres — The Robot Report, ~27 October 2026
+FACT: A single sauna session can temporarily raise the number of white blood cells circulating in your bloodstream, a response similar to what happens during exercise.
+FACT: Australia's September inflation rate of 4.3% was driven in large part by automotive fuel, which rose 23.6% over the year.
+FACT: ANYbotics' ANYmal X inspection robot is certified under IECEx and ATEX standards for use in Zone 1 explosive atmospheres, where an ordinary spark could be dangerous.
+JOKE: Why did the shopfitter get invited to every planning meeting?
+INSIGHT: Let AI Turn Your Rough Site Notes Into a Clean Variation Request
+QUOTE: "What gets measured gets managed." — Peter Drucker
+---
