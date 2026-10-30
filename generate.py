@@ -56,8 +56,8 @@ replacements = {
 '{{FACT_3}}': "Bedrock Robotics, which makes autonomous kits for heavy equipment, raised US$600 million at a US$4.1 billion valuation on 26 October.",
 '{{JOKE_SETUP}}': "Why did the scaffolder get nervous when the wind warning came through?",
 '{{JOKE_PUNCHLINE}}': '"He knew the whole job was about to get a bit shaky, and he hates being left hanging."',
-'{{CLOSING_QUOTE}}': '"A smooth sea never made a skilled sailor."',
-'{{CLOSING_ATTR}}': '— Franklin D. Roosevelt',
+'{{CLOSING_QUOTE}}': '"Slow is smooth, and smooth is fast."',
+'{{CLOSING_ATTR}}': '— Military maxim',
 '{{CLOSING_MESSAGE}}': "A possibly severe storm is forecast for Saturday late morning to early afternoon, so tie down loose gear and sheets now and keep the ute off the road until it clears. If you do head out this weekend, expect the Operation Furlong police testing, and Monday looks wet again.",
 }
 
