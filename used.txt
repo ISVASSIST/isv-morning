@@ -2054,3 +2054,13 @@ JOKE: Why did the bricklayer start the week by checking the level twice?
 INSIGHT: Ask AI to Turn Supplier Price Rises Into a Quote Update Checklist
 QUOTE: "Rome wasn't built in a day." — Traditional proverb
 ---
+DATE: Tuesday, 10 November 2026
+SCIENCE: Thirty-five years of research link acorn crops to Lyme disease risk — ScienceDaily, 9 November 2026
+ROBOTICS: China blocks SoftBank's planned acquisition of ABB Robotics — The Robot Report, November 2026
+FACT: Anthropic's Fable price drops from US$10/$50 to US$8/$40 per million input/output tokens with the 5.2 release, according to The New Stack.
+FACT: North American robot orders rose 24.8% in Q3 2026, according to A3 as shown on The Robot Report homepage.
+FACT: FuelRadar's 7 November figures put the national average diesel price at 278.0 cents a litre, down 4.0c in a week.
+JOKE: Why did the sparky quote the job in pencil?
+INSIGHT: Let AI Draft a Scope-Confirmation Message Before You Start Any New Job
+QUOTE: "A good plan violently executed now is better than a perfect plan next week." — George S. Patton
+---
