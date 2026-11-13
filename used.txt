@@ -2094,3 +2094,13 @@ JOKE: Why did the electrician turn up on Friday the 13th without a worry in the 
 INSIGHT: Use AI to Write a One-Page AI Rules Sheet for Your Crew
 QUOTE: "Shallow men believe in luck. Strong men believe in cause and effect." — Ralph Waldo Emerson
 ---
+DATE: Saturday, 14 November 2026
+SCIENCE: NIH BRAIN Initiative publishes basal ganglia cell atlas (25M+ cells, 61 cell groups) across ~27 Cell Press papers — 12 November 2026
+ROBOTICS: GXO signs non-binding LOI with Apptronik for up to 1,000 Apollo humanoids over four years, trials from 2027 — GlobeNewswire, 12 November 2026
+FACT: In a Science study from the University of Tübingen, carrion crows judged the direction of moving dots in about 235 milliseconds on average, roughly twice as fast as humans and monkeys in earlier studies.
+FACT: The new basal ganglia brain atlas's 21 million human cells came from just six donated brains.
+FACT: Logistics firm GXO has run more than 45 humanoid robot pilots with several vendors, including Apptronik, Agility Robotics and Reflex Robotics.
+JOKE: Why did the painter refuse to start an outdoor job on a drizzly Saturday?
+INSIGHT: When Outlook and Teams Go Down, Have AI Write Your One-Page Outage Plan Now
+QUOTE: "There is no such thing as bad weather, only different kinds of good weather." — John Ruskin (attributed)
+---
