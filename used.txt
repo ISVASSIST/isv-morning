@@ -2104,3 +2104,13 @@ JOKE: Why did the painter refuse to start an outdoor job on a drizzly Saturday?
 INSIGHT: When Outlook and Teams Go Down, Have AI Write Your One-Page Outage Plan Now
 QUOTE: "There is no such thing as bad weather, only different kinds of good weather." — John Ruskin (attributed)
 ---
+DATE: Sunday, 15 November 2026
+SCIENCE: STREAM trial (NEJM, ~1,900 adults 70+) finds stopping primary-prevention statins non-inferior at 2 years but slightly more heart events by 4 years — covered ScienceDaily 13 November 2026
+ROBOTICS: FF EAI Robotics (FFR) Q3 results — 1,168 robots shipped incl. record 351 in October, reaffirms ~2,000 target for 2026 — PR Newswire, 13 November 2026
+FACT: Turkey and Qatar signed five agreements at the 12th meeting of their High Strategic Committee in Istanbul, including a mutual defence pact.
+FACT: Robot start-up Rhoda AI says its robots can learn a new task from as little as ten hours of remote-control demonstration, after pretraining on hundreds of millions of videos.
+FACT: FF EAI Robotics shipped a record 351 robots in October 2026, beating its previous monthly high of 265 set in September.
+JOKE: Why did the gasfitter take a proper Sunday off?
+INSIGHT: Before You Paste Anything Into an AI Tool, Strip Out the Passwords and Bank Details
+QUOTE: "Rest when you're weary. Refresh and renew yourself, your body, your mind, your spirit. Then get back to work." — Ralph Marston
+---
