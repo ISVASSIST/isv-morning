@@ -2114,3 +2114,13 @@ JOKE: Why did the gasfitter take a proper Sunday off?
 INSIGHT: Before You Paste Anything Into an AI Tool, Strip Out the Passwords and Bank Details
 QUOTE: "Rest when you're weary. Refresh and renew yourself, your body, your mind, your spirit. Then get back to work." — Ralph Marston
 ---
+DATE: Monday, 16 November 2026
+SCIENCE: Stanford-led Science Advances study — resting-state brain-connectivity score flags Alzheimer's risk years before memory problems in cognitively normal older adults — covered ScienceDaily 14 November 2026
+ROBOTICS: ASUS unveils Gallop humanoid learning to pack motherboard accessories, 99.5% success in 20 seconds target, trials 2027 — Interesting Engineering, 13 November 2026
+FACT: Singapore takes over the rotating ASEAN chair from the Philippines when this week's Manila summit closes on 17 November.
+FACT: ChatGPT Wallet never gives the agent your real card number. A card-network token stands in for it, and only after a Face ID or fingerprint check.
+FACT: Melbourne's wholesale petrol price fell about 10 cents a litre in four trading days last week, from 205.8 cents on Monday to 195.7 cents on Friday.
+JOKE: Why did the bobcat operator never complain about Mondays?
+INSIGHT: Let AI Turn a Coating Datasheet Into a One-Page Cheat Sheet for the Crew
+QUOTE: "Never leave that till tomorrow which you can do today." — Benjamin Franklin
+---
