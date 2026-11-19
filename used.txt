@@ -2154,3 +2154,13 @@ JOKE: Why wasn't the crane operator surprised by the wage figures?
 INSIGHT: Let AI Check Your Bank Statements for Fees You Never Agreed To
 QUOTE: "Beware of little expenses; a small leak will sink a great ship." — Benjamin Franklin
 ---
+DATE: Friday, 20 November 2026
+SCIENCE: Adelaide University/UNSW Next Energy study finds airborne sodium (often sea salt) drives the orange glow and visibility of hydrogen flames, signal varied 28-fold — covered ScienceDaily 19 November 2026
+ROBOTICS: Boston Dynamics' Atlas humanoid to be tested in GlobalFoundries chip plants from early 2027, first non-auto early adopter; Spot rollout expanded — Tech Times, 19 November 2026
+FACT: Australia's unemployment rate hit 4.9% in October 2026, its highest since about October 2021, as employment fell by 43,500 people.
+FACT: The orange glow sometimes seen in hydrogen flames comes mostly from airborne sodium, and in Adelaide tests it varied more than 28-fold with the burner unchanged.
+FACT: GlobalFoundries' chip plant in Vermont has used Boston Dynamics' Spot robot dog for more than four years.
+JOKE: Why was the stormwater drainer the only tradie smiling at Friday's storm warning?
+INSIGHT: Before You Sell or Trade the Old Ute, Ask AI to Price It Against Live Listings
+QUOTE: "When everything seems to be going against you, remember that the airplane takes off against the wind, not with it." — Henry Ford
+---
