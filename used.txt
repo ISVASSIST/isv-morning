@@ -2174,3 +2174,13 @@ JOKE: Why don't roofers trust a 31-degree Sunday forecast?
 INSIGHT: Before You Take On a Big New Customer, Ask AI to Check Their Credit Signals
 QUOTE: "The best way to find out if you can trust somebody is to trust them." — Ernest Hemingway
 ---
+DATE: Sunday, 22 November 2026
+SCIENCE: University of Córdoba builds rechargeable zinc-air battery using vitamin B12 (cobalamin) as catalyst on carbon nanotubes, up to 250 charge cycles — covered ScienceDaily 20 November 2026
+ROBOTICS: GM reportedly targets 20% increase in robotics and factory automation by 2028, building its own robots at Kokomo, Indiana — Robotics 24/7 citing Reuters, 20 November 2026
+FACT: Vitamin B12 is the only vitamin with a metal atom at its core: a single atom of cobalt, which is why its chemical name is cobalamin.
+FACT: The Riemann hypothesis was first put forward by German mathematician Bernhard Riemann in 1859, and it is one of the seven Millennium Prize Problems, each worth US$1 million.
+FACT: The magnitude 6.8 earthquake felt in Darwin on Saturday started about 130 to 140 kilometres underground, which is one reason its shaking spread so far.
+JOKE: Why wouldn't the land surveyor predict next Saturday's election result?
+INSIGHT: After a Storm, Let AI Turn Your Damage Photos Into a Claim-Ready Report
+QUOTE: "It is not enough to be busy; so are the ants. The question is: what are we busy about?" — Henry David Thoreau
+---
