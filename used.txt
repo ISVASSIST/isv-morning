@@ -2194,3 +2194,13 @@ JOKE: Why did the plasterer turn off the election ads on Monday morning?
 INSIGHT: When an AI Rings Your Business for a Quote, Make Sure It Hears the Right Answer
 QUOTE: "Quality is never an accident; it is always the result of intelligent effort." — John Ruskin
 ---
+DATE: Tuesday, 24 November 2026
+SCIENCE: University of Hong Kong simulations (Huang & Yang, Science Advances) show seismic waves raise pore pressure in fault gouge ~10x, explaining remotely triggered earthquakes — covered Phys.org 23 November 2026
+ROBOTICS: Ant Group leads US$100M pre-A round in Hangzhou humanoid maker Simplexity Robotics at ~US$1.6B valuation (wheeled humanoid iX) — TechNode/Bloomberg, 23 November 2026
+FACT: Victoria was one of the first places in the world to use the secret ballot, at its 1856 election, which is why it's sometimes called the "Australian ballot".
+FACT: The 2002 magnitude 7.9 Denali earthquake in Alaska set off swarms of small earthquakes at Yellowstone, more than 3,000 kilometres away.
+FACT: Love waves are named after British mathematician Augustus Love, who described them in 1911.
+JOKE: Why wasn't the concreter worried when the share market fell eight days in a row?
+INSIGHT: Before the Slowdown Bites, Ask AI How Much of Your Work Comes From Your Top Three Customers
+QUOTE: "Smooth seas do not make skillful sailors." — African proverb
+---
