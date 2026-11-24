@@ -2204,3 +2204,13 @@ JOKE: Why wasn't the concreter worried when the share market fell eight days in 
 INSIGHT: Before the Slowdown Bites, Ask AI How Much of Your Work Comes From Your Top Three Customers
 QUOTE: "Smooth seas do not make skillful sailors." — African proverb
 ---
+DATE: Wednesday, 25 November 2026
+SCIENCE: ESA's Euclid finds most distant quasar yet, J1504+6252 "Dún Aonghasa" at redshift 8.13, ~630 million years after the Big Bang, ~360 million solar mass black hole — Astronomy & Astrophysics, announced 24 November 2026
+ROBOTICS: Infineon adapts automotive and industrial chips (functional safety, GaN motor drives up to 1.2 kW) for humanoid robots, ~US$500 of chips per robot — Digitimes, 24 November 2026
+FACT: The new record quasar is nicknamed Dún Aonghasa, after a prehistoric stone fort on a cliff edge on Inis Mór, one of Ireland's Aran Islands.
+FACT: A 100-million-year-old fossil flower, Tomlinsoniella pedicellata, was found inside a Kansas museum rock collected in the late 1800s; it's at most 1.5 mm tall and was found by micro-CT scanning its hollow mould.
+FACT: Monocots (grasses, wheat, rice, palms, orchids, onions) make up roughly one in five of all flowering plant species.
+JOKE: Why wouldn't the cabinetmaker let an AI agent do his Black Friday shopping?
+INSIGHT: Before an AI Agent Spends Your Money, Write Down Its Rules and Its Limit
+QUOTE: "Trust, but verify." — Russian proverb
+---
