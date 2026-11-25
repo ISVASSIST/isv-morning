@@ -2214,3 +2214,13 @@ JOKE: Why wouldn't the cabinetmaker let an AI agent do his Black Friday shopping
 INSIGHT: Before an AI Agent Spends Your Money, Write Down Its Rules and Its Limit
 QUOTE: "Trust, but verify." — Russian proverb
 ---
+DATE: Thursday, 26 November 2026
+SCIENCE: University of York/UEA study (Science Advances) finds global ocean iodine emissions stay near constant this century, so iodine's ozone-clearing and cooling effects stall and weaken slightly by 2100 — covered Phys.org 25 November 2026
+ROBOTICS: XPeng AI Day pushes IRON humanoid hardware mass production to January 2027, store "intern" deployments Q1, public launch Q2 2027, trimmed specs — 25 November 2026
+FACT: Bass Strait is named after ship's surgeon George Bass, who sailed through it with Matthew Flinders in 1798-99, proving Tasmania was an island; Flinders Island is named after Flinders.
+FACT: Iodine was discovered by accident in 1811 by French chemist Bernard Courtois while making saltpetre for Napoleon's gunpowder from seaweed ash, when violet vapour rose from his vat.
+FACT: Australian electricity prices rose 25.2% in the 12 months to October 2026, the biggest driver of inflation jumping to 4.9%, after Commonwealth power bill rebates ended.
+JOKE: Why did the bricklayer stay calm when inflation came in at 4.9%?
+INSIGHT: Electricity Is Up 25%: Let AI Read a Year of Power Bills and Find What Is Driving Yours
+QUOTE: "The price of anything is the amount of life you exchange for it." — Henry David Thoreau
+---
