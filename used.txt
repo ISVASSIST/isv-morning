@@ -2224,3 +2224,13 @@ JOKE: Why did the bricklayer stay calm when inflation came in at 4.9%?
 INSIGHT: Electricity Is Up 25%: Let AI Read a Year of Power Bills and Find What Is Driving Yours
 QUOTE: "The price of anything is the amount of life you exchange for it." — Henry David Thoreau
 ---
+DATE: Friday, 27 November 2026
+SCIENCE: Dokara-led team finds runaway pulsar J1909+0749 escaping its own supernova remnant G42.1-0.2 at >1,400 km/s, spotted in MeerKAT images (Astronomy & Astrophysics) — covered Phys.org 26 November 2026
+ROBOTICS: Tesla registers Tesla Machining Technologies Management SE at German machine-tool maker EMAG's Salach HQ, ~220 EMAG staff reportedly moving, linked to Optimus — Electrek, 25 November 2026
+FACT: The first pulsar was spotted in 1967 by Cambridge PhD student Jocelyn Bell Burnell; its pulses were so regular it was half-jokingly labelled LGM-1, for "Little Green Men".
+FACT: Melbourne's Western Treatment Plant at Werribee covers roughly 10,000 hectares, and its sewage lagoons are part of a Ramsar wetland that draws tens of thousands of migratory birds every summer.
+FACT: South Africa's MeerKAT radio telescope has 64 dishes and will become part of the Square Kilometre Array, whose low-frequency half is being built in outback Western Australia.
+JOKE: Why doesn't the drainage contractor ever worry about a slow week in Melbourne?
+INSIGHT: Don't Wait for a Government AI Program: Ask Your Industry Body for a Hands-On Session for Your Trade
+QUOTE: "Coming together is a beginning, staying together is progress, and working together is success." — Henry Ford (attributed)
+---
