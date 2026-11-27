@@ -2234,3 +2234,13 @@ JOKE: Why doesn't the drainage contractor ever worry about a slow week in Melbou
 INSIGHT: Don't Wait for a Government AI Program: Ask Your Industry Body for a Hands-On Session for Your Trade
 QUOTE: "Coming together is a beginning, staying together is progress, and working together is success." — Henry Ford (attributed)
 ---
+DATE: Saturday, 28 November 2026
+SCIENCE: Rutgers-led study (Golparvar, Geophysical Research Letters) finds projected 5G n258-band leakage near 23.8 GHz could degrade satellite water vapour data and alter high-impact forecasts (Hurricane Ida 2040 simulation) — covered Phys.org 26 November 2026
+ROBOTICS: Volvo Cars begins training Hexagon AEON humanoids at Ghent plant via imitation learning, larger pilot H1 2027, production use mid-2027 — announced 26 November 2026
+FACT: Red imported fire ants were first found in Australia in Brisbane in 2001, and they have since been found in New South Wales as well.
+FACT: Voting has been compulsory at Victorian state elections since 1926, a few years after Queensland became the first Australian state to make it compulsory, in 1915.
+FACT: Volvo's car plant in Ghent, where the humanoid robots are now in training, opened in 1965 and is one of the company's two biggest car factories in Europe.
+JOKE: Why did the fencer leave voting until the very last minute on election day?
+INSIGHT: Your AI Allowance Just Got Smaller: Match the Model to the Job
+QUOTE: "The ballot is stronger than the bullet." — Abraham Lincoln (attributed)
+---
